@@ -1,0 +1,36 @@
+# .github/workflows/gdelt.yml — GDELT narrative series in their own job, offset from the main pull so the
+# ten queries get a fresh rate-limit window (GDELT limits by IP, and Actions runners share address ranges).
+name: pull-gdelt
+
+on:
+  schedule:
+    - cron: "15 23 * * 1-5"   # 23:15 UTC Mon–Fri, 35 minutes after the main pull
+    - cron: "45 13 * * 1-5"   # 13:45 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pull-data            # same group as pull-data so the two never push at once
+  cancel-in-progress: false
+
+jobs:
+  gdelt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Pull GDELT volume and tone
+        run: python pull.py gdelt gdelt_tone
+      - name: Commit changes
+        run: |
+          git config user.name "macro-dials-bot"
+          git config user.email "macro-dials-bot@users.noreply.github.com"
+          git pull --rebase -q || true
+          git add -A data
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "gdelt pull $(date -u +%Y-%m-%dT%H:%MZ)"; git push; fi
