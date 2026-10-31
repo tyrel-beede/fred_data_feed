@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """pull.py — scheduled data pull for the macro-dials dashboard.
 
+v2.2.1: CFTC Disaggregated dataset id corrected (72hh-3qpy) with NYMEX WTI name candidates; option rows stamped with the US session date;
+        5-day top-up when Yahoo's long-range response omits the latest session.
 v2.2: volatility indices (^VIX, ^VIX3M, ^VIX9D, ^VVIX, ^SKEW) and index/futures/sector tickers with 10-year history for the
       core set; FRED volatility and credit additions; two new groups — `options` (CBOE delayed quotes → single-name implied-vol
       surfaces for the AI names and the index ETFs) and `breadth` (S&P 500 constituents → breadth summary and member table).
@@ -89,6 +91,21 @@ def num(x):
 
 def r4(x):
     return "" if x is None else round(x, 4)
+
+def trading_date_et():
+    """The US session whose closing data a pull represents: today in New York after the open, else the prior business day.
+    (The runner's clock is UTC; a 22:40 UTC pull is the same day's close, a 13:10 UTC pull is the previous session's.)"""
+    try:
+        from zoneinfo import ZoneInfo
+        now = dt.datetime.now(ZoneInfo("America/New_York"))
+    except Exception:  # noqa: BLE001 — no tz database: approximate with EST
+        now = dt.datetime.utcnow() - dt.timedelta(hours=5)
+    d = now.date()
+    if now.hour < 9 or (now.hour == 9 and now.minute < 30):
+        d -= dt.timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= dt.timedelta(days=1)
+    return d.isoformat()
 
 # ---------------------------------------------------------------- FRED
 FRED_SERIES = [
@@ -182,24 +199,37 @@ CFTC_MARKETS = {
     "wn": "ULTRA UST BOND - CHICAGO BOARD OF TRADE",
     "vx": "VIX FUTURES - CBOE FUTURES EXCHANGE",
 }
-# Gold and crude are not in the TFF report; they live in the Disaggregated futures-only dataset (72hh-8ejz),
-# whose classes are producer/merchant, swap dealers, managed money and other reportables.
+# Gold and crude are not in the TFF report; they live in the Disaggregated futures-only dataset (72hh-3qpy — the CFTC's
+# "API Help for the COT Datasets" page lists the identifiers), whose classes are producer/merchant, swap dealers,
+# managed money and other reportables. Candidate names are tried in order (NYMEX renamed its WTI contract in 2018),
+# then a contains-match that excludes micro and e-mini contracts.
 CFTC_DISAGG = {
-    "gc": "GOLD - COMMODITY EXCHANGE INC.",
-    "cl": "CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE",
+    "gc": (["GOLD - COMMODITY EXCHANGE INC."], "GOLD", "COMMODITY EXCHANGE"),
+    "cl": (["WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE", "CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE"], "WTI", "NEW YORK"),
 }
 
 def pull_cftc_disagg():
-    base = "https://publicreporting.cftc.gov/resource/72hh-8ejz.json"
+    base = "https://publicreporting.cftc.gov/resource/72hh-3qpy.json"
     since = (dt.date.today() - dt.timedelta(days=365 * 3)).isoformat()
-    for slug, name in CFTC_DISAGG.items():
-        def one(slug=slug, name=name):
-            safe = name.replace("'", "''")
-            where = f"market_and_exchange_names = '{safe}' AND report_date_as_yyyy_mm_dd >= '{since}'"
-            url = base + "?" + urllib.parse.urlencode({"$where": where, "$order": "report_date_as_yyyy_mm_dd DESC", "$limit": 400})
-            txt = get(url)
+    for slug, (names, needle, exch) in CFTC_DISAGG.items():
+        def one(slug=slug, names=names, needle=needle, exch=exch):
+            txt = "[]"
+            for name in names:
+                safe = name.replace("'", "''")
+                where = f"market_and_exchange_names = '{safe}' AND report_date_as_yyyy_mm_dd >= '{since}'"
+                url = base + "?" + urllib.parse.urlencode({"$where": where, "$order": "report_date_as_yyyy_mm_dd DESC", "$limit": 400})
+                txt = get(url)
+                if json.loads(txt):
+                    break
+                time.sleep(0.3)
             if not json.loads(txt):
-                raise RuntimeError("no rows for " + name)
+                where = (f"upper(market_and_exchange_names) like '%{needle}%' AND upper(market_and_exchange_names) like '%{exch}%' "
+                         f"AND upper(market_and_exchange_names) not like '%MICRO%' AND upper(market_and_exchange_names) not like '%E-MINI%' "
+                         f"AND upper(market_and_exchange_names) not like '%FINANCIAL%' AND report_date_as_yyyy_mm_dd >= '{since}'")
+                url = base + "?" + urllib.parse.urlencode({"$where": where, "$order": "report_date_as_yyyy_mm_dd DESC", "$limit": 400})
+                txt = get(url)
+                if not json.loads(txt):
+                    raise RuntimeError("no rows for " + " / ".join(names))
             save(f"cftc/disagg_{slug}.json", txt)
         attempt(f"cftc_disagg:{slug}", one)
         time.sleep(0.5)
@@ -265,12 +295,28 @@ def yahoo_bars(t, rng, interval="1d"):
     return rows
 
 def pull_prices():
-    """Yahoo's chart endpoint (no key); a stooq CSV is the fallback (stooq answers a bot check from most cloud IPs)."""
+    """Yahoo's chart endpoint (no key); a stooq CSV is the fallback (stooq answers a bot check from most cloud IPs).
+    Yahoo's long-range responses sometimes omit the just-finished session for equities during the evening EOD rollover
+    (the 2026-10-31 00:24Z pull had indices through 10/30 but stocks through 10/29); when the latest bar is older than
+    the session date, a 5-day request is merged in, and names still short of it are listed under prices_stale."""
+    session = trading_date_et()
+    stale = []
     for t in PRICES:
         def one(t=t):
             rng = RANGE_OVERRIDE.get(t, "10y" if t in LONG_HISTORY else "2y")
             try:
                 rows = yahoo_bars(t, rng)
+                if rows and rows[-1][0] < session and not t.endswith(".KS"):
+                    time.sleep(0.5)
+                    try:
+                        recent = yahoo_bars(t, "5d")
+                        have = {r[0] for r in rows}
+                        rows += [r for r in recent if r[0] not in have]
+                        rows.sort(key=lambda r: r[0])
+                    except Exception:  # noqa: BLE001 — keep the long history if the top-up fails
+                        pass
+                    if rows[-1][0] < session:
+                        stale.append(f"{t}:{rows[-1][0]}")
                 out = io.StringIO(); w = csv.writer(out)
                 w.writerow(["date", "open", "high", "low", "close", "adjclose", "volume"])
                 for r in rows:
@@ -283,6 +329,8 @@ def pull_prices():
                 save(f"prices/{price_file(t)}.csv", txt)
         attempt(f"prices:{t}", one)
         time.sleep(1.0)
+    if stale:
+        STATUS["prices_stale"] = stale     # latest bar older than the session date even after the 5-day top-up
 
 # ------------------------------------------------------------ options
 # CBOE's delayed-quotes feed (the one behind cboe.com's option-chain pages): full chain with bid/ask, implied vol and Greeks.
@@ -376,7 +424,8 @@ def upsert_row(relpath, row):
     rows = []
     if old:
         rd = list(csv.DictReader(io.StringIO(old)))
-        rows = [r for r in rd if r.get("date") != row["date"]]
+        # drop the row being replaced, and any row stamped on a weekend (rows written before the session-date fix)
+        rows = [r for r in rd if r.get("date") != row["date"] and dt.date.fromisoformat(r["date"]).weekday() < 5]
     rows.append({k: ("" if v is None else v) for k, v in row.items()})
     fields = list(row.keys())
     for r in rows:
@@ -401,8 +450,7 @@ def pull_options():
                 spot = 0.5 * (b + a) if b and a else None
             if not spot:
                 raise RuntimeError("no underlying price in the CBOE payload")
-            stamp = str(raw.get("timestamp") or d.get("timestamp") or "")[:10]
-            asof = stamp if len(stamp) == 10 and stamp[4] == "-" else dt.date.today().isoformat()
+            asof = trading_date_et()          # the session these delayed quotes belong to (CBOE's own stamp is a clock time, not a session date)
             chain = []
             for o in d.get("options") or []:
                 try:
