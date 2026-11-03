@@ -1,0 +1,8 @@
+{
+ "group": "P8_calendar",
+ "last_run_at": "2026-11-03T11:46:46-07:00",
+ "last_as_of": "2026-11-02",
+ "last_file": "dials/calendar/2026-11-03.json",
+ "status": "partial",
+ "error": "Treasury tentative schedule, BLS release calendar and FOMC calendar not read: direct fetches of federalreserve.gov/monetarypolicy/fomccalendars.htm and bls.gov/schedule/2026/11_sched_list.htm were blocked by a WebFetch provenance prompt that nobody answered (unattended run); no new 424B5/8-K issuance exhibits were fetched this run; NVDA date is from an aggregator only"
+}

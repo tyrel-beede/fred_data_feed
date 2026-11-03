@@ -1,0 +1,210 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-03T11:46:46-07:00",
+ "skill": "dials-gather",
+ "config_version": "2026-11-03",
+ "status": "partial",
+ "error": "Treasury tentative schedule, BLS release calendar and FOMC calendar not read: direct fetches of federalreserve.gov/monetarypolicy/fomccalendars.htm and bls.gov/schedule/2026/11_sched_list.htm were blocked by a WebFetch provenance prompt that nobody answered (unattended run); no new 424B5/8-K issuance exhibits were fetched this run; NVDA date is from an aggregator only",
+ "gate": {
+  "since": "2026-10-27",
+  "note": "first run: no dials/_status_* existed, so the date gate was set to 2026-10-27 (seven days before run)"
+ },
+ "items": [
+  {
+   "key": "issuance",
+   "as_of": "2026-11-02",
+   "status": "partial",
+   "deals": [
+    {
+     "issuer": "Meta Platforms (META)",
+     "date": "2026-04-30",
+     "size_usd_bn": "20-25 (reported range)",
+     "tranches": "up to six; longest 2066",
+     "ipt": "2066 tranche IPT ~+180 bp vs Treasuries; final pricing not in source",
+     "book": "not reported for this deal",
+     "source": "tradersagency.com (secondary, page dated 2026-11-02, citing Mercury News/CNBC)",
+     "url": "https://tradersagency.com/blog/meta-markets-up-to-dollar25-billion-bond-sale-amid-ai-infrastructure-buildout",
+     "late": true,
+     "note": "deal date predates the gate; recorded once because the write-up surfaced this week. Primary 424B5 not fetched this run."
+    }
+   ],
+   "note": "fourweekmba write-up 'Microsoft, Oracle, Google price $41.7B of bonds in five days' surfaced in search but the fetch failed (client_error); not recorded. No sec.gov 424B5 sweep was run for the registered tickers this run.",
+   "fetched_how": "search-surfaced"
+  },
+  {
+   "key": "ipo_calendar",
+   "as_of": "2026-11-02",
+   "status": "ok",
+   "ytd": {
+    "ipos_priced": 121,
+    "ipos_yoy_pct": -34.2,
+    "proceeds_usd_bn": 148.6,
+    "proceeds_yoy_pct": 323.9,
+    "note": "US IPOs with market cap >= $50M; Renaissance stats page, no explicit as-of printed; latest dated item 2026-11-02"
+   },
+   "october_2026": {
+    "ipos": 8,
+    "proceeds_usd_bn": 1.2,
+    "direct_listings": 1,
+    "ten_year_monthly_avg": "22 IPOs / $5.1bn",
+    "source_date": "2026-11-02"
+   },
+   "week_ahead": {
+    "headline": "US IPO Week Ahead: November's IPO market set for a quiet start",
+    "date": "2026-10-30",
+    "names": "not readable from the index page"
+   },
+   "recent": [
+    {
+     "date": "2026-11-02",
+     "name": "OPay",
+     "event": "terminated $304M IPO after announcing pricing at $19 (low end), per 6-K",
+     "candidate_dial": "issuance window"
+    },
+    {
+     "date": "2026-11-02",
+     "name": "Anthropic",
+     "event": "filed amendment disclosing nine-month results ahead of multibillion-dollar IPO; no offering date"
+    },
+    {
+     "date": "2026-10-30",
+     "name": "Aspen Neuroscience",
+     "event": "priced at $15, low end of range"
+    },
+    {
+     "date": "2026-10-30",
+     "name": "Bambusa Therapeutics",
+     "event": "upsized, priced at $16 midpoint"
+    },
+    {
+     "date": "2026-10-29",
+     "name": "Tracx Logis",
+     "event": "cut deal size 33% ahead of $20M US IPO"
+    }
+   ],
+   "source": "renaissancecapital.com IPO-Center Stats and News",
+   "urls": [
+    "https://www.renaissancecapital.com/IPO-Center/Stats",
+    "https://www.renaissancecapital.com/IPO-Center/News"
+   ],
+   "fetched_how": "WebFetch"
+  },
+  {
+   "key": "event_dates",
+   "as_of": "2026-11-03",
+   "status": "partial",
+   "dates": [
+    {
+     "ticker": "CRWV",
+     "event": "Q3 2026 results + call",
+     "date": "2026-11-10",
+     "time": "17:00 ET (call)",
+     "verified": true,
+     "source": "investors.coreweave.com press release dated 2026-10-27",
+     "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Date-of-Third-Quarter-2026-Financial-Results-and-Conference-Call/default.aspx"
+    },
+    {
+     "ticker": "NVDA",
+     "event": "Q3 FY2027 results",
+     "date": "2026-11-17",
+     "time": "after close, call 17:00 ET",
+     "verified": false,
+     "source": "marketbeat (aggregator; page says estimated, not company-confirmed). investor.nvidia.com financial-reports page shows no Q3 date; events page not fetched",
+     "url": "https://www.marketbeat.com/earnings/reports/2026-11-17-nvidia-co-stock/"
+    },
+    {
+     "ticker": "NBIS",
+     "event": "Q3 2026 results",
+     "date": null,
+     "verified": false,
+     "source": "not gathered this run"
+    },
+    {
+     "ticker": "MSFT/GOOGL/META/AMZN",
+     "event": "Q3 CY2026 results",
+     "date": "reported week of 2026-10-27",
+     "verified": false,
+     "note": "already printed; next dates outside six weeks"
+    },
+    {
+     "ticker": "ORCL/MU/AVGO/GEV/VRT/ANET/SPCX",
+     "event": "next results",
+     "date": null,
+     "verified": false,
+     "source": "not gathered this run"
+    },
+    {
+     "issuer": "US Treasury",
+     "event": "Quarterly refunding announcement (Nov 2026)",
+     "date": "2026-11-04 (assumed first Wednesday; NOT read from treasury.gov)",
+     "verified": false,
+     "source": "home.treasury.gov press release sb0590 is the AUGUST 5, 2026 statement: 3y $58bn / 10y $42bn / 30y $25bn, sizes expected unchanged 'for at least the next several quarters'",
+     "url": "https://home.treasury.gov/news/press-releases/sb0590"
+    },
+    {
+     "issuer": "US Treasury",
+     "event": "3y/10y/30y refunding auctions",
+     "date": "expected 2026-11-09/10/12 pattern; not read from the tentative schedule",
+     "verified": false,
+     "source": "yielddocket.com lists only the Nov 3 6-week bill ($100bn) as announced",
+     "url": "https://yielddocket.com/treasury-auctions/"
+    },
+    {
+     "agency": "BLS",
+     "event": "Employment Situation (Oct 2026)",
+     "date": "2026-11-06 08:30 ET per aggregators",
+     "verified": false,
+     "source": "thriveinmarkets / financecalendar; bls.gov schedule page blocked by provenance prompt"
+    },
+    {
+     "agency": "BLS",
+     "event": "CPI (Oct 2026)",
+     "date": null,
+     "verified": false,
+     "source": "bls.gov schedule page blocked by provenance prompt"
+    },
+    {
+     "agency": "Federal Reserve",
+     "event": "FOMC (Dec 2026)",
+     "date": null,
+     "verified": false,
+     "source": "federalreserve.gov FOMC calendar blocked by provenance prompt"
+    }
+   ],
+   "fetched_how": "WebFetch / search-surfaced"
+  },
+  {
+   "key": "auctions_recent",
+   "as_of": "2026-11-02",
+   "status": "partial",
+   "results": [
+    {
+     "date": "2026-10-26",
+     "security": "2-year note",
+     "high_yield": 4.708,
+     "bid_to_cover": 2.59,
+     "tail_bp": null
+    },
+    {
+     "date": "2026-10-27",
+     "security": "5-year note",
+     "high_yield": 4.845,
+     "bid_to_cover": 2.33,
+     "tail_bp": null,
+     "chg_vs_prior_bp": -18.8
+    },
+    {
+     "date": "2026-10-29",
+     "security": "7-year note",
+     "high_yield": 4.894,
+     "bid_to_cover": 2.46,
+     "tail_bp": null,
+     "chg_vs_prior_bp": -19.1
+    }
+   ],
+   "note": "yielddocket shows high yields and bid-to-cover only; when-issued yields, tails and indirect shares were not on the page. Tails not computed.",
+   "url": "https://yielddocket.com/treasury-auctions/",
+   "fetched_how": "WebFetch"
+  }
+ ]
+}

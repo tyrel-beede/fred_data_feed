@@ -1,0 +1,87 @@
+{
+ "group": "events",
+ "run_at": "2026-11-03T11:46:46-07:00",
+ "skill": "dials-gather",
+ "config_version": "2026-11-03",
+ "status": "partial",
+ "error": "standard-mode WebSearch returned mostly undated or stale pages for 5 of 8 sweep phrases (bond deal pulled, LTA renegotiation, gigawatt deferral, sovereign stress, funding round repriced); no dated post-gate hit found for those. Recorded hits below only where a date could be read.",
+ "gate": {
+  "since": "2026-10-27",
+  "note": "first run: no dials/_status_* existed, so the date gate was set to 2026-10-27 (seven days before run)"
+ },
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "items": [
+  {
+   "key": "msft-capex-cut-2026-10-28",
+   "as_of": "2026-10-28",
+   "headline": "Microsoft cuts calendar-2026 capex forecast to $170bn from $175bn on delayed third-party capacity",
+   "source": "letsdatascience.com (secondary, citing Business Insider and an EX-99.1 filing)",
+   "url": "https://letsdatascience.com/news/microsoft-cuts-2026-capex-forecast-to-170-billion-on-delayed-741510fe",
+   "candidate_dial": "capex deferral / digestion (principal: MSFT)",
+   "claim": "CFO Amy Hood said on the Oct 28 FQ1 call that some GPU-as-a-Service contracts with third parties slipped into the second half of the fiscal year, cutting CY2026 capex guidance by about $5bn; the company frames it as timing, expects acceleration in 2H.",
+   "late": false,
+   "sweep_query": "capex cut OR deferral OR digestion AI",
+   "fetched_how": "WebFetch",
+   "note": "Reads as a candidate hard event (principal capex guide cut) \u2014 flagged, not scored. Primary 8-K EX-99.1 not fetched this run."
+  },
+  {
+   "key": "opay-ipo-terminated-2026-11-02",
+   "as_of": "2026-11-02",
+   "headline": "OPay terminates $304M US IPO after announcing pricing at $19 (low end)",
+   "source": "renaissancecapital.com news index (citing 6-K)",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News",
+   "candidate_dial": "pulled deal (equity issuance window)",
+   "claim": "Emerging-markets fintech OPay announced pricing then terminated the offering, per a 6-K; trading post-IPO had been halted (nairametrics, 2026-10-30).",
+   "late": false,
+   "sweep_query": "bond deal pulled OR downsized (surfaced via P8 IPO calendar)",
+   "fetched_how": "WebFetch"
+  },
+  {
+   "key": "tracx-logis-ipo-downsized-2026-10-29",
+   "as_of": "2026-10-29",
+   "headline": "Tracx Logis cuts deal size 33% ahead of $20M US IPO",
+   "source": "renaissancecapital.com news index",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News",
+   "candidate_dial": "downsized deal (micro-cap; low weight suggestion)",
+   "claim": "Deal size cut by a third before pricing.",
+   "late": false,
+   "sweep_query": "bond deal pulled OR downsized (surfaced via P8 IPO calendar)",
+   "fetched_how": "WebFetch"
+  },
+  {
+   "key": "cliffwater-gate-2026-06-03",
+   "as_of": "2026-06-03",
+   "headline": "Cliffwater Corporate Lending Fund gates for second straight quarter; redemption requests 17%, cap 5%",
+   "source": "pulse.bot (secondary, attributed to ZeroHedge; no primary)",
+   "url": "https://www.pulse.bot/finance/blogs/cliffwater-private-credit-fund-gates-investors-for-second-straight-quarter-after-redemption-requests-10c448fb-4d9a-4c28-bc01-3e339499431a/",
+   "candidate_dial": "gated fund (private credit)",
+   "claim": "Q2 2026 redemption requests reached 17% of shares against a 5% cap; S&P outlook to negative; ~$31bn fund.",
+   "late": true,
+   "sweep_query": "fund gates redemptions",
+   "fetched_how": "WebFetch",
+   "note": "Dated well before the gate; kept once with late:true per the skill, never again. No post-gate gating hit found this run."
+  },
+  {
+   "key": "partners-group-gate-2026-06-08",
+   "as_of": "2026-06-08",
+   "headline": "Partners Group caps Global Value SICAV redemptions at 5% after 9.8% requests; shares -17%",
+   "source": "pulse.bot (secondary; no primary cited)",
+   "url": "https://www.pulse.bot/hedge-funds/news/partners-group-caps-redemptions-at-5-after-98-surge-shares-drop-17-fb4d7c81-9b35-4806-8619-0786ec9e6747/",
+   "candidate_dial": "gated fund (private markets)",
+   "claim": "Q2 2026 redemption requests 9.8% of NAV vs 5% cap; 62% of requests processed before gate.",
+   "late": true,
+   "sweep_query": "fund gates redemptions",
+   "fetched_how": "WebFetch",
+   "note": "Pre-gate; kept once with late:true."
+  }
+ ]
+}
