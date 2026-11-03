@@ -1,0 +1,17 @@
+{
+ "run_utc": "2026-11-03T03:55:21Z",
+ "ok": [
+  "gdelt:ai_bubble:timelinevol",
+  "gdelt:dc_capex:timelinevol",
+  "gdelt:term_premium:timelinevol",
+  "gdelt:hormuz:timelinevol",
+  "gdelt:ai_bubble:timelinetone",
+  "gdelt:dc_capex:timelinetone",
+  "gdelt:term_premium:timelinetone",
+  "gdelt:private_credit:timelinetone"
+ ],
+ "failed": {
+  "gdelt:private_credit:timelinevol": "HTTPError: HTTP Error 429: Too Many Requests",
+  "gdelt:hormuz:timelinetone": "HTTPError: HTTP Error 429: Too Many Requests"
+ }
+}
