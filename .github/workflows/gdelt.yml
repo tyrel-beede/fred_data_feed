@@ -1,5 +1,7 @@
 # .github/workflows/gdelt.yml — GDELT narrative series in their own job, offset from the main pull so the
 # ten queries get a fresh rate-limit window (GDELT limits by IP, and Actions runners share address ranges).
+# pull.py keeps the whole GDELT run inside a 22-minute budget and writes its status file whatever happens; the
+# step allows 25 minutes and never blocks the commit, so partial results are kept instead of lost to a timeout.
 name: pull-gdelt
 
 on:
@@ -18,15 +20,18 @@ concurrency:
 jobs:
   gdelt:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Pull GDELT volume and tone
-        run: python pull.py gdelt gdelt_tone
+        timeout-minutes: 25
+        continue-on-error: true
+        run: python -u pull.py gdelt gdelt_tone   # unbuffered, so per-query lines reach the log as they happen and survive a cancel
       - name: Commit changes
+        if: always()
         run: |
           git config user.name "macro-dials-bot"
           git config user.email "macro-dials-bot@users.noreply.github.com"

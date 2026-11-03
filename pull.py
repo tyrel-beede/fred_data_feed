@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """pull.py — scheduled data pull for the macro-dials dashboard.
 
+v2.2.2: FRED caps the ICE BofA OAS series at a trailing 3 years (series notes, April 2026); those files are now archived forward —
+        each pull merges the new window into the existing file instead of overwriting it, so the history grows one day per day.
+        GDELT: the ten narrative queries run inside a shared 22-minute budget (the job was timing out at 30), rate-limit replies that
+        arrive as HTTP 200 text and request timeouts are retried like a 429, the query order rotates daily so no query starves, and
+        whatever was fetched is saved and committed even when the budget runs out.
 v2.2.1: CFTC Disaggregated dataset id corrected (72hh-3qpy) with NYMEX WTI name candidates; option rows stamped with the US session date;
         5-day top-up when Yahoo's long-range response omits the latest session.
 v2.2: volatility indices (^VIX, ^VIX3M, ^VIX9D, ^VVIX, ^SKEW) and index/futures/sector tickers with 10-year history for the
@@ -11,7 +16,8 @@ v2.1: gold/crude via the CFTC Disaggregated dataset, GDELT in its own workflow, 
 Runs inside GitHub Actions. Writes under data/ and a status file at data/_status_main.json (or _status_gdelt.json for the GDELT
 workflow). Every source is independent: one failure never blocks the rest. Standard library only.
 
-  FRED (FRED_API_KEY)          data/fred/<SERIES>.csv                 date,value (6 years)
+  FRED (FRED_API_KEY)          data/fred/<SERIES>.csv                 date,value (6 years; the BAML* OAS series come back as 3 years and are
+                                                                       merged into the existing file, never truncated)
   Treasury FiscalData          data/treasury/auctions.json            raw, newest 400 rows
                                data/treasury/auctions_results.csv     completed auctions with allotment shares
                                data/treasury/tga.json                 daily operating cash balance
@@ -28,7 +34,7 @@ workflow). Every source is independent: one failure never blocks the rest. Stand
                                                                        up/down volume, A/D line, equal-weight index, % in drawdown >20%
                                data/breadth/sp500_members_latest.csv  per member: sector, close, % from 52w high, MA states, 1m/3m returns
                                data/breadth/constituents.csv          cached constituent list (symbol, sector)
-  GDELT DOC                    data/gdelt/<slug>_timelinevol.json     30-second spacing; tone in a second pass (own workflow)
+  GDELT DOC                    data/gdelt/<slug>_timelinevol.json     30-second spacing inside a 22-minute budget; tone in a second pass (own workflow)
   EIA (optional)               data/eia/wti_brent_spot.json
 """
 import csv, json, os, sys, time, io, math, datetime as dt
@@ -118,6 +124,24 @@ FRED_SERIES = [
     "NFCI", "STLFSI4", "MORTGAGE30US",
 ]
 
+# FRED serves the ICE BofA index series (BAML*) as a trailing 3-year window only (series notes: "Starting in April 2026, this
+# series will only include 3 years of observations"), whatever observation_start asks for. Those files are archived forward:
+# the fresh window is merged into what the file already holds, so no observation that was ever pulled is dropped and the
+# history lengthens by a day per pull. Revised values for a date already on file win (FRED restates); nothing else changes.
+FRED_ARCHIVE = {s for s in FRED_SERIES if s.startswith("BAML")}
+
+def merge_fred_rows(relpath, rows):
+    """Union of the observations already in data/<relpath> and `rows` [(date, value)], sorted by date; new values override."""
+    merged = {}
+    old = load(relpath)
+    if old:
+        for line in old.splitlines()[1:]:
+            if "," in line:
+                d, v = line.split(",", 1)
+                merged[d] = v
+    merged.update(dict(rows))
+    return sorted(merged.items())
+
 def pull_fred():
     key = os.environ.get("FRED_API_KEY", "").strip()
     if not key:
@@ -130,6 +154,8 @@ def pull_fred():
                                              "observation_start": start}))
             obs = json.loads(get(url))["observations"]
             rows = [(o["date"], o["value"]) for o in obs if o["value"] not in (".", "")]
+            if sid in FRED_ARCHIVE:
+                rows = merge_fred_rows(f"fred/{sid}.csv", rows)
             save(f"fred/{sid}.csv", "date,value\n" + "\n".join(f"{d},{v}" for d, v in rows) + "\n")
         attempt(f"fred:{sid}", one)
         time.sleep(0.25)
@@ -657,26 +683,50 @@ GDELT_QUERIES = {
     "hormuz": '"Strait of Hormuz" sourcelang:english',
 }
 
+GDELT_SPACING = 30          # seconds between queries — GDELT limits by IP and Actions runners share address ranges
+GDELT_RETRY_WAIT = 75       # seconds to wait before retrying a rate-limited or timed-out query
+GDELT_BUDGET = 22 * 60      # seconds for the whole GDELT run (volume + tone); the workflow step allows 25 minutes
+GDELT_DEADLINE = None       # set on the first call so both modes share one budget
+
 def pull_gdelt(mode="timelinevol"):
-    for slug, q in GDELT_QUERIES.items():
+    """One request per query. GDELT answers a rate limit either as HTTP 429 or as an HTTP 200 text message with no
+    `timeline` key, so both are retried after GDELT_RETRY_WAIT, as are request timeouts. Everything runs inside a shared
+    time budget: a query that would not fit is recorded as skipped (not failed) and the run ends with its status file
+    written and the files already fetched intact. The query order rotates by day so the same query is never the one
+    that always starves at the head of the list."""
+    global GDELT_DEADLINE
+    if GDELT_DEADLINE is None:
+        GDELT_DEADLINE = time.monotonic() + GDELT_BUDGET
+    items = list(GDELT_QUERIES.items())
+    k = dt.date.today().toordinal() % len(items)
+    items = items[k:] + items[:k]
+    for slug, q in items:
+        name = f"gdelt:{slug}:{mode}"
+        if time.monotonic() + 15 > GDELT_DEADLINE:
+            STATUS["failed"][name] = "skipped: GDELT time budget exhausted"
+            print("SKIPPED ", name)
+            continue
         def one(slug=slug, q=q, mode=mode):
             url = "https://api.gdeltproject.org/api/v2/doc/doc?" + urllib.parse.urlencode(
                 {"query": q, "mode": mode, "timespan": "3m", "format": "json"})
-            for attempt_no in range(4):
+            for attempt_no in range(3):
                 try:
-                    txt = get(url)
-                    data = json.loads(txt)
+                    txt = get(url, timeout=45)
+                    data = json.loads(txt) if txt.lstrip().startswith("{") else {}
                     if "timeline" not in data:
-                        raise RuntimeError("no timeline: " + txt[:80])
+                        raise RuntimeError("no timeline: " + " ".join(txt[:100].split()))
                     save(f"gdelt/{slug}_{mode}.json", txt)
                     return
-                except urllib.error.HTTPError as e:
-                    if e.code == 429 and attempt_no < 3:
-                        time.sleep(60)
+                except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, RuntimeError, ValueError) as e:
+                    code = getattr(e, "code", None)
+                    retryable = code in (None, 429, 500, 502, 503, 504)
+                    if retryable and attempt_no < 2 and time.monotonic() + GDELT_RETRY_WAIT + 15 < GDELT_DEADLINE:
+                        time.sleep(GDELT_RETRY_WAIT)
                         continue
                     raise
-        attempt(f"gdelt:{slug}:{mode}", one)
-        time.sleep(30)
+        attempt(name, one)
+        if time.monotonic() + GDELT_SPACING < GDELT_DEADLINE:
+            time.sleep(GDELT_SPACING)
 
 # ----------------------------------------------------------------- EIA
 def pull_eia():
