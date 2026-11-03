@@ -29,7 +29,7 @@ jobs:
       - name: Pull GDELT volume and tone
         timeout-minutes: 25
         continue-on-error: true
-        run: python pull.py gdelt gdelt_tone
+        run: python -u pull.py gdelt gdelt_tone   # unbuffered, so per-query lines reach the log as they happen and survive a cancel
       - name: Commit changes
         if: always()
         run: |
