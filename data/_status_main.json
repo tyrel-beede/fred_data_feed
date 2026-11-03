@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-03T03:41:56Z",
+ "run_utc": "2026-11-03T20:03:32Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -51,6 +51,8 @@
   "fred:NFCI",
   "fred:STLFSI4",
   "fred:MORTGAGE30US",
+  "treasury:auctions",
+  "treasury:tga",
   "nyfed:sofr",
   "nyfed:pd_positions",
   "cftc:es",
@@ -152,8 +154,9 @@
   "breadth"
  ],
  "failed": {
-  "treasury:auctions": "URLError: <urlopen error [Errno 101] Network is unreachable>",
-  "treasury:tga": "URLError: <urlopen error [Errno 101] Network is unreachable>",
   "eia": "RuntimeError: EIA_API_KEY not set (optional)"
- }
+ },
+ "prices_stale": [
+  "^SKEW:2026-11-02"
+ ]
 }
