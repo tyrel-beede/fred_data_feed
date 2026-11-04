@@ -1,74 +1,459 @@
 {
-  "_about": "Configuration for the macro-dials sub-skills (dials-voices, dials-gather). Edited here, never hard-coded in a skill. Times are America/Boise. Weekdays: Mon..Sun. tolerance_days = how old a group's as_of may be at a macro-dials run before it is 'carried'.",
-  "version": "2026-11-03",
-  "timezone": "America/Boise",
-  "repo": "tyrel-beede/fred_data_feed",
-  "output_root": "dials",
-
-  "schedules": {
-    "dials-voices": { "weekdays": ["Mon", "Thu"], "time": "05:00", "note": "Substack and newsletter posts cluster Tue/Wed and Fri; Monday catches the weekend essays, Thursday the mid-week ones." },
-    "dials-gather": { "weekdays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "time": "05:10", "note": "Runs daily; which groups it gathers is decided by due_weekdays below. Saturday exists for the Friday-afternoon releases (CFTC 15:30 ET, H.8, Flow Show)." }
+ "_about": "Configuration for the macro-dials sub-skills (dials-voices, dials-gather). Edited here, never hard-coded in a skill. Times are America/Boise. Weekdays: Mon..Sun. tolerance_days = how old a group's as_of may be at a macro-dials run before it is 'carried'.",
+ "version": "2026-11-04",
+ "timezone": "America/Boise",
+ "repo": "tyrel-beede/fred_data_feed",
+ "output_root": "dials",
+ "schedules": {
+  "dials-voices": {
+   "weekdays": [
+    "Mon",
+    "Thu"
+   ],
+   "time": "04:48",
+   "note": "Substack and newsletter posts cluster Tue/Wed and Fri; Monday catches the weekend essays, Thursday the mid-week ones."
   },
-
-  "groups": {
-    "voices":   { "skill": "dials-voices", "due_weekdays": ["Mon", "Thu"], "tolerance_days": 4,  "feeds": ["N5", "N6"] },
-    "consensus":{ "skill": "dials-voices", "due_weekdays": ["Mon"],        "tolerance_days": 8,  "feeds": ["N3", "N4"], "note": "stockanalysis forecast pages for the registered tickers; ratings monthly, PT weekly" },
-    "P1_ici":   { "skill": "dials-gather", "due_weekdays": ["Thu"], "release": "Wed ~12:00 ET", "tolerance_days": 8, "sources": ["https://www.ici.org/research/stats/flows", "https://www.ici.org/research/stats/mmf"], "sanity_bound": "exclude a weekly print > 5x trailing MA4, flag it" },
-    "P2_epfr":  { "skill": "dials-gather", "due_weekdays": ["Sat"], "release": "Fri (Flow Show), Thu (Lipper)", "tolerance_days": 8, "sources": ["BofA Flow Show write-ups (chaincatcher, finvaulta)", "Reuters/Lipper via investing.com"] },
-    "P4_cftc":  { "skill": "dials-gather", "due_weekdays": ["Sat"], "release": "Fri 15:30 ET (Tue data)", "tolerance_days": 8, "sources": ["repo data/cftc/tff_<slug>.json (primary)", "futuresbench.com/cot", "thetrading.tools/es-cot"] },
-    "P5_sentiment": { "skill": "dials-gather", "due_weekdays": ["Fri"], "release": "AAII Thu; CBOE daily", "tolerance_days": 8, "sources": ["https://www.aaii.com/sentimentsurvey", "thetrading.tools put/call, SKEW, VIX term"] },
-    "P6_margin":{ "skill": "dials-gather", "due_weekdays": ["Mon"], "release": "monthly, ~3rd week", "tolerance_days": 35, "sources": ["https://www.finra.org/investors/learn-to-invest/advanced-investing/margin-statistics"] },
-    "P8_calendar": { "skill": "dials-gather", "due_weekdays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "release": "daily", "tolerance_days": 2, "sources": ["renaissancecapital.com IPO stats", "sec.gov 424B5 / 8-K exhibits", "company IR pages", "Treasury tentative auction schedule", "BLS release calendar", "federalreserve.gov FOMC calendar"], "note": "issuance (bond and equity deals with size, tranches, spread vs IPT, book), IPO calendar, event-date verification for every registered fork" },
-    "P9_custody": { "skill": "dials-gather", "due_weekdays": ["Fri"], "release": "H.4.1 Thu 16:30 ET; MOF Thu; TIC mid-month", "tolerance_days": 8, "sources": ["repo data/fred/WMTSECL1 (primary)", "https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/week.pdf", "TIC via mondovisione"] },
-    "P11_h8":   { "skill": "dials-gather", "due_weekdays": ["Sat"], "release": "H.8 Fri 16:15 ET; SLOOS quarterly", "tolerance_days": 8, "sources": ["repo data/fred/TOTCI, DRTSCILM (primary)", "federalreserve.gov/releases/h8"] },
-    "P12_fms":  { "skill": "dials-gather", "due_weekdays": ["Wed"], "release": "monthly, 2nd/3rd Tue", "tolerance_days": 35, "sources": ["FMS write-ups (investinglive, cryptobriefing)"] },
-    "events":   { "skill": "dials-gather", "due_weekdays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "release": "daily", "tolerance_days": 2, "note": "raw date-gated hits for the event sweep: pulled/downsized deals, gated funds, capex cuts/deferrals/digestion, re-priced rounds, LTA renegotiations, GW deferrals, auction tails, sovereign stress. Hits only — scoring is the orchestrator's." }
+  "dials-gather": {
+   "weekdays": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+   ],
+   "time": "05:10",
+   "note": "Runs daily; which groups it gathers is decided by due_weekdays below. Saturday exists for the Friday-afternoon releases (CFTC 15:30 ET, H.8, Flow Show)."
+  }
+ },
+ "groups": {
+  "voices": {
+   "skill": "dials-voices",
+   "due_weekdays": [
+    "Mon",
+    "Thu"
+   ],
+   "tolerance_days": 4,
+   "feeds": [
+    "N5",
+    "N6"
+   ]
   },
-
-  "voices": [
-    { "name": "Ray Dalio", "outlet": "Substack / Bridgewater", "lane": "debt", "url": "https://raydalio.substack.com", "added": "2026-11-03" },
-    { "name": "Brad Setser", "outlet": "CFR Follow the Money", "lane": "debt", "url": "https://www.cfr.org/blog/setser", "added": "2026-11-03" },
-    { "name": "Michael Burry", "outlet": "Cassandra Unchained (Substack)", "lane": "debt", "url": "https://cassandraunchained.substack.com", "added": "2026-11-03", "verify_url": true },
-    { "name": "Paul Krugman", "outlet": "Substack", "lane": "debt", "url": "https://paulkrugman.substack.com", "added": "2026-11-03" },
-    { "name": "Adam Tooze", "outlet": "Chartbook (Substack)", "lane": "debt", "url": "https://adamtooze.substack.com", "added": "2026-11-03" },
-    { "name": "Joseph Wang", "outlet": "Fed Guy", "lane": "debt", "url": "https://fedguy.com", "added": "2026-11-03" },
-    { "name": "Mohamed El-Erian", "outlet": "Bloomberg Opinion / FT", "lane": "debt", "url": "", "added": "2026-11-03", "note": "no owned page; dated columns via search" },
-    { "name": "Lyn Alden", "outlet": "lynalden.com", "lane": "debt", "url": "https://www.lynalden.com", "added": "2026-11-03" },
-
-    { "name": "Dylan Patel", "outlet": "SemiAnalysis", "lane": "capex-ai", "url": "https://semianalysis.com", "added": "2026-10" },
-    { "name": "Ben Thompson", "outlet": "Stratechery", "lane": "capex-ai", "url": "https://stratechery.com", "added": "2026-10" },
-    { "name": "Ed Zitron", "outlet": "Where's Your Ed At", "lane": "capex-ai", "url": "https://www.wheresyoured.at", "added": "2026-10" },
-    { "name": "Paul Kedrosky", "outlet": "Substack", "lane": "capex-ai", "url": "https://paulkedrosky.com", "added": "2026-11-03" },
-    { "name": "Doug O'Laughlin", "outlet": "Fabricated Knowledge", "lane": "capex-ai", "url": "https://www.fabricatedknowledge.com", "added": "2026-11-03" },
-    { "name": "Gavin Baker", "outlet": "Atreides / X", "lane": "capex-ai", "url": "", "added": "2026-11-03", "note": "posts and podcast appearances; dated via search" },
-    { "name": "David Cahn", "outlet": "Sequoia", "lane": "capex-ai", "url": "https://www.sequoiacap.com/article/", "added": "2026-11-03" },
-    { "name": "Azeem Azhar", "outlet": "Exponential View", "lane": "capex-ai", "url": "https://www.exponentialview.co", "added": "2026-11-03" },
-    { "name": "Gary Marcus", "outlet": "Marcus on AI (Substack)", "lane": "capex-ai", "url": "https://garymarcus.substack.com", "added": "2026-11-03" },
-    { "name": "Doomberg", "outlet": "Substack", "lane": "capex-ai", "url": "https://doomberg.substack.com", "added": "2026-11-03", "note": "power / energy side of the buildout" },
-
-    { "name": "Torsten Slok", "outlet": "Apollo Daily Spark", "lane": "strategist", "url": "", "added": "2026-10", "note": "Apollo pages refused; dated secondary coverage" },
-    { "name": "Michael Hartnett", "outlet": "BofA Flow Show", "lane": "strategist", "url": "", "added": "2026-10", "note": "via write-ups" },
-    { "name": "Mike Wilson", "outlet": "Morgan Stanley", "lane": "strategist", "url": "", "added": "2026-10" },
-    { "name": "David Kostin", "outlet": "Goldman Sachs", "lane": "strategist", "url": "", "added": "2026-10" },
-    { "name": "James Mackintosh", "outlet": "WSJ Streetwise", "lane": "strategist", "url": "", "added": "2026-10" },
-    { "name": "Howard Marks", "outlet": "Oaktree memos", "lane": "strategist", "url": "https://www.oaktreecapital.com/insights", "added": "2026-10" },
-    { "name": "Jeremy Grantham", "outlet": "GMO", "lane": "strategist", "url": "https://www.gmo.com/americas/research-library/", "added": "2026-10" },
-    { "name": "Jim Chanos", "outlet": "X / interviews", "lane": "strategist", "url": "", "added": "2026-10" },
-    { "name": "Matt Levine", "outlet": "Bloomberg Money Stuff", "lane": "strategist", "url": "", "added": "2026-10" },
-    { "name": "Dario Perkins", "outlet": "TS Lombard", "lane": "strategist", "url": "", "added": "2026-10" },
-    { "name": "Jim Grant", "outlet": "Grant's Interest Rate Observer", "lane": "strategist", "url": "", "added": "2026-10" }
+  "consensus": {
+   "skill": "dials-voices",
+   "due_weekdays": [
+    "Mon"
+   ],
+   "tolerance_days": 8,
+   "feeds": [
+    "N3",
+    "N4"
+   ],
+   "note": "stockanalysis forecast pages for the registered tickers; ratings monthly, PT weekly"
+  },
+  "P1_ici": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Thu"
+   ],
+   "release": "Wed ~12:00 ET",
+   "tolerance_days": 8,
+   "sources": [
+    "https://www.ici.org/research/stats/flows",
+    "https://www.ici.org/research/stats/mmf"
+   ],
+   "sanity_bound": "exclude a weekly print > 5x trailing MA4, flag it"
+  },
+  "P2_epfr": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Sat"
+   ],
+   "release": "Fri (Flow Show), Thu (Lipper)",
+   "tolerance_days": 8,
+   "sources": [
+    "BofA Flow Show write-ups (chaincatcher, finvaulta)",
+    "Reuters/Lipper via investing.com"
+   ]
+  },
+  "P4_cftc": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Sat"
+   ],
+   "release": "Fri 15:30 ET (Tue data)",
+   "tolerance_days": 8,
+   "sources": [
+    "repo data/cftc/tff_<slug>.json (primary)",
+    "futuresbench.com/cot",
+    "thetrading.tools/es-cot"
+   ]
+  },
+  "P5_sentiment": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Fri"
+   ],
+   "release": "AAII Thu; CBOE daily",
+   "tolerance_days": 8,
+   "sources": [
+    "https://www.aaii.com/sentimentsurvey",
+    "thetrading.tools put/call, SKEW, VIX term"
+   ]
+  },
+  "P6_margin": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Mon"
+   ],
+   "release": "monthly, ~3rd week",
+   "tolerance_days": 35,
+   "sources": [
+    "https://www.finra.org/investors/learn-to-invest/advanced-investing/margin-statistics"
+   ]
+  },
+  "P8_calendar": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+   ],
+   "release": "daily",
+   "tolerance_days": 2,
+   "sources": [
+    "renaissancecapital.com IPO stats",
+    "sec.gov 424B5 / 8-K exhibits",
+    "company IR pages",
+    "Treasury tentative auction schedule",
+    "BLS release calendar",
+    "federalreserve.gov FOMC calendar"
+   ],
+   "note": "issuance (bond and equity deals with size, tranches, spread vs IPT, book), IPO calendar, event-date verification for every registered fork"
+  },
+  "P9_custody": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Fri"
+   ],
+   "release": "H.4.1 Thu 16:30 ET; MOF Thu; TIC mid-month",
+   "tolerance_days": 8,
+   "sources": [
+    "repo data/fred/WMTSECL1 (primary)",
+    "https://www.mof.go.jp/policy/international_policy/reference/itn_transactions_in_securities/week.pdf",
+    "TIC via mondovisione"
+   ]
+  },
+  "P11_h8": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Sat"
+   ],
+   "release": "H.8 Fri 16:15 ET; SLOOS quarterly",
+   "tolerance_days": 8,
+   "sources": [
+    "repo data/fred/TOTCI, DRTSCILM (primary)",
+    "federalreserve.gov/releases/h8"
+   ]
+  },
+  "P12_fms": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Wed"
+   ],
+   "release": "monthly, 2nd/3rd Tue",
+   "tolerance_days": 35,
+   "sources": [
+    "FMS write-ups (investinglive, cryptobriefing)"
+   ]
+  },
+  "events": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+   ],
+   "release": "daily",
+   "tolerance_days": 2,
+   "note": "raw date-gated hits for the event sweep: pulled/downsized deals, gated funds, capex cuts/deferrals/digestion, re-priced rounds, LTA renegotiations, GW deferrals, auction tails, sovereign stress. Hits only — scoring is the orchestrator's."
+  }
+ },
+ "voices": [
+  {
+   "name": "Ray Dalio",
+   "outlet": "Substack / Bridgewater",
+   "lane": "debt",
+   "url": "https://raydalio.substack.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Brad Setser",
+   "outlet": "CFR Follow the Money",
+   "lane": "debt",
+   "url": "https://www.cfr.org/blog/setser",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Michael Burry",
+   "outlet": "Cassandra Unchained (Substack)",
+   "lane": "debt",
+   "url": "https://cassandraunchained.substack.com",
+   "added": "2026-11-03",
+   "verify_url": true
+  },
+  {
+   "name": "Paul Krugman",
+   "outlet": "Substack",
+   "lane": "debt",
+   "url": "https://paulkrugman.substack.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Adam Tooze",
+   "outlet": "Chartbook (Substack)",
+   "lane": "debt",
+   "url": "https://adamtooze.substack.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Joseph Wang",
+   "outlet": "Fed Guy",
+   "lane": "debt",
+   "url": "https://fedguy.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Mohamed El-Erian",
+   "outlet": "Bloomberg Opinion / FT",
+   "lane": "debt",
+   "url": "",
+   "added": "2026-11-03",
+   "note": "no owned page; dated columns via search"
+  },
+  {
+   "name": "Lyn Alden",
+   "outlet": "lynalden.com",
+   "lane": "debt",
+   "url": "https://www.lynalden.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Dylan Patel",
+   "outlet": "SemiAnalysis",
+   "lane": "capex-ai",
+   "url": "https://semianalysis.com",
+   "added": "2026-10"
+  },
+  {
+   "name": "Ben Thompson",
+   "outlet": "Stratechery",
+   "lane": "capex-ai",
+   "url": "https://stratechery.com",
+   "added": "2026-10"
+  },
+  {
+   "name": "Ed Zitron",
+   "outlet": "Where's Your Ed At",
+   "lane": "capex-ai",
+   "url": "https://www.wheresyoured.at",
+   "added": "2026-10"
+  },
+  {
+   "name": "Paul Kedrosky",
+   "outlet": "Substack",
+   "lane": "capex-ai",
+   "url": "https://paulkedrosky.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Doug O'Laughlin",
+   "outlet": "Fabricated Knowledge",
+   "lane": "capex-ai",
+   "url": "https://www.fabricatedknowledge.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Gavin Baker",
+   "outlet": "Atreides / X",
+   "lane": "capex-ai",
+   "url": "",
+   "added": "2026-11-03",
+   "note": "posts and podcast appearances; dated via search"
+  },
+  {
+   "name": "David Cahn",
+   "outlet": "Sequoia",
+   "lane": "capex-ai",
+   "url": "https://www.sequoiacap.com/article/",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Azeem Azhar",
+   "outlet": "Exponential View",
+   "lane": "capex-ai",
+   "url": "https://www.exponentialview.co",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Gary Marcus",
+   "outlet": "Marcus on AI (Substack)",
+   "lane": "capex-ai",
+   "url": "https://garymarcus.substack.com",
+   "added": "2026-11-03"
+  },
+  {
+   "name": "Doomberg",
+   "outlet": "Substack",
+   "lane": "capex-ai",
+   "url": "https://doomberg.substack.com",
+   "added": "2026-11-03",
+   "note": "power / energy side of the buildout"
+  },
+  {
+   "name": "Torsten Slok",
+   "outlet": "Apollo Daily Spark",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10",
+   "note": "Apollo pages refused; dated secondary coverage"
+  },
+  {
+   "name": "Michael Hartnett",
+   "outlet": "BofA Flow Show",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10",
+   "note": "via write-ups"
+  },
+  {
+   "name": "Mike Wilson",
+   "outlet": "Morgan Stanley",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  },
+  {
+   "name": "David Kostin",
+   "outlet": "Goldman Sachs",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  },
+  {
+   "name": "James Mackintosh",
+   "outlet": "WSJ Streetwise",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  },
+  {
+   "name": "Howard Marks",
+   "outlet": "Oaktree memos",
+   "lane": "strategist",
+   "url": "https://www.oaktreecapital.com/insights",
+   "added": "2026-10"
+  },
+  {
+   "name": "Jeremy Grantham",
+   "outlet": "GMO",
+   "lane": "strategist",
+   "url": "https://www.gmo.com/americas/research-library/",
+   "added": "2026-10"
+  },
+  {
+   "name": "Jim Chanos",
+   "outlet": "X / interviews",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  },
+  {
+   "name": "Matt Levine",
+   "outlet": "Bloomberg Money Stuff",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  },
+  {
+   "name": "Dario Perkins",
+   "outlet": "TS Lombard",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  },
+  {
+   "name": "Jim Grant",
+   "outlet": "Grant's Interest Rate Observer",
+   "lane": "strategist",
+   "url": "",
+   "added": "2026-10"
+  }
+ ],
+ "n5_fixed_sweep": [
+  "Apollo Daily Spark",
+  "WSJ Heard on the Street",
+  "WSJ Streetwise",
+  "FT Alphaville",
+  "FT Unhedged",
+  "Bloomberg Odd Lots",
+  "Bloomberg Money Stuff",
+  "SemiAnalysis",
+  "Stratechery",
+  "BofA Flow Show",
+  "Grant's"
+ ],
+ "n1_queries": [
+  "\"AI bubble\"",
+  "\"data center\" capex",
+  "\"term premium\" OR \"Treasury auction\""
+ ],
+ "event_sweep_queries": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "registered_tickers": {
+  "principals": [
+   "MSFT",
+   "GOOGL",
+   "META",
+   "AMZN",
+   "ORCL",
+   "SPCX"
   ],
-
-  "n5_fixed_sweep": ["Apollo Daily Spark", "WSJ Heard on the Street", "WSJ Streetwise", "FT Alphaville", "FT Unhedged", "Bloomberg Odd Lots", "Bloomberg Money Stuff", "SemiAnalysis", "Stratechery", "BofA Flow Show", "Grant's"],
-  "n1_queries": ["\"AI bubble\"", "\"data center\" capex", "\"term premium\" OR \"Treasury auction\""],
-  "event_sweep_queries": ["bond deal pulled OR downsized", "fund gates redemptions", "capex cut OR deferral OR digestion AI", "funding round repriced AI lab", "LTA renegotiation memory", "gigawatt deferral data center", "Treasury auction tail", "sovereign bond stress"],
-
-  "registered_tickers": {
-    "principals": ["MSFT", "GOOGL", "META", "AMZN", "ORCL", "SPCX"],
-    "suppliers": ["NVDA", "MU", "GEV", "VRT", "ANET", "AVGO"],
-    "neoclouds": ["CRWV", "NBIS"],
-    "memory_no_surface": ["000660.KS", "005930.KS", "Kioxia"]
-  },
-
-  "github": { "commit_route": "same App credentials as pull.py; one commit per sub-skill run, message 'dials: <group(s)> <YYYY-MM-DD>'", "branch": "main" }
+  "suppliers": [
+   "NVDA",
+   "MU",
+   "GEV",
+   "VRT",
+   "ANET",
+   "AVGO"
+  ],
+  "neoclouds": [
+   "CRWV",
+   "NBIS"
+  ],
+  "memory_no_surface": [
+   "000660.KS",
+   "005930.KS",
+   "Kioxia"
+  ]
+ },
+ "github": {
+  "commit_route": "same App credentials as pull.py; one commit per sub-skill run, message 'dials: <group(s)> <YYYY-MM-DD>'",
+  "branch": "main"
+ },
+ "_fetch_rule": "Sub-skills WebFetch only URLs that appear in this file, in README.md, or in a WebSearch result; never a URL recalled from memory (unattended provenance prompts fail silently). Sweeps use WebSearch extended mode."
 }
