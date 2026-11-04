@@ -18,16 +18,16 @@ RAW = os.path.join(ROOT, "history", "physical", "raw")
 UA = {"User-Agent": "fred_data_feed history layer (github.com/tyrel-beede/fred_data_feed)"}
 
 
-def get(url, tries=3):
+def get(url, tries=4):
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=120) as r:
+            with urllib.request.urlopen(req, timeout=180) as r:
                 return r.read()
         except Exception as e:  # noqa
             if i == tries - 1:
                 raise
-            time.sleep(3 * (i + 1))
+            time.sleep(10 * (i + 1))
 
 
 def save(cat, name, data, url, manifest):
