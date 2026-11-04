@@ -59,7 +59,8 @@ history/
   bridge/                   written by tools/bridge_pull.py in Actions: FRED series since 2010 that carry the JST
                             concepts for the US, annual aggregates, and the 2016-2020 overlap check
   analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
-                            backtest.md / backtest.json
+                            backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical)
+  physical/                 the physical layer: OWID extract (CO2, energy), derived footprint features, catalog
   tools/
     jst_build.py            workbook -> csv, coverage, crisis flags, units, features
     jstlib.py               shared loader (sheet + overrides + features)
@@ -250,6 +251,19 @@ is best left to k-NN at 0.61. The heaviest weights are readable: for the drawdow
 share of countries in a credit boom, the state's two-year speed and a low dividend yield; for the contraction, the
 loans/GDP level three years back above everything else. The label's horizon curve under the logit is 0.61 / 0.58 /
 0.58 / 0.54 / 0.51. Differences of ±0.02 are within noise for a few hundred events; the gaps above are larger than that.
+
+## The physical layer (`physical/`, `tools/physical_build.py`)
+
+Fossil CO2 by fuel from 1750–1870 and primary energy, fossil production and consumption from 1900/1965 for the 18
+countries, from Our World in Data's repositories (Global Carbon Budget, EIA, Energy Institute, Ember; licenses in the
+extract's provenance file), with derived features: the **energy footprint gap** (CO2 or energy growth minus real GDP
+growth over three years, and its anomaly against the country's own trailing decade), carbon intensity, fossil
+production growth, fuel self-sufficiency, fuel shares. Added to the learners: the real GDP fall gains (0.61 → 0.66
+under k-NN; +0.02 on the weighted learners), the financial targets do not move at their best learner, and the
+footprint gap takes weight in the crisis and drawdown models without adding skill — redundant with the subnet and
+credit features, not wrong. `physical/catalog.json` lists the long-running physical catalogs still to bring in (oil
+prices since 1861, US energy 1635–, European measured energy 1800–, technology diffusion, commodity prices, minerals,
+ore grades, land) with their retrieval route and license.
 
 ## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
 

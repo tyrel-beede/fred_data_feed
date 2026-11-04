@@ -33,13 +33,24 @@ Physics enters the system in two roles, and only one of them shows up as backtes
   and what has to be supplied as a file (the pre-1965 European energy consumption series, the Jacks commodity panel,
   ore-grade compilations).
 
-## How it is tested
+## How it is tested, and what the first slice did
 
 `../tools/learner_test.py --physical` adds the physical features to the walk-forward learners and writes
-`../analogs/learner_test_physical.md` beside the run without them, so the layer's value is a measured difference, not
-an argument. The expectation stated before the run: modest gains on the activity targets from the shock channel, larger
-on the financial targets from the footprint gap if it separates booms that built from booms that priced — and no
-movement toward 0.85, because the physical variables are slow and the targets are fast.
+`../analogs/learner_test_physical.md` beside a like-for-like baseline (`learner_test_rerun.md`, same code, same day).
+The expectation stated before the run: modest gains on the activity targets from the shock channel, larger on the
+financial targets from the footprint gap if it separates booms that built from booms that priced — and no movement
+toward 0.85.
+
+Result, 2026-11-04 (walk-forward AUC within 3 years, baseline → with physical): real GDP per capita fall **0.61 →
+0.66** under k-NN, 0.60 → 0.62 logit, 0.58 → 0.60 trees — the activity target gained as predicted, and the heaviest
+new weight is fuel self-sufficiency (exporters fall less, importers more: the shock-exposure channel, 1965 on). The
+financial targets did not move at their best learner (drawdown 0.734 → 0.731, contraction 0.69 → 0.69, crisis label
+0.633 → 0.634), and the unweighted k-NN got worse on the drawdown (0.65 → 0.61: nine more dimensions diluting a
+plain distance, the same lesson as the lagged copies). The footprint gap and CO2 growth took heavy weights in the
+crisis and drawdown logits without moving their AUC, which means they carry information the subnet and credit
+features already carried. So the first slice earns its place on the activity target and is redundant, not wrong, on
+the financial ones; the catalog's next entries (oil prices since 1861, technology diffusion, pre-1965 measured energy)
+address the channels this slice cannot see.
 
 ## Rebuild
 
