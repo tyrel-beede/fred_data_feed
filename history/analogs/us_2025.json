@@ -1,0 +1,698 @@
+{
+ "query": "United States 2025 (full year, from the live feed; 9 of 20 features)",
+ "features_used": [
+  "debt_gdp",
+  "d5_debt_gdp",
+  "ltrate",
+  "term_spread",
+  "real_ltrate_expost",
+  "cpi_infl",
+  "unemp",
+  "d1_unemp",
+  "real_eq_capgain_3y"
+ ],
+ "features_requested": [
+  "loans_gdp",
+  "d3_loans_gdp",
+  "d5_loans_gdp",
+  "mort_gdp",
+  "debt_gdp",
+  "d5_debt_gdp",
+  "deficit_gdp",
+  "r_minus_g",
+  "ltrate",
+  "term_spread",
+  "real_ltrate_expost",
+  "cpi_infl",
+  "rgdp_pc_growth",
+  "unemp",
+  "d1_unemp",
+  "iy",
+  "ca_gdp",
+  "eq_dp",
+  "real_eq_capgain_3y",
+  "real_hp_growth_3y"
+ ],
+ "query_values": {
+  "debt_gdp": 1.2034221,
+  "d5_debt_gdp": -0.07757789999999987,
+  "ltrate": 4.293212851405622,
+  "term_spread": 0.08145942674808815,
+  "real_ltrate_expost": 1.6589155228453798,
+  "cpi_infl": 0.026342973285602422,
+  "unemp": 4.263636363636364,
+  "d1_unemp": 0.2386363636363633,
+  "real_eq_capgain_3y": 0.11297310782283398
+ },
+ "query_provenance": {
+  "ltrate": {
+   "value": 4.293212851405622,
+   "source": "FRED DGS10, 249 observations 2025-01-02..2025-12-31, annual mean (data/fred/DGS10.csv)"
+  },
+  "term_spread": {
+   "value": 0.08145942674808815,
+   "source": "DGS10 minus DFF annual means (JST stir for the US is a 3-month bill rate; the funds rate is used as the short-rate proxy, levels within ~10 bp in 2025)"
+  },
+  "real_ltrate_expost": {
+   "value": 1.6589155228453798,
+   "source": "DGS10 annual mean minus CPI-U annual-average inflation"
+  },
+  "cpi_infl": {
+   "value": 0.026342973285602422,
+   "source": "CPIAUCSL annual mean 2025 / 2024 - 1 (11 and 12 months)"
+  },
+  "unemp": {
+   "value": 4.263636363636364,
+   "source": "FRED UNRATE, 11 observations 2025-01-01..2025-12-01, annual mean (data/fred/UNRATE.csv)"
+  },
+  "d1_unemp": {
+   "value": 0.2386363636363633,
+   "source": "UNRATE annual mean 2025 minus 2024"
+  },
+  "debt_gdp": {
+   "value": 1.2034221,
+   "source": "FRED GFDEGDQ188S, 4 observations 2025-01-01..2025-10-01, annual mean (data/fred/GFDEGDQ188S.csv) / 100 (same series concept as JST debtgdp: 2020 FRED 128.1 vs JST 1.281)"
+  },
+  "d5_debt_gdp": {
+   "value": -0.07757789999999987,
+   "source": "GFDEGDQ188S 2025 mean / 100 minus JST USA 2020 debtgdp 1.281"
+  },
+  "real_eq_capgain_3y": {
+   "value": 0.11297310782283398,
+   "source": "SP500 annual mean 2025 / 2022, deflated by CPIAUCSL annual means, annualized over 3 years (annual-average basis, as JST)"
+  }
+ },
+ "regime": "any",
+ "from_year": 1870,
+ "k": 15,
+ "candidates": 2718,
+ "analogs": [
+  {
+   "iso": "ITA",
+   "year": 2005,
+   "distance": 0.547,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 1.01501,
+    "d5_debt_gdp": -0.0338568,
+    "ltrate": 3.55583,
+    "term_spread": 1.38343,
+    "real_ltrate_expost": 1.34893,
+    "cpi_infl": 0.022069,
+    "unemp": 7.7305,
+    "d1_unemp": -0.1351,
+    "real_eq_capgain_3y": 0.137395
+   },
+   "outcomes": {
+    "crisis_1_3y": 1.0,
+    "rgdp_pc_1y": 1.793600745324131,
+    "rgdp_pc_3y": 0.9166413697017317,
+    "req_1y": 19.566300326296826,
+    "req_3y": -42.327879654238764,
+    "rhp_3y": 1.565361636530893,
+    "dltrate_1y": 0.4916700000000005,
+    "dltrate_3y": 1.1253199999999999,
+    "dunemp_3y": -1.0072999999999999,
+    "dloans_gdp_3y": 13.163415790377398
+   }
+  },
+  {
+   "iso": "USA",
+   "year": 2019,
+   "distance": 0.607,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 1.068,
+    "d5_debt_gdp": 0.042,
+    "ltrate": 2.14417,
+    "term_spread": -0.015833,
+    "real_ltrate_expost": 0.332377,
+    "cpi_infl": 0.0181179,
+    "unemp": 3.7,
+    "d1_unemp": -0.1956,
+    "real_eq_capgain_3y": 0.093317
+   },
+   "outcomes": {
+    "crisis_1_3y": null,
+    "rgdp_pc_1y": -3.762883996568278,
+    "rgdp_pc_3y": null,
+    "req_1y": 11.147911777448162,
+    "req_3y": null,
+    "rhp_3y": null,
+    "dltrate_1y": -1.2500003999999998,
+    "dltrate_3y": null,
+    "dunemp_3y": null,
+    "dloans_gdp_3y": null
+   }
+  },
+  {
+   "iso": "FRA",
+   "year": 1898,
+   "distance": 0.627,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.9388,
+    "d5_debt_gdp": -0.1637,
+    "ltrate": 2.943,
+    "term_spread": 0.953,
+    "real_ltrate_expost": 1.8194,
+    "cpi_infl": 0.011236,
+    "unemp": 7.3,
+    "d1_unemp": 0.4,
+    "real_eq_capgain_3y": 0.0478354
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 5.501818036326789,
+    "rgdp_pc_3y": 2.423433982540679,
+    "req_1y": 3.5471394658088684,
+    "req_3y": 0.684768648111489,
+    "rhp_3y": 8.332726875773222,
+    "dltrate_1y": 0.08400000000000007,
+    "dltrate_3y": 0.05600000000000005,
+    "dunemp_3y": 0.5,
+    "dloans_gdp_3y": null
+   }
+  },
+  {
+   "iso": "NLD",
+   "year": 1910,
+   "distance": 0.639,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.729979,
+    "d5_debt_gdp": -0.08034,
+    "ltrate": 3.25,
+    "term_spread": -0.39,
+    "real_ltrate_expost": 0.43206,
+    "cpi_infl": 0.0281794,
+    "unemp": 3.62472,
+    "d1_unemp": -0.0250954,
+    "real_eq_capgain_3y": 0.0198617
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 2.1083217654706443,
+    "rgdp_pc_3y": 7.019930194514057,
+    "req_1y": 12.24683708888319,
+    "req_3y": 12.377847608652859,
+    "rhp_3y": 1.4007656652188283,
+    "dltrate_1y": 0.27,
+    "dltrate_3y": 0.25,
+    "dunemp_3y": -0.19083390844735382,
+    "dloans_gdp_3y": 1.0236367596491491
+   }
+  },
+  {
+   "iso": "NLD",
+   "year": 1903,
+   "distance": 0.669,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.851734,
+    "d5_debt_gdp": -0.049098,
+    "ltrate": 3.11,
+    "term_spread": -0.08,
+    "real_ltrate_expost": 0.533906,
+    "cpi_infl": 0.0257609,
+    "unemp": 3.6286,
+    "d1_unemp": -0.211107,
+    "real_eq_capgain_3y": -0.0272475
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": -0.0577686991921289,
+    "rgdp_pc_3y": 4.084846044627954,
+    "req_1y": 10.635944766750294,
+    "req_3y": 30.06327158253763,
+    "rhp_3y": -14.572921778610715,
+    "dltrate_1y": 0.010000000000000231,
+    "dltrate_3y": 0.06000000000000005,
+    "dunemp_3y": -0.6411617637285869,
+    "dloans_gdp_3y": 6.716474632427594
+   }
+  },
+  {
+   "iso": "NLD",
+   "year": 1961,
+   "distance": 0.708,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.659269,
+    "d5_debt_gdp": -0.090445,
+    "ltrate": 3.91,
+    "term_spread": 0.41,
+    "real_ltrate_expost": 2.60238,
+    "cpi_infl": 0.0130762,
+    "unemp": 0.964619,
+    "d1_unemp": -0.265621,
+    "real_eq_capgain_3y": 0.0765255
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 5.33805738089681,
+    "rgdp_pc_3y": 15.066583992182458,
+    "req_1y": -7.359591351528561,
+    "req_3y": 12.532714608470208,
+    "rhp_3y": 13.979085026805315,
+    "dltrate_1y": 0.2999999999999998,
+    "dltrate_3y": 1.0099999999999998,
+    "dunemp_3y": -0.04575948886524317,
+    "dloans_gdp_3y": 4.105689978719923
+   }
+  },
+  {
+   "iso": "BEL",
+   "year": 2007,
+   "distance": 0.715,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.873,
+    "d5_debt_gdp": -0.181,
+    "ltrate": 4.32833,
+    "term_spread": 0.438333,
+    "real_ltrate_expost": 2.51233,
+    "cpi_infl": 0.01816,
+    "unemp": 7.4579,
+    "d1_unemp": -0.788,
+    "real_eq_capgain_3y": 0.0918225
+   },
+   "outcomes": {
+    "crisis_1_3y": 1.0,
+    "rgdp_pc_1y": 0.8714219015930391,
+    "rgdp_pc_3y": 0.2565525180669104,
+    "req_1y": -57.94355994253816,
+    "req_3y": -30.150133148987667,
+    "rhp_3y": 1.9039820540310837,
+    "dltrate_1y": 0.08916666666667084,
+    "dltrate_3y": -0.8658333333333297,
+    "dunemp_3y": 0.8346,
+    "dloans_gdp_3y": 7.309462136684752
+   }
+  },
+  {
+   "iso": "USA",
+   "year": 1957,
+   "distance": 0.745,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.586,
+    "d5_debt_gdp": -0.139,
+    "ltrate": 3.6475,
+    "term_spread": 0.5375,
+    "real_ltrate_expost": 0.254813,
+    "cpi_infl": 0.0339269,
+    "unemp": 4.3,
+    "d1_unemp": 0.2,
+    "real_eq_capgain_3y": 0.0329256
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": -2.650724186684905,
+    "rgdp_pc_3y": 3.740744223711512,
+    "req_1y": 33.33005940167395,
+    "req_3y": 47.38525064564454,
+    "rhp_3y": -3.1273528744005685,
+    "dltrate_1y": -0.3316699999999999,
+    "dltrate_3y": 0.4691700000000001,
+    "dunemp_3y": 1.2000000000000002,
+    "dloans_gdp_3y": 5.2112649217922415
+   }
+  },
+  {
+   "iso": "DNK",
+   "year": 1999,
+   "distance": 0.748,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.670551,
+    "d5_debt_gdp": 0.0092099,
+    "ltrate": 4.91,
+    "term_spread": 1.6024,
+    "real_ltrate_expost": 2.85814,
+    "cpi_infl": 0.0205186,
+    "unemp": 5.1415,
+    "d1_unemp": 0.1026,
+    "real_eq_capgain_3y": 0.159802
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 3.1932919711848307,
+    "rgdp_pc_3y": 3.6807622019426667,
+    "req_1y": 13.875922602991908,
+    "req_3y": -24.428817396836134,
+    "rhp_3y": 8.570577896660758,
+    "dltrate_1y": 0.7316666666666674,
+    "dltrate_3y": 0.1458333333333348,
+    "dunemp_3y": -0.8674999999999997,
+    "dloans_gdp_3y": 17.1175687002026
+   }
+  },
+  {
+   "iso": "FRA",
+   "year": 1911,
+   "distance": 0.75,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.7257,
+    "d5_debt_gdp": -0.1264,
+    "ltrate": 3.181,
+    "term_spread": 0.571,
+    "real_ltrate_expost": -1.07432,
+    "cpi_infl": 0.0425532,
+    "unemp": 5.7,
+    "d1_unemp": -0.1,
+    "real_eq_capgain_3y": 0.0110531
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 8.152332886312363,
+    "rgdp_pc_3y": -0.40746455781656143,
+    "req_1y": 6.303086131811142,
+    "req_3y": -7.112033689017738,
+    "rhp_3y": 2.9411764705882693,
+    "dltrate_1y": 0.18000000000000016,
+    "dltrate_3y": 0.9799999999999995,
+    "dunemp_3y": null,
+    "dloans_gdp_3y": -1.6157525701633924
+   }
+  },
+  {
+   "iso": "BEL",
+   "year": 1954,
+   "distance": 0.756,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.696069,
+    "d5_debt_gdp": -0.086567,
+    "ltrate": 4.69,
+    "term_spread": 1.94,
+    "real_ltrate_expost": 3.39818,
+    "cpi_infl": 0.0129182,
+    "unemp": 4.80933,
+    "d1_unemp": -0.28856,
+    "real_eq_capgain_3y": 0.0995232
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 4.165031981501199,
+    "rgdp_pc_3y": 7.721322872295122,
+    "req_1y": 29.01203937919132,
+    "req_3y": -2.546615326416868,
+    "rhp_3y": 9.158606700884109,
+    "dltrate_1y": -0.08000000000000007,
+    "dltrate_3y": 1.2999999999999998,
+    "dunemp_3y": -2.5970398189134802,
+    "dloans_gdp_3y": -1.518241305377871
+   }
+  },
+  {
+   "iso": "ITA",
+   "year": 1936,
+   "distance": 0.765,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 1.00431,
+    "d5_debt_gdp": -0.0887411,
+    "ltrate": 5.9,
+    "term_spread": 0.9,
+    "real_ltrate_expost": -1.65324,
+    "cpi_infl": 0.0755324,
+    "unemp": 4.32893,
+    "d1_unemp": -0.27737,
+    "real_eq_capgain_3y": 0.153375
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 9.131559308817216,
+    "rgdp_pc_3y": 17.3412507390281,
+    "req_1y": 2.4914544684904394,
+    "req_3y": 27.012684206120795,
+    "rhp_3y": null,
+    "dltrate_1y": -0.15000000000000036,
+    "dltrate_3y": -0.16000000000000014,
+    "dunemp_3y": -0.5581559979262716,
+    "dloans_gdp_3y": -9.55152575527649
+   }
+  },
+  {
+   "iso": "NLD",
+   "year": 1993,
+   "distance": 0.769,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.754013,
+    "d5_debt_gdp": 0.01785,
+    "ltrate": 6.36,
+    "term_spread": -0.494167,
+    "real_ltrate_expost": 3.77582,
+    "cpi_infl": 0.0258418,
+    "unemp": 6.285,
+    "d1_unemp": 0.7298,
+    "real_eq_capgain_3y": 0.151881
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 2.2399479237165343,
+    "rgdp_pc_3y": 7.99052463912151,
+    "req_1y": -0.5021101013537921,
+    "req_3y": 60.79409865462269,
+    "rhp_3y": 24.558119986330283,
+    "dltrate_1y": 0.5024999999999995,
+    "dltrate_3y": -0.20999999999999996,
+    "dunemp_3y": 0.1357999999999997,
+    "dloans_gdp_3y": 12.237323629528218
+   }
+  },
+  {
+   "iso": "USA",
+   "year": 2007,
+   "distance": 0.771,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.626,
+    "d5_debt_gdp": 0.054,
+    "ltrate": 4.62917,
+    "term_spread": -0.39083,
+    "real_ltrate_expost": 1.79325,
+    "cpi_infl": 0.0283592,
+    "unemp": 4.6221,
+    "d1_unemp": -0.0009,
+    "real_eq_capgain_3y": 0.0396573
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": -1.2751893811491666,
+    "rgdp_pc_3y": -3.6758334118646374,
+    "req_1y": -41.02035246994388,
+    "req_3y": -14.425137995089866,
+    "rhp_3y": -17.583871611907554,
+    "dltrate_1y": -0.9625000000000004,
+    "dltrate_3y": -1.415,
+    "dunemp_3y": 5.0113,
+    "dloans_gdp_3y": -2.4862158996349804
+   }
+  },
+  {
+   "iso": "USA",
+   "year": 1950,
+   "distance": 0.772,
+   "features_matched": 9,
+   "values": {
+    "debt_gdp": 0.921,
+    "d5_debt_gdp": -0.212577,
+    "ltrate": 2.18,
+    "term_spread": 0.55,
+    "real_ltrate_expost": 1.11598,
+    "cpi_infl": 0.0106402,
+    "unemp": 5.3,
+    "d1_unemp": -0.6,
+    "real_eq_capgain_3y": 0.0683892
+   },
+   "outcomes": {
+    "crisis_1_3y": 0.0,
+    "rgdp_pc_1y": 5.803559120340918,
+    "rgdp_pc_3y": 10.994894821519697,
+    "req_1y": 16.425398947552527,
+    "req_3y": 33.683992122606064,
+    "rhp_3y": 10.703578623217137,
+    "dltrate_1y": 0.3299999999999996,
+    "dltrate_3y": 0.4099999999999997,
+    "dunemp_3y": -2.4,
+    "dloans_gdp_3y": 1.411538275260174
+   }
+  }
+ ],
+ "summary": {
+  "crisis_1_3y": {
+   "description": "systemic crisis within 1-3 years (share)",
+   "analogs": {
+    "n": 14,
+    "p25": 0.0,
+    "p50": 0.0,
+    "p75": 0.0,
+    "mean": 0.14285714285714285
+   },
+   "climatology": {
+    "n": 2615,
+    "p25": 0.0,
+    "p50": 0.0,
+    "p75": 0.0,
+    "mean": 0.09789674952198853
+   }
+  },
+  "rgdp_pc_1y": {
+   "description": "real GDP per capita, next 1 year (%)",
+   "analogs": {
+    "n": 15,
+    "p25": 0.4068266012004551,
+    "p50": 2.2399479237165343,
+    "p75": 5.4199377086117995,
+    "mean": 2.703491783859333
+   },
+   "climatology": {
+    "n": 2648,
+    "p25": 0.12221626419165466,
+    "p50": 1.9786993277268294,
+    "p75": 3.9764358976717205,
+    "mean": 1.9082058923905427
+   }
+  },
+  "rgdp_pc_3y": {
+   "description": "real GDP per capita, next 3 years cumulative (%)",
+   "analogs": {
+    "n": 14,
+    "p25": 1.2933395229114686,
+    "p50": 3.912795134169733,
+    "p75": 7.923224197414913,
+    "mean": 5.511013544969372
+   },
+   "climatology": {
+    "n": 2612,
+    "p25": 1.5350980183028662,
+    "p50": 5.7519513673476075,
+    "p75": 10.267735578101039,
+    "mean": 6.038517085262736
+   }
+  },
+  "req_1y": {
+   "description": "real equity total return, next 1 year (%)",
+   "analogs": {
+    "n": 15,
+    "p25": 0.9946721835683237,
+    "p50": 10.635944766750294,
+    "p75": 15.150660775272218,
+    "mean": 3.450432032768949
+   },
+   "climatology": {
+    "n": 2258,
+    "p25": -5.024538800693304,
+    "p50": 6.243158765626133,
+    "p75": 17.29596433039798,
+    "mean": 6.8656106591879205
+   }
+  },
+  "req_3y": {
+   "description": "real equity total return, next 3 years cumulative (%)",
+   "analogs": {
+    "n": 14,
+    "p25": -12.596861918571834,
+    "p50": 6.531308128382174,
+    "p75": 29.30062473843342,
+    "mean": 7.39600077615566
+   },
+   "climatology": {
+    "n": 2224,
+    "p25": -5.217936703972168,
+    "p50": 16.801418787623113,
+    "p75": 41.80343672996018,
+    "mean": 22.309955817235558
+   }
+  },
+  "rhp_3y": {
+   "description": "real house prices, next 3 years cumulative (%)",
+   "analogs": {
+    "n": 13,
+    "p25": 1.4007656652188283,
+    "p50": 2.9411764705882693,
+    "p75": 9.158606700884109,
+    "mean": 3.679218051624697
+   },
+   "climatology": {
+    "n": 1980,
+    "p25": -5.523575333807826,
+    "p50": 4.565261395317377,
+    "p75": 15.248368360204218,
+    "mean": 7.4073201965969915
+   }
+  },
+  "dltrate_1y": {
+   "description": "long rate change, next 1 year (pp)",
+   "analogs": {
+    "n": 15,
+    "p25": -0.11500000000000021,
+    "p50": 0.08916666666667084,
+    "p75": 0.3149999999999997,
+    "mean": 0.014322195555555842
+   },
+   "climatology": {
+    "n": 2606,
+    "p25": -0.28,
+    "p50": -0.016758383333332905,
+    "p75": 0.19920399999999927,
+    "mean": -0.04418737857368379
+   }
+  },
+  "dltrate_3y": {
+   "description": "long rate change, next 3 years (pp)",
+   "analogs": {
+    "n": 14,
+    "p25": -0.1060000000000001,
+    "p50": 0.1979166666666674,
+    "p75": 0.8522924999999997,
+    "mean": 0.22539214285714312
+   },
+   "climatology": {
+    "n": 2561,
+    "p25": -0.60667,
+    "p50": -0.06865800000000011,
+    "p75": 0.388300000000001,
+    "mean": -0.11541302625729556
+   }
+  },
+  "dunemp_3y": {
+   "description": "unemployment change, next 3 years (pp)",
+   "analogs": {
+    "n": 13,
+    "p25": -0.8674999999999997,
+    "p50": -0.19083390844735382,
+    "p75": 0.5,
+    "mean": -0.04815776752930269
+   },
+   "climatology": {
+    "n": 1868,
+    "p25": -1.108721739130435,
+    "p50": 0.0,
+    "p75": 1.0819694588584137,
+    "mean": 0.09814779226519016
+   }
+  },
+  "dloans_gdp_3y": {
+   "description": "bank loans/GDP change, next 3 years (pp of GDP)",
+   "analogs": {
+    "n": 13,
+    "p25": -1.518241305377871,
+    "p50": 4.105689978719923,
+    "p75": 7.309462136684752,
+    "mean": 4.086510714937639
+   },
+   "climatology": {
+    "n": 2358,
+    "p25": -1.5823233769462601,
+    "p50": 2.1360464189674286,
+    "p75": 6.502198766789406,
+    "mean": 1.992333903948669
+   }
+  }
+ }
+}

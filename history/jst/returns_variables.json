@@ -1,0 +1,1454 @@
+{
+ "_meta": {
+  "documents": [
+   {
+    "key": "RORE",
+    "file": "RORE_documentation.pdf",
+    "title": "Data from \"The Rate of Return on Everything, 1870-2015\"",
+    "authors": "No author line printed; data sourced from Jorda, Knoll, Kuvshinov, Schularick, and Taylor (2019), QJE forthcoming",
+    "date": "Not printed; PDF metadata CreationDate 2019-05-02",
+    "version": "None printed",
+    "pages": 72,
+    "license": "CC BY-NC-SA 4.0 (link target http://www.macrohistory.net/data/licence-terms/)",
+    "url": "www.macrohistory.net/data (fn 1 p.2)"
+   },
+   {
+    "key": "R6",
+    "file": "JST_RORE_Documentation_R6.pdf",
+    "title": "Documentation on the JST Database Update 2016-2020",
+    "authors": "Xiaoting Chen, Sherifa Elsherbiny, Ricardo Duque Gabriel, Oscar Jorda, Chi Hyun Kim, Moritz Schularick, Alan M. Taylor",
+    "date": "July 2022 (PDF metadata 2022-07-19)",
+    "version": "6th release of the JST database (2022)",
+    "pages": 12,
+    "url": "https://www.macrohistory.net/database/ (fn 6 p.8)"
+   }
+  ],
+  "global_caveats": [
+   "Neither document names any dataset column; all name-to-concept mappings below are inferred from the column names given in the task and marked inferred=true where the link is not direct.",
+   "Units are never stated for the stored columns. Formulas are ratios; all rent-price ratios are quoted as decimals (e.g. 0.032); R6 Figures 1-2 plot total returns and capital gains on a -0.6 to 1 axis. Inference: decimal fractions per year. Verify against the data file.",
+   "All returns are defined as nominal (RORE eq. 1 'total nominal return'); no real-return formula or deflator is given in either document.",
+   "Countries with return series: Australia, Belgium, Denmark, Finland, France, Germany, Italy, Japan, Netherlands, Norway, Portugal, Spain, Sweden, Switzerland, United Kingdom, United States. Canada: house prices (1921-2016) and equity capital gains only, no returns. Ireland: added in R6 as 18th country, no return series documented."
+  ],
+  "page_citation_convention": "pages arrays list RORE pages as integers prefixed 'RORE:' and R6 pages prefixed 'R6:'"
+ },
+ "variables": [
+  {
+   "name": "bill_rate",
+   "inferred": false,
+   "definition": "Bill return R^bill: 'The canonical risk-free rate is taken to be the yield on Treasury bills, i.e., short-term, fixed-income government securities.' Where T-bill data unavailable, money market rates or bank deposit rates (Zimmermann 2017); 'much of our bill rate data before the 1960s actually consist of deposit rates.'",
+   "construction": "Yield series from the long-run macrohistory database (Jorda, Schularick, Taylor 2017); no capital-gain component. Enters safe return eq. (2) with weight 1/2. R6 2016-2020: same approach, sources per country in R6 Table 1.",
+   "units": "Nominal annual yield; decimal fraction implied (not stated).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "Australia",
+     "source": "Deposit rate; Money market rate; Government bill rate; R6: Interbank rate (3-month), OECD Main Economic Indicators",
+     "years": "1870-1928; 1929-1944; 1948-2015; 2016-2020"
+    },
+    {
+     "country": "Belgium",
+     "source": "Central bank discount rate; Deposit rate; Government bill rate; R6: Interbank rate (3-month), OECD MEI",
+     "years": "1870-1899; 1900-1964; 1965-2015; 2016-2020"
+    },
+    {
+     "country": "Denmark",
+     "source": "Money market rate; R6: Money market rate, IMF International Financial Statistics",
+     "years": "1875-2015; 2016-2020"
+    },
+    {
+     "country": "Finland",
+     "source": "Money market rate; Interbank rate; R6: Interbank rate (3-month), OECD MEI",
+     "years": "1870-1977; 1978-2015; 2016-2020"
+    },
+    {
+     "country": "France",
+     "source": "Money market rate; Government bill rate; R6: Money market rate, IFS",
+     "years": "1870-1998; 1999-2015; 2016-2020"
+    },
+    {
+     "country": "Germany",
+     "source": "Money market rate; Interbank rate; Money market rate; R6: Interbank rate (3-month), OECD MEI",
+     "years": "1870-1922; 1924-1944; 1950-2015; 2016-2020"
+    },
+    {
+     "country": "Italy",
+     "source": "Money market rate; Government bill rate; R6: Government bill rate, IFS",
+     "years": "1870-1977; 1978-2015; 2016-2020"
+    },
+    {
+     "country": "Japan",
+     "source": "Deposit rate; Money market rate; R6: Deposit rate, Bank of Japan",
+     "years": "1876-1956; 1957-2015; 2016-2020"
+    },
+    {
+     "country": "Netherlands",
+     "source": "Money market rate; Central bank discount rate; Money market rate; R6: Interbank rate (3-month), OECD MEI",
+     "years": "1870-1957; 1958-1964; 1965-2015; 2016-2020"
+    },
+    {
+     "country": "Norway",
+     "source": "Deposit rate; R6: Deposit rate, IFS",
+     "years": "1870-2015; 2016-2020"
+    },
+    {
+     "country": "Portugal",
+     "source": "Money market rate; Central bank discount rate; Deposit rate; Money market rate; R6: Interbank rate (3-month), OECD MEI",
+     "years": "1880-1914; 1915-1946; 1947-1977; 1978-2015; 2016-2020"
+    },
+    {
+     "country": "Spain",
+     "source": "Money market rate; Deposit rate; Money market rate; R6: Money market rate, IFS (2018 missing)",
+     "years": "1870-1921; 1922-1974; 1975-2015; 2016-2020 excl. 2018"
+    },
+    {
+     "country": "Sweden",
+     "source": "Deposit rate; Government bill rate; R6: Sweden absent from R6 Table 1",
+     "years": "1870-1998; 1999-2015"
+    },
+    {
+     "country": "Switzerland",
+     "source": "Deposit rate; Money market rate; R6: Deposit rate, Schweizerische Nationalbank",
+     "years": "1870-1968; 1969-2015; 2016-2020"
+    },
+    {
+     "country": "United Kingdom",
+     "source": "Money market rate; R6: Deposit rate, Bank of England",
+     "years": "1870-2015; 2016-2020"
+    },
+    {
+     "country": "United States",
+     "source": "Deposit rate; Money market rate; R6: Money market rate, IFS",
+     "years": "1870-2013; 2014-2015; 2016-2020"
+    }
+   ],
+   "caveats": "Deposit rates 'on average roughly 0.7 percentage points below bills' (fn 2); deposit total returns uncertain due to banking-crisis losses; Germany gaps 1923, 1945-1949 as implied by Table 1 periods; Australia gap 1945-1947.",
+   "pages": [
+    "RORE:2",
+    "RORE:6",
+    "R6:3",
+    "R6:4"
+   ]
+  },
+  {
+   "name": "bond_rate",
+   "inferred": true,
+   "definition": "Government bond yield to maturity (~10-year target). RORE does not define a separate yield series; R6 section 2.2: 'we update both total bond return and yield to maturities of government bonds that are issued in local currency ... For country-specific yield to maturities, we utilize 10-year benchmark government bond redemption yields from the OECD Statistics that are available for all countries in the RORE database.'",
+   "construction": "2016-2020: OECD 10-year benchmark redemption yields. Pre-2016 construction not described in these documents (bond type/maturity per RORE Table 1).",
+   "units": "Nominal annual yield; decimal fraction implied (not stated).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "R6: OECD Statistics 10-year benchmark government bond redemption yields (https://stats.oecd.org/)",
+     "years": "2016-2020"
+    }
+   ],
+   "caveats": "Maturity varies historically (see bond_tr/Table 1): Finland ~5y 1926-1991; Spain 7-8y 1995-2015; UK ~20y 1902-1989 and ~15y 1990-2015; perpetuals pre-WW2 in several countries.",
+   "pages": [
+    "R6:4",
+    "RORE:2",
+    "RORE:6"
+   ]
+  },
+  {
+   "name": "bond_tr",
+   "inferred": false,
+   "definition": "Bond total return R^bond: total return on long-term government bonds listed and traded on local exchanges, denominated in local currency, targeting ~10-year maturity; pre-WW2 sometimes perpetuals (e.g. British consol). Eq. (1): capital gain + yield.",
+   "construction": "Per-country sources RORE Tables 19-35; many segments estimate price changes from yield movements; recent segments are 'Average of total returns on individual ... government bonds, targeting 10-year maturity'. R6 2016-2020: Datastream benchmark 10-year government bond indices or own calculation; AUS/FIN/ITA/JPN/NLD/NOR re-estimated 1988-2020 from extended micro-level bond data.",
+   "units": "Nominal annual total return; decimal fraction implied (not stated).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "Australia",
+     "source": "Table 1 type: Long maturity central gov't 1900-1968; Approx. 10y 1969-2015. Sources: Moore (2010b) Sydney-listed bonds converted GBP->AUD; London-listed bonds, 1926-1929 Meyer, Reinhart, Trebesch (2015), 1930-1968 authors; RBA 10-year yield series, implied capital gain + yield, spliced with London listings 1968-1969; average of individual bonds targeting 10y. R6: micro-level average, Datastream (re-estimated 1988-2020)",
+     "years": "1900-1925; 1926-1968; 1969-1987; 1988-2015; 2016-2020"
+    },
+    {
+     "country": "Belgium",
+     "source": "Type: Perpetual 1870-1913; Long maturity 1914-1940; Perpetual 1941-1953; Approx. 10y 1954-2015. Sources: 3% rente, Drappier (1937) Table II; SCOB database (Frans Buelens); National Bank of Belgium Economic Summaries/Ten-year Statistics monthly (1938-1953 4% perpetuals spliced with SCOB 1938-1940; 1954-1963 5-20y 4.5% bond; 1963-1970 weighted 5-20y/5+y; 1971-1989 5+y; 1989-1995 6+y basket mean ~10y); NBB online database 10-year, prices from yields. R6: Belgium benchmark 10-year index, Datastream",
+     "years": "1870-1913; 1914-1937; 1938-1995; 1996-2015; 2016-2020"
+    },
+    {
+     "country": "Denmark",
+     "source": "Type: Perpetual 1870-1923; Long maturity 1924-1979; Approx. 10y 1980-2015. Sources: Statistics Denmark (1969) and Danmarks Nationalbank Monetary Review (perpetuals to 1923, 10-40y 1924-1980, 10y from 1980); Statistics Denmark 10-year bullet loan. R6: Danish benchmark 10-year index, Datastream",
+     "years": "1870-1990; 1991-2015; 2016-2020"
+    },
+    {
+     "country": "Finland",
+     "source": "Type: Long maturity 1870-1925; Approx. 5y 1926-1991; Approx. 10y 1992-2015. Sources: bonds listed abroad, individual bond data in Arola (2006) via Nyberg and Vaihekoski (2011); ~5-year bonds Nyberg and Vaihekoski (2011), prices from yields; average of individual bonds targeting 10y. R6: own calculation (re-estimated 1988-2020)",
+     "years": "1870-1925; 1926-1991; 1992-2016; 2016-2020"
+    },
+    {
+     "country": "France",
+     "source": "Type: Perpetual 1870-1969; Long maturity 1970-2015. Sources: 4% and 5% rente, David Le Bris (Le Bris and Hautcoeur 2010); representative basket, 10-year before 1990 and 30-year after, monthly yield changes, Le Bris. R6: French benchmark 10-year index, Datastream",
+     "years": "1870-1969; 1970-2015; 2016-2020"
+    },
+    {
+     "country": "Germany",
+     "source": "Type: Long maturity local gov't 1870-1878; Long maturity central gov't 1879-1943; Mortgage bond 1948-1955; Long maturity central gov't 1956-2015. Sources: Homburger (1905) arithmetic average, regional bonds fill gaps; Berliner Boersenzeitung, 5-15y, no data 1923-25; 4.5-6% bonds from Papadia and Schioppa (2016), Deutsche Bundesbank (1976), Statistisches Jahrbuch fuer das Deutsche Reich, spliced over 1928-1930; Pfandbriefe 4%/5%, Bundesbank (1976), Statistisches Jahrbuch BRD; public bonds Bundesbank (1976); REX total return index BBK01.WU046A. R6: German benchmark 10-year index, Datastream",
+     "years": "1870-1903; 1904-1930; 1931-1943; 1948-1955; 1956-1967; 1969-2015; 2016-2020"
+    },
+    {
+     "country": "Italy",
+     "source": "Type: Perpetual 1870-1913; Long maturity 1914-1954; Approx. 10y 1955-2015. Sources: 5% Rendita, lagged current yield + capital gain, Bianchi (1979); basket, Rosania (1954); Mediobanca indici e dati, 10y target (3-5y in 1980s); average of individual bonds 10y (shorter 1988-1991). R6: own calculation (re-estimated 1988-2020)",
+     "years": "1870-1913; 1913-1954; 1955-1987; 1988-2015; 2016-2020"
+    },
+    {
+     "country": "Japan",
+     "source": "Type: Long maturity 1881-1970; Approx. 10y 1971-2015. Sources: Fujino and Akiyama (1977) lagged current yield + capital gain, Laspeyres base 1934-36; yields only (not total returns) Homer and Sylla (2005) 1941-1963 and IMF IFS 1964-65; Fujino and Akiyama (1977) base 1969-71; Hamao (1991) 9-10y; average of individual bonds 10y. R6: own calculation (printed as 'Finnish'; re-estimated 1988-2020)",
+     "years": "1880-1940; 1941-1965; 1966-1970; 1971-1987; 1988-2015; 2016-2020"
+    },
+    {
+     "country": "Netherlands",
+     "source": "Type: Perpetual 1870-1899; Long maturity 1900-1987; >=8y 1988-2003; Approx. 10y 2004-2015. Sources: 2.5% perpetual, Albers (2002); Eichholtz, Koedijk, Otten (2000); CBS total bond return reinvestment index 8+y, CBS Statline; average of individual bonds 10y. R6: Netherlands benchmark 10-year index, DataStream (listed among countries re-estimated 1988-2020)",
+     "years": "1870-1900; 1901-1987; 1988-2003; 2004-2015; 2016-2020"
+    },
+    {
+     "country": "Norway",
+     "source": "Type: Long maturity 1870-1919; Approx. 10y 1920-2015. Sources: Oslo exchange and foreign exchanges (Kurslisten over Vaerdipapier, Farmand, Kierulfs haandbok; IMM London; Klovland 2004a); 10-year bonds, monthly yields, Klovland (2004a); average of individual bonds 10y. R6: own calculation (re-estimated 1988-2020)",
+     "years": "1870-1919; 1920-1992; 1993-2015; 2016-2020"
+    },
+    {
+     "country": "Portugal",
+     "source": "Type: Long maturity 1870-1974; Approx. 10y 1975-2015. Sources: Lisbon-listed central government bonds 15-30y, Diario do Governo and Boletim da Bolsa, capitalization-weighted; 1975 exchange closed, Bank of Portugal 'Yield on fixed rate treasury bonds-10 years (monthly average)'; average of individual bonds 10y. R6: own calculation",
+     "years": "1870-1993; 1994-2015; 2016-2020"
+    },
+    {
+     "country": "Spain",
+     "source": "Type: Long maturity 1900-1994; 7-8y 1995-2015. Sources: Madrid-listed, market-cap weighted, ~25y, 1900-1926 Lyndon Moore (2010a,b); Anuario Estadistico de Espana; Barcelona exchange via La Vanguardia, spliced 1973-1975; Banco de Espana Statistical Bulletin (<5y 1988-1994; 7-8y 1995-2015). R6: Spanish benchmark 10-year index, Datastream",
+     "years": "1900-1936; 1940-1972; 1973-1990; 1989-2015; 2016-2020"
+    },
+    {
+     "country": "Sweden",
+     "source": "Type: Long maturity 1874-1918; Perpetual 1919-1949; Approx. 10y 1950-2015. Sources: 4% and 5% perpetuals, Waldenstroem (2014) appendix; holding period return long-term bonds Waldenstroem (2014) ~10y, extended to 2015 with own data. R6: Swedish benchmark 10-year index, Datastream",
+     "years": "1870-1874; 1874-2015; 2016-2020"
+    },
+    {
+     "country": "Switzerland",
+     "source": "Type: Long maturity 1900-2006; Approx. 10y 2007-2015. Sources: Zurich-listed government bonds, cap-weighted, Lyndon Moore (2010a,b); Pictet and Cie (1998); SBI total bond return index, SIX (7+y before 2007, 7-10y after). R6: Swiss benchmark 10-year index, Datastream",
+     "years": "1899-1926; 1927-1995; 1996-2015; 2016-2020"
+    },
+    {
+     "country": "United Kingdom",
+     "source": "Type: Perpetual 1870-1901; Approx. 20y 1902-1989; Approx. 15y 1990-2015. Sources: 3% and 2.75% consols, Statistical abstract for the UK; gilts (price change + lagged yield), Barclays (2016), 20y before 1990, 15y after. R6: UK benchmark 10-year index, Datastream",
+     "years": "1870-1901; 1902-2015; 2016-2020"
+    },
+    {
+     "country": "United States",
+     "source": "Type: Approx. 10y 1870-1926; Long maturity 1927-2015. Sources: basket ~10y, Commercial and Financial Chronicle; 10-year bonds, prices imputed from yields, Damodaran database; US long-term government bonds, Barclays (2016). R6: US benchmark 10-year index, Datastream",
+     "years": "1870-1926; 1927-1928; 1929-2015; 2016-2020"
+    }
+   ],
+   "caveats": "Gaps: Germany 1923-25, 1944-47, 1968; Japan 1941-1965 are yields not total returns; Spain 1937-1939 none. R6 revised previously published 1988-2015 values for AUS, FIN, ITA, JPN, NLD, NOR. Foreign-exchange listings used where domestic markets thin.",
+   "pages": [
+    "RORE:2",
+    "RORE:6",
+    "RORE:48",
+    "RORE:49",
+    "RORE:51",
+    "RORE:52",
+    "RORE:53",
+    "RORE:54",
+    "RORE:55",
+    "RORE:56",
+    "RORE:57",
+    "RORE:58",
+    "RORE:59",
+    "RORE:60",
+    "RORE:61",
+    "RORE:62",
+    "RORE:63",
+    "RORE:64",
+    "R6:3",
+    "R6:4",
+    "R6:5"
+   ]
+  },
+  {
+   "name": "eq_tr",
+   "inferred": false,
+   "definition": "Equity total return R^equity: eq. (1) capital gain plus dividend (yield) component, on indices weighted by market capitalization where possible with a representative stock selection; book-capital, transaction-volume or equal weights in some periods.",
+   "construction": "Per-country sources RORE Tables 19-35 and coverage/weighting RORE Table 2. R6 2016-2020: 'Fama-French excess return factor provided by Kenneth R. French' (Fama and French 1993; Kenneth R. French Data Library) for all countries except Portugal (PSI all-share total return) and United States (Shiller: S&P Composite price growth plus nominal dividend growth rate, as written). R6 Figures 1-2 show Fama-French and RORE series 'align very well' for AUS, FRA, DEU, ITA, SWE, GBR.",
+   "units": "Nominal annual total return; decimal fraction implied (R6 Fig. 1 axis -0.6 to 1).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "Australia",
+     "source": "Coverage: Listed abroad/market cap 1870-1881; Broad/market cap 1882-2015. Sources: IMM London-listed shares (capital gains + dividends + stock operations), market cap; Brailsford, Handley, Maheswaran (2012) with-dividend return (preferred over NERA 2015); NERA Economic Consulting (2015); ASX 200 total return index, RBA Table F7. R6: Fama-French",
+     "years": "1870-1881; 1882-2008; 2009-2013; 2014-2015; 2016-2020"
+    },
+    {
+     "country": "Belgium",
+     "source": "Coverage: All share/market cap. Source: all common stocks on Brussels exchange, Frans Buelens (SCOB), Annaert et al. (2011). R6: Fama-French",
+     "years": "1870-2015; 2016-2020"
+    },
+    {
+     "country": "Denmark",
+     "source": "Coverage: All share 1873-1899; Broad 1900-1999; Blue chip 2000-2001; All share 2002-2015 (market cap). Sources: Green's Danske Fonds og Aktier microdata; statistical yearbooks (Statistisk aarbog 1896-1927), 1914-1922 all-share price index + market-cap dividend series; Nielsen and Risager (2001) dividend yields + Jorda, Schularick, Taylor (2017) price index; MSCI total return index; OMXCGI. R6: Fama-French",
+     "years": "1873-1900; 1901-1922; 1923-1999; 2000-2001; 2002-2015; 2016-2020"
+    },
+    {
+     "country": "Finland",
+     "source": "Coverage: Broad/book cap 1896-1911; All share/market cap 1912-1969; Broad/market cap 1970-1990; All share/market cap 1991-2015. Sources: Poutvaara (1996); Nyberg and Vaihekoski (2014) (Mika Vaihekoski data); OMX Helsinki all-share total return index. R6: Fama-French",
+     "years": "1895-1912; 1913-1990; 1991-2015; 2016-2020"
+    },
+    {
+     "country": "France",
+     "source": "Coverage: Blue chip/market cap. Sources: Le Bris and Hautcoeur (2010) CAC-40-methodology index (largest 40 firms); CAC-40 total return. R6: Fama-French",
+     "years": "1870-2010; 2011-2015; 2016-2020"
+    },
+    {
+     "country": "Germany",
+     "source": "Coverage: Blue chip 1870-1889; All share 1890-1913; Blue chip 1914-1959; Broad 1960-2015 (market cap). Sources: Ronge (2002) top-30; Eube (1998) all-share; Ronge (2002); Gielen (1994) net performance index; DAX; CDAX. R6: Fama-French",
+     "years": "1870-1889; 1890-1913; 1914-1959; 1960-1990; 1991-1995; 1996-2016; 2016-2020"
+    },
+    {
+     "country": "Italy",
+     "source": "Coverage: Selected stocks/book cap 1870-1887; Broad/market cap 1888-2015. Sources: Genova exchange, Da Pozzo and Felloni (1964); Milan, Baia Curioni (2001); Rosania (1954); Mondani (1978) capital gain + Mediobanca dividends/market cap; Mediobanca index (2013, 2016). R6: Fama-French",
+     "years": "1870-1887; 1888-1912; 1913-1954; 1955-1969; 1970-2015; 2016-2020"
+    },
+    {
+     "country": "Japan",
+     "source": "Coverage: Broad/transaction volume 1882-1975; All share/mix of equal and market cap 1976-2015. Sources: Fujino and Akiyama (1977) (Laspeyres base 1934-36, clearing transaction volume weights); Bank of Japan (1966) capital gain + estimated dividends; exchange closed 1946-1947 no data; UN Monthly Bulletin of Statistics 1948; Bureau of Statistics Japan Tables 14-25-a/b + Fujino and Akiyama dividends/stock operations (to 1975). R6: Fama-French",
+     "years": "1882-1940; 1941-1945; 1946-1947 none; 1948; 1949-1951; 1952-2015; 2016-2020"
+    },
+    {
+     "country": "Netherlands",
+     "source": "Coverage: Broad/mostly market cap 1900-2003; All share/market cap 2004-2015. Sources: Eichholtz, Koedijk, Otten (2000) (1945 return covers Aug 1944-Apr 1946 closure); CBS total equity return reinvestment index; AEX all-share. R6: Fama-French",
+     "years": "1900-1995; 1996-2003; 2004-2015; 2016-2020"
+    },
+    {
+     "country": "Norway",
+     "source": "Coverage: All share/market cap 1881-1920; All share/mix equal-book 1921-1955; All share/mix book-turnover 1956-2000; Most traded/market cap 2001-2015. Sources: Oslo share-level microdata (Kurslisten, Farmand, Kierulfs); Klovland (2004b) capital gain + yearbook dividends; Klovland + MSCI Norway dividend; Klovland + total dividends/market cap; OSEBX. R6: Fama-French",
+     "years": "1881-1920; 1921-1969; 1970-1983; 1984-2000; 2001-2015; 2016-2020"
+    },
+    {
+     "country": "Portugal",
+     "source": "Coverage: All share/market cap. Sources: own calculations, Lisbon all shares (Diario do Governo, Boletim da Bolsa, annual reports; 1975 closure interpolated, no dividends); PSI all-share total return. R6: Portuguese Stock Index of all shares (not Fama-French)",
+     "years": "1870-1987; 1988-2015; 2016-2020"
+    },
+    {
+     "country": "Spain",
+     "source": "Coverage: All share/market cap. Sources: Madrid ordinary shares, 1900-1926 Lyndon Moore, 1926-1936 Banco de Espana archive (civil war 1937-1939 closure: average before/after, no dividends); IGBM and Historical IGBM total return (Lopez, Carreras, Tafunell 2005; Fernandez, Carabias, Miguel 2007; European Federation of Exchanges). R6: Fama-French",
+     "years": "1900-1940; 1940-2015; 2016-2020"
+    },
+    {
+     "country": "Sweden",
+     "source": "Coverage: Broad/market cap 1871-2001; All share/market cap 2002-2015. Sources: Waldenstroem (2014) total equity return index; OMXSGI. R6: Fama-French",
+     "years": "1871-2002; 2003-2015; 2016-2020"
+    },
+    {
+     "country": "Switzerland",
+     "source": "Coverage: All share/market cap 1900-1925; Broad/equally weighted 1926-1959; Broad/market cap 1960-2015. Sources: Zurich all stocks, Lyndon Moore (1915 covers Jul 1914-Jul 1916 closure); Pictet and Cie (1998); SBC total return index (Pictet; SNB Kapitalmarkt); SPI (Pictet; SNB; SIX). R6: Fama-French",
+     "years": "1900-1925; 1926-1959; 1960-1983; 1984-2015; 2016-2020"
+    },
+    {
+     "country": "United Kingdom",
+     "source": "Coverage: All share 1870-1928; Blue chip 1929-1963; All share 1964-2015 (market cap). Sources: Grossman (2002); Barclays (2016) 30-stock blue-chip; FTSE Actuaries all-share (Barclays 2016). R6: Fama-French",
+     "years": "1870-1907; 1908-1963; 1964-2015; 2016-2020"
+    },
+    {
+     "country": "United States",
+     "source": "Coverage: Broad/market cap 1872-2015. Source: Shiller (2000) capital gain + dividend return (http://www.econ.yale.edu/~shiller/data.htm). R6: Shiller data (S&P Composite price growth + nominal dividend growth), not Fama-French",
+     "years": "1870-2015; 2016-2020"
+    }
+   ],
+   "caveats": "Weighting and coverage change over time (Table 2); exchange closures handled ad hoc (NLD 1945, CHE 1915, PRT 1975, ESP 1937-39, JPN 1946-47 no data). R6 uses an 'excess return factor' without describing a risk-free add-back.",
+   "pages": [
+    "RORE:2",
+    "RORE:3",
+    "RORE:4",
+    "RORE:7",
+    "RORE:48",
+    "RORE:49",
+    "RORE:51",
+    "RORE:52",
+    "RORE:53",
+    "RORE:54",
+    "RORE:55",
+    "RORE:56",
+    "RORE:57",
+    "RORE:58",
+    "RORE:59",
+    "RORE:60",
+    "RORE:61",
+    "RORE:62",
+    "RORE:63",
+    "RORE:64",
+    "R6:4",
+    "R6:6",
+    "R6:7"
+   ]
+  },
+  {
+   "name": "eq_capgain",
+   "inferred": false,
+   "definition": "Equity capital gain: first term of eq. (1), (P_t - P_{t-1})/P_{t-1}; R6: 'returns without dividends, i.e. capital gains (cg^equity)'.",
+   "construction": "From the price component of the sources listed under eq_tr. R6 2016-2020: Fama-French ex-dividend returns; Portugal: Euronext Lisbon close price index; US: growth rate of the S&P Composite Price Index. Canada has capital gains only (Table 21).",
+   "units": "Nominal annual; decimal fraction implied (R6 Fig. 2 axis -0.6 to 1).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States",
+    "Canada (capital gain only)"
+   ],
+   "sources": [
+    {
+     "country": "Canada",
+     "source": "IMM London-listed Canadian shares, market cap, split-adjusted; Buckley and Urquhart (1993) stock price index; IMF IFS nominal equity price index",
+     "years": "1871-1914; 1915-1955; 1956-2016"
+    },
+    {
+     "country": "others",
+     "source": "See eq_tr sources (same tables)",
+     "years": "see eq_tr"
+    }
+   ],
+   "caveats": "Same as eq_tr.",
+   "pages": [
+    "RORE:3",
+    "RORE:4",
+    "RORE:50",
+    "R6:6",
+    "R6:7"
+   ]
+  },
+  {
+   "name": "eq_dp",
+   "inferred": true,
+   "definition": "Equity dividend yield. R6 section 2.3 lists updated 'dividend returns and yields' and defines d^equity_{i,t} = R^equity_{i,t} - cg^equity_{i,t} (eq. 1). The documents do not define a dividend-price ratio separately from the dividend return.",
+   "construction": "R6: residual of total return minus capital gain from Fama-French data; US: 'the growth rate of nominal dividend serves as dividend yields' (as written). Historical: dividend components per eq_tr sources (e.g. Denmark Nielsen and Risager 2001 dividend yields; Italy total dividends/market cap; Norway MSCI dividends or dividends/market cap; Japan 1941-45 estimated from 1940 dividend yield).",
+   "units": "Decimal fraction implied (not stated).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "See eq_tr; R6 eq. (1) d = R - cg",
+     "years": "see eq_tr"
+    }
+   ],
+   "caveats": "Distinction between eq_dp and eq_div_rtn is not documented; Canada has no dividend data.",
+   "pages": [
+    "R6:6",
+    "RORE:1",
+    "RORE:3",
+    "RORE:4"
+   ]
+  },
+  {
+   "name": "eq_div_rtn",
+   "inferred": true,
+   "definition": "Dividend return component Y of eq. (1) for equity (cash-flow return), = R^equity - cg^equity per R6 eq. (1).",
+   "construction": "As for eq_dp; documents give no separate construction.",
+   "units": "Decimal fraction implied (not stated).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "See eq_tr",
+     "years": "see eq_tr"
+    }
+   ],
+   "caveats": "Not named or distinguished from eq_dp in either document.",
+   "pages": [
+    "R6:6",
+    "RORE:3",
+    "RORE:4"
+   ]
+  },
+  {
+   "name": "housing_tr",
+   "inferred": false,
+   "definition": "Housing total return, eq. (6): R^housing_{t+1} = RI_{t+1}/HPI_t + (HPI_{t+1} - HPI_t)/HPI_t, where RI_t/HPI_t is the net rent-price ratio from eq. (5) extrapolated from a benchmark year using rent and house price indices. Covers rented and owner-occupied housing (imputed rents); benchmark yields are net of maintenance, ground rent and other irrecoverable expenditure.",
+   "construction": "Benchmark net rent-price ratio in 2012/2013/2014 from MSCI/IPD (Numbeo-based for Belgium, Fox and Tulip 2014 for Australia), extrapolated with Knoll, Schularick, Steger (2017) house price indices and Knoll (2017) rent indices; checked against balance-sheet yields (eq. 7) and historical sources, with country-specific adjustments (see sources). R6 2016-2020: same approach; OECD nominal house price indices; rent indices per R6 Table 3.",
+   "units": "Nominal annual; decimal fraction implied (rent-price ratios quoted as decimals).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "Australia",
+     "source": "Housing coverage Urban 1901-2015. Benchmark Fox and Tulip (2014) net 0.02 for 2014 (IPD 0.032 for 2013 not used). Adjustment: re-benchmarked to balance-sheet estimate in 1949 (price controls 1942-1949 structural break). Rents: ABS CPI A series via Stapledon (2012) 1901-1920; ABS CPI C series 1921-1939; Stapledon (2007) 1940-1989; ABS CPI 1990-2015. R6 rents: weighted average of eight capital cities, ABS",
+     "years": "1901-2015; 2016-2020"
+    },
+    {
+     "country": "Belgium",
+     "source": "Coverage Urban 1890-1950, Mixed 1951-1961, Nationwide 1977-2015. Benchmark Numbeo average, one-third cost deduction, 0.033 for 2012 (IPD 0.045 rejected). Rents: Segers (1999) 1870-1920 (7 cities); Buyst (1994) 1921-1938 (5 cities); Anne Henau unpublished 1939-1961 (4 cities, OCMW dwellings); ILO (2014) 1977-1983; Statistics Belgium 1984-2013; 1961-1977 gap linked with Van Fulpen (1984). R6 rents: CPI indexes by product group from 1998, Belgisches Statistikamt",
+     "years": "1890-2015; 2016-2020"
+    },
+    {
+     "country": "Denmark",
+     "source": "Coverage Mixed 1876-1964, Nationwide 1965-2015. Benchmark MSCI (2016) 0.034 for 2013. Adjustment: benchmarked to balance-sheet estimates in 1938 and 1929. Rents: Pedersen (1930) 1870-1913; Statistics Copenhagen 1914-1917; Statistics Copenhagen/Statistics Denmark (1925) 1918-1926; ILO 1927-1954; Statistics Copenhagen 1955-1964; ILO/Statistics Denmark (2003, 2015) 1965-2015. R6 rents: CPI (2015=100) by commodity group and unit, Statistics Denmark",
+     "years": "1870-2015 rents; returns from 1876; 2016-2020"
+    },
+    {
+     "country": "Finland",
+     "source": "Coverage Urban 1920-1964, Mixed 1965-1969, Nationwide 1970-2015. Benchmark MSCI (2016) 0.054 for 2013. Adjustment: rent growth WW2-1965 scaled up by factor 1.1 to match 1920 estimate. Rents: Ministry for Social Affairs 1920-1926; ILO 1927-1965; Statistics Finland (2009) 1964-2015. R6 rents: rent index (2015=100) and average rents per sqm, Statistics Finland, 2020 missing",
+     "years": "1920-2015; 2016-2019"
+    },
+    {
+     "country": "France",
+     "source": "Coverage Urban 1871-1935, Mixed 1936-1948, Nationwide 1949-2015. Benchmark MSCI (2016) 0.028 for 2013; no adjustment described. Rents: Marnata (1961) Paris 1870-1948; Statistics France (2015) CPI rent via CGEDD (2013) 1949-2015. R6 rents: annual HICP actual rentals paid by tenants, Statistics France",
+     "years": "1870-2015; 2016-2020"
+    },
+    {
+     "country": "Germany",
+     "source": "Coverage Mixed 1871-1912, Urban 1913-1938, Mixed 1939-1947, Nationwide 1948-1970, Mixed 1971-2015. Benchmark MSCI (2016) 0.047 for 2013. Adjustment: 1870-1871 yield set to average of rent-price and balance-sheet-extrapolated series. Rents: Hoffmann (1965) 1870-1912 (imputed from rates and replacement values); Statistics Germany CPI 1913-1947 (72 municipalities, working class); Statistics Germany CPI 1948-2015 (matched models). R6 rents: CPI Klassifikation der Verwendungszwecke des Individualkonsums, DESTATIS Genesis",
+     "years": "1870-2015; 2016-2020"
+    },
+    {
+     "country": "Italy",
+     "source": "Coverage Urban 1928-1998, Mixed 1999-2015. House prices Cannari and D'Alessio (2016) 1927-2015 (1941-1961 interpolated with construction costs). Benchmark MSCI (2016) 0.038 for 2013; no adjustment described. Rents: ILO CPI rent Milan 1927-1937; 62 cities 1938-1955; 92 cities 1956-2015; 1939-1945 gap linked assuming rents moved with house prices (~1.6 real). R6 rents: Nic annual average, Ecoicop classification, Istat",
+     "years": "1927-2015; 2016-2020"
+    },
+    {
+     "country": "Japan",
+     "source": "Coverage Urban 1931-1946, Mixed 1947-2015. Benchmark MSCI (2016) 0.056 for 2013. Adjustment: 1960s rent growth doubled (index assumed to understate by factor 2). Rents: ILO 1931-1946 (urban wooden houses); Statistics Japan (2012) 1947-2015 (Retail Price Survey, imputed rents since 1970). R6 rents: CPI 2015-base, Statistics Japan",
+     "years": "1931-2015; 2016-2020"
+    },
+    {
+     "country": "Netherlands",
+     "source": "Coverage Mixed 1871-1969, Nationwide 1970-2015. Benchmark MSCI (2016) 0.044 for 2013; no adjustment described. Rents: Ambrose et al. (2013) throughout - Van Riel (2006) 1870-1913; Statistics Netherlands 1914-2015. R6 rents: CPI rent increase for dwellings, Statline",
+     "years": "1870-2015; 2016-2020"
+    },
+    {
+     "country": "Norway",
+     "source": "Coverage Urban 1871-2015. Benchmark MSCI (2016) 0.037 for 2013. Adjustment: rent growth scaled up by factor 1.5 for 1990-2005. Rents: Jurgilas and Lansing (2012) underlying index (Ola Grytten) 1871-1978; Statistics Norway (2015) CPI rent 1979-2013/2015. R6 rents: 03014 Consumer Price Index, Statistics Norway, 2020 missing",
+     "years": "1871-2015; 2016-2019"
+    },
+    {
+     "country": "Portugal",
+     "source": "Coverage Mixed 1948-2015. House prices Azevedo (2016) 1931-2015. Benchmark MSCI (2016) 0.033 for 2013. Adjustment: rent growth scaled up by factor 1.2 for 1974-2005 (rent controls). Rents: ILO CPI rent 1948-2015 (Lisbon 1948-1950; Lisbon and Porto 1951-1953; 5 cities 1954-1961; 6 cities 1962-1976; 41 cities 1976-2015). R6 rents: HICP 'Actual Rentals for Housing (04.1)', FRED",
+     "years": "1948-2015; 2016-2020"
+    },
+    {
+     "country": "Spain",
+     "source": "Coverage Mixed 1901-1957, Nationwide 1958-2015. House prices Amaral (2016) 1900-2015. Benchmark MSCI (2016) 0.025 for 2013. Adjustment: rent growth 1910-1960 calibrated to La Vanguardia advertisement yields. Rents: Maluquer de Motes (2013) Catalunya 1870-1936; ILO 1937-1976 (50 cities then nationwide); Statistics Spain (2016) 1977-2015. R6 rents: 04110 actual rentals paid by tenants, Statistics Spain, 2019-2020 missing",
+     "years": "1901-2015; 2016-2018"
+    },
+    {
+     "country": "Sweden",
+     "source": "Coverage Urban 1883-1959, Mixed 1960-2015. Benchmark MSCI (2016) 0.036 for 2013; no adjustment described. Rents: Myrdal (1933) Stockholm 1882-1913; Myrdal (1933) urban 1914-1931; Statistics Sweden (1933, 1961) 1932-1959; ILO 1960-2015. R6 rents: CPI annual averages by COICOP 1980=100, Statistics Sweden, 2020 missing",
+     "years": "1883-2015; 2016-2019"
+    },
+    {
+     "country": "Switzerland",
+     "source": "Coverage Urban 1902-1930, Mixed 1931-1940, Nationwide 1941-2015. Benchmark MSCI (2016) 0.040 for 2013; no adjustment described. Rents: Curti (1981) Zurich 1890-1919; Statistics Zurich (1946-1962) 1920-1939; Statistics Switzerland (2015) CPI rent 1940-2015. R6 rents: 04.1/2 Miete, Swiss Federal Statistical Office",
+     "years": "1902-2015; 2016-2020"
+    },
+    {
+     "country": "United Kingdom",
+     "source": "Coverage Urban 1895-1899, Mixed 1900-1913, Urban 1914-1929, Mixed 1930-1946, Nationwide 1947-2015. House prices extended to 1895 with Samy (2015). Benchmark MSCI (2016) 0.032 for 2013. Adjustment: 1947-1955 extrapolated with balance-sheet growth, benchmarked to 1946 (corrected) and 1956. Rents: Samy (2015) 1895-1899; Lewis and Weber (1965) 1900-1913; official cost-of-living rent (Holmans 2005; ILO) 1914-1946 (1915-1919 interpolated with Samy); ILO CPI rent 1954-2013; 1946-1954 linked with Holmans (2005) local-authority rents. R6 rents: RPI housing: rent (Jan 1987=100), ONS",
+     "years": "1895-2015; 2016-2020"
+    },
+    {
+     "country": "United States",
+     "source": "Coverage Urban 1891-1952, Mixed 1953-2015. Benchmark MSCI (2016) 0.049 for 2014; no adjustment described; series described as conservative (Trulia 0.075 for 2012 higher). Rents: Rees (1961) 1890-1914; U.S. BLS (2015) adjusted by Gordon and van Goethem (2007) 1915-1940; Crone et al. (2010) 1941-1995; U.S. BLS (2015) 1996-2015. R6 rents: rent of primary residence, U.S. city average, all urban consumers, NSA, FRED",
+     "years": "1891-2015; 2016-2020"
+    }
+   ],
+   "caveats": "Sensitive to benchmark choice and cumulative extrapolation error; rent indices uncorrected for quality/composition; house-price and rent indices often cover different areas/dwelling types; rent controls bias indices in wars; imputed rents less precisely measured; UK and US series described as conservative. R6 2016-2020 gaps: FIN/NOR/SWE 2020, ESP 2019-2020.",
+   "pages": [
+    "RORE:3",
+    "RORE:4",
+    "RORE:5",
+    "RORE:7",
+    "RORE:8",
+    "RORE:9",
+    "RORE:10",
+    "RORE:11",
+    "RORE:12",
+    "RORE:13",
+    "RORE:14",
+    "RORE:15",
+    "RORE:16",
+    "RORE:17",
+    "RORE:18",
+    "RORE:19",
+    "RORE:20",
+    "RORE:21",
+    "RORE:22",
+    "RORE:23",
+    "RORE:24",
+    "RORE:25",
+    "RORE:26",
+    "RORE:27",
+    "RORE:28",
+    "RORE:29",
+    "RORE:30",
+    "RORE:31",
+    "RORE:32",
+    "RORE:33",
+    "RORE:34",
+    "RORE:35",
+    "RORE:36",
+    "RORE:37",
+    "RORE:38",
+    "RORE:39",
+    "RORE:40",
+    "RORE:41",
+    "RORE:42",
+    "RORE:43",
+    "RORE:44",
+    "RORE:45",
+    "RORE:46",
+    "RORE:47",
+    "R6:8",
+    "R6:9"
+   ]
+  },
+  {
+   "name": "housing_capgain",
+   "inferred": false,
+   "definition": "House price capital gain, second term of eq. (6): (HPI_{t+1} - HPI_t)/HPI_t.",
+   "construction": "House price indices from Knoll, Schularick, Steger (2017), with extensions: UK back to 1895 (Samy 2015 London hedonic index); Italy Cannari and D'Alessio (2016) 1927-2015; Portugal Azevedo (2016) 1931-2015; Spain Amaral (2016) 1900-2015; Canada 2013-2016 OECD chain-linked nominal index (no returns). R6 2016-2020: nominal house price indices downloaded from OECD Statistics for all countries.",
+   "units": "Nominal annual; decimal fraction implied.",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States",
+    "Canada (prices only)"
+   ],
+   "sources": [
+    {
+     "country": "all (default)",
+     "source": "Knoll, Schularick, and Steger (2017) house price indices",
+     "years": "1870-2015 as available"
+    },
+    {
+     "country": "Canada",
+     "source": "Knoll, Schularick, Steger (2017); OECD chain-linked nominal house price index",
+     "years": "1921-1949 and 1956-2012; 2013-2016"
+    },
+    {
+     "country": "Italy",
+     "source": "Cannari and D'Alessio (2016); 1941-1961 interpolated via construction costs",
+     "years": "1927-2015"
+    },
+    {
+     "country": "Portugal",
+     "source": "Azevedo (2016), land-registry transactions weighted by number of transactions",
+     "years": "1931-2015"
+    },
+    {
+     "country": "Spain",
+     "source": "Amaral (2016): newspaper ads 1900-1904; Carmona et al. (2017) 1905-1933; Registrars Yearbooks 1934-1975; Tecnigrama 1976-1986; Ministry of Housing 1987-1994; Ministry of Public Works and Transports 1995-",
+     "years": "1900-2015"
+    },
+    {
+     "country": "United Kingdom",
+     "source": "Knoll et al. (2017) extended back with Samy (2015) London Auction Mart hedonic index",
+     "years": "1895-2015"
+    },
+    {
+     "country": "all 16",
+     "source": "R6: OECD Statistics nominal house price indices",
+     "years": "2016-2020"
+    }
+   ],
+   "caveats": "Geographic coverage of house price indices differs from rent indices in many countries (e.g. Netherlands Amsterdam-only pre-1970, Finland Helsinki pre-1969, Belgium Brussels pre-1950, Denmark rural pre-1938, Japan land prices).",
+   "pages": [
+    "RORE:3",
+    "RORE:5",
+    "RORE:33",
+    "RORE:37",
+    "RORE:41",
+    "RORE:42",
+    "RORE:44",
+    "R6:8"
+   ]
+  },
+  {
+   "name": "housing_rent_rtn",
+   "inferred": true,
+   "definition": "Rental income component of the housing return, first term of eq. (6): RI_{t+1}/HPI_t (next period's rent index over current house price index, net rent-price basis).",
+   "construction": "From the extrapolated net rent-price ratio series (eq. 5) and the house price index.",
+   "units": "Decimal fraction implied.",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "See housing_tr",
+     "years": "see housing_tr"
+    }
+   ],
+   "caveats": "Mapping to this column is inferred; the documents only give eq. (6).",
+   "pages": [
+    "RORE:4",
+    "RORE:5"
+   ]
+  },
+  {
+   "name": "housing_rent_yd",
+   "inferred": true,
+   "definition": "Net rent-price ratio RI_t/HPI_t (eq. 5); R6 calls it 'rental yield rates'. Net of maintenance, ground rent and other irrecoverable expenditure (IPD definition) or gross yields reduced by about one-third where cost data unavailable.",
+   "construction": "Benchmark year ratio (IPD/MSCI 2013 or 2014; Numbeo 2012 for Belgium; Fox and Tulip 2014 for Australia) times relative growth of rent and house price indices, with country adjustments; the 'Rent-price ratio, final series' (green) in RORE Figures 1-16.",
+   "units": "Decimal ratio (e.g. 0.032).",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "See housing_tr (benchmarks and adjustments per country)",
+     "years": "see housing_tr"
+    }
+   ],
+   "caveats": "Benchmark values: AUS 0.02 (2014), BEL 0.033 (2012), DNK 0.034, FIN 0.054, FRA 0.028, DEU 0.047, ITA 0.038, JPN 0.056, NLD 0.044, NOR 0.037, PRT 0.033, ESP 0.025, SWE 0.036, CHE 0.040, GBR 0.032 (2013), USA 0.049 (2014).",
+   "pages": [
+    "RORE:4",
+    "RORE:5",
+    "RORE:8",
+    "RORE:9",
+    "RORE:10",
+    "RORE:11",
+    "RORE:12",
+    "RORE:14",
+    "RORE:15",
+    "RORE:16",
+    "RORE:17",
+    "RORE:18",
+    "RORE:19",
+    "RORE:20",
+    "RORE:21",
+    "RORE:22",
+    "RORE:24",
+    "RORE:25",
+    "RORE:26",
+    "RORE:27",
+    "R6:8"
+   ]
+  },
+  {
+   "name": "rent_ipolated",
+   "inferred": true,
+   "definition": "NOT DEFINED in either document. No variable with this name or an 'interpolated rent' concept is described.",
+   "construction": "Unknown from these documents. Documented interpolation/gap-linking in rent indices: UK 1915-1919 (Samy London index), UK 1946-1954 (Holmans local-authority rents), Italy 1939-1945 (lockstep with house prices), Belgium 1961-1977 (Van Fulpen), Denmark Copenhagen proxies 1870-1926 and 1955-1964.",
+   "units": "Not stated.",
+   "countries": [],
+   "sources": [],
+   "caveats": "Check the JST main codebook; nothing here supports a specific definition.",
+   "pages": [
+    "RORE:32",
+    "RORE:33",
+    "RORE:38",
+    "RORE:45",
+    "RORE:46"
+   ]
+  },
+  {
+   "name": "housing_capgain_ipolated",
+   "inferred": true,
+   "definition": "NOT DEFINED in either document.",
+   "construction": "Unknown from these documents. Documented house-price interpolation: Italy 1941-1961 (Cannari and D'Alessio 2016, construction-cost based); Canada prices only.",
+   "units": "Not stated.",
+   "countries": [],
+   "sources": [],
+   "caveats": "Check the JST main codebook.",
+   "pages": [
+    "RORE:37"
+   ]
+  },
+  {
+   "name": "eq_capgain_interp",
+   "inferred": true,
+   "definition": "NOT DEFINED in either document.",
+   "construction": "Unknown. Documented equity gap handling: Portugal 1975 prices interpolated, no dividends; Spain 1937-1939 average return before/after closure, no dividends; Switzerland 1915 covers Jul 1914-Jul 1916; Netherlands 1945 covers Aug 1944-Apr 1946; Japan 1946-1947 no data.",
+   "units": "Not stated.",
+   "countries": [],
+   "sources": [],
+   "caveats": "Check the JST main codebook.",
+   "pages": [
+    "RORE:56",
+    "RORE:57",
+    "RORE:59",
+    "RORE:60",
+    "RORE:62"
+   ]
+  },
+  {
+   "name": "eq_tr_interp",
+   "inferred": true,
+   "definition": "NOT DEFINED in either document.",
+   "construction": "Unknown; see eq_capgain_interp for documented closures.",
+   "units": "Not stated.",
+   "countries": [],
+   "sources": [],
+   "caveats": "Check the JST main codebook.",
+   "pages": [
+    "RORE:56",
+    "RORE:57",
+    "RORE:59",
+    "RORE:60",
+    "RORE:62"
+   ]
+  },
+  {
+   "name": "eq_dp_interp",
+   "inferred": true,
+   "definition": "NOT DEFINED in either document.",
+   "construction": "Unknown; dividend-related estimation documented only for Japan 1941-1945 and 1948 (1940 dividend yield and nominal dividend growth) and the no-dividend assumptions for Portugal 1975 and Spain 1937-1939.",
+   "units": "Not stated.",
+   "countries": [],
+   "sources": [],
+   "caveats": "Check the JST main codebook.",
+   "pages": [
+    "RORE:56",
+    "RORE:59",
+    "RORE:60"
+   ]
+  },
+  {
+   "name": "safe_tr",
+   "inferred": false,
+   "definition": "Safe asset return, eq. (2): R^safe_{i,t} = (R^bill_{i,t} + R^bond_{i,t}) / 2. 'we assume that total public debt is divided equally into bonds and bills since there are no data on their market shares (only for total public debt) over our full sample.'",
+   "construction": "Simple average of bill_rate and bond_tr. R6 2016-2020: same (R6 eq. 2).",
+   "units": "Nominal annual; decimal fraction implied.",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "Derived from bill and bond returns",
+     "years": "as available"
+    }
+   ],
+   "caveats": "50/50 split assumption.",
+   "pages": [
+    "RORE:4",
+    "R6:10"
+   ]
+  },
+  {
+   "name": "risky_tr",
+   "inferred": false,
+   "definition": "Risky asset return, eq. (3): R^risky_{i,t} = R^equity_{i,t} x w^equity_{i,t} + R^housing_t x w^housing_{i,t}; weights are the shares of equity and housing asset holdings scaled to sum to 1, from stock market capitalization (Kuvshinov and Zimmermann 2018/2022) and housing wealth.",
+   "construction": "R6 2016-2020: stock market capitalization (% GDP) from WFE / ECB SDW / Bundesbank BBK01.WU0178 / Swiss Stock Exchange (R6 Table 5; NOR and GBR missing 2020); value of total dwellings (% GDP) from OECD 9B N1111 (R6 Table 4; CHE none; FIN/NOR/PRT/SWE to 2019; ESP to 2018). Footnote 4 (RORE): an equally-weighted risky return (simple average of housing and equity) is also supplied.",
+   "units": "Nominal annual; decimal fraction implied.",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "Weights: Kuvshinov and Zimmermann (2018) market cap; housing wealth (sources not itemized in RORE); R6 Tables 4-5",
+     "years": "1870-2015; 2016-2020 subject to gaps"
+    }
+   ],
+   "caveats": "R6 eq. (3) printed with R^bond instead of R^housing (typo); Switzerland has no dwellings-value weights for 2016-2020 and the document does not say how this was handled.",
+   "pages": [
+    "RORE:3",
+    "RORE:4",
+    "R6:8",
+    "R6:10",
+    "R6:11"
+   ]
+  },
+  {
+   "name": "capital_tr",
+   "inferred": true,
+   "definition": "Return on wealth / aggregate wealth, eq. (4): R^wealth_{i,t} = R^risky_{i,t} x w^risky_{i,t} + R^safe_{i,t} x w^safe_{i,t}; weights are asset holdings of risky (equity + housing) and safe (public debt: bills + bonds) assets scaled to sum to 1. Column-name mapping ('capital' = return on wealth) is inferred.",
+   "construction": "R6 2016-2020: public debt-to-GDP from the JST database for safe assets; equity and housing weights as for risky_tr; w^equity + w^housing + w^bill + w^bond = w^risky + w^safe = 1. RORE fn 4: an equally-weighted return on wealth (simple average of housing, equity and bonds) is also supplied.",
+   "units": "Nominal annual; decimal fraction implied.",
+   "countries": [
+    "Australia",
+    "Belgium",
+    "Denmark",
+    "Finland",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "Netherlands",
+    "Norway",
+    "Portugal",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "United Kingdom",
+    "United States"
+   ],
+   "sources": [
+    {
+     "country": "all 16",
+     "source": "Weights: equity market cap, housing wealth, public debt stocks (RORE p.3); R6 Tables 4-5 and JST debt-to-GDP",
+     "years": "1870-2015; 2016-2020 subject to gaps"
+    }
+   ],
+   "caveats": "Same weight gaps as risky_tr; equally-weighted variant omits bills as described.",
+   "pages": [
+    "RORE:3",
+    "RORE:4",
+    "R6:8",
+    "R6:10"
+   ]
+  }
+ ],
+ "composites": {
+  "safe": {
+   "formula": "R_safe = (R_bill + R_bond)/2",
+   "weights": "public debt assumed split equally between bills and bonds (no market-share data)",
+   "pages": [
+    "RORE:4",
+    "R6:10"
+   ]
+  },
+  "risky": {
+   "formula": "R_risky = R_equity * w_equity + R_housing * w_housing, w_equity + w_housing = 1",
+   "weights": "stock market capitalization (Kuvshinov and Zimmermann 2018; R6: 2022) and housing wealth; R6 2016-2020: market cap % GDP (WFE, ECB SDW, Bundesbank, Swiss Stock Exchange) and dwellings value % GDP (OECD 9B N1111)",
+   "equally_weighted_variant": "simple average of housing and equity (RORE fn 4)",
+   "pages": [
+    "RORE:3",
+    "RORE:4",
+    "R6:8",
+    "R6:10",
+    "R6:11"
+   ]
+  },
+  "wealth": {
+   "formula": "R_wealth = R_risky * w_risky + R_safe * w_safe, w_risky + w_safe = 1",
+   "weights": "asset holdings of risky (equity + housing) and safe (public debt) assets; R6: public debt-to-GDP from JST database",
+   "equally_weighted_variant": "simple average of housing, equity and bonds (RORE fn 4)",
+   "pages": [
+    "RORE:4",
+    "R6:10"
+   ]
+  },
+  "r6_weight_gaps": {
+   "dwellings_value": {
+    "2016-2020": [
+     "Australia",
+     "Belgium",
+     "Denmark",
+     "France",
+     "Germany",
+     "Italy",
+     "Japan",
+     "Netherlands",
+     "United Kingdom",
+     "United States"
+    ],
+    "2016-2019": [
+     "Finland",
+     "Norway",
+     "Portugal",
+     "Sweden"
+    ],
+    "2016-2018": [
+     "Spain"
+    ],
+    "none": [
+     "Switzerland"
+    ]
+   },
+   "market_cap_missing_2020": [
+    "Norway",
+    "United Kingdom"
+   ]
+  }
+ },
+ "r6_update": {
+  "release": "6th release of the JST database, 2022; document dated July 2022",
+  "main_data_changes": [
+   "Discontinued IMF series replaced using the IMF's original data sources: short-term interest rates, long-term interest rates, narrow money, broad money",
+   "Ireland added (18 countries); some Irish information still being gathered and not included",
+   "Major revision of GDP and related series driven by current-account revisions: nominal GDP, investment-to-GDP, debt-to-GDP, real GDP per capita; minor revisions to consumption per capita",
+   "New variables: unemployment rate and nominal wages index (1990 base) from Gabriel (2021); corporate debt from Jorda, Kornejew, Schularick, Taylor (2022) (Online Appendix H)"
+  ],
+  "rore_extension": {
+   "period": "2016-2020",
+   "countries": "the 16 RORE countries (Canada and Ireland not covered); Sweden absent from the bill-rate table",
+   "bills": "T-bill yields where available, else money market or deposit rates; sources per country in R6 Table 1 (OECD MEI interbank 3-month: AUS, BEL, FIN, DEU, NLD, PRT; IFS money market: DNK, FRA, ESP, USA; IFS government bill: ITA; deposit rates: JPN Bank of Japan, NOR IFS, CHE SNB, GBR Bank of England); Spain 2018 missing",
+   "bonds": "Total return and yield to maturity updated for ~10-year local-currency government bonds; yields from OECD 10-year benchmark redemption yields; total returns from Datastream benchmark 10-year indices (BEL, DNK, FRA, DEU, NLD, ESP, SWE, CHE, GBR, USA), Datastream micro-level average (AUS), own calculation (FIN, ITA, JPN, NOR, PRT)",
+   "bonds_methodology_change": "Micro-level bond datasets of Australia, Finland, Italy, Japan, Netherlands and Norway extended to 2020 and total returns re-estimated for 1988-2020, which 'explains the differences of the updated total bond returns series from the previous version'",
+   "equity": "Total returns, capital gains, dividend returns and yields from 2016 taken from the Fama-French excess return factor (Kenneth R. French Data Library); dividend yield = total return - capital gain; Portugal from PSI all-share (total) and Euronext Lisbon close price index (capital gain); US from Shiller (S&P Composite price growth + nominal dividend growth rate); Figures 1-2 show Fama-French and RORE align closely 1975-2020 for AUS, FRA, DEU, ITA, SWE, GBR",
+   "housing": "Rent-price approach applied to extend housing returns and rental yields; house prices from OECD Statistics; rent indices per R6 Table 3 (national statistical offices, FRED for PRT and USA); missing: FIN, NOR, SWE 2020; ESP 2019-2020",
+   "composites": "Same formulas; weights from JST public debt-to-GDP, OECD 9B dwellings value (% GDP), and stock market capitalization (% GDP) per Kuvshinov and Zimmermann (2022); Switzerland has no dwellings data",
+   "provisional_flags": "No variable is labelled provisional; gaps are flagged with asterisks in Tables 1, 3, 4, 5 (Spain bills 2018; FIN/NOR/SWE rents 2020; ESP rents 2019-2020; dwellings FIN/NOR/PRT/SWE 2020, ESP 2019-2020, CHE all; market cap NOR/GBR 2020)",
+   "typos_noted": [
+    "Table 2 Japan row reads 'Finnish government bonds'",
+    "eq. (3) uses R^bond with w^housing",
+    "Table 4 note 'OCED Statstics'"
+   ]
+  },
+  "pages": [
+   "R6:1",
+   "R6:2",
+   "R6:3",
+   "R6:4",
+   "R6:5",
+   "R6:6",
+   "R6:7",
+   "R6:8",
+   "R6:9",
+   "R6:10",
+   "R6:11"
+  ]
+ },
+ "headline_findings": {
+  "note": "Neither document states average real returns by asset class, a risky-safe gap, or r vs g; the QJE paper's headline results are not restated. Figures below are the only quantitative return statements, as made by the authors.",
+  "items": [
+   {
+    "statement": "Deposit rates on average roughly 0.7 percentage points below bills, a return close to zero in real terms",
+    "page": "RORE:2 fn 2"
+   },
+   {
+    "statement": "Germany 1870-1913: Tilly (1986) average annual real net housing returns about 8 percent vs circa 10 percent p.a. from the adjusted rent and house price data",
+    "page": "RORE:16"
+   },
+   {
+    "statement": "Zurich residential real estate real returns 6 percent in 1927 and 7.3 percent in 1933 (Real 1950)",
+    "page": "RORE:24"
+   },
+   {
+    "statement": "France: average annual net rental yield of about 5 percent for 1914-1938 in the final series",
+    "page": "RORE:14"
+   },
+   {
+    "statement": "UK final series average rent-price ratio 0.037 during 1900-1913",
+    "page": "RORE:26"
+   },
+   {
+    "statement": "Benchmark net rent-price ratios: AUS 0.02 (2014); BEL 0.033 (2012); DNK 0.034; FIN 0.054; FRA 0.028; DEU 0.047; ITA 0.038; JPN 0.056; NLD 0.044; NOR 0.037; PRT 0.033; ESP 0.025; SWE 0.036; CHE 0.040; GBR 0.032 (2013); USA 0.049 (2014)",
+    "page": "RORE:9-26"
+   },
+   {
+    "statement": "Rent-growth adjustment factors: Finland 1.1 (WW2-1965); Norway 1.5 (1990-2005); Portugal 1.2 (1974-2005); Japan 2 (1960s); Italy rents 1939-45 linked by ~1.6 real",
+    "page": "RORE:13,17,19-21,38"
+   }
+  ]
+ },
+ "references": {
+  "RORE": [
+   "Abildgren, Kim. 2016. The National Wealth of Denmark 1845-2013 in a European Perspective. Danish Journal of Economics 154(1): 1-19.",
+   "Albers, Ronald Martin. 2002. Machinery Investment and Economic Growth: The Dynamics of Dutch Development 1800-1913. Aksant Academic Publishers.",
+   "Amaral, Francisco. 2016. House Prices in Spain, 1870-2015. Master's thesis, University of Bonn.",
+   "Ambrose, Brent W., Piet Eichholtz, and Thies Lindenthal. 2013. House Prices and Fundamentals: 355 Years of Evidence. Journal of Money, Credit and Banking 45(2-3): 477-491.",
+   "Angermann, Oswald. 1985. Weiterentwicklung des Mietenindex in der Verbraucherpreisstatistik mit Hilfe von Ergebnisse der Wohnungszaehlung. Wirtschaft und Statistik 6/1985: 505-508.",
+   "Annaert, Jan, Frans Buelens, Ludo Cuyvers, Marc De Ceuster, Marc Deloof, and Ann De Schepper. 2011. Are Blue Chip Stock Market Indices Good Proxies for All-Shares Market Indices? The Case of the Brussels Stock Exchange 1833-2005. Financial History Review 18(3): 277-308.",
+   "Arola, Mika. 2006. Foreign Capital and Finland: Central Government's First Period of Reliance on International Financial Markets 1862-1938. Bank of Finland Scientific Monograph E:37-2006.",
+   "Artola Blanco, Miguel, Luis E. Bauluz, and Clara Martinez-Toledano. 2017. Wealth in Spain, 1900-2014: A Country of Two Lands. Working paper.",
+   "Australian Bureau of Statistics. 2011. Consumer Price Index: Concepts, Sources and Methods. Information Paper 6461.0.",
+   "Australian Bureau of Statistics. 2014. Australian National Accounts: National Income, Expenditure and Product. Table 8: Household Final Consumption Expenditure. http://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/5206.0Main+Features1Dec%202013?OpenDocument.",
+   "Azevedo, Joao. 2016. House Prices in Portugal, 1930 to 2015. Master's thesis, University of Bonn.",
+   "Baia Curioni, Stefano. 2001. Modernizzazione e Mercato. La Borsa di Milano Nella \"Nuova Economia\" Dell'eta Giolittiana (1888-1914). Milan: EGEA.",
+   "Bank of Japan. 1966. Hundred-Year Statistics of the Japanese Economy.",
+   "Barclays. 2016. UK Equity and Gilt Study 2016.",
+   "Bernhardt, Christoph. 1997. Bauplatz Gross-Berlin: Wohnungsmaerkte, Terraingewerbe und Kommunalpolitik im Staedtewachstum der Hochindustrialisierung (1871-1918). Berlin: De Gruyter.",
+   "Bianchi, Bruno. 1979. Appendice Statistica: Il Rendimento del Consolidato dal 1862 al 1946. In Capitale Industriale e Capitale Finanziaro: Il Caso Italiano. Bologna: Il Mulino.",
+   "Birck, Laurits Vilhelm. 1912. Ejendomsskatter Og Eijendomspriser: En Studie. Copenhagen: G.E.C. Gad.",
+   "Bracke, Philippe. 2015. House Prices and Rents: Microevidence from a Matched Data Set in Central London. Real Estate Economics 43(2): 403-431.",
+   "Brailsford, Tim, John C. Handley, and Krishnan Maheswaran. 2012. The Historical Equity Risk Premium in Australia: Post-GFC and 128 Years of Data. Accounting and Finance 52(1): 237-247.",
+   "Buckley, Kenneth Arthur Haig, and Malcolm Charles Urquhart. 1993. Historical Statistics of Canada. Statistics Canada.",
+   "Bureau of Economic Analysis. 2014. Personal Consumption Expenditures by Major Type of Product. http://www.bea.gov/iTable/iTable.cfm?reqid=9&step=3&isuri=1&910=x&911=1&903=65&904=2011&905=2013&906=areqid=9&step=3&isuri=1&910=x&911=1&903=65&904=2011&905=2013&906=a.",
+   "Bureau of Labor Statistics. 1966. The Consumer Price Index: History and Techniques. Bureau of Labor Statistics Bulletin 1517(1517).",
+   "Butlin, N. G. 1985. Australian National Accounts 1788-1983. Source Papers in Economic History 6, Australian National University.",
+   "Buyst, Erik. 1994. Het Inkomen uit Onroerend Vermogen toevloeiend aan Particulieren: Belgie, 1920-1939. Workshop in Quantitative Economic History Research Paper 1994-01.",
+   "Cabinet Office. Government of Japan. 2012. Composition of Final Consumption Expenditure of Households Classified by Purpose. http://www.esri.cao.go.jp/en/sna/data/kakuhou/files/2012/tables/24s13n_en.xls.",
+   "Cairncross, Alexander K. 1975. Home and Foreign Investment, 1870-1913: Studies in Capital Accumulation. Clifton, N.J.: Augustus M. Kelley Publishers.",
+   "Cannari, Luigi, and Giovanni D'Alessio. 2016. I Prezzi delle Abitazioni in Italia, 1927-2012. Questioni di Economia e Finanza (Occasional Papers) 333.",
+   "Cardoso, Abilio. 1983. State Intervention in Housing in Portugal 1960-1980. Ph.D. thesis, University of Reading.",
+   "Cardoso, Fatima, Luisa Farinha, and Rita Lameira. 2008. Household Wealth in Portugal: Revised Series. Banco de Portugal Occasional Papers 1-2008.",
+   "Carmona, Juan, Markus Kampe, and Joan Roses. 2017. Housing Affordability During the Urban Transition in Spain. Economic History Review 70(2): 632-658.",
+   "Conseil General de l'Environnement et du Developpement Durable. 2013. House Prices in France: Property Price Index, French Real Estate Market Trends, 1200-2013. http://www.cgedd.developpement-durable.gouv.fr/house-prices-in-france-property-a1117.html [Accessed February 16, 2017].",
+   "Crone, Theodore M., Leonard I. Nakamura, and Richard Voith. 2010. Rents Have Been Rising, Not Falling, in the Postwar Period. Review of Economics and Statistics 3: 628-642.",
+   "Curti, Marco. 1981. Realloehne schweizerischer Industriearbeiter von 1890 bis 1921: Ergebnisse 3 - Die Entwicklung der Wohnungsmieten. Zurich: University of Zurich.",
+   "Da Pozzo, Mario, and Giuseppe Felloni. 1964. La Borsa Valori di Genova nel Secolo XIX. ILTE.",
+   "Dagens Nyheter. 1892. Annonsering: 2 Stenhus Till Salu. Dagens Nyheter November 5, 1892.",
+   "Dagens Nyheter. 1897. Annonsering: Hus. Dagens Nyheter September 3, 1897.",
+   "Dagens Nyheter. 1899. Anonsering: Hrr Kapitalister. Dagens Nyheter December, 20, 1899.",
+   "Dahlman, Carl Johan, and Anders Klevmarken. 1971. Private Consumption in Sweden, 1931-1975.",
+   "De Telegraaf. 1939. Stijgende Woningbouw in Ons Land. De Telegraaf (21): 47, January 21, 1939.",
+   "Deutsche Bundesbank. 1976. Deutsches Geld-Und Bankwesen in Zahlen, 1876-1975. Knapp.",
+   "Diewert, Erwin D. 2009. Durables and Owner-Occupied Housing in a Consumer Price Index. In Price Index Concepts and Measurement, edited by Diewert, Erwin W., John S. Greenlees, and Charles R. Hulten, 445-500. Chicago: University of Chicago Press.",
+   "Drappier, Jean-Marie. 1937. La Conjoncture des Cours des Valeurs Mobilieres, de Leurs Dividendes et des Taux d'Interet en Belgique de 1830 a 1913. Recherches Economiques de Louvain 8(4): 391-449.",
+   "Edvinsson, Rodney. 2016. Historical National Accounts for Sweden 1800-2000.",
+   "Eichholtz, Piet M. A., C. G. Koedijk, and Roger Otten. 2000. De Eeuw Van Het Aandeel. Economisch-statistische berichten 85.",
+   "Eube, Steffen. 1998. Der Aktienmarkt in Deutschland vor dem Ersten Weltkrieg: Eine Indexanalyse. Frankfurt am Main: Knapp.",
+   "Evangelista, R., and A. Teixeira. 2014. Using Different Administrative Data Sources to Develop House Price Indexes for Portugal. INE Working Paper.",
+   "Fernandez, Pablo, Jose M. Carabias, and Lucia Miguel. 2007. Rentabilidad de los Fondos de Inversion de Renta Variable Nacional en Espana (1991-2006). IESE Research Papers D/695.",
+   "Fox, Ryan, and Peter Tulip. 2014. Is Housing Overvalued? RBA Research Discussion Paper 2014-06.",
+   "Fujino, Shozaburo, and Ryoko Akiyama. 1977. Security Prices and Rates of Interest in Japan: 1874-1975. Tokyo: Hitotsubashi University.",
+   "Gielen, Gregor. 1994. Koennen Aktienkurse Noch Steigen?: Langfristige Trendanalyse Des Deutschen Aktienmarktes. Wiesbaden: Gabler-Verlag.",
+   "Giglio, Stefano, Matteo Maggiori, and Johannes Stroebel. 2015. Very Long-Run Discount Rates. Quarterly Journal of Economics 130(1): 1-53.",
+   "Goldsmith, Raymond W. 1985. Comparative National Balance Sheets: A Study of Twenty Countries, 1688-1978. Chicago, Ill.: University of Chicago Press.",
+   "Goldsmith, Raymond W., and A.C. Frijdal. 1975. Le Bilan National de la Belgique de 1948 a 1971. Cahiers Economiques de Bruxelles 66: 191-200.",
+   "Gordon, Robert J., and Todd van Goethem. 2007. Downward Bias in the Most Important CPI Component: The Case of Rental Shelter, 1914-2003. In Hard-to-Measure Goods and Services: Essays in Honor of Zvi Griliches, edited by Berndt, Ernst R., and Charles R. Hulten, 153-195. Chicago, IL: University of Chicago Press.",
+   "Grebler, Leo, David M. Blank, and Louis Winnick. 1956. Capital Formation in Residential Real Estate: Trends and Prospects. Princeton, N.J.: Princeton University Press.",
+   "Groote, Peter, Ronald Albers, and Herman De Jong. 1996. A Standardised Time Series of the Stock of Fixed Capital in the Netherlands, 1900-1995. Groningen Growth and Development Centre, Faculty of Economics, University of Groningen.",
+   "Grossman, Richard S. 2002. New Indices of British Equity Prices, 1870-1913. Journal of Economic History 62(1): 121-146.",
+   "Hamao, Yasushi. 1991. A Standard Data Base for the Analysis of Japanese Security Markets. Journal of Business 64(1): 87-102.",
+   "Hansen, Svend Aage. 1976. Oekonomisk Vaekst I Danmark. 6. Akademisk forlag.",
+   "Haynie, Henry. 1903. Paris Past and Present. New York Times. January 10, 1903.",
+   "Henau, Anne. 1991. De Belgische Huishuren Gedurende Het Interbellum. Workshop in Quantitative Economic History Research Paper 1991-01.",
+   "Hjerppe, Riitta. 1989. The Finnish Economy 1860-1985: Growth and Structural Change. Studies on Finland's Economic Growth. Helsinki: Bank of Finland.",
+   "Hoffmann, Walther G. 1965. Das Wachstum der Deutschen Wirtschaft seit der Mitte des 19. Jahrhunderts. Berlin: Springer.",
+   "Holmans, A.E. 2005. Historical Statistics of Housing in Britain. Cambridge: Cambridge Center for Housing and Planning Research.",
+   "Homburger, Paul. 1905. Die Entwicklung Des Zinsfusses in Deutschland Von 1870-1903. Frankfurt am Main: Sauerlaender.",
+   "Homer, Sidney, and Richard E. Sylla. 2005. A History of Interest Rates. Hoboken, N.J.: Wiley, 4th edition.",
+   "International Labour Organization. 2013. Sources and Methods: Labour Statistics. Volume 1: Consumer Price Indices. http://laborsta.ilo.org/applv8/data/SSM1_NEW/E/SSM1.html [Accessed February 16, 2017].",
+   "International Labour Organization. 2014. LABORSTA Internet. Table 7F: Consumer Prices, Rent Indices. http://laborsta.ilo.org [Accessed February 16, 2017].",
+   "International Labour Organization. various years. Year-Book of Labour Statistics. Geneva: International Labour Organization.",
+   "International Labour Organization, International Monetary Fund, Organization for Economic Cooperation and Development, Statistical Office of the European Communities, United Nations, The International Bank for Reconstruction and Development, and The World Bank. 2004. Consumer Price Index Manual: Theory and Practice. Geneva: International Labour Organization.",
+   "Istat. 2016. National Accounts, Final Consumption Expenditure of Households; Consumption of Fixed Capital by Industry. https://www.istat.it/en/national-accounts.",
+   "Jorda, Oscar, Katharina Knoll, Dmitry Kuvshinov, Moritz Schularick, and Alan M. Taylor. 2019. The Rate of Return on Everything, 1870-2015. Quarterly Journal of Economics forthcoming.",
+   "Jorda, Oscar, Moritz Schularick, and Alan M. Taylor. 2017. Macrofinancial History and the New Business Cycle Facts. In NBER Macroeconomics Annual 2016, Volume 31, edited by Martin Eichenbaum, Jonathan A. Parker, pp. 213-263. Chicago, Ill.: University of Chicago Press.",
+   "Jurgilas, Marius, and Kevin J. Lansing. 2012. Housing Bubbles and Homeownership Returns. FRBSF Economic Letter 2012-19.",
+   "Klovland, Jan Tore. 2004a. Bond Markets and Bond Yields in Norway 1820-2003. In Historical Monetary Statistics for Norway 1819-2003. Norges Bank Occasional Paper No. 35, edited by Oyvind Eitrheim, Jan T. Klovland, and Jan F. Qvigstad, chapter 4, pp. 99-181.",
+   "Klovland, Jan Tore. 2004b. Historical Stock Price Indices in Norway 1914-2003. In Historical Monetary Statistics for Norway 1819-2003. Norges Bank Occasional Paper No. 35, edited by Oyvind Eitrheim, Jan T. Klovland, and Jan F. Qvigstad, chapter 8, pp. 329-349.",
+   "Knoll, Katharina. 2017. Our Home in Days Gone By: Housing Markets in Advanced Economies in Historical Perspective. Ph.D. thesis, Free University of Berlin. Chapter 3. As Volatile As Houses: Return Predictability in International Housing Markets, 1870-2015.",
+   "Knoll, Katharina, Moritz Schularick, and Thomas M. Steger. 2017. No Price like Home: Global House Prices, 1870-2012. American Economic Review 107(2): 331-352.",
+   "Kuczynski, Juergen. 1947. Die Geschichte der Lage der Arbeiter in Deutschland von 1800 bis in die Gegenwart: 1800 bis 1932, volume 1. Berlin: Verlag die freie Gewerkschaft.",
+   "Kurz, Claudia, and Johannes Hofmann. 2004. A Rental-Equivalence Index for Owner-Occupied Housing in West Germany 1985-1998. Deutsche Bundesbank Discussion Paper, Series 1: Studies of the Economic Research Center 2004-08.",
+   "Kuvshinov, Dmitry, and Kaspar Zimmermann. 2018. The Big Bang: Stock Market Capitalization in the Long Run. EHES Working Paper 136.",
+   "Le Bris, David, and Pierre-Cyrille Hautcoeur. 2010. A Challenge to Triumphant Optimists? A Blue Chips Index for the Paris Stock Exchange, 1854-2007. Financial History Review 17(2): 141-183.",
+   "Leeman, August. 1955. De Woningmarkt in Belgie 1890-1950. Kortrijk: Uitgeverij Jos. Vermaut.",
+   "Leroy-Beaulieu, Paul. 1906. L'Art de Placer et Gerer sa Fortune. Paris: Libraire Ch. Delagrave.",
+   "Lewis, Parry J., and Bernard Weber. 1965. Building Cycles and Britain's Growth. London, Macmillan.",
+   "Limburgsch Dagblaad. 1935. Advertentie: Steenen Devalueeren Niet. Limburgsch Dagblaad (222): 18, September 21, 1935.",
+   "Lopez, Carlos Barciela, Albert Carreras, and Xavier Tafunell. 2005. Estadisticas Historicas De Espana: Siglos XIX-XX. Madrid: Fundacion BBVA.",
+   "Maluquer de Motes, J. 2013. La Inflacion en Espana. Un Indice de Precios de Consumo, 1830-2012. Estudios de Historia Economica 64.",
+   "Marnata, F. 1961. Les Loyers des Bourgeois de Paris, 1860-1958. Paris: A. Colin.",
+   "Mediobanca. 2013. La Borsa Italiana dal 1928.",
+   "Mediobanca. 2016. Indici e Dati Relativi ad Investimenti in Titoli Quotati.",
+   "Meyer, Josefin, Carmen C. Reinhart, and Christoph Trebesch. 2015. 200 Years of Sovereign Haircuts and Bond Returns. Working paper.",
+   "Ministry for Social Affairs. 1920-1929. Social Tidskrift (various issues). Helsinki: Stadsradets Tryckeri.",
+   "Mitchell, B.R. 1988. British Historical Statistics. Cambridge: Cambridge University Press.",
+   "Mondani, A. 1978. Aspetti Metodologici dell'indagine Mediobanca Sull'andamento dei Corsi e sul Movimento dei Capitali delle Societa Quotate in Borsa Dal 1928 al 1977. Risparmio 1566-84.",
+   "Moore, Lyndon. 2010a. Financial Market Liquidity, Returns and Market Growth: Evidence from Bolsa and Boerse, 1902-1925. Financial History Review 17(1): 73-98.",
+   "Moore, Lyndon. 2010b. World Financial Markets 1900-25. Working paper.",
+   "MSCI. 2016. Real Estate Analytics Portal. https://realestateportal.ipd.com/#/.",
+   "Myrdal, Gunnar. 1933. The Cost of Living in Sweden, 1830-1930. London: P.S. King and Son.",
+   "NERA Economic Consulting. 2015. Historical Estimates of the Market Risk Premium.",
+   "Nielsen, Steen, and Ole Risager. 2001. Stock Returns and Bond Yields in Denmark, 1922-1999. Scandinavian Economic History Review 49(1): 63-82.",
+   "Nieuwe Tilburgsche Courant. 1934. Advertentie: Geldbelegging. Nieuwe Tilburgsche Courant (11946): 56, March 31, 1934.",
+   "Nieuwe Tilburgsche Courant. 1936. Advertentie: Geldbelegging. Nieuwe Tilburgsche Courant 58, August 14, 1936.",
+   "Nyberg, Peter M., and Mika Vaihekoski. 2011. Descriptive Analysis of Finnish Equity, Bond and Money Market Returns. Bank of Finland Discussion Paper Series 14/2011.",
+   "Nyberg, Peter M., and Mika Vaihekoski. 2014. Equity Premium in Finland and Long-Term Performance of the Finnish Equity and Money Markets. Cliometrica 8(2): 241-269.",
+   "OECD. 2002. Comparative Methodological Analysis: Consumer and Producer Price Indices. Number Supplement 2 in MEI Methodoligical Analysis. Paris: OECD.",
+   "OECD. 2016a. OECD Statistics. 5. Final Consumption Expenditure of Households. https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5.",
+   "OECD. 2016b. OECD Statistics. Table 9B. Balance-Sheets for Non-Financial Assets. http://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE9B.",
+   "Offer, Avner. 1981. Property and Politics 1870-1914: Landownership, Law, Ideology, and Urban Development in England. Cambridge: Cambridge University Press.",
+   "Papadia, Andrea, and Claudio A. Schioppa. 2016. Foreign Debt and Secondary Markets: The Case of Interwar Germany. Unpublished.",
+   "Pedersen, Jorgen. 1930. Arbejdslonnen i Danmark. Copenhagen: Gyldendalske Boghandel.",
+   "Peeters, Stef, Martine Goossens, and Erik Buyst. 2005. Belgian National Income During the Interwar Period: Reconstruction of the Database. Leuven: Leuven University Press.",
+   "Pictet and Cie. 1998. The Performance of Shares and Bonds in Switzerland: An Empirical Study Covering the Years Since 1925.",
+   "Piketty, Thomas, Emmanuel Saez, and Gabriel Zucman. 2018. Distributional National Accounts: Methods and Estimates for the United States. Quarterly Journal of Economics 133(2): 553-609.",
+   "Piketty, Thomas, and Gabriel Zucman. 2014. Capital is Back: Wealth-Income Ratios in Rich Countries 1700-2010. Quarterly Journal of Economics 129(3): 1255-1310.",
+   "Poullet, Gh. 2013. Real Estate Wealth by Institutional Sector. NBB Economic Review Spring 2013: 79-93.",
+   "Poutvaara, Panu. 1996. Poerssikurssien Kehitys Suomessa 1896-1929: Uudet Indeksisarjat Ja Niiden Tulkinta. Bank of Finland Discussion Paper.",
+   "Real, Werner Hermann. 1950. Erfahrungen und Moeglichkeiten bei der Aufstellung von Richtlinen fuer die Stadtplanung: Unter Besonderer Beruecksichtigung der Verhaeltnisse in der Stadt Zuerich. Zuerich: Eidgenoessische Technische Hochschule.",
+   "Rees, Albert. 1961. Real Wages in Manufacturing, 1890-1914. Princeton, NJ: Princeton University Press.",
+   "Rognlie, Matthew. 2015. Deciphering the Fall and Rise in the Net Capital Share. Brookings Papers on Economic Activity 46(1): 1-69.",
+   "Ronge, Ulrich. 2002. Die Langfristige Rendite Deutscher Standardaktien: Konstruktion eines Historischen Aktienindex ab Ultimo 1870 bis Ultimo 1959. Frankfurt am Main: Lang.",
+   "Rosania, L. 1954. Indice del Corso Secco e Rendimento dei Titoli Quotati in Borsa. Banca d'Italia, Bollettino 9: 539-71.",
+   "Saez, Emmanuel, and Gabriel Zucman. 2016. Wealth Inequality in the United States Since 1913: Evidence from Capitalized Income Tax Data. Quarterly Journal of Economics 131(2): 519-578.",
+   "Samy, Luke. 2015. Indices of House Prices and Rent Prices of Residential Property in London, 1895-1939. University of Oxford Discussion Paper in Economic and Social History 134.",
+   "Sefton, James, and Martin Weale. 1995. Reconciliation of National Income and Expenditure: Balanced Estimates of National Income for the United Kingdom, 1920-1990, volume 7. Cambridge: Cambridge University Press.",
+   "Segers, Yves. 1999. De Huishuren in Belgie, 1800-1920. Voorstelling van een Databank. Centre for Economic Studies Discussion Paper Series 1999-14.",
+   "Shiller, Robert J. 2000. Irrational Exuberance. Princeton, N.J.: Princeton University Press.",
+   "Shimizu, Chihiro, Satoshi Imai, and Erwin Diewert. 2015. Housing Rent and Japanese CPI: Bias from Nominal Rigidity of Rents. IRES Working Paper Series 9.",
+   "Shinohara, Miyohei. 1967. Estimates of Long-Term Economic Statistics of Japan Since 1868. Volume 6: Personal Consumption Expenditure. Tokyo: Tokyo Keizai Shinposha.",
+   "Shiratsuka, Shigenori. 1999. Measurement Errors in the Japanese Consumer Price Index. Monetary and Economic Studies 17(3): 69-102.",
+   "Simonnet, Francois, Georges Gallais-Hamonno, and Pedro Arbulu. 1998. Un Siecle de Placement Immobilier. L'exemple de La Fourmi Immobiliere. Journal de la Societe Francaise de Statistique 139(2): 95-135.",
+   "Stapledon, Nigel D. 2007. Long Term Housing Prices in Australia and Some Economic Perspectives. Ph.D. thesis, Australian School of Business at the University of New South Wales.",
+   "Stapledon, Nigel D. 2012. Historical Housing-Related Statistics for Australia 1881-2011 - A Short Note. UNSW Australian School of Business Research Paper 2012-52.",
+   "Statistics Amsterdam. 1916-1944. Amsterdam Statistical Yearbook. Amsterdam: J.M. Meulenhoff.",
+   "Statistics Belgium. 2013a. Final Consumption Expenditure of Households (P.3), Estimates at Current Prices. http://www.nbb.be/belgostat/PresentationLinker?Presentation=META&TableId=558000001&Lang=E&prop=treeview.",
+   "Statistics Belgium. 2013b. Huishoudbudgetonderzoek. http://statbel.fgov.be/nl/binaries/HBO%20uitgaven%20evolutie%201978-2010_nl_tcm325-167949.xls.",
+   "Statistics Belgium. 2015. Bouw en Industrie - Verkoop van Onroerende Goederen. http://statbel.fgov.be/nl/modules/publications/statistiques/economie/downloads/bouw_en_industrie_verkoop_onroerende_goederen.jsp.",
+   "Statistics Canada. 2015. A Revision of the Methodology of the Rent Component of the Consumer Price Index (CPI), beginning with the July 2009 CPI. http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvDocument&Item_Id=204204&InstaId=250656 [Accessed February 16, 2017].",
+   "Statistics Copenhagen. 1906-1966. Statistical Yearbook of Copenhagen and Frederiksberg. Copenhagen: Gyldendalske Boghandel.",
+   "Statistics Denmark. 1919. Vurderingen til Ejendomsskyld Pr. 1 Juli 1916. Number 10 in Statistisk Tabelvaerk, 5. Raekke, Litra E. Copenhagen: Bianco Lunoc Bogtrykkeri.",
+   "Statistics Denmark. 1923. Vurderingen til Eijendomsskyld Pr. 1 Juli 1920. Number 12 in Statistisk Tabelvaerk, 5. Raekke, Litra E. Copenhagen: Bianco Lunoc Bogtrykkeri.",
+   "Statistics Denmark. 1925. Statistisk Arbog. Copenhagen: Gyldendalske Boghandel.",
+   "Statistics Denmark. 1948. Vurderingen til Grundskyld Og Ejendomsskyld Pr. 1 Oktober 1945. Number 21 in Statistisk Tabelvaerk, 5. Raekke, Litra E. Copenhagen: Bianco Lunoc Bogtrykkeri.",
+   "Statistics Denmark. 1954. Vurderingen til Grundskyld Og Ejendomsskyld Pr. 1 Oktober 1950. Number 23 in Statistisk Tabelvaerk, 5. Raekke, Litra E. Copenhagen: Bianco Lunoc Bogtrykkeri.",
+   "Statistics Denmark. 1969. Kreditmarkedsstatistik. Statistiske undersoegelser 24.",
+   "Statistics Denmark. 2003. Consumer price index (1980=100) by Commodity Group. http://www.statbank.dk/pris1 [Accessed February 16, 2017].",
+   "Statistics Denmark. 2015. Consumer price index (2000=100) by Commodity Group and Unit. http://www.statbank.dk/pris6 [Accessed February 16, 2017].",
+   "Statistics Denmark. 2017a. Annual National Accounts. http://www.dst.dk/en/Statistik/emner/nationalregnskab-og-offentlige-finanser/aarligt-nationalregnskab.",
+   "Statistics Denmark. 2017b. Private Consumption (DKK Million) by Group of Consumption and Price Unit. http://www.statbank.dk/NAT05.",
+   "Statistics Finland. 1920. The Republic of Finland: An Economic and Financial Survey. Helsinki: Statistics Finland.",
+   "Statistics Finland. 2009. Average Rents in 1964-2008. http://www.stat.fi/til/asvu/2008/asvu_2008_2009-02-20_tau_001_en.html [Accessed February 16, 2017].",
+   "Statistics France. 2015. Banque de Donnees Macroeconomiques: Serie 000637649. https://www.insee.fr/fr/information/2411675 [Accessed February 16, 2017].",
+   "Statistics France. 2016a. National Accounts. 6.461 Consumption of Fixed Capital at Current Prices (Billions of Euros). https://www.insee.fr/en/statistiques/2839283?sommaire=2839395&q=consumption+of+fixed+capital#titre-bloc-63.",
+   "Statistics France. 2016b. National Accounts. Actual Final Consumption of Households by Purpose at Current Prices (Billions of Euros). https://www.insee.fr/en/statistiques/2387892?sommaire=2387999.",
+   "Statistics Germany. 1924-1935. Statistisches Jahrbuch fuer das Deutsche Reich. Berlin: Verlag von Puttkammer und Muehlbrecht.",
+   "Statistics Germany. 1925. Wirtschaft und Statistik, volume 5. Berlin: Reimar Hobbing.",
+   "Statistics Germany. 1934. Vierteljahreshefte zur Statistik des Deutschen Reichs, volume 43. Berlin: Verlag fuer Sozialpolitik, Wirtschaft und Statistik G.m.b.H.",
+   "Statistics Germany. 2013. Volkswirtschaftliche Gesamtrechnungen: Private Konsumausgaben Und Verfuegbares Einkommen. Beiheft zur Fachserie 18, 3. Vierteljahr 2013. Wiesbaden: Statistics Germany.",
+   "Statistics Germany. various years. Statistical Yearbook Germany. Wiesbaden: Statistics Germany.",
+   "Statistics Japan. 2012. Historical Statistics of Japan: Chapter 22 - Prices - Consumer Price Index. http://www.stat.go.jp/english/data/chouki/index.htm [Accessed February 16, 2017].",
+   "Statistics Netherlands. 2010. Rent Increase for Dwellings. http://www.cbs.nl/en-GB/menu/themas/prijzen/methoden/dataverzameling/korte-onderzoeksbeschrijvingen/rent-movements-for-dwellings.htm [Accessed February 16, 2017].",
+   "Statistics Netherlands. 2014. Consumentenprijzen; Huurverhoging Woningen vanaf 1959. http://statline.cbs.nl/StatWeb/publication/?DM=SLNL&PA=70675NED [Accessed February 16, 2017].",
+   "Statistics Norway. 1949. Statistical Survey 1948. Oslo: H. Aschehoug and Co.",
+   "Statistics Norway. 1954. Nasjonalregnskap 1938 Og 1948-1953. https://www.ssb.no/a/histstat/nos/nos_xi_185.pdf.",
+   "Statistics Norway. 1978. Historical Statistics 1978. Oslo: Statistics Norway.",
+   "Statistics Norway. 1991. Konsumprisindeksen. Rapporter fra Statistisk Sentrabyra 91/8.",
+   "Statistics Norway. 2014. Annual National Accounts. https://www.ssb.no/statistikkbanken/SelectVarVal/Define.asp?MainTable=NRKonsumHus&KortNavnWeb=nr&PLanguage=1&checked=true.",
+   "Statistics Norway. 2015. Consumer Price Index for Goods and Services by Delivery Sector, 1979M01 - Latest Month. http://data.ssb.no/api/v0/dataset/1100?lang=en [Accessed February 16, 2017].",
+   "Statistics Oslo. 1915. Husholdningsregnskaper fort av Endel Mindre Bemidlede Familier i Kristiania, Bergen, Trondhjem, Drammen, Kristianssand of Hamar i Aaret 1912/13. Oslo: J. Chr. Gundersens Boktrykkeri.",
+   "Statistics Spain. 2016. Standard and Life Conditions (CPI). http://www.ine.es/dyngs/INEbase/en/categoria.htm?c=Estadistica_P&cid=1254735976607 [Accessed February 16, 2017].",
+   "Statistics Sweden. 1933. Detaljpriser och Indexberaekningar Aren 1913-1930. Stockholm: A. B. Hasse W. Tullbergs Boktbyckeri.",
+   "Statistics Sweden. 1961. Konsumentpriser och Indexberaekningar Aren 1931-1959. Stockholm: Kungl. Sociastyrelsen.",
+   "Statistics Switzerland. 2014. Haushaltungsrechnungen von Unselbstaendigerwerbenden: Ausgabenstruktur nach Sozialklassen 1912-1988 (ausgewaehlte Erhebungen). http://www.bfs.admin.ch/bfs/portal/de/index/dienstleistungen/history/01/00/20/01.html.",
+   "Statistics Switzerland. 2015. Rent Index. http://www.bfs.admin.ch/bfs/portal/de/index/themen/05/06/blank/key/index.html [Accessed February 16, 2017].",
+   "Statistics Zurich. 1946-1962. Statistical Yearbook of Zurich. Zurich: City of Zurich.",
+   "Tarbuck, Edward Lance. 1938. Handbook of House Property: A Popular and Practical Guide to the Purchase, Mortgage, Tenancy and Compulsory Sale of Houses and Land, Including Dilapidations and Fixtures; with Examples of All Kinds of Valuations, Information on Building and on the Right Use of Decorative Art. London: Technical Press.",
+   "Tilly, Richard H. 1986. Wohnungsbauinvestitionen waehrend des Urbanisierungsprozesses im Deutschen Reich, 1870-1913. In Stadtwachstum, Industrialisierung, Sozialer Wandel: Beitraege zur Erforschung der Urbanisierung im 19. und 20. Jahrhundert, edited by Teuteberg, H.-J., pp. 61-99. Berlin: Duncker and Humblot.",
+   "U.S. Bureau of Labor Statistics. 2015. Consumer Price Index for All Urban Consumers: Rent of Primary Residence. https://research.stlouisfed.org/fred2/data/CUUR0000SEHA.txt [Accessed February 16, 2017].",
+   "U.S. Census Bureau. 1942. Statistical Abstract of the United States. Washington, D.C.: US Government Printing Office.",
+   "U.S. Census Bureau. 2013. Census of Housing, Tables on Gross Rents and Home Values. https://www.census.gov/hhes/www/housing/census/histcensushsg.html.",
+   "Van den Eeckhout, P., and Peter Scholliers. 1979. De Brusselse Huishuren: 1800-1940. Lonen en Prijzen in Belgie in de 19e en 20e Eeuw. Brussels: VUB.",
+   "Van Fulpen, H. 1984. Een International Vergelijking van Woonuitgaven. Technische Hogeschool Delft Working Paper 13.",
+   "Van Riel, A. 2006. Constructing the Nineteenth-Century Cost of Living Deflator (1800-1913). http://www.iisg.nl/hpw/brannex.php [Accessed February 16, 2017].",
+   "Villa, Piere. 1994. Un Siecle de Donnees Macro-Economiques. Number 86-87 in INSEE resultats. Paris: INSEE.",
+   "Waldenstroem, Daniel. 2014. Swedish Stock and Bond Returns, 1856-2012. In Historical Monetary and Financial Statistics for Sweden, Volume 2: House Prices, Stock Returns, National Accounts and the Riksbank Balance Sheet, 1860-2012, edited by Rodney Edvinsson, Tor Jacobson, and Daniel Waldenstroem, pp. 223-293. Stockholm: Sveriges Riksbank and Ekerlids foerlag.",
+   "Waldenstroem, Daniel. 2017. Wealth-Income Ratios in a Small, Developing Economy: Sweden, 1810-2014. Journal of Economic History 77: 285-313.",
+   "Whitehead, Christine, editor. 2012. The Private Rented Sector in the New Century: A Comparative Approach. Copenhagen: Boligokonimisk Videncenter.",
+   "Wueest, and Partner. 2012. Immo-Monitoring 2012-1.",
+   "Zimmermann, Kaspar. 2017. Breaking Banks? Bank Profitability and Monetary Policy. Unpublished."
+  ],
+  "R6": [
+   "Fama, E. F. and French, K. R. (1993). Common risk factors in the returns on stocks and bonds. Journal of financial economics, 33(1):3-56.",
+   "Gabriel, R. D. (2021). Monetary policy and the wage inflation-unemployment tradeoff. Available at SSRN 3689791.",
+   "Jorda, O., Knoll, K., Kuvshinov, D., Schularick, M., and Taylor, A. M. (2019). The rate of return on everything, 1870-2015. The Quarterly Journal of Economics, 134(3):1225-1298.",
+   "Jorda, , Kornejew, M., Schularick, M., and Taylor, A. M. (2022). Zombies at Large? Corporate Debt Overhang and the Macroeconomy. The Review of Financial Studies.",
+   "Kuvshinov, D. and Zimmermann, K. (2022). The big bang: Stock market capitalization in the long run. Journal of Financial Economics, 145(2):527-552."
+  ],
+  "note": "Diacritics in the JSON references are ASCII-folded (ae/oe/ue etc.); the Markdown file keeps the original characters."
+ },
+ "unreadable_or_figure_only_pages": {
+  "unreadable": [],
+  "figure_only": [
+   "R6:7 (Figures 1 and 2, Fama-French vs RORE comparison, six countries)"
+  ],
+  "figure_plus_text": [
+   "RORE:9",
+   "RORE:10",
+   "RORE:11",
+   "RORE:13",
+   "RORE:14",
+   "RORE:15",
+   "RORE:16",
+   "RORE:17",
+   "RORE:18",
+   "RORE:19",
+   "RORE:20",
+   "RORE:22",
+   "RORE:23",
+   "RORE:24",
+   "RORE:25",
+   "RORE:26",
+   "RORE:31",
+   "RORE:45"
+  ]
+ }
+}

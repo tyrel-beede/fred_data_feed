@@ -1,0 +1,226 @@
+{
+ "_about": "Bibliography of the history layer. Every file under history/ names one of these ids in its provenance column. Citation strings are copied from the documents' own citation guidance where one exists; others are standard references.",
+ "sources": [
+  {
+   "id": "JST-R6",
+   "type": "dataset",
+   "title": "Jordà-Schularick-Taylor Macrohistory Database, Release 6",
+   "authors": [
+    "Òscar Jordà",
+    "Moritz Schularick",
+    "Alan M. Taylor"
+   ],
+   "url": "https://www.macrohistory.net/database/",
+   "citation": "Jordà, Òscar, Moritz Schularick, and Alan M. Taylor. 2017. \"Macrofinancial History and the New Business Cycle Facts.\" In NBER Macroeconomics Annual 2016, volume 31, edited by Martin Eichenbaum and Jonathan A. Parker. Chicago: University of Chicago Press.",
+   "terms_of_use": "transcribed verbatim in history/jst/LICENSE-JST.md and history/jst/data_dictionary.json (CC BY-NC-SA 4.0)",
+   "provenance_class": "measured (compiled from national sources; reconstructed for early decades)",
+   "coverage": "18 advanced economies, annual, 1870-2020",
+   "local_files": [
+    "history/jst/JSTdatasetR6.xlsx",
+    "history/jst/jst_r6.csv"
+   ]
+  },
+  {
+   "id": "JST-DOC-R6",
+   "type": "documentation",
+   "title": "Jordà-Schularick-Taylor Macrohistory Database: Documentation (Release 6)",
+   "url": "https://www.macrohistory.net/database/",
+   "local_files": [
+    "history/jst/data_dictionary.json",
+    "history/jst/data_dictionary.md"
+   ]
+  },
+  {
+   "id": "JST-CRISES",
+   "type": "chronology",
+   "title": "JST Financial Crisis Chronology",
+   "authors": [
+    "Òscar Jordà",
+    "Moritz Schularick",
+    "Alan M. Taylor"
+   ],
+   "local_files": [
+    "history/jst/crises_chronology.csv",
+    "history/jst/crises_chronology_notes.md"
+   ]
+  },
+  {
+   "id": "JST-UPDATE-2016-2020",
+   "type": "documentation",
+   "title": "Documentation on the JST Database Update 2016-2020",
+   "authors": [
+    "Xiaoting Chen",
+    "Sherifa Elsherbiny",
+    "and others (University of Bonn)"
+   ],
+   "local_files": [
+    "history/jst/returns_documentation.md"
+   ]
+  },
+  {
+   "id": "RORE",
+   "type": "paper+data",
+   "title": "The Rate of Return on Everything, 1870-2015",
+   "authors": [
+    "Òscar Jordà",
+    "Katharina Knoll",
+    "Dmitry Kuvshinov",
+    "Moritz Schularick",
+    "Alan M. Taylor"
+   ],
+   "citation": "Jordà, Òscar, Katharina Knoll, Dmitry Kuvshinov, Moritz Schularick, and Alan M. Taylor. 2019. \"The Rate of Return on Everything, 1870-2015.\" Quarterly Journal of Economics 134(3): 1225-1298.",
+   "provenance_class": "measured/derived (total-return series built from price and yield sources)",
+   "local_files": [
+    "history/jst/returns_documentation.md",
+    "history/jst/returns_variables.json"
+   ]
+  },
+  {
+   "id": "NPLH",
+   "type": "paper+data",
+   "title": "No Price Like Home: Global House Prices, 1870-2012",
+   "authors": [
+    "Katharina Knoll",
+    "Moritz Schularick",
+    "Thomas Steger"
+   ],
+   "citation": "Knoll, Katharina, Moritz Schularick, and Thomas Steger. 2017. \"No Price Like Home: Global House Prices, 1870-2012.\" American Economic Review 107(2): 331-353.",
+   "provenance_class": "measured (spliced house-price indices; city-only in early decades for most countries)",
+   "local_files": [
+    "history/jst/house_prices_documentation.md"
+   ]
+  },
+  {
+   "id": "ST-2012",
+   "type": "paper",
+   "title": "Credit Booms Gone Bust: Monetary Policy, Leverage Cycles, and Financial Crises, 1870-2008",
+   "authors": [
+    "Moritz Schularick",
+    "Alan M. Taylor"
+   ],
+   "citation": "Schularick, Moritz, and Alan M. Taylor. 2012. American Economic Review 102(2): 1029-1061.",
+   "why_here": "the credit-growth crisis predictor used in features.csv (d5_loans_gdp)"
+  },
+  {
+   "id": "JST-GREAT-MORTGAGING",
+   "type": "paper",
+   "title": "The Great Mortgaging: Housing Finance, Crises and Business Cycles",
+   "authors": [
+    "Òscar Jordà",
+    "Moritz Schularick",
+    "Alan M. Taylor"
+   ],
+   "citation": "Jordà, Òscar, Moritz Schularick, and Alan M. Taylor. 2016. Economic Policy 31(85): 107-152."
+  },
+  {
+   "id": "DALIO-HCGB-2025",
+   "type": "book",
+   "title": "How Countries Go Broke: The Big Cycle",
+   "authors": [
+    "Ray Dalio"
+   ],
+   "citation": "Dalio, Ray. 2025. How Countries Go Broke: The Big Cycle. New York: Avid Reader Press (Simon & Schuster). ISBN 978-1-5011-2406-8.",
+   "provenance_class": "stated (a voice's template, reads and prescriptions); historical figures therein are secondary data",
+   "copyright_note": "The text is not reproduced here. history/dalio/ holds our own structured encoding with page citations; the PDF stays out of the repository.",
+   "local_files": [
+    "history/dalio/hcgb/part1.md",
+    "history/dalio/hcgb/part2.md",
+    "history/dalio/hcgb/part3.md",
+    "history/dalio/hcgb/part4.md",
+    "history/dalio/hcgb_indicators.csv",
+    "history/dalio/hcgb_template.json",
+    "history/dalio/hcgb_timeline.csv",
+    "history/dalio/reads.csv"
+   ]
+  },
+  {
+   "id": "DALIO-BDC-2018",
+   "type": "book",
+   "title": "Principles for Navigating Big Debt Crises",
+   "authors": [
+    "Ray Dalio"
+   ],
+   "citation": "Dalio, Ray. 2018. Principles for Navigating Big Debt Crises. Westport, CT: Bridgewater. (free PDF edition from economicprinciples.org)",
+   "provenance_class": "stated (template and case narratives); the 48-case statistics are Bridgewater-derived numbers",
+   "copyright_note": "Text not reproduced; our encoding with page citations only.",
+   "local_files": [
+    "history/dalio/bdc/part1_template.md",
+    "history/dalio/bdc/part2a_germany_us1930s.md",
+    "history/dalio/bdc/part2b_us2007.md",
+    "history/dalio/bdc/part3a_compendium.md",
+    "history/dalio/bdc/part3b_compendium.md",
+    "history/dalio/bdc_case_us2007.json",
+    "history/dalio/bdc_cases.csv",
+    "history/dalio/bdc_cases_part2a.json",
+    "history/dalio/bdc_template.json",
+    "history/dalio/reads.csv"
+   ]
+  },
+  {
+   "id": "DALIO-CWO-2021-CHARTS",
+   "type": "charts",
+   "title": "Principles for Dealing with the Changing World Order — charts and tables (companion PDF)",
+   "authors": [
+    "Ray Dalio"
+   ],
+   "citation": "Dalio, Ray. 2021. Principles for Dealing with the Changing World Order. New York: Avid Reader Press. Companion charts PDF from economicprinciples.org.",
+   "local_files": [
+    "history/dalio/cwo_charts_catalogue.md",
+    "history/dalio/cwo_gauges.json"
+   ]
+  },
+  {
+   "id": "DALIO-PRINCIPLES-2011",
+   "type": "document",
+   "title": "Principles (original free edition)",
+   "authors": [
+    "Ray Dalio"
+   ],
+   "citation": "Dalio, Ray. 2011. Principles. Bridgewater Associates (free PDF).",
+   "local_files": [
+    "history/dalio/principles_2011.md",
+    "history/dalio/principles_mechanisms.json"
+   ]
+  },
+  {
+   "id": "DALIO-PRINCIPLES-2017",
+   "type": "book",
+   "title": "Principles: Life and Work",
+   "authors": [
+    "Ray Dalio"
+   ],
+   "citation": "Dalio, Ray. 2017. Principles: Life and Work. New York: Simon & Schuster.",
+   "local_files": [
+    "history/dalio/principles_2017.md",
+    "history/dalio/principles_mechanisms.json"
+   ]
+  },
+  {
+   "id": "FRED",
+   "type": "dataset",
+   "title": "FRED, Federal Reserve Bank of St. Louis",
+   "url": "https://fred.stlouisfed.org/",
+   "why_here": "the bridge series that carry the JST concepts from 2010 to the present (history/bridge/)"
+  },
+  {
+   "id": "OVERRIDES",
+   "type": "corrections",
+   "title": "Overrides to JST values with their own provenance",
+   "local_files": [
+    "history/jst/overrides.csv"
+   ],
+   "provenance_class": "measured (replacement values from the cited official series); the JST value is kept beside each"
+  },
+  {
+   "id": "ANALOGS",
+   "type": "derived",
+   "title": "Analog retrieval and its backtest on the JST panel",
+   "local_files": [
+    "history/analogs/backtest.md",
+    "history/tools/analog_backtest.py",
+    "history/tools/analogs.py"
+   ],
+   "provenance_class": "derived"
+  }
+ ]
+}
