@@ -260,7 +260,7 @@
     "real_hp_growth_3y": 0.0397636
    },
    "outcomes": {
-    "crisis_1_3y": 0.0,
+    "crisis_1_3y": null,
     "rgdp_pc_1y": 1.814463016915857,
     "rgdp_pc_3y": null,
     "req_1y": 6.23882794166466,
@@ -677,18 +677,18 @@
   "crisis_1_3y": {
    "description": "systemic crisis within 1-3 years (share)",
    "analogs": {
-    "n": 15,
+    "n": 14,
     "p25": 0.0,
     "p50": 0.0,
     "p75": 0.0,
-    "mean": 0.13333333333333333
+    "mean": 0.14285714285714285
    },
    "climatology": {
-    "n": 2642,
+    "n": 2604,
     "p25": 0.0,
     "p50": 0.0,
     "p75": 0.0,
-    "mean": 0.09576078728236184
+    "mean": 0.09715821812596007
    }
   },
   "rgdp_pc_1y": {

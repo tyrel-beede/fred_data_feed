@@ -9,7 +9,13 @@ actually followed that country-year:
   - continuous outcomes (real equity 3y, real GDP per capita 3y, long-rate change 3y): rank correlation between the
     analog median and the realized value, and the share of realized values inside the analogs' p25-p75 band vs the
     share inside the climatology's p25-p75 band (a calibrated cone covers ~50%)
-Run per feature group as well as for all groups, so the groups' skill can be compared rather than assumed.
+Run per feature group as well as for all groups, so the groups' skill can be compared rather than assumed, and under
+three exclusion rules, because the rule decides how much of the apparent skill is real:
+  same-country   exclude only the query's own country within +-5 years (its own episode). Other countries in the same
+                 global episode stay in the pool, so a 2007 query can be "predicted" by other countries' 2007 - leaky.
+  block-year     exclude every country within +-5 years of the query year: no cross-sectional leakage.
+  walk-forward   candidates whose 3-year outcome window ends before the query year (and not the own episode): the
+                 true forecast setting - only the past is known. This is the headline.
 
 Usage: python3 -I history/tools/analog_backtest.py [--k 15] [--min-coverage 0.8] [--from-year 1880]
 Writes history/analogs/backtest.md and backtest.json.
@@ -68,7 +74,11 @@ def main():
     report = {"k": a.k, "min_coverage": a.min_coverage, "from_year": a.from_year, "groups": {}}
     sets = {"all": [f for g in GROUPS.values() for f in g]}
     sets.update(GROUPS)
-    for gname, feats in sets.items():
+    sets["credit_change"] = ["d3_loans_gdp", "d5_loans_gdp"]
+    MODES = ("same-country", "block-year", "walk-forward")
+    for gname0, feats in sets.items():
+      for mode in MODES:
+        gname = f"{gname0} | {mode}"
         X = np.array([[np.nan if r.get(f) is None else r[f] for f in feats] for r in rows], dtype=float)
         # robust scale
         med = np.nanmedian(X, axis=0); mad = np.nanmedian(np.abs(X - med), axis=0) * 1.4826
@@ -89,6 +99,10 @@ def main():
             dist[(n_both / len(feats)) < a.min_coverage] = np.inf
             same = (isos == isos[qi]) & (np.abs(years - years[qi]) <= 5)
             dist[same] = np.inf
+            if mode == "block-year":
+                dist[np.abs(years - years[qi]) <= 5] = np.inf
+            elif mode == "walk-forward":
+                dist[years + 3 >= years[qi]] = np.inf
             order = np.argsort(dist)
             picked, taken = [], []
             for ci in order:
@@ -134,9 +148,12 @@ def main():
     os.makedirs(os.path.join(ROOT, "history", "analogs"), exist_ok=True)
     json.dump(report, open(os.path.join(ROOT, "history", "analogs", "backtest.json"), "w"), indent=1)
     L = ["# Analog cone backtest", "",
-         f"Leave-one-episode-out over the panel from {a.from_year} (k={a.k}, own country within ±5 years excluded, "
-         f"coverage ≥ {a.min_coverage:.0%}). Skill is measured against climatology: AUC 0.5 and band coverage equal to "
-         f"the climatology's mean no information.", "",
+         f"Over the panel from {a.from_year} (k={a.k}, coverage ≥ {a.min_coverage:.0%}), under three exclusion rules: "
+         f"same-country (own episode only excluded — leaky across countries in a shared global episode), block-year "
+         f"(all countries within ±5 years excluded) and walk-forward (only candidates whose outcome window closed before "
+         f"the query year — the forecast setting, and the headline). Skill is measured against climatology: AUC 0.5 and "
+         f"band coverage equal to the climatology's mean no information. The same-country rows are kept to show how "
+         f"much of the apparent skill was leakage.", "",
          "| feature set | queries | crisis AUC | crisis rate: top decile vs base | real equity 3y: ρ, band cover (analog / clim), band width (analog / clim) | rGDP/cap 3y: ρ, cover, width | Δ long rate 3y: ρ, cover, width |",
          "|---|---|---|---|---|---|---|"]
     for gname, g in report["groups"].items():

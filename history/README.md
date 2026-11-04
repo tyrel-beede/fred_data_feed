@@ -22,6 +22,7 @@ and the **node** (who recorded it). A revision is a new observed time for the sa
 ```
 history/
   README.md                 this file
+  QC.md, QC_review.md       mechanical checks (tools/qc.py) and the hand-kept content review
   sources.json              bibliography; every file names one of these ids
   jst/
     JSTdatasetR6.xlsx       the Release 6 workbook as distributed (CC BY-NC-SA 4.0; see LICENSE-JST.md)
@@ -34,7 +35,8 @@ history/
     house_prices_documentation.md   how each country's house-price index was spliced (and how weak the early parts are)
     coverage.csv            per country x variable: first year, last year, observations, gaps
     units.csv               the nominal-currency unit per country (euro members are in legacy currency)
-    features.csv            derived annual features for analog matching (see below)
+    overrides.csv           corrections with their own provenance; JST values are never edited
+    features.csv            derived annual features for analog matching (see below), override-flagged per row
     field_map.csv           dials field -> long-history proxy, join rule, caveat
     LICENSE-JST.md          the license and required citations
   dalio/
@@ -55,10 +57,16 @@ history/
     reads.csv               every dated read by the voice across the books, one ledger (status open until resolved)
   bridge/                   written by tools/bridge_pull.py in Actions: FRED series since 2010 that carry the JST
                             concepts for the US, annual aggregates, and the 2016-2020 overlap check
+  analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
+                            backtest.md / backtest.json
   tools/
     jst_build.py            workbook -> csv, coverage, crisis flags, units, features
+    jstlib.py               shared loader (sheet + overrides + features)
     bridge_pull.py          the FRED bridge (needs FRED_API_KEY; runs in the pull workflow)
     assemble.py             merges the documentation and book encodings into the layout above
+    analogs.py              the empirical cone: nearest country-years and what followed, beside climatology
+    analog_backtest.py      skill of the cone by feature group under three exclusion rules
+    qc.py                   mechanical checks -> QC.md
 ```
 
 ## The JST dataset
@@ -82,8 +90,9 @@ Conventions that matter when reading it:
 - **The crisis flag marks the first year of an episode only;** no end years are coded. The chronology document gives the
   narrative and sources for each of the 88 episodes, and lists every change from the previous coding (`crisisJST_old`):
   two added (BEL 1876, JPN 1901), five removed (DEU 1907, DNK 1931, NLD 1893, 1907, 1939), following Baron, Verner and
-  Xiong (2021). The dataset also moves the US Great Depression flag from 1929 to 1930 and adds IRL 2008 (Ireland is new
-  in R6); those two are not discussed in the chronology document and are noted as open in the verification log.
+  Xiong (2021). The dataset also moves the US Great Depression flag from 1929 to 1930 and carries IRL 2008 in
+  `crisisJST` with no `crisisJST_old` flag at all for Ireland; neither change is listed in the document's Section 3,
+  and both are noted as open in the verification log.
 - **Release 6 extended 2016–2020 from different sources than the history** (OECD, IFS, Fama-French factors, Datastream)
   and silently revised some bond returns back to 1988 for six countries; see `returns_documentation.md`.
 
@@ -95,7 +104,7 @@ Anomalies found while checking the data (not corrected in the files; flagged for
 | GBR `stir` 2019–2020 | 0 | ~0.8 / ~0.3 | zero where a value is missing; treat as missing |
 | FIN IRL NLD PRT `stir` 2016–2020 | identical | — | the euro-area rate used for all four; fine, but not national |
 | JPN `tloans` 2018–2020, `revenue`/`expenditure` 2020, AUS fiscal 2020 | blank | — | gaps in the update window (full list in `coverage.csv`) |
-| USA `narrowm` 2020 | 5,206 | M1 was redefined May 2020 | the series is on a pre-redefinition basis; do not splice to M1SL without a ratio |
+| USA `narrowm` | 5,206 (2020) | — | not an anomaly: US narrow money is the monetary base (documentation pp. 193–194), so the bridge uses BOGMBASE, never M1 |
 
 ## Overrides (`jst/overrides.csv`)
 
@@ -145,8 +154,12 @@ A book like his is three different records with three provenances, and the encod
   historical date, observed time the publication date, node Dalio/Bridgewater. Where the primary series exist they are
   in `jst/`; his 48 cases (`bdc_cases.csv`) index into them rather than replace them.
 - **His reads** are forecasts with issue dates (`dalio/reads.csv`): claim, as-of date, horizon, probability where he
-  gives one, and whether the claim is falsifiable as written. Most public claims fail that last test; the share that pass
-  is itself a voice metric. Each read stays `open` until a resolution is logged against the criterion he stated.
+  gives one, the reader's falsifiability flag, and a mechanical `falsifiability_grade` — *strict* needs a dated horizon
+  and a criterion with a quantity or threshold, *conditional* marks claims that hang on an antecedent, *loose* is the
+  reader's "yes" without both, *no* is the reader's "no", *author-scored* are the Daily Observations the book itself
+  grades. Of the 116 book claims, 8 are strict, 70 loose, 8 conditional, 30 not falsifiable: the strict share, 7%, is
+  the voice metric, and it says what one expects of a public voice. Each read stays `open` until a resolution is
+  logged against the criterion he stated. Pages follow each source's convention, stated per row.
 - **His mechanisms** are hypotheses about which game is being played (`hcgb_template.json`: the nine stages and their
   gauges, the five forces, the monetary regimes; `bdc_template.json`: the phase templates and the bubble checklist;
   `cwo_gauges.json`: the power determinants and cycle stages). They enter the dials only as prospective rules, after the
@@ -167,15 +180,21 @@ crisis within 1–3 years, real GDP per capita, real equity and house-price retu
 — as quantiles beside the same outcomes over the whole panel, which is the climatology and the no-skill reference.
 Nothing in it assumes a branch: the analogs are paths that happened.
 
-`tools/analog_backtest.py` asks whether the cone carries information, leave-one-episode-out over the panel from 1880,
-per feature group (`analogs/backtest.md`). With all 20 features, k=15: crisis AUC 0.66 and a top-decile crisis rate
-of 26% against a 9% base rate; rank correlation of the analog median with the realized value +0.36 for three-year real
-equity returns, +0.42 for real GDP per capita, +0.41 for the long-rate change; the analogs' p25–p75 band is narrower
-than the climatology's (36 vs 47 pp for equity) and covers 42–46% of outcomes, i.e. slightly over-confident. By group,
-rates and valuation sort crises best; public-debt levels alone carry nothing at this horizon; bank-credit levels alone
-are weak (the literature's credit signal is the *change*, which is in the set but is diluted by the levels in a plain
-distance). Two caveats on the backtest: standardization uses the whole panel, and analogs may come from years after
-the query, so it is leave-one-out rather than walk-forward; a walk-forward variant is the next refinement.
+`tools/analog_backtest.py` asks whether the cone carries information, over the panel from 1880 (k=15), per feature
+group and under three exclusion rules, because the rule decides how much apparent skill is real (`analogs/backtest.md`).
+Excluding only the query's own episode leaves other countries in the same global episode in the pool — a 2007 query
+"predicted" by other countries' 2007 — and that leaky setting reads crisis AUC 0.66, top decile 25% against a 10% base,
+ρ +0.36 to +0.42 for the three-year outcomes. Remove the leakage and the skill is modest: block-year (every country
+within ±5 years excluded) gives AUC 0.54, top decile 15% vs 10%, ρ +0.20 / +0.30 / +0.25 for three-year real equity,
+real GDP per capita and the long-rate change; walk-forward (only candidates whose outcome window closed before the query
+year — the forecast setting, and the headline) gives AUC 0.59, top decile 13% vs 10%, ρ +0.20 / +0.18 / +0.14, with
+analog bands narrower than climatology's (31 vs 47 pp for equity) but covering only 29–37% of outcomes — the past's
+dispersion under-covers what followed, which is a finding about non-stationarity, not a tuning problem. No single group
+survives on its own in the forecast setting (crisis AUC 0.45–0.58; valuation is the best single group at 0.58); the
+five-year change in loans/GDP alone, the literature's credit-boom signal, scores 0.51 as a nearest-neighbour feature
+(it is a logit result there, not a distance result here). The honest summary: the state vector carries information
+about the next three years, less than a leaky backtest suggests and more than nothing, and the number to beat is now
+on the record.
 
 `analogs/us_2025.md` and `analogs/us_2026ytd.md` are the first live queries, built from the feed with the provenance
 of every value in `analogs/us_2025_query.json`; they cover 9 of the 20 features (no credit, valuation or investment

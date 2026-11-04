@@ -143,13 +143,15 @@ for iso, y in sample:
     if r.get("unemp") is not None and not close(f["unemp"], r["unemp"]):
         errs.append((iso, y, "unemp", f["unemp"], r["unemp"]))
     nxt = [jo.get((iso, y + k), {}).get("crisisJST") for k in (1, 2, 3)]
-    lab = None if all(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0)
+    lab = None if any(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0)
     if not close(f["crisis_next_1_3y"], lab):
         errs.append((iso, y, "crisis_next_1_3y", f["crisis_next_1_3y"], lab))
 check("features: 44 country-years recomputed independently (loans/GDP, 5y change, r-g, unemp, crisis label)", not errs,
       str(errs[:5]) if errs else "all match")
-check("features: overrides applied and flagged", feat[("USA", 2019)]["unemp"] == 3.7 and feat[("USA", 2019)]["overrides"] == "unemp"
-      and feat[("GBR", 2019)]["overrides"] == "stir", "")
+check("features: overrides applied and flagged, with propagation to dependent rows",
+      feat[("USA", 2019)]["unemp"] == 3.7 and feat[("USA", 2019)]["overrides"] == "unemp@2019"
+      and feat[("USA", 2020)]["overrides"] == "unemp@2019" and feat[("GBR", 2019)]["overrides"] == "stir@2019"
+      and "stir@2019" in feat[("GBR", 2021)]["overrides"] if ("GBR", 2021) in feat else True, "")
 
 # ------------------------------------------------------------------ 8. field map tokens
 fm = list(csv.DictReader(open(os.path.join(H, "jst", "field_map.csv"))))
@@ -174,9 +176,12 @@ check("HCGB: five forces of the Big Cycle recorded", t.get("big_cycle") and len(
       str(t["big_cycle"].get("forces"))[:200] if t.get("big_cycle") else "none")
 reads = list(csv.DictReader(open(os.path.join(H, "dalio", "reads.csv"))))
 rp = [r["id"] for r in reads if not r["claim"] or not r["event_time_as_of"] or r["falsifiable"] not in ("True", "False", "")]
-pages_bad = [r["id"] for r in reads if r["book_page"] and (not str(r["book_page"]).isdigit() or not (1 <= int(r["book_page"]) <= 480))]
-check("reads ledger: every row has a claim and an as-of date; falsifiable flag well-formed; pages in range", not rp and not pages_bad,
-      f"{len(reads)} reads; bad {rp[:5]} {pages_bad[:5]}")
+RANGE = {"DALIO-HCGB-2025": (1, 390), "DALIO-BDC-2018": (1, 190)}  # book pages; BDC Part 2 printed pages
+pages_bad = [r["id"] for r in reads if r["book_page"] and (not str(r["book_page"]).isdigit()
+             or not (RANGE[r["source"]][0] <= int(r["book_page"]) <= RANGE[r["source"]][1]))]
+conv_bad = [r["id"] for r in reads if not r.get("page_convention") or r.get("falsifiability_grade") not in ("strict", "loose", "conditional", "no", "author-scored")]
+check("reads ledger: every row has a claim and an as-of date; falsifiable flag well-formed; pages in each source's range; page convention and grade present",
+      not rp and not pages_bad and not conv_bad, f"{len(reads)} reads; bad {rp[:5]} {pages_bad[:5]} {conv_bad[:5]}")
 cases = list(csv.DictReader(open(os.path.join(H, "dalio", "bdc_cases.csv"))))
 cn = [c["case_name"] for c in cases]
 cyr = [c for c in cases if not (c["start_year"].isdigit() and c["end_year"].isdigit() and int(c["start_year"]) <= int(c["end_year"]))]
@@ -224,15 +229,14 @@ lines = ["# history/ — quality control", "",
 for name, ok, detail in results:
     lines.append(f"| {name} | {'PASS' if ok else 'FAIL'} | {detail.replace('|', '/')[:220]} |")
 lines += ["", "## Content review", "",
-          "The content review (encodings against the source documents, design intent against the layout) is recorded below by "
-          "whoever ran it, with date, scope and findings. It is not mechanical and is not overwritten by this script.", ""]
+          "The content review (encodings against the source documents, design intent against the layout) is kept by hand in "
+          "`QC_review.md` and included here verbatim; this script never edits it.", ""]
+rev_path = os.path.join(H, "QC_review.md")
+if os.path.exists(rev_path):
+    lines.append(open(rev_path).read())
 qc_path = os.path.join(H, "QC.md")
-old = open(qc_path).read() if os.path.exists(qc_path) else ""
-tail = old.split("## Content review", 1)[1] if "## Content review" in old else ""
 with open(qc_path, "w") as f:
     f.write("\n".join(lines))
-    if tail.strip():
-        f.write(tail.split("\n", 1)[1] if tail.startswith("\n") else tail)
 print("\n".join(f"{'PASS' if ok else 'FAIL'}  {name}  {detail[:100]}" for name, ok, detail in results))
 print(f"\n{n_ok}/{len(results)} pass -> {rel(qc_path)}")
 sys.exit(0 if n_ok == len(results) else 1)

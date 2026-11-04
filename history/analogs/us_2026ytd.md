@@ -21,7 +21,7 @@ Features used (9 of 20 requested): debt_gdp, d5_debt_gdp, ltrate, term_spread, r
 | # | country | year | distance | crisis in 1-3y | rGDP/cap next 3y | real equity next 3y | real houses next 3y | Δ long rate 3y | Δ unemp 3y |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | ITA | 2005 | 0.46 | yes | +0.9% | -42.3% | +1.6% | +1.1 pp | -1.0 pp |
-| 2 | USA | 2018 | 0.59 | no | — | — | — | — | — |
+| 2 | USA | 2018 | 0.59 | — | — | — | — | — | — |
 | 3 | BEL | 2006 | 0.64 | yes | +0.7% | -39.6% | +6.7% | +0.1 pp | -0.3 pp |
 | 4 | ITA | 1936 | 0.65 | no | +17.3% | +27.0% | — | -0.2 pp | -0.6 pp |
 | 5 | DNK | 1999 | 0.66 | no | +3.7% | -24.4% | +8.6% | +0.1 pp | -0.9 pp |
@@ -40,7 +40,7 @@ Features used (9 of 20 requested): debt_gdp, d5_debt_gdp, ltrate, term_spread, r
 
 | outcome | analogs p25 / p50 / p75 (n) | climatology p25 / p50 / p75 (n) |
 |---|---|---|
-| systemic crisis within 1-3 years (share) | share 20% (n=15) | share 10% (n=2653) |
+| systemic crisis within 1-3 years (share) | share 21% (n=14) | share 10% (n=2615) |
 | real GDP per capita, next 1 year (%) | +1.8 / +3.0 / +4.4 (n=15) | +0.1 / +2.0 / +4.0 (n=2648) |
 | real GDP per capita, next 3 years cumulative (%) | +1.0 / +3.3 / +8.2 (n=14) | +1.5 / +5.8 / +10.3 (n=2612) |
 | real equity total return, next 1 year (%) | -1.7 / +5.0 / +14.7 (n=15) | -5.0 / +6.2 / +17.3 (n=2258) |

@@ -22,6 +22,8 @@ related columns), the documentation asks for this citation as well:
 > Òscar Jordà, Katharina Knoll, Dmitry Kuvshinov, Moritz Schularick, and Alan M. Taylor. 2019. "The Rate of Return on
 > Everything, 1870–2015." Quarterly Journal of Economics 134(3): 1225–1298.
 
+(The documentation's own wording of that citation predates publication and reads "Quarterly Journal of Economics. Forthcoming."; the published reference is given above.)
+
 The house-price series (`hpnom`) rest on Knoll, Schularick and Steger (2017), "No Price Like Home: Global House Prices,
 1870–2012," American Economic Review 107(2): 331–353.
 

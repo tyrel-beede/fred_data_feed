@@ -1683,31 +1683,38 @@
  ],
  "bubble_checklist": [
   {
-   "question": "Prices are high relative to traditional measures",
+   "gauge": "valuation",
+   "paraphrase": "prices sit high against the usual yardsticks (earnings, rents, incomes)",
    "page": 20
   },
   {
-   "question": "Prices are discounting future rapid price appreciation from these high levels",
+   "gauge": "extrapolation",
+   "paraphrase": "prices already assume further rapid gains from those high levels",
    "page": 20
   },
   {
-   "question": "There is broad bullish sentiment",
+   "gauge": "sentiment",
+   "paraphrase": "bullishness is broad, not confined to specialists",
    "page": 20
   },
   {
-   "question": "Purchases are being financed by high leverage",
+   "gauge": "leverage",
+   "paraphrase": "purchases are financed with a lot of borrowed money",
    "page": 20
   },
   {
-   "question": "Buyers have made exceptionally extended forward purchases (e.g., built inventory, contracted for supplies, etc.) to speculate or to protect themselves against future price gains",
+   "gauge": "forward commitments",
+   "paraphrase": "buyers have locked in unusually far ahead - stockpiles, supply contracts, pre-orders - to speculate or to hedge against higher prices",
    "page": 20
   },
   {
-   "question": "New buyers (i.e., those who weren't previously in the market) have entered the market",
+   "gauge": "new entrants",
+   "paraphrase": "people who were never in the market before are now buying",
    "page": 20
   },
   {
-   "question": "Stimulative monetary policy threatens to inflate the bubble even more (and tight policy to cause its popping)",
+   "gauge": "policy",
+   "paraphrase": "easy money is still feeding the bubble, and tightening would be what pops it",
    "page": 20
   }
  ],
@@ -3039,5 +3046,6 @@
    "disclosures": 67
   },
   "outside_range_used": "Part 2 TOC (PDF p.71) and Part 3 TOC (PDF p.261) extracted as text to complete the toc field"
- }
+ },
+ "bubble_checklist_note": "Seven measurable characteristics of a bubble, paraphrased from p. 20 (the book's wording is not reproduced); the dials' stage score S1-S7 maps onto these."
 }

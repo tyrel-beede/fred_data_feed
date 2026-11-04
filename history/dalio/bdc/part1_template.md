@@ -122,14 +122,14 @@ Template basis (p.13): 48 big debt cycles — all cases in large countries where
 - Market behavior: equities rise from ≈62 to ≈100 indexed over the bubble band (p.18, chart read); short rate drifts from ≈3.5% to ≈4.5% with "not much tightening until later in the bubble" (p.20); yield curve ratio rises from ≈0.7 toward 1.0 (p.22).
 - Transition to the top: central bank tightening/rising rates (or an external liquidity tightening) begins to squeeze debt service.
 
-**Bubble-identification checklist (p.20), verbatim ("the most defining characteristics of bubbles that can be measured are"):**
-1. "Prices are high relative to traditional measures"
-2. "Prices are discounting future rapid price appreciation from these high levels"
-3. "There is broad bullish sentiment"
-4. "Purchases are being financed by high leverage"
-5. "Buyers have made exceptionally extended forward purchases (e.g., built inventory, contracted for supplies, etc.) to speculate or to protect themselves against future price gains"
-6. "New buyers (i.e., those who weren't previously in the market) have entered the market"
-7. "Stimulative monetary policy threatens to inflate the bubble even more (and tight policy to cause its popping)"
+**Bubble-identification checklist (p.20), paraphrased** — the seven measurable characteristics he lists:
+1. valuation: prices sit high against the usual yardsticks (earnings, rents, incomes)
+2. extrapolation: prices already assume further rapid gains from those high levels
+3. sentiment: bullishness is broad, not confined to specialists
+4. leverage: purchases are financed with a lot of borrowed money
+5. forward commitments: buyers have locked in unusually far ahead - stockpiles, supply contracts, pre-orders - to speculate or to hedge against higher prices
+6. new entrants: people who were never in the market before are now buying
+7. policy: easy money is still feeding the bubble, and tightening would be what pops it
 
 Method (p.20): look at all the big markets, see which are in bubbles, then look at what is connected to them that would be hit when they pop.
 

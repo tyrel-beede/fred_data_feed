@@ -14,7 +14,8 @@ Usage
 Options
   --k 15                 number of distinct analog episodes (one per country within a +-5-year window)
   --features credit,debt,rates,activity,valuation   feature groups (default all)
-  --regime FLOAT|PEG|any restrict candidates by peg_type (default any)
+  --regime nonpeg|peg|any  restrict candidates by monetary regime: nonpeg = peg_type FLOAT or BASE (the anchor
+                         country of a system is not pegged), peg = PEG (default any)
   --from-year 1870       earliest candidate year
   --min-coverage 0.6     minimum share of the chosen features the query and the candidate must both have
   --out history/analogs  output directory (a .md and a .json per query)
@@ -72,7 +73,7 @@ def forward(jst, iso, y):
 
     nxt = [g("crisisJST", k) for k in (1, 2, 3)]
     out = {
-        "crisis_1_3y": None if all(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0),
+        "crisis_1_3y": None if any(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0),
         "rgdp_pc_1y": pct(cum_growth("rgdpmad", 1)),
         "rgdp_pc_3y": pct(cum_growth("rgdpmad", 3)),
         "req_1y": pct(cum_real("eq_tr", 1)),
@@ -135,8 +136,10 @@ def main():
         sys.exit(f"query covers {len(q_have)}/{len(feats)} features; below --min-coverage")
 
     # robust standardization across the panel (median / MAD per feature), on candidate rows
+    REG = {"any": None, "nonpeg": {"FLOAT", "BASE"}, "peg": {"PEG"}, "FLOAT": {"FLOAT", "BASE"}, "PEG": {"PEG"}}
+    allowed = REG.get(a.regime, {a.regime})
     cands = [r for r in rows if r["year"] >= a.from_year and (r["iso"], r["year"]) not in exclude
-             and (a.regime == "any" or peg.get((r["iso"], r["year"])) == a.regime)]
+             and (allowed is None or peg.get((r["iso"], r["year"])) in allowed)]
     scale = {}
     for f in q_have:
         vals = sorted(r[f] for r in cands if r.get(f) is not None)

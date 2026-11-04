@@ -4,7 +4,7 @@
 
 Source: Ray Dalio, *Principles for Navigating Big Debt Crises* (Bridgewater, 2018), free PDF edition,
 file `Big_Debt_Crises.pdf`. Range covered here: **PDF pages 259–362** (Part 3 printed pages 1–104;
-printed page = PDF page − 258). Companion files: `bdc_cases_a.csv` (22 rows) and `bdc_cases_a_columns.txt`.
+printed page = PDF page − 258). Companion files: `bdc_cases.csv` (22 rows) and `bdc_cases_schema.md`.
 
 All numbers below are transcribed from the book; prose is paraphrased. Short quotes (≤25 words) carry a page.
 
@@ -390,7 +390,7 @@ gives no per-case lesson line.
 
 There is **no tabular statistics block** in this edition. Each case's standardized numbers live in the
 auto-text sentences and in the attribution-chart labels. The CSV therefore has one column per
-standardized sentence slot. Exact column order is in `bdc_cases_a_columns.txt` (91 columns). The
+standardized sentence slot. Exact column order is in `bdc_cases_schema.md` (91 columns). The
 second-half encoder should use the same names and fill from the same phrases:
 
 | CSV column | Source phrase in the auto-text (number in brackets) |

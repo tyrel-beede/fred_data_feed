@@ -93,13 +93,15 @@ def main():
     # 5) derived features (annual; per country; all ratios are unit-free). Features are computed on the overridden
     #    view: replacements from overrides.csv are applied in memory (the JST values on disk are untouched) and the
     #    affected rows carry the overridden variable names in the 'overrides' column.
-    applied = {}
+    applied = {}  # (iso, year) -> ["var@year", ...]: the row's own cell, and every later row within the 5-year lookback
     for o in load_overrides():
         if o["action"] == "replace":
             r = by.get((o["iso"], int(o["year"])))
             if r is not None:
                 r[o["variable"]] = float(o["override_value"])
-                applied.setdefault((o["iso"], int(o["year"])), []).append(o["variable"])
+                for yy in range(int(o["year"]), int(o["year"]) + 6):  # differences and growth rates look back up to 5 years
+                    if (o["iso"], yy) in by:
+                        applied.setdefault((o["iso"], yy), []).append(f"{o['variable']}@{o['year']}")
 
     def g(iso, y, k):
         r = by.get((iso, y))
@@ -158,7 +160,7 @@ def main():
             lt, st = g(iso, y, "ltrate"), g(iso, y, "stir")
             infl = growth(iso, y, "cpi")
             dg = debt_gdp(iso, y)
-            nxt = [g(iso, y + k, "crisisJST") for k in (1, 2, 3)]
+            nxt = [g(iso, y + k, "crisisJST") for k in (1, 2, 3)]  # label censored unless all three forward years exist
             row = [iso, y,
                    loans_gdp(iso, y), diff(iso, y, loans_gdp, 3), diff(iso, y, loans_gdp, 5),
                    mort_gdp(iso, y), diff(iso, y, mort_gdp, 5),
@@ -176,7 +178,7 @@ def main():
                    ratio(g(iso, y, "ca"), g(iso, y, "gdp")), g(iso, y, "lev"), g(iso, y, "ltd"), g(iso, y, "noncore"),
                    g(iso, y, "unemp"), diff(iso, y, lambda i, yy: g(i, yy, "unemp"), 1), growth(iso, y, "xrusd"),
                    g(iso, y, "crisisJST"),
-                   None if all(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0),
+                   None if any(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0),
                    ",".join(applied.get((iso, y), []))]
             feats.append(["" if v is None else (f"{v:.6g}" if isinstance(v, float) else v) for v in row])
     write_csv(os.path.join(JST, "features.csv"), FH, feats)

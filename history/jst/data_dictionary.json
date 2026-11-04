@@ -9182,7 +9182,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "documented only in the label table; coding rules per country in the countries block"
   },
   {
    "name": "peg_base",
@@ -9196,7 +9197,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "documented only in the label table"
   },
   {
    "name": "crisisJST",
@@ -9210,7 +9212,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "crises_chronology_notes.md (definition, dating rule, deviations)"
   },
   {
    "name": "crisisJST_old",
@@ -9224,7 +9227,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "crises_chronology_notes.md"
   },
   {
    "name": "JSTtrilemmaIV",
@@ -12471,7 +12475,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "returns_documentation.md / returns_variables.json"
   },
   {
    "name": "housing_tr",
@@ -12485,7 +12490,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "returns_documentation.md"
   },
   {
    "name": "bond_tr",
@@ -12499,7 +12505,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "returns_documentation.md"
   },
   {
    "name": "bill_rate",
@@ -12513,7 +12520,8 @@
     6,
     7
    ],
-   "documented_in_pp_1_100": false
+   "documented_in_pp_1_100": false,
+   "see_also": "returns_documentation.md"
   },
   {
    "name": "rent_ipolated",
@@ -20734,7 +20742,7 @@
    "Niklas Flamang (Berkeley)"
   ],
   "r6_changes": "Not described anywhere in pp. 1-100. The only release-related statements are the label-table notes that crisisJST is 'included since R5' and crisisJST_old is 'as coded in all prior releases (R1 – R4)', and the July 2022 date with data extended to 2020.",
-  "page_range_covered": "PDF pages 1-100 of 201 (front matter, label table, table of contents, Australia, Belgium, Canada, Denmark, Finland, France, Germany, and Ireland up to Government Revenues 1960-1969)",
+  "page_range_covered": "PDF pages 1-201 (both halves merged by variable)",
   "countries_in_range": {
    "Australia": "AUS",
    "Belgium": "BEL",

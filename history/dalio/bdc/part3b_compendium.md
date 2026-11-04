@@ -4,7 +4,7 @@
 
 Source: Ray Dalio, *Principles for Navigating Big Debt Crises* (Bridgewater, 2018), free PDF edition. Part 3 printed page = PDF page − 258. This file covers printed pages 105–221: the 26 cases from Argentina 1980 to Russia 2014 (the "Non-Domestic Currency Debt Crises (Typically Inflationary Deleveragings)" group, minus Germany 1918 which is on printed p. 99, PDF 357, outside this range), the Appendix on Macroprudential Policies, the endnotes, and the Disclosures page.
 
-Companion CSV: `bdc_cases_b.csv` (64 columns, 26 rows); column list in `bdc_cases_b_columns.txt`.
+Companion CSV: `bdc_cases.csv` (64 columns, 26 rows); column list in `bdc_cases_schema.md`.
 
 ---
 

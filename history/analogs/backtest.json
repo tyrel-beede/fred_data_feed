@@ -3,11 +3,11 @@
  "min_coverage": 0.8,
  "from_year": 1880,
  "groups": {
-  "all": {
+  "all | same-country": {
    "n_queries": 2140,
-   "crisis_auc": 0.6599174870053688,
-   "crisis_base_rate": 0.09472196041470311,
-   "crisis_rate_top_decile": 0.25943396226415094,
+   "crisis_auc": 0.6609472531242989,
+   "crisis_base_rate": 0.09635666347075743,
+   "crisis_rate_top_decile": 0.25,
    "req_3y": {
     "spearman": 0.3592561701736849,
     "n": 1923,
@@ -33,11 +33,71 @@
     "climatology_band_width": 1.0408
    }
   },
-  "credit": {
+  "all | block-year": {
+   "n_queries": 2140,
+   "crisis_auc": 0.5416234477479974,
+   "crisis_base_rate": 0.09635666347075743,
+   "crisis_rate_top_decile": 0.15384615384615385,
+   "req_3y": {
+    "spearman": 0.20019985074587254,
+    "n": 1924,
+    "coverage_analog_band": 0.39397089397089397,
+    "coverage_climatology_band": 0.501039501039501,
+    "analog_band_width_median": 36.00979416049077,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.29657667391545234,
+    "n": 2086,
+    "coverage_analog_band": 0.4405560882070949,
+    "coverage_climatology_band": 0.5172579098753596,
+    "analog_band_width_median": 6.732551139967724,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.2515507424476504,
+    "n": 2078,
+    "coverage_analog_band": 0.38931665062560156,
+    "coverage_climatology_band": 0.4735322425409047,
+    "analog_band_width_median": 0.9416991750000006,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "all | walk-forward": {
+   "n_queries": 2079,
+   "crisis_auc": 0.5895592461026766,
+   "crisis_base_rate": 0.09530864197530864,
+   "crisis_rate_top_decile": 0.13366336633663367,
+   "req_3y": {
+    "spearman": 0.19940833951906603,
+    "n": 1863,
+    "coverage_analog_band": 0.3134728931830381,
+    "coverage_climatology_band": 0.487385936661299,
+    "analog_band_width_median": 30.917635542294516,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.17918073968290718,
+    "n": 2025,
+    "coverage_analog_band": 0.37135802469135804,
+    "coverage_climatology_band": 0.5150617283950617,
+    "analog_band_width_median": 6.159333322079718,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.14424049795905133,
+    "n": 2017,
+    "coverage_analog_band": 0.28953891918691127,
+    "coverage_climatology_band": 0.45810609816559245,
+    "analog_band_width_median": 0.6619417500000007,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "credit | same-country": {
    "n_queries": 2125,
-   "crisis_auc": 0.5523337191461872,
-   "crisis_base_rate": 0.09198672356567093,
-   "crisis_rate_top_decile": 0.1619047619047619,
+   "crisis_auc": 0.5411371960733858,
+   "crisis_base_rate": 0.09340394800192585,
+   "crisis_rate_top_decile": 0.1497584541062802,
    "req_3y": {
     "spearman": -0.01665919532404506,
     "n": 1860,
@@ -63,11 +123,71 @@
     "climatology_band_width": 1.0408
    }
   },
-  "debt": {
+  "credit | block-year": {
+   "n_queries": 2125,
+   "crisis_auc": 0.4974500550229673,
+   "crisis_base_rate": 0.09340394800192585,
+   "crisis_rate_top_decile": 0.08695652173913043,
+   "req_3y": {
+    "spearman": -0.06573981178072204,
+    "n": 1860,
+    "coverage_analog_band": 0.4295698924731183,
+    "coverage_climatology_band": 0.4967741935483871,
+    "analog_band_width_median": 43.696367594792676,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.09871300703378033,
+    "n": 2077,
+    "coverage_analog_band": 0.4073182474723158,
+    "coverage_climatology_band": 0.5127587867116032,
+    "analog_band_width_median": 6.865702540652508,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.008554764615853893,
+    "n": 2058,
+    "coverage_analog_band": 0.42808551992225463,
+    "coverage_climatology_band": 0.47667638483965014,
+    "analog_band_width_median": 1.0733333333333328,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "credit | walk-forward": {
+   "n_queries": 2082,
+   "crisis_auc": 0.5095553548128073,
+   "crisis_base_rate": 0.09292035398230089,
+   "crisis_rate_top_decile": 0.07389162561576355,
+   "req_3y": {
+    "spearman": -0.07060784062488987,
+    "n": 1829,
+    "coverage_analog_band": 0.34499726626571897,
+    "coverage_climatology_band": 0.48933843630399126,
+    "analog_band_width_median": 35.65199259463195,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.08475794837551516,
+    "n": 2034,
+    "coverage_analog_band": 0.42674532940019666,
+    "coverage_climatology_band": 0.5137659783677483,
+    "analog_band_width_median": 7.032621992246133,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.020721804569948214,
+    "n": 2015,
+    "coverage_analog_band": 0.286848635235732,
+    "coverage_climatology_band": 0.4660049627791563,
+    "analog_band_width_median": 0.623229166666667,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "debt | same-country": {
    "n_queries": 2220,
-   "crisis_auc": 0.5099447182549676,
-   "crisis_base_rate": 0.09482758620689655,
-   "crisis_rate_top_decile": 0.09090909090909091,
+   "crisis_auc": 0.5241395986136859,
+   "crisis_base_rate": 0.09640221402214022,
+   "crisis_rate_top_decile": 0.09259259259259259,
    "req_3y": {
     "spearman": 0.2396682365154161,
     "n": 1901,
@@ -93,11 +213,71 @@
     "climatology_band_width": 1.0408
    }
   },
-  "rates": {
+  "debt | block-year": {
+   "n_queries": 2220,
+   "crisis_auc": 0.4211942915900359,
+   "crisis_base_rate": 0.09640221402214022,
+   "crisis_rate_top_decile": 0.05092592592592592,
+   "req_3y": {
+    "spearman": 0.1729535954712616,
+    "n": 1901,
+    "coverage_analog_band": 0.41820094687006837,
+    "coverage_climatology_band": 0.5034192530247238,
+    "analog_band_width_median": 39.042203623778114,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": -0.006035288740987293,
+    "n": 2168,
+    "coverage_analog_band": 0.4345018450184502,
+    "coverage_climatology_band": 0.5216789667896679,
+    "analog_band_width_median": 7.5931009389965105,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.21052603677827147,
+    "n": 2160,
+    "coverage_analog_band": 0.42777777777777776,
+    "coverage_climatology_band": 0.48518518518518516,
+    "analog_band_width_median": 0.9770416666662503,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "debt | walk-forward": {
+   "n_queries": 2180,
+   "crisis_auc": 0.453529135137446,
+   "crisis_base_rate": 0.09727443609022557,
+   "crisis_rate_top_decile": 0.04716981132075472,
+   "req_3y": {
+    "spearman": 0.18628670443156592,
+    "n": 1873,
+    "coverage_analog_band": 0.33048585157501337,
+    "coverage_climatology_band": 0.49759743726641753,
+    "analog_band_width_median": 30.15297121760767,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.07300290349620542,
+    "n": 2128,
+    "coverage_analog_band": 0.42387218045112784,
+    "coverage_climatology_band": 0.5202067669172933,
+    "analog_band_width_median": 7.125152525659331,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.20160122569665298,
+    "n": 2120,
+    "coverage_analog_band": 0.2811320754716981,
+    "coverage_climatology_band": 0.47594339622641507,
+    "analog_band_width_median": 0.5562937499999999,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "rates | same-country": {
    "n_queries": 2372,
-   "crisis_auc": 0.6475283202475215,
-   "crisis_base_rate": 0.09600679694137638,
-   "crisis_rate_top_decile": 0.2127659574468085,
+   "crisis_auc": 0.6419683497182693,
+   "crisis_base_rate": 0.09749784296807593,
+   "crisis_rate_top_decile": 0.21645021645021645,
    "req_3y": {
     "spearman": 0.2611520677952441,
     "n": 2052,
@@ -123,11 +303,71 @@
     "climatology_band_width": 1.0408
    }
   },
-  "activity": {
+  "rates | block-year": {
+   "n_queries": 2372,
+   "crisis_auc": 0.495043274843906,
+   "crisis_base_rate": 0.09749784296807593,
+   "crisis_rate_top_decile": 0.09523809523809523,
+   "req_3y": {
+    "spearman": 0.08434676752735622,
+    "n": 2056,
+    "coverage_analog_band": 0.4178015564202335,
+    "coverage_climatology_band": 0.5033947623666344,
+    "analog_band_width_median": 40.68781600089734,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.08845524821672099,
+    "n": 2312,
+    "coverage_analog_band": 0.4273356401384083,
+    "coverage_climatology_band": 0.5159620362381363,
+    "analog_band_width_median": 7.434628698305422,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.030184929741978738,
+    "n": 2297,
+    "coverage_analog_band": 0.3844144536351763,
+    "coverage_climatology_band": 0.49109856708640903,
+    "analog_band_width_median": 0.9163875083333335,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "rates | walk-forward": {
+   "n_queries": 2312,
+   "crisis_auc": 0.5143633847147305,
+   "crisis_base_rate": 0.09610274579273693,
+   "crisis_rate_top_decile": 0.12,
+   "req_3y": {
+    "spearman": 0.06472297872330264,
+    "n": 2022,
+    "coverage_analog_band": 0.33086053412462907,
+    "coverage_climatology_band": 0.49554896142433236,
+    "analog_band_width_median": 31.340598268058912,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.1331496124170524,
+    "n": 2258,
+    "coverage_analog_band": 0.39105403011514617,
+    "coverage_climatology_band": 0.5146147032772365,
+    "analog_band_width_median": 6.9268302374287885,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.0008588296507232054,
+    "n": 2243,
+    "coverage_analog_band": 0.3013820775746768,
+    "coverage_climatology_band": 0.4797146678555506,
+    "analog_band_width_median": 0.6223604083333332,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "activity | same-country": {
    "n_queries": 1874,
-   "crisis_auc": 0.5867994710539979,
-   "crisis_base_rate": 0.07758620689655173,
-   "crisis_rate_top_decile": 0.12972972972972974,
+   "crisis_auc": 0.5863083399628746,
+   "crisis_base_rate": 0.07912087912087912,
+   "crisis_rate_top_decile": 0.13186813186813187,
    "req_3y": {
     "spearman": 0.22255558662732905,
     "n": 1641,
@@ -153,11 +393,71 @@
     "climatology_band_width": 1.0408
    }
   },
-  "valuation": {
+  "activity | block-year": {
+   "n_queries": 1874,
+   "crisis_auc": 0.48015073919384776,
+   "crisis_base_rate": 0.07912087912087912,
+   "crisis_rate_top_decile": 0.06593406593406594,
+   "req_3y": {
+    "spearman": 0.15656750359686403,
+    "n": 1641,
+    "coverage_analog_band": 0.4082876294942108,
+    "coverage_climatology_band": 0.4783668494820232,
+    "analog_band_width_median": 41.58722927999722,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.2510321484104534,
+    "n": 1820,
+    "coverage_analog_band": 0.43241758241758244,
+    "coverage_climatology_band": 0.5208791208791209,
+    "analog_band_width_median": 6.853319926290708,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.2839919456747033,
+    "n": 1812,
+    "coverage_analog_band": 0.4503311258278146,
+    "coverage_climatology_band": 0.4381898454746137,
+    "analog_band_width_median": 1.2651158330837489,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "activity | walk-forward": {
+   "n_queries": 1824,
+   "crisis_auc": 0.5109797609797609,
+   "crisis_base_rate": 0.07457627118644068,
+   "crisis_rate_top_decile": 0.07909604519774012,
+   "req_3y": {
+    "spearman": 0.106749173757087,
+    "n": 1603,
+    "coverage_analog_band": 0.35558328134747347,
+    "coverage_climatology_band": 0.46912039925140364,
+    "analog_band_width_median": 36.66921935525193,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.17486234023103128,
+    "n": 1770,
+    "coverage_analog_band": 0.4129943502824859,
+    "coverage_climatology_band": 0.5175141242937853,
+    "analog_band_width_median": 6.975500536596251,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.24103397298929544,
+    "n": 1762,
+    "coverage_analog_band": 0.3444948921679909,
+    "coverage_climatology_band": 0.42224744608399545,
+    "analog_band_width_median": 0.9068749999999997,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "valuation | same-country": {
    "n_queries": 1658,
-   "crisis_auc": 0.6124784366399347,
-   "crisis_base_rate": 0.09317904993909866,
-   "crisis_rate_top_decile": 0.17073170731707318,
+   "crisis_auc": 0.6077040745376164,
+   "crisis_base_rate": 0.09503105590062112,
+   "crisis_rate_top_decile": 0.17391304347826086,
    "req_3y": {
     "spearman": 0.15980013904290197,
     "n": 1607,
@@ -180,6 +480,156 @@
     "coverage_analog_band": 0.4406033940917662,
     "coverage_climatology_band": 0.45505971087366437,
     "analog_band_width_median": 1.0848124999999995,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "valuation | block-year": {
+   "n_queries": 1658,
+   "crisis_auc": 0.5811072083832389,
+   "crisis_base_rate": 0.09503105590062112,
+   "crisis_rate_top_decile": 0.14285714285714285,
+   "req_3y": {
+    "spearman": 0.0689711533111021,
+    "n": 1607,
+    "coverage_analog_band": 0.4187927815805849,
+    "coverage_climatology_band": 0.5009334163036714,
+    "analog_band_width_median": 41.0180537892391,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": -0.09957436135134964,
+    "n": 1610,
+    "coverage_analog_band": 0.40869565217391307,
+    "coverage_climatology_band": 0.5571428571428572,
+    "analog_band_width_median": 6.736975097410272,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.020888606308465583,
+    "n": 1591,
+    "coverage_analog_band": 0.4085480829666876,
+    "coverage_climatology_band": 0.45505971087366437,
+    "analog_band_width_median": 1.0847480158730165,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "valuation | walk-forward": {
+   "n_queries": 1611,
+   "crisis_auc": 0.5788284981598935,
+   "crisis_base_rate": 0.09213051823416507,
+   "crisis_rate_top_decile": 0.12179487179487179,
+   "req_3y": {
+    "spearman": 0.08477430404041977,
+    "n": 1560,
+    "coverage_analog_band": 0.34935897435897434,
+    "coverage_climatology_band": 0.4897435897435897,
+    "analog_band_width_median": 32.4423619257829,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": -0.012914815030916956,
+    "n": 1563,
+    "coverage_analog_band": 0.41586692258477287,
+    "coverage_climatology_band": 0.5540626999360204,
+    "analog_band_width_median": 6.638327884965811,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": -0.01589372019577811,
+    "n": 1544,
+    "coverage_analog_band": 0.25323834196891193,
+    "coverage_climatology_band": 0.43976683937823835,
+    "analog_band_width_median": 0.5712499999999998,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "credit_change | same-country": {
+   "n_queries": 2250,
+   "crisis_auc": 0.5379702746018833,
+   "crisis_base_rate": 0.09367894497498863,
+   "crisis_rate_top_decile": 0.1552511415525114,
+   "req_3y": {
+    "spearman": -0.016904036489476013,
+    "n": 1938,
+    "coverage_analog_band": 0.4411764705882353,
+    "coverage_climatology_band": 0.4979360165118679,
+    "analog_band_width_median": 43.010053190091384,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.08628803405213066,
+    "n": 2199,
+    "coverage_analog_band": 0.4324693042291951,
+    "coverage_climatology_band": 0.5120509322419281,
+    "analog_band_width_median": 7.436813067019882,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.05708006355582104,
+    "n": 2179,
+    "coverage_analog_band": 0.4497475906379073,
+    "coverage_climatology_band": 0.48141349242771914,
+    "analog_band_width_median": 1.0641673333333332,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "credit_change | block-year": {
+   "n_queries": 2250,
+   "crisis_auc": 0.5127399782734717,
+   "crisis_base_rate": 0.09367894497498863,
+   "crisis_rate_top_decile": 0.0958904109589041,
+   "req_3y": {
+    "spearman": -0.04600126095044138,
+    "n": 1938,
+    "coverage_analog_band": 0.4277605779153767,
+    "coverage_climatology_band": 0.4979360165118679,
+    "analog_band_width_median": 42.71932612685599,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.009994730983947276,
+    "n": 2199,
+    "coverage_analog_band": 0.41882673942701226,
+    "coverage_climatology_band": 0.5120509322419281,
+    "analog_band_width_median": 7.4298760424284875,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": -0.009526938192672718,
+    "n": 2179,
+    "coverage_analog_band": 0.4359798072510326,
+    "coverage_climatology_band": 0.48141349242771914,
+    "analog_band_width_median": 1.0654354621249995,
+    "climatology_band_width": 1.0408
+   }
+  },
+  "credit_change | walk-forward": {
+   "n_queries": 2206,
+   "crisis_auc": 0.5119182219274178,
+   "crisis_base_rate": 0.09466357308584687,
+   "crisis_rate_top_decile": 0.06511627906976744,
+   "req_3y": {
+    "spearman": -0.06922775841071376,
+    "n": 1910,
+    "coverage_analog_band": 0.3586387434554974,
+    "coverage_climatology_band": 0.4905759162303665,
+    "analog_band_width_median": 34.85794642852926,
+    "climatology_band_width": 47.08816151204502
+   },
+   "rgdp_pc_3y": {
+    "spearman": 0.0331795823617931,
+    "n": 2155,
+    "coverage_analog_band": 0.44269141531322503,
+    "coverage_climatology_band": 0.511368909512761,
+    "analog_band_width_median": 7.881334068985962,
+    "climatology_band_width": 8.713584938994561
+   },
+   "dltrate_3y": {
+    "spearman": 0.014780826384223946,
+    "n": 2135,
+    "coverage_analog_band": 0.26651053864168617,
+    "coverage_climatology_band": 0.4711943793911007,
+    "analog_band_width_median": 0.6059978416666665,
     "climatology_band_width": 1.0408
    }
   }
