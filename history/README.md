@@ -67,8 +67,8 @@ history/
     assemble.py             merges the documentation and book encodings into the layout above
     analogs.py              the empirical cone: nearest country-years and what followed, beside climatology
     analog_backtest.py      skill of the cone by feature group under three exclusion rules
-    features2.py, wf.py, analog_test2.py, label_test.py   test 2 (subnet, rank, flux; measured targets; horizons) and
-                            the tests of the crisis label itself
+    features2.py, wf.py, analog_test2.py, label_test.py, lag_test.py   test 2 (subnet, rank, flux; measured targets;
+                            horizons), the tests of the crisis label itself, and the lead-lag measurements
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -220,6 +220,21 @@ three years (0.56–0.58) and is gone by four (0.51) and five (0.48): the cone's
 Where the signal is. Measured targets are far more predictable than the label: a 30% real equity drawdown within three
 years AUC 0.67 (top decile 35% against a 12.5% base rate), a 5-pp credit contraction 0.68 (top decile 45% vs 17%), a
 5% real GDP per capita fall 0.61, a 3-pp unemployment spike 0.59.
+
+## Lead-lag: the path into T (`tools/lag_test.py`, `analogs/lag_test.md`)
+
+Does the path into T carry information the point at T does not? Three measurements. *Trajectory analogs*: matching on
+the state at T, T−1 and T−2 (60 dimensions) makes the nearest-neighbour cone worse, not better (drawdown 0.61 → 0.55,
+label 0.53 → 0.50) — stacking lagged copies dilutes an equal-weighted distance with redundant dimensions; adding only
+five lagged features with proven lead keeps it level (0.665 / 0.667 on drawdown and contraction). *Lead profiles*:
+for every feature and lag 0–4, the single-feature AUC for each event, with pre/post-1950 agreement. The drawdown's
+information is coincident and persistent (low dividend yield, low r−g, low real rate, high inflation, all best at
+lag 0, decaying slowly); the credit contraction has true leads — the *level* of loans/GDP three to four years earlier
+(0.73 at k=3–4, era-consistent), equity weakness one year earlier (0.65 at k=1), house-price weakness coincident.
+*Mile markers*: the event rate as markers arrive in sequence — credit contraction 17% unconditional → 30% with
+loans/GDP in the top tercile at T−3 → 42% with real equity gains ≤ 0 at T−1 → 51% with real house prices ≤ 0 at T
+(post-1950: 25 → 36 → 52); drawdown 12% → 23% (low dividend yield) → 31% (low r−g) → 43% (high inflation). Those
+ladders are measured likelihood ratios: the lag structure is worth more as conditioning than as distance.
 
 ## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
 
