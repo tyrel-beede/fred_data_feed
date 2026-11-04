@@ -75,15 +75,28 @@ jd = os.path.join(H, "jst")
 p1, p2 = load_json("jst_doc_part1.json"), load_json("jst_doc_part2.json")
 if p1 or p2:
     merged = {"variables": [], "countries": {}, "references": [], "terms_of_use": None, "citation": None, "release": None}
+    byname = {}
     for p in (p1, p2):
         if not p:
             continue
-        merged["variables"] += p.get("variables", [])
+        for v in p.get("variables", []):
+            key = v.get("name") or ("component:" + (v.get("label") or ""))
+            if key in byname:  # same column documented in both halves (different countries): merge the source lists
+                m = byname[key]
+                m["sources"] = (m.get("sources") or []) + (v.get("sources") or [])
+                m["pages"] = sorted(set((m.get("pages") or []) + (v.get("pages") or [])))
+                for f in ("definition", "construction", "caveats", "units"):
+                    if v.get(f) and v[f] != m.get(f):
+                        m[f] = (m.get(f) or "") + (" | " if m.get(f) else "") + v[f]
+            else:
+                byname[key] = dict(v)
         merged["countries"].update(p.get("countries", {}))
         merged["references"] += p.get("references", [])
         for k in ("terms_of_use", "citation", "release"):
             if p.get(k) and not merged[k]:
                 merged[k] = p[k]
+    merged["variables"] = list(byname.values())
+    merged["references"] = sorted(set(r if isinstance(r, str) else json.dumps(r, ensure_ascii=False) for r in merged["references"]))
     json.dump(merged, open(os.path.join(jd, "data_dictionary.json"), "w"), indent=1, ensure_ascii=False)
 parts = [have("jst_doc_part1.md"), have("jst_doc_part2.md")]
 if any(parts):
