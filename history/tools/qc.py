@@ -45,6 +45,7 @@ expected = [
     "history/tools/analogs.py", "history/tools/qc.py", "history/tools/features2.py", "history/tools/wf.py",
     "history/tools/analog_test2.py", "history/tools/label_test.py", "history/jst/features2.csv",
     "history/analogs/test2.md", "history/analogs/label_test.md", "history/tools/lag_test.py", "history/analogs/lag_test.md",
+    "history/tools/learner_test.py", "history/analogs/learner_test.md",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")

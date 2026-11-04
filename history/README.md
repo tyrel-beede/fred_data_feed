@@ -67,8 +67,9 @@ history/
     assemble.py             merges the documentation and book encodings into the layout above
     analogs.py              the empirical cone: nearest country-years and what followed, beside climatology
     analog_backtest.py      skill of the cone by feature group under three exclusion rules
-    features2.py, wf.py, analog_test2.py, label_test.py, lag_test.py   test 2 (subnet, rank, flux; measured targets;
-                            horizons), the tests of the crisis label itself, and the lead-lag measurements
+    features2.py, wf.py, analog_test2.py, label_test.py, lag_test.py, learner_test.py   test 2 (subnet, rank, flux;
+                            measured targets; horizons), the tests of the crisis label, the lead-lag measurements,
+                            and the weighted learners
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -236,6 +237,20 @@ loans/GDP in the top tercile at T−3 → 42% with real equity gains ≤ 0 at T�
 (post-1950: 25 → 36 → 52); drawdown 12% → 23% (low dividend yield) → 31% (low r−g) → 43% (high inflation). Those
 ladders are measured likelihood ratios: the lag structure is worth more as conditioning than as distance.
 
+## A learner that can weight (`tools/learner_test.py`, `analogs/learner_test.md`)
+
+The same 53 features (base, subnet, rank, flux, five selected leads, three mile-marker indicators with training-set
+terciles) fed to learners that weight them — an L2 logit and shallow gradient-boosted trees — refit every four years
+on rows whose outcome window closed before the fit year, forecasting the next four; the nearest-neighbour share on the
+same features is the no-weights reference. Walk-forward AUC within three years, queries from 1900: a 30% real equity
+drawdown 0.73 with the trees (k-NN 0.65; top decile 35% against a 14% base rate), a 3-pp unemployment spike 0.67
+(k-NN 0.57), the crisis label 0.63 (k-NN 0.60), while the credit contraction stays at 0.68–0.69 under every learner
+(its signal — the loans/GDP level three years earlier — is simple enough that weighting adds nothing) and the GDP fall
+is best left to k-NN at 0.61. The heaviest weights are readable: for the drawdown, low r−g, a low real rate, a high
+share of countries in a credit boom, the state's two-year speed and a low dividend yield; for the contraction, the
+loans/GDP level three years back above everything else. The label's horizon curve under the logit is 0.61 / 0.58 /
+0.58 / 0.54 / 0.51. Differences of ±0.02 are within noise for a few hundred events; the gaps above are larger than that.
+
 ## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
 
 The crisis flag is a narrative judgment, so it was tested against the measured record. Labelled crisis years do look
@@ -253,8 +268,9 @@ stays as one view; the measured targets become the primary ones, and the horizon
 
 ## What this layer is for next
 
-1. **Feature weighting measured, not assumed**: a learner that can weight (regularized logit or boosted trees),
-   walk-forward, against the measured targets and by horizon; and conformal bands so coverage is 50% by construction.
+1. **Calibrated bands and on-time markers**: conformal bands so coverage is 50% by construction; the gap distribution
+   between successive markers so an on-schedule arrival carries a higher ratio than an early or late one; a seed and
+   cadence sweep on the trees to size the noise band around each AUC.
 2. **Climatology**: the unconditional distribution of each feature by era and regime (`peg_type`), which is what the
    forecast relaxes toward at long lead times.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;
