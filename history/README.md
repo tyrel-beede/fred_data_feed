@@ -261,7 +261,10 @@ growth over three years, and its anomaly against the country's own trailing deca
 production growth, fuel self-sufficiency, fuel shares. Added to the learners: the real GDP fall gains (0.61 → 0.66
 under k-NN; +0.02 on the weighted learners), the financial targets do not move at their best learner, and the
 footprint gap takes weight in the crisis and drawdown models without adding skill — redundant with the subnet and
-credit features, not wrong. `physical/catalog.json` lists the long-running physical catalogs still to bring in (oil
+credit features, not wrong. Oil prices since 1861 (fetched by the workflow, deflated into a real price with changes, a
+shock flag and an exposure-signed change) then move the two targets the shock channel should move: real GDP fall
+0.60 → 0.68 (logit) and the equity drawdown 0.73 → 0.76 (trees, top decile 40% against 14%) — the shadow price of the
+energy constraint earns its place. `physical/catalog.json` lists the long-running physical catalogs still to bring in (oil
 prices since 1861, US energy 1635–, European measured energy 1800–, technology diffusion, commodity prices, minerals,
 ore grades, land) with their retrieval route and license.
 

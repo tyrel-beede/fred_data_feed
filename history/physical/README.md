@@ -49,8 +49,24 @@ financial targets did not move at their best learner (drawdown 0.734 → 0.731, 
 plain distance, the same lesson as the lagged copies). The footprint gap and CO2 growth took heavy weights in the
 crisis and drawdown logits without moving their AUC, which means they carry information the subnet and credit
 features already carried. So the first slice earns its place on the activity target and is redundant, not wrong, on
-the financial ones; the catalog's next entries (oil prices since 1861, technology diffusion, pre-1965 measured energy)
-address the channels this slice cannot see.
+the financial ones.
+
+**Oil, the shadow price of the constraint (second run, same day).** The workflow fetched crude oil prices 1861–2025
+(Energy Institute / S&P Global Platts via Our World in Data; `raw/EI-OIL-PRICE-1861/`, manifest with URL and hash).
+`physical_build.py` deflates them by the US CPI from the JST sheet into a real price (1990 dollars per barrel), its
+1- and 3-year changes, a shock flag (real price +40% in a year: 1876, 1895, 1899, 1916, 1932, 1934, 1947, 1974, 1979,
+2000) and the change signed by each country's fuel self-sufficiency (importers +, exporters −). Added to the learners
+(`../analogs/learner_test_physical_oil.md`): the real GDP per capita fall **0.60 → 0.68** under the logit (0.58 →
+0.63 trees, 0.61 → 0.66 k-NN) — the largest single gain of any feature family on that target, the supply-shock channel
+exactly as the frame predicted — and the equity drawdown **0.73 → 0.76** under the trees (top decile 35% → 40%
+against a 14% base rate), with the real oil level and its 3-year change among the heaviest drawdown weights. The credit
+contraction, unemployment spike and crisis label did not move. On the mile-marker ladders a ≥25% real oil rise as a
+fourth rung lifts the contraction ladder 51% → 60% and the drawdown ladder 43% → 64%, on 35 and 11 country-years —
+hints at that depth, not findings.
+
+Not yet landed: the NBER data appendix for CHAT returned 504 then 503 (the workflow retries on its schedule; the file
+can also be supplied), and the `EIA_API_KEY` secret is not set in the repository, so the EIA pull and the feed's own
+`eia` source are skipping.
 
 ## Rebuild
 
