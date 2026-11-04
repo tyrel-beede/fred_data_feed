@@ -2815,6 +2815,13 @@
     "rate": 0.5142857142857142,
     "rate_pre1950": 0.5106382978723404,
     "rate_post1950": 0.5161290322580645
+   },
+   {
+    "stage": "real oil price up >= 25% over the year at T",
+    "n": 35,
+    "rate": 0.6,
+    "rate_pre1950": 0.4,
+    "rate_post1950": 0.68
    }
   ],
   "dd30_3y": [
@@ -2843,6 +2850,41 @@
     "rate": 0.4297520661157025,
     "rate_pre1950": 0.46938775510204084,
     "rate_post1950": 0.4027777777777778
+   },
+   {
+    "stage": "real oil price up >= 25% over the year at T",
+    "n": 11,
+    "rate": 0.6363636363636364,
+    "rate_pre1950": 0.6,
+    "rate_post1950": 0.6666666666666666
+   }
+  ],
+  "gdp_fall_3y": [
+   {
+    "stage": "unconditional",
+    "n": 2612,
+    "rate": 0.11485451761102604
+   },
+   {
+    "stage": "real oil price up >= 25% over the year at T",
+    "n": 369,
+    "rate": 0.14905149051490515,
+    "rate_pre1950": 0.2028985507246377,
+    "rate_post1950": 0.08024691358024691
+   },
+   {
+    "stage": "loans/GDP high (top tercile) at T-3",
+    "n": 143,
+    "rate": 0.15384615384615385,
+    "rate_pre1950": 0.30303030303030304,
+    "rate_post1950": 0.10909090909090909
+   },
+   {
+    "stage": "real house prices 3y growth <= 0 at T",
+    "n": 55,
+    "rate": 0.23636363636363636,
+    "rate_pre1950": 0.375,
+    "rate_post1950": 0.1794871794871795
    }
   ]
  }

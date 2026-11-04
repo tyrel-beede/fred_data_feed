@@ -142,7 +142,7 @@ def main():
                    np.nan if np.isnan(c) or c <= 0 or np.isnan(oc) else oc / c,
                    oil_real.get(y, np.nan), oil_chg(y, 1), oil_chg(y, 3),
                    (np.nan if np.isnan(oil_chg(y, 1)) else (1.0 if oil_chg(y, 1) >= 0.40 else 0.0)),
-                   (np.nan if np.isnan(oil_chg(y, 1)) or np.isnan(fp) or fp <= 0 or np.isnan(pr) else oil_chg(y, 1) * (1.0 - 2.0 * min(pr / fp, 1.0)))]
+                   (np.nan if np.isnan(oil_chg(y, 1)) or np.isnan(fp) or fp <= 0 or np.isnan(pr) else oil_chg(y, 1) * max(-1.0, min(1.0, 1.0 - pr / fp)))]  # importer +, exporter -, self-sufficient 0
             out.append(["" if (isinstance(v, float) and np.isnan(v)) else (f"{v:.6g}" if isinstance(v, float) else v) for v in row])
     with open(os.path.join(OUT, "physical_features.csv"), "w", newline="") as f:
         w = csv.writer(f); w.writerow(FH); w.writerows(out)

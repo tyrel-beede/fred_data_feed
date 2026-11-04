@@ -91,13 +91,26 @@ def main():
     def tercile_flag(name, lag, top=True):
         x = col(name, lag); q = np.nanpercentile(x, 67 if top else 33)
         return (x >= q) if top else (x <= q)
+    # physical rung: the real oil price change at T (the shadow price of the energy constraint), if the physical layer is built
+    oil = {}
+    pp = os.path.join(ROOT, "history", "physical", "physical_features.csv")
+    if os.path.exists(pp):
+        for r in csv.DictReader(open(pp)):
+            if r.get("oil_real_change_1y"):
+                oil[(r["iso"], int(r["year"]))] = float(r["oil_real_change_1y"])
+    oil_up = np.array([oil.get((i, y), np.nan) >= 0.25 if (i, y) in oil else np.nan for i, y in zip(isos, years)], dtype=float)
     ladders = {
         "credit_contraction_3y": [("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
                                   ("real equity 3y gain <= 0 at T-1", col("real_eq_capgain_3y", 1) <= 0),
-                                  ("real house prices 3y growth <= 0 at T", col("real_hp_growth_3y", 0) <= 0)],
+                                  ("real house prices 3y growth <= 0 at T", col("real_hp_growth_3y", 0) <= 0)]
+                                 + ([("real oil price up >= 25% over the year at T", oil_up == 1.0)] if oil else []),
         "dd30_3y": [("dividend yield low (bottom tercile) at T", tercile_flag("eq_dp", 0, False)),
                     ("r - g low (bottom tercile) at T", tercile_flag("r_minus_g", 0, False)),
-                    ("inflation high (top tercile) at T", tercile_flag("cpi_infl", 0, True))],
+                    ("inflation high (top tercile) at T", tercile_flag("cpi_infl", 0, True))]
+                   + ([("real oil price up >= 25% over the year at T", oil_up == 1.0)] if oil else []),
+        "gdp_fall_3y": ([("real oil price up >= 25% over the year at T", oil_up == 1.0),
+                         ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
+                         ("real house prices 3y growth <= 0 at T", col("real_hp_growth_3y", 0) <= 0)] if oil else []),
     }
     rep["mile_markers"] = {}
     for t, steps in ladders.items():

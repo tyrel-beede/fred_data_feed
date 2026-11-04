@@ -105,6 +105,7 @@ Conditional frequency of the event given each marker in turn (all markers comput
 | loans/GDP high (top tercile) at T-3 | 732 | 30% | 42% | 25% |
 | real equity 3y gain <= 0 at T-1 | 275 | 42% | 56% | 36% |
 | real house prices 3y growth <= 0 at T | 140 | 51% | 51% | 52% |
+| real oil price up >= 25% over the year at T | 35 | 60% | 40% | 68% |
 
 ### dd30_3y
 
@@ -114,5 +115,15 @@ Conditional frequency of the event given each marker in turn (all markers comput
 | dividend yield low (bottom tercile) at T | 683 | 23% | 29% | 21% |
 | r - g low (bottom tercile) at T | 216 | 31% | 37% | 29% |
 | inflation high (top tercile) at T | 121 | 43% | 47% | 40% |
+| real oil price up >= 25% over the year at T | 11 | 64% | 60% | 67% |
+
+### gdp_fall_3y
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2612 | 11% | — | — |
+| real oil price up >= 25% over the year at T | 369 | 15% | 20% | 8% |
+| loans/GDP high (top tercile) at T-3 | 143 | 15% | 30% | 11% |
+| real house prices 3y growth <= 0 at T | 55 | 24% | 38% | 18% |
 
 Reading the profiles: a feature whose AUC is highest at k=0 is coincident information; one whose AUC stays high or peaks at k=1..3 leads the event by that many years, which is the lag a mile marker can be registered at. A ✗ means the relationship flipped sign between eras and should not be trusted as a 'known' lag.
