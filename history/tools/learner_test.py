@@ -35,7 +35,8 @@ TARGETS = ["dd30_3y", "credit_contraction_3y", "gdp_fall_3y", "unemp_spike_3y", 
 
 
 PHYSICAL = ["energy_footprint_gap_3y", "gap_anom_3y", "d3_co2_intensity", "co2_growth_3y", "co2_growth_1y",
-            "fossil_prod_growth_3y", "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2"]
+            "fossil_prod_growth_3y", "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2",
+            "oil_real_price", "oil_real_change_1y", "oil_real_change_3y", "oil_change_x_exposure"]
 
 
 def main():

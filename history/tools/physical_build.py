@@ -89,9 +89,28 @@ def main():
         a, b = fn(i, y), fn(i, y - n)
         return np.nan if np.isnan(a) or np.isnan(b) or b <= 0 or a <= 0 else (a / b) ** (1.0 / n) - 1
 
+    # oil prices since 1861 (OWID grapher CSV pulled by the workflow): current US$ per cubic metre -> per barrel,
+    # deflated by the US CPI from the JST sheet (1990=100); real price and its changes are the same for every country,
+    # the exposure differs (fuel self-sufficiency), which the learner can combine
+    oil_nom = {}
+    oil_path = os.path.join(OUT, "raw", "EI-OIL-PRICE-1861", "crude-oil-prices.csv")
+    if os.path.exists(oil_path):
+        rd = csv.DictReader(open(oil_path))
+        vcol = [c for c in rd.fieldnames if c not in ("Entity", "Code", "Year", "entity", "code", "year")][0]
+        for r in rd:
+            try:
+                oil_nom[int(r.get("Year") or r.get("year"))] = float(r[vcol]) / 6.2898
+            except (ValueError, TypeError):
+                pass
+    us_cpi = {y: float(jst[("USA", y)]["cpi"]) for y in range(1870, 2021) if ("USA", y) in jst and jst[("USA", y)].get("cpi") is not None}
+    oil_real = {y: oil_nom[y] / us_cpi[y] * 100 for y in oil_nom if y in us_cpi}
+    def oil_chg(y, n):
+        a, b = oil_real.get(y), oil_real.get(y - n)
+        return np.nan if a is None or b is None or b <= 0 else a / b - 1
     FH = ["iso", "year", "co2_growth_1y", "co2_growth_3y", "rgdp_growth_3y", "energy_footprint_gap_3y", "gap_anom_3y",
           "co2_per_rgdp", "d3_co2_intensity", "energy_growth_3y", "energy_gap_3y", "fossil_prod_growth_3y",
-          "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2"]
+          "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2",
+          "oil_real_price", "oil_real_change_1y", "oil_real_change_3y", "oil_shock_1y", "oil_change_x_exposure"]
     out = []
     gap_hist = {}  # (iso, year) -> gap, for the trailing-10-year anomaly (efficiency trends make the raw gap drift)
     for i in sorted(ISOS):
@@ -120,11 +139,14 @@ def main():
                    ann_growth(prod, i, y, 3),
                    np.nan if np.isnan(fp) or fp <= 0 or np.isnan(pr) else pr / fp,
                    np.nan if np.isnan(c) or c <= 0 or np.isnan(cc) else cc / c,
-                   np.nan if np.isnan(c) or c <= 0 or np.isnan(oc) else oc / c]
+                   np.nan if np.isnan(c) or c <= 0 or np.isnan(oc) else oc / c,
+                   oil_real.get(y, np.nan), oil_chg(y, 1), oil_chg(y, 3),
+                   (np.nan if np.isnan(oil_chg(y, 1)) else (1.0 if oil_chg(y, 1) >= 0.40 else 0.0)),
+                   (np.nan if np.isnan(oil_chg(y, 1)) or np.isnan(fp) or fp <= 0 or np.isnan(pr) else oil_chg(y, 1) * (1.0 - 2.0 * min(pr / fp, 1.0)))]
             out.append(["" if (isinstance(v, float) and np.isnan(v)) else (f"{v:.6g}" if isinstance(v, float) else v) for v in row])
     with open(os.path.join(OUT, "physical_features.csv"), "w", newline="") as f:
         w = csv.writer(f); w.writerow(FH); w.writerows(out)
-    print(f"extract {len(rows)} rows; features {len(out)} rows x {len(FH)}")
+    print(f"extract {len(rows)} rows; features {len(out)} rows x {len(FH)}; oil price years {len(oil_real)}")
 
 
 if __name__ == "__main__":
