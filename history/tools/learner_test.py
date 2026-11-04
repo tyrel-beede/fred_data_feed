@@ -15,7 +15,7 @@ in the final fit.
 
 Usage: python3 -I history/tools/learner_test.py ; writes history/analogs/learner_test.md and learner_test.json
 """
-import csv, json, os, sys, warnings
+import argparse, csv, json, os, sys, warnings
 import numpy as np
 
 warnings.filterwarnings("ignore")
@@ -34,8 +34,22 @@ LEADS = [("loans_gdp", 3), ("mort_gdp", 3), ("real_eq_capgain_3y", 1), ("rgdp_pc
 TARGETS = ["dd30_3y", "credit_contraction_3y", "gdp_fall_3y", "unemp_spike_3y", "crisis_3y"]
 
 
+PHYSICAL = ["energy_footprint_gap_3y", "gap_anom_3y", "d3_co2_intensity", "co2_growth_3y", "co2_growth_1y",
+            "fossil_prod_growth_3y", "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2"]
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--physical", action="store_true", help="add the physical-layer features (history/physical/physical_features.csv)")
+    ap.add_argument("--no-horizon", action="store_true"); ap.add_argument("--tag", default="")
+    a = ap.parse_args()
     rows = list(csv.DictReader(open(os.path.join(ROOT, "history", "jst", "features2.csv"))))
+    if a.physical:
+        ph = {(r["iso"], int(r["year"])): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "physical", "physical_features.csv")))}
+        for r in rows:
+            p = ph.get((r["iso"], int(r["year"])), {})
+            for c in PHYSICAL:
+                r[c] = p.get(c, "")
     isos = [r["iso"] for r in rows]; years = np.array([int(r["year"]) for r in rows])
     idx = {(i, y): n for n, (i, y) in enumerate(zip(isos, years))}
     jst = {(r["iso"], r["year"]): r for r in load_jst(apply_overrides=True)}
@@ -49,13 +63,16 @@ def main():
                 out[n] = float(rows[j][name])
         return out
 
-    names = BASE + NETWORK + RANK + FLUX + [f"{f}_lag{k}" for f, k in LEADS]
-    X = np.column_stack([col(f) for f in BASE + NETWORK + RANK + FLUX] + [col(f, k) for f, k in LEADS])
+    extra = PHYSICAL if a.physical else []
+    names = BASE + NETWORK + RANK + FLUX + [f"{f}_lag{k}" for f, k in LEADS] + extra
+    X = np.column_stack([col(f) for f in BASE + NETWORK + RANK + FLUX] + [col(f, k) for f, k in LEADS] + [col(f) for f in extra])
     lg3, eq1, hp0 = col("loans_gdp", 3), col("real_eq_capgain_3y", 1), col("real_hp_growth_3y", 0)
     nF = X.shape[1]
     rep = {"features": names + ["mk_loans_top_tercile_T-3", "mk_equity_le0_T-1", "mk_houses_le0_T"], "results": {}, "horizon": {}, "weights": {}}
 
     def fit_predict(Xtr, ytr, Xte, learner):
+        keep = (~np.isnan(Xtr)).sum(axis=0) >= 50  # a column unobserved in the training era cannot be used (or binned)
+        Xtr, Xte = Xtr[:, keep], Xte[:, keep]
         if learner == "logit":
             med = np.nanmedian(Xtr, axis=0); med = np.where(np.isnan(med), 0.0, med)
             A = np.where(np.isnan(Xtr), med, Xtr); B = np.where(np.isnan(Xte), med, Xte)
@@ -63,7 +80,8 @@ def main():
             A = (A - mu) / sd; B = (B - mu) / sd
             m = LogisticRegression(C=0.3, max_iter=2000, class_weight="balanced")
             m.fit(A, ytr)
-            return m.predict_proba(B)[:, 1], m.coef_[0]
+            coef = np.full(len(keep), np.nan); coef[keep] = m.coef_[0]
+            return m.predict_proba(B)[:, 1], coef
         m = HistGradientBoostingClassifier(max_iter=120, max_depth=3, learning_rate=0.06, min_samples_leaf=25,
                                            l2_regularization=1.0, class_weight="balanced", random_state=0)
         m.fit(Xtr, ytr)
@@ -125,12 +143,13 @@ def main():
             res[l] = {"auc": A, "top_decile": td, "base": base, "n_pos": npos, "n_neg": nneg}
         rep["results"][target] = res
         if coef is not None:
+            coef = np.where(np.isnan(coef), 0.0, coef)
             order = np.argsort(-np.abs(coef))[:12]
             rep["weights"][target] = [(rep["features"][i], float(coef[i])) for i in order]
         print(target, {l: round(v["auc"], 3) for l, v in res.items() if v["auc"]})
 
-    # horizon curve for the best learner (gbt) on the two strongest targets and the label
-    for target in ("dd30_3y", "credit_contraction_3y", "crisis_3y"):
+    # horizon curve (logit) on the label
+    for target in (() if a.no_horizon else ("crisis_3y",)):
         base_name = target.replace("_3y", "")
         curve = {}
         for h in (1, 2, 3, 4, 5):
@@ -145,11 +164,12 @@ def main():
             print("horizon logit", target, {h: round(v, 3) for h, v in curve.items() if v})
 
     os.makedirs(os.path.join(ROOT, "history", "analogs"), exist_ok=True)
-    json.dump(rep, open(os.path.join(ROOT, "history", "analogs", "learner_test.json"), "w"), indent=1)
+    suffix = ("_physical" if a.physical else "") + a.tag
+    json.dump(rep, open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.json"), "w"), indent=1)
     L = ["# A learner that can weight — walk-forward", "",
          "Models are refit every 4 years; a model fit at t forecasts years t..t+3 and is trained only on rows whose outcome window closed before t (training from 1880, queries "
          "from 1900); standardization and imputation from the training rows, mile-marker terciles from the training rows. "
-         "Features: 20 base + 10 subnet + 6 rank + 9 flux + 5 selected leads + 3 markers = 53. AUC 0.5 is no skill.", "",
+         f"Features: 20 base + 10 subnet + 6 rank + 9 flux + 5 selected leads + 3 markers{' + ' + str(len(PHYSICAL)) + ' physical' if a.physical else ''} = {len(names) + 3}. AUC 0.5 is no skill.", "",
          "| target (base rate) | knn (no weights) | logit | gbt | ensemble |", "|---|---|---|---|---|"]
     for target, res in rep["results"].items():
         base = next((v["base"] for v in res.values() if v["base"] is not None), 0)
@@ -165,7 +185,9 @@ def main():
     L += ["", "Reading: the gap between knn and the weighted learners on the same features is the value of weighting; the "
           "ensemble row says whether the learners disagree in a useful way. Walk-forward throughout, so these are the "
           "numbers a forecaster at the time could have had.", ""]
-    open(os.path.join(ROOT, "history", "analogs", "learner_test.md"), "w").write("\n".join(L))
+    if a.physical:
+        L.insert(1, f"\n**Physical-layer features added ({len(PHYSICAL)}): {', '.join(PHYSICAL)}.** Compare with learner_test.md (same harness without them).\n")
+    open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.md"), "w").write("\n".join(L))
     print("\n".join(L))
 
 
