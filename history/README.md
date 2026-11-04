@@ -166,4 +166,11 @@ citations, and the PDFs stay out of the repository.
   20,893.7 bn, federal receipts 3,421 bn and outlays 6,550 bn, M2 17,677 bn, 10-year 0.894%, bill 0.37%, debt/GDP 1.281,
   unemployment 8.05 — all match the official figures; equity capital gain 2019 = 6.1% matches the annual-average basis.
   Anomalies listed above. Documentation and book encodings produced by page-by-page readers and spot-checked against
-  the PDFs' text layers (the readers' own cross-checks are described in each file).
+  the PDFs' text layers (the readers' own cross-checks are described in each file). Second pass the same day: the
+  88 chronology episodes equal the 88 indicator flags by country and year exactly; nine page citations re-checked
+  against the PDF text (the debt-dynamics identity at HCGB p. 70, "single most important variable" p. 74, the 100%
+  long-term government risk reading p. 330, the 65%/80% restructuring-or-monetization probabilities p. 365, the BDC
+  bubble checklist p. 20 and bubble statistics p. 19, the CWO determinants p. 11, the chronology's first-year rule
+  p. 4) — all present where cited. The reads ledger holds 193 dated claims (116 from the 2025 book, 77 Bridgewater
+  Daily Observations from the 2007–2011 case); 86 are marked falsifiable as written, 30 not, 77 (the Daily
+  Observations) carry the author's own outcome note instead.
