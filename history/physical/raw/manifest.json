@@ -1,0 +1,24 @@
+{
+ "manifest": [
+  {
+   "catalog": "EI-OIL-PRICE-1861",
+   "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.csv",
+   "url": "https://ourworldindata.org/grapher/crude-oil-prices.csv",
+   "bytes": 4919,
+   "sha256": "98014e71cb3c56b65f3c4018c8639b3dce19c95800a39dcc0636b3137022d2d0",
+   "retrieved": "2026-11-04T22:23:54Z"
+  },
+  {
+   "catalog": "EI-OIL-PRICE-1861",
+   "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.metadata.json",
+   "url": "https://ourworldindata.org/grapher/crude-oil-prices.metadata.json",
+   "bytes": 1349,
+   "sha256": "7ab600308a29fb9d0438801385d9df611eaa23ac679915e2350889dae1e8a298",
+   "retrieved": "2026-11-04T22:23:55Z"
+  }
+ ],
+ "errors": [
+  "chat index: HTTP Error 503: Service Unavailable",
+  "eia: EIA_API_KEY not set"
+ ]
+}
