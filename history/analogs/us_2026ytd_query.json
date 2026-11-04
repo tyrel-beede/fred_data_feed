@@ -1,0 +1,45 @@
+{
+ "name": "us_2026ytd",
+ "label": "United States 2026 year-to-date (Jan-Oct/Nov 2026, from the live feed; 9 of 20 features)",
+ "as_of": "2026-11-04",
+ "node": "fred_data_feed/history",
+ "features": {
+  "ltrate": {
+   "value": 4.531619047619047,
+   "source": "FRED DGS10, 210 observations 2026-01-02..2026-11-02, annual mean (data/fred/DGS10.csv)"
+  },
+  "term_spread": {
+   "value": 0.8601811391223153,
+   "source": "DGS10 minus DFF annual means (JST stir for the US is a 3-month bill rate; the funds rate is used as the short-rate proxy, levels within ~10 bp in 2025)"
+  },
+  "real_ltrate_expost": {
+   "value": 1.464319757022877,
+   "source": "DGS10 annual mean minus CPI-U annual-average inflation"
+  },
+  "cpi_infl": {
+   "value": 0.030672992905961705,
+   "source": "CPIAUCSL annual mean 2026 / 2025 - 1 (9 and 11 months)"
+  },
+  "unemp": {
+   "value": 4.2444444444444445,
+   "source": "FRED UNRATE, 9 observations 2026-01-01..2026-09-01, annual mean (data/fred/UNRATE.csv)"
+  },
+  "d1_unemp": {
+   "value": -0.019191919191919204,
+   "source": "UNRATE annual mean 2026 minus 2025"
+  },
+  "debt_gdp": {
+   "value": 1.2181289000000002,
+   "source": "FRED GFDEGDQ188S, 2 observations 2026-01-01..2026-04-01, annual mean (data/fred/GFDEGDQ188S.csv) / 100 (same series concept as JST debtgdp: 2020 FRED 128.1 vs JST 1.281)"
+  },
+  "d5_debt_gdp": {
+   "value": -0.06287109999999974,
+   "source": "GFDEGDQ188S 2026 mean / 100 minus JST USA 2020 debtgdp 1.281"
+  },
+  "real_eq_capgain_3y": {
+   "value": 0.16067615309777006,
+   "source": "SP500 annual mean 2026 / 2023, deflated by CPIAUCSL annual means, annualized over 3 years (annual-average basis, as JST)"
+  }
+ },
+ "missing": "loans_gdp, d3/d5_loans_gdp, mort_gdp, deficit_gdp, r_minus_g, rgdp_pc_growth, iy, ca_gdp, eq_dp, real_hp_growth_3y - not in the live feed yet; the bridge pull adds GDP, loans, mortgages, current account and house prices"
+}

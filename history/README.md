@@ -97,6 +97,17 @@ Anomalies found while checking the data (not corrected in the files; flagged for
 | JPN `tloans` 2018–2020, `revenue`/`expenditure` 2020, AUS fiscal 2020 | blank | — | gaps in the update window (full list in `coverage.csv`) |
 | USA `narrowm` 2020 | 5,206 | M1 was redefined May 2020 | the series is on a pre-redefinition basis; do not splice to M1SL without a ratio |
 
+## Overrides (`jst/overrides.csv`)
+
+A JST value is never edited. Where a value is wrong or is a placeholder, `overrides.csv` records the cell, the JST
+value, the replacement, the source and its URL, the observed time and the node that made the correction, and the
+reason. `jst_build.py` applies the `replace` rows in memory when it computes `features.csv`, and the affected rows
+carry the overridden variable names in an `overrides` column, so every derived number can be traced to either the
+sheet or a named correction. Rows with action `note` change nothing and record a basis caveat. Current overrides:
+US unemployment 2019 (2.0 → 3.7, BLS), UK short rate 2019 and 2020 (0 → 0.81 and 0.30, the OECD 3-month interbank
+rate as the nearest continuing instrument, flagged as a proxy), and a basis note on US narrow money at the May-2020
+M1 redefinition.
+
 ## Features for analog matching (`jst/features.csv`)
 
 Derived per country-year by `tools/jst_build.py`, all unit-free, each chosen because the literature built on this panel
@@ -148,14 +159,38 @@ into. `principles_mechanisms.json` carries the mechanisms and a mapping, labeled
 Copyright: the books' text is not reproduced; every file under `dalio/` is our own structured encoding with page
 citations, and the PDFs stay out of the repository.
 
+## Analog retrieval (`tools/analogs.py`, `analogs/`)
+
+The first use of the layer: standardize a state vector (robust z-scores across the panel), find the nearest
+country-years (one per country within ±5 years, the query's own episode excluded), and report what followed them —
+crisis within 1–3 years, real GDP per capita, real equity and house-price returns, long-rate and unemployment changes
+— as quantiles beside the same outcomes over the whole panel, which is the climatology and the no-skill reference.
+Nothing in it assumes a branch: the analogs are paths that happened.
+
+`tools/analog_backtest.py` asks whether the cone carries information, leave-one-episode-out over the panel from 1880,
+per feature group (`analogs/backtest.md`). With all 20 features, k=15: crisis AUC 0.66 and a top-decile crisis rate
+of 26% against a 9% base rate; rank correlation of the analog median with the realized value +0.36 for three-year real
+equity returns, +0.42 for real GDP per capita, +0.41 for the long-rate change; the analogs' p25–p75 band is narrower
+than the climatology's (36 vs 47 pp for equity) and covers 42–46% of outcomes, i.e. slightly over-confident. By group,
+rates and valuation sort crises best; public-debt levels alone carry nothing at this horizon; bank-credit levels alone
+are weak (the literature's credit signal is the *change*, which is in the set but is diluted by the levels in a plain
+distance). Two caveats on the backtest: standardization uses the whole panel, and analogs may come from years after
+the query, so it is leave-one-out rather than walk-forward; a walk-forward variant is the next refinement.
+
+`analogs/us_2025.md` and `analogs/us_2026ytd.md` are the first live queries, built from the feed with the provenance
+of every value in `analogs/us_2025_query.json`; they cover 9 of the 20 features (no credit, valuation or investment
+yet — those arrive with the bridge pull), so they are a demonstration of the plumbing, not a reading.
+
 ## What this layer is for next
 
-1. **Analog retrieval**: standardize today's feature vector against the panel and return the nearest country-years and
-   what followed them — the empirical cone, run unscored beside the hypothesis cone.
+1. **Walk-forward backtest and feature weighting measured, not assumed**: candidates before the query year only;
+   weights per feature group from their measured skill, reported with the lead-time ledger (ruling n).
 2. **Climatology**: the unconditional distribution of each feature by era and regime (`peg_type`), which is what the
    forecast relaxes toward at long lead times.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;
    the same table takes any other voice.
+4. **The bridge**: once the first workflow run writes `bridge/`, confirm the join rules and complete the live query
+   vector (credit, mortgages, investment, current account, house prices, dividend yield).
 
 ## Verification log
 

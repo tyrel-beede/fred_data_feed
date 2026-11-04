@@ -18,6 +18,8 @@ import openpyxl
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 JST = os.path.join(ROOT, "history", "jst")
 SRC = os.path.join(JST, "JSTdatasetR6.xlsx")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from jstlib import load_overrides  # noqa: E402
 
 # Unit of the nominal local-currency variables (gdp, revenue, expenditure, tloans, tmort, thh, tbus, money, narrowm, ca,
 # imports, exports, bdebt): multiplier that turns the stored number into billions of national currency.
@@ -88,7 +90,17 @@ def main():
               [[iso, UNIT_NAME[iso], UNIT_TO_BN[iso], "inferred from 2019 GDP vs World Bank USD GDP; confirm in documentation"]
                for iso in isos])
 
-    # 5) derived features (annual; per country; all ratios are unit-free)
+    # 5) derived features (annual; per country; all ratios are unit-free). Features are computed on the overridden
+    #    view: replacements from overrides.csv are applied in memory (the JST values on disk are untouched) and the
+    #    affected rows carry the overridden variable names in the 'overrides' column.
+    applied = {}
+    for o in load_overrides():
+        if o["action"] == "replace":
+            r = by.get((o["iso"], int(o["year"])))
+            if r is not None:
+                r[o["variable"]] = float(o["override_value"])
+                applied.setdefault((o["iso"], int(o["year"])), []).append(o["variable"])
+
     def g(iso, y, k):
         r = by.get((iso, y))
         return None if r is None else fnum(r.get(k))
@@ -138,7 +150,7 @@ def main():
           "deficit_gdp", "ngdp_growth", "rgdp_pc_growth", "cpi_infl", "ltrate", "stir", "term_spread", "real_ltrate_expost",
           "r_minus_g", "interest_burden_proxy", "money_growth", "narrowm_growth", "money_gdp", "iy", "d3_iy", "eq_dp",
           "real_eq_capgain_3y", "real_hp_growth_3y", "ca_gdp", "lev", "ltd", "noncore", "unemp", "d1_unemp", "xr_depreciation",
-          "crisis_now", "crisis_next_1_3y"]
+          "crisis_now", "crisis_next_1_3y", "overrides"]
     for iso in isos:
         years = sorted(r["year"] for r in data if r["iso"] == iso)
         for y in years:
@@ -164,7 +176,8 @@ def main():
                    ratio(g(iso, y, "ca"), g(iso, y, "gdp")), g(iso, y, "lev"), g(iso, y, "ltd"), g(iso, y, "noncore"),
                    g(iso, y, "unemp"), diff(iso, y, lambda i, yy: g(i, yy, "unemp"), 1), growth(iso, y, "xrusd"),
                    g(iso, y, "crisisJST"),
-                   None if all(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0)]
+                   None if all(v is None for v in nxt) else (1.0 if any(v == 1 for v in nxt) else 0.0),
+                   ",".join(applied.get((iso, y), []))]
             feats.append(["" if v is None else (f"{v:.6g}" if isinstance(v, float) else v) for v in row])
     write_csv(os.path.join(JST, "features.csv"), FH, feats)
     print(f"rows {len(data)}, countries {len(isos)}, features {len(feats)} x {len(FH)}")
