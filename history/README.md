@@ -37,6 +37,7 @@ history/
     units.csv               the nominal-currency unit per country (euro members are in legacy currency)
     overrides.csv           corrections with their own provenance; JST values are never edited
     features.csv            derived annual features for analog matching (see below), override-flagged per row
+    features2.csv           the base 20 plus the subnet-at-t, rank and flux families (tools/features2.py)
     field_map.csv           dials field -> long-history proxy, join rule, caveat
     LICENSE-JST.md          the license and required citations
   dalio/
@@ -66,6 +67,8 @@ history/
     assemble.py             merges the documentation and book encodings into the layout above
     analogs.py              the empirical cone: nearest country-years and what followed, beside climatology
     analog_backtest.py      skill of the cone by feature group under three exclusion rules
+    features2.py, wf.py, analog_test2.py, label_test.py   test 2 (subnet, rank, flux; measured targets; horizons) and
+                            the tests of the crisis label itself
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -200,10 +203,43 @@ on the record.
 of every value in `analogs/us_2025_query.json`; they cover 9 of the 20 features (no credit, valuation or investment
 yet — those arrive with the bridge pull), so they are a demonstration of the plumbing, not a reading.
 
+## Test 2: the subnet at t, flux, and measured targets (`tools/analog_test2.py`, `analogs/test2.md`)
+
+The leak had been borrowing the *outcomes* of other countries in the same global episode. Their *states* at time t are
+legitimate information, so `tools/features2.py` adds three families computable at t and nothing later: the subnet
+(cross-sectional shares, means and dispersion of the others; crises already begun elsewhere in t−1 and t−2; the
+bloc and its base currency's state, from `peg_base`), the relative growth race (percentile rank within the
+cross-section), and flux (speed of the state in z-space, band transitions, accelerations). The harness is walk-forward
+throughout, with expanding-window standardization, so it is stricter than the first backtest.
+
+What moved. On the JST crisis label within three years, base features alone score AUC 0.53 (the leaky same-country
+number on this harness is 0.63); the subnet alone scores 0.58 — the others' present state carries as much crisis
+information as the country's own whole state vector — and everything together 0.58. Skill by horizon peaks at two to
+three years (0.56–0.58) and is gone by four (0.51) and five (0.48): the cone's "day 5" is about three years.
+
+Where the signal is. Measured targets are far more predictable than the label: a 30% real equity drawdown within three
+years AUC 0.67 (top decile 35% against a 12.5% base rate), a 5-pp credit contraction 0.68 (top decile 45% vs 17%), a
+5% real GDP per capita fall 0.61, a 3-pp unemployment spike 0.59.
+
+## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
+
+The crisis flag is a narrative judgment, so it was tested against the measured record. Labelled crisis years do look
+different in the real economy and the market — unemployment rises (AUC 0.77 as a detector), real GDP per capita falls
+(0.70), real equity falls (0.71) — but not in the banking aggregates the label is nominally about: loans/GDP (0.50),
+the bank capital ratio (0.53) and noncore funding (0.46) do not register a labelled crisis at all. A measured stress
+event built from the data alone matches the label poorly: with three of five conditions, recall 14% and precision 27%;
+with two of three real-economy conditions, 27% and 28% — and 60 measured stress episodes carry no label (the wars,
+1920–21, 1930–33 outside the banking cases, 1974, 2009, 2020). Timing is noisy by a year: for the 86 labelled crises,
+measured stress peaks the year before the label in 18 cases, in the label year in 30, a year after in 16, two years
+after in 11, and never in 11. About one label in ten is contested by another chronology and seven were recoded between
+releases. Conclusion for the framework: the label is a banking-narrative event, loosely coupled to measured stress,
+dated to within ±1 year, and less predictable from the state (0.58) than the measured outcomes are (0.67–0.68). It
+stays as one view; the measured targets become the primary ones, and the horizon curve is reported for each.
+
 ## What this layer is for next
 
-1. **Walk-forward backtest and feature weighting measured, not assumed**: candidates before the query year only;
-   weights per feature group from their measured skill, reported with the lead-time ledger (ruling n).
+1. **Feature weighting measured, not assumed**: a learner that can weight (regularized logit or boosted trees),
+   walk-forward, against the measured targets and by horizon; and conformal bands so coverage is 50% by construction.
 2. **Climatology**: the unconditional distribution of each feature by era and regime (`peg_type`), which is what the
    forecast relaxes toward at long lead times.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;

@@ -42,7 +42,9 @@ expected = [
     "history/dalio/principles_mechanisms.json", "history/dalio/principles_2011.md", "history/dalio/principles_2017.md",
     "history/dalio/reads.csv",
     "history/tools/jst_build.py", "history/tools/bridge_pull.py", "history/tools/assemble.py", "history/tools/jstlib.py",
-    "history/tools/analogs.py", "history/tools/qc.py",
+    "history/tools/analogs.py", "history/tools/qc.py", "history/tools/features2.py", "history/tools/wf.py",
+    "history/tools/analog_test2.py", "history/tools/label_test.py", "history/jst/features2.csv",
+    "history/analogs/test2.md", "history/analogs/label_test.md",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")
