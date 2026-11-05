@@ -8,7 +8,8 @@ the raw files.
                       current US$ per cubic metre (1 m3 = 6.2898 barrels)
   CHAT                the NBER data appendix of Comin & Hobijn's CHAT dataset: every data file linked from the index
   EIA-TOTAL-ENERGY    EIA Total Energy API: annual US primary energy consumption by source 1949- (needs EIA_API_KEY)
-  EIA-HISTORICAL-1635 EIA's table of estimated US energy consumption by source for selected years 1635-1945 (HTML page)
+  EIA-HISTORICAL-1635 EIA's table of estimated US energy consumption by source for selected years 1635-1945: the notes
+                      page (HTML) and the table itself (PDF); eia_hist_parse.py turns the PDF into a CSV
   USGS-DS140          USGS Data Series 140, historical statistics for mineral and material commodities (US production,
                       consumption, unit value nominal and real, world production where given, since 1900): every
                       commodity workbook linked from the series index
@@ -98,6 +99,9 @@ def main():
     try:
         url = "https://www.eia.gov/energyexplained/us-energy-facts/estimated-consumption-1635-1945.php"
         save("EIA-HISTORICAL-1635", "estimated-consumption-1635-1945.html", get(url), url, manifest)
+        # the table itself is a PDF linked from that page (the page holds the coverage notes)
+        url = "https://www.eia.gov/energyexplained/us-energy-facts/images/U.S._Primary_Energy_Consumption_1635-1945.pdf"
+        save("EIA-HISTORICAL-1635", "U.S._Primary_Energy_Consumption_1635-1945.pdf", get(url), url, manifest)
     except Exception as e:  # noqa
         errors.append(f"eia historical table: {e}")
     # 4. USGS DS140: index page -> commodity pages -> workbook links (S3)
