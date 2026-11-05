@@ -1,0 +1,2216 @@
+{
+ "group": "voices",
+ "run_at": "2026-11-05T05:03:33-07:00",
+ "skill": "dials-voices",
+ "config_version": "2026-11-04",
+ "status": "partial",
+ "error": "Michael Burry unreachable: config url https://cassandraunchained.substack.com could not be opened and the post index of the search-surfaced https://michaeljburry.substack.com ('Cassandra Unchained, by Michael Burry') was not readable for the gate window. WebFetch of every roster url taken verbatim from config.json returned PROVENANCE_REQUIRED (unattended permission prompt, not retried); voices were read through search-surfaced links instead, so these owned index pages were NOT read and an in-gate post there cannot be ruled out: Dalio Substack, Tooze index, lynalden.com home, Oaktree insights, GMO research library, Sequoia article index. Quiet on search only (low confidence): Grantham, Cahn, Baker. David Kostin retired from Goldman in 2025 (Ben Snider is Chief US Equity Strategist) - roster entry is stale. Hartnett: the in-gate Flow Show was read via write-ups that carry no EPFR flow table or Bull & Bear reading. N5: WSJ Heard on the Street and FT Alphaville surfaced nothing dated; the 'term premium OR Treasury auction' query returned no argument piece.",
+ "date_gate": "2026-10-22",
+ "notes": "Scheduled run. No _status_voices.json existed, so the gate is fourteen days: items published after 2026-10-22. No previous dials/voices file exists, so conversion could not be evaluated and is false on every item. Pages were read through WebFetch's summarizer, not raw text: figures are as reported from the page and not cross-checked. Consensus (N3/N4) not due today (Mon only).",
+ "items": [
+  {
+   "kind": "voice",
+   "key": "dalio",
+   "lane": "debt",
+   "name": "Ray Dalio",
+   "source": "Fortune (commentary bylined by Dalio)",
+   "as_of": "2026-11-04",
+   "title": "Ray Dalio: why I recommend being a catalytic leader",
+   "url": "https://fortune.com/2026/11/04/ray-dalio-catalytic-leadership-world-economic-forum-gaea/",
+   "status": "ok",
+   "position": "Mostly a philanthropy/leadership piece urging the wealthy to give 'catalytically'; in passing he says he expects a difficult period driven by five forces, the first being unsustainable government debt burdens threatening the existing monetary order (others: internal political polarization, conflict between nations, climate/nature, technological change).",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Indonesia 12-million-hectare marine protected area funded with about IDR 4 trillion ($220 million), expected to generate about IDR 13 trillion ($720 million) net economic value through 2045",
+     "checkable_against": "WEF GAEA / Indonesian government announcements (not a macro series)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "https://raydalio.substack.com blocked: PROVENANCE_REQUIRED, permission request not answered in time (not retried)",
+   "notes": "Substack itself unread, so an in-gate Substack post cannot be ruled out. No debt/market figures in this piece; the debt line is one sentence of framing. All other Dalio items surfaced by search were dated on or before 2026-10-19 and discarded."
+  },
+  {
+   "kind": "voice",
+   "key": "setser",
+   "lane": "debt",
+   "name": "Brad Setser",
+   "source": "CFR Follow the Money",
+   "as_of": "2026-11-02",
+   "title": "Europe's Deal Limiting Chinese Auto Imports",
+   "url": "https://www.cfr.org/articles/europes-china-auto-deal",
+   "status": "ok",
+   "position": "The EU-China auto deal (a quota on Chinese hybrids) is a reasonable first step that stops the immediate import surge but is not a full answer: China's export surge is driven by collapsing domestic demand and massive excess capacity, Europe lacks a broad Section 301-style instrument and conditions on transplant factories, and without a stronger renminbi safeguards and managed trade will keep spreading.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Chinese auto exports to all markets up about 3.5 million cars year over year (2026)",
+     "checkable_against": "China General Administration of Customs / CAAM export data"
+    },
+    {
+     "claim": "China's domestic auto market down about 20 percent (about 5 million cars) in 2026, to under 20 million from about 24 million in 2025",
+     "checkable_against": "CAAM / CPCA monthly sales; Reuters and WSJ as cited"
+    },
+    {
+     "claim": "Chinese auto production capacity over 60 million cars; domestic sales under one-third of capacity",
+     "checkable_against": "WSJ as cited; industry capacity estimates"
+    },
+    {
+     "claim": "Deal caps Chinese hybrid (incl. PHEV) exports to Europe at about 350,000 cars/yr, rising to 370,000 then 390,000; versus about 300,000 in 2025 and an annualized pace of about 800,000 in the last three months of data",
+     "checkable_against": "European Commission announcement; Eurostat trade data; Bloomberg as cited"
+    },
+    {
+     "claim": "Total Chinese car imports into Europe running about 2 million/yr annualized, up about 75 percent y/y; hybrids up about 200 percent y/y",
+     "checkable_against": "Eurostat Comext / ACEA"
+    },
+    {
+     "claim": "EU BEV tariffs 25 percent (Tesla) to 45 percent, BYD 27 percent; ICE cars 10 percent",
+     "checkable_against": "EU countervailing duty regulation on Chinese BEVs"
+    },
+    {
+     "claim": "Net exports contributing about 1.5 percentage points to China's GDP growth",
+     "checkable_against": "China NBS GDP expenditure contributions"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "https://www.cfr.org/blog/setser blocked: PROVENANCE_REQUIRED, permission request not answered in time (not retried); index read via search-surfaced https://www.cfr.org/blogs/follow-the-money",
+   "notes": "Only in-gate post on the index; prior post 'What's the Renminbi Got to Do With it?' is 2026-10-11 (pre-gate). Body opened and read in full. Trade/China topic, no Treasury or TIC content this time."
+  },
+  {
+   "kind": "voice",
+   "key": "burry",
+   "lane": "debt",
+   "name": "Michael Burry",
+   "source": "Cassandra Unchained (Substack)",
+   "as_of": "2026-10-26",
+   "title": "Pricing Update - There will be NO Pricing/ Rate Increase November 1",
+   "url": "https://michaeljburry.substack.com/p/pricing-update-there-will-be-no-pricing",
+   "status": "unreachable",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "https://cassandraunchained.substack.com blocked: PROVENANCE_REQUIRED, permission request not answered in time (not retried). michaeljburry.substack.com home page rendered no post list; /t/articles index showed nothing later than 2026-08-03.",
+   "notes": "URL identity: listed URL could not be opened, so not confirmed. Search-surfaced https://michaeljburry.substack.com states 'Cassandra Unchained' 'By Michael Burry' on the page (verified by opening) - likely his real page. The one in-gate post found and opened (Oct 26) is an administrative subscription-price notice ($49/month or $479/year unchanged) with no macro content, so it is skipped as off-topic. No substantive in-gate post could be listed or read; this is NOT a confirmed quiet - the post index for the gate window was not readable. Publication is paid; bodies likely paywalled."
+  },
+  {
+   "kind": "voice",
+   "key": "krugman",
+   "lane": "debt",
+   "name": "Paul Krugman",
+   "source": "Substack",
+   "as_of": "2026-11-01",
+   "title": "Trumponomics: A Midterm Report Card",
+   "url": "https://paulkrugman.substack.com/p/trumponomics-a-midterm-report-card",
+   "status": "paywalled",
+   "position": "Free portion only: the economy is not disastrous - unemployment is low by historical standards and inflation is high but below the 2021-22 peak - yet families face affordability problems the CPI does not fully capture (notably health care), and this time the economy's problems are the president's own doing. He defers tax cuts and the growing budget deficit to a later piece.",
+   "sign": "neutral",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "Body behind paywall after the introduction",
+   "notes": "Paywalled sections: the economy, energy, immigration, tariffs, health care, grading. No quantitative figures in the free portion. Other in-gate Krugman posts skipped or over the cap are listed in the notes above the JSON (Oct 30 'Trumpflation and Travel' chart-only; Nov 4 'It Wasn't (Just) the Economy, Stupid' and Nov 3 'Moment of Truth' election pieces)."
+  },
+  {
+   "kind": "voice",
+   "key": "krugman",
+   "lane": "debt",
+   "name": "Paul Krugman",
+   "source": "Substack",
+   "as_of": "2026-10-31",
+   "title": "Azeem Azhar on the Explosion of Hacking and Other AI Issues",
+   "url": "https://paulkrugman.substack.com/p/azeem-azhar-on-the-explosion-of-hacking",
+   "status": "ok",
+   "position": "In his own remarks in the conversation (recorded Oct 29), Krugman says the 1990s IT bubble is a less convincing model than he thought, but he worries about how much capital AI infrastructure absorbs for few jobs, fast chip depreciation (likened to fracking wells), and whether AI firms will capture the value given cheaper foreign competitors; he also sees local opposition as a real veto on data centers.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Illustrative: an $8 billion data center investment ends up supporting about 100 maintenance workers",
+     "checkable_against": "Company data center announcements / local permit filings (illustrative, not a sourced statistic)"
+    },
+    {
+     "claim": "Total factor productivity about 10% above prior trend by around 2005, with IT-boom gains starting about 1999",
+     "checkable_against": "SF Fed / Fernald TFP series; BLS total factor productivity"
+    },
+    {
+     "claim": "Hypothetical: Chinese competitors 90% as effective and 90% cheaper",
+     "checkable_against": "Not checkable - stated as hypothetical"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "Interview transcript; only Krugman's own words used, not the guest's (guest argues it is not yet a bubble). Depreciation concern presented by him as something he has heard, not a conclusion. Archive showed '3 hrs ago'; post page gives Oct 31, 2026."
+  },
+  {
+   "kind": "voice",
+   "key": "krugman",
+   "lane": "debt",
+   "name": "Paul Krugman",
+   "source": "Substack",
+   "as_of": "2026-10-29",
+   "title": "Will the AI Investment Splurge Last?",
+   "url": "https://paulkrugman.substack.com/p/will-the-ai-investment-splurge-last",
+   "status": "ok",
+   "position": "The announced AI data center buildout, on plans the largest investment boom in U.S. history relative to GDP, will not happen as planned: it now depends on borrowing and lenders are getting wary (rising CDS spreads, notably CoreWeave and Oracle), and intense public opposition is blocking permits. He argues a slowdown would be good, letting the bubble deflate rather than burst.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Announced plans imply the largest investment boom in U.S. history as a share of GDP (Van Nieuwerburgh projection, Brookings paper, Sept 2026; values in chart only)",
+     "checkable_against": "Brookings Papers Sept 2026 (Van Nieuwerburgh); BEA NIPA private fixed investment in info processing equipment/software vs GDP (FRED)"
+    },
+    {
+     "claim": "CDS spreads for several AI companies, especially CoreWeave and Oracle, have risen since summer 2026 (levels in chart only)",
+     "checkable_against": "CDS quotes (Bloomberg/ICE) for ORCL, CRWV"
+    },
+    {
+     "claim": "New York State one-year moratorium on new large data centers",
+     "checkable_against": "NCSL state data center legislation tracker"
+    },
+    {
+     "claim": "Oracle's Project Jupiter (New Mexico) hit by repeated gas-pipeline permit rejections; force majeure filing reported 2026-09-24",
+     "checkable_against": "Oracle SEC filings; Bloomberg 2026-09-24"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "https://paulkrugman.substack.com blocked: PROVENANCE_REQUIRED, permission request not answered in time (not retried); used search-surfaced /archive and post links",
+   "notes": "Full body readable. Most data are in chart images not readable by the fetch; few figures stated in text. One phrase: lenders likened to Wile E. Coyote past the cliff edge."
+  },
+  {
+   "kind": "voice",
+   "key": "krugman",
+   "lane": "debt",
+   "name": "Paul Krugman",
+   "source": "Substack",
+   "as_of": "2026-10-25",
+   "title": "The Crisis Next Time",
+   "url": "https://paulkrugman.substack.com/p/the-crisis-next-time",
+   "status": "paywalled",
+   "position": "Free portion only: the U.S. will eventually suffer a severe or prolonged slump, and three current concerns could be the source - persistent inflation forcing the Fed to raise short rates substantially, an AI investment boom that may be a bubble, and rising long-term government bond yields with talk of a debt crisis. He frames it as an explanatory primer, not a forecast, and is especially worried an AI investment collapse could lead to a liquidity trap.",
+   "sign": "bear",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "Body behind paywall after the introduction and section roadmap",
+   "notes": "Paywalled sections listed: why recessions are sometimes easy to cure, stagflation, the liquidity trap, debt crisis, unknown unknowns. No figures in the free portion."
+  },
+  {
+   "kind": "voice",
+   "key": "tooze",
+   "lane": "debt",
+   "name": "Adam Tooze",
+   "source": "Chartbook (Substack)",
+   "as_of": "2026-11-04",
+   "title": "Chartbook 483 After the midterms: How does America come down from Trump's \"speedball economy\"?",
+   "url": "https://adamtooze.substack.com/p/chartbook-483-after-the-midterms",
+   "status": "ok",
+   "position": "After the Democratic midterm landslide he poses four open questions: whether economic nationalism has peaked, whether pushback on AI data centers weakens the dollar under his profit-dollar / speedball-dollar hypotheses, how \"big government\" coexists with falling yields now that Treasuries rallied on the result (non-fiscal tools, redistributive taxes or financial repression), and how to find an off-ramp from the Iran war and a weaponized Strait of Hormuz. He calls healthcare costs a \"sleeper inflation issue\" and warns that reversing Trump's policies will not make things better quickly.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "10-year Treasury yield fell 4 bps to 4.92% on election day (quoted from Bloomberg)",
+     "checkable_against": "FRED DGS10, 2026-11-03"
+    },
+    {
+     "claim": "30 non-binding ballot measures on data centers nationwide, 'restrict' leading 29 to 1 (citing a Jim Bianco post of 2026-11-04)",
+     "checkable_against": "state election results / Ballotpedia"
+    },
+    {
+     "claim": "Texas to host 25% of US data centers coming online by 2030 (citing Jim Bianco)",
+     "checkable_against": "ERCOT large-load interconnection queue; industry data-center pipeline trackers"
+    },
+    {
+     "claim": "60 GW of data center capacity and a $200 billion investment, attributed to Wall Street analysts (undated)",
+     "checkable_against": "sell-side data-center capacity estimates; hyperscaler capex in 10-Q filings"
+    },
+    {
+     "claim": "Health insurance premiums up 5% (citing Greg Ip, WSJ, 2026-11-03; period not stated)",
+     "checkable_against": "KFF Employer Health Benefits Survey; BLS CPI health insurance index"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Full body read. Given index URL timed out on permission; post reached via search result. Much of the piece is electoral politics; only the economic questions are recorded."
+  },
+  {
+   "kind": "voice",
+   "key": "tooze",
+   "lane": "debt",
+   "name": "Adam Tooze",
+   "source": "Chartbook (Substack)",
+   "as_of": "2026-11-04",
+   "title": "Top Links 1275 AI and the great cashflow transfer. The mining boom that drove the Australian economy. Psychopatriarchy & the caesura in the movement of thought.",
+   "url": "https://adamtooze.substack.com/p/top-links-1275-ai-and-the-great-cashflow",
+   "status": "paywalled",
+   "position": "Free portion only: one lead line framing the AI boom as a large transfer of cash flow from the hyperscalers to the chip makers. No argument or evidence visible.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Paid post; body cut after the first bolded sentence",
+   "notes": "Date read off the page (Nov 04, 2026)."
+  },
+  {
+   "kind": "voice",
+   "key": "tooze",
+   "lane": "debt",
+   "name": "Adam Tooze",
+   "source": "Chartbook (Substack)",
+   "as_of": "2026-11-02",
+   "title": "Top Links 1273 AI price shock. A miserable decade in the UK. Harlan county KY & the tank - a German history.",
+   "url": "https://adamtooze.substack.com/p/top-links-1273-ai-price-shock-a-miserable",
+   "status": "paywalled",
+   "position": "Free portion only: one lead line saying the US AI build-out is driving \"serious inflationary pressures\". No mechanism or evidence visible.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Paid post; body cut after the first bolded sentence",
+   "notes": "Date read off the page (Nov 02, 2026). Other in-gate Tooze posts seen but not given their own entry: Chartbook 482 China's billionaires (2026-10-31, full text readable, https://adamtooze.substack.com/p/chartbook-482-chinas-billionaires); Top Links 1274 AI & recycled capex / total social financing (2026-11-03, paid, no body visible); Top Links 1266 Winter arrives in the market (2026-10-26, paid, teaser quotes Robert Armstrong only). Index page not read, so other in-gate posts may exist."
+  },
+  {
+   "kind": "voice",
+   "key": "tooze",
+   "lane": "debt",
+   "name": "Adam Tooze",
+   "source": "Chartbook (Substack)",
+   "as_of": "2026-10-28",
+   "title": "Chartbook 481 How stable is the profit dollar in an age of \"speedball capitalism\"?",
+   "url": "https://adamtooze.substack.com/p/chartbook-481-how-stable-is-the-profit",
+   "status": "ok",
+   "position": "The reserve-recycling dollar of the 2000s has given way to a \"profit dollar\", a portfolio currency driven by foreign buying of US equities and the AI trade rather than Treasuries. A liquidity-driven crisis would probably strengthen the dollar at first, but an AI-specific unwind could weaken it through self-reinforcing selling; he leaves open whether the dollar system is already almost broken.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Net foreign purchases of US equities $244bn in April-May 2026 and $904bn over the past 12 months, of which private $781bn and official $123bn (MUFG citing TIC)",
+     "checkable_against": "Treasury TIC monthly transactions data"
+    },
+    {
+     "claim": "Non-US holdings of US equities over $17.6tn and of US bonds $13.6tn as of March 2025 (BIS Bulletin)",
+     "checkable_against": "BIS Bulletin; Treasury TIC annual holdings survey"
+    },
+    {
+     "claim": "Non-US share of holdings, March 2025: 18% of US equities, 33% of Treasuries, 21% of agency and corporate bonds (BIS)",
+     "checkable_against": "BIS Bulletin; TIC SHL survey; Fed Z.1"
+    },
+    {
+     "claim": "Real trade-weighted dollar above its long-run (since 1973) average for 12 consecutive years (Wells Fargo via Reuters)",
+     "checkable_against": "FRED RTWEXBGS / Fed real broad dollar index"
+    },
+    {
+     "claim": "183 GW of new data-centre capacity projected by 2032 (Van Nieuwerburgh via the Economist)",
+     "checkable_against": "the cited Economist column / Van Nieuwerburgh paper"
+    },
+    {
+     "claim": "US budget surplus 2.4% of GDP and debt under 35% of GDP in 2000",
+     "checkable_against": "FRED FYFSGDA188S, FYGFGDQ188S (debt held by public) / CBO historical tables"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Full body read. Refers to an AI-related sell-off around 2026-10-22 (via Reuters) without a figure. Figures in reader comments excluded."
+  },
+  {
+   "kind": "voice",
+   "key": "wang",
+   "lane": "debt",
+   "name": "Joseph Wang",
+   "source": "Fed Guy (fedguy.com)",
+   "as_of": "2026-02-23",
+   "title": "War and Policy",
+   "url": "https://fedguy.com/",
+   "status": "quiet",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "The URL exactly as given (no trailing slash) timed out on permission; the same front page with trailing slash came up in search and was read. Newest post on page one is dated February 23, 2026; nothing in gate. Search surfaced only out-of-gate interviews (Forward Guidance on YouTube 2026-06-17; Fox Business clip 2026-03-22). Cannot tell whether newer posts are subscriber-only."
+  },
+  {
+   "kind": "voice",
+   "key": "el-erian",
+   "lane": "debt",
+   "name": "Mohamed El-Erian",
+   "source": "X post, reported by gokhshtein.com",
+   "as_of": "2026-11-03",
+   "title": "Mohamed El-Erian Warns of Spreading Real Estate Debt Risk",
+   "url": "https://gokhshtein.com/news/2026-11-03-mohamed-el-erian-warns-of-spreading-real-estate-debt-risk",
+   "status": "ok",
+   "position": "Sharing a WSJ report on Brookfield walking away from a property rather than refinancing, he flags it as a risk that industry insiders he follows \"worry could spread\" as more debt refinancing deadlines arrive.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Brookfield exiting a property rather than refinance a loan of roughly $360 million; refinancing would have cost tens of millions more (WSJ text he shared)",
+     "checkable_against": "the WSJ article; CMBS/loan servicer reports (Trepp)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "His own words are a single framing sentence; the figures are from the WSJ excerpt he shared, not his own. Not included for lack of readable dated own words: an X post on the post-midterm market reaction (search title only), a Fox Business video of 2026-11-02 (no quotes on page), and an FT op-ed 'Europe's bracing reality on US bond yields' reposted at gramercy.com under /2026/10/ (redirect loop, exact day unknown)."
+  },
+  {
+   "kind": "voice",
+   "key": "el-erian",
+   "lane": "debt",
+   "name": "Mohamed El-Erian",
+   "source": "X post, reported by gokhshtein.com",
+   "as_of": "2026-11-02",
+   "title": "Mohamed El-Erian Notes Bond Market Resilience Amidst Oil Drop, Nasdaq Decline",
+   "url": "https://gokhshtein.com/news/2026-11-02-mohamed-el-erian-notes-bond-market-resilience-amidst-oil",
+   "status": "ok",
+   "position": "He finds it notable that the 10-year Treasury yield \"barely moved lower on the day\" despite a sharp fall in oil and a Nasdaq reversal.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "10-year US Treasury yield closed at 4.91% on 2026-11-02",
+     "checkable_against": "FRED DGS10"
+    },
+    {
+     "claim": "Oil prices fell 8% on 2026-11-02",
+     "checkable_against": "FRED DCOILWTICO / DCOILBRENTEU"
+    },
+    {
+     "claim": "Nasdaq reversed intraday and closed down 1.1% on 2026-11-02",
+     "checkable_against": "FRED NASDAQCOM"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Original X post not readable; only the opening of the post is quoted by the site. Which oil benchmark he meant is not stated."
+  },
+  {
+   "kind": "voice",
+   "key": "el-erian",
+   "lane": "debt",
+   "name": "Mohamed El-Erian",
+   "source": "X post, reported by gokhshtein.com",
+   "as_of": "2026-11-01",
+   "title": "Mohamed El-Erian Notes October Market Dispersion, Nasdaq Underperformance",
+   "url": "https://gokhshtein.com/news/2026-11-01-mohamed-el-erian-notes-october-market-dispersion-nasdaq",
+   "status": "ok",
+   "position": "October was marked by \"significant dispersion, both across asset classes and within them\": Nasdaq underperformed the Dow and European equities, oil surged, perceived safe havens diverged, and government bonds rallied strongly.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "US 10-year yield fell 36 bps in October 2026, the largest monthly drop since 2023",
+     "checkable_against": "FRED DGS10, month-end September vs October 2026"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Original X post not readable (robots-blocked); quotes are as relayed by a crypto news site."
+  },
+  {
+   "kind": "voice",
+   "key": "el-erian",
+   "lane": "debt",
+   "name": "Mohamed El-Erian",
+   "source": "CNBC interview, reported by Stocktwits and GuruFocus/Yahoo Finance",
+   "as_of": "2026-10-26",
+   "title": "Fed Is Using The 'Wrong Policy' To Tackle Inflation, Rising Bond Yields, Says Mohamed El-Erian: Calls For Fiscal Restraint",
+   "url": "https://stocktwits.com/news-articles/markets/equity/mohamed-el-erian-fed-wrong-policy-inflation-fiscal-restraint/cZU3RmPRBy8",
+   "status": "ok",
+   "position": "Rate policy is the wrong tool for inflation and yield levels; what is needed is \"fiscal containment\". He expected the Fed to hold that week with hawkish language, said debt markets are getting somewhat saturated (citing Meta's return to equity funding), welcomed differentiation within AI with weak-balance-sheet names hit first, called AI adoption broad but very shallow, and named an Iran escalation lifting oil and a sudden stop in AI as the risks.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "US fiscal deficit about 6% of GDP",
+     "checkable_against": "FRED FYFSGDA188S; Treasury Monthly Treasury Statement / CBO monthly budget review"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Interview given Monday 2026-10-26. Second write-up of the same interview, dated 2026-10-26: https://finance.yahoo.com/technology/ai/articles/veteran-economist-sounds-stark-warning-184714020.html. Sign left n/a: the remarks mix a bond-supply concern with AI caution but he gives no explicit directional call."
+  },
+  {
+   "kind": "voice",
+   "key": "alden",
+   "lane": "debt",
+   "name": "Lyn Alden",
+   "source": "CNBC video (interview); lynalden.com newsletter archive has nothing in gate",
+   "as_of": "2026-11-02",
+   "title": "Lyn Alden: I'm still bullish on the semiconductor space",
+   "url": "https://www.cnbc.com/video/2026/11/02/lyn-alden-im-still-bullish-on-the-semiconductor-space.html",
+   "status": "paywalled",
+   "position": "Title only: she says she is still bullish on the semiconductor space. Body and any reasoning not readable.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "CNBC page fetch failed (client_error); https://www.lynalden.com timed out on permission (PROVENANCE_REQUIRED)",
+   "notes": "Sign left n/a: the only evidence is the CNBC headline, body unread. Date taken from the URL path in the search result (2026/11/02), not from a page I opened. 'paywalled' is used loosely: in-gate item exists, body unread. Sign rests on the headline alone. Her own newsletter archive (https://www.lynalden.com/newsletter-archives/, read successfully) shows the newest issue as 'The Wild West', June 2026 (month only), so the owned site is quiet."
+  },
+  {
+   "kind": "voice",
+   "key": "patel",
+   "lane": "capex-ai",
+   "name": "Dylan Patel",
+   "source": "SemiAnalysis",
+   "as_of": "2026-11-03",
+   "title": "Elon Is Doing It Again: SpaceX Will Be The World's Biggest AI Cloud",
+   "url": "https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will",
+   "status": "paywalled",
+   "position": "SemiAnalysis says its earlier call that SpaceX could reach 10GW in 2027 is being borne out and raises the 2027 estimate to about 13GW, calling SpaceX the fastest datacenter builder in the world thanks to in-house engineering and labor, behind-the-meter gas turbines and very large battery storage; a possible power gap at Colossus 2 is seen as closable.",
+   "sign": "bull",
+   "numbers": [
+    {
+     "claim": "SpaceX datacenter capacity estimate ~13GW in 2027 (revised up from 10GW)",
+     "checkable_against": "SemiAnalysis datacenter model; SpaceX/xAI disclosures; later permit and utility filings"
+    },
+    {
+     "claim": "3.6GW under construction across SpaceX sites as of about Nov 2026",
+     "checkable_against": "County permits, satellite imagery, SemiAnalysis datacenter model"
+    },
+    {
+     "claim": "Colossus 2: ~2GW built in just under 1 year; 5.9GWh BESS being installed; ~1.2GW grid connection; possible power gap of up to ~300MW",
+     "checkable_against": "TVA / MLGW filings, Shelby County and Mississippi permits"
+    },
+    {
+     "claim": "Southaven power plant: 2.7GW nameplate currently permitted, 1.24GW nameplate by July 2027 (binding requirement signed 2026-07-30)",
+     "checkable_against": "Mississippi DEQ air permit records"
+    },
+    {
+     "claim": "TVA grid service requests of 700MW (Macrohard) and 450MW (MiniHard); 500kV GIS substation due 2026-12-31",
+     "checkable_against": "TVA board materials / interconnection records"
+    },
+    {
+     "claim": "Build times: Colossus 1 retrofit 150MW in 122 days; Colossus 2 210MW in 91 days; typical greenfield 8-12 months",
+     "checkable_against": "xAI/SpaceX statements, contemporaneous press"
+    },
+    {
+     "claim": "Industry forecast of 40GW+ behind-the-meter datacenter power by 2028",
+     "checkable_against": "SemiAnalysis model; EIA generator data (Form 860)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Authors: Reyk Knuhtsen, Jeremie Eliahou Ontiveros, Dylan Patel. Paid post; free portion ends in the power section after the ~300MW shortfall discussion. Archive showed '17 hrs ago'; post page shows Nov 03, 2026. No dollar capex in visible text. Archive URL surfaced by search; listed homepage https://semianalysis.com was blocked (PROVENANCE_REQUIRED, permission timeout)."
+  },
+  {
+   "kind": "voice",
+   "key": "patel",
+   "lane": "capex-ai",
+   "name": "Dylan Patel",
+   "source": "SemiAnalysis",
+   "as_of": "2026-11-02",
+   "title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+   "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+   "status": "ok",
+   "position": "SemiAnalysis introduces GDPx, an agentic benchmark aimed at the sectors where frontier models earn the highest returns, arguing early AI revenue will concentrate there; the best model scores only 12%, OpenAI and Anthropic lead, and OpenAI's GDPval is criticised as outdated for agentic work.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Best model's GDPx score is 12% (pass@1 across three attempts, 8-hour default task limit)",
+     "checkable_against": "SemiAnalysis GDPx results / leaderboard"
+    },
+    {
+     "claim": "GDPval human expert inter-rater agreement on gold subset 71%",
+     "checkable_against": "OpenAI GDPval paper (Sept 25, 2025)"
+    },
+    {
+     "claim": "Expert-built tasks cost $5,000+ each",
+     "checkable_against": "Not independently checkable; SemiAnalysis claim"
+    },
+    {
+     "claim": "Legal tasks mean partial scores: Opus 5.5 44%, GPT-6 Astra 25%, Gemini 4 Argon 2%, GLM-5.3 0.5%",
+     "checkable_against": "SemiAnalysis GDPx results"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Authors: Max Kan, Andrew Megalaa, Dylan Patel. Header marks post as paid but a long body (~107k chars) was returned; fetch read the first 100k only and no explicit paywall line was seen. Marginal to the capex/datacenter focus (model capability benchmark, no capex/GW/revenue figures). Out of gate and discarded: 'The Huawei-DeepSeek Symbiosis' (Oct 21), 'Datacenters 2027: The Year of Acceleration, +50GW in a Single Year' (Oct 19)."
+  },
+  {
+   "kind": "voice",
+   "key": "patel",
+   "lane": "capex-ai",
+   "name": "Dylan Patel",
+   "source": "SemiAnalysis",
+   "as_of": "2026-11-01",
+   "title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
+   "url": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+   "status": "paywalled",
+   "position": "The 2027 US datacenter buildout is largely locked in because most capacity is already under construction, but 2028 is less secure: most of it has not started and sits in states electing governors on Nov. 3, with both parties campaigning on tighter datacenter rules. A prolonged Texas permitting freeze is named as the largest single risk to their forecast.",
+   "sign": "neutral",
+   "numbers": [
+    {
+     "claim": "33.8GW 2027 pipeline in the top 20 US states, roughly three-quarters already under construction",
+     "checkable_against": "SemiAnalysis datacenter model; state permit records"
+    },
+    {
+     "claim": "US net datacenter additions of 62.2GW in 2028; 43.5GW (70%) in 13 states, 10 of which elect a governor on 2026-11-03",
+     "checkable_against": "SemiAnalysis datacenter model; state election results"
+    },
+    {
+     "claim": "Texas is ~30% of US GW in 2028",
+     "checkable_against": "ERCOT large-load interconnection queue"
+    },
+    {
+     "claim": "Scenario: ~30GW of 2028 capacity in states where pro-moratorium candidates win vs 5.7GW if less restrictive candidates win",
+     "checkable_against": "State election results cross-referenced with SemiAnalysis state pipeline"
+    },
+    {
+     "claim": "September 2026 estimate: ~20GW inside local restrictions, 1.5GW facing delay",
+     "checkable_against": "SemiAnalysis prior note; local moratorium trackers"
+    },
+    {
+     "claim": "Texas TCEQ froze permits 2026-09-21; ERCOT report targeted 2026-12-10; freeze could run ~8 months to close to a year if tied to the 2027 legislative session (Jan 12 - May 31, 2027)",
+     "checkable_against": "TCEQ and ERCOT notices; Texas Legislature calendar"
+    },
+    {
+     "claim": "Of 20 nominees, 9 want a pause on new construction and 11 want conditions only; 15 would make datacenters pay grid costs, 12 would end tax breaks",
+     "checkable_against": "Candidate platforms"
+    },
+    {
+     "claim": "Global +50GW datacenter year in 2027",
+     "checkable_against": "SemiAnalysis 'Datacenters 2027' note (Oct 2026, out of gate)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Authors per archive: Maya Barkin, Wayne Ma, Reyk Knuhtsen, Jeremie Eliahou Ontiveros, Dylan Patel. Paid; free portion ends at the excluded-states paragraph (West Virginia). Published before the election; contains no results."
+  },
+  {
+   "kind": "voice",
+   "key": "patel",
+   "lane": "capex-ai",
+   "name": "Dylan Patel",
+   "source": "SemiAnalysis",
+   "as_of": "2026-10-23",
+   "title": "Amazon's Trainium Takes a Strike at the Training King",
+   "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at",
+   "status": "paywalled",
+   "position": "Trainium has proven itself in inference and was historically a weaker fit for research training; AWS's move to native PyTorch is the right direction but not yet mature, with usable test results, slow compile times, and the caveat that training-stack quality depends on broad numerical correctness rather than peak MFU.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Qwen3-32B on 16 Trainium2 chips: 11,099 tokens/s at 23.89% MFU eager vs 14,156 tokens/s at 30.47% MFU compiled (1.28x)",
+     "checkable_against": "SemiAnalysis benchmark; AWS Neuron SDK documentation"
+    },
+    {
+     "claim": "First-step time 184.6s eager / 255.7s compiled; gpt-oss 20B compile time 27 min 17 s",
+     "checkable_against": "SemiAnalysis benchmark; AWS Neuron release notes"
+    },
+    {
+     "claim": "FlexAttention benchmark: 89 of 96 cases passed (93%)",
+     "checkable_against": "SemiAnalysis benchmark"
+    },
+    {
+     "claim": "AWS CI uses up to 80,000 physical Trainium cores",
+     "checkable_against": "AWS statements"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Authors: Kimbo Chen, Dylan Patel. Paid; free portion ends after the Nsight Compute figures. Technical software-stack piece: no GW, capex, revenue or shipment figures in visible text. Published exactly on the gate date (Oct 23)."
+  },
+  {
+   "kind": "voice",
+   "key": "thompson",
+   "lane": "capex-ai",
+   "name": "Ben Thompson",
+   "source": "Stratechery",
+   "as_of": "2026-11-04",
+   "title": "AI on the Ballot",
+   "url": "https://stratechery.com/2026/ai-on-the-ballot/",
+   "status": "ok",
+   "position": "Thompson argues the midterms showed voters in both parties opposing data center construction and that the binding constraint on AI has moved from compute to memory to power and now to politics, which is harder to solve; he sees the AI trade as possibly painful short term (credit tightening the main near-term driver), neoclouds hurt, hyperscalers and frontier labs relative winners, Nvidia hurt near term but efficiency per watt more valuable.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Texas accounts for over 25% of planned US data center capacity by 2030",
+     "checkable_against": "ERCOT large-load queue; SemiAnalysis / industry datacenter pipeline estimates"
+    },
+    {
+     "claim": "Texas Governor Abbott imposed a moratorium on new data center permits in September 2026",
+     "checkable_against": "Texas governor's office / TCEQ notices"
+    },
+    {
+     "claim": "Democrats flipped at least 7 Senate seats in the 2026 midterms; first Democratic Texas governor since 1990",
+     "checkable_against": "Official election results / DDHQ"
+    },
+    {
+     "claim": "Nearly a trillion dollars of enterprise software market value lost earlier in 2026",
+     "checkable_against": "Software index market cap (e.g. IGV constituents)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Body readable in fetch. Sign is a stretch-check: the piece is mixed (ten implications, winners and losers); 'bear' reflects his short-term framing of the buildout, long-run view explicitly uncertain — downgrade to neutral if preferred. Election outcomes are as the piece reports them, not independently verified. Stripe sponsor figures excluded. No capex/revenue/debt figures. Listed homepage https://stratechery.com was blocked (PROVENANCE_REQUIRED); index read at search-surfaced https://stratechery.com/2026/."
+  },
+  {
+   "kind": "voice",
+   "key": "thompson",
+   "lane": "capex-ai",
+   "name": "Ben Thompson",
+   "source": "Stratechery",
+   "as_of": "2026-10-28",
+   "title": "Meta Earnings, Muse and the Frontier, Musebook",
+   "url": "https://stratechery.com/2026/meta-earnings-muse-and-the-frontier-musebook/",
+   "status": "paywalled",
+   "position": "Standfirst only: Meta's earnings should be read against Zuckerberg having delivered on a promise, and backing Muse means backing Meta's compute spending.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Body behind Stratechery Plus paywall; only standfirst returned.",
+   "notes": "Daily Update. Also in gate but not opened (cap of 4): 'Google Earnings, Facebook Deja Vu, The Agent Play' (Nov 2, Update), 'Apple Earnings, Memory Problems, The Hardware Company Regression' (Nov 3, Update), 'An Interview with Palantir CTO Shyam Sankar About the AI Religious War' (Oct 29). Skipped as off-topic: Sharp Tech / sharptext.net sports items. Out of gate: Craig Moffett interview on SpaceX and bubbles (Oct 22)."
+  },
+  {
+   "kind": "voice",
+   "key": "thompson",
+   "lane": "capex-ai",
+   "name": "Ben Thompson",
+   "source": "Stratechery",
+   "as_of": "2026-10-27",
+   "title": "Anthropic S-1, The Cost of Compute, Who Is Paying?",
+   "url": "https://stratechery.com/2026/anthropic-s-1-the-cost-of-compute-who-is-paying/",
+   "status": "paywalled",
+   "position": "Standfirst only: Anthropic's IPO has arrived; the core business is very profitable but competition may eat all of the profits, and investors face continued dilution.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Body behind Stratechery Plus paywall; only headline and standfirst returned.",
+   "notes": "Daily Update. Verbatim phrase used: 'the core business is very profitable, but competition may eat all of the profits'."
+  },
+  {
+   "kind": "voice",
+   "key": "thompson",
+   "lane": "capex-ai",
+   "name": "Ben Thompson",
+   "source": "Stratechery",
+   "as_of": "2026-10-26",
+   "title": "The End of the Internet",
+   "url": "https://stratechery.com/2026/the-end-of-the-internet/",
+   "status": "ok",
+   "position": "Thompson argues the open Internet where anyone can run a server is ending, with AI-enabled attacks the latest blow, and that the future is smaller but more promising: AI makes software for one person or a small team cheap, and freeing minds from subsistence cognition could unleash very large new demand in many local markets.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Weekly free Article; body readable. Only tangentially on-focus (AI and software/security economics); no capex, GW, revenue or debt figures. Cites Venkatesh Rao's 80% 'subsistence cognition' estimate, which is not a checkable market figure."
+  },
+  {
+   "kind": "voice",
+   "key": "zitron",
+   "lane": "capex-ai",
+   "name": "Ed Zitron",
+   "source": "Where's Your Ed At",
+   "as_of": "2026-11-03",
+   "title": "Running Dry",
+   "url": "https://www.wheresyoured.at/running-dry/",
+   "status": "ok",
+   "position": "Zitron argues the AI bubble collapses when the money runs out: debt markets are closing to AI infrastructure and venture capital is drying up; OpenAI's raise fell short of target, Anthropic's amended S-1 shows compute costs rising faster than revenue with enormous commitments, and hyperscaler revenue is inflated by lab compute spending.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "OpenAI raised $11B at a $1.25T valuation in late Oct 2026 against a $30B target",
+     "checkable_against": "OpenAI announcement; press reports (The Information, Bloomberg)"
+    },
+    {
+     "claim": "OpenAI revenue $6.7B in Q2 2026 (up from $5.7B); $12.1B cost of revenue plus R&D in Q1 2026; over $73B cash and marketable securities at end Q1 2026",
+     "checkable_against": "Reported OpenAI financials (press leaks; Microsoft 10-Q equity-method disclosures)"
+    },
+    {
+     "claim": "OpenAI $750B planned cloud spend through 2030",
+     "checkable_against": "Press reports of OpenAI compute commitments"
+    },
+    {
+     "claim": "Microsoft: $10B revenue from OpenAI in latest quarter (FY27 Q1), about 11% of total",
+     "checkable_against": "Microsoft FY27 Q1 10-Q / earnings call"
+    },
+    {
+     "claim": "Anthropic Q3 2026: revenue ~$17B (up ~47% from $11.5B), compute costs $9.9B (up ~77% from $5.6B), net loss $567M",
+     "checkable_against": "Anthropic amended S-1 (SEC EDGAR)"
+    },
+    {
+     "claim": "Anthropic: $319.9B minimum contractual payments plus $451.2B in leases not yet commenced, through 2030; $69.8B due within 12 months (Oct 2026 - Sep 2027)",
+     "checkable_against": "Anthropic amended S-1, commitments and contingencies note"
+    },
+    {
+     "claim": "Anthropic lost ~$600M of Q3 2026 revenue to price cuts and discounts; ~$9.3B per quarter for SpaceX compute; expected borrowing rates 8-11%",
+     "checkable_against": "Anthropic amended S-1; partly author's estimates"
+    },
+    {
+     "claim": "CoreWeave accumulated debt $35.1B",
+     "checkable_against": "CoreWeave 10-Q"
+    },
+    {
+     "claim": "Data center construction starts $9.4B in September 2026, down from $25.8B in August",
+     "checkable_against": "Dodge Construction Network data (source not confirmed in fetch)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Free post, body read. Fetch flagged internal inconsistencies in the piece: Anthropic non-cancellable commitments given as both $437.4B and $447.5B, and Anthropic cash as both $16.8B and $95.5B — those were left out of numbers. Several figures are the author's own estimates or from other outlets. No GW figures. Listed homepage https://www.wheresyoured.at was blocked (PROVENANCE_REQUIRED); index read at search-surfaced author page."
+  },
+  {
+   "kind": "voice",
+   "key": "zitron",
+   "lane": "capex-ai",
+   "name": "Ed Zitron",
+   "source": "Where's Your Ed At",
+   "as_of": "2026-10-28",
+   "title": "Exit Liquidity",
+   "url": "https://www.wheresyoured.at/exit-liquidity/",
+   "status": "ok",
+   "position": "Zitron argues Anthropic's S-1 describes a company that won't exist once it is public: Q2 2026 was profitable only because of discounted SpaceX compute, commitments ramp sharply from mid-2026, and the IPO and lock-up schedule let insiders sell to retail investors as 'exit liquidity' within a broader AI bubble.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Anthropic Q2 2026 net profit $974M",
+     "checkable_against": "Anthropic S-1 (SEC EDGAR)"
+    },
+    {
+     "claim": "Anthropic Q3 2026 revenue $16.8B (up 45% QoQ from $11.5B); compute spend ~$9.88B (up 76.3% QoQ from $5.5B); revenue per $1 of compute fell from $2.00 (Q2) to $1.70 (Q3)",
+     "checkable_against": "Anthropic S-1 / amended S-1"
+    },
+    {
+     "claim": "Anthropic compute deals: Broadcom TPU leases $161.2B; SpaceX up to $120.5B (~$3.1B/month from Dec 2026); Google $114.5B (Apr 2026 - Jul 2033); Amazon $110B (May 2026 - Apr 2036); Microsoft $44.9B",
+     "checkable_against": "Anthropic S-1 commitments note; counterparties' filings"
+    },
+    {
+     "claim": "Anthropic cash and equivalents ~$112B as of June 30, 2026; Series H raise $65B in May 2026",
+     "checkable_against": "Anthropic S-1 balance sheet"
+    },
+    {
+     "claim": "Anthropic IPO valuation target ~$1.4T-$1.5T (reported up to $1.75T), earlier private mark $960B; raise target $50B-$100B",
+     "checkable_against": "S-1 price range when filed; press reports"
+    },
+    {
+     "claim": "5-7% of Anthropic revenue (~$1.65B-$2.31B, nine months to Sep 30, 2026) from distillation / policy-violating usage",
+     "checkable_against": "Anthropic S-1 risk factors"
+    },
+    {
+     "claim": "Meta equity raise of ~$97.5B via at-the-market offering in 2026",
+     "checkable_against": "Meta 424B5 prospectus supplements / 10-Q"
+    },
+    {
+     "claim": "Magnificent Seven capex over $1 trillion",
+     "checkable_against": "Company 10-Ks/10-Qs, capex lines"
+    },
+    {
+     "claim": "OpenAI and Anthropic combined obligations over $1.3T",
+     "checkable_against": "Anthropic S-1; reported OpenAI commitments"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Free post, body read. The piece's ~$430B headline obligation does not match its itemised deals (about $551B); headline figure omitted from numbers. Verbatim phrase used: 'exit liquidity'. No GW figures."
+  },
+  {
+   "kind": "voice",
+   "key": "zitron",
+   "lane": "capex-ai",
+   "name": "Ed Zitron",
+   "source": "Where's Your Ed At",
+   "as_of": "2026-10-23",
+   "title": "Premium: The Hater's Guide To Blackstone",
+   "url": "https://www.wheresyoured.at/premium-the-haters-guide-to-blackstone/",
+   "status": "paywalled",
+   "position": "Free portion: Zitron argues Blackstone's record undercuts its founder's self-presentation and that the firm is now deeply tied to AI through data centers, debt financing and stakes in AI firms, with exposure hard to trace because it runs through private vehicles funded partly by public pensions.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Blackstone has $275 billion invested in data center and digital infrastructure (period not stated)",
+     "checkable_against": "Blackstone 10-K / earnings materials"
+    },
+    {
+     "claim": "Blackstone assets under management ~$1.4 trillion",
+     "checkable_against": "Blackstone quarterly earnings release"
+    },
+    {
+     "claim": "Blackstone did a $2.3B debt financing for CoreWeave when CoreWeave had $16M revenue (per The Information)",
+     "checkable_against": "CoreWeave S-1 / 2023 financing announcement"
+    },
+    {
+     "claim": "~32% of Blackstone's funding comes from public pension funds (Bloomberg Intelligence)",
+     "checkable_against": "Bloomberg Intelligence; pension fund disclosures"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Paywall after the introduction ('Read the full story').",
+   "notes": "Published exactly on the gate date. Out of gate and discarded: 'AI Had Better Work Out' (Oct 20)."
+  },
+  {
+   "kind": "voice",
+   "key": "kedrosky",
+   "lane": "capex-ai",
+   "name": "Paul Kedrosky",
+   "source": "paulkedrosky.com",
+   "as_of": "2026-11-04",
+   "title": "Four AI, Capex, and Economy-Related Takeaway Graphs from U.S. 2026",
+   "url": "https://paulkedrosky.com/four-ai-capex-and-economy-related-takeaway-graphs-from-u-s-2026/",
+   "status": "paywalled",
+   "position": "Free portion (three of four points): opposition to data centers is among the top areas of bipartisan voter agreement and he thinks it should rank higher given utility prices; economic pessimism and AI skepticism overlap; and a majority of Americans see AI as net harmful, which he ties partly to employer-linked health insurance and to frontier labs' approach to risk.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Data center opposition ranks among the top four areas of bipartisan agreement among US voters (2026 midterm polling; chart values not readable)",
+     "checkable_against": "Underlying exit poll / survey behind the chart (source not visible)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Paywall after point 3; the fourth graph is hidden. Charts are images; no survey percentages in text.",
+   "notes": "Also in gate, not opened or not readable: 'Daily Brief — November 4, 2026' (opened; fully paywalled, no body), Daily Briefs Nov 2 and Nov 3 (paid), 'Graph of the Day: Anthropic and its AI Side Hustle' (Nov 2, paid), 'The Hackening Has Begun' (Oct 24, paid). Out of gate: two Oct 22 posts."
+  },
+  {
+   "kind": "voice",
+   "key": "kedrosky",
+   "lane": "capex-ai",
+   "name": "Paul Kedrosky",
+   "source": "paulkedrosky.com",
+   "as_of": "2026-10-29",
+   "title": "Nine Charts on the AI Boom: Debt Records, China Bust, Anthropic Indifference, Oracle Magic, etc.",
+   "url": "https://paulkedrosky.com/nine-charts-on-the-ai-boom-debt-records-china-bust-anthropic-indifference-oracle-magic-etc/",
+   "status": "paywalled",
+   "position": "Free portion (items 1-6): Chinese AI stocks rallied then gave back most gains; AI productivity gains look concentrated in the companies selling AI rather than the S&P 493; cybersecurity stocks are outperforming AI leaders; and a large share of AI spending comes from venture-backed companies, so the AI economy is partly investors financing other investors' customers.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "STAR 50 index +64% through June 2026, then -40% by late October 2026",
+     "checkable_against": "SSE STAR 50 index price history"
+    },
+    {
+     "claim": "Cybersecurity stocks +61% in 2026 YTD vs Magnificent Seven +8% YTD",
+     "checkable_against": "Cybersecurity ETF/index (e.g. HACK, CIBR) and Mag 7 index price data"
+    },
+    {
+     "claim": "80% of the largest AI spenders and 13% of median AI spenders are venture-backed",
+     "checkable_against": "Underlying source not visible; likely spend-management dataset"
+    },
+    {
+     "claim": "S&P 493 revenue per employee essentially flat in real terms since 2019",
+     "checkable_against": "Company filings (revenue, headcount) deflated by CPI/GDP deflator"
+    },
+    {
+     "claim": "Oracle '$220 Billion' appears in item 7's title only; context paywalled",
+     "checkable_against": "Oracle 10-Q (RPO, debt, lease commitments) — which metric is unknown"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Paywall after item 6; items 7-9 (including debt records and Oracle) are titles only.",
+   "notes": "Sign reflects the skeptical framing of the visible items; the debt-records chart named in the title was not readable."
+  },
+  {
+   "kind": "voice",
+   "key": "kedrosky",
+   "lane": "capex-ai",
+   "name": "Paul Kedrosky",
+   "source": "paulkedrosky.com",
+   "as_of": "2026-10-28",
+   "title": "Post-Noise Notes on the Anthropic S-1",
+   "url": "https://paulkedrosky.com/post-noise-notes-on-the-anthropic-s-1/",
+   "status": "paywalled",
+   "position": "Free portion: Kedrosky says the cash pile makes Anthropic look like a bank whose interest income cushions operating losses but shrinks as cash is spent; growth depends on continually releasing new models; public holders get exposure without control; and large, mostly non-cancellable compute commitments to competitors are a worry. The S-1, he says, describes Anthropic 1.0, not 2.0.",
+   "sign": "neutral",
+   "numbers": [
+    {
+     "claim": "Anthropic cash and cash equivalents $112 billion and short-term investments $19 billion as of June 30 (2026)",
+     "checkable_against": "Anthropic S-1 balance sheet (SEC EDGAR)"
+    },
+    {
+     "claim": "Anthropic interest income $1.1 billion over six months against operating losses of over $700 million",
+     "checkable_against": "Anthropic S-1 income statement"
+    },
+    {
+     "claim": "About 80% of first-half revenue from usage-based customers; more than 80% of Q3 revenue from models released in the prior six months",
+     "checkable_against": "Anthropic S-1 MD&A"
+    },
+    {
+     "claim": "Single Class F share held by seven co-founders carries 50.1% of the vote",
+     "checkable_against": "Anthropic S-1 description of capital stock"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "Paywall partway through the fourth section; fifth item ('Growth Slows as the Coding Era Ends') visible as heading only.",
+   "notes": "Compute commitments described only as hundreds of billions of dollars, no precise figure in the free portion."
+  },
+  {
+   "kind": "voice",
+   "key": "kedrosky",
+   "lane": "capex-ai",
+   "name": "Paul Kedrosky",
+   "source": "paulkedrosky.com",
+   "as_of": "2026-10-23",
+   "title": "How Much Revenue Must AI Deliver?",
+   "url": "https://paulkedrosky.com/how-much-revenue-must-ai-deliver/",
+   "status": "ok",
+   "position": "Kedrosky says AI infrastructure cost is now measured in trillions while the revenue it implies is hard to pin down, and that the math is backwards because capex is increasingly locked in while revenue is uncertain; he introduces an interactive calculator (premium only) to derive required annual revenue from capital outlay, return hurdle and cash margin.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "$3.7 trillion annual revenue requirement shown in the calculator screenshot (image alt text only, not article prose; assumptions not visible)",
+     "checkable_against": "Kedrosky's calculator inputs; Bain 2025 technology report and the Columbia estimate he cites"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Free, 1-minute post; the tool itself is premium. Published exactly on the gate date (metadata 2026-10-23T20:39Z). Verbatim phrase used: 'measured in trillions'. Listed URL without trailing slash was blocked (PROVENANCE_REQUIRED); index read at search-surfaced https://paulkedrosky.com/."
+  },
+  {
+   "kind": "voice",
+   "key": "olaughlin",
+   "lane": "capex-ai",
+   "name": "Doug O'Laughlin",
+   "source": "Fabricated Knowledge (Substack)",
+   "as_of": "2026-08-13",
+   "title": "The Cost of Time and AI Timelines",
+   "url": "https://www.fabricatedknowledge.com/archive",
+   "status": "quiet",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Archive page (search-surfaced) read successfully; newest post is 'The Cost of Time and AI Timelines', Aug 13 (year not shown on archive; post page shows Aug 13, 2026, paid), then 'Close but Not Quite' (Jul 27, 2026). Nothing on or after 2026-10-23. Listed homepage https://www.fabricatedknowledge.com was blocked (PROVENANCE_REQUIRED, permission timeout) and not retried. O'Laughlin's SemiAnalysis work, if any, would appear under SemiAnalysis bylines; none of the four in-gate SemiAnalysis posts names him."
+  },
+  {
+   "kind": "voice",
+   "key": "baker",
+   "lane": "capex-ai",
+   "name": "Gavin Baker",
+   "source": "Atreides / X",
+   "as_of": "2026-08-31",
+   "title": "Gavin Baker: AI Compute Shortage Will Last Through 2028 as Data Center Paybacks Hit 9 Months (coverage of a16z podcast; most recent dated item seen, out of gate)",
+   "url": "https://finance.biggo.com/news/5483e0ee7fc171b5",
+   "status": "quiet",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "x.com post not fetchable (robots_disallowed); podcastrex.com episode list failed (client_error).",
+   "notes": "Four extended searches surfaced nothing in his own words dated 2026-10-23 or later. This is 'nothing surfaced', not confirmed silence - his X feed could not be read. Out-of-gate items seen: Invest Like the Best 'AI Market Jitters' (page shows 08.04.2026), a16z podcast coverage (2026-08-31), BG2 episode recorded 2026-06-11."
+  },
+  {
+   "kind": "voice",
+   "key": "cahn",
+   "lane": "capex-ai",
+   "name": "David Cahn",
+   "source": "Sequoia",
+   "as_of": "2025-12-03",
+   "title": "AI in 2026: A Tale of Two AIs (most recent dated essay seen; out of gate)",
+   "url": "https://dcahn.substack.com/p/ai-in-2026-a-tale-of-two-ais",
+   "status": "quiet",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "https://www.sequoiacap.com/article/ blocked: PROVENANCE_REQUIRED (permission request not answered in time). https://dcahn.substack.com failed with client_error.",
+   "notes": "Low-confidence quiet. The Sequoia index was not read. sequoiacap.com/people/david-cahn was opened but shows no dates and only older titles. Three extended searches surfaced nothing dated 2026-10-23 or later. Latest dated items: Substack essay 2025-12-03 (opened); TechCrunch interview 2026-07-09 seen via an aiweekly alert of 2026-07-10 ($1.5T 2026 infrastructure spend needing roughly $3T revenue) - out of gate, secondary."
+  },
+  {
+   "kind": "voice",
+   "key": "azhar",
+   "lane": "capex-ai",
+   "name": "Azeem Azhar",
+   "source": "Exponential View",
+   "as_of": "2026-11-02",
+   "title": "Political ads turn against data centers",
+   "url": "https://www.exponentialview.co/p/political-ads-turn-against-data-centers",
+   "status": "paywalled",
+   "position": "Data roundup (with Hannah Petrovic): political messaging on data centers has turned sharply negative, while measured business AI use is rising and chips dominate South Korea's exports.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "24.6% of US firms reported using AI in early October 2026, up from 17.3% in late November 2025",
+     "checkable_against": "US Census Bureau Business Trends and Outlook Survey (AI use)"
+    },
+    {
+     "claim": "In October 2026, 3% of political ads mentioning data centers supported them and 57% opposed",
+     "checkable_against": "Political ad tracking data (e.g. AdImpact); original source not visible in the free portion"
+    },
+    {
+     "claim": "Semiconductor parts were almost half of South Korea's exports in October 2026",
+     "checkable_against": "Korea Customs Service / MOTIE monthly trade data"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Free-signup wall; cuts off after the third item. The fetch summary rendered the Census survey term as 'Super Intelligence' use; I have recorded it as AI use - verify wording against the post."
+  },
+  {
+   "kind": "voice",
+   "key": "azhar",
+   "lane": "capex-ai",
+   "name": "Azeem Azhar",
+   "source": "Exponential View",
+   "as_of": "2026-11-01",
+   "title": "39 charts on Anthropic, one-person biotech firm & cheap solar #608",
+   "url": "https://www.exponentialview.co/p/ev-608",
+   "status": "paywalled",
+   "position": "Free portion (with Marija Gavrilov) covers only 'The unbounded firm': AI agents that share working state could move firm boundaries and amplify concentration. The Anthropic (39 charts) and cheap-solar items are teasers only.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "The largest 1% of American firms held 97% of corporate assets in 2018 (citing Kwon and co-authors)",
+     "checkable_against": "Kwon, Ma and Zimmermann, '100 Years of Rising Corporate Concentration'; IRS Statistics of Income"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Free-signup wall; cuts off at the heading 'The solo biotech'. No capex, datacenter, semis or power content was readable. Also in the feed, not opened: 'EV Unfiltered - opening my sketchbook' (2026-11-03). Out of gate and discarded: 'Anthropic: The agony and the ecstasy' (2026-10-15)."
+  },
+  {
+   "kind": "voice",
+   "key": "azhar",
+   "lane": "capex-ai",
+   "name": "Azeem Azhar",
+   "source": "Exponential View",
+   "as_of": "2026-10-29",
+   "title": "Microsoft is making room for machines",
+   "url": "https://www.exponentialview.co/p/microsoft-is-making-room-for-machines",
+   "status": "paywalled",
+   "position": "Free portion: Microsoft's voluntary exit offer is not explained by funding data-center spending, AI headcount replacement or unwinding Covid hiring. The company is 'more productive than ever' and is betting it can run much leaner.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Voluntary exit offered to about 60,000 employees, about 27% of 223,000 workers (October 2026)",
+     "checkable_against": "Microsoft announcements; Microsoft 10-K headcount"
+    },
+    {
+     "claim": "Microsoft capital spending heading toward $170 billion, up from $23 billion five years earlier",
+     "checkable_against": "Microsoft 10-K / 10-Q cash flow statement and capex guidance"
+    },
+    {
+     "claim": "Revenue growth outpaced headcount growth by 20% in the year to June 2026, the widest gap on record; four years running",
+     "checkable_against": "Microsoft 10-K revenue and employee counts"
+    },
+    {
+     "claim": "58,000 people added in the two years to June 2022; 25,000 laid off since 2023",
+     "checkable_against": "Microsoft 10-K employee counts; layoff announcements"
+    },
+    {
+     "claim": "Revenue per employee $1.5 million, up two-thirds since 2022",
+     "checkable_against": "Microsoft 10-K revenue divided by headcount"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paid post; cuts off after the question 'What does Microsoft see coming that others don't?'."
+  },
+  {
+   "kind": "voice",
+   "key": "azhar",
+   "lane": "capex-ai",
+   "name": "Azeem Azhar",
+   "source": "Exponential View",
+   "as_of": "2026-10-27",
+   "title": "Anthropic's S-1 in seven charts",
+   "url": "https://www.exponentialview.co/p/anthropics-s-1-in-charts",
+   "status": "paywalled",
+   "position": "Free portion: the S-1 shows Anthropic is no longer a research lab but a business with paying customers, cash flow and reserves that could become reliably profitable. What it does not settle is whether it can keep the growth rate needed to pay for its committed compute; growth is very high but slowing and appears driven by new model releases.",
+   "sign": "neutral",
+   "numbers": [
+    {
+     "claim": "Over 80% of Anthropic's current revenue comes from models six months old or less",
+     "checkable_against": "Anthropic S-1 (SEC EDGAR)"
+    },
+    {
+     "claim": "Anthropic might post a marginal loss in Q3 2026 because of payments to its foundation (no figure given)",
+     "checkable_against": "Anthropic S-1, Q3 2026 financials"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paid post; cuts off at the heading 'Customer concentration is not a major issue'. The seven charts are images and their values were not readable. Date read off the page and the feed pubDate (27 Oct 2026)."
+  },
+  {
+   "kind": "voice",
+   "key": "marcus",
+   "lane": "capex-ai",
+   "name": "Gary Marcus",
+   "source": "Marcus on AI (Substack)",
+   "as_of": "2026-10-26",
+   "title": "What Anthropic left out of their draft S-1",
+   "url": "https://garymarcus.substack.com/p/what-anthropic-left-out-of-their",
+   "status": "paywalled",
+   "position": "Free portion: 'Buyer, beware of omissions' - the draft S-1 should be read for what it reveals about changing demand after the drop in tokenmaxxing and the rise of cheaper models, and it leaves things out, including Q3 in some places.",
+   "sign": "bear",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paid post; cuts off after the sentence about Q3 being omitted, before an image. No figures in the free portion."
+  },
+  {
+   "kind": "voice",
+   "key": "marcus",
+   "lane": "capex-ai",
+   "name": "Gary Marcus",
+   "source": "Marcus on AI (Substack)",
+   "as_of": "2026-10-26",
+   "title": "Generative AI's make-or-break week?",
+   "url": "https://garymarcus.substack.com/p/ais-make-or-break-week",
+   "status": "paywalled",
+   "position": "Free portion: with Anthropic reported (via Bloomberg) to be filing publicly for its IPO on Monday, Marcus says that in some ways they 'couldn't have picked a worse week'. His reasons are behind the paywall.",
+   "sign": "bear",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paid post; cuts off after 'Consider the following:'. No figures in the free portion."
+  },
+  {
+   "kind": "voice",
+   "key": "marcus",
+   "lane": "capex-ai",
+   "name": "Gary Marcus",
+   "source": "Marcus on AI (Substack)",
+   "as_of": "2026-10-24",
+   "title": "Will Generative AI do more harm than good?",
+   "url": "https://garymarcus.substack.com/p/will-generative-ai-do-more-harm-than",
+   "status": "ok",
+   "position": "Generative AI has 'on the whole been a net detriment to society': harms (hacks, deepfakes, disinformation) are mounting while expected economic benefits, per Torsten Slok, are not materialising. He acknowledges real value mainly in coding and warns of turbulence ahead.",
+   "sign": "bear",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened; full text readable. Bears on AI economics only indirectly - no capex or valuation figures. Slok's data appears as an image and was not readable. Archive (opened) shows nothing newer than 26 Oct. Out of gate and discarded: CoreWeave post (2026-10-22), 'Frontier Labs' WeWork moment' (2026-10-13)."
+  },
+  {
+   "kind": "voice",
+   "key": "doomberg",
+   "lane": "capex-ai",
+   "name": "Doomberg",
+   "source": "Substack (newsletter.doomberg.com)",
+   "as_of": "2026-11-04",
+   "title": "Recycle Bin",
+   "url": "https://newsletter.doomberg.com/p/recycle-bin",
+   "status": "paywalled",
+   "position": "Free portion: US natural gas keeps outgrowing skeptics' expectations and AI data-center power demand has producers racing to lock in supply, but gas turbines are sold out for years. Repurposed used aircraft engines are proposed as the bridge - 'energy arbitrage is about to take flight'. It also notes last week's AI equity sell-off may have dented confidence in future data-center demand.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "US natural gas output growth in 2026 forecast to exceed the entire EU's combined output, and to repeat in 2027",
+     "checkable_against": "EIA Short-Term Energy Outlook; Eurostat / Energy Institute Statistical Review"
+    },
+    {
+     "claim": "Appalachian spot gas roughly $1-2 per million BTU, equivalent to $6-12 per barrel of oil",
+     "checkable_against": "EIA / Platts regional spot prices (Eastern Gas South, Tennessee Zone 4)"
+    },
+    {
+     "claim": "EQT's all-stock deal to buy Range Resources valued at $13 billion; EQT described as second-largest US gas producer",
+     "checkable_against": "EQT and Range Resources 8-K / merger press release"
+    },
+    {
+     "claim": "New gas turbine orders placed today deliver in 2030 at the earliest; some slots already being booked for 2032",
+     "checkable_against": "GE Vernova, Siemens Energy, Mitsubishi Heavy backlog disclosures and earnings calls"
+    },
+    {
+     "claim": "Tens of thousands of used aircraft engines available worldwide",
+     "checkable_against": "Aviation fleet databases (Cirium, IBA)"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paywall cuts off after the paragraph beginning 'Unless, of course, alternatives can be found...'. The only in-gate post bearing on AI power."
+  },
+  {
+   "kind": "voice",
+   "key": "doomberg",
+   "lane": "capex-ai",
+   "name": "Doomberg",
+   "source": "Substack (newsletter.doomberg.com)",
+   "as_of": "2026-10-31",
+   "title": "Gating Functions",
+   "url": "https://newsletter.doomberg.com/p/gating-functions",
+   "status": "paywalled",
+   "position": "Free portion: Venezuela's oil journey shows that the molecular definition of oil is shifting and that politics outranks geology as a constraint on production.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Venezuelan oil output recently 1.25 million barrels per day, up from a December 2025 low of 830,000 barrels per day",
+     "checkable_against": "OPEC Monthly Oil Market Report; EIA"
+    },
+    {
+     "claim": "Orinoco Belt heavy oil output temporarily fell 25% in late summer 2021",
+     "checkable_against": "OPEC secondary sources; Reuters reporting"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paywall after 'Let's head to Caracas to explore each in order.' No AI or power content in the free portion."
+  },
+  {
+   "kind": "voice",
+   "key": "doomberg",
+   "lane": "capex-ai",
+   "name": "Doomberg",
+   "source": "Substack (newsletter.doomberg.com)",
+   "as_of": "2026-10-27",
+   "title": "Tough Comp",
+   "url": "https://newsletter.doomberg.com/p/tough-comp",
+   "status": "paywalled",
+   "position": "Free portion: asks how formidable Iran really is; knocking out a country from the air is very hard (Russia's campaign on Ukraine's energy system as the example) and a direct Iran-Ukraine comparison will be sobering.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paywall before the comparison figures. Geopolitics; no AI or power content in the free portion."
+  },
+  {
+   "kind": "voice",
+   "key": "doomberg",
+   "lane": "capex-ai",
+   "name": "Doomberg",
+   "source": "Substack (newsletter.doomberg.com)",
+   "as_of": "2026-10-24",
+   "title": "Margin Call",
+   "url": "https://newsletter.doomberg.com/p/margin-call",
+   "status": "paywalled",
+   "position": "Free portion: Guyana's Stabroek boom is spilling into neighbouring waters, and Brazil's Equatorial Margin is drawing renewed interest after Petrobras's finds; asks whether it will matter as much as Stabroek.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Guyana output expected above 1 million barrels per day once a fifth FPSO is fully operating in December 2026",
+     "checkable_against": "ExxonMobil / Hess (Chevron) Stabroek disclosures; Guyana Ministry of Natural Resources"
+    },
+    {
+     "claim": "Guyana real GDP $5.5 billion in 2020 to $27 billion at end-2025; growth 20% (2021), 63% (2022), 34% (2023), 44% (2024), 19% (2025); IMF 2026 estimate 22%",
+     "checkable_against": "IMF World Economic Outlook database"
+    },
+    {
+     "claim": "Suriname GranMorgu (Block 58) FPSO targeting 220,000 barrels per day by mid-2028",
+     "checkable_against": "TotalEnergies project disclosures"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Opened. Paywall after 'Let's hazard a guess'. Oil exploration; no AI or power content in the free portion. Doomcasts page (opened) also lists in-gate podcast appearances on 2 Nov, 29 Oct, 27 Oct and 26 Oct - not opened."
+  },
+  {
+   "kind": "voice",
+   "key": "slok",
+   "lane": "strategist",
+   "name": "Torsten Slok",
+   "source": "Apollo Daily Spark (via Yahoo Finance)",
+   "as_of": "2026-11-02",
+   "title": "Daily Spark notes of Nov 1 and Nov 2 on core PCE and the required Fed funds rate (titles not given in coverage)",
+   "url": "https://finance.yahoo.com/economy/article/the-economy-is-less-k-shaped-than-you-think--and-thats-bad-news-for-the-fed-110000449.html",
+   "status": "ok",
+   "position": "Core PCE should be 2% but \"it has been 3% for three years, and it is now moving higher\"; his model says the Fed would need to take its policy rate to about 6.75% by end-2027, and the Fed may be further from its inflation goal than the market expects.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Core PCE inflation about 3% for three years and now rising (Nov 1 note)",
+     "checkable_against": "FRED PCEPILFE (year-over-year)"
+    },
+    {
+     "claim": "Model-implied Fed funds rate of about 6.75% by end-2027, nearly 3 points above the current 3.75%-4.00% target range (Nov 2 note)",
+     "checkable_against": "FRED DFEDTARU / DFEDTARL for the current range; Apollo model not independently checkable"
+    },
+    {
+     "claim": "About half of current inflation comes from strong demand (undated, 'last week')",
+     "checkable_against": "SF Fed supply- vs demand-driven PCE inflation decomposition"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Two notes (Nov 1, Nov 2) combined into one object because the coverage reports them together without titles; dates are as stated in the Yahoo article of 2026-11-03. CNBC interview page dated 2026-10-23 exists (search result) but failed to fetch (client_error); its content is not recorded."
+  },
+  {
+   "kind": "voice",
+   "key": "slok",
+   "lane": "strategist",
+   "name": "Torsten Slok",
+   "source": "Apollo Daily Spark (via Yahoo Finance)",
+   "as_of": "2026-10-31",
+   "title": "The Economy Is Less K-Shaped than You Think",
+   "url": "https://finance.yahoo.com/economy/article/the-economy-is-less-k-shaped-than-you-think--and-thats-bad-news-for-the-fed-110000449.html",
+   "status": "ok",
+   "position": "New Fed data show the US consumer is \"less K-shaped than commonly perceived\": spending has grown at a similar pace across every income group since 2024.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Consumer spending growth of roughly 4% to 5% a year for every income group since 2024",
+     "checkable_against": "Federal Reserve distributional consumption / spending-by-income data (the 'new data from the Fed' cited); BEA PCE"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Yahoo Finance article dated 2026-11-03 attributes this to Slok's Oct. 31 note. Note title taken from an apollo.com Daily Spark URL seen in search results (not fetched). Yahoo discloses it is a portfolio company of Apollo-affiliated funds."
+  },
+  {
+   "kind": "voice",
+   "key": "slok",
+   "lane": "strategist",
+   "name": "Torsten Slok",
+   "source": "Apollo Daily Spark (via NewsCord aggregation of Bloomberg/TechCrunch coverage)",
+   "as_of": "2026-10-24",
+   "title": "No Signs of AI Payoff Outside the Tech Sector",
+   "url": "https://newscord.org/article/apollo-economist-torsten-slok-says-ai-delivers-zero-financial-payoff-outside-tec--Story_20261025_AIdeliverszerofinanc74700e7f",
+   "status": "ok",
+   "position": "Revenue per worker and profit margins are rising for the Mag 7 but flat for the S&P 493, and \"There are still no signs of AI boosting productivity growth\"; corporate America still has to turn cheap intelligence into higher revenue growth and margins, and mainstream firms are starting to treat token spending as a cost.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Revenue per worker rising for the Mag 7, flat for the S&P 493 (no level given in coverage)",
+     "checkable_against": "S&P 500 company filings (revenue / headcount), Mag 7 vs ex-Mag 7 aggregates"
+    },
+    {
+     "claim": "Profit margins rising for the Mag 7, flat for the S&P 493 (no level given in the note as quoted)",
+     "checkable_against": "S&P Dow Jones Indices / FactSet net margin by constituent group"
+    },
+    {
+     "claim": "No pickup in US productivity growth (output per hour and total factor productivity, chart from Jan 1985)",
+     "checkable_against": "BLS productivity; FRED OPHNFB; SF Fed TFP series"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "NewsCord page dated 2026-10-25 gives the note date as 2026-10-24. The 'zero payoff' wording is the press's, not established as Slok's. A 'margins near 10%' figure appears only in a PPC Land headline and is excluded. TechCrunch fetch blocked (PROVENANCE_REQUIRED). Sign = bearish on AI payoff outside tech; he makes no market call in the coverage."
+  },
+  {
+   "kind": "voice",
+   "key": "hartnett",
+   "lane": "strategist",
+   "name": "Michael Hartnett",
+   "source": "BofA Flow Show (via Benzinga on Yahoo Finance; investingLive)",
+   "as_of": "2026-10-31",
+   "title": "Tech Bonds Are 'Diamonds in the Rough': Bank of America's Hartnett Says",
+   "url": "https://finance.yahoo.com/markets/options/articles/tech-bonds-diamonds-rough-bank-113004075.html",
+   "status": "ok",
+   "position": "\"Buy tech bond 'diamonds-in-rough' as AI hyperscalers up equity issuance, cut buybacks\": the bond market is now disciplining the AI boom and AI bonds' long underperformance versus AI stocks is ending. Risk-off persists until the global rate-hiking cycle ends, with relief possible in H1 2027 (peace, lower oil, end of hikes); a year-end rally needs MAGS to hold $70 and SMH to hold $520.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "US tech bonds down about 9% in 2026; total return relative to the IG index at a 30-year low",
+     "checkable_against": "ICE BofA US IG technology sector index vs ICE BofA US Corporate index total returns"
+    },
+    {
+     "claim": "AI hyperscaler bond issuance $182bn in 2026 YTD vs $17bn in 2024",
+     "checkable_against": "Company filings / Dealogic or SIFMA corporate issuance data"
+    },
+    {
+     "claim": "Hyperscaler equity issuance $89bn in 2026 YTD",
+     "checkable_against": "Company filings (10-Q, prospectus supplements)"
+    },
+    {
+     "claim": "Hyperscaler buybacks $14bn annualised in 2026 vs $105bn in 2024",
+     "checkable_against": "Company 10-Q/10-K cash flow statements"
+    },
+    {
+     "claim": "AI capex projected $1.2tn in 2027 vs $240bn in 2024; free cash flow from +$240bn to -$180bn over the same span",
+     "checkable_against": "Hyperscaler filings and consensus estimates"
+    },
+    {
+     "claim": "Long-dated Mag 7 / AI-leader bonds yield 6%-8%; CoreWeave 2031 high-yield bond yields 14.26%",
+     "checkable_against": "TRACE bond pricing"
+    },
+    {
+     "claim": "42 central bank rate hikes in the past six months",
+     "checkable_against": "BIS central bank policy rate database"
+    },
+    {
+     "claim": "Tripwires: Roundhill Magnificent Seven ETF (MAGS) $70; VanEck Semiconductor ETF (SMH) $520",
+     "checkable_against": "ETF price history"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Yahoo/Benzinga article dated 2026-10-31; investingLive write-up dated 2026-11-01 (also opened) gives the same figures. Neither states the note's own date or title (presumably the edition of Thu 2026-10-29/Fri 10-30 — inferred, not read). WEEKLY EPFR FLOWS AND BULL & BEAR READING FOR THIS EDITION WERE NOT FOUND in any page I could open; a search-result title only (wisewallet.eu, robots-disallowed) says week to Oct 28: EM +$30.6bn, Europe outflows — unverified. Sign is mixed: bearish/risk-off on equities, constructive on tech bonds. CDS levels and MAGS/SMH prices in the article are the reporter's, excluded. Previous edition 'Enter the Dragon' is dated 2026-10-22 (out of gate). No coverage of a note from the week of Nov 5 found."
+  },
+  {
+   "kind": "voice",
+   "key": "wilson",
+   "lane": "strategist",
+   "name": "Mike Wilson",
+   "source": "Bloomberg interview (via investingLive repost on swingfish.trade; bloomingbit)",
+   "as_of": "2026-11-01",
+   "title": "Mike Wilson Says Buy Stock Dip Regardless Of Who Wins Midterms",
+   "url": "https://www.swingfish.trade/blog/market-news/election-scenarios-morgan-stanleys-wilson-says-buy-midterm-dip-sees-sp-500-at-8-000-after-correction-441295/",
+   "status": "ok",
+   "position": "Midterms, AI spending stress and liquidity constraints are \"clearing events\" that could take the S&P 500 down to about 7,100 before it climbs to 8,000; buy the dip whoever wins. A narrow Democratic win is priced, a larger margin could add disruption including data-centre pushback; he is not yet worried about heavy equity issuance and thinks that cycle may pause within about a month.",
+   "sign": "bull",
+   "numbers": [
+    {
+     "claim": "S&P 500 possible pullback to about 7,100, roughly 9% below its record; target 8,000",
+     "checkable_against": "FRED SP500"
+    },
+    {
+     "claim": "Stocks higher six and 12 months after every midterm since 1950",
+     "checkable_against": "S&P 500 historical returns around midterm elections"
+    },
+    {
+     "claim": "Nominal GDP growth about 7.5% (7%-8% in his framework)",
+     "checkable_against": "FRED GDP (nominal, year-over-year)"
+    },
+    {
+     "claim": "10-year Treasury yield near 5%",
+     "checkable_against": "FRED DGS10"
+    },
+    {
+     "claim": "Borrowing costs 8%-10% for smaller, lower-quality firms; all-in cost of capital 7%-8% for large tech issuers",
+     "checkable_against": "ICE BofA high-yield effective yield (FRED BAMLH0A0HYM2EY); TRACE for tech issues"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Underlying Bloomberg article dated 2026-11-01 (URL date; robots-disallowed, not read). Read via swingfish.trade repost of investingLive (dated 2026-11-02) and bloomingbit (2026-11-01), both opened; investingLive original, FA-mag and GuruFocus all failed (client_error). Unclear whether the remarks come from his weekly note or an interview; coverage calls it an interview."
+  },
+  {
+   "kind": "voice",
+   "key": "wilson",
+   "lane": "strategist",
+   "name": "Mike Wilson",
+   "source": "Morgan Stanley Thoughts on the Market podcast",
+   "as_of": "2026-10-26",
+   "title": "The Next Stage of the Market Correction",
+   "url": "https://www.morganstanley.com/insights/podcasts/thoughts-on-the-market/equity-market-correction-outlook-mike-wilson",
+   "status": "ok",
+   "position": "The correction that began in June is in its final stages but not complete — \"I think we are close but we're not quite there\"; three clearing events (AI equity supply and financing, the midterms, tightening liquidity) may bring one more index-level drawdown before a Fed pivot and higher stocks. Stay with quality and be ready to buy a sharp downdraft around election day.",
+   "sign": "bull",
+   "numbers": [
+    {
+     "claim": "S&P 500 material support at 7,100-7,200",
+     "checkable_against": "FRED SP500"
+    },
+    {
+     "claim": "Semiconductor index expected to fall another 10%-15% into mid-November 2026",
+     "checkable_against": "PHLX Semiconductor Index (SOX) price history"
+    },
+    {
+     "claim": "Roughly 60% of Russell 3000 stocks down more than 20% since June 2026",
+     "checkable_against": "Russell 3000 constituent price data"
+    },
+    {
+     "claim": "Hedge-fund positioning near 12-month lows",
+     "checkable_against": "Morgan Stanley prime brokerage data (not public); CFTC COT as a proxy"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Read on Morgan Stanley's own page; date 2026-10-26 confirmed on the podcast index (also opened) and by a Seeking Alpha item of the same day. Sign = buy-the-dip / bullish medium term, with further near-term downside expected. His Oct 20 CNBC appearance (8,500 by mid-2027) is out of gate. No Wilson episode after Oct 26 appears on the index through Nov 4."
+  },
+  {
+   "kind": "voice",
+   "key": "kostin",
+   "lane": "strategist",
+   "name": "David Kostin",
+   "source": "Goldman Sachs",
+   "as_of": "2025-09-18",
+   "title": "(no item; as_of is the date of the retirement coverage, the latest dated item seen)",
+   "url": "https://investinglive.com/stocks/goldman-sachs-chief-equity-analyst-david-kostin-retires-after-decade-of-darkness-call-20250918",
+   "status": "quiet",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "Kostin no longer writes Goldman's US equity strategy: Bloomberg headline of 2025-09-18 'Top Goldman US Stock Strategist David Kostin to Retire This Year' (search result, not opened) and investingLive article of 2025-09-18 (opened) which says Goldman appointed Ben Snider as Chief US Equity Strategist. Two searches surfaced no note, interview or quote from Kostin dated 2026-10-23 or later. Snider's views were not recorded as Kostin's. Roster may need this voice replaced or retired — a decision for the main session/user."
+  },
+  {
+   "kind": "voice",
+   "key": "mackintosh",
+   "lane": "strategist",
+   "name": "James Mackintosh",
+   "source": "WSJ Streetwise (read via Dow Jones syndication on Tiger Brokers)",
+   "as_of": "2026-11-01",
+   "title": "The Tangled Web of AI Bets Is Reason to Fear Tech Stocks",
+   "url": "https://www.itiger.com/news/2680209548",
+   "status": "ok",
+   "position": "Circular financing in AI, with chip suppliers funding their own customers through equity stakes, backstops and guarantees, reduces diversification because interdependent companies move together. Shareholders should demand a lower premium and consider their exposure if the AI trade falls; he draws the parallel to 2001 telecom-equipment vendor financing write-offs.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Nvidia, AMD and Broadcom took $5 billion in total as cornerstone investors in Meta's $25 billion stock sale",
+     "checkable_against": "Meta prospectus supplement / 8-K; chipmaker filings"
+    },
+    {
+     "claim": "CoreWeave shares down 23% this year; its 2031 bonds trade more than 10 percentage points over Treasurys, up from just over 4 points in June",
+     "checkable_against": "CoreWeave price history; TRACE bond pricing"
+    },
+    {
+     "claim": "Nvidia has promised to rent CoreWeave's spare compute until 2032",
+     "checkable_against": "CoreWeave / Nvidia filings"
+    },
+    {
+     "claim": "Nvidia provided a $105 billion backstop for an Ohio data center being built for OpenAI by SoftBank's SB Energy",
+     "checkable_against": "Nvidia 10-Q commitments and guarantees note; press reports"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Full text was in the page's embedded data behind a login prompt. The page has no byline (credits Dow Jones); attribution to Mackintosh is from the Muck Rack author index (same title, WSJ, 1 Nov 2026)."
+  },
+  {
+   "kind": "voice",
+   "key": "mackintosh",
+   "lane": "strategist",
+   "name": "James Mackintosh",
+   "source": "WSJ Streetwise",
+   "as_of": "2026-10-26",
+   "title": "The Bull Case for AI Armageddon (print 27 Oct: A Case for AI Armageddon)",
+   "url": "https://note.com/hirokimiyano/n/ne1794e1eebdb?hl=en",
+   "status": "paywalled",
+   "position": "Free portion only (Muck Rack snippet): if an Anthropic researcher's 10% chance of AI wiping out humanity is accepted, the other 90% is powerful but controlled AI, so believers should buy heavily; he concedes the doom case makes investments worthless. Rest of the column unread.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "10% chance of human extinction from AI (attributed to an Anthropic researcher), implying a 90% chance otherwise",
+     "checkable_against": "Anthropic S-1 risk factors / the researcher's public statement"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "Column body not readable; only the Muck Rack snippet and a blogger's summary",
+   "notes": "A third-party blog summary (note.com, 2026-10-27, the url recorded) says he then adds caveats; that characterization is not recorded as his position. The caveats come from a third party's characterization (a note.com post dated 2026-10-27), so treat them as unverified. Column dated 26 Oct in Muck Rack. Out of gate and discarded: 18 Oct 'AI Stock Market Wobble' and 2 Oct 'AI is squeezing out the rest of the stock market'."
+  },
+  {
+   "kind": "voice",
+   "key": "mackintosh",
+   "lane": "strategist",
+   "name": "James Mackintosh",
+   "source": "WSJ Streetwise",
+   "as_of": "2026-10-25",
+   "title": "How France Became the Poster Child for Debt Woes",
+   "url": "https://biztoc.com/x/3bb3dd310aab36e4",
+   "status": "paywalled",
+   "position": "Dek only: the EU's second-largest economy has become the biggest victim of soaring global yields, and its troubles are \"like those of most other countries, only worse.\" The Muck Rack snippet of the syndicated version adds that strong US growth pushed rates up and investors targeted the weakest borrower, whose debt was manageable only at ultra-low rates.",
+   "sign": "bear-bonds",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "Body not readable; WSJ paywalled, aggregator pages carry only the dek",
+   "notes": "Date 2026-10-25 09:30 UTC from BizToc metadata, and 25 Oct in the Muck Rack index. BizToc lists wsj.com as author; attribution to Mackintosh is from Muck Rack."
+  },
+  {
+   "kind": "voice",
+   "key": "marks",
+   "lane": "strategist",
+   "name": "Howard Marks",
+   "source": "Bloomberg Television, The China Show (via 24/7 Wall St)",
+   "as_of": "2026-11-02",
+   "title": "Howard Marks Says AI Stumbles Have Boosted Skepticism",
+   "url": "https://247wallst.com/investing/2026/11/04/billionaire-howard-marks-has-a-warning-for-ai-investors-theres-no-reward-for-rushing-in",
+   "status": "ok",
+   "position": "Recent AI-market stumbles have dented the sector's aura of infallibility and he welcomes the skepticism; he doubts five-year earnings estimates are reliable for businesses like Anthropic given the pace of change, and says \"There is no reward in the investment business for hyperactivity.\"",
+   "sign": "neutral",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "24/7 Wall St article dated 2026-11-04; interview date Nov 2 also matches Bloomberg video URL (2026-11-02) seen in search and a whatfinger.com repost (opened, no quotes). Bloomberg video not opened. The article's valuation arithmetic is the author's hypothetical, excluded. A Benzinga piece on Marks questioning Anthropic's valuation ($1.5T+ per its headline) could not be fetched (client_error)."
+  },
+  {
+   "kind": "voice",
+   "key": "marks",
+   "lane": "strategist",
+   "name": "Howard Marks",
+   "source": "The Economist 'Money Talks' podcast (via TheStreet)",
+   "as_of": "2026-10-29",
+   "title": "Veteran investor Howard Marks on AI debt",
+   "url": "https://www.thestreet.com/investing/howard-marks-sees-hidden-lender-risk-in-ai-boom",
+   "status": "ok",
+   "position": "Lenders to AI firms may be taking risk better suited to stockholders, because debt returns are capped while equity shares the upside; \"If you want to invest in AI, you should probably buy the stocks.\" He is not against all AI bonds and loans, but wants the risk matched by adequate reward.",
+   "sign": "bear",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "TheStreet article dated 2026-11-02 reporting the Oct 29 Economist episode; episode date also confirmed by a BizToc listing (2026-10-29). Episode itself not opened. Figures in the article ($63bn Anthropic financing, $43.5bn first-lien) are Reuters/Bloomberg, not Marks, so excluded. Sign = bearish on AI debt specifically, not on AI equities. Oaktree index was blocked (PROVENANCE_REQUIRED), so absence of a new memo is not verified on the owned page."
+  },
+  {
+   "kind": "voice",
+   "key": "grantham",
+   "lane": "strategist",
+   "name": "Jeremy Grantham",
+   "source": "GMO research library / interviews",
+   "as_of": "2026-09-22",
+   "title": "Jeremy Grantham Joins The Diary of a CEO: \"The Biggest Bubble in American History\" (most recent item seen; out of gate)",
+   "url": "https://www.gmo.com/americas/research-library/jeremy-grantham-joins-the-diary-of-a-ceo-the-biggest-bubble-in-american-history_inthenews/",
+   "status": "quiet",
+   "position": "",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "GMO research-library index fetch blocked: PROVENANCE_REQUIRED (permission request not answered in time).",
+   "notes": "Quiet is based on three extended searches plus one GMO sub-page, NOT on the index. Nothing by or with Grantham dated 2026-10-23 or later surfaced; latest items seen are the GMO 'in the news' page dated 2026-09-22 and June 2026 coverage of CNBC / Diary of a CEO remarks (70% decline call), all out of gate. Morningstar Long View episode page failed to fetch (client_error), date unknown."
+  },
+  {
+   "kind": "voice",
+   "key": "chanos",
+   "lane": "strategist",
+   "name": "Jim Chanos",
+   "source": "X posts (@RealJimChanos), reported by TIKR / Yahoo Finance",
+   "as_of": "2026-10-26",
+   "title": "Jim Chanos: SpaceX's $40 Billion Chip Debt Raises \"a Pretty Material $500B Question\"",
+   "url": "https://www.tikr.com/blog/jim-chanos-spacexs-40-billion-chip-debt-raises-a-pretty-material-500b-question",
+   "status": "ok",
+   "position": "After Musk confirmed SpaceX's chip debt, Chanos asked what share of the 10 GW of capacity SpaceX is building in 2027 is terrestrial, calling it \"a pretty material $500B question.\"",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "10 GW of capacity being built by SpaceX in 2027",
+     "checkable_against": "SpaceX 10-Q / earnings materials"
+    },
+    {
+     "claim": "About $500 billion at stake in the terrestrial versus orbital split",
+     "checkable_against": "SpaceX capex guidance"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Article dated 2026-10-26. The X post's date is not given; it followed Musk's confirmation 'over the weekend' (24-25 Oct). The $40 billion debt figure is the article's framing, not Chanos's quoted words."
+  },
+  {
+   "kind": "voice",
+   "key": "chanos",
+   "lane": "strategist",
+   "name": "Jim Chanos",
+   "source": "X posts (@RealJimChanos), reported by TIKR via Yahoo Finance",
+   "as_of": "2026-10-26",
+   "title": "Musk's $1 Trillion SpaceX Revenue Goal: \"They Had Better Get Going\" says Jim Chanos",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/musk-1-trillion-spacex-revenue-153637554.html",
+   "status": "ok",
+   "position": "Musk's revenue goal implies a 1-2x revenue-to-investment ratio while the industry is at about 0.3x, and SpaceX is \"not even remotely close\" even with the Google and Anthropic deals. Its Q3 annualized AI revenue per MW is well below the figures cited during the quarter.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "SpaceX Q3 2026 AI capex was $16 billion",
+     "checkable_against": "SpaceX Q3 2026 10-Q / earnings release"
+    },
+    {
+     "claim": "SpaceX AI revenue of $7.56 billion in Q3 2026, about $30 billion annualized",
+     "checkable_against": "SpaceX Q3 2026 earnings release"
+    },
+    {
+     "claim": "Industry revenue-to-investment ratio of about 0.3x versus the 1-2x implied by the goal",
+     "checkable_against": "Hyperscaler and neocloud filings (AI revenue / capex)"
+    },
+    {
+     "claim": "Q3 annualized AI revenue of $19.5 million per MW versus $40-50 million per MW cited during the quarter",
+     "checkable_against": "SpaceX disclosures on deployed MW and AI revenue"
+    },
+    {
+     "claim": "About $500 billion of capex for 10 GW of new capacity (attributed to Chanos by the article; not in his quoted post)",
+     "checkable_against": "SpaceX capex guidance"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Article dated 2026-10-26 08:36 PDT. The X posts are undated on the page; they followed SpaceX earnings 'last week', so they may fall on 20-26 Oct and are not confirmed as on or after 23 Oct. Out of gate and discarded: 'largest global neocloud' reply (about 16 Oct), iConnections talk (15 Jun 2026). No in-gate interview or podcast found."
+  },
+  {
+   "kind": "voice",
+   "key": "levine",
+   "lane": "strategist",
+   "name": "Matt Levine",
+   "source": "Bloomberg Money Stuff",
+   "as_of": "2026-11-03",
+   "title": "How Much Should Anthropic Pop?",
+   "url": "https://www.bloomberg.com/opinion/newsletters/2026-11-03/how-much-should-anthropic-pop",
+   "status": "paywalled",
+   "position": "Index snippet only: the column poses equity-capital-markets questions about a possible Anthropic public offering. No position was readable.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "bloomberg.com fetch failed: robots_disallowed",
+   "notes": "Title and date from the Muck Rack index (3 Nov 2026) and the Bloomberg URL in search results. Other in-gate issues with no visible credit or market-stress content: 4 Nov 'The Midterm Predictions Were Good' (prediction markets, quant code theft, college athlete stock); 2 Nov 'Binance Got Some Money Back'; 29 Oct 'Run on the Law Firm' (Weil, law firm economics; opens with a Reserve Primary Fund analogy: $0.97 mark, $0.991 paid out); 28 Oct 'Not Your Keys, Not Your DAT' (bitcoin treasury companies, non-GAAP worries, buy-borrow-die, sports betting); 27 Oct 'Musk's Mars Merger Pay'. Bloomberg Law mirrors are paywalled after the first section. Muck Rack also lists sports articles from another Matt Levine (Heavy); ignored."
+  },
+  {
+   "kind": "voice",
+   "key": "levine",
+   "lane": "strategist",
+   "name": "Matt Levine",
+   "source": "Bloomberg Money Stuff",
+   "as_of": "2026-10-26",
+   "title": "Anthropic Raises Concerns",
+   "url": "https://muckrack.com/link/YR6nga/anthropic-raises-concerns",
+   "status": "paywalled",
+   "position": "Index snippet only: the column refers to the draft prospectus for Anthropic PBC's initial public offering. No position was readable.",
+   "sign": "n/a",
+   "numbers": [],
+   "conversion": false,
+   "fetched_how": "search-surfaced",
+   "error": "Body not read; only the Muck Rack index entry was seen (the Muck Rack link itself was not fetched)",
+   "notes": "Date 26 Oct 2026 from the Muck Rack index. Out of gate: private credit and BDC issues on Bloomberg Law mirrors dated 11 Mar, 25 Mar, 14 Apr and 29 Jun 2026."
+  },
+  {
+   "kind": "voice",
+   "key": "perkins",
+   "lane": "strategist",
+   "name": "Dario Perkins",
+   "source": "TS Lombard note \"Wargaming the AI Crash\" (via Yahoo Finance Canada on Head Topics; Motley Fool on Yahoo Finance)",
+   "as_of": "2026-10-23",
+   "title": "'A cyclical downturn is inevitable' in an AI crash: Strategist Dario Perkins",
+   "url": "https://ca.headtopics.com/news/a-cyclical-downturn-is-inevitable-in-an-ai-crash-89130764",
+   "status": "ok",
+   "position": "In his wargame the AI crash scenario is \"now overdetermined\": US stocks fall 30%, a cyclical downturn is inevitable as capex and construction jobs fall, but the recession is not especially severe because the Fed has room to cut. Investors should stay diversified globally, not bet against tech too early, and add government bonds only once fragility appears.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "S&P 500 down at least 30% in the scenario: tech down about 40%, other sectors about 20%; roughly $20 trillion of market value erased",
+     "checkable_against": "TS Lombard note; S&P 500 market cap (S&P Dow Jones Indices)"
+    },
+    {
+     "claim": "Losses on AI-related debt including private credit of $125-190 billion (Yahoo Canada version: $125-200 billion)",
+     "checkable_against": "TS Lombard note"
+    },
+    {
+     "claim": "Mild US recession with GDP about 2 percentage points below its expected path",
+     "checkable_against": "TS Lombard note; BEA GDP"
+    },
+    {
+     "claim": "AI data-center construction has created about 500,000 jobs, possibly 800,000 by end-2027",
+     "checkable_against": "BLS CES construction employment"
+    },
+    {
+     "claim": "Tech companies invest about $1 trillion a year; AI companies expected to issue about $700 billion of bonds in 2027, $400 billion from hyperscalers",
+     "checkable_against": "Hyperscaler capex in 10-Qs; SIFMA / Dealogic issuance"
+    },
+    {
+     "claim": "Working assumption of a reversal in early 2028, which could slip",
+     "checkable_against": "TS Lombard note"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "The note's own date is not stated; coverage dated 2026-10-23 says it was 'making the rounds on Friday'. Second source, dated 2026-11-01: https://finance.yahoo.com/markets/stocks/articles/wall-street-firm-modeled-ai-164027685.html. The loss-range upper bound differs between sources (190 vs 200). Out of gate: TheStreet, 20 Oct (data-center backlash note, AI debt near $2 trillion by end-2027). Also seen, date unverified so not recorded as an item: TS Lombard 'Perkins Vs Beamish' podcast episode 'AI Crash: Is This It?' (https://podcasts.apple.com/us/podcast/globaldata-ts-lombard-perkins-vs-beamish/id1767634755; Apple shows '1d ago', no absolute date; description only)."
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Almost Daily Grant's",
+   "as_of": "2026-11-03",
+   "title": "Mighty Mouse",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "ADG sets a small fine-tuned model beating leading LLMs at a fraction of the cost beside reports of shrinking AI fundraising and IPO valuation targets.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "OpenAI trimmed its raise to $20 billion from $30 billion at a $1.25 trillion valuation, down from $1.4 trillion (FT report)",
+     "checkable_against": "FT report; company announcement"
+    },
+    {
+     "claim": "Anthropic's IPO valuation target may fall to $1.5-1.6 trillion from $2 trillion (WSJ report)",
+     "checkable_against": "WSJ report; Anthropic S-1/A price range"
+    },
+    {
+     "claim": "Palantir says a fine-tuned 4B Nvidia Nemotron model saves an estimated 30,000 drafting hours a year for McCarthy",
+     "checkable_against": "Palantir release"
+    },
+    {
+     "claim": "Recap 3 Nov: 2-year at 4.61%, 30-year at 5.32%, WTI about $97, gold $3,922/oz, VIX just under 21",
+     "checkable_against": "FRED DGS2, DGS30, DCOILWTICO, VIXCLS; LBMA gold"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Almost Daily Grant's is the house daily, unsigned, not Jim Grant's bylined words; recorded as the outlet's voice. Other in-gate ADG items not carried, over the cap: 30 Oct 'Talk Soup' (Musalem and Logan on further hikes) and 'Bad Reception' (Alphabet down 13%); 26 Oct 'Warsh Trade' (funds rate 3.75-4%, October hike odds under 10%) and 'Capitol Call'; 23 Oct 'All Together Now' (AI versus non-AI correlation turned negative) and 'Barrel Roll' (Brent above $117, headline CPI 3.6%). Skipped as off-topic: crypto heist, spyware and cruise-ship items."
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Almost Daily Grant's",
+   "as_of": "2026-11-02",
+   "title": "Tealeaf Blower",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "ADG tallies widening dispersion in BDC loan marks and a deteriorating leveraged loan market, with the share of loans trading above par collapsing since late September and the sub-80-cent share roughly doubling this year.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "BDC loans whose marks vary by 5 or more points rose to 12.3% from 9.3%; sub-80-cent marks rose to 5.9% from 4.2% (Frankfurt School research)",
+     "checkable_against": "Frankfurt School study; BDC 10-Q schedules of investments"
+    },
+    {
+     "claim": "Only 7.4% of leveraged loans traded above par versus about 30% in late September",
+     "checkable_against": "Morningstar LSTA Leveraged Loan Index / PitchBook LCD"
+    },
+    {
+     "claim": "$134 billion of term loans (8.4% of the index) traded below 80 cents, up from 4.3% at end-2025",
+     "checkable_against": "Morningstar LSTA index distress ratio"
+    },
+    {
+     "claim": "Recap 2 Nov: 2-year at 4.59%, 30-year at 5.28%, VIX near 22",
+     "checkable_against": "FRED DGS2, DGS30, VIXCLS"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Almost Daily Grant's is the house daily, unsigned, not Jim Grant's bylined words; recorded as the outlet's voice. Same page as above; the item is dated 11.02.2026 on the page."
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Almost Daily Grant's (grantspub.com public commentary page)",
+   "as_of": "2026-10-29",
+   "title": "Feast of Burden / Not QE Progress Report",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "ADG records the weight of AI-related bond supply: a jumbo Microsoft deal, record year-to-date global issuance and blue-chip data center bond yields moving toward 7%. It also notes the Fed's balance sheet is growing again since December.",
+   "sign": "bear-bonds",
+   "numbers": [
+    {
+     "claim": "Microsoft completed a $25 billion, 10-tranche bond sale",
+     "checkable_against": "Microsoft 424B prospectus supplement (SEC EDGAR)"
+    },
+    {
+     "claim": "Global bond supply of $6.61 trillion year to date",
+     "checkable_against": "Dealogic / LSEG / Bloomberg league tables"
+    },
+    {
+     "claim": "Blue-chip data center bond yields rose toward 7% from under 5%",
+     "checkable_against": "TRACE / ICE BofA indices"
+    },
+    {
+     "claim": "Reserve Bank credit of $6.076 trillion, down $1.1 billion on the week, up $202 billion since December, about 25% below the 2022 peak",
+     "checkable_against": "Fed H.4.1; FRED WALCL / RSBKCRNS"
+    },
+    {
+     "claim": "Recap 29 Oct: 2-year at 4.61%, 30-year at 5.32%",
+     "checkable_against": "FRED DGS2, DGS30"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Almost Daily Grant's is the house daily, unsigned, not Jim Grant's bylined words; recorded as the outlet's voice. ADG is Grant's house daily and is not bylined to Jim Grant personally. No in-gate interview or podcast of Jim Grant himself surfaced. The homepage shows the current issue as 6 Nov 2026 (Vol. 44, No. 21), paywalled, teaser only."
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Almost Daily Grant's",
+   "as_of": "2026-10-27",
+   "title": "These are not the Droids You're Looking For / Behind the Curtain",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "ADG flags an AI-related force majeure clause appearing in a private-equity-sponsored loan ahead of a heavy sub-investment-grade maturity wall with large software exposure. It also notes the NAIC backing down on scrutiny of private-credit ratings from smaller agencies.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Sub-investment-grade loans maturing in 2028 and 2029 total $140 billion and $160 billion; software is about one-third of the nearer maturities",
+     "checkable_against": "PitchBook LCD / Morningstar LSTA maturity wall"
+    },
+    {
+     "claim": "A 2024 study found private-loan ratings from three smaller firms averaged three notches above the NAIC's in-house ratings; those firms rated 86% of insurers' private credit holdings",
+     "checkable_against": "NAIC Capital Markets Bureau reports"
+    },
+    {
+     "claim": "Recap 27 Oct: 2-year about 4.7%, 30-year about 5.3%",
+     "checkable_against": "FRED DGS2, DGS30"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Almost Daily Grant's is the house daily, unsigned, not Jim Grant's bylined words; recorded as the outlet's voice. The item is dated 10.27.2026 on the page."
+  },
+  {
+   "kind": "argument",
+   "name": "Microsoft capex shortfall is an execution gap, not a demand drop",
+   "source": "456X Semi-AI (Substack), 456X Morning Brief, unsigned",
+   "as_of": "2026-11-05",
+   "title": "456X Morning Brief — November 5, 2026: Microsoft Cuts AI Capex $5B on Data Center Delays",
+   "url": "https://404kresearch.substack.com/p/456x-morning-brief-november-5-2026",
+   "status": "ok",
+   "position": "The reported Microsoft capex cut reflects slipped delivery milestones for third-party capacity, which shifts cash-flow and bridge-financing stress onto developers while energized capacity earns premium rents.",
+   "sign": "neutral",
+   "numbers": [
+    {
+     "claim": "Microsoft capex about $5 billion below plan (reported)",
+     "checkable_against": "Microsoft FY27 Q1 10-Q and earnings call; The Information report"
+    },
+    {
+     "claim": "Aggregate free cash flow deficit of eight hyperscalers and neoclouds: $128B (2026), $335B (2027), $77B (2028), per BofA",
+     "checkable_against": "Company cash flow statements; BofA research"
+    },
+    {
+     "claim": "Hyperscaler long-term lease liabilities $1.7 trillion and unconditional purchase commitments $1.9 trillion, $685B maturing before end-2027, per Goldman Sachs",
+     "checkable_against": "10-K/10-Q commitments and lease footnotes"
+    },
+    {
+     "claim": "SOX forward P/E 16.2x, down from about 28x in September 2026; 15-year average 17.3x",
+     "checkable_against": "Bloomberg / FactSet index valuation"
+    },
+    {
+     "claim": "H100 rental rates up 26% y/y; GB200 pricing up 50% year-to-date, per Wells Fargo",
+     "checkable_against": "GPU rental price indices; Wells Fargo research"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Aggregator brief; bank figures are relayed without links and labelled reported or consensus. FourWeekMBA (Gennaro Cuofano, 2026-11-05, https://fourweekmba.com/ai-microsofts-new-operating-leases-up-4-6x-as-capex-fell-short/) gives filing-level detail on the same point: new operating-lease assets $6.5B in Jul-Sep 2026 vs $1.4B a year earlier, new finance-lease assets $5.2B vs $9.1B, leases signed but not commenced $364.6B vs $106.2B a year earlier, capex $45.2B, all checkable against the Microsoft 10-Q. That author says he read only a summary of The Information report and a machine transcript of the call."
+  },
+  {
+   "kind": "argument",
+   "name": "Politics is the binding constraint on AI buildout",
+   "source": "Stratechery, Ben Thompson",
+   "as_of": "2026-11-04",
+   "title": "AI on the Ballot",
+   "url": "https://stratechery.com/2026/ai-on-the-ballot/",
+   "status": "ok",
+   "position": "After data center projects lost at the ballot, local permission (permits, moratoria, ballot measures) becomes the final constraint beyond compute, memory and power, favouring hyperscalers and frontier labs over neoclouds, startups and, near term, Nvidia.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Texas accounts for more than 25% of planned US data center capacity by 2030",
+     "checkable_against": "ERCOT large-load forecasts; SemiAnalysis / BNEF datacenter pipeline"
+    },
+    {
+     "claim": "Texas data-center permit moratorium declared in September 2026",
+     "checkable_against": "Texas governor's office / TCEQ orders"
+    },
+    {
+     "claim": "Democrats flipped at least seven Senate seats on Nov 3 2026",
+     "checkable_against": "AP election results"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Full text appeared in the fetch, though subscribe prompts are present. Also in gate but paywalled: 'Anthropic S-1, The Cost of Compute, Who Is Paying?' (Oct 27), whose dek says the core business is very profitable but competition may erode profits and investors face ongoing dilution."
+  },
+  {
+   "kind": "argument",
+   "name": "Earnings pace implies 10% nominal GDP",
+   "source": "Apollo, The Daily Spark, Torsten Slok",
+   "as_of": "2026-11-03",
+   "title": "10% Nominal GDP Growth Coming?",
+   "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/10-percent-nominal-gdp-growth-coming",
+   "status": "ok",
+   "position": "A regression of S&P 500 earnings growth on nominal GDP says the current earnings pace is consistent with 10% nominal GDP growth, so there is upside risk to growth and jobs and rates stay higher for longer.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Nominal GDP growth about 6% currently",
+     "checkable_against": "FRED GDP (BEA nominal GDP, y/y)"
+    },
+    {
+     "claim": "S&P 500 earnings growth nearly 40% y/y",
+     "checkable_against": "S&P Dow Jones Indices / FactSet Earnings Insight"
+    },
+    {
+     "claim": "Earnings pace consistent with 10% nominal GDP growth (regression-implied)",
+     "checkable_against": "Re-run regression: S&P 500 EPS y/y vs FRED GDP y/y"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Chart sourced to BEA, Bloomberg, Macrobond. Refers to the employment report due Friday as an upside risk."
+  },
+  {
+   "kind": "argument",
+   "name": "Fed needs about 275bp of hikes to reach 2%",
+   "source": "Apollo, The Daily Spark, Torsten Slok",
+   "as_of": "2026-11-02",
+   "title": "How High Would the Fed Funds Rate Need to Rise to Bring Inflation Back to 2%?",
+   "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/how-high-would-the-fed-funds-rate-need-to-rise-to-bring-inflation-back-to-2-percent",
+   "status": "ok",
+   "position": "A macro model built on the historical rate-GDP-inflation relationship says the Fed would need to lift the funds rate about 275bp to return CPI to target, so the Fed is further from its goal than markets expect.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Fed funds from roughly 4% today to 6.75% by end-2027 (about 275bp)",
+     "checkable_against": "FRED DFEDTARU / FEDFUNDS; fed funds futures"
+    },
+    {
+     "claim": "Inflation would not reach the 2% target until 2Q27 even with aggressive hikes",
+     "checkable_against": "FRED CPIAUCSL y/y"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Model is Bloomberg SHOK per the chart source. As summarised, the 2Q27 target date sits alongside an end-2027 rate path; wording not verified against raw page text. Companion post Nov 1 says core PCE has been about 3% for three years and is rising."
+  },
+  {
+   "kind": "argument",
+   "name": "AI pessimism is overdone: forward multiples are reasonable",
+   "source": "QuantStreet Capital (Substack), Harry Mamaysky",
+   "as_of": "2026-11-02",
+   "title": "QuantStreet November 2026 Letter: AI Worries",
+   "url": "https://quantstreet.substack.com/p/quantstreet-november-2026-letter",
+   "status": "ok",
+   "position": "The press case that the AI trade is unsustainable was largely written after October's selloff began, and with strong profits, strong nominal GDP and two-year forward P/Es under 16 the pessimism looks overdone, with gains shifting from AI providers to AI users.",
+   "sign": "bull",
+   "numbers": [
+    {
+     "claim": "S&P 500 and Nasdaq-100 two-year forward P/E both under 16",
+     "checkable_against": "FactSet / Bloomberg forward earnings estimates"
+    },
+    {
+     "claim": "Five hyperscalers (Amazon, Google, Meta, Microsoft, Oracle) LTM capex $690B, up $334B y/y; LTM net income slightly below LTM capex",
+     "checkable_against": "Company 10-Q/10-K cash flow statements"
+    },
+    {
+     "claim": "Corporate after-tax profits up 26.6% y/y nominal as of 2Q 2026",
+     "checkable_against": "FRED CP (BEA corporate profits after tax)"
+    },
+    {
+     "claim": "3Q 2026 nominal GDP up 5.9% y/y",
+     "checkable_against": "FRED GDP"
+    },
+    {
+     "claim": "October 2026: Nasdaq -5.3%, gold -6.6%; YTD S&P 500 +11.75%, Nasdaq-100 +12.98%",
+     "checkable_against": "FRED NASDAQCOM / SP500; index providers"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Date is the page's modified timestamp. The letter cites two WSJ pieces by James Mackintosh (one mid-October, one later and undated there) as the bear case it answers; neither WSJ piece was reached."
+  },
+  {
+   "kind": "argument",
+   "name": "Permit freezes put the 2028 US datacenter buildout at risk",
+   "source": "SemiAnalysis, Maya Barkin, Wayne Ma, Reyk Knuhtsen and two others",
+   "as_of": "2026-11-01",
+   "title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
+   "url": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+   "status": "paywalled",
+   "position": "The 2027 US buildout is largely locked in but 2028 is not, because a pause on approvals (above all a prolonged Texas permit freeze) stops projects outright, whereas conditions-only rules can be absorbed.",
+   "sign": "neutral",
+   "numbers": [
+    {
+     "claim": "33.8 GW due across the top 20 states in 2027, roughly three-quarters already under construction",
+     "checkable_against": "SemiAnalysis datacenter model; utility/ISO interconnection queues"
+    },
+    {
+     "claim": "62.2 GW of US net additions in 2028, most not yet started; 13 states hold 43.5 GW (70%)",
+     "checkable_against": "SemiAnalysis datacenter model; ERCOT/PJM large-load queues"
+    },
+    {
+     "claim": "About 30 GW of 2028 capacity at risk if pro-pause candidates win everywhere; 5.7 GW if conditions-only candidates win",
+     "checkable_against": "Nov 3 2026 gubernatorial results vs the piece's state tiers"
+    },
+    {
+     "claim": "Texas adds close to 30% of US GW in 2028; TCEQ permit freeze began Sept 21 2026; ERCOT report targeted Dec 10",
+     "checkable_against": "TCEQ notices; ERCOT large-load reports"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Sign set neutral to match the roster item for the same piece (2027 locked in, 2028 at risk; no directional call in the free portion). Marked Paid; visible text stops partway through the state-tier analysis, so figures are from the free portion. Published before the Nov 3 election."
+  },
+  {
+   "kind": "argument",
+   "name": "Treasury issues short, corporates issue long: duration demand goes to credit",
+   "source": "Apollo, The Daily Spark, Torsten Slok",
+   "as_of": "2026-10-30",
+   "title": "The Search for Duration Leads to Credit",
+   "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/The-Search-for-Duration-Leads-to-Credit",
+   "status": "ok",
+   "position": "With Treasury issuing short and companies issuing long to fund data centers, power and grid, insurers and pensions that need duration will go to credit, 'where the duration is'.",
+   "sign": "n/a",
+   "numbers": [
+    {
+     "claim": "Weighted average maturity of 2026 Treasury issuance: 1.7 years",
+     "checkable_against": "FiscalData auction results (issuance-weighted maturity incl. bills); TBAC charts"
+    },
+    {
+     "claim": "Weighted average maturity of US corporate bond issuance: almost 10 years",
+     "checkable_against": "SIFMA US corporate bond issuance statistics / Bloomberg SRCH"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Chart sourced to Bloomberg SRCH."
+  },
+  {
+   "kind": "argument",
+   "name": "Record bond supply led by tech is repricing data center credit",
+   "source": "Grant's, Almost Daily Grant's (unsigned)",
+   "as_of": "2026-10-29",
+   "title": "Feast of Burden",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "Global bond supply has already passed 2025's record with tech borrowers prominent, and blue-chip data center bond yields have risen toward 7% from under 5% earlier in the year.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "Global bond supply $6.61 trillion year-to-date, above 2025's full-year record",
+     "checkable_against": "Bloomberg / Dealogic global issuance league tables"
+    },
+    {
+     "claim": "US investment-grade issuance $1.76 trillion year-to-date",
+     "checkable_against": "SIFMA US corporate bond issuance"
+    },
+    {
+     "claim": "BofA expects November IG supply of $175 billion, up 27% y/y",
+     "checkable_against": "SIFMA monthly issuance for November 2026"
+    },
+    {
+     "claim": "Microsoft $25 billion, 10-tranche bond sale, first domestic sale in nine years",
+     "checkable_against": "Microsoft SEC filings (424B prospectus supplement / 8-K)"
+    },
+    {
+     "claim": "Blue-chip data center bond yields toward 7% from under 5% earlier in 2026",
+     "checkable_against": "Bloomberg / TRACE pricing on data center issues; ICE BofA index yields on FRED"
+    }
+   ],
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Read on the free commentary listing page, which carries all entries; no per-entry URL was available. Entry cites Bloomberg and others, plus a Brookings estimate that AI spending could top $10 trillion by 2032."
+  }
+ ]
+}
