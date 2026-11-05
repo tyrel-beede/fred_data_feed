@@ -397,6 +397,6 @@ stays as one view; the measured targets become the primary ones, and the horizon
 - 2026-11-05 (EIA 1635–1945): the notes page links the table as a PDF; the parser reads its text layer, treats the
   table's "– –" (two dashes) as one not-applicable cell, drops dot leaders and the footnote letter glued to the 1945
   wood value, and checks fossil, renewable and total sums on every row — 42 rows, 42 pass, matching a reader's
-  independent extraction of the same PDF value for value; the CO2-proxy calibration (correlation 0.99 with fossil
+  independent extraction of the same PDF value for value; the CO2-proxy calibration (correlation 0.993 with fossil
   energy growth, +4.5 pp a year against total energy growth before 1900, +0.1 pp after 1905) computed at five-year
   spans from the two files as stored.

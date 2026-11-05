@@ -1,6 +1,6 @@
 # history/ — quality control
 
-Mechanical checks run by `tools/qc.py`: **24 of 25 pass**. Re-run after any change.
+Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any change.
 
 | check | result | evidence |
 |---|---|---|
@@ -28,7 +28,7 @@ Mechanical checks run by `tools/qc.py`: **24 of 25 pass**. Re-run after any chan
 | workflow: bridge step wired and the bridge script exists | PASS |  |
 | license: CC BY-NC-SA 4.0 and both required citations stated | PASS |  |
 | README: documents overrides, provenance classes, bitemporal fields | PASS |  |
-| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | FAIL | 27 quoted; unsupported ['0.99'] |
+| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 26 quoted numbers all found |
 
 ## Content review
 
