@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-05T02:45:22Z",
+ "run_utc": "2026-11-05T05:09:09Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -151,9 +151,8 @@
   "options:AVGO",
   "options:CRWV",
   "options:ORCL",
-  "breadth"
+  "breadth",
+  "eia"
  ],
- "failed": {
-  "eia": "RuntimeError: EIA_API_KEY not set (optional)"
- }
+ "failed": {}
 }
