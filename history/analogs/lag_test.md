@@ -126,4 +126,31 @@ Conditional frequency of the event given each marker in turn (all markers comput
 | loans/GDP high (top tercile) at T-3 | 143 | 15% | 30% | 11% |
 | real house prices 3y growth <= 0 at T | 55 | 24% | 38% | 18% |
 
+### credit_contraction_3y (diffusion rung)
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2355 | 17% | — | — |
+| loans/GDP high (top tercile) at T-3 | 732 | 30% | 42% | 25% |
+| real equity 3y gain <= 0 at T-1 | 275 | 42% | 56% | 36% |
+| technology diffusion slow (bottom tercile of tech_growth_3y) at T | 69 | 54% | 58% | 50% |
+
+### dd30_3y (materials rungs)
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2224 | 12% | — | — |
+| metals real price above its own history (top tercile anomaly) at T | 576 | 20% | 44% | 18% |
+| real commodity PPI 3y change high (top tercile) at T | 304 | 28% | 44% | 25% |
+| r - g low (bottom tercile) at T | 144 | 37% | 42% | 35% |
+
+### gdp_fall_3y (materials rungs)
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2612 | 11% | — | — |
+| real commodity PPI 3y change high (top tercile) at T | 626 | 16% | 25% | 8% |
+| world metals production decelerating at T | 250 | 20% | 33% | 10% |
+| loans/GDP high (top tercile) at T-3 | 72 | 28% | 40% | 23% |
+
 Reading the profiles: a feature whose AUC is highest at k=0 is coincident information; one whose AUC stays high or peaks at k=1..3 leads the event by that many years, which is the lag a mile marker can be registered at. A ✗ means the relationship flipped sign between eras and should not be trusted as a 'known' lag.

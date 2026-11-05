@@ -49,6 +49,12 @@ expected = [
     "history/tools/physical_build.py", "history/physical/owid_extract.csv", "history/physical/physical_features.csv",
     "history/physical/catalog.json", "history/physical/README.md", "history/analogs/learner_test_physical.md",
     "history/tools/physical_pull.py", "history/physical/raw/manifest.json", "history/analogs/learner_test_physical_oil.md",
+    "history/tools/physical_build2.py", "history/physical/chat_extract.csv", "history/physical/usgs_extract.csv",
+    "history/physical/diffusion_features.csv", "history/physical/materials_features.csv", "history/physical/physical_build2.provenance.json",
+    "history/physical/raw/CHAT/FinalCHAT_72909.csv", "history/physical/raw/USGS-DS140/ds140-copper-2020.xlsx",
+    "history/physical/raw/FRED-PHYSICAL/PPIACO.csv",
+    "history/analogs/learner_test_physical_era.md", "history/analogs/learner_test_physical_diffusion_era.md",
+    "history/analogs/learner_test_physical_materials_era.md", "history/analogs/learner_test_physical_diffusion_materials_era.md",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")
@@ -249,7 +255,9 @@ def _aucs(path, keys):
     return out
 pool = set()
 for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_rerun.json", "learner_test_physical.json",
-          "learner_test_physical_oil.json", "lag_test.json", "label_test.json"):
+          "learner_test_physical_oil.json", "lag_test.json", "label_test.json", "learner_test_physical_era.json",
+          "learner_test_physical_diffusion_era.json", "learner_test_physical_materials_era.json",
+          "learner_test_physical_diffusion_materials_era.json"):
     pool |= _aucs(f, None)
 for o in ov:  # override values quoted in the README are not AUCs
     try:

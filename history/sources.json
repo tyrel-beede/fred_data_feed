@@ -257,6 +257,57 @@
     "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.csv",
     "history/physical/raw/manifest.json"
    ]
+  },
+  {
+   "id": "CHAT",
+   "type": "dataset",
+   "title": "Cross-country Historical Adoption of Technology (CHAT) dataset, Comin and Hobijn, NBER Working Paper 15319 data appendix",
+   "url": "https://data.nber.org/data-appendix/w15319/",
+   "citation": "Comin, D. and B. Hobijn (2009), 'The CHAT Dataset', NBER Working Paper 15319",
+   "license": "NBER research data, free for research use; cite the working paper",
+   "provenance_class": "counted (units in service, km built, kWh generated, messages sent; compiled from national and league statistics; unit and territory breaks exist)",
+   "local_files": [
+    "history/physical/raw/CHAT/FinalCHAT_72909.csv",
+    "history/physical/raw/CHAT/chat.dta",
+    "history/physical/raw/CHAT/README.TXT",
+    "history/physical/chat_extract.csv",
+    "history/physical/diffusion_features.csv"
+   ]
+  },
+  {
+   "id": "USGS-DS140",
+   "type": "dataset",
+   "title": "USGS Data Series 140: Historical Statistics for Mineral and Material Commodities in the United States",
+   "url": "https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities",
+   "citation": "Kelly, T.D., and Matos, G.R., comps., Historical statistics for mineral and material commodities in the United States (2016 version and later updates): U.S. Geological Survey Data Series 140",
+   "license": "U.S. Government work, public domain",
+   "provenance_class": "measured/counted (mine, smelter and refinery returns; unit values are annual averages; world production compiled from national reports)",
+   "local_files": [
+    "history/physical/raw/USGS-DS140/index.html",
+    "history/physical/raw/USGS-DS140/ds140-copper-2020.xlsx",
+    "history/physical/raw/USGS-DS140/ds140-iron_ore-2021.xlsx",
+    "history/physical/raw/USGS-DS140/ds140-iron-steel-2021.xlsx",
+    "history/physical/raw/USGS-DS140/ds140-gold-2022.xlsx",
+    "history/physical/usgs_extract.csv",
+    "history/physical/materials_features.csv"
+   ],
+   "note": "85 commodity workbooks under history/physical/raw/USGS-DS140/ (listed in raw/manifest.json); the basket files are named here"
+  },
+  {
+   "id": "FRED-PHYSICAL",
+   "type": "dataset",
+   "title": "FRED long physical price series: PPIACO (Producer Price Index by Commodity: All Commodities, BLS, monthly 1913-), WTISPLC (WTI spot, 1946-), PCOPPUSDM and PIORECRUSDM (IMF copper and iron ore prices, 1990-)",
+   "url": "https://fred.stlouisfed.org/",
+   "citation": "U.S. Bureau of Labor Statistics, PPIACO; FRED, Federal Reserve Bank of St. Louis; IMF Primary Commodity Prices via FRED",
+   "license": "BLS public domain; IMF series under FRED terms of use",
+   "provenance_class": "measured (price indexes and spot prices)",
+   "local_files": [
+    "history/physical/raw/FRED-PHYSICAL/PPIACO.csv",
+    "history/physical/raw/FRED-PHYSICAL/WTISPLC.csv",
+    "history/physical/raw/FRED-PHYSICAL/PCOPPUSDM.csv",
+    "history/physical/raw/FRED-PHYSICAL/PIORECRUSDM.csv",
+    "history/physical/materials_features.csv"
+   ]
   }
  ]
 }

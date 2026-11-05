@@ -29,6 +29,14 @@ Physics enters the system in two roles, and only one of them shows up as backtes
   primary-energy growth and gap (1965 on), fossil production growth (1900 on), fuel self-sufficiency (production over
   consumption, 1965 on — the sign of a commodity shock for exporters versus importers), and the coal and oil shares of
   emissions (the fuel transitions).
+- `raw/` — what the pull workflow (`../tools/physical_pull.py`) fetched, with `manifest.json` recording URL, size,
+  SHA-256 and retrieval time per file: crude oil prices since 1861, the CHAT data appendix, 85 USGS DS140 commodity
+  workbooks, the FRED physical price series. Raw files are never edited.
+- `chat_extract.csv`, `usgs_extract.csv` — the 18 countries × 16 technologies as published (no fill), and the
+  commodity basket's real unit values and world production by year, parsed from the workbooks named in
+  `physical_build2.provenance.json`.
+- `diffusion_features.csv`, `materials_features.csv` — derived by `../tools/physical_build2.py` (the second slice,
+  below): technology diffusion per country-year, materials per year.
 - `catalog.json` — the catalog of long-running physical series: what is pulled, what the workflow can retrieve by URL,
   and what has to be supplied as a file (the pre-1965 European energy consumption series, the Jacks commodity panel,
   ore-grade compilations).
@@ -64,9 +72,100 @@ contraction, unemployment spike and crisis label did not move. On the mile-marke
 fourth rung lifts the contraction ladder 51% → 60% and the drawdown ladder 43% → 64%, on 35 and 11 country-years —
 hints at that depth, not findings.
 
-Not yet landed: the NBER data appendix for CHAT returned 504 then 503 (the workflow retries on its schedule; the file
-can also be supplied), and the `EIA_API_KEY` secret is not set in the repository, so the EIA pull and the feed's own
-`eia` source are skipping.
+**The second slice: diffusion and materials (third run, 2026-11-04).** The workflow's next pass landed the three
+catalogs that were still outstanding: the NBER data appendix of **CHAT** (Comin and Hobijn's Cross-country Historical
+Adoption of Technology panel, `raw/CHAT/`), the **USGS Data Series 140** historical mineral statistics (85 commodity
+workbooks, `raw/USGS-DS140/`) and the **FRED** long physical price series (`raw/FRED-PHYSICAL/`: the all-commodity PPI
+from 1913, WTI from 1946, IMF copper and iron ore from 1990). `../tools/physical_build2.py` turns them into two
+feature families, every value computable at year t from data dated t or earlier:
+
+- `diffusion_features.csv` (per country-year, the transfer function): for sixteen technologies — rail km, telegrams,
+  telephones, electricity, cars, commercial vehicles, radios, TVs, mail, aviation passenger-km, ship tonnage,
+  tractors, fertilizer, cellphones, computers, internet users — the per-capita log level against JST population,
+  its growth per year from the latest observation in [t−5, t−2] (post-inception only: ten years after the first
+  positive value, and never across a one-year log jump above 1.0, which marks the 108 unit or territory breaks the
+  CHAT note warns about), and from those the median pace of adoption (`tech_growth_3y`), its change against three
+  to five years earlier (`tech_accel_3y`, the S-curve position), the fastest technology's pace (`tech_max_growth_3y`,
+  the era's lead technology), the median distance to the JST-18 frontier (`tech_frontier_gap`, 0 for the leader),
+  the percentile rank of the pace in the cross-section (`rank_tech_growth_3y`, the relative diffusion race), the four
+  long lead series on their own (rail, electricity, cars, telephones) and electricity per tonne of fossil CO2
+  (`elec_per_co2_growth_3y`: how much of the energy flow becomes the highest-grade carrier). `tech_n` records how many
+  technologies the medians rest on and is kept out of the learner, because it grows with the calendar and falls to
+  zero after 2003 — a clock, not a state. The panel thins out after 1993 and ends in 2003; nothing is filled.
+- `materials_features.csv` (per year, global at t, the mining problem): across a base-metal basket — copper, lead,
+  zinc, tin, nickel, aluminum, iron ore — the median log change of the real unit value (USGS's 1998-dollar series)
+  over one and three years, the median of the real price against its own history to t (`metals_real_price_anom`,
+  the scarcity signal: the price the mining problem is clearing at), the median world-production growth (basket plus
+  pig iron) and its three-year acceleration, gold's real three-year change, and the all-commodity PPI deflated by the
+  JST US CPI over one and three years. `usgs_extract.csv` holds the basket series as parsed; the workbook, sheet and
+  column each came from are in `physical_build2.provenance.json`.
+
+The features read correctly at the known episodes: US per-capita rail growth 8.9%/yr in 1872, 5.2% in 1873, 0.3% by
+1875, and 5.8% in 1883 down to 0.4% in 1893; Germany 6.9%/yr in 1873; US car growth 32%/yr in 1915, 18% in 1920, 5.6%
+in 1929, −5.5% in 1932; Japan the fastest diffuser in the cross-section in 1960 (rank 1.0) with its frontier gap
+closing from −2.9 (1900) to −1.2 (1989); the metals basket 58% below its three-years-earlier real price in 1920 and 42%
+below its own history, world metal production −15%/yr through 1932, the basket 40% above its history in 1974 and 2007
+and 60% above in 2011; gold's real price +85% over 1970–73 and +111% over 1977–80.
+
+Added to the walk-forward learners like-for-like (`../analogs/learner_test_physical_*_era.md`; the comparison row is
+the oil run, 66 features, reproduced exactly by `learner_test_physical_era.md`), with a new era split in the report
+(AUC for queries before 2004 and from 2004, because the later window is dominated by one synchronized episode):
+
+| within 3 years (AUC, best learner) | energy + oil | + diffusion (10) | + materials (8) | + both |
+|---|---|---|---|---|
+| real equity drawdown ≥ 30% | **0.76** trees | 0.74 | 0.75 | 0.72 |
+| credit contraction ≥ 5 pp of GDP | **0.68** ensemble | 0.68 | 0.68 | 0.67 |
+| real GDP per capita fall ≥ 5% | **0.68** logit | 0.69 | 0.62 (0.65 k-NN) | 0.63 (0.65 k-NN) |
+| unemployment spike ≥ 3 pp | **0.68** trees | 0.67 | 0.67 | 0.65 |
+| JST crisis label | 0.63 trees | 0.58 | **0.66** logit (0.64 trees; 0.63 before 2004) | 0.63 |
+
+Reading, family by family:
+
+- **Diffusion adds no skill at this horizon.** Where the panel exists (queries before 2004) every target is within
+  ±0.03 of the baseline at its best learner, mostly a little down; on the label the trees fall from 0.63 to 0.58
+  overall, and the era split shows why — 0.63 → 0.62 before 2004 but 0.62 → 0.35 from 2004, when every diffusion
+  column is missing for every country and the trees route those rows down branches they learned from early-era and
+  small-country gaps. The family is neutral where it exists and harmful where it does not, which is a data-coverage
+  result, not a mechanism result: the S-curve story (lead-technology capacity outrunning demand near the inflection)
+  is not visible to a learner at three years from aggregate adoption rates. The one hint is on the mile-marker ladder:
+  after a high loans/GDP at T−3 and a flat-or-falling real equity market at T−1, slow diffusion at T lifts the
+  contraction rate from 42% to 54% (n = 69), the same reading before and after 1950. The pooled single-feature
+  screen also says rail growth per capita separates labelled crises (0.66) — the railway manias — but the learner
+  already has the credit variables that financed them.
+- **Materials move the crisis label — mostly through one call — and cost the logit elsewhere.** The label's logit
+  goes 0.58 → 0.66 (k-NN 0.58 → 0.61, trees 0.63 → 0.64), the largest move the label has shown in any test here, with
+  the metals anomaly, the real oil price and the real commodity PPI change among the heaviest weights. The era split
+  decomposes it: 0.59 → 0.63 on queries before 2004, and 0.58 → 0.89 from 2004 — the 2006–07 commodity boom (metals
+  40% above their history, the real commodity PPI up 7% over three years, real oil at its highest since 1981) made the model score 2005–07 as
+  pre-crisis years across the panel, and the 2007–08 wave then supplied all 39 of that window's positive country-years. That was a legitimate
+  walk-forward call with information available at the time, but it is one event, and the +0.04 before 2004 is the
+  part that rests on many. Elsewhere the drawdown logit falls 0.60 → 0.52 and the GDP-fall logit 0.68 → 0.62 while the
+  trees barely move (0.76 → 0.75, 0.63 → 0.62), and the weights show the cause: the materials columns are the same for
+  every country in a year, so a linear model with eight of them can fit the era — world production acceleration
+  −1.3 and the commodity PPI +1.0 on the GDP fall, collinear with each other and with the metals anomaly — and that
+  fit does not carry forward. A global-at-t family has in effect about 120 independent observations, not 2,600, so its
+  skill estimates are noisier and its risk of learning the calendar higher. On the ladders the materials rungs do
+  what the shock channel predicts: the drawdown rate climbs 12% → 20% → 28% → 37% as the metals anomaly, the real
+  commodity PPI change and a low r−g arrive (n = 144), and the GDP fall 11% → 16% → 20% → 28% as a commodity-price
+  boom, a world production deceleration and a high loans/GDP line up (n = 72) — both ladders steeper before 1950
+  than after.
+- **Together they do not stack.** All three families (84 features) land at or below the oil run on every target:
+  the dilution that the k-NN showed on the first slice now shows on the weighted learners too.
+
+The era split carries a warning for every number measured on the last window: from 2004 the drawdown AUC is 0.8–0.9 and
+the contraction 0.7–0.8 for every learner except the within-year rank ensemble (which by construction cannot see a year
+that is bad everywhere), because the 2008 wave hit nearly every country at once with one credit-boom
+signature — 41 drawdowns and 73 contractions that are one event, not 41 and 73 — while the GDP-fall logit is 0.35 on
+that window, anti-predicting 2009 and 2020, which were shocks from outside the state vector. Skill measured on the
+full panel is mostly pre-2004 skill, and that is the honest number.
+
+What the second slice settles: the oil price stays the physical feature that earns its place; materials add a view
+of the label and of the shock channel at the cost of a linear learner's stability (the trees are the right learner
+for global features); diffusion, as aggregate adoption rates, is not a three-year forecasting feature and would need
+the panel extended past 2003 (electricity from OWID's energy data, telephones and internet from the ITU, vehicles
+from the WDI) before it could be retested on the only window with the later episodes. Still outstanding: the
+`EIA_API_KEY` secret is not set in the repository, so the EIA pull and the feed's own `eia` source are skipping; the
+pre-1965 European energy series and the Jacks commodity panel have to be supplied as files.
 
 ## Rebuild
 
@@ -74,4 +173,6 @@ can also be supplied), and the `EIA_API_KEY` secret is not set in the repository
 GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/owid/co2-data    /path/owid/co2-data
 GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/owid/energy-data /path/owid/energy-data
 python3 -I history/tools/physical_build.py /path/owid/co2-data /path/owid/energy-data
+python3 -I history/tools/physical_build2.py          # CHAT, USGS DS140 and FRED PPIACO from raw/ (pulled by the workflow)
+python3 -I history/tools/learner_test.py --physical --diffusion --materials --no-horizon --era-split 2004 --tag _era
 ```

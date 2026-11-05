@@ -1,0 +1,573 @@
+{
+ "features": [
+  "loans_gdp",
+  "d3_loans_gdp",
+  "d5_loans_gdp",
+  "mort_gdp",
+  "debt_gdp",
+  "d5_debt_gdp",
+  "deficit_gdp",
+  "r_minus_g",
+  "ltrate",
+  "term_spread",
+  "real_ltrate_expost",
+  "cpi_infl",
+  "rgdp_pc_growth",
+  "unemp",
+  "d1_unemp",
+  "iy",
+  "ca_gdp",
+  "eq_dp",
+  "real_eq_capgain_3y",
+  "real_hp_growth_3y",
+  "xs_share_credit_boom",
+  "xs_mean_d3_loans_gdp",
+  "xs_disp_real_rate",
+  "xs_mean_term_spread",
+  "xs_mean_req3y",
+  "xs_crises_now",
+  "xs_crises_last2y",
+  "bloc_crises_last2y",
+  "base_d3_loans_gdp",
+  "base_term_spread",
+  "rank_d3_loans_gdp",
+  "rank_req3y",
+  "rank_ca_gdp",
+  "rank_rgdp_pc_growth",
+  "rank_rhp3y",
+  "rank_d1_unemp",
+  "speed_1y",
+  "speed_2y",
+  "transitions_1y",
+  "accel_d3_loans_gdp",
+  "d1_term_spread",
+  "d1_real_eq_capgain_3y",
+  "d1_real_hp_growth_3y",
+  "d1_ca_gdp",
+  "d1_rank_d3_loans_gdp",
+  "loans_gdp_lag3",
+  "mort_gdp_lag3",
+  "real_eq_capgain_3y_lag1",
+  "rgdp_pc_growth_lag1",
+  "r_minus_g_lag1",
+  "energy_footprint_gap_3y",
+  "gap_anom_3y",
+  "d3_co2_intensity",
+  "co2_growth_3y",
+  "co2_growth_1y",
+  "fossil_prod_growth_3y",
+  "fuel_self_sufficiency",
+  "coal_share_co2",
+  "oil_share_co2",
+  "oil_real_price",
+  "oil_real_change_1y",
+  "oil_real_change_3y",
+  "oil_change_x_exposure",
+  "tech_growth_3y",
+  "tech_accel_3y",
+  "tech_max_growth_3y",
+  "tech_frontier_gap",
+  "rank_tech_growth_3y",
+  "rail_growth_3y",
+  "elec_growth_3y",
+  "car_growth_3y",
+  "phone_growth_3y",
+  "elec_per_co2_growth_3y",
+  "metals_real_price_1y",
+  "metals_real_price_3y",
+  "metals_real_price_anom",
+  "world_metals_prod_3y",
+  "world_metals_prod_accel",
+  "gold_real_3y",
+  "ppi_commod_real_1y",
+  "ppi_commod_real_3y",
+  "mk_loans_top_tercile_T-3",
+  "mk_equity_le0_T-1",
+  "mk_houses_le0_T"
+ ],
+ "results": {
+  "dd30_3y": {
+   "knn": {
+    "auc": 0.590934408911937,
+    "top_decile": 0.22043010752688172,
+    "base": 0.13963480128893663,
+    "n_pos": 260,
+    "n_neg": 1602,
+    "auc_before_2004": 0.5371362558364788,
+    "n_pos_before_2004": 219,
+    "auc_from_2004": 0.8841796614687458,
+    "n_pos_from_2004": 41
+   },
+   "logit": {
+    "auc": 0.5208851124092759,
+    "top_decile": 0.17419354838709677,
+    "base": 0.13504823151125403,
+    "n_pos": 210,
+    "n_neg": 1345,
+    "auc_before_2004": 0.5365315870413183,
+    "n_pos_before_2004": 169,
+    "auc_from_2004": 0.6530721044915367,
+    "n_pos_from_2004": 41
+   },
+   "gbt": {
+    "auc": 0.7177907594264472,
+    "top_decile": 0.36129032258064514,
+    "base": 0.13504823151125403,
+    "n_pos": 210,
+    "n_neg": 1345,
+    "auc_before_2004": 0.6722698061901028,
+    "n_pos_before_2004": 169,
+    "auc_from_2004": 0.9238971078235373,
+    "n_pos_from_2004": 41
+   },
+   "ensemble": {
+    "auc": 0.6270103344951996,
+    "top_decile": 0.2709677419354839,
+    "base": 0.1335483870967742,
+    "n_pos": 207,
+    "n_neg": 1343,
+    "auc_before_2004": 0.6598462816784378,
+    "n_pos_before_2004": 166,
+    "auc_from_2004": 0.49120351859256295,
+    "n_pos_from_2004": 41
+   }
+  },
+  "credit_contraction_3y": {
+   "knn": {
+    "auc": 0.5837385884320659,
+    "top_decile": 0.30612244897959184,
+    "base": 0.19277721261444558,
+    "n_pos": 379,
+    "n_neg": 1587,
+    "auc_before_2004": 0.5574026208640791,
+    "n_pos_before_2004": 306,
+    "auc_from_2004": 0.7329934620174346,
+    "n_pos_from_2004": 73
+   },
+   "logit": {
+    "auc": 0.6538385565052232,
+    "top_decile": 0.4463276836158192,
+    "base": 0.21079258010118043,
+    "n_pos": 375,
+    "n_neg": 1404,
+    "auc_before_2004": 0.6196340358521906,
+    "n_pos_before_2004": 302,
+    "auc_from_2004": 0.8297789539227896,
+    "n_pos_from_2004": 73
+   },
+   "gbt": {
+    "auc": 0.6507958214624882,
+    "top_decile": 0.4689265536723164,
+    "base": 0.21079258010118043,
+    "n_pos": 375,
+    "n_neg": 1404,
+    "auc_before_2004": 0.6277503936838018,
+    "n_pos_before_2004": 302,
+    "auc_from_2004": 0.7572384806973848,
+    "n_pos_from_2004": 73
+   },
+   "ensemble": {
+    "auc": 0.6674238930328822,
+    "top_decile": 0.4124293785310734,
+    "base": 0.2104670793472144,
+    "n_pos": 374,
+    "n_neg": 1403,
+    "auc_before_2004": 0.635446365957539,
+    "n_pos_before_2004": 301,
+    "auc_from_2004": 0.8059620174346201,
+    "n_pos_from_2004": 73
+   }
+  },
+  "gdp_fall_3y": {
+   "knn": {
+    "auc": 0.6521836799854042,
+    "top_decile": 0.23786407766990292,
+    "base": 0.11611030478955008,
+    "n_pos": 240,
+    "n_neg": 1827,
+    "auc_before_2004": 0.6648883579138173,
+    "n_pos_before_2004": 212,
+    "auc_from_2004": 0.546875,
+    "n_pos_from_2004": 28
+   },
+   "logit": {
+    "auc": 0.6309592064740261,
+    "top_decile": 0.3140096618357488,
+    "base": 0.11631274131274132,
+    "n_pos": 241,
+    "n_neg": 1831,
+    "auc_before_2004": 0.6726469582898762,
+    "n_pos_before_2004": 213,
+    "auc_from_2004": 0.3638392857142857,
+    "n_pos_from_2004": 28
+   },
+   "gbt": {
+    "auc": 0.5920080857341634,
+    "top_decile": 0.2028985507246377,
+    "base": 0.11631274131274132,
+    "n_pos": 241,
+    "n_neg": 1831,
+    "auc_before_2004": 0.5941231291503428,
+    "n_pos_before_2004": 213,
+    "auc_from_2004": 0.5888073979591837,
+    "n_pos_from_2004": 28
+   },
+   "ensemble": {
+    "auc": 0.5239155719759168,
+    "top_decile": 0.16019417475728157,
+    "base": 0.11611030478955008,
+    "n_pos": 240,
+    "n_neg": 1827,
+    "auc_before_2004": 0.5131990136418744,
+    "n_pos_before_2004": 212,
+    "auc_from_2004": 0.6172672193877551,
+    "n_pos_from_2004": 28
+   }
+  },
+  "unemp_spike_3y": {
+   "knn": {
+    "auc": 0.5783106753386473,
+    "top_decile": 0.11728395061728394,
+    "base": 0.10425663170882171,
+    "n_pos": 169,
+    "n_neg": 1452,
+    "auc_before_2004": 0.5553458699355356,
+    "n_pos_before_2004": 147,
+    "auc_from_2004": 0.7431818181818182,
+    "n_pos_from_2004": 22
+   },
+   "logit": {
+    "auc": 0.5749521590814544,
+    "top_decile": 0.26582278481012656,
+    "base": 0.10732323232323232,
+    "n_pos": 170,
+    "n_neg": 1414,
+    "auc_before_2004": 0.5570386687363039,
+    "n_pos_before_2004": 148,
+    "auc_from_2004": 0.7488142292490119,
+    "n_pos_from_2004": 22
+   },
+   "gbt": {
+    "auc": 0.6548090523338048,
+    "top_decile": 0.18354430379746836,
+    "base": 0.10732323232323232,
+    "n_pos": 170,
+    "n_neg": 1414,
+    "auc_before_2004": 0.6246119430241052,
+    "n_pos_before_2004": 148,
+    "auc_from_2004": 0.8256916996047431,
+    "n_pos_from_2004": 22
+   },
+   "ensemble": {
+    "auc": 0.6232596420417482,
+    "top_decile": 0.18120805369127516,
+    "base": 0.09798657718120805,
+    "n_pos": 146,
+    "n_neg": 1344,
+    "auc_before_2004": 0.5894480801528929,
+    "n_pos_before_2004": 124,
+    "auc_from_2004": 0.807806324110672,
+    "n_pos_from_2004": 22
+   }
+  },
+  "crisis_3y": {
+   "knn": {
+    "auc": 0.6120033812341504,
+    "top_decile": 0.1407766990291262,
+    "base": 0.0880503144654088,
+    "n_pos": 182,
+    "n_neg": 1885,
+    "auc_before_2004": 0.6326370997423629,
+    "n_pos_before_2004": 143,
+    "auc_from_2004": 0.4792945708438666,
+    "n_pos_from_2004": 39
+   },
+   "logit": {
+    "auc": 0.6306442235013664,
+    "top_decile": 0.1497584541062802,
+    "base": 0.08783783783783784,
+    "n_pos": 182,
+    "n_neg": 1890,
+    "auc_before_2004": 0.610639211712557,
+    "n_pos_before_2004": 143,
+    "auc_from_2004": 0.8760081858673407,
+    "n_pos_from_2004": 39
+   },
+   "gbt": {
+    "auc": 0.6181057038199895,
+    "top_decile": 0.1642512077294686,
+    "base": 0.08783783783783784,
+    "n_pos": 182,
+    "n_neg": 1890,
+    "auc_before_2004": 0.6318767696227445,
+    "n_pos_before_2004": 143,
+    "auc_from_2004": 0.5263031178524137,
+    "n_pos_from_2004": 39
+   },
+   "ensemble": {
+    "auc": 0.5861631736963302,
+    "top_decile": 0.1941747572815534,
+    "base": 0.0880503144654088,
+    "n_pos": 182,
+    "n_neg": 1885,
+    "auc_before_2004": 0.5943386756783886,
+    "n_pos_before_2004": 143,
+    "auc_from_2004": 0.5568797399783315,
+    "n_pos_from_2004": 39
+   }
+  }
+ },
+ "horizon": {},
+ "weights": {
+  "dd30_3y": [
+   [
+    "r_minus_g",
+    -1.2138350093032173
+   ],
+   [
+    "real_ltrate_expost",
+    -0.8236002278979747
+   ],
+   [
+    "eq_dp",
+    -0.7226869084000507
+   ],
+   [
+    "loans_gdp_lag3",
+    0.6561976048716595
+   ],
+   [
+    "co2_growth_3y",
+    -0.6305819497481576
+   ],
+   [
+    "oil_share_co2",
+    -0.6256861968469086
+   ],
+   [
+    "speed_2y",
+    0.6189280931608765
+   ],
+   [
+    "world_metals_prod_accel",
+    -0.5878672640764516
+   ],
+   [
+    "xs_share_credit_boom",
+    0.5589926495426961
+   ],
+   [
+    "oil_real_price",
+    -0.5191889938087032
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.4929047614522343
+   ],
+   [
+    "bloc_crises_last2y",
+    -0.4869323988482573
+   ]
+  ],
+  "credit_contraction_3y": [
+   [
+    "loans_gdp_lag3",
+    1.6038573370901041
+   ],
+   [
+    "mort_gdp",
+    -0.9104588612447638
+   ],
+   [
+    "loans_gdp",
+    0.8195965928017344
+   ],
+   [
+    "d5_loans_gdp",
+    -0.6407781813066906
+   ],
+   [
+    "real_eq_capgain_3y",
+    -0.5488974518424529
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.46590213588951973
+   ],
+   [
+    "coal_share_co2",
+    0.4506547755072692
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.4389002073343559
+   ],
+   [
+    "tech_growth_3y",
+    -0.4250687850569017
+   ],
+   [
+    "d1_real_eq_capgain_3y",
+    0.4236223895768828
+   ],
+   [
+    "elec_growth_3y",
+    0.3842772566392839
+   ],
+   [
+    "speed_1y",
+    0.37194547912512416
+   ]
+  ],
+  "gdp_fall_3y": [
+   [
+    "world_metals_prod_accel",
+    -1.3486797251237868
+   ],
+   [
+    "fuel_self_sufficiency",
+    -1.220318712266605
+   ],
+   [
+    "ppi_commod_real_3y",
+    1.0061805480368944
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.6793766586025131
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.6513917892789339
+   ],
+   [
+    "metals_real_price_anom",
+    -0.5885449168418179
+   ],
+   [
+    "world_metals_prod_3y",
+    0.575654604316613
+   ],
+   [
+    "gold_real_3y",
+    0.5591694812729061
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.5459486533671838
+   ],
+   [
+    "d5_loans_gdp",
+    -0.5168085944334441
+   ],
+   [
+    "oil_share_co2",
+    -0.511566515061372
+   ],
+   [
+    "base_d3_loans_gdp",
+    -0.46961182565006065
+   ]
+  ],
+  "unemp_spike_3y": [
+   [
+    "xs_mean_term_spread",
+    -1.0035679597906904
+   ],
+   [
+    "loans_gdp_lag3",
+    0.8369656369302295
+   ],
+   [
+    "r_minus_g_lag1",
+    -0.8239032146140537
+   ],
+   [
+    "gold_real_3y",
+    0.7934943124359243
+   ],
+   [
+    "world_metals_prod_accel",
+    -0.7590936656087791
+   ],
+   [
+    "ppi_commod_real_3y",
+    0.6591450311758497
+   ],
+   [
+    "oil_real_price",
+    0.6105373723772647
+   ],
+   [
+    "fuel_self_sufficiency",
+    -0.6085419091648444
+   ],
+   [
+    "mort_gdp_lag3",
+    -0.5607933336339656
+   ],
+   [
+    "r_minus_g",
+    0.5401330848954888
+   ],
+   [
+    "world_metals_prod_3y",
+    0.5230657515447393
+   ],
+   [
+    "coal_share_co2",
+    0.4966059814670817
+   ]
+  ],
+  "crisis_3y": [
+   [
+    "metals_real_price_anom",
+    -0.8757036000484925
+   ],
+   [
+    "mort_gdp",
+    -0.7791733794448994
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.7007576844875261
+   ],
+   [
+    "oil_real_price",
+    0.6826059924980648
+   ],
+   [
+    "co2_growth_3y",
+    -0.6692031709901014
+   ],
+   [
+    "coal_share_co2",
+    0.6485583497645009
+   ],
+   [
+    "unemp",
+    -0.6351661153043183
+   ],
+   [
+    "mort_gdp_lag3",
+    0.6161116284425434
+   ],
+   [
+    "ppi_commod_real_3y",
+    0.6054160596906047
+   ],
+   [
+    "energy_footprint_gap_3y",
+    0.5699089143916547
+   ],
+   [
+    "metals_real_price_3y",
+    0.5198173883261941
+   ],
+   [
+    "gap_anom_3y",
+    0.435375605360558
+   ]
+  ]
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "built_by": "history/tools/physical_build2.py",
+ "provenance_class": "derived",
+ "diffusion": {
+  "rows": 2718,
+  "breaks_flagged": 108,
+  "coverage": {
+   "tech_growth_3y": 2247,
+   "tech_accel_3y": 2179,
+   "tech_max_growth_3y": 2247,
+   "tech_n": 2718,
+   "tech_frontier_gap": 2276,
+   "rank_tech_growth_3y": 2245,
+   "rail_growth_3y": 2155,
+   "elec_growth_3y": 1396,
+   "car_growth_3y": 1223,
+   "phone_growth_3y": 1441,
+   "elec_per_co2_growth_3y": 1505
+  },
+  "techs": [
+   "railline",
+   "telegram",
+   "telephone",
+   "elecprod",
+   "vehicle_car",
+   "vehicle_com",
+   "radio",
+   "tv",
+   "mail",
+   "aviationpkm",
+   "shipton_all",
+   "ag_tractor",
+   "fert_total",
+   "cellphone",
+   "computer",
+   "internetuser"
+  ],
+  "inception_years": 10,
+  "break_logjump": 1.0
+ },
+ "materials": {
+  "years": 123,
+  "coverage": {
+   "metals_real_price_1y": 121,
+   "metals_real_price_3y": 119,
+   "metals_real_price_anom": 113,
+   "world_metals_prod_3y": 119,
+   "world_metals_prod_accel": 116,
+   "gold_real_3y": 120,
+   "ppi_commod_real_1y": 107,
+   "ppi_commod_real_3y": 105
+  },
+  "basket": {
+   "copper": {
+    "file": "history/physical/raw/USGS-DS140/ds140-copper-2020.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "lead": {
+    "file": "history/physical/raw/USGS-DS140/ds140-lead-2021.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "zinc": {
+    "file": "history/physical/raw/USGS-DS140/ds140-zinc-2022.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "tin": {
+    "file": "history/physical/raw/USGS-DS140/ds140-tin-2021.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "nickel": {
+    "file": "history/physical/raw/USGS-DS140/ds140-nickel-2019.xlsx",
+    "sheet": "Nickel",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "aluminum": {
+    "file": "history/physical/raw/USGS-DS140/ds140-aluminum-2021.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "iron_ore": {
+    "file": "history/physical/raw/USGS-DS140/ds140-iron_ore-2021.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "pig_iron": {
+    "file": "history/physical/raw/USGS-DS140/ds140-iron-steel-2021.xlsx",
+    "sheet": "Pig Iron",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   },
+   "gold": {
+    "file": "history/physical/raw/USGS-DS140/ds140-gold-2022.xlsx",
+    "sheet": "first",
+    "real_unit_value_column": "Unit value (98$/t)",
+    "world_production_column": "World production"
+   }
+  },
+  "ppi_years": 108
+ }
+}

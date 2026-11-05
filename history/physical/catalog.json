@@ -52,25 +52,25 @@
   },
   {
    "id": "FRED-WTISPLC",
-   "status": "planned",
+   "status": "pulled",
    "title": "Spot crude oil price, WTI, monthly 1946- (FRED)",
    "coverage": "1946-",
-   "retrieval": "FRED API in the pull workflow",
+   "retrieval": "workflow: FRED API (history/physical/raw/FRED-PHYSICAL/WTISPLC.csv)",
    "license": "public",
    "feeds": [
-    "oil_real_price (1946-)"
+    "(not yet used: the 1861- series covers it; kept for the bridge)"
    ]
   },
   {
    "id": "FRED-PPIACO",
-   "status": "planned",
+   "status": "pulled",
    "title": "Producer price index, all commodities, monthly 1913- (FRED)",
    "coverage": "US, 1913-",
-   "retrieval": "FRED API in the pull workflow",
+   "retrieval": "workflow: FRED API (history/physical/raw/FRED-PHYSICAL/PPIACO.csv, monthly, averaged to years)",
    "license": "public",
    "feeds": [
-    "commodity_real_price",
-    "commodity_real_change_3y"
+    "ppi_commod_real_1y",
+    "ppi_commod_real_3y"
    ]
   },
   {
@@ -98,17 +98,25 @@
   },
   {
    "id": "CHAT",
-   "status": "planned",
+   "status": "pulled",
    "title": "Cross-country Historical Adoption of Technology (Comin and Hobijn), 100+ technologies, 150 countries, 1750-2000",
-   "coverage": "railroads km, electricity, telephones, cars, ships, steel, ... by country",
-   "retrieval": "nber.org/research/data/cross-country-historical-adoption-technology (xls); reachable from the workflow",
+   "coverage": "18 JST countries x 16 technologies used (rail km, telegrams, telephones, electricity, cars, commercial vehicles, radios, TVs, mail, aviation pkm, ship tonnage, tractors, fertilizer, cellphones, computers, internet users); most series end 1993-2003",
+   "retrieval": "workflow: NBER data appendix data.nber.org/data-appendix/w15319/ (FinalCHAT_72909.csv, chat.dta, README.TXT; manifest.json has URL, hash, time)",
    "license": "NBER research data; free for research",
    "feeds": [
-    "diffusion_position (lead technology of the era: adoption growth and its second derivative)",
-    "railroad_km_growth",
-    "electricity_growth"
+    "tech_growth_3y",
+    "tech_accel_3y",
+    "tech_max_growth_3y",
+    "tech_n",
+    "tech_frontier_gap",
+    "rank_tech_growth_3y",
+    "rail_growth_3y",
+    "elec_growth_3y",
+    "car_growth_3y",
+    "phone_growth_3y",
+    "elec_per_co2_growth_3y"
    ],
-   "note": "the diffusion channel: capacity outrunning demand near the inflection (1873, 1893, 2001)"
+   "note": "the diffusion channel: capacity outrunning demand near the inflection (1873, 1893, 2001); per-capita log growth from the latest observation in [t-5, t-2], post-inception only, no growth across one-year log jumps > 1 (108 flagged unit/territory breaks); nothing after 2003"
   },
   {
    "id": "JACKS-COMMODITIES",
@@ -124,15 +132,20 @@
   },
   {
    "id": "USGS-MINERALS",
-   "status": "planned",
+   "status": "pulled",
    "title": "USGS historical statistics for mineral and material commodities (production, prices, since 1900)",
-   "coverage": "US and world, by commodity",
-   "retrieval": "usgs.gov data series 140; reachable from the workflow",
+   "coverage": "US production, imports, exports, apparent consumption, unit value nominal and real (98$/t), world production; 1900-2021/22; basket used: copper, lead, zinc, tin, nickel, aluminum, iron ore (+ pig iron world production, gold)",
+   "retrieval": "workflow: USGS series index -> 85 commodity workbooks (history/physical/raw/USGS-DS140/, manifest.json has URL, hash, time)",
    "license": "public domain",
    "feeds": [
-    "metal_real_price_change",
-    "production_growth"
-   ]
+    "metals_real_price_1y",
+    "metals_real_price_3y",
+    "metals_real_price_anom",
+    "world_metals_prod_3y",
+    "world_metals_prod_accel",
+    "gold_real_3y"
+   ],
+   "note": "global at t (the same for every country); prices are annual averages in US dollars, deflated by USGS with the US CPI"
   },
   {
    "id": "ORE-GRADES",

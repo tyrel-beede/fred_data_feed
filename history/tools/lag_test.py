@@ -99,6 +99,19 @@ def main():
             if r.get("oil_real_change_1y"):
                 oil[(r["iso"], int(r["year"]))] = float(r["oil_real_change_1y"])
     oil_up = np.array([oil.get((i, y), np.nan) >= 0.25 if (i, y) in oil else np.nan for i, y in zip(isos, years)], dtype=float)
+    # second physical slice rungs: diffusion (per country-year) and materials (global at t), if built
+    def side(path, key, name, by_year=False):
+        d = {}
+        if os.path.exists(path):
+            for r in csv.DictReader(open(path)):
+                if r.get(name):
+                    d[int(r["year"]) if by_year else (r["iso"], int(r["year"]))] = float(r[name])
+        return np.array([d.get(y if by_year else (i, y), np.nan) for i, y in zip(isos, years)], dtype=float)
+    tech_g = side(os.path.join(ROOT, "history", "physical", "diffusion_features.csv"), None, "tech_growth_3y")
+    ppi3 = side(os.path.join(ROOT, "history", "physical", "materials_features.csv"), None, "ppi_commod_real_3y", by_year=True)
+    metals_anom = side(os.path.join(ROOT, "history", "physical", "materials_features.csv"), None, "metals_real_price_anom", by_year=True)
+    wm_accel = side(os.path.join(ROOT, "history", "physical", "materials_features.csv"), None, "world_metals_prod_accel", by_year=True)
+    has_d, has_m = not np.all(np.isnan(tech_g)), not np.all(np.isnan(ppi3))
     ladders = {
         "credit_contraction_3y": [("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
                                   ("real equity 3y gain <= 0 at T-1", col("real_eq_capgain_3y", 1) <= 0),
@@ -112,9 +125,23 @@ def main():
                          ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
                          ("real house prices 3y growth <= 0 at T", col("real_hp_growth_3y", 0) <= 0)] if oil else []),
     }
+    if has_d:
+        ladders["credit_contraction_3y (diffusion rung)"] = [
+            ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
+            ("real equity 3y gain <= 0 at T-1", col("real_eq_capgain_3y", 1) <= 0),
+            ("technology diffusion slow (bottom tercile of tech_growth_3y) at T", tech_g <= np.nanpercentile(tech_g, 33))]
+    if has_m:
+        ladders["dd30_3y (materials rungs)"] = [
+            ("metals real price above its own history (top tercile anomaly) at T", metals_anom >= np.nanpercentile(metals_anom, 67)),
+            ("real commodity PPI 3y change high (top tercile) at T", ppi3 >= np.nanpercentile(ppi3, 67)),
+            ("r - g low (bottom tercile) at T", tercile_flag("r_minus_g", 0, False))]
+        ladders["gdp_fall_3y (materials rungs)"] = [
+            ("real commodity PPI 3y change high (top tercile) at T", ppi3 >= np.nanpercentile(ppi3, 67)),
+            ("world metals production decelerating at T", wm_accel < 0),
+            ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True))]
     rep["mile_markers"] = {}
     for t, steps in ladders.items():
-        lab = T[t]; cond = ~np.isnan(lab)
+        lab = T[t.split(" ")[0]]; cond = ~np.isnan(lab)
         out = [{"stage": "unconditional", "n": int(cond.sum()), "rate": float(np.nanmean(lab[cond]))}]
         for name, flag in steps:
             cond = cond & np.nan_to_num(flag, nan=False)

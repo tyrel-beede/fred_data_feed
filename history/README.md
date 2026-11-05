@@ -60,7 +60,9 @@ history/
                             concepts for the US, annual aggregates, and the 2016-2020 overlap check
   analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
                             backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical)
-  physical/                 the physical layer: OWID extract (CO2, energy), derived footprint features, catalog
+  physical/                 the physical layer: OWID extract (CO2, energy), oil prices since 1861, the CHAT technology-
+                            diffusion panel, USGS mineral statistics and FRED commodity prices (raw/ pulled by the
+                            workflow), the derived footprint, oil, diffusion and materials features, and the catalog
   tools/
     jst_build.py            workbook -> csv, coverage, crisis flags, units, features
     jstlib.py               shared loader (sheet + overrides + features)
@@ -71,6 +73,8 @@ history/
     features2.py, wf.py, analog_test2.py, label_test.py, lag_test.py, learner_test.py   test 2 (subnet, rank, flux;
                             measured targets; horizons), the tests of the crisis label, the lead-lag measurements,
                             and the weighted learners
+    physical_pull.py, physical_build.py, physical_build2.py   the physical layer: the workflow's raw pulls, the
+                            energy/CO2/oil features, the diffusion and materials features
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -252,7 +256,7 @@ share of countries in a credit boom, the state's two-year speed and a low divide
 loans/GDP level three years back above everything else. The label's horizon curve under the logit is 0.61 / 0.58 /
 0.58 / 0.54 / 0.51. Differences of ±0.02 are within noise for a few hundred events; the gaps above are larger than that.
 
-## The physical layer (`physical/`, `tools/physical_build.py`)
+## The physical layer (`physical/`, `tools/physical_build.py`, `tools/physical_build2.py`)
 
 Fossil CO2 by fuel from 1750–1870 and primary energy, fossil production and consumption from 1900/1965 for the 18
 countries, from Our World in Data's repositories (Global Carbon Budget, EIA, Energy Institute, Ember; licenses in the
@@ -264,9 +268,22 @@ footprint gap takes weight in the crisis and drawdown models without adding skil
 credit features, not wrong. Oil prices since 1861 (fetched by the workflow, deflated into a real price with changes, a
 shock flag and an exposure-signed change) then move the two targets the shock channel should move: real GDP fall
 0.60 → 0.68 (logit) and the equity drawdown 0.73 → 0.76 (trees, top decile 40% against 14%) — the shadow price of the
-energy constraint earns its place. `physical/catalog.json` lists the long-running physical catalogs still to bring in (oil
-prices since 1861, US energy 1635–, European measured energy 1800–, technology diffusion, commodity prices, minerals,
-ore grades, land) with their retrieval route and license.
+energy constraint earns its place.
+
+The second slice brings in the CHAT technology-adoption panel (sixteen technologies, 1870–2003: the pace of adoption,
+its acceleration, the lead technology's pace, the distance to the frontier, the diffusion race) and the USGS mineral
+statistics with the FRED commodity PPI (a base-metal basket's real price changes and its price against its own
+history, world metal production growth and acceleration, gold, the real commodity PPI; global at t). Measured
+like-for-like with an era split (`analogs/learner_test_physical_*_era.md`): **diffusion adds no skill** at three years
+— within ±0.03 of the baseline wherever the panel exists, and harmful after 2003 where it is missing for every country
+(the label's trees 0.62 → 0.35 on that window) — with one ladder hint, slow diffusion lifting the contraction rate
+42% → 54% after the credit and equity rungs; **materials move the label** (logit 0.58 → 0.66, the largest move it has
+shown) while costing the logit on the drawdown (0.60 → 0.52) and the GDP fall (0.68 → 0.62) as a linear model fits the
+era from eight global columns — the trees barely move, and are the right learner for global-at-t features; the two
+families together land at or below the oil run everywhere. The era split also shows that from 2004 the drawdown
+and contraction AUCs are 0.8–0.9 for every learner because 2008 is one synchronized event, so skill on the full
+panel is mostly pre-2004 skill. `physical/catalog.json` lists what is pulled and what still has to be supplied (US
+energy 1635–, European measured energy 1800–, the Jacks commodity panel, ore grades, land).
 
 ## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
 
@@ -294,6 +311,10 @@ stays as one view; the measured targets become the primary ones, and the horizon
    the same table takes any other voice.
 4. **The bridge**: once the first workflow run writes `bridge/`, confirm the join rules and complete the live query
    vector (credit, mortgages, investment, current account, house prices, dividend yield).
+5. **Extend the diffusion panel past 2003** (electricity from OWID's energy data, telephones and internet users from
+   the ITU, vehicles from the WDI) so the family can be retested on the window that holds the later episodes, and
+   test the materials family under a learner built for global-at-t columns (the trees, or a year-demeaned logit)
+   before the label's 0.66 is quoted as a finding.
 
 ## Verification log
 
@@ -312,3 +333,13 @@ stays as one view; the measured targets become the primary ones, and the horizon
   p. 4) — all present where cited. The reads ledger holds 193 dated claims (116 from the 2025 book, 77 Bridgewater
   Daily Observations from the 2007–2011 case); 86 are marked falsifiable as written, 30 not, 77 (the Daily
   Observations) carry the author's own outcome note instead.
+- 2026-11-04 (physical, second slice): CHAT country names mapped to the 18 ISO codes by hand (no partial matches used);
+  inception years taken from the raw series before the population join (a first build took them after it and lost the
+  1870s — caught by the 1873 spot check and fixed); 108 one-year per-capita log jumps above 1.0 flagged as breaks and
+  excluded from growth; the USGS parser located the real unit value (98$/t) and world production columns by header, and every
+  basket workbook has both from 1900–1905 on (the Steel sheet's real unit value ends 2010 and Pig Iron's 1988, so the
+  basket uses iron ore for price and adds pig iron for production only); PPIACO averaged from monthly to annual (≥ 6 months)
+  and deflated by the JST US CPI; spot checks at 1873, 1893, 1920, 1929–33, 1973–80, 2008 and 2011 read as the record
+  says; the baseline era run reproduced the oil run's AUCs to three decimals; the ladder re-run reproduced every earlier
+  section unchanged (diff limited to the three new ladders); `tech_n` removed from the learner family after it took
+  heavy weights as a calendar proxy.

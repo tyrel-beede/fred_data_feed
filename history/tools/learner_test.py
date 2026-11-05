@@ -37,12 +37,22 @@ TARGETS = ["dd30_3y", "credit_contraction_3y", "gdp_fall_3y", "unemp_spike_3y", 
 PHYSICAL = ["energy_footprint_gap_3y", "gap_anom_3y", "d3_co2_intensity", "co2_growth_3y", "co2_growth_1y",
             "fossil_prod_growth_3y", "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2",
             "oil_real_price", "oil_real_change_1y", "oil_real_change_3y", "oil_change_x_exposure"]
+# second physical slice (physical_build2.py): technology diffusion per country-year, materials per year (global at t)
+DIFFUSION = ["tech_growth_3y", "tech_accel_3y", "tech_max_growth_3y", "tech_frontier_gap", "rank_tech_growth_3y",
+             "rail_growth_3y", "elec_growth_3y", "car_growth_3y", "phone_growth_3y", "elec_per_co2_growth_3y"]
+# tech_n (how many technologies the medians rest on) stays in the CSV as a coverage column but out of the learner: it
+# grows with the calendar and drops to zero after 2003, so a learner would read it as a clock
+MATERIALS = ["metals_real_price_1y", "metals_real_price_3y", "metals_real_price_anom", "world_metals_prod_3y",
+             "world_metals_prod_accel", "gold_real_3y", "ppi_commod_real_1y", "ppi_commod_real_3y"]
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--physical", action="store_true", help="add the physical-layer features (history/physical/physical_features.csv)")
+    ap.add_argument("--diffusion", action="store_true", help="add the technology-diffusion features (history/physical/diffusion_features.csv)")
+    ap.add_argument("--materials", action="store_true", help="add the materials features, global at t (history/physical/materials_features.csv)")
     ap.add_argument("--no-horizon", action="store_true"); ap.add_argument("--tag", default="")
+    ap.add_argument("--era-split", type=int, default=0, help="also report AUC for query years before and from this year")
     a = ap.parse_args()
     rows = list(csv.DictReader(open(os.path.join(ROOT, "history", "jst", "features2.csv"))))
     if a.physical:
@@ -50,6 +60,18 @@ def main():
         for r in rows:
             p = ph.get((r["iso"], int(r["year"])), {})
             for c in PHYSICAL:
+                r[c] = p.get(c, "")
+    if a.diffusion:
+        df = {(r["iso"], int(r["year"])): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "physical", "diffusion_features.csv")))}
+        for r in rows:
+            p = df.get((r["iso"], int(r["year"])), {})
+            for c in DIFFUSION:
+                r[c] = p.get(c, "")
+    if a.materials:
+        mt = {int(r["year"]): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "physical", "materials_features.csv")))}
+        for r in rows:
+            p = mt.get(int(r["year"]), {})
+            for c in MATERIALS:
                 r[c] = p.get(c, "")
     isos = [r["iso"] for r in rows]; years = np.array([int(r["year"]) for r in rows])
     idx = {(i, y): n for n, (i, y) in enumerate(zip(isos, years))}
@@ -64,7 +86,8 @@ def main():
                 out[n] = float(rows[j][name])
         return out
 
-    extra = PHYSICAL if a.physical else []
+    extra = (PHYSICAL if a.physical else []) + (DIFFUSION if a.diffusion else []) + (MATERIALS if a.materials else [])
+    added = [(n, f) for n, f, on in (("physical", PHYSICAL, a.physical), ("diffusion", DIFFUSION, a.diffusion), ("materials", MATERIALS, a.materials)) if on]
     names = BASE + NETWORK + RANK + FLUX + [f"{f}_lag{k}" for f, k in LEADS] + extra
     X = np.column_stack([col(f) for f in BASE + NETWORK + RANK + FLUX] + [col(f, k) for f, k in LEADS] + [col(f) for f in extra])
     lg3, eq1, hp0 = col("loans_gdp", 3), col("real_eq_capgain_3y", 1), col("real_hp_growth_3y", 0)
@@ -142,6 +165,11 @@ def main():
         for l in ("knn", "logit", "gbt", "ensemble"):
             A, npos, nneg = auc(preds[l], T[target]); td, base = top_decile(preds[l], T[target])
             res[l] = {"auc": A, "top_decile": td, "base": base, "n_pos": npos, "n_neg": nneg}
+            if a.era_split:
+                for era, m in (("before", years < a.era_split), ("from", years >= a.era_split)):
+                    pe = [p_ if ok_ else None for p_, ok_ in zip(preds[l], m)]
+                    Ae, npe, nne = auc(pe, T[target])
+                    res[l][f"auc_{era}_{a.era_split}"] = Ae; res[l][f"n_pos_{era}_{a.era_split}"] = npe
         rep["results"][target] = res
         if coef is not None:
             coef = np.where(np.isnan(coef), 0.0, coef)
@@ -165,17 +193,25 @@ def main():
             print("horizon logit", target, {h: round(v, 3) for h, v in curve.items() if v})
 
     os.makedirs(os.path.join(ROOT, "history", "analogs"), exist_ok=True)
-    suffix = ("_physical" if a.physical else "") + a.tag
+    suffix = ("_physical" if a.physical else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + a.tag
     json.dump(rep, open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.json"), "w"), indent=1)
     L = ["# A learner that can weight — walk-forward", "",
          "Models are refit every 4 years; a model fit at t forecasts years t..t+3 and is trained only on rows whose outcome window closed before t (training from 1880, queries "
          "from 1900); standardization and imputation from the training rows, mile-marker terciles from the training rows. "
-         f"Features: 20 base + 10 subnet + 6 rank + 9 flux + 5 selected leads + 3 markers{' + ' + str(len(PHYSICAL)) + ' physical' if a.physical else ''} = {len(names) + 3}. AUC 0.5 is no skill.", "",
+         f"Features: 20 base + 10 subnet + 6 rank + 9 flux + 5 selected leads + 3 markers{''.join(' + ' + str(len(f)) + ' ' + n for n, f in added)} = {len(names) + 3}. AUC 0.5 is no skill.", "",
          "| target (base rate) | knn (no weights) | logit | gbt | ensemble |", "|---|---|---|---|---|"]
     for target, res in rep["results"].items():
         base = next((v["base"] for v in res.values() if v["base"] is not None), 0)
         L.append(f"| {target} ({base:.0%}) | " + " | ".join(
             f"{v['auc']:.2f} (top {v['top_decile']:.0%})" if v["auc"] else "—" for v in res.values()) + " |")
+    if a.era_split:
+        L += ["", f"## AUC by query era (before / from {a.era_split})", "", "| target | knn | logit | gbt | ensemble |", "|---|---|---|---|---|"]
+        for target, res in rep["results"].items():
+            cells = []
+            for l in ("knn", "logit", "gbt", "ensemble"):
+                b, f_ = res[l].get(f"auc_before_{a.era_split}"), res[l].get(f"auc_from_{a.era_split}")
+                cells.append((f"{b:.2f}" if b else "—") + " / " + (f"{f_:.2f}" if f_ else "—"))
+            L.append(f"| {target} | " + " | ".join(cells) + " |")
     if rep["horizon"]:
         L += ["", "## Crisis label by horizon, logit", "", "| 1y | 2y | 3y | 4y | 5y |", "|---|---|---|---|---|"]
         for target, curve in rep["horizon"].items():
@@ -186,8 +222,8 @@ def main():
     L += ["", "Reading: the gap between knn and the weighted learners on the same features is the value of weighting; the "
           "ensemble row says whether the learners disagree in a useful way. Walk-forward throughout, so these are the "
           "numbers a forecaster at the time could have had.", ""]
-    if a.physical:
-        L.insert(1, f"\n**Physical-layer features added ({len(PHYSICAL)}): {', '.join(PHYSICAL)}.** Compare with learner_test.md (same harness without them).\n")
+    for n, f in added:
+        L.insert(1, f"\n**{n.capitalize()} features added ({len(f)}): {', '.join(f)}.** Compare with learner_test.md (same harness without them).\n")
     open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.md"), "w").write("\n".join(L))
     print("\n".join(L))
 
