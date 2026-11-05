@@ -1,0 +1,260 @@
+{
+ "breaks": [
+  1914,
+  1932,
+  1940,
+  1973
+ ],
+ "climatology": {
+  "dd30_3y": {
+   "pooled (varies only with t)": {
+    "auc": 0.42081210702648125,
+    "n_pos": 270,
+    "n_neg": 1614
+   },
+   "by peg_type": {
+    "auc": 0.4529441461287806,
+    "n_pos": 270,
+    "n_neg": 1614
+   },
+   "by peg_type x bloc size x moved recently": {
+    "auc": 0.4903579685633156,
+    "n_pos": 223,
+    "n_neg": 1445
+   }
+  },
+  "credit_contraction_3y": {
+   "pooled (varies only with t)": {
+    "auc": 0.39674343214935126,
+    "n_pos": 381,
+    "n_neg": 1595
+   },
+   "by peg_type": {
+    "auc": 0.4888064007702555,
+    "n_pos": 381,
+    "n_neg": 1592
+   },
+   "by peg_type x bloc size x moved recently": {
+    "auc": 0.5418553890484941,
+    "n_pos": 324,
+    "n_neg": 1431
+   }
+  },
+  "gdp_fall_3y": {
+   "pooled (varies only with t)": {
+    "auc": 0.42489308855291574,
+    "n_pos": 250,
+    "n_neg": 1852
+   },
+   "by peg_type": {
+    "auc": 0.4946436285097192,
+    "n_pos": 250,
+    "n_neg": 1852
+   },
+   "by peg_type x bloc size x moved recently": {
+    "auc": 0.5443239349248594,
+    "n_pos": 177,
+    "n_neg": 1694
+   }
+  },
+  "unemp_spike_3y": {
+   "pooled (varies only with t)": {
+    "auc": 0.4771082681224165,
+    "n_pos": 197,
+    "n_neg": 1551
+   },
+   "by peg_type": {
+    "auc": 0.3982723204714117,
+    "n_pos": 191,
+    "n_neg": 1514
+   },
+   "by peg_type x bloc size x moved recently": {
+    "auc": 0.37282961784399166,
+    "n_pos": 123,
+    "n_neg": 1349
+   }
+  },
+  "crisis_3y": {
+   "pooled (varies only with t)": {
+    "auc": 0.45119804792191687,
+    "n_pos": 182,
+    "n_neg": 1923
+   },
+   "by peg_type": {
+    "auc": 0.48933831517078136,
+    "n_pos": 182,
+    "n_neg": 1922
+   },
+   "by peg_type x bloc size x moved recently": {
+    "auc": 0.5541781468417895,
+    "n_pos": 151,
+    "n_neg": 1733
+   }
+  }
+ },
+ "after_break": {
+  "dd30_3y": {
+   "rate_after": 0.265625,
+   "n_after": 192,
+   "rate_other": 0.11122047244094488,
+   "n_other": 2032
+  },
+  "credit_contraction_3y": {
+   "rate_after": 0.47540983606557374,
+   "n_after": 183,
+   "rate_other": 0.1427255985267035,
+   "n_other": 2172
+  },
+  "gdp_fall_3y": {
+   "rate_after": 0.3004694835680751,
+   "n_after": 213,
+   "rate_other": 0.09837432263443101,
+   "n_other": 2399
+  },
+  "unemp_spike_3y": {
+   "rate_after": 0.12337662337662338,
+   "n_after": 154,
+   "rate_other": 0.11668611435239207,
+   "n_other": 1714
+  },
+  "crisis_3y": {
+   "rate_after": 0.03755868544600939,
+   "n_after": 213,
+   "rate_other": 0.10324729392173189,
+   "n_other": 2402
+  }
+ },
+ "single_feature": {
+  "in_peg": {
+   "dd30_3y": 0.4540948863288703,
+   "credit_contraction_3y": 0.4522047377805451,
+   "gdp_fall_3y": 0.43391291810841986,
+   "unemp_spike_3y": 0.5438718913635219,
+   "crisis_3y": 0.46594041560644617
+  },
+  "is_base": {
+   "dd30_3y": 0.4851646242761705,
+   "credit_contraction_3y": 0.48351785479965936,
+   "gdp_fall_3y": 0.48114763552479817,
+   "unemp_spike_3y": 0.509561627221147,
+   "crisis_3y": 0.493617141115352
+  },
+  "bloc_size": {
+   "dd30_3y": 0.41742363981243014,
+   "credit_contraction_3y": 0.3831455528311159,
+   "gdp_fall_3y": 0.3609234429065744,
+   "unemp_spike_3y": 0.4126480418463106,
+   "crisis_3y": 0.4352312937340967
+  },
+  "bloc_share": {
+   "dd30_3y": 0.41704723920351405,
+   "credit_contraction_3y": 0.38298603160064115,
+   "gdp_fall_3y": 0.3614806805074971,
+   "unemp_spike_3y": 0.4134483054625607,
+   "crisis_3y": 0.43582435459075486
+  },
+  "bloc_tenure": {
+   "dd30_3y": 0.41593843346887466,
+   "credit_contraction_3y": 0.46603998837038774,
+   "gdp_fall_3y": 0.383195645905421,
+   "unemp_spike_3y": 0.4411972386751622,
+   "crisis_3y": 0.4945498038592027
+  },
+  "regime_change_3y": {
+   "dd30_3y": 0.5637303710790831,
+   "credit_contraction_3y": 0.5580875977389153,
+   "gdp_fall_3y": 0.5691926182237601,
+   "unemp_spike_3y": 0.5138440067454746,
+   "crisis_3y": 0.47491418840118743
+  },
+  "bloc_churn_3y": {
+   "dd30_3y": 0.4843395096408619,
+   "credit_contraction_3y": 0.46993732359396184,
+   "gdp_fall_3y": 0.4133657727797001,
+   "unemp_spike_3y": 0.4338397977465241,
+   "crisis_3y": 0.34074659404156066
+  },
+  "base_changed_5y": {
+   "dd30_3y": 0.588045294158003,
+   "credit_contraction_3y": 0.5543542863611921,
+   "gdp_fall_3y": 0.6043281430219146,
+   "unemp_spike_3y": 0.5043889890372192,
+   "crisis_3y": 0.4752918919635284
+  },
+  "n_blocs": {
+   "dd30_3y": 0.47690420697212593,
+   "credit_contraction_3y": 0.41746641692160047,
+   "gdp_fall_3y": 0.367762399077278,
+   "unemp_spike_3y": 0.42449000501203166,
+   "crisis_3y": 0.3758796517175573
+  },
+  "panel_peg_share": {
+   "dd30_3y": 0.4281000669362659,
+   "credit_contraction_3y": 0.3143275794197029,
+   "gdp_fall_3y": 0.39421929065743944,
+   "unemp_spike_3y": 0.5149765597525552,
+   "crisis_3y": 0.4986473905322307
+  },
+  "panel_changes_3y": {
+   "dd30_3y": 0.5204424468635446,
+   "credit_contraction_3y": 0.5887381870669449,
+   "gdp_fall_3y": 0.5939857266435986,
+   "unemp_spike_3y": 0.5404423879423257,
+   "crisis_3y": 0.3706481260602205
+  },
+  "years_since_break": {
+   "dd30_3y": 0.4495592129794699,
+   "credit_contraction_3y": 0.3974146552476803,
+   "gdp_fall_3y": 0.29909576081520894,
+   "unemp_spike_3y": 0.38938618925831203,
+   "crisis_3y": 0.5144774328984856
+  }
+ },
+ "era_rates": [
+  {
+   "era": "1870-1913",
+   "rows": 792,
+   "dd30_3y": 0.024822695035460994,
+   "credit_contraction_3y": 0.06020066889632107,
+   "gdp_fall_3y": 0.10294117647058823,
+   "unemp_spike_3y": 0.15765765765765766,
+   "crisis_3y": 0.13368983957219252
+  },
+  {
+   "era": "1914-1931",
+   "rows": 324,
+   "dd30_3y": 0.28125,
+   "credit_contraction_3y": 0.28113879003558717,
+   "gdp_fall_3y": 0.3322784810126582,
+   "unemp_spike_3y": 0.3524229074889868,
+   "crisis_3y": 0.22884012539184953
+  },
+  {
+   "era": "1932-1939",
+   "rows": 144,
+   "dd30_3y": 0.03125,
+   "credit_contraction_3y": 0.5365853658536586,
+   "gdp_fall_3y": 0.24305555555555555,
+   "unemp_spike_3y": 0.05,
+   "crisis_3y": 0.05555555555555555
+  },
+  {
+   "era": "1940-1972",
+   "rows": 594,
+   "dd30_3y": 0.11450381679389313,
+   "credit_contraction_3y": 0.10622710622710622,
+   "gdp_fall_3y": 0.07744107744107744,
+   "unemp_spike_3y": 0.0137524557956778,
+   "crisis_3y": 0.003367003367003367
+  },
+  {
+   "era": "1973-2020",
+   "rows": 864,
+   "dd30_3y": 0.1638888888888889,
+   "credit_contraction_3y": 0.19578686493184635,
+   "gdp_fall_3y": 0.04567901234567901,
+   "unemp_spike_3y": 0.11358024691358025,
+   "crisis_3y": 0.09012345679012346
+  }
+ ]
+}

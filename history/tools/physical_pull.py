@@ -8,6 +8,7 @@ the raw files.
                       current US$ per cubic metre (1 m3 = 6.2898 barrels)
   CHAT                the NBER data appendix of Comin & Hobijn's CHAT dataset: every data file linked from the index
   EIA-TOTAL-ENERGY    EIA Total Energy API: annual US primary energy consumption by source 1949- (needs EIA_API_KEY)
+  EIA-HISTORICAL-1635 EIA's table of estimated US energy consumption by source for selected years 1635-1945 (HTML page)
   USGS-DS140          USGS Data Series 140, historical statistics for mineral and material commodities (US production,
                       consumption, unit value nominal and real, world production where given, since 1900): every
                       commodity workbook linked from the series index
@@ -76,7 +77,7 @@ def main():
     key = os.environ.get("EIA_API_KEY", "").strip()
     if key:
         try:
-            msns = ["TETCBUS", "CLTCBUS", "PATCBUS", "NNTCBUS", "NUETBUS", "RETCBUS", "ELTCBUS"]  # total, coal, petroleum, gas, nuclear, renewables, electricity
+            msns = ["TETCBUS", "CLTCBUS", "PATCBUS", "NNTCBUS", "NUETBUS", "RETCBUS"]  # total, coal, petroleum, gas, nuclear, renewables (ELTCBUS is not a Total Energy msn: returned nothing)
             rows = []
             for msn in msns:
                 url = ("https://api.eia.gov/v2/total-energy/data/?" + urllib.parse.urlencode({
@@ -93,6 +94,12 @@ def main():
             errors.append(f"eia: {e}")
     else:
         errors.append("eia: EIA_API_KEY not set")
+    # 3b. EIA's estimated US energy consumption 1635-1945 by source (an HTML table on the Energy Explained site; no key)
+    try:
+        url = "https://www.eia.gov/energyexplained/us-energy-facts/estimated-consumption-1635-1945.php"
+        save("EIA-HISTORICAL-1635", "estimated-consumption-1635-1945.html", get(url), url, manifest)
+    except Exception as e:  # noqa
+        errors.append(f"eia historical table: {e}")
     # 4. USGS DS140: index page -> commodity pages -> workbook links (S3)
     try:
         idx = "https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities"

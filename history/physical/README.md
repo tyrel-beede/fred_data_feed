@@ -37,6 +37,11 @@ Physics enters the system in two roles, and only one of them shows up as backtes
   `physical_build2.provenance.json`.
 - `diffusion_features.csv`, `materials_features.csv` — derived by `../tools/physical_build2.py` (the second slice,
   below): technology diffusion per country-year, materials per year.
+- `eia_extract.csv` — the EIA Total Energy series the workflow pulls with the `EIA_API_KEY` secret: US primary energy
+  consumption by source 1949– (total, coal, petroleum, gas, nuclear, renewables, quadrillion Btu) with the fossil
+  share and growth. `physical_build.py` uses it to carry the US energy growth and gap back from 1965 to 1952 where
+  OWID has no value, both endpoints from the same source, with `energy_src` saying which (eia for 16 US years, owid
+  otherwise). Nothing in the learner changed: the energy growth columns are not in its feature list.
 - `catalog.json` — the catalog of long-running physical series: what is pulled, what the workflow can retrieve by URL,
   and what has to be supplied as a file (the pre-1965 European energy consumption series, the Jacks commodity panel,
   ore-grade compilations).
@@ -163,9 +168,10 @@ What the second slice settles: the oil price stays the physical feature that ear
 of the label and of the shock channel at the cost of a linear learner's stability (the trees are the right learner
 for global features); diffusion, as aggregate adoption rates, is not a three-year forecasting feature and would need
 the panel extended past 2003 (electricity from OWID's energy data, telephones and internet from the ITU, vehicles
-from the WDI) before it could be retested on the only window with the later episodes. Still outstanding: the
-`EIA_API_KEY` secret is not set in the repository, so the EIA pull and the feed's own `eia` source are skipping; the
-pre-1965 European energy series and the Jacks commodity panel have to be supplied as files.
+from the WDI) before it could be retested on the only window with the later episodes. With the `EIA_API_KEY`
+secret set, the next workflow run landed the EIA Total Energy series and the feed's own `eia` spot-price source, and
+the manifest's error list is empty; the EIA table of estimated consumption 1635–1945 is queued for the run after.
+Still to be supplied as files: the pre-1965 European energy series and the Jacks commodity panel.
 
 ## Rebuild
 

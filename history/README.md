@@ -59,7 +59,8 @@ history/
   bridge/                   written by tools/bridge_pull.py in Actions: FRED series since 2010 that carry the JST
                             concepts for the US, annual aggregates, and the 2016-2020 overlap check
   analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
-                            backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical)
+                            backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical…),
+                            topology_test
   physical/                 the physical layer: OWID extract (CO2, energy), oil prices since 1861, the CHAT technology-
                             diffusion panel, USGS mineral statistics and FRED commodity prices (raw/ pulled by the
                             workflow), the derived footprint, oil, diffusion and materials features, and the catalog
@@ -73,6 +74,8 @@ history/
     features2.py, wf.py, analog_test2.py, label_test.py, lag_test.py, learner_test.py   test 2 (subnet, rank, flux;
                             measured targets; horizons), the tests of the crisis label, the lead-lag measurements,
                             and the weighted learners
+    topology.py             the network's topology from the regime columns: subnets, tenure, moves, churn, breaks ->
+                            jst/topology.csv and analogs/topology_test.md
     physical_pull.py, physical_build.py, physical_build2.py   the physical layer: the workflow's raw pulls, the
                             energy/CO2/oil features, the diffusion and materials features
     qc.py                   mechanical checks -> QC.md
@@ -285,6 +288,47 @@ and contraction AUCs are 0.8–0.9 for every learner because 2008 is one synchro
 panel is mostly pre-2004 skill. `physical/catalog.json` lists what is pulled and what still has to be supplied (US
 energy 1635–, European measured energy 1800–, the Jacks commodity panel, ore grades, land).
 
+## The network's topology (`tools/topology.py`, `jst/topology.csv`, `analogs/topology_test.md`)
+
+Nodes come and go from subnets, and the JST regime columns record it: `peg_type` (BASE, PEG, FLOAT) and `peg_base`
+(GBR, USA, DEU, HYBRID) give, for every country-year, which base currency the country is tied to — one sterling bloc of
+thirteen before 1914, fragmentation and hybrids between the wars, one dollar bloc of sixteen by 1960, a dollar bloc
+and a mark bloc with floaters from 1973, the euro bloc from 1999. From those columns alone, with nothing dated by
+hand, `topology.py` measures the node's place in the arrangement (in a peg, a base, bloc size and share, tenure in
+the current state, whether it moved subnet in the last three years, churn in its bloc, a base change within five
+years) and the arrangement itself (number of blocs, share pegged, panel-wide changes in three years, years since the
+last break). A **break** is a year in which at least a third of the recorded countries changed state, and the data
+finds four: 1914 (17 of 17), 1932 (7 of 18), 1940 (17 of 18) and 1973 (13 of 18) — the two wars, the gold standard's
+collapse and the end of Bretton Woods, found without being told.
+
+Three measurements of what the topology carries:
+
+- **Climate by era.** Event base rates between the measured breaks differ by an order of magnitude: in 1940–72 (war,
+  then one dollar bloc) the crisis label fires 0% of the time, unemployment spikes 1% and the stress composite 3%;
+  in 1914–31, 23%, 35% and 24%; the 1932–39 bloc era has credit contractions 54% of the time; 1973–2020 sits in
+  between (drawdown 16%, contraction 20%, label 9%). These are the unconditional rates a forecast relaxes toward at
+  long lead times — the climatology the plan called for, with the arrangement as its index. The arrangement marks a
+  whole institutional setting (wars, capital controls, financial repression, the euro), not a cause by itself.
+- **The topology alone as a forecast.** Walk-forward, the pooled trailing event rate (the no-skill reference, varying
+  only with the query year) scores 0.40–0.48 — below a coin flip, because the trailing mean lags the regime (a 1930s
+  rate carried into the calm 1950s). Conditioning the rate on the node's class (peg type × bloc size × moved
+  recently) lifts it to 0.54 on the contraction, 0.54 on the GDP fall and 0.55 on the label, 0.49 on the drawdown,
+  and 0.37 on unemployment. So the topology by itself corrects part of the reference's drift on three targets, and
+  nothing more.
+- **After a break.** In the three years after a measured break the drawdown rate is 27% against 11% in all other
+  years, the credit contraction 48% against 14%, the GDP fall 30% against 10% (192–213 country-years), while the
+  crisis label is 4% against 10% — the label does not register the wars, as `label_test` found. The break arrives
+  with the shock rather than ahead of it: it is a signature, usable as a mile marker the year it is observed (four
+  observations), not a precursor.
+
+As learner features (`analogs/learner_test_physical_topology_era.md`, twelve columns on top of the oil run): the
+logit gains on the drawdown (0.60 → 0.66) and unemployment (0.55 → 0.61) while the trees lose on unemployment (0.68 →
+0.59) and the label (0.63 → 0.56); the era split places the drawdown gain entirely from 2004 (0.81 → 0.94, one event,
+the euro-era arrangement scored against 2008) and the pre-2004 numbers within noise or down. Four of the twelve
+columns are global at t and the family's information is a handful of arrangements, so this is the materials result
+again: a few eras cannot be learned as features, and the trees over-carve them. The topology's place is the
+climatology and the break marker, not the feature vector.
+
 ## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
 
 The crisis flag is a narrative judgment, so it was tested against the measured record. Labelled crisis years do look
@@ -305,8 +349,9 @@ stays as one view; the measured targets become the primary ones, and the horizon
 1. **Calibrated bands and on-time markers**: conformal bands so coverage is 50% by construction; the gap distribution
    between successive markers so an on-schedule arrival carries a higher ratio than an early or late one; a seed and
    cadence sweep on the trees to size the noise band around each AUC.
-2. **Climatology**: the unconditional distribution of each feature by era and regime (`peg_type`), which is what the
-   forecast relaxes toward at long lead times.
+2. **Climatology**: the unconditional distribution of each feature by era and regime, which is what the forecast
+   relaxes toward at long lead times — the topology eras measured in `analogs/topology_test.md` are the index to use,
+   with a windowed (trailing 30-year) variant as the fallback where an era is young.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;
    the same table takes any other voice.
 4. **The bridge**: once the first workflow run writes `bridge/`, confirm the join rules and complete the live query
@@ -343,3 +388,9 @@ stays as one view; the measured targets become the primary ones, and the horizon
   says; the baseline era run reproduced the oil run's AUCs to three decimals; the ladder re-run reproduced every earlier
   section unchanged (diff limited to the three new ladders); `tech_n` removed from the learner family after it took
   heavy weights as a calendar proxy.
+- 2026-11-04 (topology): subnets read from `peg_type`/`peg_base` only; the four measured breaks (1914, 1932, 1940, 1973)
+  checked against the regime columns year by year (1914: all 17 recorded countries change state; 1932: 7 leave the
+  interwar pegs; 1940: 17 of 18; 1973: 13 of 18); spot checks — GBR 1913 base of a bloc of 13 with 44 years' tenure,
+  GBR 1931 on a gold peg with no base country recorded and so no bloc, USA 1960 base of 16, DEU 1973 floating with 15 bloc moves in
+  three years, IRL and ESP 1999 in the DEU bloc of 9 — all as the record says; the climatology test is walk-forward
+  (training rows' windows closed before the query year, classes with fewer than 20 training rows left unscored).

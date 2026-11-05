@@ -55,6 +55,9 @@ expected = [
     "history/physical/raw/FRED-PHYSICAL/PPIACO.csv",
     "history/analogs/learner_test_physical_era.md", "history/analogs/learner_test_physical_diffusion_era.md",
     "history/analogs/learner_test_physical_materials_era.md", "history/analogs/learner_test_physical_diffusion_materials_era.md",
+    "history/physical/eia_extract.csv", "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
+    "history/tools/topology.py", "history/jst/topology.csv", "history/analogs/topology_test.md",
+    "history/analogs/learner_test_physical_topology_era.md",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")
@@ -257,7 +260,7 @@ pool = set()
 for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_rerun.json", "learner_test_physical.json",
           "learner_test_physical_oil.json", "lag_test.json", "label_test.json", "learner_test_physical_era.json",
           "learner_test_physical_diffusion_era.json", "learner_test_physical_materials_era.json",
-          "learner_test_physical_diffusion_materials_era.json"):
+          "learner_test_physical_diffusion_materials_era.json", "learner_test_physical_topology_era.json", "topology_test.json"):
     pool |= _aucs(f, None)
 for o in ov:  # override values quoted in the README are not AUCs
     try:

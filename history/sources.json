@@ -308,6 +308,19 @@
     "history/physical/raw/FRED-PHYSICAL/PIORECRUSDM.csv",
     "history/physical/materials_features.csv"
    ]
+  },
+  {
+   "id": "EIA-TOTAL-ENERGY",
+   "type": "dataset",
+   "title": "U.S. Energy Information Administration, Total Energy (Monthly Energy Review) — primary energy consumption by source, annual 1949-",
+   "url": "https://www.eia.gov/totalenergy/data/browser/",
+   "citation": "U.S. Energy Information Administration, Monthly Energy Review, Table 1.3 (primary energy consumption by source), via the EIA API v2 total-energy route",
+   "license": "public domain (U.S. Government work)",
+   "provenance_class": "measured (compiled consumption statistics; nuclear and renewables converted to Btu by EIA's conventions)",
+   "local_files": [
+    "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
+    "history/physical/eia_extract.csv"
+   ]
   }
  ]
 }

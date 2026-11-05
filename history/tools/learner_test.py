@@ -44,6 +44,9 @@ DIFFUSION = ["tech_growth_3y", "tech_accel_3y", "tech_max_growth_3y", "tech_fron
 # grows with the calendar and drops to zero after 2003, so a learner would read it as a clock
 MATERIALS = ["metals_real_price_1y", "metals_real_price_3y", "metals_real_price_anom", "world_metals_prod_3y",
              "world_metals_prod_accel", "gold_real_3y", "ppi_commod_real_1y", "ppi_commod_real_3y"]
+# the network's topology (topology.py): the node's subnet, its tenure and moves, the panel's fragmentation and churn
+TOPOLOGY = ["in_peg", "is_base", "bloc_size", "bloc_share", "bloc_tenure", "regime_change_3y", "bloc_churn_3y", "base_changed_5y",
+            "n_blocs", "panel_peg_share", "panel_changes_3y", "years_since_break"]
 
 
 def main():
@@ -51,6 +54,7 @@ def main():
     ap.add_argument("--physical", action="store_true", help="add the physical-layer features (history/physical/physical_features.csv)")
     ap.add_argument("--diffusion", action="store_true", help="add the technology-diffusion features (history/physical/diffusion_features.csv)")
     ap.add_argument("--materials", action="store_true", help="add the materials features, global at t (history/physical/materials_features.csv)")
+    ap.add_argument("--topology", action="store_true", help="add the network-topology features (history/jst/topology.csv)")
     ap.add_argument("--no-horizon", action="store_true"); ap.add_argument("--tag", default="")
     ap.add_argument("--era-split", type=int, default=0, help="also report AUC for query years before and from this year")
     a = ap.parse_args()
@@ -73,6 +77,12 @@ def main():
             p = mt.get(int(r["year"]), {})
             for c in MATERIALS:
                 r[c] = p.get(c, "")
+    if a.topology:
+        tp = {(r["iso"], int(r["year"])): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "jst", "topology.csv")))}
+        for r in rows:
+            p = tp.get((r["iso"], int(r["year"])), {})
+            for c in TOPOLOGY:
+                r[c] = p.get(c, "")
     isos = [r["iso"] for r in rows]; years = np.array([int(r["year"]) for r in rows])
     idx = {(i, y): n for n, (i, y) in enumerate(zip(isos, years))}
     jst = {(r["iso"], r["year"]): r for r in load_jst(apply_overrides=True)}
@@ -86,8 +96,9 @@ def main():
                 out[n] = float(rows[j][name])
         return out
 
-    extra = (PHYSICAL if a.physical else []) + (DIFFUSION if a.diffusion else []) + (MATERIALS if a.materials else [])
-    added = [(n, f) for n, f, on in (("physical", PHYSICAL, a.physical), ("diffusion", DIFFUSION, a.diffusion), ("materials", MATERIALS, a.materials)) if on]
+    extra = (PHYSICAL if a.physical else []) + (DIFFUSION if a.diffusion else []) + (MATERIALS if a.materials else []) + (TOPOLOGY if a.topology else [])
+    added = [(n, f) for n, f, on in (("physical", PHYSICAL, a.physical), ("diffusion", DIFFUSION, a.diffusion), ("materials", MATERIALS, a.materials),
+                                     ("topology", TOPOLOGY, a.topology)) if on]
     names = BASE + NETWORK + RANK + FLUX + [f"{f}_lag{k}" for f, k in LEADS] + extra
     X = np.column_stack([col(f) for f in BASE + NETWORK + RANK + FLUX] + [col(f, k) for f, k in LEADS] + [col(f) for f in extra])
     lg3, eq1, hp0 = col("loans_gdp", 3), col("real_eq_capgain_3y", 1), col("real_hp_growth_3y", 0)
@@ -193,7 +204,7 @@ def main():
             print("horizon logit", target, {h: round(v, 3) for h, v in curve.items() if v})
 
     os.makedirs(os.path.join(ROOT, "history", "analogs"), exist_ok=True)
-    suffix = ("_physical" if a.physical else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + a.tag
+    suffix = ("_physical" if a.physical else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + ("_topology" if a.topology else "") + a.tag
     json.dump(rep, open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.json"), "w"), indent=1)
     L = ["# A learner that can weight — walk-forward", "",
          "Models are refit every 4 years; a model fit at t forecasts years t..t+3 and is trained only on rows whose outcome window closed before t (training from 1880, queries "

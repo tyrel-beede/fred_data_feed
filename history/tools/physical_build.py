@@ -13,7 +13,11 @@ Outputs:
     rgdp_growth_3y                      real GDP growth (Maddison per-capita x JST population), annualized over 3y
     energy_footprint_gap_3y             co2_growth_3y - rgdp_growth_3y: the thermodynamic footprint of the boom
     co2_per_rgdp, d3_co2_intensity      carbon intensity of output and its 3-year change
-    energy_growth_3y, energy_gap_3y     the same with primary energy (1965 on)
+    energy_growth_3y, energy_gap_3y     the same with primary energy (1965 on; for the US from 1952 via the EIA Total
+                                        Energy series where OWID has no value, both endpoints from the same source —
+                                        energy_src says which)
+  history/physical/eia_extract.csv    the EIA Total Energy annual series as pulled by the workflow (US primary energy
+                                      consumption by source, quadrillion Btu, 1949-), with fossil share and growth
     fossil_prod_growth_3y               coal+oil+gas production growth (1900 on, where produced)
     fuel_self_sufficiency               fossil production / fossil consumption (1965 on)
     coal_share_co2, oil_share_co2       fuel mix of emissions (the coal->oil->gas transitions)
@@ -107,8 +111,32 @@ def main():
     def oil_chg(y, n):
         a, b = oil_real.get(y), oil_real.get(y - n)
         return np.nan if a is None or b is None or b <= 0 else a / b - 1
+    # EIA Total Energy (pulled by the workflow with EIA_API_KEY): US primary energy by source, 1949-, trillion Btu
+    eia = {}
+    eia_path = os.path.join(OUT, "raw", "EIA-TOTAL-ENERGY", "us_primary_energy_annual.csv")
+    if os.path.exists(eia_path):
+        for r in csv.DictReader(open(eia_path)):
+            try:
+                eia.setdefault(int(r["year"]), {})[r["msn"]] = float(r["value"]) / 1000.0  # quadrillion Btu
+            except (ValueError, TypeError):
+                pass
+        names = {"TETCBUS": "total", "CLTCBUS": "coal", "PATCBUS": "petroleum", "NNTCBUS": "gas", "NUETBUS": "nuclear", "RETCBUS": "renewables"}
+        with open(os.path.join(OUT, "eia_extract.csv"), "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["year"] + [f"{n}_quad_btu" for n in names.values()] + ["fossil_share", "total_growth_1y", "total_growth_3y"])
+            for y in sorted(eia):
+                d = eia[y]; tot = d.get("TETCBUS", np.nan)
+                foss = sum(d.get(k, 0.0) for k in ("CLTCBUS", "PATCBUS", "NNTCBUS"))
+                g1 = eia.get(y - 1, {}).get("TETCBUS", np.nan); g3 = eia.get(y - 3, {}).get("TETCBUS", np.nan)
+                w.writerow([y] + [f"{d.get(k, np.nan):.6g}" if k in d else "" for k in names] +
+                           [f"{foss / tot:.6g}" if tot and not np.isnan(tot) else "",
+                            f"{tot / g1 - 1:.6g}" if tot and g1 and not np.isnan(g1) else "",
+                            f"{(tot / g3) ** (1 / 3) - 1:.6g}" if tot and g3 and not np.isnan(g3) else ""])
+    def en_eia(ii, yy):
+        return eia.get(yy, {}).get("TETCBUS", np.nan) if ii == "USA" else np.nan
+
     FH = ["iso", "year", "co2_growth_1y", "co2_growth_3y", "rgdp_growth_3y", "energy_footprint_gap_3y", "gap_anom_3y",
-          "co2_per_rgdp", "d3_co2_intensity", "energy_growth_3y", "energy_gap_3y", "fossil_prod_growth_3y",
+          "co2_per_rgdp", "d3_co2_intensity", "energy_growth_3y", "energy_gap_3y", "energy_src", "fossil_prod_growth_3y",
           "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2",
           "oil_real_price", "oil_real_change_1y", "oil_real_change_3y", "oil_shock_1y", "oil_change_x_exposure"]
     out = []
@@ -123,7 +151,9 @@ def main():
                                   if not all(np.isnan(g(ii, yy, c)) for c in ("en_coal_production", "en_oil_production", "en_gas_production")) else np.nan
             cg1, cg3, rg3 = ann_growth(co2, i, y, 1), ann_growth(co2, i, y, 3), ann_growth(rgdp, i, y, 3)
             inten = lambda ii, yy: (co2(ii, yy) / rgdp(ii, yy)) if not np.isnan(co2(ii, yy)) and not np.isnan(rgdp(ii, yy)) and rgdp(ii, yy) > 0 else np.nan
-            eg3 = ann_growth(en, i, y, 3)
+            eg3 = ann_growth(en, i, y, 3); src = "owid" if not np.isnan(eg3) else ""
+            if np.isnan(eg3) and not np.isnan(ann_growth(en_eia, i, y, 3)):  # the US before 1965: EIA at both endpoints
+                eg3 = ann_growth(en_eia, i, y, 3); src = "eia"
             fp = g(i, y, "en_fossil_fuel_consumption")
             pr = prod(i, y)
             c, cc, oc = co2(i, y), g(i, y, "co2ds_coal_co2"), g(i, y, "co2ds_oil_co2")
@@ -135,7 +165,7 @@ def main():
             row = [i, y, cg1, cg3, rg3, gap, anom,
                    inten(i, y),
                    np.nan if np.isnan(inten(i, y)) or np.isnan(inten(i, y - 3)) or inten(i, y - 3) == 0 else inten(i, y) / inten(i, y - 3) - 1,
-                   eg3, np.nan if np.isnan(eg3) or np.isnan(rg3) else eg3 - rg3,
+                   eg3, np.nan if np.isnan(eg3) or np.isnan(rg3) else eg3 - rg3, src,
                    ann_growth(prod, i, y, 3),
                    np.nan if np.isnan(fp) or fp <= 0 or np.isnan(pr) else pr / fp,
                    np.nan if np.isnan(c) or c <= 0 or np.isnan(cc) else cc / c,
@@ -146,7 +176,7 @@ def main():
             out.append(["" if (isinstance(v, float) and np.isnan(v)) else (f"{v:.6g}" if isinstance(v, float) else v) for v in row])
     with open(os.path.join(OUT, "physical_features.csv"), "w", newline="") as f:
         w = csv.writer(f); w.writerow(FH); w.writerows(out)
-    print(f"extract {len(rows)} rows; features {len(out)} rows x {len(FH)}; oil price years {len(oil_real)}")
+    print(f"extract {len(rows)} rows; features {len(out)} rows x {len(FH)}; oil price years {len(oil_real)}; EIA years {len(eia)}")
 
 
 if __name__ == "__main__":

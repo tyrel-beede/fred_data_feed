@@ -75,13 +75,26 @@
   },
   {
    "id": "EIA-TOTAL-ENERGY",
+   "status": "pulled",
+   "title": "US primary energy consumption by source, annual 1949- (EIA Total Energy API: total, coal, petroleum, natural gas, nuclear, renewables; trillion Btu)",
+   "coverage": "US, 1949-2025",
+   "retrieval": "workflow: api.eia.gov/v2/total-energy with the EIA_API_KEY secret (history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv; manifest.json has URL, hash, time); eia_extract.csv is the tidy table with fossil share and growth",
+   "license": "public domain (U.S. Government work)",
+   "feeds": [
+    "energy_growth_3y, energy_gap_3y for the US 1952-1967 (energy_src = eia), where OWID's series has no value",
+    "fossil_share (eia_extract.csv), for a measured fuel mix beside the CO2-based shares"
+   ],
+   "note": "the 1635-1945 estimated-consumption table is queued as EIA-HISTORICAL-1635"
+  },
+  {
+   "id": "EIA-HISTORICAL-1635",
    "status": "planned",
-   "title": "US primary energy consumption by source, annual 1949- (EIA Total Energy API); selected years 1635-1945 (EIA historical table)",
-   "coverage": "US",
-   "retrieval": "EIA API (key in the workflow); the 1635-1945 table from eia.gov/energyexplained/us-energy-facts/estimated-consumption-1635-1945.php",
+   "title": "Estimated US energy consumption by source for selected years 1635-1945 (EIA Energy Explained table: wood, coal, petroleum, natural gas, hydro)",
+   "coverage": "US, selected years 1635-1945 (roughly five-year steps from 1850)",
+   "retrieval": "workflow (next run): the HTML page is saved to history/physical/raw/EIA-HISTORICAL-1635/; a parser follows",
    "license": "public domain",
    "feeds": [
-    "energy_growth (US, pre-1965)"
+    "US energy growth before 1949 at five-year resolution (a check on the CO2 proxy)"
    ]
   },
   {
