@@ -227,6 +227,40 @@ check("license: CC BY-NC-SA 4.0 and both required citations stated", "CC BY-NC-S
 readme = open(os.path.join(H, "README.md")).read()
 check("README: documents overrides, provenance classes, bitemporal fields", "overrides" in readme and "observed time" in readme and "provenance class" in readme, "")
 
+# ------------------------------------------------------------------ 13. README numbers vs result files
+import re as _re
+def _aucs(path, keys):
+    try:
+        d = json.load(open(os.path.join(H, "analogs", path)))
+    except Exception:  # noqa
+        return set()
+    out = set()
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if str(k).startswith("auc") and isinstance(v, (int, float)):
+                    out.add(f"{v:.2f}")
+                else:
+                    walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    walk(d)
+    return out
+pool = set()
+for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_rerun.json", "learner_test_physical.json",
+          "learner_test_physical_oil.json", "lag_test.json", "label_test.json"):
+    pool |= _aucs(f, None)
+for o in ov:  # override values quoted in the README are not AUCs
+    try:
+        pool.add(f"{float(o['override_value']):.2f}")
+    except (ValueError, TypeError):
+        pass
+quoted = set(_re.findall(r"\b0\.[5-9]\d\b", readme))
+unsupported = sorted(q for q in quoted if q not in pool)
+check("README: every quoted AUC-like number (0.5x-0.9x) appears in a result file", not unsupported,
+      f"{len(quoted)} quoted; unsupported {unsupported}" if unsupported else f"{len(quoted)} quoted numbers all found")
+
 # ------------------------------------------------------------------ report
 n_ok = sum(1 for _, ok, _ in results if ok)
 lines = ["# history/ — quality control", "",

@@ -1,6 +1,6 @@
 # history/ — quality control
 
-Mechanical checks run by `tools/qc.py`: **24 of 24 pass**. Re-run after any change.
+Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any change.
 
 | check | result | evidence |
 |---|---|---|
@@ -16,7 +16,7 @@ Mechanical checks run by `tools/qc.py`: **24 of 24 pass**. Re-run after any chan
 | features: 44 country-years recomputed independently (loans/GDP, 5y change, r-g, unemp, crisis label) | PASS | all match |
 | features: overrides applied and flagged, with propagation to dependent rows | PASS |  |
 | field map: every variable-looking token names a real column or feature | PASS | 23 rows |
-| sources.json: every local_files path exists | PASS | 16 sources |
+| sources.json: every local_files path exists | PASS | 19 sources |
 | HCGB: nine numbered stages with names and gauges | PASS | 1 The Private Sector and Government Get De; 2 The Private Sector Suffers a Debt Crisis; 3 The Central Government Experiences a Deb; 4 The Selling of the Government's Debt Lea; 5 When There Is a Debt Crisis and Interest;  |
 | HCGB: five forces of the Big Cycle recorded | PASS | ['1. The debt/credit/money/economic cycle (p. 165)', '2. The internal order and disorder cycle (p. 165)', '3. The external geopolitical order and disorder cycle (i.e., the changing world order) (p. 16 |
 | reads ledger: every row has a claim and an as-of date; falsifiable flag well-formed; pages in each source's range; page convention and grade present | PASS | 193 reads; bad [] [] [] |
@@ -28,6 +28,7 @@ Mechanical checks run by `tools/qc.py`: **24 of 24 pass**. Re-run after any chan
 | workflow: bridge step wired and the bridge script exists | PASS |  |
 | license: CC BY-NC-SA 4.0 and both required citations stated | PASS |  |
 | README: documents overrides, provenance classes, bitemporal fields | PASS |  |
+| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 23 quoted numbers all found |
 
 ## Content review
 
