@@ -10,6 +10,9 @@ the raw files.
   EIA-TOTAL-ENERGY    EIA Total Energy API: annual US primary energy consumption by source 1949- (needs EIA_API_KEY)
   EIA-HISTORICAL-1635 EIA's table of estimated US energy consumption by source for selected years 1635-1945: the notes
                       page (HTML) and the table itself (PDF); eia_hist_parse.py turns the PDF into a CSV
+  JACKS-COMMODITIES   Jacks's real commodity prices 1850-present: the files linked from his data page
+  KMW-EUROPE-ENERGY   European energy consumption by carrier 1800-2009 (Kander, Malanima, Warde et al.), the Mendeley
+                      Data deposit by Rubio-Varas and Munoz-Delgado (CC BY 4.0)
   USGS-DS140          USGS Data Series 140, historical statistics for mineral and material commodities (US production,
                       consumption, unit value nominal and real, world production where given, since 1900): every
                       commodity workbook linked from the series index
@@ -104,6 +107,55 @@ def main():
         save("EIA-HISTORICAL-1635", "U.S._Primary_Energy_Consumption_1635-1945.pdf", get(url), url, manifest)
     except Exception as e:  # noqa
         errors.append(f"eia historical table: {e}")
+    # 3c. Jacks, real commodity prices 1850-present ("freely provided to all comers"; cite Jacks 2019, Cliometrica):
+    #     every spreadsheet, archive or PDF linked from the author's data page
+    try:
+        idx_url = "https://www.sfu.ca/~djacks/data/boombust/index.html"
+        page = get(idx_url).decode("utf-8", "replace")
+        save("JACKS-COMMODITIES", "index.html", page.encode(), idx_url, manifest)
+        links = sorted(set(html.unescape(m) for m in re.findall(r'href="([^"]+)"', page)))
+        files = [l for l in links if re.search(r"\.(xlsx?|csv|zip|pdf|dta)$", l, re.I)]
+        if not files:
+            errors.append("jacks: no data links found on the page")
+        for l in files:
+            url = urllib.parse.urljoin(idx_url, l)
+            name = os.path.basename(urllib.parse.urlparse(url).path)
+            try:
+                save("JACKS-COMMODITIES", name, get(url), url, manifest)
+            except Exception as e:  # noqa
+                errors.append(f"jacks {name}: {e}")
+            time.sleep(0.5)
+    except Exception as e:  # noqa
+        errors.append(f"jacks index: {e}")
+    # 3d. European energy consumption by carrier 1800-2009 (Kander, Malanima, Warde and the national compilers), as
+    #     deposited by Rubio-Varas and Munoz-Delgado on Mendeley Data under CC BY 4.0 (doi 10.17632/dx7fwfj28g.2)
+    try:
+        ds, ver = "dx7fwfj28g", "2"
+        api = f"https://data.mendeley.com/public-api/datasets/{ds}/files?folder_id=root&version={ver}"
+        got = 0
+        try:
+            js = json.loads(get(api))
+            for fobj in js if isinstance(js, list) else js.get("files", []):
+                name = fobj.get("filename") or fobj.get("name")
+                furl = (fobj.get("content_details") or {}).get("download_url") or fobj.get("download_url")
+                if name and furl:
+                    save("KMW-EUROPE-ENERGY", name, get(furl), furl, manifest); got += 1; time.sleep(0.5)
+        except Exception as e:  # noqa
+            errors.append(f"kmw api: {e}")
+        if not got:  # fall back to the dataset page's own file links
+            page_url = f"https://data.mendeley.com/datasets/{ds}/{ver}"
+            page = get(page_url).decode("utf-8", "replace")
+            save("KMW-EUROPE-ENERGY", "dataset_page.html", page.encode(), page_url, manifest)
+            for furl in sorted(set(re.findall(r'https://data\.mendeley\.com/public-files/datasets/[^"\s]+file_downloaded', page))):
+                name = re.sub(r"[^A-Za-z0-9_.-]", "_", furl.split("/files/")[-1].split("/")[0]) + ".bin"
+                try:
+                    save("KMW-EUROPE-ENERGY", name, get(furl), furl, manifest); got += 1
+                except Exception as e:  # noqa
+                    errors.append(f"kmw file: {e}")
+            if not got:
+                errors.append("kmw: no files retrieved (download from the Mendeley page and add them under history/physical/raw/KMW-EUROPE-ENERGY/)")
+    except Exception as e:  # noqa
+        errors.append(f"kmw: {e}")
     # 4. USGS DS140: index page -> commodity pages -> workbook links (S3)
     try:
         idx = "https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities"
