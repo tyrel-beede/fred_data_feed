@@ -39,6 +39,8 @@ dials/
 }
 ```
 
+**Fixed item keys.** Every item has `kind`, `as_of`, `name`, `source`, `url`, `fetched_how`, `status` (ok / quiet / unreachable / paywalled). By kind: `voice` and `argument` add `position`, `sign`, `numbers`, `conversion`; `reading` (flow groups) adds `series`, `value`, `unit`, `period_end`; `deal` adds `issuer`, `size`, `tranches`, `spread_vs_ipt`, `book`; `ipo` adds `size`, `priced`; `event_date` adds `ticker_or_release`, `datetime`, `verified` (true only from IR / SEC / the agency); `hit` adds `headline`, `candidate_dial`, `late`. The orchestrator drops an item without `kind` and `as_of`.
+
 Items carry their own `as_of` (publication or data date), never the run date. A page that could not be read is an item with `status: "unreachable"` rather than an omission, so the orchestrator can tell a quiet week from a failed fetch.
 
 ## Status file schema
