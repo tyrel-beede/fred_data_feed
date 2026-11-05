@@ -321,6 +321,20 @@
     "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
     "history/physical/eia_extract.csv"
    ]
+  },
+  {
+   "id": "EIA-HISTORICAL-1635",
+   "type": "dataset",
+   "title": "U.S. Energy Information Administration, Estimated Primary Energy Consumption in the United States, Selected Years, 1635-1945 (October 2026 edition)",
+   "url": "https://www.eia.gov/energyexplained/us-energy-facts/estimated-consumption-1635-1945.php",
+   "citation": "EIA, Estimated primary energy consumption in the United States, selected years, 1635-1945; underlying: Schurr and Netschert, Energy in the American Economy, 1850-1975 (Tables I, VI, VII); USDA Circular No. 641, Fuel Wood Used in the United States 1630-1930 (1942)",
+   "license": "public domain (U.S. Government work)",
+   "provenance_class": "stated/estimated (historical reconstructions: coal as apparent consumption, wood from cords per decade assigned to mid-decade, hydro at 3,412 Btu/kWh)",
+   "local_files": [
+    "history/physical/raw/EIA-HISTORICAL-1635/U.S._Primary_Energy_Consumption_1635-1945.pdf",
+    "history/physical/raw/EIA-HISTORICAL-1635/estimated-consumption-1635-1945.html",
+    "history/physical/eia_1635_1945.csv"
+   ]
   }
  ]
 }

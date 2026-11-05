@@ -56,6 +56,8 @@ expected = [
     "history/analogs/learner_test_physical_era.md", "history/analogs/learner_test_physical_diffusion_era.md",
     "history/analogs/learner_test_physical_materials_era.md", "history/analogs/learner_test_physical_diffusion_materials_era.md",
     "history/physical/eia_extract.csv", "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
+    "history/tools/eia_hist_parse.py", "history/physical/eia_1635_1945.csv",
+    "history/physical/raw/EIA-HISTORICAL-1635/U.S._Primary_Energy_Consumption_1635-1945.pdf",
     "history/tools/topology.py", "history/jst/topology.csv", "history/analogs/topology_test.md",
     "history/analogs/learner_test_physical_topology_era.md",
 ]

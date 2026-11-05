@@ -88,14 +88,16 @@
   },
   {
    "id": "EIA-HISTORICAL-1635",
-   "status": "planned",
+   "status": "pulled",
    "title": "Estimated US energy consumption by source for selected years 1635-1945 (EIA Energy Explained table: wood, coal, petroleum, natural gas, hydro)",
-   "coverage": "US, selected years 1635-1945 (roughly five-year steps from 1850)",
-   "retrieval": "workflow (next run): the HTML page is saved to history/physical/raw/EIA-HISTORICAL-1635/; a parser follows",
+   "coverage": "US, 42 selected years: 1635-1845 every ten years (wood only), 1850-1945 every five years (coal, gas, petroleum, hydro, wood, net electricity imports); quadrillion Btu",
+   "retrieval": "workflow: the notes page (HTML) and the table (PDF) under history/physical/raw/EIA-HISTORICAL-1635/; tools/eia_hist_parse.py reads the PDF's text layer into eia_1635_1945.csv with every row's sums checked",
    "license": "public domain",
    "feeds": [
-    "US energy growth before 1949 at five-year resolution (a check on the CO2 proxy)"
-   ]
+    "calibration of the CO2 proxy: CO2 growth tracks fossil energy growth (corr 0.99) but overstates total energy growth by 4.5 pp/yr before 1900 while wood was being displaced; the footprint gap's trailing anomaly, not its raw level, is the pre-1900 feature",
+    "wood share of US energy (0.91 in 1850, 0.22 in 1900, 0.04 in 1945): the first energy transition"
+   ],
+   "caveat": "five-year steps, so no 3-year growth; wood through 1945 is fuelwood only (series break at 1949); (s) = under 0.5 trillion Btu is written as 0; coverage follows settlement, not statehood (see the notes page)"
   },
   {
    "id": "KMW-EUROPE-ENERGY",

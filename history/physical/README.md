@@ -42,6 +42,17 @@ Physics enters the system in two roles, and only one of them shows up as backtes
   share and growth. `physical_build.py` uses it to carry the US energy growth and gap back from 1965 to 1952 where
   OWID has no value, both endpoints from the same source, with `energy_src` saying which (eia for 16 US years, owid
   otherwise). Nothing in the learner changed: the energy growth columns are not in its feature list.
+- `eia_1635_1945.csv` — EIA's estimated US primary energy consumption for 42 selected years, 1635–1945 (wood every
+  ten years from 1635; coal, gas, petroleum, hydro, wood and net electricity imports every five years from 1850;
+  quadrillion Btu), parsed from the PDF's text layer by `../tools/eia_hist_parse.py` with every row's three sums
+  checked (fossil, renewable, total; all 42 pass). Provenance class: stated/estimated — historical reconstructions
+  (Schurr and Netschert's *Energy in the American Economy*; USDA fuelwood estimates in cords per decade), not
+  measurements. What it is for: it calibrates the CO2 proxy. At five-year spans 1850–1945, OWID's US CO2 growth tracks
+  the table's fossil energy growth almost exactly (correlation 0.99, mean gap 0.3 pp a year — the early CO2 series is
+  itself built from fuel records), but overstates **total** energy growth by 4.5 pp a year before 1900, while wood fell
+  from 91% of US energy in 1850 to 22% in 1900 (4% by 1945); after 1905 the gap is 0.1 pp. So before about 1900 the raw
+  footprint gap (CO2 growth − GDP growth) carries the wood-to-coal substitution as a spurious boom for every country,
+  with its own timing, and only the trailing-decade anomaly `gap_anom_3y` is the feature to trust there.
 - `catalog.json` — the catalog of long-running physical series: what is pulled, what the workflow can retrieve by URL,
   and what has to be supplied as a file (the pre-1965 European energy consumption series, the Jacks commodity panel,
   ore-grade compilations).
@@ -170,8 +181,8 @@ for global features); diffusion, as aggregate adoption rates, is not a three-yea
 the panel extended past 2003 (electricity from OWID's energy data, telephones and internet from the ITU, vehicles
 from the WDI) before it could be retested on the only window with the later episodes. With the `EIA_API_KEY`
 secret set, the next workflow run landed the EIA Total Energy series and the feed's own `eia` spot-price source, and
-the manifest's error list is empty; the EIA table of estimated consumption 1635–1945 is queued for the run after.
-Still to be supplied as files: the pre-1965 European energy series and the Jacks commodity panel.
+the manifest's error list is empty; the run after landed the EIA 1635–1945 table (parsed and cataloged above: the CO2 proxy's pre-1900 bias is now
+measured). Still to be supplied as files: the pre-1965 European energy series and the Jacks commodity panel.
 
 ## Rebuild
 

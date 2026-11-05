@@ -394,3 +394,9 @@ stays as one view; the measured targets become the primary ones, and the horizon
   GBR 1931 on a gold peg with no base country recorded and so no bloc, USA 1960 base of 16, DEU 1973 floating with 15 bloc moves in
   three years, IRL and ESP 1999 in the DEU bloc of 9 — all as the record says; the climatology test is walk-forward
   (training rows' windows closed before the query year, classes with fewer than 20 training rows left unscored).
+- 2026-11-05 (EIA 1635–1945): the notes page links the table as a PDF; the parser reads its text layer, treats the
+  table's "– –" (two dashes) as one not-applicable cell, drops dot leaders and the footnote letter glued to the 1945
+  wood value, and checks fossil, renewable and total sums on every row — 42 rows, 42 pass, matching a reader's
+  independent extraction of the same PDF value for value; the CO2-proxy calibration (correlation 0.99 with fossil
+  energy growth, +4.5 pp a year against total energy growth before 1900, +0.1 pp after 1905) computed at five-year
+  spans from the two files as stored.
