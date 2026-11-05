@@ -8,6 +8,11 @@ the raw files.
                       current US$ per cubic metre (1 m3 = 6.2898 barrels)
   CHAT                the NBER data appendix of Comin & Hobijn's CHAT dataset: every data file linked from the index
   EIA-TOTAL-ENERGY    EIA Total Energy API: annual US primary energy consumption by source 1949- (needs EIA_API_KEY)
+  USGS-DS140          USGS Data Series 140, historical statistics for mineral and material commodities (US production,
+                      consumption, unit value nominal and real, world production where given, since 1900): every
+                      commodity workbook linked from the series index
+  FRED-PHYSICAL       FRED long physical price series: PPIACO (all-commodity PPI, 1913-), WTISPLC (WTI spot, 1946-),
+                      PCOPPUSDM (copper, 1990-) (needs FRED_API_KEY)
 
 Usage: python3 history/tools/physical_pull.py
 """
@@ -88,6 +93,44 @@ def main():
             errors.append(f"eia: {e}")
     else:
         errors.append("eia: EIA_API_KEY not set")
+    # 4. USGS DS140: index page -> commodity pages -> workbook links (S3)
+    try:
+        idx = "https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities"
+        page = get(idx).decode("utf-8", "replace")
+        pages = sorted(set(re.findall(r'href="(/media/files/[^"]*historical-statistics-data-series-140[^"]*)"', page)))
+        save("USGS-DS140", "index.html", page.encode(), idx, manifest)
+        n = 0
+        for rel_ in pages[:120]:
+            url = "https://www.usgs.gov" + rel_
+            try:
+                sub = get(url).decode("utf-8", "replace")
+                m = re.search(r'href="(https://[^"]+\.xlsx?)"', sub)
+                if not m:
+                    errors.append(f"usgs {rel_}: no workbook link"); continue
+                furl = html.unescape(m.group(1))
+                name = os.path.basename(urllib.parse.urlparse(furl).path)
+                save("USGS-DS140", name, get(furl), furl, manifest); n += 1
+            except Exception as e:  # noqa
+                errors.append(f"usgs {rel_}: {e}")
+            time.sleep(0.7)
+        print(f"  USGS-DS140: {n} workbooks")
+    except Exception as e:  # noqa
+        errors.append(f"usgs index: {e}")
+    # 5. FRED long physical price series
+    fkey = os.environ.get("FRED_API_KEY", "").strip()
+    if fkey:
+        for sid in ("PPIACO", "WTISPLC", "PCOPPUSDM", "PIORECRUSDM"):
+            try:
+                url = ("https://api.stlouisfed.org/fred/series/observations?" + urllib.parse.urlencode(
+                    {"series_id": sid, "api_key": fkey, "file_type": "json", "observation_start": "1900-01-01"}))
+                obs = json.loads(get(url))["observations"]
+                body = "date,value\n" + "\n".join(f"{o['date']},{o['value']}" for o in obs if o["value"] not in (".", "")) + "\n"
+                save("FRED-PHYSICAL", f"{sid}.csv", body.encode(), f"FRED {sid}", manifest)
+                time.sleep(0.3)
+            except Exception as e:  # noqa
+                errors.append(f"fred {sid}: {e}")
+    else:
+        errors.append("fred: FRED_API_KEY not set")
     os.makedirs(RAW, exist_ok=True)
     out = {"manifest": manifest, "errors": errors}
     prev = os.path.join(RAW, "manifest.json")

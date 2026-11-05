@@ -36,9 +36,10 @@ jobs:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python history/tools/bridge_pull.py || echo "bridge pull failed; data pull unaffected"
 
-      - name: Physical-layer catalogs reachable by URL (oil prices since 1861, CHAT technology adoption, EIA energy)
+      - name: Physical-layer catalogs reachable by URL (oil prices since 1861, CHAT technology adoption, EIA energy, USGS minerals, FRED physical prices)
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python history/tools/physical_pull.py || echo "physical pull failed; data pull unaffected"
 
       - name: Commit changes
