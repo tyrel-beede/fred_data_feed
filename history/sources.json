@@ -221,6 +221,42 @@
     "history/tools/analogs.py"
    ],
    "provenance_class": "derived"
+  },
+  {
+   "id": "OWID-CO2",
+   "type": "dataset",
+   "title": "Our World in Data: CO2 and greenhouse gas emissions (Global Carbon Budget), by country",
+   "url": "https://github.com/owid/co2-data",
+   "citation": "Global Carbon Budget (2025), processed by Our World in Data; Maddison Project Database 2023 for GDP",
+   "license": "OWID CC BY 4.0; Global Carbon Budget CC BY 4.0",
+   "provenance_class": "measured (compiled; reconstructed from fuel records in early decades)",
+   "local_files": [
+    "history/physical/owid_extract.csv",
+    "history/physical/owid_extract.provenance.json"
+   ]
+  },
+  {
+   "id": "OWID-ENERGY",
+   "type": "dataset",
+   "title": "Our World in Data: energy (EIA international data, Energy Institute Statistical Review, Ember), by country",
+   "url": "https://github.com/owid/energy-data",
+   "license": "OWID CC BY 4.0; EIA public domain; Energy Institute free with attribution; Ember CC BY 4.0",
+   "provenance_class": "measured",
+   "local_files": [
+    "history/physical/owid_extract.csv"
+   ]
+  },
+  {
+   "id": "EI-OIL-PRICE-1861",
+   "type": "dataset",
+   "title": "Crude oil prices 1861-2025 (Energy Institute Statistical Review of World Energy, based on S&P Global Platts), via Our World in Data",
+   "url": "https://ourworldindata.org/grapher/crude-oil-prices",
+   "license": "Energy Institute terms (free with attribution); OWID processing CC BY 4.0",
+   "provenance_class": "measured (annual averages; pre-1945 US averages, then Arabian Light, then Brent)",
+   "local_files": [
+    "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.csv",
+    "history/physical/raw/manifest.json"
+   ]
   }
  ]
 }

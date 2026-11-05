@@ -37,6 +37,7 @@ history/
     units.csv               the nominal-currency unit per country (euro members are in legacy currency)
     overrides.csv           corrections with their own provenance; JST values are never edited
     features.csv            derived annual features for analog matching (see below), override-flagged per row
+    features2.csv           the base 20 plus the subnet-at-t, rank and flux families (tools/features2.py)
     field_map.csv           dials field -> long-history proxy, join rule, caveat
     LICENSE-JST.md          the license and required citations
   dalio/
@@ -58,7 +59,8 @@ history/
   bridge/                   written by tools/bridge_pull.py in Actions: FRED series since 2010 that carry the JST
                             concepts for the US, annual aggregates, and the 2016-2020 overlap check
   analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
-                            backtest.md / backtest.json
+                            backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical)
+  physical/                 the physical layer: OWID extract (CO2, energy), derived footprint features, catalog
   tools/
     jst_build.py            workbook -> csv, coverage, crisis flags, units, features
     jstlib.py               shared loader (sheet + overrides + features)
@@ -66,6 +68,9 @@ history/
     assemble.py             merges the documentation and book encodings into the layout above
     analogs.py              the empirical cone: nearest country-years and what followed, beside climatology
     analog_backtest.py      skill of the cone by feature group under three exclusion rules
+    features2.py, wf.py, analog_test2.py, label_test.py, lag_test.py, learner_test.py   test 2 (subnet, rank, flux;
+                            measured targets; horizons), the tests of the crisis label, the lead-lag measurements,
+                            and the weighted learners
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -200,10 +205,89 @@ on the record.
 of every value in `analogs/us_2025_query.json`; they cover 9 of the 20 features (no credit, valuation or investment
 yet — those arrive with the bridge pull), so they are a demonstration of the plumbing, not a reading.
 
+## Test 2: the subnet at t, flux, and measured targets (`tools/analog_test2.py`, `analogs/test2.md`)
+
+The leak had been borrowing the *outcomes* of other countries in the same global episode. Their *states* at time t are
+legitimate information, so `tools/features2.py` adds three families computable at t and nothing later: the subnet
+(cross-sectional shares, means and dispersion of the others; crises already begun elsewhere in t−1 and t−2; the
+bloc and its base currency's state, from `peg_base`), the relative growth race (percentile rank within the
+cross-section), and flux (speed of the state in z-space, band transitions, accelerations). The harness is walk-forward
+throughout, with expanding-window standardization, so it is stricter than the first backtest.
+
+What moved. On the JST crisis label within three years, base features alone score AUC 0.53 (the leaky same-country
+number on this harness is 0.63); the subnet alone scores 0.58 — the others' present state carries as much crisis
+information as the country's own whole state vector — and everything together 0.58. Skill by horizon peaks at two to
+three years (0.56–0.58) and is gone by four (0.51) and five (0.48): the cone's "day 5" is about three years.
+
+Where the signal is. Measured targets are far more predictable than the label: a 30% real equity drawdown within three
+years AUC 0.67 (top decile 35% against a 12.5% base rate), a 5-pp credit contraction 0.68 (top decile 45% vs 17%), a
+5% real GDP per capita fall 0.61, a 3-pp unemployment spike 0.59.
+
+## Lead-lag: the path into T (`tools/lag_test.py`, `analogs/lag_test.md`)
+
+Does the path into T carry information the point at T does not? Three measurements. *Trajectory analogs*: matching on
+the state at T, T−1 and T−2 (60 dimensions) makes the nearest-neighbour cone worse, not better (drawdown 0.61 → 0.55,
+label 0.53 → 0.50) — stacking lagged copies dilutes an equal-weighted distance with redundant dimensions; adding only
+five lagged features with proven lead keeps it level (0.665 / 0.667 on drawdown and contraction). *Lead profiles*:
+for every feature and lag 0–4, the single-feature AUC for each event, with pre/post-1950 agreement. The drawdown's
+information is coincident and persistent (low dividend yield, low r−g, low real rate, high inflation, all best at
+lag 0, decaying slowly); the credit contraction has true leads — the *level* of loans/GDP three to four years earlier
+(0.73 at k=3–4, era-consistent), equity weakness one year earlier (0.65 at k=1), house-price weakness coincident.
+*Mile markers*: the event rate as markers arrive in sequence — credit contraction 17% unconditional → 30% with
+loans/GDP in the top tercile at T−3 → 42% with real equity gains ≤ 0 at T−1 → 51% with real house prices ≤ 0 at T
+(post-1950: 25 → 36 → 52); drawdown 12% → 23% (low dividend yield) → 31% (low r−g) → 43% (high inflation). Those
+ladders are measured likelihood ratios: the lag structure is worth more as conditioning than as distance.
+
+## A learner that can weight (`tools/learner_test.py`, `analogs/learner_test.md`)
+
+The same 53 features (base, subnet, rank, flux, five selected leads, three mile-marker indicators with training-set
+terciles) fed to learners that weight them — an L2 logit and shallow gradient-boosted trees — refit every four years
+on rows whose outcome window closed before the fit year, forecasting the next four; the nearest-neighbour share on the
+same features is the no-weights reference. Walk-forward AUC within three years, queries from 1900: a 30% real equity
+drawdown 0.73 with the trees (k-NN 0.65; top decile 35% against a 14% base rate), a 3-pp unemployment spike 0.67
+(k-NN 0.57), the crisis label 0.63 (k-NN 0.60), while the credit contraction stays at 0.68–0.69 under every learner
+(its signal — the loans/GDP level three years earlier — is simple enough that weighting adds nothing) and the GDP fall
+is best left to k-NN at 0.61. The heaviest weights are readable: for the drawdown, low r−g, a low real rate, a high
+share of countries in a credit boom, the state's two-year speed and a low dividend yield; for the contraction, the
+loans/GDP level three years back above everything else. The label's horizon curve under the logit is 0.61 / 0.58 /
+0.58 / 0.54 / 0.51. Differences of ±0.02 are within noise for a few hundred events; the gaps above are larger than that.
+
+## The physical layer (`physical/`, `tools/physical_build.py`)
+
+Fossil CO2 by fuel from 1750–1870 and primary energy, fossil production and consumption from 1900/1965 for the 18
+countries, from Our World in Data's repositories (Global Carbon Budget, EIA, Energy Institute, Ember; licenses in the
+extract's provenance file), with derived features: the **energy footprint gap** (CO2 or energy growth minus real GDP
+growth over three years, and its anomaly against the country's own trailing decade), carbon intensity, fossil
+production growth, fuel self-sufficiency, fuel shares. Added to the learners: the real GDP fall gains (0.61 → 0.66
+under k-NN; +0.02 on the weighted learners), the financial targets do not move at their best learner, and the
+footprint gap takes weight in the crisis and drawdown models without adding skill — redundant with the subnet and
+credit features, not wrong. Oil prices since 1861 (fetched by the workflow, deflated into a real price with changes, a
+shock flag and an exposure-signed change) then move the two targets the shock channel should move: real GDP fall
+0.60 → 0.68 (logit) and the equity drawdown 0.73 → 0.76 (trees, top decile 40% against 14%) — the shadow price of the
+energy constraint earns its place. `physical/catalog.json` lists the long-running physical catalogs still to bring in (oil
+prices since 1861, US energy 1635–, European measured energy 1800–, technology diffusion, commodity prices, minerals,
+ore grades, land) with their retrieval route and license.
+
+## Testing the target (`tools/label_test.py`, `analogs/label_test.md`)
+
+The crisis flag is a narrative judgment, so it was tested against the measured record. Labelled crisis years do look
+different in the real economy and the market — unemployment rises (AUC 0.77 as a detector), real GDP per capita falls
+(0.70), real equity falls (0.71) — but not in the banking aggregates the label is nominally about: loans/GDP (0.50),
+the bank capital ratio (0.53) and noncore funding (0.46) do not register a labelled crisis at all. A measured stress
+event built from the data alone matches the label poorly: with three of five conditions, recall 14% and precision 27%;
+with two of three real-economy conditions, 27% and 28% — and 60 measured stress episodes carry no label (the wars,
+1920–21, 1930–33 outside the banking cases, 1974, 2009, 2020). Timing is noisy by a year: for the 86 labelled crises,
+measured stress peaks the year before the label in 18 cases, in the label year in 30, a year after in 16, two years
+after in 11, and never in 11. About one label in ten is contested by another chronology and seven were recoded between
+releases. Conclusion for the framework: the label is a banking-narrative event, loosely coupled to measured stress,
+dated to within ±1 year, and less predictable from the state (0.58) than the measured outcomes are (0.67–0.68). It
+stays as one view; the measured targets become the primary ones, and the horizon curve is reported for each.
+
 ## What this layer is for next
 
-1. **Walk-forward backtest and feature weighting measured, not assumed**: candidates before the query year only;
-   weights per feature group from their measured skill, reported with the lead-time ledger (ruling n).
+1. **Calibrated bands and on-time markers**: conformal bands so coverage is 50% by construction; the gap distribution
+   between successive markers so an on-schedule arrival carries a higher ratio than an early or late one; a seed and
+   cadence sweep on the trees to size the noise band around each AUC.
 2. **Climatology**: the unconditional distribution of each feature by era and regime (`peg_type`), which is what the
    forecast relaxes toward at long lead times.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;

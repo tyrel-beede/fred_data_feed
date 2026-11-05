@@ -42,7 +42,13 @@ expected = [
     "history/dalio/principles_mechanisms.json", "history/dalio/principles_2011.md", "history/dalio/principles_2017.md",
     "history/dalio/reads.csv",
     "history/tools/jst_build.py", "history/tools/bridge_pull.py", "history/tools/assemble.py", "history/tools/jstlib.py",
-    "history/tools/analogs.py", "history/tools/qc.py",
+    "history/tools/analogs.py", "history/tools/qc.py", "history/tools/features2.py", "history/tools/wf.py",
+    "history/tools/analog_test2.py", "history/tools/label_test.py", "history/jst/features2.csv",
+    "history/analogs/test2.md", "history/analogs/label_test.md", "history/tools/lag_test.py", "history/analogs/lag_test.md",
+    "history/tools/learner_test.py", "history/analogs/learner_test.md",
+    "history/tools/physical_build.py", "history/physical/owid_extract.csv", "history/physical/physical_features.csv",
+    "history/physical/catalog.json", "history/physical/README.md", "history/analogs/learner_test_physical.md",
+    "history/tools/physical_pull.py", "history/physical/raw/manifest.json", "history/analogs/learner_test_physical_oil.md",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")
@@ -220,6 +226,40 @@ lic = " ".join(open(os.path.join(H, "jst", "LICENSE-JST.md")).read().replace("\n
 check("license: CC BY-NC-SA 4.0 and both required citations stated", "CC BY-NC-SA 4.0" in lic and "Macrofinancial History" in lic and "Rate of Return on Everything" in lic, "")
 readme = open(os.path.join(H, "README.md")).read()
 check("README: documents overrides, provenance classes, bitemporal fields", "overrides" in readme and "observed time" in readme and "provenance class" in readme, "")
+
+# ------------------------------------------------------------------ 13. README numbers vs result files
+import re as _re
+def _aucs(path, keys):
+    try:
+        d = json.load(open(os.path.join(H, "analogs", path)))
+    except Exception:  # noqa
+        return set()
+    out = set()
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if str(k).startswith("auc") and isinstance(v, (int, float)):
+                    out.add(f"{v:.2f}")
+                else:
+                    walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    walk(d)
+    return out
+pool = set()
+for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_rerun.json", "learner_test_physical.json",
+          "learner_test_physical_oil.json", "lag_test.json", "label_test.json"):
+    pool |= _aucs(f, None)
+for o in ov:  # override values quoted in the README are not AUCs
+    try:
+        pool.add(f"{float(o['override_value']):.2f}")
+    except (ValueError, TypeError):
+        pass
+quoted = set(_re.findall(r"\b0\.[5-9]\d\b", readme))
+unsupported = sorted(q for q in quoted if q not in pool)
+check("README: every quoted AUC-like number (0.5x-0.9x) appears in a result file", not unsupported,
+      f"{len(quoted)} quoted; unsupported {unsupported}" if unsupported else f"{len(quoted)} quoted numbers all found")
 
 # ------------------------------------------------------------------ report
 n_ok = sum(1 for _, ok, _ in results if ok)

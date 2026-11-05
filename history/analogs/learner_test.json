@@ -1,0 +1,470 @@
+{
+ "features": [
+  "loans_gdp",
+  "d3_loans_gdp",
+  "d5_loans_gdp",
+  "mort_gdp",
+  "debt_gdp",
+  "d5_debt_gdp",
+  "deficit_gdp",
+  "r_minus_g",
+  "ltrate",
+  "term_spread",
+  "real_ltrate_expost",
+  "cpi_infl",
+  "rgdp_pc_growth",
+  "unemp",
+  "d1_unemp",
+  "iy",
+  "ca_gdp",
+  "eq_dp",
+  "real_eq_capgain_3y",
+  "real_hp_growth_3y",
+  "xs_share_credit_boom",
+  "xs_mean_d3_loans_gdp",
+  "xs_disp_real_rate",
+  "xs_mean_term_spread",
+  "xs_mean_req3y",
+  "xs_crises_now",
+  "xs_crises_last2y",
+  "bloc_crises_last2y",
+  "base_d3_loans_gdp",
+  "base_term_spread",
+  "rank_d3_loans_gdp",
+  "rank_req3y",
+  "rank_ca_gdp",
+  "rank_rgdp_pc_growth",
+  "rank_rhp3y",
+  "rank_d1_unemp",
+  "speed_1y",
+  "speed_2y",
+  "transitions_1y",
+  "accel_d3_loans_gdp",
+  "d1_term_spread",
+  "d1_real_eq_capgain_3y",
+  "d1_real_hp_growth_3y",
+  "d1_ca_gdp",
+  "d1_rank_d3_loans_gdp",
+  "loans_gdp_lag3",
+  "mort_gdp_lag3",
+  "real_eq_capgain_3y_lag1",
+  "rgdp_pc_growth_lag1",
+  "r_minus_g_lag1",
+  "mk_loans_top_tercile_T-3",
+  "mk_equity_le0_T-1",
+  "mk_houses_le0_T"
+ ],
+ "results": {
+  "dd30_3y": {
+   "knn": {
+    "auc": 0.650040071558126,
+    "top_decile": 0.3641304347826087,
+    "base": 0.13705308775731312,
+    "n_pos": 253,
+    "n_neg": 1593
+   },
+   "logit": {
+    "auc": 0.614000881251377,
+    "top_decile": 0.2222222222222222,
+    "base": 0.13255360623781676,
+    "n_pos": 204,
+    "n_neg": 1335
+   },
+   "gbt": {
+    "auc": 0.7339465374164648,
+    "top_decile": 0.3464052287581699,
+    "base": 0.13255360623781676,
+    "n_pos": 204,
+    "n_neg": 1335
+   },
+   "ensemble": {
+    "auc": 0.6411024397890518,
+    "top_decile": 0.2679738562091503,
+    "base": 0.13102998696219034,
+    "n_pos": 201,
+    "n_neg": 1333
+   }
+  },
+  "credit_contraction_3y": {
+   "knn": {
+    "auc": 0.6802790437355081,
+    "top_decile": 0.5153061224489796,
+    "base": 0.19307182883341822,
+    "n_pos": 379,
+    "n_neg": 1584
+   },
+   "logit": {
+    "auc": 0.6798744710698628,
+    "top_decile": 0.5310734463276836,
+    "base": 0.21094190637337845,
+    "n_pos": 374,
+    "n_neg": 1399
+   },
+   "gbt": {
+    "auc": 0.6515635690886921,
+    "top_decile": 0.5028248587570622,
+    "base": 0.21094190637337845,
+    "n_pos": 374,
+    "n_neg": 1399
+   },
+   "ensemble": {
+    "auc": 0.6936037199986239,
+    "top_decile": 0.4463276836158192,
+    "base": 0.21094190637337845,
+    "n_pos": 374,
+    "n_neg": 1399
+   }
+  },
+  "gdp_fall_3y": {
+   "knn": {
+    "auc": 0.6122311167286941,
+    "top_decile": 0.2634146341463415,
+    "base": 0.11446663419386265,
+    "n_pos": 235,
+    "n_neg": 1818
+   },
+   "logit": {
+    "auc": 0.5963064391545537,
+    "top_decile": 0.37073170731707317,
+    "base": 0.11446663419386265,
+    "n_pos": 235,
+    "n_neg": 1818
+   },
+   "gbt": {
+    "auc": 0.5804718769749315,
+    "top_decile": 0.18536585365853658,
+    "base": 0.11446663419386265,
+    "n_pos": 235,
+    "n_neg": 1818
+   },
+   "ensemble": {
+    "auc": 0.5246565082040119,
+    "top_decile": 0.13658536585365855,
+    "base": 0.11446663419386265,
+    "n_pos": 235,
+    "n_neg": 1818
+   }
+  },
+  "unemp_spike_3y": {
+   "knn": {
+    "auc": 0.5737684645451636,
+    "top_decile": 0.1342281879194631,
+    "base": 0.10314802411252512,
+    "n_pos": 154,
+    "n_neg": 1339
+   },
+   "logit": {
+    "auc": 0.607259764520386,
+    "top_decile": 0.3057324840764331,
+    "base": 0.10559796437659033,
+    "n_pos": 166,
+    "n_neg": 1406
+   },
+   "gbt": {
+    "auc": 0.6687432518123704,
+    "top_decile": 0.22929936305732485,
+    "base": 0.10559796437659033,
+    "n_pos": 166,
+    "n_neg": 1406
+   },
+   "ensemble": {
+    "auc": 0.6407847706433153,
+    "top_decile": 0.26277372262773724,
+    "base": 0.09693877551020408,
+    "n_pos": 133,
+    "n_neg": 1239
+   }
+  },
+  "crisis_3y": {
+   "knn": {
+    "auc": 0.6023652093034348,
+    "top_decile": 0.15121951219512195,
+    "base": 0.08718947881149537,
+    "n_pos": 179,
+    "n_neg": 1874
+   },
+   "logit": {
+    "auc": 0.5772285256047173,
+    "top_decile": 0.1951219512195122,
+    "base": 0.08718947881149537,
+    "n_pos": 179,
+    "n_neg": 1874
+   },
+   "gbt": {
+    "auc": 0.6325936216261335,
+    "top_decile": 0.18536585365853658,
+    "base": 0.08718947881149537,
+    "n_pos": 179,
+    "n_neg": 1874
+   },
+   "ensemble": {
+    "auc": 0.5953581202339572,
+    "top_decile": 0.18536585365853658,
+    "base": 0.08718947881149537,
+    "n_pos": 179,
+    "n_neg": 1874
+   }
+  }
+ },
+ "horizon": {
+  "crisis_3y": {
+   "1": 0.6121754454036926,
+   "2": 0.5848539210661199,
+   "3": 0.5772285256047173,
+   "4": 0.5421612386946584,
+   "5": 0.5097558657934955
+  }
+ },
+ "weights": {
+  "dd30_3y": [
+   [
+    "r_minus_g",
+    -1.207864035361063
+   ],
+   [
+    "real_ltrate_expost",
+    -0.8425489281867098
+   ],
+   [
+    "xs_share_credit_boom",
+    0.7706421966914813
+   ],
+   [
+    "speed_2y",
+    0.5810221487931979
+   ],
+   [
+    "eq_dp",
+    -0.5636736410334038
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.5411223261239708
+   ],
+   [
+    "rgdp_pc_growth",
+    -0.4257619335445955
+   ],
+   [
+    "xs_crises_now",
+    -0.40343197067542386
+   ],
+   [
+    "xs_crises_last2y",
+    -0.3996739200609748
+   ],
+   [
+    "real_eq_capgain_3y_lag1",
+    0.37332536787420745
+   ],
+   [
+    "bloc_crises_last2y",
+    -0.33473396952522316
+   ],
+   [
+    "loans_gdp_lag3",
+    0.3273410644914629
+   ]
+  ],
+  "credit_contraction_3y": [
+   [
+    "loans_gdp_lag3",
+    1.5874144279455282
+   ],
+   [
+    "mort_gdp",
+    -0.8475635750818152
+   ],
+   [
+    "loans_gdp",
+    0.7118192764501594
+   ],
+   [
+    "d5_loans_gdp",
+    -0.6167127947606833
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.5259453049151862
+   ],
+   [
+    "r_minus_g",
+    0.48886239537461346
+   ],
+   [
+    "real_eq_capgain_3y",
+    -0.48846580065633105
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.47578902451197863
+   ],
+   [
+    "speed_1y",
+    0.4679467332491557
+   ],
+   [
+    "xs_crises_last2y",
+    0.3914999667677054
+   ],
+   [
+    "d1_real_eq_capgain_3y",
+    0.38103026548774993
+   ],
+   [
+    "r_minus_g_lag1",
+    0.33348393947235455
+   ]
+  ],
+  "gdp_fall_3y": [
+   [
+    "loans_gdp",
+    0.6414511019664557
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.6321540493295371
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.6181921232284032
+   ],
+   [
+    "base_d3_loans_gdp",
+    -0.5009384240196294
+   ],
+   [
+    "d5_loans_gdp",
+    -0.4996865087243941
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.4667080569930541
+   ],
+   [
+    "ltrate",
+    -0.4243453916480915
+   ],
+   [
+    "d3_loans_gdp",
+    0.4207907573796159
+   ],
+   [
+    "ca_gdp",
+    -0.4179155228998026
+   ],
+   [
+    "real_eq_capgain_3y_lag1",
+    0.3664887497940322
+   ],
+   [
+    "mort_gdp_lag3",
+    -0.338439873900393
+   ],
+   [
+    "rank_rhp3y",
+    0.29657074520911314
+   ]
+  ],
+  "unemp_spike_3y": [
+   [
+    "loans_gdp_lag3",
+    0.9985746336835185
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.8028780354162774
+   ],
+   [
+    "ca_gdp",
+    -0.6943958136598127
+   ],
+   [
+    "r_minus_g",
+    0.5022537132129922
+   ],
+   [
+    "xs_share_credit_boom",
+    0.4697358741008129
+   ],
+   [
+    "r_minus_g_lag1",
+    -0.4401315602208341
+   ],
+   [
+    "mort_gdp_lag3",
+    -0.42191500568289253
+   ],
+   [
+    "d3_loans_gdp",
+    0.4174259568146308
+   ],
+   [
+    "iy",
+    -0.37203441095039097
+   ],
+   [
+    "loans_gdp",
+    -0.3377880854392137
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.3342276862382174
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.32548042328264765
+   ]
+  ],
+  "crisis_3y": [
+   [
+    "xs_mean_term_spread",
+    -0.7612845772252859
+   ],
+   [
+    "mort_gdp",
+    -0.5014094662238259
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    0.4842827491106729
+   ],
+   [
+    "speed_1y",
+    0.447377359463622
+   ],
+   [
+    "base_term_spread",
+    0.4441086769954826
+   ],
+   [
+    "mort_gdp_lag3",
+    0.44147522119504123
+   ],
+   [
+    "base_d3_loans_gdp",
+    -0.42674276755899904
+   ],
+   [
+    "real_eq_capgain_3y",
+    0.42080079211787513
+   ],
+   [
+    "iy",
+    -0.4187163625485104
+   ],
+   [
+    "rank_rhp3y",
+    0.370007777643208
+   ],
+   [
+    "mk_equity_le0_T-1",
+    0.3646218172530195
+   ],
+   [
+    "debt_gdp",
+    0.3352120136436796
+   ]
+  ]
+ }
+}
