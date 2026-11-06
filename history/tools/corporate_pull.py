@@ -1,0 +1,336 @@
+#!/usr/bin/env python3
+"""Pull the corporate-sector catalogs (runs in the GitHub Actions workflow; the sandbox cannot reach these hosts).
+Raw files land under history/corporate/raw/<id>/ with a manifest (URL, size, SHA-256, time). Nothing here transforms
+the long-record series; corporate_build.py reads them. The two SEC data sets are the exception: their quarterly zips
+run to hundreds of megabytes, so the puller streams them in the runner and keeps only small aggregates.
+
+  FRED-Z1          Financial Accounts of the United States (Z.1), nonfinancial corporate business, quarterly 1945-:
+                   debt securities and loans, corporate equities (market value), net worth, total liabilities, capital
+                   expenditures, net dividends; plus BEA corporate profits (annual 1929-, quarterly 1947-). Series are
+                   resolved by exact FRED title at run time and the id used is recorded (needs FRED_API_KEY)
+  SHILLER          Robert Shiller's long-record US stock market data (S&P composite price, dividends, earnings, CPI,
+                   long rate, CAPE), monthly 1871-; the xls as served from his Yale page
+  GOYAL-WELCH      the Goyal-Welch equity-premium predictor workbook (annual 1871-), linked from Amit Goyal's page
+  SEC-FSDS         SEC Financial Statement Data Sets (XBRL financial data from 10-K/10-Q filings, quarterly 2009-):
+                   per quarter, sums and filer counts of a fixed tag list (assets, debt, cash, revenue, net income,
+                   capex, buybacks, dividends, operating cash flow, inventories, interest), 10-K/10-Q forms only
+  SEC-13F          SEC Form 13F Data Sets (institutional holdings, quarterly 2013-): per quarter, number of filers,
+                   total value, distinct issuers, top-10/top-50 issuer shares, Herfindahl across issuers, median
+                   filer concentration, and the twenty most-held issuers
+
+Usage: python3 history/tools/corporate_pull.py            (environment: FRED_API_KEY)
+"""
+import csv, hashlib, heapq, html, io, json, os, re, sys, tempfile, time, urllib.parse, urllib.request, zipfile
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+RAW = os.path.join(ROOT, "history", "corporate", "raw")
+UA = {"User-Agent": "fred_data_feed history layer (github.com/tyrel-beede/fred_data_feed)", "Accept-Encoding": "gzip, deflate"}
+SEC_UA = {"User-Agent": "fred_data_feed research tool github.com/tyrel-beede/fred_data_feed", "Accept-Encoding": "gzip, deflate"}
+
+
+def get(url, headers=None, tries=4, timeout=300):
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers=headers or UA)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                data = r.read()
+                if r.headers.get("Content-Encoding") == "gzip":
+                    import gzip
+                    data = gzip.decompress(data)
+                return data, dict(r.headers)
+        except Exception as e:  # noqa
+            if i == tries - 1:
+                raise
+            time.sleep(10 * (i + 1))
+
+
+def save(cat, name, data, url, manifest, note=None):
+    d = os.path.join(RAW, cat); os.makedirs(d, exist_ok=True)
+    with open(os.path.join(d, name), "wb") as f:
+        f.write(data)
+    rec = {"catalog": cat, "file": f"history/corporate/raw/{cat}/{name}", "url": url, "bytes": len(data),
+           "sha256": hashlib.sha256(data).hexdigest(), "retrieved": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    if note:
+        rec["note"] = note
+    manifest.append(rec)
+    print(f"  {cat}/{name}: {len(data)} bytes")
+
+
+# ------------------------------------------------------------------------------------------------------- FRED Z.1 / BEA
+FRED_SERIES = [  # key, candidate ids (tried first), exact title to search for if none of them answers
+    ("nfcb_debt", ["NCBDBIQ027S"], "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level"),
+    ("nfcb_equity_mv", ["NCBEILQ027S"], "Nonfinancial Corporate Business; Corporate Equities; Liability, Level"),
+    ("nfcb_net_worth", ["TNWMVBSNNCB"], "Nonfinancial Corporate Business; Net Worth, Level"),
+    ("nfcb_total_liabilities", ["TLBSNNCB"], "Nonfinancial Corporate Business; Total Liabilities, Level"),
+    ("nfcb_capex", ["BOGZ1FA105050005Q"], "Nonfinancial Corporate Business; Capital Expenditures, Transactions"),
+    ("nfcb_net_dividends", ["BOGZ1FA106121075Q"], "Nonfinancial Corporate Business; Net Dividends Paid, Transactions"),
+    ("nfcb_liquid_assets", ["NCBLLAQ027S"], "Nonfinancial Corporate Business; Liquid Assets (Broad Measure), Level"),
+    ("corp_profits_after_tax_q", ["CP"], "Corporate Profits After Tax (without IVA and CCAdj)"),
+    ("corp_profits_iva_ccadj_annual", ["A053RC1A027NBEA"], "National income: Corporate profits with inventory valuation and capital consumption adjustments"),
+    ("nfcb_profits_after_tax_q", ["NFCPATAX"], "Nonfinancial Corporate Business: Profits After Tax (without IVA and CCAdj)"),
+    ("gdp_nominal_q", ["GDP"], "Gross Domestic Product"),
+]
+
+
+def fred_observations(sid, key):
+    url = ("https://api.stlouisfed.org/fred/series/observations?" + urllib.parse.urlencode(
+        {"series_id": sid, "api_key": key, "file_type": "json", "observation_start": "1900-01-01"}))
+    data, _ = get(url)
+    js = json.loads(data)
+    if "observations" not in js:
+        raise ValueError(js.get("error_message", "no observations"))
+    meta, _ = get("https://api.stlouisfed.org/fred/series?" + urllib.parse.urlencode({"series_id": sid, "api_key": key, "file_type": "json"}))
+    m = json.loads(meta)["seriess"][0]
+    return js["observations"], m
+
+
+def fred_search(title, key):
+    url = "https://api.stlouisfed.org/fred/series/search?" + urllib.parse.urlencode(
+        {"search_text": title, "api_key": key, "file_type": "json", "limit": 20})
+    data, _ = get(url)
+    hits = json.loads(data).get("seriess", [])
+    exact = [h for h in hits if h["title"].strip().lower() == title.strip().lower()]
+    pool = exact or hits
+    # prefer quarterly, then the longest record
+    pool.sort(key=lambda h: (h.get("frequency_short") != "Q", h.get("observation_start", "9999")))
+    return pool[0]["id"] if pool else None
+
+
+def pull_fred(manifest, errors):
+    key = os.environ.get("FRED_API_KEY", "").strip()
+    if not key:
+        errors.append("fred: FRED_API_KEY not set"); return
+    used = []
+    for name, cands, title in FRED_SERIES:
+        got = None
+        for sid in cands:
+            try:
+                obs, meta = fred_observations(sid, key); got = (sid, obs, meta); break
+            except Exception as e:  # noqa
+                last = str(e)
+        if got is None:
+            try:
+                sid = fred_search(title, key)
+                if sid:
+                    obs, meta = fred_observations(sid, key); got = (sid, obs, meta)
+            except Exception as e:  # noqa
+                last = str(e)
+        if got is None:
+            errors.append(f"fred {name}: no series found ({title}): {last}"); continue
+        sid, obs, meta = got
+        body = "date,value\n" + "\n".join(f"{o['date']},{o['value']}" for o in obs if o["value"] not in (".", "")) + "\n"
+        save("FRED-Z1", f"{name}.csv", body.encode(), f"FRED {sid}", manifest,
+             note=f"{meta.get('title')} | units: {meta.get('units')} | frequency: {meta.get('frequency')} | from {meta.get('observation_start')}")
+        used.append({"key": name, "id": sid, "title": meta.get("title"), "units": meta.get("units"), "frequency": meta.get("frequency"),
+                     "observation_start": meta.get("observation_start"), "seasonal_adjustment": meta.get("seasonal_adjustment")})
+        time.sleep(0.3)
+    save("FRED-Z1", "series_used.json", json.dumps(used, indent=1).encode(), "FRED series metadata", manifest)
+
+
+# ------------------------------------------------------------------------------------------------------- Shiller, Goyal-Welch
+def pull_shiller(manifest, errors):
+    try:
+        url = "https://shillerdata.com/"
+        page, _ = get(url)
+        links = sorted(set(html.unescape(l) for l in re.findall(r'href="([^"]+\.xls[x]?)"', page.decode("utf-8", "replace"), re.I)))
+        if not links:
+            raise ValueError("no xls link on shillerdata.com")
+        for l in links[:3]:
+            furl = urllib.parse.urljoin(url, l)
+            data, _ = get(furl)
+            save("SHILLER", os.path.basename(urllib.parse.urlparse(furl).path).replace("%20", "_"), data, furl, manifest)
+    except Exception as e:  # noqa
+        errors.append(f"shiller (shillerdata.com): {e}")
+        try:  # the long-standing Yale address
+            url = "https://www.econ.yale.edu/~shiller/data/ie_data.xls"
+            data, _ = get(url)
+            save("SHILLER", "ie_data.xls", data, url, manifest)
+        except Exception as e2:  # noqa
+            errors.append(f"shiller (yale): {e2}")
+
+
+def pull_goyal_welch(manifest, errors):
+    try:
+        url = "https://sites.google.com/view/agoyal145"
+        page, _ = get(url)
+        txt = page.decode("utf-8", "replace")
+        ids = sorted(set(re.findall(r"drive\.google\.com/(?:file/d/|open\?id=|uc\?[^\"']*id=)([A-Za-z0-9_-]{20,})", txt)))
+        got = 0
+        for fid in ids[:8]:
+            try:
+                data, hdr = get(f"https://drive.google.com/uc?export=download&id={fid}")
+                cd = hdr.get("Content-Disposition", "") or hdr.get("content-disposition", "")
+                m = re.search(r'filename="?([^";]+)', cd)
+                name = m.group(1) if m else f"{fid}.bin"
+                if data[:2] == b"PK" and re.search(r"predictor", name, re.I):
+                    save("GOYAL-WELCH", name, data, f"https://drive.google.com/uc?export=download&id={fid}", manifest); got += 1
+            except Exception:  # noqa
+                pass
+            time.sleep(1)
+        if not got:
+            errors.append("goyal-welch: no predictor workbook found among the page's Drive links (attach PredictorData<year>.xlsx under history/corporate/raw/GOYAL-WELCH/)")
+    except Exception as e:  # noqa
+        errors.append(f"goyal-welch: {e}")
+
+
+# ------------------------------------------------------------------------------------------------------- SEC Financial Statement Data Sets
+FSDS_TAGS = {"Assets", "Liabilities", "StockholdersEquity", "LongTermDebt", "LongTermDebtNoncurrent", "CashAndCashEquivalentsAtCarryingValue",
+             "InventoryNet", "Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "NetIncomeLoss", "InterestExpense",
+             "NetCashProvidedByUsedInOperatingActivities", "PaymentsToAcquirePropertyPlantAndEquipment",
+             "PaymentsForRepurchaseOfCommonStock", "PaymentsOfDividends", "PaymentsOfDividendsCommonStock", "DepreciationDepletionAndAmortization"}
+
+
+def aggregate_fsds(zip_bytes):
+    """Per (tag, qtrs, ddate): number of filers, sum and median of value, 10-K/10-Q filers only, USD, no co-registrant."""
+    z = zipfile.ZipFile(io.BytesIO(zip_bytes))
+    forms = {}
+    with z.open("sub.txt") as f:
+        rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
+        for r in rd:
+            if r.get("form", "").startswith(("10-K", "10-Q")):
+                forms[r["adsh"]] = (r.get("form"), r.get("fy"), r.get("fp"), r.get("sic"))
+    acc = {}
+    with z.open("num.txt") as f:
+        rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
+        for r in rd:
+            if r["tag"] not in FSDS_TAGS or r["adsh"] not in forms or r.get("uom") != "USD" or r.get("coreg"):
+                continue
+            try:
+                v = float(r["value"])
+            except (TypeError, ValueError):
+                continue
+            k = (r["tag"], r["qtrs"], r["ddate"])
+            acc.setdefault(k, {}).setdefault(r["adsh"], v)  # one value per filer per key (the first seen)
+    rows = []
+    for (tag, qtrs, ddate), d in sorted(acc.items()):
+        vals = sorted(d.values())
+        if len(vals) < 20:
+            continue
+        rows.append({"tag": tag, "qtrs": qtrs, "ddate": ddate, "n_filers": len(vals), "sum_usd": f"{sum(vals):.6g}",
+                     "median_usd": f"{vals[len(vals) // 2]:.6g}", "p90_usd": f"{vals[int(len(vals) * 0.9)]:.6g}"})
+    return rows, len(forms)
+
+
+def pull_fsds(manifest, errors, max_quarters=2):
+    try:
+        idx = "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets"
+        page, _ = get(idx, SEC_UA)
+        links = sorted(set(re.findall(r'href="(/files/dera/data/financial-statement-data-sets/(\d{4}q[1-4])\.zip)"', page.decode("utf-8", "replace"))), reverse=True)
+        if not links:
+            raise ValueError("no zip links on the index page")
+        done = set(os.listdir(os.path.join(RAW, "SEC-FSDS"))) if os.path.isdir(os.path.join(RAW, "SEC-FSDS")) else set()
+        n = 0
+        for rel_, q in links:
+            if f"{q}_aggregates.csv" in done or n >= max_quarters:
+                continue
+            url = "https://www.sec.gov" + rel_
+            data, _ = get(url, SEC_UA, timeout=600)
+            rows, nf = aggregate_fsds(data)
+            body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["tag", "qtrs", "ddate", "n_filers", "sum_usd", "median_usd", "p90_usd"])
+            w.writeheader(); w.writerows(rows)
+            save("SEC-FSDS", f"{q}_aggregates.csv", body.getvalue().encode(), url, manifest,
+                 note=f"aggregated in the workflow from the {len(data)}-byte zip (sha256 {hashlib.sha256(data).hexdigest()}): {nf} 10-K/10-Q filings, {len(rows)} tag-period rows; the zip is not kept")
+            n += 1; time.sleep(1)
+    except Exception as e:  # noqa
+        errors.append(f"sec fsds: {e}")
+
+
+# ------------------------------------------------------------------------------------------------------- SEC Form 13F Data Sets
+def aggregate_13f(zip_bytes):
+    z = zipfile.ZipFile(io.BytesIO(zip_bytes))
+    names = {n.lower(): n for n in z.namelist()}
+    info = names.get("infotable.tsv")
+    if not info:
+        raise ValueError(f"no INFOTABLE.tsv in zip: {z.namelist()[:5]}")
+    by_cusip, by_cusip_name = {}, {}
+    filer_total, filer_top = {}, {}
+    total, putcall_value, n_lines = 0.0, 0.0, 0
+    with z.open(info) as f:
+        rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
+        for r in rd:
+            try:
+                v = float(r.get("VALUE") or 0)
+            except ValueError:
+                continue
+            n_lines += 1
+            acc = r.get("ACCESSION_NUMBER"); cusip = (r.get("CUSIP") or "").strip()
+            total += v
+            if (r.get("PUTCALL") or "").strip():
+                putcall_value += v
+                continue  # options lines are not holdings of the issuer's shares
+            by_cusip[cusip] = by_cusip.get(cusip, 0.0) + v
+            by_cusip_name.setdefault(cusip, (r.get("NAMEOFISSUER") or "").strip())
+            filer_total[acc] = filer_total.get(acc, 0.0) + v
+            h = filer_top.setdefault(acc, [])
+            if len(h) < 10:
+                heapq.heappush(h, v)
+            elif v > h[0]:
+                heapq.heapreplace(h, v)
+    vals = sorted(by_cusip.values(), reverse=True)
+    s = sum(vals) or 1.0
+    top10 = sum(vals[:10]) / s; top50 = sum(vals[:50]) / s
+    hhi = sum((v / s) ** 2 for v in vals)
+    conc = sorted(sum(filer_top[a]) / filer_total[a] for a in filer_total if filer_total[a] > 0)
+    summary = {"n_filers": len(filer_total), "n_infotable_lines": n_lines, "total_value_reported": f"{total:.6g}",
+               "putcall_value_share": f"{putcall_value / total:.4f}" if total else "", "n_issuers_cusip": len(by_cusip),
+               "top10_issuer_share": f"{top10:.4f}", "top50_issuer_share": f"{top50:.4f}", "hhi_issuers": f"{hhi:.6f}",
+               "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else ""}
+    top = [{"rank": k + 1, "cusip": c, "issuer": by_cusip_name.get(c, ""), "value": f"{v:.6g}", "share": f"{v / s:.4f}"}
+           for k, (c, v) in enumerate(sorted(by_cusip.items(), key=lambda kv: -kv[1])[:20])]
+    return summary, top
+
+
+def pull_13f(manifest, errors, max_quarters=2):
+    try:
+        idx = "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets"
+        page, _ = get(idx, SEC_UA)
+        links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
+        if not links:
+            raise ValueError("no zip links on the index page")
+        def qkey(name):  # '01jul2025-30sep2025_form13f' -> sortable (2025, 9)
+            m = re.search(r"-(\d{2})([a-z]{3})(\d{4})", name.lower())
+            months = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
+            return (int(m.group(3)), months.get(m.group(2), 0)) if m else (0, 0)
+        links = sorted(set(links), key=lambda t: qkey(t[1]), reverse=True)
+        done = set(os.listdir(os.path.join(RAW, "SEC-13F"))) if os.path.isdir(os.path.join(RAW, "SEC-13F")) else set()
+        n = 0
+        for rel_, name in links:
+            if f"{name}_summary.json" in done or n >= max_quarters:
+                continue
+            url = "https://www.sec.gov" + rel_
+            data, _ = get(url, SEC_UA, timeout=900)
+            summary, top = aggregate_13f(data)
+            summary["source_zip_sha256"] = hashlib.sha256(data).hexdigest(); summary["source_zip_bytes"] = len(data); summary["period"] = name
+            save("SEC-13F", f"{name}_summary.json", json.dumps(summary, indent=1).encode(), url, manifest,
+                 note="aggregated in the workflow; the zip is not kept; VALUE is in dollars from 2023 (thousands before)")
+            body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["rank", "cusip", "issuer", "value", "share"]); w.writeheader(); w.writerows(top)
+            save("SEC-13F", f"{name}_top20.csv", body.getvalue().encode(), url, manifest)
+            n += 1; time.sleep(1)
+    except Exception as e:  # noqa
+        errors.append(f"sec 13f: {e}")
+
+
+def main():
+    manifest, errors = [], []
+    os.makedirs(RAW, exist_ok=True)
+    pull_fred(manifest, errors)
+    pull_shiller(manifest, errors)
+    pull_goyal_welch(manifest, errors)
+    pull_fsds(manifest, errors)
+    pull_13f(manifest, errors)
+    out = {"manifest": manifest, "errors": errors}
+    prev = os.path.join(RAW, "manifest.json")
+    if os.path.exists(prev):
+        try:
+            old = json.load(open(prev)).get("manifest", [])
+            seen = {m["file"] for m in manifest}
+            out["manifest"] = manifest + [m for m in old if m["file"] not in seen]
+        except Exception:  # noqa
+            pass
+    json.dump(out, open(prev, "w"), indent=1)
+    print(json.dumps({"files": len(manifest), "errors": errors}, indent=1))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
