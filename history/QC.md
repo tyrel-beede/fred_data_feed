@@ -4,7 +4,7 @@ Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any chan
 
 | check | result | evidence |
 |---|---|---|
-| inventory: every expected file exists | PASS | 94 files |
+| inventory: every expected file exists | PASS | 101 files |
 | parse: every JSON parses and every CSV is rectangular | PASS | ok |
 | jst_r6: 2,718 rows, 18 countries x 1870-2020, no duplicate country-year | PASS | rows 2718, countries 18 |
 | jst_r6: 59 columns | PASS | 59 columns |
@@ -16,7 +16,7 @@ Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any chan
 | features: 44 country-years recomputed independently (loans/GDP, 5y change, r-g, unemp, crisis label) | PASS | all match |
 | features: overrides applied and flagged, with propagation to dependent rows | PASS |  |
 | field map: every variable-looking token names a real column or feature | PASS | 23 rows |
-| sources.json: every local_files path exists | PASS | 25 sources |
+| sources.json: every local_files path exists | PASS | 30 sources |
 | HCGB: nine numbered stages with names and gauges | PASS | 1 The Private Sector and Government Get De; 2 The Private Sector Suffers a Debt Crisis; 3 The Central Government Experiences a Deb; 4 The Selling of the Government's Debt Lea; 5 When There Is a Debt Crisis and Interest;  |
 | HCGB: five forces of the Big Cycle recorded | PASS | ['1. The debt/credit/money/economic cycle (p. 165)', '2. The internal order and disorder cycle (p. 165)', '3. The external geopolitical order and disorder cycle (i.e., the changing world order) (p. 16 |
 | reads ledger: every row has a claim and an as-of date; falsifiable flag well-formed; pages in each source's range; page convention and grade present | PASS | 193 reads; bad [] [] [] |

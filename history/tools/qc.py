@@ -59,6 +59,8 @@ expected = [
     "history/tools/eia_hist_parse.py", "history/physical/eia_1635_1945.csv",
     "history/tools/kmw_parse.py", "history/physical/kmw_extract.csv", "history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx",
     "history/analogs/learner_test_physical_measured_era.md",
+    "history/tools/corporate_pull.py", "history/tools/corporate_build.py", "history/corporate/README.md", "history/corporate/catalog.json",
+    "history/corporate/raw/manifest.json", "history/corporate/raw/FRED-Z1/series_used.json", "history/corporate/us_corporate_annual.csv",
     "history/physical/raw/EIA-HISTORICAL-1635/U.S._Primary_Energy_Consumption_1635-1945.pdf",
     "history/tools/topology.py", "history/jst/topology.csv", "history/analogs/topology_test.md",
     "history/analogs/learner_test_physical_topology_era.md",

@@ -349,6 +349,72 @@
     "history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx",
     "history/physical/kmw_extract.csv"
    ]
+  },
+  {
+   "id": "FRED-Z1",
+   "type": "dataset",
+   "title": "Board of Governors of the Federal Reserve System, Financial Accounts of the United States (Z.1), nonfinancial corporate business series; BEA corporate profits and GDP; all via FRED",
+   "url": "https://fred.stlouisfed.org/",
+   "citation": "Board of Governors of the Federal Reserve System (US), Financial Accounts of the United States - Z.1, retrieved from FRED, Federal Reserve Bank of St. Louis; U.S. Bureau of Economic Analysis, National Income and Product Accounts, retrieved from FRED",
+   "license": "public domain (US Government work); FRED terms of use",
+   "provenance_class": "compiled (sector accounts built from reports, surveys and tax data)",
+   "local_files": [
+    "history/corporate/raw/FRED-Z1/series_used.json",
+    "history/corporate/us_corporate_annual.csv"
+   ]
+  },
+  {
+   "id": "SHILLER",
+   "type": "dataset",
+   "title": "Robert J. Shiller, Online Data: U.S. Stock Markets 1871-Present and CAPE Ratio (ie_data.xls)",
+   "url": "http://www.econ.yale.edu/~shiller/data.htm",
+   "citation": "Shiller, R. J., Irrational Exuberance (Princeton, 2000; 3rd ed. 2015), data updated at econ.yale.edu/~shiller/data.htm",
+   "license": "posted for public use with attribution",
+   "provenance_class": "compiled (Cowles Commission index to 1926, S&P after; monthly averages of daily prices)",
+   "local_files": [
+    "history/corporate/catalog.json",
+    "history/corporate/us_corporate_annual.csv"
+   ],
+   "note": "the workbook lands under history/corporate/raw/SHILLER/"
+  },
+  {
+   "id": "GOYAL-WELCH",
+   "type": "dataset",
+   "title": "Goyal, A. and I. Welch, equity premium predictor data (annual, monthly, quarterly; 1871-), updated yearly",
+   "url": "https://sites.google.com/view/agoyal145",
+   "citation": "Welch, I. and A. Goyal (2008), 'A Comprehensive Look at the Empirical Performance of Equity Premium Prediction', Review of Financial Studies 21(4); Goyal, A., I. Welch and A. Zafirov (2024), 'A Comprehensive 2022 Look at the Empirical Performance of Equity Premium Prediction', Review of Financial Studies 37(11)",
+   "license": "academic use with citation",
+   "provenance_class": "compiled (CRSP, Shiller, FRED and the authors' own construction)",
+   "local_files": [
+    "history/corporate/catalog.json"
+   ],
+   "note": "the workbook goes under history/corporate/raw/GOYAL-WELCH/ (PredictorData<year>.xlsx) when the page cannot be resolved by the workflow"
+  },
+  {
+   "id": "SEC-FSDS",
+   "type": "dataset",
+   "title": "U.S. Securities and Exchange Commission, Financial Statement Data Sets (quarterly, 2009q1-)",
+   "url": "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets",
+   "citation": "U.S. Securities and Exchange Commission, Division of Economic and Risk Analysis, Financial Statement Data Sets",
+   "license": "public domain; SEC fair-access policy",
+   "provenance_class": "counted (as filed in XBRL; self-reported, audited)",
+   "local_files": [
+    "history/corporate/raw/manifest.json"
+   ],
+   "note": "aggregates land as history/corporate/raw/SEC-FSDS/<yyyyqN>_aggregates.csv; the zips are hashed in the manifest and not kept"
+  },
+  {
+   "id": "SEC-13F",
+   "type": "dataset",
+   "title": "U.S. Securities and Exchange Commission, Form 13F Data Sets (quarterly, 2013q2-)",
+   "url": "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+   "citation": "U.S. Securities and Exchange Commission, Form 13F Data Sets",
+   "license": "public domain; SEC fair-access policy",
+   "provenance_class": "counted (self-reported holdings of 13(f) securities; long-only; 45-day lag)",
+   "local_files": [
+    "history/corporate/raw/manifest.json"
+   ],
+   "note": "summaries land as history/corporate/raw/SEC-13F/<period>_summary.json and <period>_top20.csv"
   }
  ]
 }

@@ -61,6 +61,9 @@ history/
   analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
                             backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical…),
                             topology_test
+  corporate/                the corporate layer: Z.1 and BEA via FRED, Shiller, Goyal-Welch (long-record US anchors) and
+                            the SEC financial-statement and 13F data sets aggregated in the workflow (the bridge and
+                            live cone); us_corporate_annual.csv, catalog, README
   physical/                 the physical layer: OWID extract (CO2, energy), oil prices since 1861, the CHAT technology-
                             diffusion panel, USGS mineral statistics and FRED commodity prices (raw/ pulled by the
                             workflow), the derived footprint, oil, diffusion and materials features, and the catalog
@@ -78,6 +81,8 @@ history/
                             jst/topology.csv and analogs/topology_test.md
     physical_pull.py, physical_build.py, physical_build2.py   the physical layer: the workflow's raw pulls, the
                             energy/CO2/oil features, the diffusion and materials features
+    corporate_pull.py, corporate_build.py   the corporate layer: the workflow's pulls (FRED-resolved Z.1 and BEA
+                            series, Shiller, Goyal-Welch, SEC aggregates) and the US annual series
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -292,6 +297,24 @@ transition decades — and swapping measured energy into the footprint gap moves
 (`analogs/learner_test_physical_measured_era.md`). `physical/catalog.json` lists what is pulled and what still has
 to be supplied (the Jacks commodity panel, ore grades, land).
 
+## The corporate layer (`corporate/`, `tools/corporate_pull.py`, `tools/corporate_build.py`)
+
+Corporate filings were the question — 10-Ks and 13-Fs as a data source — and the answer is a layer with two depths.
+Machine-readable filings begin in 1993 (structured financial statements 2009, structured 13F holdings 2013): one
+era, the kind the tests here keep showing cannot be learned as a climatology. So the filings go to the bridge and
+the live cone as *counted* records (self-reported, audited, a quarter stale; 13F long-only and 45 days late), where
+they add two things the macro aggregates lack — the capex, buyback, dividend and cash cycle across all filers, and
+the crowding of institutional holdings — and the long record comes from the compiled sector accounts instead: the
+Fed's Financial Accounts for nonfinancial corporate business from 1945 (debt, equity at market value, net worth,
+capital expenditures, dividends, liquid assets), BEA corporate profits from 1929, Shiller's market series from 1871,
+and the Goyal–Welch predictors (net equity issuance, book-to-market, the default spread). `corporate_pull.py` fetches
+them in the workflow — the FRED series resolved by exact title at run time, the SEC quarterly zips streamed and
+reduced to aggregates because the files are hundreds of megabytes — and `corporate_build.py` turns the long series
+into `corporate/us_corporate_annual.csv`, one row per year, every value computable at year end. These are US-only
+and so stay out of the panel learners (a learner would read the missingness as the country); they belong to the US
+query vector and to the corporate reads in the voice ledger. `corporate/README.md` and `corporate/catalog.json`
+carry the routes, licenses and provenance notes.
+
 ## The network's topology (`tools/topology.py`, `jst/topology.csv`, `analogs/topology_test.md`)
 
 Nodes come and go from subnets, and the JST regime columns record it: `peg_type` (BASE, PEG, FLOAT) and `peg_base`
@@ -410,3 +433,11 @@ stays as one view; the measured targets become the primary ones, and the horizon
   leaves Warde's England and Wales sheet out because GBR is the UK; the splice into the features changed only
   previously empty cells (777 country-years); the proxy calibration by country and era recomputed from the stored
   files; the measured-energy learner run reproduces the proxy run within ±0.01 everywhere.
+- 2026-11-06 (corporate layer): the first workflow run resolved all FRED titles (the "Debt Securities" series answered
+  for the debt key, so a second key for "Debt Securities and Loans" was added and the builder prefers it); the
+  resolved ids, titles, units and start dates are in `corporate/raw/FRED-Z1/series_used.json`; the SEC endpoints
+  returned 403 until the User-Agent carried a contact in the fair-access form; Shiller's Yale server refused the
+  runner's connection and the Goyal-Welch page exposed no Drive link, so both carry fallbacks and an attach route;
+  `us_corporate_annual.csv` spot-checked — NIPA profits before tax 10% of GDP in 1929, 3% in 1933; nonfinancial
+  corporate equities 0.42× GDP in 1950, 1.30× in 2000, 2.1× in 2024; dividends 30% of after-tax profits in 1973,
+  88% in 2000 — against the published series.
