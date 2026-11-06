@@ -192,8 +192,11 @@ from the WDI) before it could be retested on the only window with the later epis
 secret set, the next workflow run landed the EIA Total Energy series and the feed's own `eia` spot-price source, and
 the manifest's error list is empty; the run after landed the EIA 1635–1945 table (parsed and cataloged above: the CO2 proxy's pre-1900 bias is now
 measured), and the run after that the European series from Mendeley (below). The Jacks commodity panel timed out
-from the Actions runner (the author's site did not answer); it is retried on every scheduled run, and the fallback is
-the openICPSR deposit (free login), attached by hand.
+from the Actions runner on every run (the author's site does not answer cloud addresses), so the scheduled pull now
+leaves it out — a yearly dataset is not worth a daily timeout — and it runs from a desktop once:
+`python3 history/tools/physical_pull.py --only jacks`, or the openICPSR deposit (free login) attached by hand. The
+same pass put the slow annual catalogs (CHAT, USGS, KMW, the EIA 1635–1945 table) on a 30-day refresh, which takes
+about ten minutes off each scheduled run.
 
 **The European series and the proxy (fourth run, 2026-11-06).** With measured energy for eight countries from 1800,
 the CO2 proxy can be calibrated country by country at three-year spans — and it is a different proxy in different

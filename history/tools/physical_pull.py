@@ -19,7 +19,10 @@ the raw files.
   FRED-PHYSICAL       FRED long physical price series: PPIACO (all-commodity PPI, 1913-), WTISPLC (WTI spot, 1946-),
                       PCOPPUSDM (copper, 1990-) (needs FRED_API_KEY)
 
-Usage: python3 history/tools/physical_pull.py
+Usage: python3 history/tools/physical_pull.py [--only oil,chat,eia,eia_hist,jacks,kmw,usgs,fred] [--refresh-days 30]
+  The slow annual catalogs (chat, eia_hist, kmw, usgs) are re-pulled only when their last retrieval in the manifest is
+  older than --refresh-days. jacks is off unless named: the author's site has not answered the Actions runner (it
+  times out on every run), so it is run from a desktop: python3 history/tools/physical_pull.py --only jacks
 """
 import hashlib, html, json, os, re, sys, time, urllib.parse, urllib.request
 
@@ -50,18 +53,58 @@ def save(cat, name, data, url, manifest):
     print(f"  {cat}/{name}: {len(data)} bytes")
 
 
+class Skip(Exception):
+    pass
+
+
+SLOW = {"chat": "CHAT", "eia_hist": "EIA-HISTORICAL-1635", "kmw": "KMW-EUROPE-ENERGY", "usgs": "USGS-DS140"}
+OFF_BY_DEFAULT = {"jacks"}
+
+
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", default="", help="comma list of pulls to run (default: all except jacks)")
+    ap.add_argument("--refresh-days", type=int, default=30, help="re-pull the slow annual catalogs only when older than this")
+    a = ap.parse_args()
+    only = {x.strip() for x in a.only.split(",") if x.strip()}
+    last = {}
+    prev_path = os.path.join(RAW, "manifest.json")
+    if os.path.exists(prev_path):
+        try:
+            for m in json.load(open(prev_path)).get("manifest", []):
+                last[m["catalog"]] = max(last.get(m["catalog"], ""), m.get("retrieved", ""))
+        except Exception:  # noqa
+            pass
+
+    def want(name):
+        if only:
+            return name in only
+        if name in OFF_BY_DEFAULT:
+            return False
+        if name in SLOW and last.get(SLOW[name]):
+            age = (time.time() - time.mktime(time.strptime(last[SLOW[name]], "%Y-%m-%dT%H:%M:%SZ"))) / 86400.0
+            if age < a.refresh_days:
+                print(f"  {SLOW[name]}: retrieved {age:.0f} days ago, skipped (refresh after {a.refresh_days} days)")
+                return False
+        return True
+
     manifest = []
     errors = []
+    skipped = []
     # 1. oil prices since 1861 (OWID grapher CSV + metadata)
     try:
+        if not want("oil"):
+            raise Skip()
         base = "https://ourworldindata.org/grapher/crude-oil-prices"
         save("EI-OIL-PRICE-1861", "crude-oil-prices.csv", get(base + ".csv?v=1&csvType=full&useColumnShortNames=true"), base + ".csv", manifest)
         save("EI-OIL-PRICE-1861", "crude-oil-prices.metadata.json", get(base + ".metadata.json?v=1&csvType=full&useColumnShortNames=true"), base + ".metadata.json", manifest)
     except Exception as e:  # noqa
-        errors.append(f"oil: {e}")
+        errors.append(f"oil: {e}") if not isinstance(e, Skip) else None
     # 2. CHAT: every data file linked from the NBER data-appendix index
     try:
+        if not want("chat"):
+            raise Skip()
         idx_url = "https://data.nber.org/data-appendix/w15319/"
         page = get(idx_url).decode("utf-8", "replace")
         links = sorted(set(html.unescape(m) for m in re.findall(r'href="([^"]+)"', page)))
@@ -76,9 +119,11 @@ def main():
                 errors.append(f"chat {name}: {e}")
             time.sleep(0.5)
     except Exception as e:  # noqa
-        errors.append(f"chat index: {e}")
+        errors.append(f"chat index: {e}") if not isinstance(e, Skip) else None
     # 3. EIA Total Energy: annual primary energy consumption by source, 1949- (TETCBUS = total; others by msn)
     key = os.environ.get("EIA_API_KEY", "").strip()
+    if not want("eia"):
+        key = ""; skipped.append("eia")
     if key:
         try:
             msns = ["TETCBUS", "CLTCBUS", "PATCBUS", "NNTCBUS", "NUETBUS", "RETCBUS"]  # total, coal, petroleum, gas, nuclear, renewables (ELTCBUS is not a Total Energy msn: returned nothing)
@@ -96,20 +141,24 @@ def main():
             save("EIA-TOTAL-ENERGY", "us_primary_energy_annual.csv", body.encode(), "https://api.eia.gov/v2/total-energy/data/ (annual, by msn)", manifest)
         except Exception as e:  # noqa
             errors.append(f"eia: {e}")
-    else:
+    elif "eia" not in skipped:
         errors.append("eia: EIA_API_KEY not set")
     # 3b. EIA's estimated US energy consumption 1635-1945 by source (an HTML table on the Energy Explained site; no key)
     try:
+        if not want("eia_hist"):
+            raise Skip()
         url = "https://www.eia.gov/energyexplained/us-energy-facts/estimated-consumption-1635-1945.php"
         save("EIA-HISTORICAL-1635", "estimated-consumption-1635-1945.html", get(url), url, manifest)
         # the table itself is a PDF linked from that page (the page holds the coverage notes)
         url = "https://www.eia.gov/energyexplained/us-energy-facts/images/U.S._Primary_Energy_Consumption_1635-1945.pdf"
         save("EIA-HISTORICAL-1635", "U.S._Primary_Energy_Consumption_1635-1945.pdf", get(url), url, manifest)
     except Exception as e:  # noqa
-        errors.append(f"eia historical table: {e}")
+        errors.append(f"eia historical table: {e}") if not isinstance(e, Skip) else None
     # 3c. Jacks, real commodity prices 1850-present ("freely provided to all comers"; cite Jacks 2019, Cliometrica):
     #     every spreadsheet, archive or PDF linked from the author's data page
     try:
+        if not want("jacks"):
+            raise Skip()
         idx_url = "https://www.sfu.ca/~djacks/data/boombust/index.html"
         page = get(idx_url, tries=2, timeout=60).decode("utf-8", "replace")  # the site has timed out from the runner; keep the cost low
         save("JACKS-COMMODITIES", "index.html", page.encode(), idx_url, manifest)
@@ -126,10 +175,12 @@ def main():
                 errors.append(f"jacks {name}: {e}")
             time.sleep(0.5)
     except Exception as e:  # noqa
-        errors.append(f"jacks index: {e}")
+        errors.append(f"jacks index: {e}") if not isinstance(e, Skip) else None
     # 3d. European energy consumption by carrier 1800-2009 (Kander, Malanima, Warde and the national compilers), as
     #     deposited by Rubio-Varas and Munoz-Delgado on Mendeley Data under CC BY 4.0 (doi 10.17632/dx7fwfj28g.2)
     try:
+        if not want("kmw"):
+            raise Skip()
         ds, ver = "dx7fwfj28g", "2"
         api = f"https://data.mendeley.com/public-api/datasets/{ds}/files?folder_id=root&version={ver}"
         got = 0
@@ -155,9 +206,11 @@ def main():
             if not got:
                 errors.append("kmw: no files retrieved (download from the Mendeley page and add them under history/physical/raw/KMW-EUROPE-ENERGY/)")
     except Exception as e:  # noqa
-        errors.append(f"kmw: {e}")
+        errors.append(f"kmw: {e}") if not isinstance(e, Skip) else None
     # 4. USGS DS140: index page -> commodity pages -> workbook links (S3)
     try:
+        if not want("usgs"):
+            raise Skip()
         idx = "https://www.usgs.gov/centers/national-minerals-information-center/historical-statistics-mineral-and-material-commodities"
         page = get(idx).decode("utf-8", "replace")
         pages = sorted(set(re.findall(r'href="(/media/files/[^"]*historical-statistics-data-series-140[^"]*)"', page)))
@@ -178,9 +231,11 @@ def main():
             time.sleep(0.7)
         print(f"  USGS-DS140: {n} workbooks")
     except Exception as e:  # noqa
-        errors.append(f"usgs index: {e}")
+        errors.append(f"usgs index: {e}") if not isinstance(e, Skip) else None
     # 5. FRED long physical price series
     fkey = os.environ.get("FRED_API_KEY", "").strip()
+    if not want("fred"):
+        fkey = ""; skipped.append("fred")
     if fkey:
         for sid in ("PPIACO", "WTISPLC", "PCOPPUSDM", "PIORECRUSDM"):
             try:
@@ -192,10 +247,10 @@ def main():
                 time.sleep(0.3)
             except Exception as e:  # noqa
                 errors.append(f"fred {sid}: {e}")
-    else:
+    elif "fred" not in skipped:
         errors.append("fred: FRED_API_KEY not set")
     os.makedirs(RAW, exist_ok=True)
-    out = {"manifest": manifest, "errors": errors}
+    out = {"manifest": manifest, "errors": errors, "pulls_run": sorted(only) if only else "all except jacks (slow catalogs on a %d-day refresh)" % a.refresh_days}
     prev = os.path.join(RAW, "manifest.json")
     if os.path.exists(prev):
         try:
