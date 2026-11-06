@@ -11,6 +11,15 @@
    "observation_start": "1945-10-01",
    "seasonal_adjustment": "Not Seasonally Adjusted"
   },
+  "nfcb_debt_securities_and_loans": {
+   "key": "nfcb_debt_securities_and_loans",
+   "id": "BCNSDODNS",
+   "title": "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1945-10-01",
+   "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+  },
   "nfcb_equity_mv": {
    "key": "nfcb_equity_mv",
    "id": "NCBEILQ027S",
@@ -110,11 +119,11 @@
   "nfcb_dividends_profits": 74,
   "nfcb_liquid_assets_debt": 81,
   "corp_profits_gdp": 97,
-  "cape": 0,
-  "real_earnings_growth_1y": 0,
-  "real_earnings_growth_3y": 0,
-  "real_price_growth_3y": 0,
-  "earnings_yield_minus_long_rate": 0,
+  "cape": 143,
+  "real_earnings_growth_1y": 152,
+  "real_earnings_growth_3y": 150,
+  "real_price_growth_3y": 150,
+  "earnings_yield_minus_long_rate": 153,
   "gw_ntis": 0,
   "gw_bm": 0,
   "gw_dfy": 0,
@@ -148,6 +157,26 @@
   "corp_profits_gdp": [
    1929,
    2025
+  ],
+  "cape": [
+   1881,
+   2023
+  ],
+  "real_earnings_growth_1y": [
+   1872,
+   2023
+  ],
+  "real_earnings_growth_3y": [
+   1874,
+   2023
+  ],
+  "real_price_growth_3y": [
+   1874,
+   2023
+  ],
+  "earnings_yield_minus_long_rate": [
+   1871,
+   2023
   ]
  }
 }

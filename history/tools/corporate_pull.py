@@ -229,20 +229,39 @@ def aggregate_fsds(zip_bytes):
     return rows, len(forms)
 
 
+def recent_quarters(n=5):
+    """The last n completed calendar quarters as (year, q), newest first."""
+    t = time.gmtime(); y, q = t.tm_year, (t.tm_mon - 1) // 3 + 1
+    out = []
+    for _ in range(n):
+        q -= 1
+        if q == 0:
+            y, q = y - 1, 4
+        out.append((y, q))
+    return out
+
+
 def pull_fsds(manifest, errors, max_quarters=2):
     try:
-        idx = "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets"
-        page, _ = get(idx, SEC_UA)
-        links = sorted(set(re.findall(r'href="(/files/dera/data/financial-statement-data-sets/(\d{4}q[1-4])\.zip)"', page.decode("utf-8", "replace"))), reverse=True)
-        if not links:
-            raise ValueError("no zip links on the index page")
+        links = []
+        try:  # the index page lists the zips; it sits behind bot protection that sometimes answers 403
+            idx = "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets"
+            page, _ = get(idx, SEC_UA, tries=2)
+            links = sorted(set(re.findall(r'href="(/files/dera/data/financial-statement-data-sets/(\d{4}q[1-4])\.zip)"', page.decode("utf-8", "replace"))), reverse=True)
+        except Exception as e:  # noqa
+            errors.append(f"sec fsds index: {e}; trying the quarterly file names directly")
+        if not links:  # the file names are predictable: yyyyqN.zip
+            links = [(f"/files/dera/data/financial-statement-data-sets/{y}q{q}.zip", f"{y}q{q}") for y, q in recent_quarters()]
         done = set(os.listdir(os.path.join(RAW, "SEC-FSDS"))) if os.path.isdir(os.path.join(RAW, "SEC-FSDS")) else set()
         n = 0
         for rel_, q in links:
             if f"{q}_aggregates.csv" in done or n >= max_quarters:
                 continue
             url = "https://www.sec.gov" + rel_
-            data, _ = get(url, SEC_UA, timeout=600)
+            try:
+                data, _ = get(url, SEC_UA, tries=2, timeout=600)
+            except Exception as e:  # noqa
+                errors.append(f"sec fsds {q}: {e}"); continue
             rows, nf = aggregate_fsds(data)
             body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["tag", "qtrs", "ddate", "n_filers", "sum_usd", "median_usd", "p90_usd"])
             w.writeheader(); w.writerows(rows)
@@ -300,11 +319,17 @@ def aggregate_13f(zip_bytes):
 
 def pull_13f(manifest, errors, max_quarters=2):
     try:
-        idx = "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets"
-        page, _ = get(idx, SEC_UA)
-        links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
-        if not links:
-            raise ValueError("no zip links on the index page")
+        links = []
+        try:
+            idx = "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets"
+            page, _ = get(idx, SEC_UA, tries=2)
+            links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
+        except Exception as e:  # noqa
+            errors.append(f"sec 13f index: {e}; trying the quarterly file names directly")
+        if not links:  # predictable names: 01jan2025-31mar2025_form13f.zip etc.
+            spans = {1: ("01jan", "31mar"), 2: ("01apr", "30jun"), 3: ("01jul", "30sep"), 4: ("01oct", "31dec")}
+            links = [(f"/files/structureddata/data/form-13f-data-sets/{spans[q][0]}{y}-{spans[q][1]}{y}_form13f.zip",
+                      f"{spans[q][0]}{y}-{spans[q][1]}{y}_form13f") for y, q in recent_quarters()]
         def qkey(name):  # '01jul2025-30sep2025_form13f' -> sortable (2025, 9)
             m = re.search(r"-(\d{2})([a-z]{3})(\d{4})", name.lower())
             months = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
@@ -316,7 +341,10 @@ def pull_13f(manifest, errors, max_quarters=2):
             if f"{name}_summary.json" in done or n >= max_quarters:
                 continue
             url = "https://www.sec.gov" + rel_
-            data, _ = get(url, SEC_UA, timeout=900)
+            try:
+                data, _ = get(url, SEC_UA, tries=2, timeout=900)
+            except Exception as e:  # noqa
+                errors.append(f"sec 13f {name}: {e}"); continue
             summary, top = aggregate_13f(data)
             summary["source_zip_sha256"] = hashlib.sha256(data).hexdigest(); summary["source_zip_bytes"] = len(data); summary["period"] = name
             save("SEC-13F", f"{name}_summary.json", json.dumps(summary, indent=1).encode(), url, manifest,
