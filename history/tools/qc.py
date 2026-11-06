@@ -60,6 +60,8 @@ expected = [
     "history/tools/kmw_parse.py", "history/physical/kmw_extract.csv", "history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx",
     "history/analogs/learner_test_physical_measured_era.md",
     "history/tools/live_query.py", "history/bridge/join_rules.json", "history/analogs/us_2026ytd_query.json",
+    "history/tools/climatology.py", "history/climatology/README.md", "history/climatology/features_by_era.csv",
+    "history/climatology/outcomes_by_era.csv", "history/climatology/event_rates_by_era.csv",
     "history/tools/corporate_pull.py", "history/tools/corporate_build.py", "history/corporate/README.md", "history/corporate/catalog.json",
     "history/corporate/raw/manifest.json", "history/corporate/raw/FRED-Z1/series_used.json", "history/corporate/us_corporate_annual.csv",
     "history/physical/raw/EIA-HISTORICAL-1635/U.S._Primary_Energy_Consumption_1635-1945.pdf",

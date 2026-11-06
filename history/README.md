@@ -61,6 +61,8 @@ history/
   analogs/                  analog queries (validation cases, the live US queries with per-value provenance) and
                             backtest.md / backtest.json, test2, label_test, lag_test, learner_test(_physical…),
                             topology_test
+  climatology/              the unconditional distributions by topology era and regime: every base feature's percentiles,
+                            the forward outcomes, the event base rates (tools/climatology.py)
   corporate/                the corporate layer: Z.1 and BEA via FRED, Shiller, Goyal-Welch (long-record US anchors) and
                             the SEC financial-statement and 13F data sets aggregated in the workflow (the bridge and
                             live cone); us_corporate_annual.csv, catalog, README
@@ -83,6 +85,7 @@ history/
                             energy/CO2/oil features, the diffusion and materials features
     corporate_pull.py, corporate_build.py   the corporate layer: the workflow's pulls (FRED-resolved Z.1 and BEA
                             series, Shiller, Goyal-Welch, SEC aggregates) and the US annual series
+    climatology.py          the climatology tables by measured topology era and regime -> climatology/
     live_query.py           the live US query vector (all 20 features) from the JST sheet, the bridge and Shiller, with
                             the join rules measured on the 2016-2020 overlap -> bridge/join_rules.json
     qc.py                   mechanical checks -> QC.md
@@ -310,6 +313,19 @@ transition decades — and swapping measured energy into the footprint gap moves
 (`analogs/learner_test_physical_measured_era.md`). `physical/catalog.json` lists what is pulled and what still has
 to be supplied (the Jacks commodity panel, ore grades, land).
 
+## The climatology (`climatology/`, `tools/climatology.py`)
+
+The fourth part of the foundation — climatology, analog library, voice ledger, mechanisms — is now an artifact rather
+than a sentence. `climatology.py` takes the measured topology eras (1870–1913, 1914–31, 1932–39, 1940–72, 1973–98,
+1999–2020) and the regime (`peg_type`) as the index and writes, for every cell with thirty country-years or more, the
+five percentiles of each base feature, the forward outcomes the analog reports use and the event base rates. The
+arrangement is a climate: the median loans/GDP ratio is 34% in the first era and 96% in the last, the median long
+rate 3.9% and then 9.2% in 1973–98 and 3.4% after; real equity three years out runs +17% at the median in 1870–1913,
++8% with a −29% lower quartile between the wars, +28% in 1973–98; unemployment spikes 35% of the time in 1914–31 and
+1% of the time in 1940–72. The same state vector means different things in different arrangements, which is why the
+analog retrieval standardizes inside an expanding window and why the far end of a cone should relax toward the era's
+climate rather than the pooled one. `climatology/README.md` carries the headline tables.
+
 ## The corporate layer (`corporate/`, `tools/corporate_pull.py`, `tools/corporate_build.py`)
 
 Corporate filings were the question — 10-Ks and 13-Fs as a data source — and the answer is a layer with two depths.
@@ -389,9 +405,8 @@ stays as one view; the measured targets become the primary ones, and the horizon
 1. **Calibrated bands and on-time markers**: conformal bands so coverage is 50% by construction; the gap distribution
    between successive markers so an on-schedule arrival carries a higher ratio than an early or late one; a seed and
    cadence sweep on the trees to size the noise band around each AUC.
-2. **Climatology**: the unconditional distribution of each feature by era and regime, which is what the forecast
-   relaxes toward at long lead times — the topology eras measured in `analogs/topology_test.md` are the index to use,
-   with a windowed (trailing 30-year) variant as the fallback where an era is young.
+2. **Climatology**: done in revision one (`climatology/`, indexed by the measured topology eras and the regime); a
+   windowed (trailing 30-year) variant remains to be added for a young era.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;
    the same table takes any other voice.
 4. **The bridge**: done in revision one — `tools/live_query.py` measures the join rules each run and builds the full
