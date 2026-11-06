@@ -25,5 +25,10 @@ Commit the raw files, the rebuilt CSVs and `QC.md` together. The workflow's comm
 and `history/physical/raw` on its own runs and never deletes a hand-supplied file (the puller writes the stale Yale
 copy of Shiller's workbook under a different name, so the current one keeps precedence).
 
+**The revision-one tag.** Tag and release writes are refused through the sandbox's proxy (branches push; tags do
+not), so the tag is yours to place: on GitHub, create a release named `history-v1` from commit `bb2e0fc` ("revision
+one: the cadence noise band…", 2026-11-06), or from a clone `git tag -a history-v1 bb2e0fc -m "history layer, revision
+one" && git push origin history-v1`. Later work is compared against that point.
+
 Open question for the repository owner: the repository's visibility against the "internal use only" terms on some
 of the live feed's licensed sources — a judgment the tooling should not make.

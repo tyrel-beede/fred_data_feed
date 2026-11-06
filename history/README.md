@@ -17,9 +17,10 @@ Every dated record carries, or can carry, the three bitemporal fields the dials 
 happened), the **observed time** (when the record was made — the release date for JST, the publication date for a book),
 and the **node** (who recorded it). A revision is a new observed time for the same event time, never an overwrite.
 
-## Revision one (tag `history-v1`, 2026-11-06)
+## Revision one (`history-v1`, 2026-11-06)
 
-What stands at the tag, so that later work has a fixed point to be compared against:
+What stands at revision one — commit `bb2e0fc` plus this note; the `history-v1` tag is placed by the repository owner
+(see `HANDOFF.md`) — so that later work has a fixed point to be compared against:
 
 - **The record**: JST R6 (18 countries, 1870–2020) with two cited overrides and a propagated override flag; the Dalio
   corpus taken apart into templates, 48 cases, gauges and 193 graded reads; the physical layer (CO2 and energy,
