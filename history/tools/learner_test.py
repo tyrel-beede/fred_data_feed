@@ -55,16 +55,19 @@ def main():
     ap.add_argument("--diffusion", action="store_true", help="add the technology-diffusion features (history/physical/diffusion_features.csv)")
     ap.add_argument("--materials", action="store_true", help="add the materials features, global at t (history/physical/materials_features.csv)")
     ap.add_argument("--topology", action="store_true", help="add the network-topology features (history/jst/topology.csv)")
+    ap.add_argument("--measured-energy", action="store_true",
+                    help="with --physical: use the footprint gap from measured energy where it exists (fgap_merged_3y, fgap_anom_merged_3y) instead of the CO2 proxy")
     ap.add_argument("--no-horizon", action="store_true"); ap.add_argument("--tag", default="")
     ap.add_argument("--era-split", type=int, default=0, help="also report AUC for query years before and from this year")
     a = ap.parse_args()
     rows = list(csv.DictReader(open(os.path.join(ROOT, "history", "jst", "features2.csv"))))
     if a.physical:
         ph = {(r["iso"], int(r["year"])): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "physical", "physical_features.csv")))}
+        swap = {"energy_footprint_gap_3y": "fgap_merged_3y", "gap_anom_3y": "fgap_anom_merged_3y"} if a.measured_energy else {}
         for r in rows:
             p = ph.get((r["iso"], int(r["year"])), {})
             for c in PHYSICAL:
-                r[c] = p.get(c, "")
+                r[c] = p.get(swap.get(c, c), "")
     if a.diffusion:
         df = {(r["iso"], int(r["year"])): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "physical", "diffusion_features.csv")))}
         for r in rows:
@@ -204,7 +207,7 @@ def main():
             print("horizon logit", target, {h: round(v, 3) for h, v in curve.items() if v})
 
     os.makedirs(os.path.join(ROOT, "history", "analogs"), exist_ok=True)
-    suffix = ("_physical" if a.physical else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + ("_topology" if a.topology else "") + a.tag
+    suffix = ("_physical" if a.physical else "") + ("_measured" if a.measured_energy else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + ("_topology" if a.topology else "") + a.tag
     json.dump(rep, open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.json"), "w"), indent=1)
     L = ["# A learner that can weight — walk-forward", "",
          "Models are refit every 4 years; a model fit at t forecasts years t..t+3 and is trained only on rows whose outcome window closed before t (training from 1880, queries "
@@ -235,6 +238,10 @@ def main():
           "numbers a forecaster at the time could have had.", ""]
     for n, f in added:
         L.insert(1, f"\n**{n.capitalize()} features added ({len(f)}): {', '.join(f)}.** Compare with learner_test.md (same harness without them).\n")
+    if a.measured_energy:
+        L.insert(1, "\n**Measured energy:** energy_footprint_gap_3y and gap_anom_3y are taken from measured energy consumption where it "
+                    "exists (fgap_src = energy: OWID 1968-, EIA for the US 1952-, KMW for eight European countries 1873-) and from the CO2 "
+                    "proxy elsewhere. Compare with learner_test_physical_era.md (the proxy everywhere).\n")
     open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.md"), "w").write("\n".join(L))
     print("\n".join(L))
 

@@ -18,6 +18,12 @@ Outputs:
                                         energy_src says which)
   history/physical/eia_extract.csv    the EIA Total Energy annual series as pulled by the workflow (US primary energy
                                       consumption by source, quadrillion Btu, 1949-), with fossil share and growth
+    (and for eight European countries from 1803, via the KMW series in kmw_extract.csv — fuels only, no food or feed —
+     where OWID has no value; energy_src = kmw)
+    energy_gap_anom_3y                  the measured energy gap against its own trailing decade (as gap_anom_3y)
+    fgap_merged_3y, fgap_anom_merged_3y, fgap_src   the footprint gap and its anomaly from measured energy where it
+                                        exists (fgap_src = energy) and from the CO2 proxy elsewhere (fgap_src = co2):
+                                        the ledger's best-available value, for the --measured-energy learner run
     fossil_prod_growth_3y               coal+oil+gas production growth (1900 on, where produced)
     fuel_self_sufficiency               fossil production / fossil consumption (1965 on)
     coal_share_co2, oil_share_co2       fuel mix of emissions (the coal->oil->gas transitions)
@@ -135,12 +141,24 @@ def main():
     def en_eia(ii, yy):
         return eia.get(yy, {}).get("TETCBUS", np.nan) if ii == "USA" else np.nan
 
+    # KMW European energy (Mendeley deposit, parsed by kmw_parse.py): fuels total in PJ, 1800-2009, eight countries
+    kmw = {}
+    kmw_path = os.path.join(OUT, "kmw_extract.csv")
+    if os.path.exists(kmw_path):
+        for r in csv.DictReader(open(kmw_path)):
+            if r.get("fuel_total"):
+                kmw[(r["iso"], int(r["year"]))] = float(r["fuel_total"])
+    def en_kmw(ii, yy):
+        return kmw.get((ii, yy), np.nan)
+
     FH = ["iso", "year", "co2_growth_1y", "co2_growth_3y", "rgdp_growth_3y", "energy_footprint_gap_3y", "gap_anom_3y",
-          "co2_per_rgdp", "d3_co2_intensity", "energy_growth_3y", "energy_gap_3y", "energy_src", "fossil_prod_growth_3y",
+          "co2_per_rgdp", "d3_co2_intensity", "energy_growth_3y", "energy_gap_3y", "energy_src", "energy_gap_anom_3y",
+          "fgap_merged_3y", "fgap_anom_merged_3y", "fgap_src", "fossil_prod_growth_3y",
           "fuel_self_sufficiency", "coal_share_co2", "oil_share_co2",
           "oil_real_price", "oil_real_change_1y", "oil_real_change_3y", "oil_shock_1y", "oil_change_x_exposure"]
     out = []
     gap_hist = {}  # (iso, year) -> gap, for the trailing-10-year anomaly (efficiency trends make the raw gap drift)
+    egap_hist = {}
     for i in sorted(ISOS):
         for y in range(1870, 2021):
             co2 = lambda ii, yy: g(ii, yy, "co2ds_co2")
@@ -154,6 +172,8 @@ def main():
             eg3 = ann_growth(en, i, y, 3); src = "owid" if not np.isnan(eg3) else ""
             if np.isnan(eg3) and not np.isnan(ann_growth(en_eia, i, y, 3)):  # the US before 1965: EIA at both endpoints
                 eg3 = ann_growth(en_eia, i, y, 3); src = "eia"
+            if np.isnan(eg3) and not np.isnan(ann_growth(en_kmw, i, y, 3)):  # eight European countries before 1965: KMW at both endpoints
+                eg3 = ann_growth(en_kmw, i, y, 3); src = "kmw"
             fp = g(i, y, "en_fossil_fuel_consumption")
             pr = prod(i, y)
             c, cc, oc = co2(i, y), g(i, y, "co2ds_coal_co2"), g(i, y, "co2ds_oil_co2")
@@ -162,10 +182,20 @@ def main():
             past = [gap_hist.get((i, yy), np.nan) for yy in range(y - 10, y)]
             past = [v for v in past if not np.isnan(v)]
             anom = np.nan if np.isnan(gap) or len(past) < 6 else gap - float(np.mean(past))
+            egap = np.nan if np.isnan(eg3) or np.isnan(rg3) else eg3 - rg3
+            egap_hist[(i, y)] = egap
+            epast = [egap_hist.get((i, yy), np.nan) for yy in range(y - 10, y)]
+            epast = [v for v in epast if not np.isnan(v)]
+            eanom = np.nan if np.isnan(egap) or len(epast) < 6 else egap - float(np.mean(epast))
+            # merged: measured energy where it exists, the CO2 proxy elsewhere; the anomaly is taken from the same source
+            if not np.isnan(egap):
+                mg, ma, msrc = egap, eanom, "energy"
+            else:
+                mg, ma, msrc = gap, anom, ("co2" if not np.isnan(gap) else "")
             row = [i, y, cg1, cg3, rg3, gap, anom,
                    inten(i, y),
                    np.nan if np.isnan(inten(i, y)) or np.isnan(inten(i, y - 3)) or inten(i, y - 3) == 0 else inten(i, y) / inten(i, y - 3) - 1,
-                   eg3, np.nan if np.isnan(eg3) or np.isnan(rg3) else eg3 - rg3, src,
+                   eg3, egap, src, eanom, mg, ma, msrc,
                    ann_growth(prod, i, y, 3),
                    np.nan if np.isnan(fp) or fp <= 0 or np.isnan(pr) else pr / fp,
                    np.nan if np.isnan(c) or c <= 0 or np.isnan(cc) else cc / c,
@@ -176,7 +206,7 @@ def main():
             out.append(["" if (isinstance(v, float) and np.isnan(v)) else (f"{v:.6g}" if isinstance(v, float) else v) for v in row])
     with open(os.path.join(OUT, "physical_features.csv"), "w", newline="") as f:
         w = csv.writer(f); w.writerow(FH); w.writerows(out)
-    print(f"extract {len(rows)} rows; features {len(out)} rows x {len(FH)}; oil price years {len(oil_real)}; EIA years {len(eia)}")
+    print(f"extract {len(rows)} rows; features {len(out)} rows x {len(FH)}; oil price years {len(oil_real)}; EIA years {len(eia)}; KMW rows {len(kmw)}")
 
 
 if __name__ == "__main__":

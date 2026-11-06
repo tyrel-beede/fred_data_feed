@@ -53,9 +53,18 @@ Physics enters the system in two roles, and only one of them shows up as backtes
   from 91% of US energy in 1850 to 22% in 1900 (4% by 1945); after 1905 the gap is 0.1 pp. So before about 1900 the raw
   footprint gap (CO2 growth − GDP growth) carries the wood-to-coal substitution as a spurious boom for every country,
   with its own timing, and only the trailing-decade anomaly `gap_anom_3y` is the feature to trust there.
+- `kmw_extract.csv` — the European energy-consumption series of Kander, Malanima, Warde and the national compilers
+  (Fouquet's UK series 1500–2010; Sweden, Netherlands, Germany, France 1800–2009; Spain 1850–, Portugal 1856–, Italy
+  1861–), annual PJ by carrier — food, feed for draught animals, fuelwood, water and wind, coal, oil, gas, hydro and
+  other primary electricity, nuclear — from the Mendeley deposit by Rubio-Varas and Muñoz-Delgado (CC BY 4.0), parsed
+  by `../tools/kmw_parse.py` (the UK sheet converted at 41.868 PJ per mtoe; every row's carrier sum checked against the
+  compilers' total, four Spanish rows more than 1% off and flagged). `fuel_total` leaves out food and feed, so it is
+  the analogue of EIA's total. Provenance class: stated/estimated. `physical_build.py` carries the energy growth and
+  gap for these eight countries back to 1873 from it (777 country-years, `energy_src` = kmw, both endpoints from the
+  same source), and builds `fgap_merged_3y` / `fgap_anom_merged_3y` — the footprint gap from measured energy where it
+  exists (`fgap_src` = energy: 1,723 rows) and from the CO2 proxy elsewhere (887 rows).
 - `catalog.json` — the catalog of long-running physical series: what is pulled, what the workflow can retrieve by URL,
-  and what has to be supplied as a file (the pre-1965 European energy consumption series, the Jacks commodity panel,
-  ore-grade compilations).
+  and what has to be supplied as a file (the Jacks commodity panel, ore-grade compilations).
 
 ## How it is tested, and what the first slice did
 
@@ -182,7 +191,34 @@ the panel extended past 2003 (electricity from OWID's energy data, telephones an
 from the WDI) before it could be retested on the only window with the later episodes. With the `EIA_API_KEY`
 secret set, the next workflow run landed the EIA Total Energy series and the feed's own `eia` spot-price source, and
 the manifest's error list is empty; the run after landed the EIA 1635–1945 table (parsed and cataloged above: the CO2 proxy's pre-1900 bias is now
-measured). Still to be supplied as files: the pre-1965 European energy series and the Jacks commodity panel.
+measured), and the run after that the European series from Mendeley (below). The Jacks commodity panel timed out
+from the Actions runner (the author's site did not answer); it is retried on every scheduled run, and the fallback is
+the openICPSR deposit (free login), attached by hand.
+
+**The European series and the proxy (fourth run, 2026-11-06).** With measured energy for eight countries from 1800,
+the CO2 proxy can be calibrated country by country at three-year spans — and it is a different proxy in different
+places:
+
+| 3-year growth, CO2 (OWID) against the KMW fuels total | 1873–99 | 1900–39 | 1946–64 |
+|---|---|---|---|
+| GBR, DEU, FRA (coal economies): correlation / bias, pp a year | 0.53–0.98 / −0.2 to +0.8 | 0.90–0.99 / +0.1 to +0.2 | 0.73–0.95 / −0.4 to +1.9 |
+| SWE, NLD, ITA, ESP, PRT (wood, hydro, late coal): correlation / bias | 0.11–0.87 / +1.4 to +17 | 0.67–0.93 / +0.5 to +1.6 | 0.23–0.98 / +0.1 to +14 |
+
+Against fossil energy alone the proxy is near-exact almost everywhere (correlation 0.9–1.0, bias within ±0.3 pp except
+post-war Italy and pre-1900 Portugal, where the fossil series starts from almost nothing). The bias against total
+fuels is the share of energy the proxy cannot see: wood and hydro. Sweden's CO2 growth overstates its energy growth
+by 4.5 pp a year before 1900 and 6.8 pp in 1946–64 (hydro); Italy's by 4.9 pp before 1900 and 13.6 pp in 1946–64 (the
+miracle years ran on hydro and imported oil from a low base); Portugal's pre-1900 figure (17 pp, correlation 0.16) says
+the CO2 series there is too small to carry a growth rate at all. For the coal economies the proxy was always fine.
+
+Swapped into the learners like-for-like (`../analogs/learner_test_physical_measured_era.md`: the footprint gap and
+its anomaly from measured energy on 1,723 rows, the proxy on the rest), **nothing moves**: every target, every learner
+and both eras are within ±0.01 of the proxy-everywhere run (drawdown 0.76, contraction 0.69, GDP fall 0.68,
+unemployment 0.67, label 0.63 at their best learners). The gap pair is not where the physical signal lives — the oil
+price, fuel self-sufficiency and the fuel shares are the physical weights in both fits — and the anomaly form had
+already taken out the proxy's slow bias. So the measured series change the ledger's numbers, not the forecast: the
+right value now sits in the record for 1,723 country-years, with its source beside it, and the proxy's error is a
+measured quantity rather than an assumption.
 
 ## Rebuild
 

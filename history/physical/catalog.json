@@ -101,15 +101,18 @@
   },
   {
    "id": "KMW-EUROPE-ENERGY",
-   "status": "attach",
+   "status": "pulled",
    "title": "Energy consumption of European economies 1800-2008 (Kander, Malanima, Warde, Power to the People)",
-   "coverage": "about eight European countries incl. GBR, DEU, FRA, ITA, ESP, PRT, NLD, SWE",
-   "retrieval": "dataset distributed with the book / the Energy History project; supply the file",
-   "license": "research use; check",
+   "coverage": "SWE, NLD, DEU, FRA 1800-2009; ESP 1850-; PRT 1856-; ITA 1861-; GBR (Fouquet, UK) 1500-2010; annual PJ by carrier: food, feed, fuelwood, water/wind, coal, oil, gas, hydro and other primary electricity, nuclear",
+   "retrieval": "workflow: Mendeley Data file API for doi 10.17632/dx7fwfj28g.2 (Rubio-Varas and Munoz-Delgado's deposit of the national series, CC BY 4.0) -> history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx; tools/kmw_parse.py -> kmw_extract.csv",
+   "license": "CC BY 4.0 (the Mendeley deposit); cite the original compiler first, then Kander, Malanima and Warde (2013), as the Energy History Project asks",
    "feeds": [
-    "energy_growth_3y, energy_gap_3y before 1965"
+    "energy_growth_3y, energy_gap_3y for eight countries 1873-1967 (energy_src = kmw, fuels only: no food or feed), 777 country-years",
+    "fgap_merged_3y / fgap_anom_merged_3y: the footprint gap from measured energy where it exists, the CO2 proxy elsewhere (fgap_src)",
+    "the proxy calibration by country and era (physical/README.md)"
    ],
-   "note": "replaces the CO2 proxy with measured consumption for the pre-1965 decades"
+   "note": "replaces the CO2 proxy with measured consumption for the pre-1965 decades",
+   "caveat": "the compilers' totals include muscle energy (food, feed); fuel_total excludes them; four Spanish rows have a total more than 1% off the carrier sum (kept, flagged); Germany's territory changes with the record"
   },
   {
    "id": "CHAT",
@@ -135,15 +138,16 @@
   },
   {
    "id": "JACKS-COMMODITIES",
-   "status": "attach",
+   "status": "planned",
    "title": "Real commodity prices 1850-2015, 40 commodities (Jacks 2013, 'From boom to bust')",
    "coverage": "world, annual",
-   "retrieval": "author's data appendix; supply the file",
+   "retrieval": "workflow: the author's data page (sfu.ca/~djacks/data/boombust) \u2014 timed out from the Actions runner on 2026-11-06; retried on every scheduled run; fallback: the openICPSR deposit doi 10.3886/E198401V1 (free login) attached by hand under history/physical/raw/JACKS-COMMODITIES/",
    "license": "research use",
    "feeds": [
     "commodity_supercycle_phase",
     "terms_of_trade proxies by exporter/importer"
-   ]
+   ],
+   "note": "42 commodities 1850-2023 with three real price indices from 1900 (2023 update); 'freely provided to all comers', cite Jacks (2019) Cliometrica 13(2)"
   },
   {
    "id": "USGS-MINERALS",

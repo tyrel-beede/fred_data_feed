@@ -57,6 +57,8 @@ expected = [
     "history/analogs/learner_test_physical_materials_era.md", "history/analogs/learner_test_physical_diffusion_materials_era.md",
     "history/physical/eia_extract.csv", "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
     "history/tools/eia_hist_parse.py", "history/physical/eia_1635_1945.csv",
+    "history/tools/kmw_parse.py", "history/physical/kmw_extract.csv", "history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx",
+    "history/analogs/learner_test_physical_measured_era.md",
     "history/physical/raw/EIA-HISTORICAL-1635/U.S._Primary_Energy_Consumption_1635-1945.pdf",
     "history/tools/topology.py", "history/jst/topology.csv", "history/analogs/topology_test.md",
     "history/analogs/learner_test_physical_topology_era.md",
@@ -262,7 +264,8 @@ pool = set()
 for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_rerun.json", "learner_test_physical.json",
           "learner_test_physical_oil.json", "lag_test.json", "label_test.json", "learner_test_physical_era.json",
           "learner_test_physical_diffusion_era.json", "learner_test_physical_materials_era.json",
-          "learner_test_physical_diffusion_materials_era.json", "learner_test_physical_topology_era.json", "topology_test.json"):
+          "learner_test_physical_diffusion_materials_era.json", "learner_test_physical_topology_era.json", "topology_test.json",
+          "learner_test_physical_measured_era.json"):
     pool |= _aucs(f, None)
 for o in ov:  # override values quoted in the README are not AUCs
     try:

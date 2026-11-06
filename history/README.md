@@ -285,8 +285,12 @@ shown) while costing the logit on the drawdown (0.60 → 0.52) and the GDP fall 
 era from eight global columns — the trees barely move, and are the right learner for global-at-t features; the two
 families together land at or below the oil run everywhere. The era split also shows that from 2004 the drawdown
 and contraction AUCs are 0.8–0.9 for every learner because 2008 is one synchronized event, so skill on the full
-panel is mostly pre-2004 skill. `physical/catalog.json` lists what is pulled and what still has to be supplied (US
-energy 1635–, European measured energy 1800–, the Jacks commodity panel, ore grades, land).
+panel is mostly pre-2004 skill. The later pulls landed the EIA series (US energy 1949– and the 1635–1945 estimates)
+and the European energy series 1800–2009 (`physical/kmw_extract.csv`): the CO2 proxy is now calibrated against
+measured energy — near-exact for the coal economies, 4–14 pp a year too fast for the wood-and-hydro economies in their
+transition decades — and swapping measured energy into the footprint gap moves no AUC by more than 0.01
+(`analogs/learner_test_physical_measured_era.md`). `physical/catalog.json` lists what is pulled and what still has
+to be supplied (the Jacks commodity panel, ore grades, land).
 
 ## The network's topology (`tools/topology.py`, `jst/topology.csv`, `analogs/topology_test.md`)
 
@@ -400,3 +404,9 @@ stays as one view; the measured targets become the primary ones, and the horizon
   independent extraction of the same PDF value for value; the CO2-proxy calibration (correlation 0.993 with fossil
   energy growth, +4.5 pp a year against total energy growth before 1900, +0.1 pp after 1905) computed at five-year
   spans from the two files as stored.
+- 2026-11-06 (KMW European energy): the Mendeley file API delivered the deposit's workbook through the workflow;
+  `kmw_parse.py` finds each sheet's carrier columns by header text (the UK sheet in mtoe, converted), checks every row's
+  carrier sum against the compilers' total (1,813 rows, four Spanish rows off by more than 1%, kept and flagged), and
+  leaves Warde's England and Wales sheet out because GBR is the UK; the splice into the features changed only
+  previously empty cells (777 country-years); the proxy calibration by country and era recomputed from the stored
+  files; the measured-energy learner run reproduces the proxy run within ±0.01 everywhere.

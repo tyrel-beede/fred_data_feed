@@ -335,6 +335,20 @@
     "history/physical/raw/EIA-HISTORICAL-1635/estimated-consumption-1635-1945.html",
     "history/physical/eia_1635_1945.csv"
    ]
+  },
+  {
+   "id": "KMW-EUROPE-ENERGY",
+   "type": "dataset",
+   "title": "Energy use by primary source, eight European countries, 1800-2009 (Kander, Malanima and Warde's national series as deposited by Rubio-Varas and Munoz-Delgado, Mendeley Data v2, 2019)",
+   "url": "https://data.mendeley.com/datasets/dx7fwfj28g/2",
+   "doi": "10.17632/dx7fwfj28g.2",
+   "citation": "Rubio-Varas, M. and B. Munoz-Delgado (2019), Data for: Long-term diversification paths and energy transitions in Europe, Mendeley Data v2; underlying: Kander, A., P. Malanima and P. Warde (2013), Power to the People: Energy in Europe over the Last Five Centuries, Princeton; national series by Kander (Sweden), Malanima (Italy), Warde (England and Wales), Henriques (Portugal), Rubio (Spain), Gales et al. (Netherlands, France, Germany), Fouquet (UK)",
+   "license": "CC BY 4.0",
+   "provenance_class": "stated/estimated (historical reconstructions in PJ; coal as apparent consumption, fuelwood and muscle energy estimated)",
+   "local_files": [
+    "history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx",
+    "history/physical/kmw_extract.csv"
+   ]
   }
  ]
 }
