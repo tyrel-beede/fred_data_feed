@@ -1,0 +1,153 @@
+{
+ "built_by": "history/tools/corporate_build.py",
+ "provenance_class": "derived",
+ "series_used": {
+  "nfcb_debt": {
+   "key": "nfcb_debt",
+   "id": "NCBDBIQ027S",
+   "title": "Nonfinancial Corporate Business; Debt Securities; Liability, Level",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1945-10-01",
+   "seasonal_adjustment": "Not Seasonally Adjusted"
+  },
+  "nfcb_equity_mv": {
+   "key": "nfcb_equity_mv",
+   "id": "NCBEILQ027S",
+   "title": "Nonfinancial Corporate Business; Corporate Equities; Liability, Level",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1945-10-01",
+   "seasonal_adjustment": "Not Seasonally Adjusted"
+  },
+  "nfcb_net_worth": {
+   "key": "nfcb_net_worth",
+   "id": "TNWMVBSNNCB",
+   "title": "Nonfinancial Corporate Business; Net Worth, Level",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1945-10-01",
+   "seasonal_adjustment": "Not Seasonally Adjusted"
+  },
+  "nfcb_total_liabilities": {
+   "key": "nfcb_total_liabilities",
+   "id": "TLBSNNCB",
+   "title": "Nonfinancial Corporate Business; Total Liabilities, Level",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1945-10-01",
+   "seasonal_adjustment": "Not Seasonally Adjusted"
+  },
+  "nfcb_capex": {
+   "key": "nfcb_capex",
+   "id": "BOGZ1FA105050005Q",
+   "title": "Nonfinancial Corporate Business; Total Capital Expenditures, Transactions",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1946-10-01",
+   "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+  },
+  "nfcb_net_dividends": {
+   "key": "nfcb_net_dividends",
+   "id": "BOGZ1FA106121075Q",
+   "title": "Nonfinancial Corporate Business; Net Dividends Paid, Transactions",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1946-10-01",
+   "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+  },
+  "nfcb_liquid_assets": {
+   "key": "nfcb_liquid_assets",
+   "id": "BOGZ1FL104001005Q",
+   "title": "Nonfinancial Corporate Business; Liquid Assets (Broad Measure), Level",
+   "units": "Millions of U.S. Dollars",
+   "frequency": "Quarterly, End of Period",
+   "observation_start": "1945-10-01",
+   "seasonal_adjustment": "Not Seasonally Adjusted"
+  },
+  "corp_profits_after_tax_q": {
+   "key": "corp_profits_after_tax_q",
+   "id": "CP",
+   "title": "Corporate Profits After Tax (without IVA and CCAdj)",
+   "units": "Billions of Dollars",
+   "frequency": "Quarterly",
+   "observation_start": "1947-01-01",
+   "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+  },
+  "corp_profits_iva_ccadj_annual": {
+   "key": "corp_profits_iva_ccadj_annual",
+   "id": "A053RC1A027NBEA",
+   "title": "Corporate profits: Profits before taxes, NIPAs",
+   "units": "Billions of Dollars",
+   "frequency": "Annual",
+   "observation_start": "1929-01-01",
+   "seasonal_adjustment": "Not Seasonally Adjusted"
+  },
+  "nfcb_profits_after_tax_q": {
+   "key": "nfcb_profits_after_tax_q",
+   "id": "NFCPATAX",
+   "title": "Nonfinancial Corporate Business: Profits After Tax (without IVA and CCAdj)",
+   "units": "Billions of Dollars",
+   "frequency": "Quarterly",
+   "observation_start": "1947-01-01",
+   "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+  },
+  "gdp_nominal_q": {
+   "key": "gdp_nominal_q",
+   "id": "GDP",
+   "title": "Gross Domestic Product",
+   "units": "Billions of Dollars",
+   "frequency": "Quarterly",
+   "observation_start": "1947-01-01",
+   "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+  }
+ },
+ "coverage": {
+  "nfcb_debt_gdp": 81,
+  "nfcb_equity_mv_gdp": 81,
+  "nfcb_net_worth_growth_3y": 78,
+  "nfcb_capex_gdp": 74,
+  "nfcb_dividends_profits": 74,
+  "nfcb_liquid_assets_debt": 81,
+  "corp_profits_gdp": 97,
+  "cape": 0,
+  "real_earnings_growth_1y": 0,
+  "real_earnings_growth_3y": 0,
+  "real_price_growth_3y": 0,
+  "earnings_yield_minus_long_rate": 0,
+  "gw_ntis": 0,
+  "gw_bm": 0,
+  "gw_dfy": 0,
+  "gw_svar": 0
+ },
+ "spans": {
+  "nfcb_debt_gdp": [
+   1945,
+   2025
+  ],
+  "nfcb_equity_mv_gdp": [
+   1945,
+   2025
+  ],
+  "nfcb_net_worth_growth_3y": [
+   1948,
+   2025
+  ],
+  "nfcb_capex_gdp": [
+   1952,
+   2025
+  ],
+  "nfcb_dividends_profits": [
+   1952,
+   2025
+  ],
+  "nfcb_liquid_assets_debt": [
+   1945,
+   2025
+  ],
+  "corp_profits_gdp": [
+   1929,
+   2025
+  ]
+ }
+}

@@ -25,7 +25,8 @@ import csv, hashlib, heapq, html, io, json, os, re, sys, tempfile, time, urllib.
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RAW = os.path.join(ROOT, "history", "corporate", "raw")
 UA = {"User-Agent": "fred_data_feed history layer (github.com/tyrel-beede/fred_data_feed)", "Accept-Encoding": "gzip, deflate"}
-SEC_UA = {"User-Agent": "fred_data_feed research tool github.com/tyrel-beede/fred_data_feed", "Accept-Encoding": "gzip, deflate"}
+# SEC's fair-access policy wants a client name and a contact in the User-Agent; the contact is the workflow's bot address
+SEC_UA = {"User-Agent": "fred_data_feed/1.0 (macro-dials-bot@users.noreply.github.com)", "Accept": "*/*", "Accept-Encoding": "gzip, deflate"}
 
 
 def get(url, headers=None, tries=4, timeout=300):
@@ -58,7 +59,8 @@ def save(cat, name, data, url, manifest, note=None):
 
 # ------------------------------------------------------------------------------------------------------- FRED Z.1 / BEA
 FRED_SERIES = [  # key, candidate ids (tried first), exact title to search for if none of them answers
-    ("nfcb_debt", ["NCBDBIQ027S"], "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level"),
+    ("nfcb_debt", ["NCBDBIQ027S"], "Nonfinancial Corporate Business; Debt Securities; Liability, Level"),
+    ("nfcb_debt_securities_and_loans", ["BCNSDODNS"], "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level"),
     ("nfcb_equity_mv", ["NCBEILQ027S"], "Nonfinancial Corporate Business; Corporate Equities; Liability, Level"),
     ("nfcb_net_worth", ["TNWMVBSNNCB"], "Nonfinancial Corporate Business; Net Worth, Level"),
     ("nfcb_total_liabilities", ["TLBSNNCB"], "Nonfinancial Corporate Business; Total Liabilities, Level"),
@@ -129,24 +131,40 @@ def pull_fred(manifest, errors):
 
 # ------------------------------------------------------------------------------------------------------- Shiller, Goyal-Welch
 def pull_shiller(manifest, errors):
+    """Shiller's ie_data.xls: the Yale address (https, then http), then shillerdata.com's links (any href that names an
+    xls, with or without a query string), then datahub.io's CSV mirror of the same workbook, flagged as a mirror."""
+    for url in ("https://www.econ.yale.edu/~shiller/data/ie_data.xls", "http://www.econ.yale.edu/~shiller/data/ie_data.xls"):
+        try:
+            data, _ = get(url, tries=2, timeout=120)
+            if data[:4] == b"\xd0\xcf\x11\xe0" or data[:2] == b"PK":
+                save("SHILLER", "ie_data.xls" if data[:2] != b"PK" else "ie_data.xlsx", data, url, manifest); return
+        except Exception as e:  # noqa
+            errors.append(f"shiller ({url}): {e}")
     try:
         url = "https://shillerdata.com/"
         page, _ = get(url)
-        links = sorted(set(html.unescape(l) for l in re.findall(r'href="([^"]+\.xls[x]?)"', page.decode("utf-8", "replace"), re.I)))
+        links = sorted(set(html.unescape(l) for l in re.findall(r'href="([^"]*xls[^"]*)"', page.decode("utf-8", "replace"), re.I)))
         if not links:
             raise ValueError("no xls link on shillerdata.com")
         for l in links[:3]:
             furl = urllib.parse.urljoin(url, l)
             data, _ = get(furl)
-            save("SHILLER", os.path.basename(urllib.parse.urlparse(furl).path).replace("%20", "_"), data, furl, manifest)
+            if data[:4] == b"\xd0\xcf\x11\xe0" or data[:2] == b"PK":
+                name = re.sub(r"[^A-Za-z0-9_.-]", "_", os.path.basename(urllib.parse.urlparse(furl).path)) or "ie_data.xls"
+                save("SHILLER", name, data, furl, manifest); return
+        raise ValueError("links found but none served a workbook")
     except Exception as e:  # noqa
         errors.append(f"shiller (shillerdata.com): {e}")
-        try:  # the long-standing Yale address
-            url = "https://www.econ.yale.edu/~shiller/data/ie_data.xls"
-            data, _ = get(url)
-            save("SHILLER", "ie_data.xls", data, url, manifest)
-        except Exception as e2:  # noqa
-            errors.append(f"shiller (yale): {e2}")
+    try:  # last resort: the datahub.io core dataset, a scripted mirror of ie_data.xls (monthly, 1871-)
+        url = "https://datahub.io/core/s-and-p-500/_r/-/data/data.csv"
+        data, _ = get(url)
+        if b"Date" in data[:200]:
+            save("SHILLER", "datahub_s-and-p-500_monthly.csv", data, url, manifest,
+                 note="MIRROR: datahub.io core/s-and-p-500, scripted from Shiller's ie_data.xls; replace with the workbook when the Yale server answers")
+        else:
+            raise ValueError("unexpected content")
+    except Exception as e:  # noqa
+        errors.append(f"shiller (datahub mirror): {e}")
 
 
 def pull_goyal_welch(manifest, errors):
