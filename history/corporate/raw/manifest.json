@@ -124,6 +124,24 @@
    "sha256": "0df9392b7dacf91f756e92c8db508ad903c4588b43f3253680eec3dd8b40db68",
    "retrieved": "2026-11-06T21:13:00Z",
    "note": "the Yale copy: last updated September 2023; the current workbook is on shillerdata.com (a hand-supplied ie_data.xls beside it takes precedence)"
+  },
+  {
+   "catalog": "SHILLER",
+   "file": "history/corporate/raw/SHILLER/ie_data.xls",
+   "url": "https://shillerdata.com/ (downloaded by hand)",
+   "bytes": 1675264,
+   "sha256": "98a54927942e842ec07ffe73000998e793953708c345b6b27bb363e9ada8366a",
+   "retrieved": "2026-11-06T21:31:19Z",
+   "note": "the current workbook (data through October 2026), supplied by the repository owner from shillerdata.com on 2026-11-06; takes precedence over ie_data_yale.xls in corporate_build.py"
+  },
+  {
+   "catalog": "SHILLER",
+   "file": "history/corporate/raw/SHILLER/Fig3-1_1.xls",
+   "url": "https://shillerdata.com/ (downloaded by hand)",
+   "bytes": 329728,
+   "sha256": "06d05120edadbe1164425f92c1b9cee42b6ec28477a669b612ef8d0fb1c5bc72",
+   "retrieved": "2026-11-06T21:31:19Z",
+   "note": "Shiller's Figure 3.1 workbook (Irrational Exuberance): US real and nominal home price index 1890- (annual to 1952, monthly from 1953), real building cost, population, long rate, CPI; supplied by the repository owner from shillerdata.com on 2026-11-06"
   }
  ],
  "errors": [

@@ -13,6 +13,8 @@
     cape                     Shiller's cyclically adjusted P/E, December value
     real_earnings_growth_1y, real_earnings_growth_3y   S&P composite real earnings (annual average), per year
     real_price_growth_3y     S&P composite real price (annual average), per year
+    real_home_price_growth_3y   Shiller's real home price index (Figure 3.1 workbook; annual to 1952, monthly averaged after),
+                             per year over three years; the whole series is in shiller_home_prices.csv
     earnings_yield_minus_long_rate   annual-average E/P (real) minus the long government rate, percentage points
     gw_ntis, gw_bm, gw_dfy, gw_svar  Goyal-Welch net equity issuance, book-to-market, default yield spread, stock
                              variance (when the workbook is present)
@@ -20,7 +22,7 @@
   GDP (billions) before that. Units are taken from the series metadata the puller recorded (series_used.json).
 Run: python3 -I history/tools/corporate_build.py
 """
-import csv, json, os, re, sys, warnings
+import csv, json, os, re, sys, time, warnings
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -76,7 +78,7 @@ def read_shiller():
     d = os.path.join(RAW, "SHILLER")
     if not os.path.isdir(d):
         return {}
-    files = [f for f in os.listdir(d) if f.lower().endswith((".xls", ".xlsx"))]
+    files = [f for f in os.listdir(d) if f.lower().startswith("ie_data") and f.lower().endswith((".xls", ".xlsx"))]
     if not files:
         return {}
     files.sort(key=lambda f: ("yale" in f.lower(), f))  # a current workbook supplied by hand beats the stale Yale copy
@@ -138,6 +140,35 @@ def read_shiller():
     return out
 
 
+def read_fig31():
+    """Shiller's Figure 3.1 workbook (Data sheet): col A date (annual 1890-1952, then monthly as year.fraction), col B real
+    home price index (1890 = 100), cols H/I the nominal home price index with its own date column, cols N/O the CPI.
+    Returns {year: {"real_hpi": annual mean, "nominal_hpi": annual mean}} (annual rows as themselves, monthly averaged)."""
+    path = os.path.join(RAW, "SHILLER", "Fig3-1_1.xls")
+    if not os.path.exists(path):
+        return {}
+    import subprocess, tempfile, openpyxl
+    warnings.filterwarnings("ignore")
+    tmp = tempfile.mkdtemp(prefix="fig31_")
+    subprocess.run(["soffice", "--headless", "--convert-to", "xlsx", "--outdir", tmp, path], check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=300)
+    wb = openpyxl.load_workbook(os.path.join(tmp, "Fig3-1_1.xlsx"), read_only=True, data_only=True)
+    rows = [list(r) for r in (wb["Data"] if "Data" in wb.sheetnames else wb.worksheets[0]).iter_rows(values_only=True)]
+    acc = {}
+    def add(key, dv, v):
+        try:
+            dv, v = float(dv), float(v)
+        except (TypeError, ValueError):
+            return
+        acc.setdefault(int(dv), {}).setdefault(key, []).append(v)
+    for r in rows[7:]:
+        if len(r) > 1:
+            add("real_hpi", r[0], r[1])
+        if len(r) > 8:
+            add("nominal_hpi", r[7], r[8])
+    return {y: {k: float(np.mean(v)) for k, v in d.items()} for y, d in acc.items()}
+
+
 def read_goyal_welch():
     d = os.path.join(RAW, "GOYAL-WELCH")
     if not os.path.isdir(d):
@@ -187,7 +218,15 @@ def main():
         r = jst.get(("USA", y))
         return float(r["gdp"]) * 1000.0 if r and r.get("gdp") not in (None, "") else np.nan  # JST: billions of dollars
 
-    sh = read_shiller(); gw = read_goyal_welch()
+    sh = read_shiller(); gw = read_goyal_welch(); hp = read_fig31()
+    if hp:
+        with open(os.path.join(CORP, "shiller_home_prices.csv"), "w", newline="") as f:
+            w = csv.writer(f); w.writerow(["year", "real_hpi_1890eq100", "nominal_hpi", "real_home_price_growth_1y", "real_home_price_growth_3y"])
+            for y in sorted(hp):
+                r0, r1, r3 = hp[y].get("real_hpi", np.nan), hp.get(y - 1, {}).get("real_hpi", np.nan), hp.get(y - 3, {}).get("real_hpi", np.nan)
+                g1 = r0 / r1 - 1 if not np.isnan(r0) and not np.isnan(r1) and r1 > 0 else np.nan
+                g3 = (r0 / r3) ** (1 / 3) - 1 if not np.isnan(r0) and not np.isnan(r3) and r3 > 0 else np.nan
+                w.writerow([y] + ["" if np.isnan(v) else f"{v:.6g}" for v in (r0, hp[y].get("nominal_hpi", np.nan), g1, g3)])
     def sh_year(y, k, how="mean"):
         v = [sh[(y, m)].get(k, np.nan) for m in range(1, 13) if (y, m) in sh]
         v = [x for x in v if not np.isnan(x)]
@@ -200,9 +239,9 @@ def main():
 
     cols = ["nfcb_debt_gdp", "nfcb_equity_mv_gdp", "nfcb_net_worth_growth_3y", "nfcb_capex_gdp", "nfcb_dividends_profits",
             "nfcb_liquid_assets_debt", "corp_profits_gdp", "cape", "real_earnings_growth_1y", "real_earnings_growth_3y",
-            "real_price_growth_3y", "earnings_yield_minus_long_rate", "gw_ntis", "gw_bm", "gw_dfy", "gw_svar"]
+            "real_price_growth_3y", "earnings_yield_minus_long_rate", "real_home_price_growth_3y", "gw_ntis", "gw_bm", "gw_dfy", "gw_svar"]
     out = []
-    for y in range(1871, 2026):
+    for y in range(1871, time.gmtime().tm_year + 1):
         g = gdp_mn(y)
         dkey = "nfcb_debt_securities_and_loans" if S.get("nfcb_debt_securities_and_loans") else "nfcb_debt"  # loans included when present
         debt = q4(S.get(dkey, {}), y) * sc.get(dkey, 1); eq = q4(S.get("nfcb_equity_mv", {}), y) * sc.get("nfcb_equity_mv", 1)
@@ -228,6 +267,8 @@ def main():
                "real_earnings_growth_3y": (re0 / re3) ** (1 / 3) - 1 if not np.isnan(re0) and not np.isnan(re3) and re3 > 0 else np.nan,
                "real_price_growth_3y": (rp0 / rp3) ** (1 / 3) - 1 if not np.isnan(rp0) and not np.isnan(rp3) and rp3 > 0 else np.nan,
                "earnings_yield_minus_long_rate": ep - rate if not np.isnan(ep) and not np.isnan(rate) else np.nan,
+               "real_home_price_growth_3y": ((hp[y]["real_hpi"] / hp[y - 3]["real_hpi"]) ** (1 / 3) - 1
+                                             if y in hp and (y - 3) in hp and "real_hpi" in hp[y] and "real_hpi" in hp[y - 3] else np.nan),
                "gw_ntis": gw.get(y, {}).get("ntis", np.nan), "gw_bm": gw.get(y, {}).get("bm", np.nan),
                "gw_dfy": gw.get(y, {}).get("dfy", np.nan), "gw_svar": gw.get(y, {}).get("svar", np.nan)}
         if all(isinstance(v, float) and np.isnan(v) for k, v in row.items() if k != "year"):
