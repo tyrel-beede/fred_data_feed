@@ -28,11 +28,11 @@ RAW = os.path.join(ROOT, "history", "physical", "raw")
 UA = {"User-Agent": "fred_data_feed history layer (github.com/tyrel-beede/fred_data_feed)"}
 
 
-def get(url, tries=4):
+def get(url, tries=4, timeout=180):
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read()
         except Exception as e:  # noqa
             if i == tries - 1:
@@ -111,7 +111,7 @@ def main():
     #     every spreadsheet, archive or PDF linked from the author's data page
     try:
         idx_url = "https://www.sfu.ca/~djacks/data/boombust/index.html"
-        page = get(idx_url).decode("utf-8", "replace")
+        page = get(idx_url, tries=2, timeout=60).decode("utf-8", "replace")  # the site has timed out from the runner; keep the cost low
         save("JACKS-COMMODITIES", "index.html", page.encode(), idx_url, manifest)
         links = sorted(set(html.unescape(m) for m in re.findall(r'href="([^"]+)"', page)))
         files = [l for l in links if re.search(r"\.(xlsx?|csv|zip|pdf|dta)$", l, re.I)]

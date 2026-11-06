@@ -131,15 +131,19 @@ def pull_fred(manifest, errors):
 
 # ------------------------------------------------------------------------------------------------------- Shiller, Goyal-Welch
 def pull_shiller(manifest, errors):
-    """Shiller's ie_data.xls: the Yale address (https, then http), then shillerdata.com's links (any href that names an
-    xls, with or without a query string), then datahub.io's CSV mirror of the same workbook, flagged as a mirror."""
-    for url in ("https://www.econ.yale.edu/~shiller/data/ie_data.xls", "http://www.econ.yale.edu/~shiller/data/ie_data.xls"):
-        try:
-            data, _ = get(url, tries=2, timeout=120)
-            if data[:4] == b"\xd0\xcf\x11\xe0" or data[:2] == b"PK":
-                save("SHILLER", "ie_data.xls" if data[:2] != b"PK" else "ie_data.xlsx", data, url, manifest); return
-        except Exception as e:  # noqa
-            errors.append(f"shiller ({url}): {e}")
+    """Shiller's ie_data.xls: shillerdata.com first (the workbook has been updated there since late 2023; any href
+    that names an xls, with or without a query string), then the Yale address (https, then http; the copy there
+    stopped in September 2023), then datahub.io's CSV mirror of the same workbook, flagged as a mirror."""
+    def yale():
+        for url in ("https://www.econ.yale.edu/~shiller/data/ie_data.xls", "http://www.econ.yale.edu/~shiller/data/ie_data.xls"):
+            try:
+                data, _ = get(url, tries=2, timeout=120)
+                if data[:4] == b"\xd0\xcf\x11\xe0" or data[:2] == b"PK":
+                    save("SHILLER", "ie_data.xls" if data[:2] != b"PK" else "ie_data.xlsx", data, url, manifest,
+                         note="the Yale copy: last updated September 2023; the current workbook is on shillerdata.com"); return True
+            except Exception as e:  # noqa
+                errors.append(f"shiller ({url}): {e}")
+        return False
     try:
         url = "https://shillerdata.com/"
         page, _ = get(url)
@@ -155,6 +159,8 @@ def pull_shiller(manifest, errors):
         raise ValueError("links found but none served a workbook")
     except Exception as e:  # noqa
         errors.append(f"shiller (shillerdata.com): {e}")
+    if yale():
+        return
     try:  # last resort: the datahub.io core dataset, a scripted mirror of ie_data.xls (monthly, 1871-)
         url = "https://datahub.io/core/s-and-p-500/_r/-/data/data.csv"
         data, _ = get(url)
