@@ -1,6 +1,6 @@
 {
  "_about": "Configuration for the macro-dials sub-skills (dials-voices, dials-gather). Edited here, never hard-coded in a skill. Times are America/Boise. Weekdays: Mon..Sun. tolerance_days = how old a group's as_of may be at a macro-dials run before it is 'carried'.",
- "version": "2026-11-04",
+ "version": "2026-11-06",
  "timezone": "America/Boise",
  "repo": "tyrel-beede/fred_data_feed",
  "output_root": "dials",
@@ -23,7 +23,7 @@
     "Sat"
    ],
    "time": "05:10",
-   "note": "Runs daily; which groups it gathers is decided by due_weekdays below. Saturday exists for the Friday-afternoon releases (CFTC 15:30 ET, H.8, Flow Show)."
+   "note": "Runs daily; which groups it gathers is decided by due_weekdays below. Saturday exists for the Friday-afternoon releases (CFTC 15:30 ET, H.8, Flow Show). The standoff group is gathered on every firing; the oil settles it records are the prior session's."
   }
  },
  "groups": {
@@ -183,6 +183,32 @@
    "release": "daily",
    "tolerance_days": 2,
    "note": "raw date-gated hits for the event sweep: pulled/downsized deals, gated funds, capex cuts/deferrals/digestion, re-priced rounds, LTA renegotiations, GW deferrals, auction tails, sovereign stress. Hits only — scoring is the orchestrator's."
+  },
+  "standoff": {
+   "skill": "dials-gather",
+   "due_weekdays": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+   ],
+   "release": "daily (oil settles ~14:30 ET; UKMTO/press continuous)",
+   "tolerance_days": 2,
+   "feeds": [
+    "standoff-watch T/M/O panels",
+    "macro-dials B1-oil, Hormuz fork"
+   ],
+   "sources": [
+    "settles: Brent front and second month, WTI front (cappnotes closing look, tradingeconomics)",
+    "Dated Brent / physical premium (press: Argus, Reuters)",
+    "Hormuz transits per day and tanker counts (Lloyd's List, Kpler, Windward via press; straits.live daily brief)",
+    "UKMTO / JMIC incident advisories (count and type, dated)",
+    "war-risk insurance premia (press)",
+    "political plumbing: talks, mediators, IAEA, sanctions, strike reports (Reuters, AP, dated)"
+   ],
+   "note": "readings and dated headlines only; no tell scoring, no branch weights - standoff-watch does that"
   }
  },
  "voices": [
@@ -204,9 +230,9 @@
    "name": "Michael Burry",
    "outlet": "Cassandra Unchained (Substack)",
    "lane": "debt",
-   "url": "https://cassandraunchained.substack.com",
+   "url": "https://michaeljburry.substack.com",
    "added": "2026-11-03",
-   "verify_url": true
+   "note": "search-surfaced 2026-11-05 as \"Cassandra Unchained, by Michael Burry\""
   },
   {
    "name": "Paul Krugman",
@@ -340,11 +366,12 @@
    "added": "2026-10"
   },
   {
-   "name": "David Kostin",
-   "outlet": "Goldman Sachs",
+   "name": "Ben Snider",
+   "outlet": "Goldman Sachs (Chief US Equity Strategist)",
    "lane": "strategist",
    "url": "",
-   "added": "2026-10"
+   "added": "2026-10",
+   "note": "replaces David Kostin, who retired in 2025 (roster fix 2026-11-06)"
   },
   {
    "name": "James Mackintosh",
@@ -455,5 +482,5 @@
   "commit_route": "same App credentials as pull.py; one commit per sub-skill run, message 'dials: <group(s)> <YYYY-MM-DD>'",
   "branch": "main"
  },
- "_fetch_rule": "Sub-skills WebFetch only URLs that appear in this file, in README.md, or in a WebSearch result; never a URL recalled from memory (unattended provenance prompts fail silently). Sweeps use WebSearch extended mode."
+ "_fetch_rule": "Sub-skills never WebFetch a URL directly, not even one copied from this file: unattended sessions raise PROVENANCE_REQUIRED for any URL that was not returned by a WebSearch in that session (confirmed 2026-11-05 on every roster url). Every page is reached by WebSearch (extended mode for anything dated) and then WebFetch of the result link. The url fields below are what to search for and match against, not what to fetch."
 }

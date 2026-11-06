@@ -11,6 +11,7 @@ dials/
   flows/YYYY-MM-DD.json    P-groups gathered that day (dials-gather)
   calendar/YYYY-MM-DD.json P8 issuance, IPO calendar, verified event dates (dials-gather)
   events/YYYY-MM-DD.json   raw date-gated hits for the event sweep (dials-gather)
+  standoff/YYYY-MM-DD.json oil settles, Hormuz transit and incident readings, dated political-plumbing headlines (dials-gather; read by standoff-watch)
 ```
 
 ## Output file schema (every group)
@@ -58,6 +59,10 @@ For each group, with `tolerance_days` from `config.json`:
 - **missing** — nothing good within 2 × tolerance → the orchestrator fetches it itself or labels the group unmeasured
 
 A group that fails two scheduled runs running is reported to the user with its error string.
+
+## Fetch rule for unattended runs
+
+A scheduled session cannot WebFetch a URL that was not returned by a WebSearch in that same session — the fetch raises `PROVENANCE_REQUIRED`, an approval prompt nobody answers, and this applies even to URLs read from `config.json`. Every page is therefore reached as search → result link → fetch. The `url` fields in the config are search targets, not fetch targets.
 
 ## Rules
 
