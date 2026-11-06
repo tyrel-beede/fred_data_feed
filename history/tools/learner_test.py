@@ -59,6 +59,7 @@ def main():
                     help="with --physical: use the footprint gap from measured energy where it exists (fgap_merged_3y, fgap_anom_merged_3y) instead of the CO2 proxy")
     ap.add_argument("--no-horizon", action="store_true"); ap.add_argument("--tag", default="")
     ap.add_argument("--era-split", type=int, default=0, help="also report AUC for query years before and from this year")
+    ap.add_argument("--cadence-offset", type=int, default=0, help="shift the refit years (1900, 1904, ...) by this many years: the cadence noise band")
     a = ap.parse_args()
     rows = list(csv.DictReader(open(os.path.join(ROOT, "history", "jst", "features2.csv"))))
     if a.physical:
@@ -106,7 +107,8 @@ def main():
     X = np.column_stack([col(f) for f in BASE + NETWORK + RANK + FLUX] + [col(f, k) for f, k in LEADS] + [col(f) for f in extra])
     lg3, eq1, hp0 = col("loans_gdp", 3), col("real_eq_capgain_3y", 1), col("real_hp_growth_3y", 0)
     nF = X.shape[1]
-    rep = {"features": names + ["mk_loans_top_tercile_T-3", "mk_equity_le0_T-1", "mk_houses_le0_T"], "results": {}, "horizon": {}, "weights": {}}
+    rep = {"features": names + ["mk_loans_top_tercile_T-3", "mk_equity_le0_T-1", "mk_houses_le0_T"], "cadence_offset": a.cadence_offset,
+           "results": {}, "horizon": {}, "weights": {}}
 
     def fit_predict(Xtr, ytr, Xte, learner):
         keep = (~np.isnan(Xtr)).sum(axis=0) >= 50  # a column unobserved in the training era cannot be used (or binned)
@@ -157,7 +159,7 @@ def main():
     # knn reference (test-2 harness) on the same feature matrix
     knn_nb = walk_forward_neighbors(X, isos, list(years), horizon=3, k=15, min_cov=0.6, from_year=1900)
     for target in TARGETS:
-        preds, coef = run(target)
+        preds, coef = run(target, from_year=1900 + a.cadence_offset)
         preds["knn"] = predict(knn_nb, T[target])
         # ensemble: mean of within-year percentile ranks
         ens = [None] * len(rows)
