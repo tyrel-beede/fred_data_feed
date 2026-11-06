@@ -221,7 +221,7 @@ and the join factor beside its value. The join rules are measured, not remembere
 2016–2020 overlap between every bridged series and the JST column each run and writes `bridge/join_rules.json`:
 rates, the fiscal flows, M2 and the dividend yield join at level (overlap ratios within 1% of one; the JST equity
 series turn out to *be* Shiller's annual means, ratio 1.0000 and capital-gain differences 0.0000); the CPI (×0.744),
-nominal GDP (×0.98), federal debt (×1.05), house prices (×1.37), real GDP per capita (×0.55, Maddison dollars), bank
+nominal GDP (×0.977), federal debt (×1.05), house prices (×1.37), real GDP per capita (×0.55, Maddison dollars), bank
 loans (×1.39, the JST aggregate is broader than bank loans and leases), mortgages (×0.84, a drifting ratio: scope
 differs) and the investment share (×1.20, real against nominal) splice by a ratio chained at 2020. The current year's
 rates and indices are year-to-date means, the current account is annualized by the quarters observed, and nominal GDP
