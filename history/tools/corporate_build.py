@@ -79,7 +79,8 @@ def read_shiller():
     files = [f for f in os.listdir(d) if f.lower().endswith((".xls", ".xlsx"))]
     if not files:
         return {}
-    path = os.path.join(d, sorted(files)[0])
+    files.sort(key=lambda f: ("yale" in f.lower(), f))  # a current workbook supplied by hand beats the stale Yale copy
+    path = os.path.join(d, files[0])
     warnings.filterwarnings("ignore")
     rows = []
     try:

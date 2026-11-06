@@ -1,30 +1,74 @@
 {
  "about": "The corporate-sector catalog: long-record anchors for the history layer (US only) and the modern micro layer for the bridge and the live cone. Status: pulled (the workflow fetched it), planned (a route exists, not yet landed), attach (has to be supplied as a file). Provenance class per the history README: counted (self-reported, audited, lagged) for filings; measured/compiled for the national accounts.",
  "entries": [
-  {"id": "FRED-Z1", "layer": "history", "status": "planned",
+  {
+   "id": "FRED-Z1",
+   "layer": "history",
+   "status": "pulled",
    "title": "Financial Accounts of the United States (Z.1), nonfinancial corporate business: debt securities and loans, corporate equities at market value, net worth, total liabilities, capital expenditures, net dividends, liquid assets; BEA corporate profits (annual 1929-, quarterly 1947-); nominal GDP",
-   "coverage": "US, quarterly from 1945Q4 (Z.1), annual from 1929 (BEA profits)", "retrieval": "workflow: FRED API with FRED_API_KEY; series resolved by exact title at run time, ids recorded in raw/FRED-Z1/series_used.json",
-   "license": "public domain (Federal Reserve Board, BEA); FRED terms of use", "provenance_class": "compiled (sector balance sheets built from reports and surveys; profits from tax and survey data)",
-   "feeds": ["us_corporate_annual.csv: nonfinancial corporate debt/GDP, equity market value/GDP, net worth growth, capex/GDP, dividends/profits, liquid assets/debt, profits/GDP (1929-)"]},
-  {"id": "SHILLER", "layer": "history", "status": "planned",
+   "coverage": "US, quarterly from 1945Q4 (Z.1), annual from 1929 (BEA profits)",
+   "retrieval": "workflow: FRED API with FRED_API_KEY; series resolved by exact title at run time, ids recorded in raw/FRED-Z1/series_used.json",
+   "license": "public domain (Federal Reserve Board, BEA); FRED terms of use",
+   "provenance_class": "compiled (sector balance sheets built from reports and surveys; profits from tax and survey data)",
+   "feeds": [
+    "us_corporate_annual.csv: nonfinancial corporate debt/GDP, equity market value/GDP, net worth growth, capex/GDP, dividends/profits, liquid assets/debt, profits/GDP (1929-)"
+   ]
+  },
+  {
+   "id": "SHILLER",
+   "layer": "history",
+   "status": "pulled (Yale copy to 2023-09)",
    "title": "Robert Shiller, US stock market data 1871-: S&P composite price, dividends, earnings, CPI, long rate, real series and CAPE (monthly)",
-   "coverage": "US, monthly 1871-", "retrieval": "workflow: shillerdata.com (xls link on the page), with the Yale address as fallback",
-   "license": "posted for public use with attribution (Irrational Exuberance data)", "provenance_class": "compiled (Cowles Commission back to 1871, S&P since 1926; earnings and dividends are the index's reported aggregates)",
-   "feeds": ["us_corporate_annual.csv: CAPE, real earnings growth 1y/3y, real price growth 3y, earnings yield minus the long rate"]},
-  {"id": "GOYAL-WELCH", "layer": "history", "status": "planned",
+   "coverage": "US, monthly 1871-",
+   "retrieval": "workflow: shillerdata.com (xls link on the page), with the Yale address as fallback",
+   "license": "posted for public use with attribution (Irrational Exuberance data)",
+   "provenance_class": "compiled (Cowles Commission back to 1871, S&P since 1926; earnings and dividends are the index's reported aggregates)",
+   "feeds": [
+    "us_corporate_annual.csv: CAPE, real earnings growth 1y/3y, real price growth 3y, earnings yield minus the long rate"
+   ],
+   "note": "the Yale server serves a copy last updated September 2023 (https refused, http answers); shillerdata.com's page exposes no plain link to the workbook. To bring it current: download ie_data.xls from shillerdata.com and put it at history/corporate/raw/SHILLER/ie_data.xls \u2014 the builder prefers it over ie_data_yale.xls"
+  },
+  {
+   "id": "GOYAL-WELCH",
+   "layer": "history",
+   "status": "attach",
    "title": "Goyal and Welch, equity-premium predictor data (annual 1871-, updated yearly): dividends, earnings, book-to-market, net equity issuance, default and term spreads, inflation, stock variance",
-   "coverage": "US, annual 1871- (some series from 1919/1926)", "retrieval": "workflow: Amit Goyal's page (Google Sites) -> the Drive-hosted PredictorData workbook; if the link cannot be resolved, attach PredictorData<year>.xlsx under raw/GOYAL-WELCH/",
-   "license": "academic use with citation (Welch and Goyal 2008, RFS; Goyal, Welch and Zafirov 2024, RFS)", "provenance_class": "compiled (CRSP, Shiller, FRED, Amit Goyal's own construction)",
-   "feeds": ["net equity issuance (ntis), book-to-market (bm), default yield spread (dfy, 1919-), stock variance (svar): counted corporate-finance variables with a crisis literature"]},
-  {"id": "SEC-FSDS", "layer": "bridge", "status": "planned",
+   "coverage": "US, annual 1871- (some series from 1919/1926)",
+   "retrieval": "workflow: Amit Goyal's page (Google Sites) -> the Drive-hosted PredictorData workbook; if the link cannot be resolved, attach PredictorData<year>.xlsx under raw/GOYAL-WELCH/",
+   "license": "academic use with citation (Welch and Goyal 2008, RFS; Goyal, Welch and Zafirov 2024, RFS)",
+   "provenance_class": "compiled (CRSP, Shiller, FRED, Amit Goyal's own construction)",
+   "feeds": [
+    "net equity issuance (ntis), book-to-market (bm), default yield spread (dfy, 1919-), stock variance (svar): counted corporate-finance variables with a crisis literature"
+   ],
+   "note": "Amit Goyal's page exposes no Drive link the workflow can resolve; download PredictorData<year>.xlsx from the page and put it under history/corporate/raw/GOYAL-WELCH/; corporate_build.py reads the annual sheet"
+  },
+  {
+   "id": "SEC-FSDS",
+   "layer": "bridge",
+   "status": "local run",
    "title": "SEC Financial Statement Data Sets: every number in 10-K/10-Q XBRL financial statements, quarterly 2009q1-",
-   "coverage": "all SEC registrants filing XBRL, 2009-", "retrieval": "workflow: the two latest quarterly zips (60-120 MB each) streamed in the runner; only per-tag aggregates are kept (raw/SEC-FSDS/<yyyyqN>_aggregates.csv): filer count, sum, median and p90 for assets, liabilities, equity, long-term debt, cash, inventories, revenue, net income, interest, operating cash flow, capex, buybacks, dividends, depreciation; 10-K/10-Q forms only, USD, no co-registrants",
-   "license": "public domain (SEC); fair-access policy: identify the client in the User-Agent, at most 10 requests a second", "provenance_class": "counted (self-reported, audited, as filed; restatements appear as later filings)",
-   "feeds": ["the live dials' capital/capex group: aggregate capex, buybacks, dividends and cash against revenue and debt, quarter by quarter, one quarter stale"]},
-  {"id": "SEC-13F", "layer": "bridge", "status": "planned",
+   "coverage": "all SEC registrants filing XBRL, 2009-",
+   "retrieval": "workflow: the two latest quarterly zips (60-120 MB each) streamed in the runner; only per-tag aggregates are kept (raw/SEC-FSDS/<yyyyqN>_aggregates.csv): filer count, sum, median and p90 for assets, liabilities, equity, long-term debt, cash, inventories, revenue, net income, interest, operating cash flow, capex, buybacks, dividends, depreciation; 10-K/10-Q forms only, USD, no co-registrants",
+   "license": "public domain (SEC); fair-access policy: identify the client in the User-Agent, at most 10 requests a second",
+   "provenance_class": "counted (self-reported, audited, as filed; restatements appear as later filings)",
+   "feeds": [
+    "the live dials' capital/capex group: aggregate capex, buybacks, dividends and cash against revenue and debt, quarter by quarter, one quarter stale"
+   ],
+   "note": "sec.gov answers 403 to every request from GitHub-hosted runners (cloud-provider addresses are blocked), with or without the fair-access User-Agent; run from a desktop instead: python3 history/tools/corporate_pull.py --only fsds,13f (streams the two latest quarterly zips, keeps only the aggregates under history/corporate/raw/), then commit and push"
+  },
+  {
+   "id": "SEC-13F",
+   "layer": "bridge",
+   "status": "local run",
    "title": "SEC Form 13F Data Sets: institutional investment managers' quarterly holdings (long positions in 13(f) securities), structured from 2013q2",
-   "coverage": "managers with $100M+ in 13(f) securities, 2013-; 45-day filing lag", "retrieval": "workflow: the two latest quarterly zips streamed in the runner; only summaries are kept (raw/SEC-13F/<period>_summary.json: filers, total value, distinct issuers, top-10 and top-50 issuer shares, Herfindahl, median filer top-10 concentration; <period>_top20.csv: the twenty most-held issuers)",
-   "license": "public domain (SEC)", "provenance_class": "counted (self-reported, long-only, no shorts or most derivatives; VALUE in dollars from 2023, thousands before)",
-   "feeds": ["the live dials' positioning group: crowding and concentration of institutional holdings, beside CFTC, EPFR, ICI, AAII and margin"]}
+   "coverage": "managers with $100M+ in 13(f) securities, 2013-; 45-day filing lag",
+   "retrieval": "workflow: the two latest quarterly zips streamed in the runner; only summaries are kept (raw/SEC-13F/<period>_summary.json: filers, total value, distinct issuers, top-10 and top-50 issuer shares, Herfindahl, median filer top-10 concentration; <period>_top20.csv: the twenty most-held issuers)",
+   "license": "public domain (SEC)",
+   "provenance_class": "counted (self-reported, long-only, no shorts or most derivatives; VALUE in dollars from 2023, thousands before)",
+   "feeds": [
+    "the live dials' positioning group: crowding and concentration of institutional holdings, beside CFTC, EPFR, ICI, AAII and margin"
+   ],
+   "note": "sec.gov answers 403 to every request from GitHub-hosted runners (cloud-provider addresses are blocked), with or without the fair-access User-Agent; run from a desktop instead: python3 history/tools/corporate_pull.py --only fsds,13f (streams the two latest quarterly zips, keeps only the aggregates under history/corporate/raw/), then commit and push"
+  }
  ]
 }

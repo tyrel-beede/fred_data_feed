@@ -139,8 +139,8 @@ def pull_shiller(manifest, errors):
             try:
                 data, _ = get(url, tries=2, timeout=120)
                 if data[:4] == b"\xd0\xcf\x11\xe0" or data[:2] == b"PK":
-                    save("SHILLER", "ie_data.xls" if data[:2] != b"PK" else "ie_data.xlsx", data, url, manifest,
-                         note="the Yale copy: last updated September 2023; the current workbook is on shillerdata.com"); return True
+                    save("SHILLER", "ie_data_yale.xls" if data[:2] != b"PK" else "ie_data_yale.xlsx", data, url, manifest,
+                         note="the Yale copy: last updated September 2023; the current workbook is on shillerdata.com (a hand-supplied ie_data.xls beside it takes precedence)"); return True
             except Exception as e:  # noqa
                 errors.append(f"shiller ({url}): {e}")
         return False
@@ -363,14 +363,26 @@ def pull_13f(manifest, errors, max_quarters=2):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", default="", help="comma list of pulls to run: fred, shiller, goyal, fsds, 13f (default: all). "
+                    "sec.gov answers 403 to cloud-provider addresses, so fsds and 13f are meant to be run from a desktop: "
+                    "python3 history/tools/corporate_pull.py --only fsds,13f, then commit history/corporate/raw/")
+    a = ap.parse_args()
+    only = {x.strip() for x in a.only.split(",") if x.strip()}
     manifest, errors = [], []
     os.makedirs(RAW, exist_ok=True)
-    pull_fred(manifest, errors)
-    pull_shiller(manifest, errors)
-    pull_goyal_welch(manifest, errors)
-    pull_fsds(manifest, errors)
-    pull_13f(manifest, errors)
-    out = {"manifest": manifest, "errors": errors}
+    if not only or "fred" in only:
+        pull_fred(manifest, errors)
+    if not only or "shiller" in only:
+        pull_shiller(manifest, errors)
+    if not only or "goyal" in only:
+        pull_goyal_welch(manifest, errors)
+    if not only or "fsds" in only:
+        pull_fsds(manifest, errors)
+    if not only or "13f" in only:
+        pull_13f(manifest, errors)
+    out = {"manifest": manifest, "errors": errors, "pulls_run": sorted(only) if only else "all"}
     prev = os.path.join(RAW, "manifest.json")
     if os.path.exists(prev):
         try:

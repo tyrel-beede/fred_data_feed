@@ -46,12 +46,16 @@ are most held) beside the CFTC, EPFR, ICI, AAII and margin series the positionin
   which leaves out banks, insurers and non-corporate business. Profits series differ in concept (before/after tax,
   with and without IVA and CCAdj): the title of the series used is recorded beside its id.
 - Shiller's earnings and dividends are the S&P composite's reported aggregates (Cowles back to 1871); CAPE uses
-  ten-year real earnings. The workbook is updated monthly on his site; if the Yale server does not answer, the
-  puller falls back to shillerdata.com and then to datahub.io's scripted mirror of the same workbook, flagged
-  `MIRROR` in the manifest — a provenance compromise to be replaced by the workbook.
+  ten-year real earnings. The copy the Yale server still serves (`raw/SHILLER/ie_data_yale.xls`) was last updated in
+  September 2023; the current workbook lives on shillerdata.com behind a page the puller cannot read a link from. A
+  hand-downloaded `ie_data.xls` placed beside it takes precedence in the builder. The last resort in the puller is
+  datahub.io's scripted mirror of the same workbook, flagged `MIRROR` in the manifest.
 - Goyal–Welch is distributed from Amit Goyal's page as a Drive-hosted workbook that the puller may not be able to
   resolve; when it cannot, the workbook goes under `raw/GOYAL-WELCH/` by hand (`PredictorData<year>.xlsx`).
 - SEC data: public domain, under the fair-access policy (identify the client in the User-Agent, at most ten
-  requests a second). 13F `VALUE` is in dollars from 2023 and in thousands before. Options lines (put/call) are
+  requests a second). **sec.gov refuses GitHub-hosted runners** (403 to every request from cloud-provider addresses,
+  with or without the fair-access User-Agent), so the two SEC pulls run from a desktop:
+  `python3 history/tools/corporate_pull.py --only fsds,13f` streams the two latest quarterly zips and writes only the
+  aggregates under `raw/`; commit and push them, and the builder and the dials pick them up. 13F `VALUE` is in dollars from 2023 and in thousands before. Options lines (put/call) are
   excluded from the issuer concentration. Restated financials appear as later filings; the aggregates take the
   first value a filer reports for a tag and period.

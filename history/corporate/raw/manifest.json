@@ -118,11 +118,12 @@
   },
   {
    "catalog": "SHILLER",
-   "file": "history/corporate/raw/SHILLER/ie_data.xls",
+   "file": "history/corporate/raw/SHILLER/ie_data_yale.xls",
    "url": "http://www.econ.yale.edu/~shiller/data/ie_data.xls",
    "bytes": 1628672,
    "sha256": "0df9392b7dacf91f756e92c8db508ad903c4588b43f3253680eec3dd8b40db68",
-   "retrieved": "2026-11-06T21:13:00Z"
+   "retrieved": "2026-11-06T21:13:00Z",
+   "note": "the Yale copy: last updated September 2023; the current workbook is on shillerdata.com (a hand-supplied ie_data.xls beside it takes precedence)"
   }
  ],
  "errors": [
