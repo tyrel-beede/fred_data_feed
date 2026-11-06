@@ -1,0 +1,556 @@
+{
+ "features": [
+  "loans_gdp",
+  "d3_loans_gdp",
+  "d5_loans_gdp",
+  "mort_gdp",
+  "debt_gdp",
+  "d5_debt_gdp",
+  "deficit_gdp",
+  "r_minus_g",
+  "ltrate",
+  "term_spread",
+  "real_ltrate_expost",
+  "cpi_infl",
+  "rgdp_pc_growth",
+  "unemp",
+  "d1_unemp",
+  "iy",
+  "ca_gdp",
+  "eq_dp",
+  "real_eq_capgain_3y",
+  "real_hp_growth_3y",
+  "xs_share_credit_boom",
+  "xs_mean_d3_loans_gdp",
+  "xs_disp_real_rate",
+  "xs_mean_term_spread",
+  "xs_mean_req3y",
+  "xs_crises_now",
+  "xs_crises_last2y",
+  "bloc_crises_last2y",
+  "base_d3_loans_gdp",
+  "base_term_spread",
+  "rank_d3_loans_gdp",
+  "rank_req3y",
+  "rank_ca_gdp",
+  "rank_rgdp_pc_growth",
+  "rank_rhp3y",
+  "rank_d1_unemp",
+  "speed_1y",
+  "speed_2y",
+  "transitions_1y",
+  "accel_d3_loans_gdp",
+  "d1_term_spread",
+  "d1_real_eq_capgain_3y",
+  "d1_real_hp_growth_3y",
+  "d1_ca_gdp",
+  "d1_rank_d3_loans_gdp",
+  "loans_gdp_lag3",
+  "mort_gdp_lag3",
+  "real_eq_capgain_3y_lag1",
+  "rgdp_pc_growth_lag1",
+  "r_minus_g_lag1",
+  "energy_footprint_gap_3y",
+  "gap_anom_3y",
+  "d3_co2_intensity",
+  "co2_growth_3y",
+  "co2_growth_1y",
+  "fossil_prod_growth_3y",
+  "fuel_self_sufficiency",
+  "coal_share_co2",
+  "oil_share_co2",
+  "oil_real_price",
+  "oil_real_change_1y",
+  "oil_real_change_3y",
+  "oil_change_x_exposure",
+  "mk_loans_top_tercile_T-3",
+  "mk_equity_le0_T-1",
+  "mk_houses_le0_T"
+ ],
+ "cadence_offset": 1,
+ "results": {
+  "dd30_3y": {
+   "knn": {
+    "auc": 0.6078055418109847,
+    "top_decile": 0.372972972972973,
+    "base": 0.13900862068965517,
+    "n_pos": 258,
+    "n_neg": 1598,
+    "auc_before_2004": 0.5461171451368647,
+    "n_pos_before_2004": 217,
+    "auc_from_2004": 0.9200319872051179,
+    "n_pos_from_2004": 41
+   },
+   "logit": {
+    "auc": 0.5534658362337425,
+    "top_decile": 0.1895424836601307,
+    "base": 0.13455258001306336,
+    "n_pos": 206,
+    "n_neg": 1325,
+    "auc_before_2004": 0.5444435599426843,
+    "n_pos_before_2004": 165,
+    "auc_from_2004": 0.821671331467413,
+    "n_pos_from_2004": 41
+   },
+   "gbt": {
+    "auc": 0.7606557977651585,
+    "top_decile": 0.47058823529411764,
+    "base": 0.13455258001306336,
+    "n_pos": 206,
+    "n_neg": 1325,
+    "auc_before_2004": 0.7070795520883086,
+    "n_pos_before_2004": 165,
+    "auc_from_2004": 0.9496201519392243,
+    "n_pos_from_2004": 41
+   },
+   "ensemble": {
+    "auc": 0.6225577493870177,
+    "top_decile": 0.2565789473684211,
+    "base": 0.13416230366492146,
+    "n_pos": 205,
+    "n_neg": 1323,
+    "auc_before_2004": 0.6570469619169876,
+    "n_pos_before_2004": 164,
+    "auc_from_2004": 0.4821404771424763,
+    "n_pos_from_2004": 41
+   }
+  },
+  "credit_contraction_3y": {
+   "knn": {
+    "auc": 0.6283567564138732,
+    "top_decile": 0.3826530612244898,
+    "base": 0.19175991861648017,
+    "n_pos": 377,
+    "n_neg": 1589,
+    "auc_before_2004": 0.6045053916638731,
+    "n_pos_before_2004": 304,
+    "auc_from_2004": 0.7243539850560399,
+    "n_pos_from_2004": 73
+   },
+   "logit": {
+    "auc": 0.6894426622648561,
+    "top_decile": 0.5738636363636364,
+    "base": 0.20861678004535147,
+    "n_pos": 368,
+    "n_neg": 1396,
+    "auc_before_2004": 0.6570964156710197,
+    "n_pos_before_2004": 295,
+    "auc_from_2004": 0.837640099626401,
+    "n_pos_from_2004": 73
+   },
+   "gbt": {
+    "auc": 0.6517067397533325,
+    "top_decile": 0.4772727272727273,
+    "base": 0.20861678004535147,
+    "n_pos": 368,
+    "n_neg": 1396,
+    "auc_before_2004": 0.6236954709641567,
+    "n_pos_before_2004": 295,
+    "auc_from_2004": 0.7657222914072229,
+    "n_pos_from_2004": 73
+   },
+   "ensemble": {
+    "auc": 0.685921524417931,
+    "top_decile": 0.44886363636363635,
+    "base": 0.20771850170261066,
+    "n_pos": 366,
+    "n_neg": 1396,
+    "auc_before_2004": 0.6556985396967493,
+    "n_pos_before_2004": 293,
+    "auc_from_2004": 0.8136285803237858,
+    "n_pos_from_2004": 73
+   }
+  },
+  "gdp_fall_3y": {
+   "knn": {
+    "auc": 0.6578542545710268,
+    "top_decile": 0.21844660194174756,
+    "base": 0.11499272197962154,
+    "n_pos": 237,
+    "n_neg": 1824,
+    "auc_before_2004": 0.6704037081339713,
+    "n_pos_before_2004": 209,
+    "auc_from_2004": 0.5524553571428571,
+    "n_pos_from_2004": 28
+   },
+   "logit": {
+    "auc": 0.6683100784561612,
+    "top_decile": 0.36764705882352944,
+    "base": 0.11632453567937438,
+    "n_pos": 238,
+    "n_neg": 1808,
+    "auc_before_2004": 0.7145337301587301,
+    "n_pos_before_2004": 210,
+    "auc_from_2004": 0.42410714285714285,
+    "n_pos_from_2004": 28
+   },
+   "gbt": {
+    "auc": 0.6122020710939243,
+    "top_decile": 0.21568627450980393,
+    "base": 0.11632453567937438,
+    "n_pos": 238,
+    "n_neg": 1808,
+    "auc_before_2004": 0.608032708032708,
+    "n_pos_before_2004": 210,
+    "auc_from_2004": 0.689094387755102,
+    "n_pos_from_2004": 28
+   },
+   "ensemble": {
+    "auc": 0.5469237073826819,
+    "top_decile": 0.16666666666666666,
+    "base": 0.1159491193737769,
+    "n_pos": 237,
+    "n_neg": 1807,
+    "auc_before_2004": 0.5326480215930627,
+    "n_pos_before_2004": 209,
+    "auc_from_2004": 0.6620695153061225,
+    "n_pos_from_2004": 28
+   }
+  },
+  "unemp_spike_3y": {
+   "knn": {
+    "auc": 0.5462353616145253,
+    "top_decile": 0.1320754716981132,
+    "base": 0.10414052697616061,
+    "n_pos": 166,
+    "n_neg": 1428,
+    "auc_before_2004": 0.5231317241699128,
+    "n_pos_before_2004": 144,
+    "auc_from_2004": 0.6916007905138339,
+    "n_pos_from_2004": 22
+   },
+   "logit": {
+    "auc": 0.5573669586015265,
+    "top_decile": 0.1987179487179487,
+    "base": 0.10344827586206896,
+    "n_pos": 162,
+    "n_neg": 1404,
+    "auc_before_2004": 0.5192382574835727,
+    "n_pos_before_2004": 140,
+    "auc_from_2004": 0.7573122529644268,
+    "n_pos_from_2004": 22
+   },
+   "gbt": {
+    "auc": 0.6634219689775245,
+    "top_decile": 0.1987179487179487,
+    "base": 0.10344827586206896,
+    "n_pos": 162,
+    "n_neg": 1404,
+    "auc_before_2004": 0.634168897541981,
+    "n_pos_before_2004": 140,
+    "auc_from_2004": 0.8598814229249012,
+    "n_pos_from_2004": 22
+   },
+   "ensemble": {
+    "auc": 0.6302204050687751,
+    "top_decile": 0.1793103448275862,
+    "base": 0.09595613433858807,
+    "n_pos": 140,
+    "n_neg": 1319,
+    "auc_before_2004": 0.5845278672705483,
+    "n_pos_before_2004": 118,
+    "auc_from_2004": 0.8475296442687748,
+    "n_pos_from_2004": 22
+   }
+  },
+  "crisis_3y": {
+   "knn": {
+    "auc": 0.5750590702345089,
+    "top_decile": 0.14563106796116504,
+    "base": 0.08733624454148471,
+    "n_pos": 180,
+    "n_neg": 1881,
+    "auc_before_2004": 0.638899518682926,
+    "n_pos_before_2004": 141,
+    "auc_from_2004": 0.2942097026604069,
+    "n_pos_from_2004": 39
+   },
+   "logit": {
+    "auc": 0.5794276159083801,
+    "top_decile": 0.12254901960784313,
+    "base": 0.08699902248289346,
+    "n_pos": 178,
+    "n_neg": 1868,
+    "auc_before_2004": 0.6020778543328479,
+    "n_pos_before_2004": 139,
+    "auc_from_2004": 0.4763452509931383,
+    "n_pos_from_2004": 39
+   },
+   "gbt": {
+    "auc": 0.6348404831220076,
+    "top_decile": 0.1715686274509804,
+    "base": 0.08699902248289346,
+    "n_pos": 178,
+    "n_neg": 1868,
+    "auc_before_2004": 0.640283422808581,
+    "n_pos_before_2004": 139,
+    "auc_from_2004": 0.5748164198868424,
+    "n_pos_from_2004": 39
+   },
+   "ensemble": {
+    "auc": 0.5941146717728242,
+    "top_decile": 0.1715686274509804,
+    "base": 0.08708414872798434,
+    "n_pos": 178,
+    "n_neg": 1866,
+    "auc_before_2004": 0.6012721583169036,
+    "n_pos_before_2004": 139,
+    "auc_from_2004": 0.5690381605874564,
+    "n_pos_from_2004": 39
+   }
+  }
+ },
+ "horizon": {},
+ "weights": {
+  "dd30_3y": [
+   [
+    "r_minus_g",
+    -1.1167690714731418
+   ],
+   [
+    "real_ltrate_expost",
+    -0.8255779425508402
+   ],
+   [
+    "oil_share_co2",
+    -0.7172842834635874
+   ],
+   [
+    "xs_share_credit_boom",
+    0.7095583541417189
+   ],
+   [
+    "eq_dp",
+    -0.635162113737859
+   ],
+   [
+    "speed_2y",
+    0.5850238239090342
+   ],
+   [
+    "loans_gdp_lag3",
+    0.5550317451391023
+   ],
+   [
+    "co2_growth_3y",
+    -0.5372348921088795
+   ],
+   [
+    "bloc_crises_last2y",
+    -0.5190262008498482
+   ],
+   [
+    "oil_real_change_3y",
+    0.4519563212831168
+   ],
+   [
+    "oil_real_price",
+    -0.4476901034969919
+   ],
+   [
+    "coal_share_co2",
+    -0.43223684870326917
+   ]
+  ],
+  "credit_contraction_3y": [
+   [
+    "loans_gdp_lag3",
+    1.5588598655197887
+   ],
+   [
+    "mort_gdp",
+    -0.9131622440061313
+   ],
+   [
+    "loans_gdp",
+    0.8121761134879898
+   ],
+   [
+    "d5_loans_gdp",
+    -0.5781149763849938
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.5665661510907322
+   ],
+   [
+    "real_eq_capgain_3y",
+    -0.5280342579779717
+   ],
+   [
+    "coal_share_co2",
+    0.5160744065956483
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.4871231050125777
+   ],
+   [
+    "r_minus_g",
+    0.438302290622752
+   ],
+   [
+    "d1_real_eq_capgain_3y",
+    0.418658149658862
+   ],
+   [
+    "xs_crises_last2y",
+    0.38867846162422454
+   ],
+   [
+    "d3_loans_gdp",
+    0.37543279807006247
+   ]
+  ],
+  "gdp_fall_3y": [
+   [
+    "fuel_self_sufficiency",
+    -1.2129195987352088
+   ],
+   [
+    "oil_share_co2",
+    -0.7304498948144877
+   ],
+   [
+    "real_hp_growth_3y",
+    -0.5626551444133996
+   ],
+   [
+    "d5_loans_gdp",
+    -0.5416725030160725
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.5333316279128625
+   ],
+   [
+    "base_d3_loans_gdp",
+    -0.4845554535466802
+   ],
+   [
+    "d3_loans_gdp",
+    0.4710937397174617
+   ],
+   [
+    "energy_footprint_gap_3y",
+    -0.44750385315369107
+   ],
+   [
+    "r_minus_g_lag1",
+    -0.4029492897215432
+   ],
+   [
+    "real_eq_capgain_3y_lag1",
+    0.38838131565580586
+   ],
+   [
+    "loans_gdp",
+    0.3359459766630403
+   ],
+   [
+    "xs_share_credit_boom",
+    0.33060069647651646
+   ]
+  ],
+  "unemp_spike_3y": [
+   [
+    "xs_mean_term_spread",
+    -0.7474128579114732
+   ],
+   [
+    "xs_share_credit_boom",
+    0.6588433663059198
+   ],
+   [
+    "oil_real_price",
+    0.6131567299462966
+   ],
+   [
+    "loans_gdp_lag3",
+    0.5968930350687417
+   ],
+   [
+    "r_minus_g",
+    0.5187728621013212
+   ],
+   [
+    "mort_gdp_lag3",
+    -0.5101094771356159
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    -0.4993101436739325
+   ],
+   [
+    "r_minus_g_lag1",
+    -0.4387554597694164
+   ],
+   [
+    "coal_share_co2",
+    0.41450915773171426
+   ],
+   [
+    "fuel_self_sufficiency",
+    -0.367933715617156
+   ],
+   [
+    "ca_gdp",
+    -0.36094994883565346
+   ],
+   [
+    "bloc_crises_last2y",
+    0.3481336866601299
+   ]
+  ],
+  "crisis_3y": [
+   [
+    "co2_growth_3y",
+    -1.0446838316206075
+   ],
+   [
+    "energy_footprint_gap_3y",
+    0.8022183346611881
+   ],
+   [
+    "xs_mean_term_spread",
+    -0.6164666489627704
+   ],
+   [
+    "oil_share_co2",
+    -0.5681146676435311
+   ],
+   [
+    "base_term_spread",
+    0.493595276473976
+   ],
+   [
+    "xs_mean_d3_loans_gdp",
+    0.3937349170191894
+   ],
+   [
+    "mort_gdp_lag3",
+    0.38555044924744014
+   ],
+   [
+    "speed_1y",
+    0.380268499651475
+   ],
+   [
+    "term_spread",
+    -0.3773491946187511
+   ],
+   [
+    "fuel_self_sufficiency",
+    -0.3485937309229823
+   ],
+   [
+    "real_eq_capgain_3y",
+    0.3464616759246504
+   ],
+   [
+    "unemp",
+    -0.34503503360534415
+   ]
+  ]
+ }
+}

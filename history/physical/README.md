@@ -184,6 +184,11 @@ signature — 41 drawdowns and 73 contractions that are one event, not 41 and 73
 that window, anti-predicting 2009 and 2020, which were shocks from outside the state vector. Skill measured on the
 full panel is mostly pre-2004 skill, and that is the honest number.
 
+Read against the cadence noise band (`../analogs/noise_band.md`: mean range 0.031 for the logit and 0.025 for the trees,
+single cells up to 0.07): the oil price's GDP-fall gain (+0.08, logit) clears it, its drawdown gain (+0.03, trees) sits
+at the band's edge and rests on the top-decile lift (40% against 14%), the materials label move (+0.08, logit) clears
+it but is the 2008 call, and every diffusion and measured-energy difference sits inside it.
+
 What the second slice settles: the oil price stays the physical feature that earns its place; materials add a view
 of the label and of the shock channel at the cost of a linear learner's stability (the trees are the right learner
 for global features); diffusion, as aggregate adoption rates, is not a three-year forecasting feature and would need

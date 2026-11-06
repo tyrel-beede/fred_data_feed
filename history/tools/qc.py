@@ -60,6 +60,8 @@ expected = [
     "history/tools/kmw_parse.py", "history/physical/kmw_extract.csv", "history/physical/raw/KMW-EUROPE-ENERGY/Energy use and EMCI.xlsx",
     "history/analogs/learner_test_physical_measured_era.md",
     "history/tools/live_query.py", "history/bridge/join_rules.json", "history/analogs/us_2026ytd_query.json",
+    "history/HANDOFF.md", "history/tools/noise_band.py", "history/analogs/noise_band.md",
+    "history/analogs/learner_test_physical_era_cad1.md", "history/analogs/learner_test_physical_era_cad2.md", "history/analogs/learner_test_physical_era_cad3.md",
     "history/tools/climatology.py", "history/climatology/README.md", "history/climatology/features_by_era.csv",
     "history/climatology/outcomes_by_era.csv", "history/climatology/event_rates_by_era.csv",
     "history/tools/corporate_pull.py", "history/tools/corporate_build.py", "history/corporate/README.md", "history/corporate/catalog.json",
@@ -270,7 +272,8 @@ for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_reru
           "learner_test_physical_oil.json", "lag_test.json", "label_test.json", "learner_test_physical_era.json",
           "learner_test_physical_diffusion_era.json", "learner_test_physical_materials_era.json",
           "learner_test_physical_diffusion_materials_era.json", "learner_test_physical_topology_era.json", "topology_test.json",
-          "learner_test_physical_measured_era.json"):
+          "learner_test_physical_measured_era.json", "noise_band.json", "learner_test_physical_era_cad1.json",
+          "learner_test_physical_era_cad2.json", "learner_test_physical_era_cad3.json"):
     pool |= _aucs(f, None)
 for o in ov:  # override values quoted in the README are not AUCs
     try:

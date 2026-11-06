@@ -17,6 +17,33 @@ Every dated record carries, or can carry, the three bitemporal fields the dials 
 happened), the **observed time** (when the record was made — the release date for JST, the publication date for a book),
 and the **node** (who recorded it). A revision is a new observed time for the same event time, never an overwrite.
 
+## Revision one (tag `history-v1`, 2026-11-06)
+
+What stands at the tag, so that later work has a fixed point to be compared against:
+
+- **The record**: JST R6 (18 countries, 1870–2020) with two cited overrides and a propagated override flag; the Dalio
+  corpus taken apart into templates, 48 cases, gauges and 193 graded reads; the physical layer (CO2 and energy,
+  oil since 1861, CHAT technology adoption, USGS minerals, the commodity PPI, US energy from 1635, European energy
+  from 1800); the network's topology from the regime columns; the corporate layer (Z.1 from 1945, BEA profits from
+  1929, Shiller from 1871, home prices from 1890). 98 physical and 17 corporate files pulled by the workflow with
+  hashes; four desktop-only sources documented in `HANDOFF.md`.
+- **The four parts of the foundation as artifacts**: the climatology by measured topology era (`climatology/`), the
+  analog library with a full 20-feature live query and measured join rules (`analogs/`, `bridge/join_rules.json`),
+  the voice ledger (`dalio/reads.csv`, 193 reads graded for falsifiability, unscored), the mechanisms (templates,
+  ladders with measured conditional rates).
+- **The measured numbers**: walk-forward crisis-label AUC 0.59 for the analog cone (the leaky 0.66 retired); measured
+  targets 0.68–0.76 with weighted learners; the oil price the one physical feature that earns its place (GDP fall
+  0.60 → 0.68 on the logit, four times its band; the drawdown's 0.73 → 0.76 on the trees sits at the edge of theirs
+  and rests on the top-decile lift, 40% against 14%); diffusion, materials and topology measured and found not to add
+  as features; the CO2 proxy calibrated against measured energy; the era split and the cadence noise band
+  (`analogs/noise_band.md`: refit years shifted 0–3, mean range 0.03 for the logit, 0.025 for the trees, up to 0.07 and
+  0.06 on single cells) as the reading rules for every comparison.
+- **What it does not do**: forecast the dials' branches by itself; learn from the handful of eras; see the micro layer
+  before 2009; bridge any country but the United States. No investment advice.
+
+Queued after the tag: conformal bands, mile-marker timing, the voice ledger scored against outcomes, the diffusion
+panel past 2003, the bridge for other countries, a windowed climatology for young eras.
+
 ## Layout
 
 ```
@@ -86,6 +113,7 @@ history/
     corporate_pull.py, corporate_build.py   the corporate layer: the workflow's pulls (FRED-resolved Z.1 and BEA
                             series, Shiller, Goyal-Welch, SEC aggregates) and the US annual series
     climatology.py          the climatology tables by measured topology era and regime -> climatology/
+    noise_band.py           the cadence noise band from the shifted-refit runs -> analogs/noise_band.md
     live_query.py           the live US query vector (all 20 features) from the JST sheet, the bridge and Shiller, with
                             the join rules measured on the 2016-2020 overlap -> bridge/join_rules.json
     qc.py                   mechanical checks -> QC.md
@@ -325,6 +353,17 @@ rate 3.9% and then 9.2% in 1973–98 and 3.4% after; real equity three years out
 1% of the time in 1940–72. The same state vector means different things in different arrangements, which is why the
 analog retrieval standardizes inside an expanding window and why the far end of a cone should relax toward the era's
 climate rather than the pooled one. `climatology/README.md` carries the headline tables.
+
+## The noise band (`tools/noise_band.py`, `analogs/noise_band.md`)
+
+The harness refits every four years; shift those years by one, two and three and rerun, and the spread is the
+run-to-run noise with nothing else changed (the trees have no other randomness at this sample size; the k-NN does not
+refit and does not move). Mean range across targets: 0.031 for the logit, 0.025 for the trees, 0.016 for the ensemble;
+single cells reach 0.07 (the logit on the drawdown before 2004) and 0.06 (the trees on the contraction before 2004).
+Read against it: the oil price's GDP-fall gain (+0.08, logit) and the materials family's label move (+0.08, logit)
+clear the band, the oil drawdown gain (+0.03, trees) sits at its edge, and the diffusion, topology and measured-energy
+differences (±0.01 to ±0.06, mostly logit) sit inside it — which is the reading the sections above already gave,
+now with the band written down rather than assumed.
 
 ## The corporate layer (`corporate/`, `tools/corporate_pull.py`, `tools/corporate_build.py`)
 
