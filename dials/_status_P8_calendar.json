@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-05T05:26:09-07:00",
- "last_as_of": "2026-11-04",
- "last_file": "dials/calendar/2026-11-05.json",
+ "last_run_at": "2026-11-06T05:15:00-07:00",
+ "last_as_of": "2026-11-05",
+ "last_file": "dials/calendar/2026-11-06.json",
  "status": "partial",
- "error": "Refunding statement text (treasury.gov press release sb0678) failed to fetch (client_error): refunding sizes and guidance are press-sourced, verified:false. ORCL / AVGO / MU next earnings dates are aggregator estimates (verified:false). No primary SEC FWP/424B5 read for the Oracle, Meta or Alphabet deals (Meta FWP fetch failed, client_error); final tranche terms incomplete for Alphabet EUR and Meta EUR. NVDA date verified from the company release text but via a mirror. Auction tails not available (no when-issued source)."
+ "error": "ORCL (12-14), AVGO (12-09 or 12-10 - aggregators disagree) and MU (12-23) next earnings dates remain aggregator estimates (verified:false); none falls inside ten days. Meta USD 15bn FWP on sec.gov unreachable (client_error) - Meta USD and EUR final terms are press-sourced, two EUR tranches still missing. New deals (Apple, ING loan sale, SpaceX financing sell-down, Meta option exercise) are press-only (primary:false). Bill auction results from a secondary site (repo auction files have no rows after 2026-10-22 / no bills); no tails computed (no when-issued source). TreasuryDirect pages robots_disallowed; Renaissance week-ahead / weekly recap for 11-06 not yet posted."
 }
