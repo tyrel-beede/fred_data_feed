@@ -112,6 +112,8 @@ A **Forecasts** section built at site build time from `state/` (the same pattern
 
 Steps 1–2 are a few hours and reversible (memory is untouched until step 3 is saved). Step 3 is the one that changes behaviour; it is proposed as a skill card and saved by you. The weekly task exists only after 6.
 
+**Status (2026-11-06).** Steps 1–2 done (commit 69cbc42: 15 run folders seeded, `state/` reproducible, Brier 0.121 n=12 reproduced). Step 3 proposed as a skill card (saved by the user). Step 4 saved. Step 5: `tools/post_column.py` built (verified against the site's strict build) and the `macro-column` card proposed; `state/pigs.json` added to the materializer. Step 6: the `dials-weekly` scheduled task exists (Sat 06:10 MT) with a precondition guard — it stops and reports, writing nothing, if `main` lacks the feed tools or any of the three skills is still the memory-writing version — so its first firing is the one-shot test. Step 7 done on the site (`tools/forecasts.py`, the Forecasts page, a Saturday 15:30 UTC rebuild after the sequence). Remaining: merge this branch; a ruleset on the site repository; retire `/areas/macro-dials-log.md` once the pointer-line model is in use.
+
 ## 8. Invariants (the rules the tools enforce)
 
 - A run folder is written once. Corrections are new runs with `supersedes: <run_id>` in the header; nothing is edited in place.
