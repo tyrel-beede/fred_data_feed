@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-06T02:48:24Z",
+ "run_utc": "2026-11-06T19:47:37Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -154,5 +154,8 @@
   "breadth",
   "eia"
  ],
- "failed": {}
+ "failed": {},
+ "prices_stale": [
+  "^SKEW:2026-11-05"
+ ]
 }

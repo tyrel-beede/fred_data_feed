@@ -1,0 +1,101 @@
+[
+ {
+  "key": "nfcb_debt",
+  "id": "NCBDBIQ027S",
+  "title": "Nonfinancial Corporate Business; Debt Securities; Liability, Level",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1945-10-01",
+  "seasonal_adjustment": "Not Seasonally Adjusted"
+ },
+ {
+  "key": "nfcb_equity_mv",
+  "id": "NCBEILQ027S",
+  "title": "Nonfinancial Corporate Business; Corporate Equities; Liability, Level",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1945-10-01",
+  "seasonal_adjustment": "Not Seasonally Adjusted"
+ },
+ {
+  "key": "nfcb_net_worth",
+  "id": "TNWMVBSNNCB",
+  "title": "Nonfinancial Corporate Business; Net Worth, Level",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1945-10-01",
+  "seasonal_adjustment": "Not Seasonally Adjusted"
+ },
+ {
+  "key": "nfcb_total_liabilities",
+  "id": "TLBSNNCB",
+  "title": "Nonfinancial Corporate Business; Total Liabilities, Level",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1945-10-01",
+  "seasonal_adjustment": "Not Seasonally Adjusted"
+ },
+ {
+  "key": "nfcb_capex",
+  "id": "BOGZ1FA105050005Q",
+  "title": "Nonfinancial Corporate Business; Total Capital Expenditures, Transactions",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1946-10-01",
+  "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+ },
+ {
+  "key": "nfcb_net_dividends",
+  "id": "BOGZ1FA106121075Q",
+  "title": "Nonfinancial Corporate Business; Net Dividends Paid, Transactions",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1946-10-01",
+  "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+ },
+ {
+  "key": "nfcb_liquid_assets",
+  "id": "BOGZ1FL104001005Q",
+  "title": "Nonfinancial Corporate Business; Liquid Assets (Broad Measure), Level",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1945-10-01",
+  "seasonal_adjustment": "Not Seasonally Adjusted"
+ },
+ {
+  "key": "corp_profits_after_tax_q",
+  "id": "CP",
+  "title": "Corporate Profits After Tax (without IVA and CCAdj)",
+  "units": "Billions of Dollars",
+  "frequency": "Quarterly",
+  "observation_start": "1947-01-01",
+  "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+ },
+ {
+  "key": "corp_profits_iva_ccadj_annual",
+  "id": "A053RC1A027NBEA",
+  "title": "Corporate profits: Profits before taxes, NIPAs",
+  "units": "Billions of Dollars",
+  "frequency": "Annual",
+  "observation_start": "1929-01-01",
+  "seasonal_adjustment": "Not Seasonally Adjusted"
+ },
+ {
+  "key": "nfcb_profits_after_tax_q",
+  "id": "NFCPATAX",
+  "title": "Nonfinancial Corporate Business: Profits After Tax (without IVA and CCAdj)",
+  "units": "Billions of Dollars",
+  "frequency": "Quarterly",
+  "observation_start": "1947-01-01",
+  "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+ },
+ {
+  "key": "gdp_nominal_q",
+  "id": "GDP",
+  "title": "Gross Domestic Product",
+  "units": "Billions of Dollars",
+  "frequency": "Quarterly",
+  "observation_start": "1947-01-01",
+  "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+ }
+]
