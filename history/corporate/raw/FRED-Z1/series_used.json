@@ -9,6 +9,15 @@
   "seasonal_adjustment": "Not Seasonally Adjusted"
  },
  {
+  "key": "nfcb_debt_securities_and_loans",
+  "id": "BCNSDODNS",
+  "title": "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level",
+  "units": "Millions of U.S. Dollars",
+  "frequency": "Quarterly, End of Period",
+  "observation_start": "1945-10-01",
+  "seasonal_adjustment": "Seasonally Adjusted Annual Rate"
+ },
+ {
   "key": "nfcb_equity_mv",
   "id": "NCBEILQ027S",
   "title": "Nonfinancial Corporate Business; Corporate Equities; Liability, Level",

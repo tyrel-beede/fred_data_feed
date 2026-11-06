@@ -6,8 +6,17 @@
    "url": "FRED NCBDBIQ027S",
    "bytes": 5994,
    "sha256": "ab716664c2261e86dd2d7d9e6024a8898909412f0dc79a250756fdb6c8bd6689",
-   "retrieved": "2026-11-06T20:03:59Z",
+   "retrieved": "2026-11-06T20:47:01Z",
    "note": "Nonfinancial Corporate Business; Debt Securities; Liability, Level | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1945-10-01"
+  },
+  {
+   "catalog": "FRED-Z1",
+   "file": "history/corporate/raw/FRED-Z1/nfcb_debt_securities_and_loans.csv",
+   "url": "FRED BCNSDODNS",
+   "bytes": 6094,
+   "sha256": "81f6d44cdeaf216f6a9118d52a2b9e490d6d86bee4671837d928b4028fc34be8",
+   "retrieved": "2026-11-06T20:47:02Z",
+   "note": "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1945-10-01"
   },
   {
    "catalog": "FRED-Z1",
@@ -15,7 +24,7 @@
    "url": "FRED NCBEILQ027S",
    "bytes": 6010,
    "sha256": "5c11a5f8336da2da75a062d6ef54bd2990600cc23ab9df9f86ffa19a8fa718e5",
-   "retrieved": "2026-11-06T20:04:00Z",
+   "retrieved": "2026-11-06T20:47:02Z",
    "note": "Nonfinancial Corporate Business; Corporate Equities; Liability, Level | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1945-10-01"
   },
   {
@@ -24,7 +33,7 @@
    "url": "FRED TNWMVBSNNCB",
    "bytes": 6141,
    "sha256": "77466a85b4cd9803ad3140df912570c2f99f48eb662503e2d6079eeab3c62ad6",
-   "retrieved": "2026-11-06T20:04:02Z",
+   "retrieved": "2026-11-06T20:47:03Z",
    "note": "Nonfinancial Corporate Business; Net Worth, Level | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1945-10-01"
   },
   {
@@ -33,7 +42,7 @@
    "url": "FRED TLBSNNCB",
    "bytes": 6328,
    "sha256": "d9576bb012708a500c42eae704dbd317e9345605a087485b869c635c8d90a3ee",
-   "retrieved": "2026-11-06T20:04:03Z",
+   "retrieved": "2026-11-06T20:47:04Z",
    "note": "Nonfinancial Corporate Business; Total Liabilities, Level | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1945-10-01"
   },
   {
@@ -42,7 +51,7 @@
    "url": "FRED BOGZ1FA105050005Q",
    "bytes": 6108,
    "sha256": "1d1ac267f4503e692a531705b304780572442bec540c1ffc64e3ac08e199ea10",
-   "retrieved": "2026-11-06T20:04:04Z",
+   "retrieved": "2026-11-06T20:47:05Z",
    "note": "Nonfinancial Corporate Business; Total Capital Expenditures, Transactions | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1946-10-01"
   },
   {
@@ -51,7 +60,7 @@
    "url": "FRED BOGZ1FA106121075Q",
    "bytes": 5917,
    "sha256": "32912288408da4937ee48688d773278612632f663bbf05151012846b1aac0c4b",
-   "retrieved": "2026-11-06T20:04:06Z",
+   "retrieved": "2026-11-06T20:47:06Z",
    "note": "Nonfinancial Corporate Business; Net Dividends Paid, Transactions | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1946-10-01"
   },
   {
@@ -60,7 +69,7 @@
    "url": "FRED BOGZ1FL104001005Q",
    "bytes": 6092,
    "sha256": "8ea86acefe47ca05ec585cd223bead9c3a9069e08004946d08392d4753b8a5a5",
-   "retrieved": "2026-11-06T20:05:09Z",
+   "retrieved": "2026-11-06T20:48:08Z",
    "note": "Nonfinancial Corporate Business; Liquid Assets (Broad Measure), Level | units: Millions of U.S. Dollars | frequency: Quarterly, End of Period | from 1945-10-01"
   },
   {
@@ -69,7 +78,7 @@
    "url": "FRED CP",
    "bytes": 5989,
    "sha256": "45567ec505c565357b454d92a892f53e5a067c47c97e92ed78141cfd6a1a6d0d",
-   "retrieved": "2026-11-06T20:05:11Z",
+   "retrieved": "2026-11-06T20:48:10Z",
    "note": "Corporate Profits After Tax (without IVA and CCAdj) | units: Billions of Dollars | frequency: Quarterly | from 1947-01-01"
   },
   {
@@ -78,7 +87,7 @@
    "url": "FRED A053RC1A027NBEA",
    "bytes": 1815,
    "sha256": "5b84c6a0527f6a9d014d359cb82a2ce2fa7317228a58546ef6ea8806743518be",
-   "retrieved": "2026-11-06T20:05:12Z",
+   "retrieved": "2026-11-06T20:48:10Z",
    "note": "Corporate profits: Profits before taxes, NIPAs | units: Billions of Dollars | frequency: Annual | from 1929-01-01"
   },
   {
@@ -87,7 +96,7 @@
    "url": "FRED NFCPATAX",
    "bytes": 5954,
    "sha256": "2f09f164d24ac0a33559352c8dfdfbdb59ebdb9a80dd0d5083dc77b3571e5943",
-   "retrieved": "2026-11-06T20:05:13Z",
+   "retrieved": "2026-11-06T20:48:11Z",
    "note": "Nonfinancial Corporate Business: Profits After Tax (without IVA and CCAdj) | units: Billions of Dollars | frequency: Quarterly | from 1947-01-01"
   },
   {
@@ -96,21 +105,28 @@
    "url": "FRED GDP",
    "bytes": 6357,
    "sha256": "2e2c40d1b0d4fc6158229cc020e5b7bf0eccc5785938b0dce68e2d1833f89d1f",
-   "retrieved": "2026-11-06T20:05:14Z",
+   "retrieved": "2026-11-06T20:48:12Z",
    "note": "Gross Domestic Product | units: Billions of Dollars | frequency: Quarterly | from 1947-01-01"
   },
   {
    "catalog": "FRED-Z1",
    "file": "history/corporate/raw/FRED-Z1/series_used.json",
    "url": "FRED series metadata",
-   "bytes": 3302,
-   "sha256": "9068b3bb3b4bdf2f04f0d32d1deaa9a1914cdb3af6b3f849584acad8112bc48e",
-   "retrieved": "2026-11-06T20:05:15Z"
+   "bytes": 3642,
+   "sha256": "b31a3a367ed2d6be4cb4eb5fe9738b52ae226a46551f04f8c0dfcc5e8141fb59",
+   "retrieved": "2026-11-06T20:48:12Z"
+  },
+  {
+   "catalog": "SHILLER",
+   "file": "history/corporate/raw/SHILLER/ie_data.xls",
+   "url": "http://www.econ.yale.edu/~shiller/data/ie_data.xls",
+   "bytes": 1628672,
+   "sha256": "0df9392b7dacf91f756e92c8db508ad903c4588b43f3253680eec3dd8b40db68",
+   "retrieved": "2026-11-06T20:48:24Z"
   }
  ],
  "errors": [
-  "shiller (shillerdata.com): no xls link on shillerdata.com",
-  "shiller (yale): <urlopen error [Errno 111] Connection refused>",
+  "shiller (https://www.econ.yale.edu/~shiller/data/ie_data.xls): <urlopen error [Errno 111] Connection refused>",
   "goyal-welch: no predictor workbook found among the page's Drive links (attach PredictorData<year>.xlsx under history/corporate/raw/GOYAL-WELCH/)",
   "sec fsds: HTTP Error 403: Forbidden",
   "sec 13f: HTTP Error 403: Forbidden"
