@@ -14,6 +14,7 @@ Outputs
   standoff.csv    one row per standoff run: H2/H3 R+ R- F E
   lens.csv        SUP PRIN NEO HYP TOP8 per run
   fields.csv      the field columns per run that carries point readings
+  pigs.json       the pig ledger: open / graded / retired across the column runs, with the logged and recomputed tally
   cone.csv        the raw cone log fields per run
   register.json   the gatherers' _status_<group>.json files, merged
   latest.json     run_id / run_at of the latest run of each kind
@@ -73,6 +74,7 @@ def main():
 
     ledger, resolved_by_id = {}, {}
     weights, standoff, lens, fields, cone_rows = [], [], [], [], []
+    pigs_open, pigs_graded, pigs_retired, pigs_tally, pigs_runs = {}, {}, {}, None, []
     latest = {}
     mismatches = []
     for h in runs:
@@ -122,6 +124,24 @@ def main():
             r = load(rp)
             if isinstance(r.get("fields"), dict):
                 fields.append({"run_id": rid, "run_at": h.get("run_at"), **{k: r["fields"].get(k) for k in FIELD_COLS}})
+        pp = os.path.join(d, "pigs.json")
+        if os.path.exists(pp) and kind == "column":
+            pg = load(pp)
+            pigs_runs.append(rid)
+            for item in pg.get("graded", []):
+                item = dict(item); item.setdefault("graded_in_run", rid)
+                pigs_graded[item["id"]] = item; pigs_open.pop(item["id"], None)
+            for item in pg.get("retired", []):
+                item = dict(item); item.setdefault("retired_in_run", rid)
+                pigs_retired[item["id"]] = item; pigs_open.pop(item["id"], None)
+            for item in pg.get("open", []):
+                if item["id"] in pigs_graded or item["id"] in pigs_retired:
+                    continue
+                prev = pigs_open.get(item["id"], {})
+                merged = {**prev, **item, "first_seen_run": prev.get("first_seen_run", rid), "last_seen_run": rid}
+                pigs_open[item["id"]] = merged
+            if pg.get("tally") is not None:
+                pigs_tally = pg["tally"]
 
     # ledger: attach resolutions
     for i, rec in resolved_by_id.items():
@@ -170,6 +190,13 @@ def main():
     put("fields.csv", csv_text(["run_id", "run_at"] + FIELD_COLS, fields))
     cone_cols = ["run_id", "run_at"] + sorted({k for r in cone_rows for k in r} - {"run_id", "run_at"})
     put("cone.csv", csv_text(cone_cols, cone_rows))
+    tally_rec = {"paid": sum(1 for g in pigs_graded.values() if g.get("grade") == "paid"),
+                 "cost": sum(1 for g in pigs_graded.values() if g.get("grade") == "cost"),
+                 "void": sum(1 for g in pigs_graded.values() if g.get("grade") == "void")}
+    pigs_out = {"open": [pigs_open[k] for k in sorted(pigs_open)], "graded": [pigs_graded[k] for k in sorted(pigs_graded)],
+                "retired": [pigs_retired[k] for k in sorted(pigs_retired)], "tally_logged": pigs_tally, "tally_recomputed": tally_rec,
+                "column_runs": pigs_runs, "n_open": len(pigs_open)}
+    put("pigs.json", json.dumps(pigs_out, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
     put("register.json", json.dumps(register, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
     put("latest.json", json.dumps(latest, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
     print(f"materialized {len(runs)} runs -> {out}: ledger {ledger_out['n_open']} open / {ledger_out['n_resolved']} resolved; "
