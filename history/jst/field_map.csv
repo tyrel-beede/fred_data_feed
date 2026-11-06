@@ -1,6 +1,6 @@
 dials_field,dials_group,jst_proxy,transform,bridge_fred_series,join_rule,caveat,use
-10y Treasury yield,field,ltrate,level (percent),DGS10,level join on annual mean,JST long rate is the long-term government bond yield as each country defines it; annual average vs daily print,analog feature
-short rate / SOFR / IORB,field,stir,level (percent),TB3MS,level join on annual mean,JST short rate is a money-market or bill rate by country; US bill rate not policy rate,analog feature
+10y Treasury yield,field,ltrate,level (percent),DGS10,"level join (measured overlap ratio 2016-2020: 1.0023, 1.0002, 0.9996, 1.0013, 1.0056)",JST long rate is the long-term government bond yield as each country defines it; annual average vs daily print,analog feature
+short rate / SOFR / IORB,field,stir,level (percent),TB3MS,"level join (measured overlap ratio 2016-2020: 1.2283, 1.0743, 0.9437, 1.0481, 1.0137)",JST short rate is a money-market or bill rate by country; US bill rate not policy rate,analog feature
 term spread,derived,ltrate - stir,difference (pp),DGS10 - TB3MS,level join,,analog feature
 real 10y (DFII10),field,ltrate - CPI inflation,ex-post real rate (pp),DFII10 (ex-ante TIPS),concept differs: ex-post vs market-implied; compare both over 2003-2020,ex-ante real yields do not exist before 1997 anywhere in the history; the ex-post rate is the only long series,analog feature
 5y5y / breakevens,field,none,,T5YIFR,none,no inflation expectations series in the history; realized inflation (cpi_infl) is the fallback,reference only

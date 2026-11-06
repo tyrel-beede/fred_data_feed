@@ -1,45 +1,110 @@
 {
  "name": "us_2026ytd",
- "label": "United States 2026 year-to-date (Jan-Oct/Nov 2026, from the live feed; 9 of 20 features)",
- "as_of": "2026-11-04",
+ "label": "United States 2026 year-to-date (built by live_query.py from the JST sheet through 2020 and the FRED bridge, Shiller workbooks; 20 of 20 features)",
+ "as_of": "2026-11-06",
  "node": "fred_data_feed/history",
  "features": {
-  "ltrate": {
-   "value": 4.531619047619047,
-   "source": "FRED DGS10, 210 observations 2026-01-02..2026-11-02, annual mean (data/fred/DGS10.csv)"
+  "loans_gdp": {
+   "value": 0.6034245306229474,
+   "source": "FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775; FRED TOTLL 2026 (mean of 42 obs) x 1.388"
   },
-  "term_spread": {
-   "value": 0.8601811391223153,
-   "source": "DGS10 minus DFF annual means (JST stir for the US is a 3-month bill rate; the funds rate is used as the short-rate proxy, levels within ~10 bp in 2025)"
+  "d3_loans_gdp": {
+   "value": -0.016694764778984794,
+   "source": "FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775; FRED GDPA 2023 (last of 1 obs) x 0.9775; FRED TOTLL 2023 (mean of 52 obs) x 1.388; FRED TOTLL 2026 (mean of 42 obs) x 1.388"
   },
-  "real_ltrate_expost": {
-   "value": 1.464319757022877,
-   "source": "DGS10 annual mean minus CPI-U annual-average inflation"
+  "d5_loans_gdp": {
+   "value": -0.02024796949443919,
+   "source": "FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775; FRED GDPA 2021 (last of 1 obs) x 0.9775; FRED TOTLL 2021 (mean of 52 obs) x 1.388; FRED TOTLL 2026 (mean of 42 obs) x 1.388"
   },
-  "cpi_infl": {
-   "value": 0.030672992905961705,
-   "source": "CPIAUCSL annual mean 2026 / 2025 - 1 (9 and 11 months)"
-  },
-  "unemp": {
-   "value": 4.2444444444444445,
-   "source": "FRED UNRATE, 9 observations 2026-01-01..2026-09-01, annual mean (data/fred/UNRATE.csv)"
-  },
-  "d1_unemp": {
-   "value": -0.019191919191919204,
-   "source": "UNRATE annual mean 2026 minus 2025"
+  "mort_gdp": {
+   "value": 0.3679351634740187,
+   "source": "FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775; FRED HHMSDODNS 2026 (mean of 2 obs) x 0.8386"
   },
   "debt_gdp": {
-   "value": 1.2181289000000002,
-   "source": "FRED GFDEGDQ188S, 2 observations 2026-01-01..2026-04-01, annual mean (data/fred/GFDEGDQ188S.csv) / 100 (same series concept as JST debtgdp: 2020 FRED 128.1 vs JST 1.281)"
+   "value": 1.2758757224373658,
+   "source": "FRED GFDEGDQ188S 2026 (mean of 2 obs) x 1.047"
   },
   "d5_debt_gdp": {
-   "value": -0.06287109999999974,
-   "source": "GFDEGDQ188S 2026 mean / 100 minus JST USA 2020 debtgdp 1.281"
+   "value": 0.01033470428253036,
+   "source": "FRED GFDEGDQ188S 2021 (mean of 4 obs) x 1.047; FRED GFDEGDQ188S 2026 (mean of 2 obs) x 1.047"
+  },
+  "deficit_gdp": {
+   "value": 0.06273322965023762,
+   "source": "FRED FYFR 2026 (last of 1 obs); FRED FYONET 2026 (last of 1 obs); FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775"
+  },
+  "r_minus_g": {
+   "value": -0.7522687016501912,
+   "source": "FRED DGS10 2026 (mean of 212 obs); FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775; FRED GDPA 2025 (last of 1 obs) x 0.9775"
+  },
+  "ltrate": {
+   "value": 4.535330188679246,
+   "source": "FRED DGS10 2026 (mean of 212 obs)"
+  },
+  "term_spread": {
+   "value": 0.826330188679246,
+   "source": "FRED DGS10 2026 (mean of 212 obs); FRED TB3MS 2026 (mean of 10 obs)"
+  },
+  "real_ltrate_expost": {
+   "value": 1.468030898083053,
+   "source": "FRED CPIAUCSL 2025 (mean of 11 obs) x 0.7441; FRED CPIAUCSL 2026 (mean of 9 obs) x 0.7441; FRED DGS10 2026 (mean of 212 obs)"
+  },
+  "cpi_infl": {
+   "value": 0.030672992905961927,
+   "source": "FRED CPIAUCSL 2025 (mean of 11 obs) x 0.7441; FRED CPIAUCSL 2026 (mean of 9 obs) x 0.7441"
+  },
+  "rgdp_pc_growth": {
+   "value": 0.017896013415166667,
+   "source": "FRED A939RX0Q048SBEA 2025 (mean of 4 obs) x 0.5504; FRED A939RX0Q048SBEA 2026 (mean of 3 obs) x 0.5504"
+  },
+  "unemp": {
+   "value": 4.23,
+   "source": "FRED UNRATE 2026 (mean of 10 obs)"
+  },
+  "d1_unemp": {
+   "value": -0.03363636363636324,
+   "source": "FRED UNRATE 2025 (mean of 11 obs); FRED UNRATE 2026 (mean of 10 obs)"
+  },
+  "iy": {
+   "value": 0.22958005588942515,
+   "source": "FRED GPDIC1/GDPC1 2026 (mean of 3 quarters) x 1.202"
+  },
+  "ca_gdp": {
+   "value": -0.030175794492217634,
+   "source": "FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775; FRED IEABC 2026 (sum of 2 obs) x 1.045"
+  },
+  "eq_dp": {
+   "value": 0.011068669279579927,
+   "source": "Shiller ie_data D/P 2026 (mean of 6 months)"
   },
   "real_eq_capgain_3y": {
-   "value": 0.16067615309777006,
-   "source": "SP500 annual mean 2026 / 2023, deflated by CPIAUCSL annual means, annualized over 3 years (annual-average basis, as JST)"
+   "value": 0.16028638867215084,
+   "source": "FRED CPIAUCSL 2023 (mean of 12 obs) x 0.7441; FRED CPIAUCSL 2024 (mean of 12 obs) x 0.7441; FRED CPIAUCSL 2025 (mean of 11 obs) x 0.7441; FRED CPIAUCSL 2026 (mean of 9 obs) x 0.7441; Shiller ie_data P 2024/2023 (annual means, 12 months in 2024); Shiller ie_data P 2025/2024 (annual means, 12 months in 2025); Shiller ie_data P 2026/2025 (annual means, 10 months in 2026)"
+  },
+  "real_hp_growth_3y": {
+   "value": -0.0006225110170409165,
+   "source": "FRED CPIAUCSL 2023 (mean of 12 obs) x 0.7441; FRED CPIAUCSL 2026 (mean of 9 obs) x 0.7441; FRED CSUSHPISA 2023 (mean of 12 obs) x 1.374; FRED CSUSHPISA 2026 (mean of 8 obs) x 1.374"
   }
  },
- "missing": "loans_gdp, d3/d5_loans_gdp, mort_gdp, deficit_gdp, r_minus_g, rgdp_pc_growth, iy, ca_gdp, eq_dp, real_hp_growth_3y - not in the live feed yet; the bridge pull adds GDP, loans, mortgages, current account and house prices"
+ "missing": "",
+ "join_rules": "history/bridge/join_rules.json",
+ "current_year_inputs": [
+  "ca: FRED IEABC 2026 (sum of 2 obs) x 1.045",
+  "cpi: FRED CPIAUCSL 2026 (mean of 9 obs) x 0.7441",
+  "debtgdp: FRED GFDEGDQ188S 2026 (mean of 2 obs) x 1.047",
+  "eq_capgain: Shiller ie_data P 2026/2025 (annual means, 10 months in 2026)",
+  "eq_dp: Shiller ie_data D/P 2026 (mean of 6 months)",
+  "expenditure: FRED FYONET 2026 (last of 1 obs)",
+  "gdp: FRED GDP quarterly SAAR, mean of 3 quarters of 2026 x 0.9775",
+  "hpnom: FRED CSUSHPISA 2026 (mean of 8 obs) x 1.374",
+  "iy: FRED GPDIC1/GDPC1 2026 (mean of 3 quarters) x 1.202",
+  "ltrate: FRED DGS10 2026 (mean of 212 obs)",
+  "money: FRED M2SL 2026 (mean of 9 obs)",
+  "narrowm: FRED BOGMBASE 2026 (mean of 9 obs)",
+  "revenue: FRED FYFR 2026 (last of 1 obs)",
+  "rgdpmad: FRED A939RX0Q048SBEA 2026 (mean of 3 obs) x 0.5504",
+  "stir: FRED TB3MS 2026 (mean of 10 obs)",
+  "tloans: FRED TOTLL 2026 (mean of 42 obs) x 1.388",
+  "tmort: FRED HHMSDODNS 2026 (mean of 2 obs) x 0.8386",
+  "unemp: FRED UNRATE 2026 (mean of 10 obs)"
+ ]
 }

@@ -1,10 +1,10 @@
 # history/ — quality control
 
-Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any change.
+Mechanical checks run by `tools/qc.py`: **24 of 25 pass**. Re-run after any change.
 
 | check | result | evidence |
 |---|---|---|
-| inventory: every expected file exists | PASS | 101 files |
+| inventory: every expected file exists | PASS | 104 files |
 | parse: every JSON parses and every CSV is rectangular | PASS | ok |
 | jst_r6: 2,718 rows, 18 countries x 1870-2020, no duplicate country-year | PASS | rows 2718, countries 18 |
 | jst_r6: 59 columns | PASS | 59 columns |
@@ -28,7 +28,7 @@ Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any chan
 | workflow: bridge step wired and the bridge script exists | PASS |  |
 | license: CC BY-NC-SA 4.0 and both required citations stated | PASS |  |
 | README: documents overrides, provenance classes, bitemporal fields | PASS |  |
-| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 26 quoted numbers all found |
+| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | FAIL | 28 quoted; unsupported ['0.98'] |
 
 ## Content review
 

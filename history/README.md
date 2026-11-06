@@ -83,6 +83,8 @@ history/
                             energy/CO2/oil features, the diffusion and materials features
     corporate_pull.py, corporate_build.py   the corporate layer: the workflow's pulls (FRED-resolved Z.1 and BEA
                             series, Shiller, Goyal-Welch, SEC aggregates) and the US annual series
+    live_query.py           the live US query vector (all 20 features) from the JST sheet, the bridge and Shiller, with
+                            the join rules measured on the 2016-2020 overlap -> bridge/join_rules.json
     qc.py                   mechanical checks -> QC.md
 ```
 
@@ -213,9 +215,20 @@ five-year change in loans/GDP alone, the literature's credit-boom signal, scores
 about the next three years, less than a leaky backtest suggests and more than nothing, and the number to beat is now
 on the record.
 
-`analogs/us_2025.md` and `analogs/us_2026ytd.md` are the first live queries, built from the feed with the provenance
-of every value in `analogs/us_2025_query.json`; they cover 9 of the 20 features (no credit, valuation or investment
-yet — those arrive with the bridge pull), so they are a demonstration of the plumbing, not a reading.
+`analogs/us_2026ytd.md` is the live query, built by `tools/live_query.py` from the JST sheet through 2020, the FRED
+bridge from 2021 and Shiller's workbooks: all 20 features, each with the series, the months or quarters behind it
+and the join factor beside its value. The join rules are measured, not remembered — `live_query.py` recomputes the
+2016–2020 overlap between every bridged series and the JST column each run and writes `bridge/join_rules.json`:
+rates, the fiscal flows, M2 and the dividend yield join at level (overlap ratios within 1% of one; the JST equity
+series turn out to *be* Shiller's annual means, ratio 1.0000 and capital-gain differences 0.0000); the CPI (×0.744),
+nominal GDP (×0.98), federal debt (×1.05), house prices (×1.37), real GDP per capita (×0.55, Maddison dollars), bank
+loans (×1.39, the JST aggregate is broader than bank loans and leases), mortgages (×0.84, a drifting ratio: scope
+differs) and the investment share (×1.20, real against nominal) splice by a ratio chained at 2020. The current year's
+rates and indices are year-to-date means, the current account is annualized by the quarters observed, and nominal GDP
+is the mean of the quarterly series until the annual prints. The 2026 reading's fifteen nearest episodes are USA 2019,
+Belgium 2014, USA 1996, USA 2005, Japan 2007, Italy 1998 and their neighbours; what followed them, against the
+climatology, is in the file — a record's answer to "what followed states like this one", not a forecast of the dials'
+branches. `analogs/us_2025.md` is the earlier nine-feature demonstration, kept for the plumbing.
 
 ## Test 2: the subnet at t, flux, and measured targets (`tools/analog_test2.py`, `analogs/test2.md`)
 
@@ -381,8 +394,8 @@ stays as one view; the measured targets become the primary ones, and the horizon
    with a windowed (trailing 30-year) variant as the fallback where an era is young.
 3. **Voice ledger**: resolve Dalio's dated reads against the criteria recorded here and the data in `jst/` and the feed;
    the same table takes any other voice.
-4. **The bridge**: once the first workflow run writes `bridge/`, confirm the join rules and complete the live query
-   vector (credit, mortgages, investment, current account, house prices, dividend yield).
+4. **The bridge**: done in revision one — `tools/live_query.py` measures the join rules each run and builds the full
+   20-feature live vector; what remains is to carry the join to the other 17 countries' live feeds when there are any.
 5. **Extend the diffusion panel past 2003** (electricity from OWID's energy data, telephones and internet users from
    the ITU, vehicles from the WDI) so the family can be retested on the window that holds the later episodes, and
    test the materials family under a learner built for global-at-t columns (the trees, or a year-demeaned logit)

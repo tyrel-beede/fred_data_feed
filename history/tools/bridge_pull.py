@@ -29,7 +29,7 @@ BRIDGE = {
     "FYFR":           ("revenue",  "last", 1e-3,   "federal receipts, fiscal year, millions USD -> billions"),
     "FYONET":         ("expenditure", "last", 1e-3, "federal outlays, fiscal year, millions USD -> billions"),
     "M2SL":           ("money",    "mean", 1.0,    "M2, monthly, billions USD"),
-    "BOGMBASE":       ("narrowm",  "mean", 1e-3,   "monetary base, monthly, millions USD -> billions; JST US narrow money is the monetary base (doc pp. 193-194)"),
+    "BOGMBASE":       ("narrowm",  "mean", 1.0,    "monetary base, monthly, billions USD as FRED reports it; JST US narrow money is the monetary base (doc pp. 193-194)"),
     "CSUSHPISA":      ("hpnom",    "mean", None,   "Case-Shiller national index, Jan 2000=100 -> ratio splice"),
     "IEABC":          ("ca",       "sum",  1e-3,   "balance on current account, quarterly, millions USD -> billions"),
     "A939RX0Q048SBEA": ("rgdpmad", "mean", None,   "real GDP per capita, chained 2017 USD -> ratio splice to Maddison 1990 international dollars"),

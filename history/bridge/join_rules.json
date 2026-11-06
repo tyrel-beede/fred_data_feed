@@ -1,0 +1,286 @@
+{
+ "overlap_years": [
+  2016,
+  2020
+ ],
+ "rules": {
+  "ltrate": {
+   "series": "DGS10",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 1.0023,
+    "2017": 1.0002,
+    "2018": 0.9996,
+    "2019": 1.0013,
+    "2020": 1.0056
+   },
+   "note": "10-year Treasury constant maturity, annual mean of daily"
+  },
+  "stir": {
+   "series": "TB3MS",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 1.2283,
+    "2017": 1.0743,
+    "2018": 0.9437,
+    "2019": 1.0481,
+    "2020": 1.0137
+   },
+   "note": "3-month bill, annual mean of monthly"
+  },
+  "cpi": {
+   "series": "CPIAUCSL",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "ratio",
+   "factor": 0.7441308011688518,
+   "overlap_ratios": {
+    "2016": 0.744,
+    "2017": 0.7442,
+    "2018": 0.7442,
+    "2019": 0.7442,
+    "2020": 0.7441
+   },
+   "note": "CPI-U 1982-84=100 against the JST base: ratio chained at 2020"
+  },
+  "unemp": {
+   "series": "UNRATE",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 0.9988,
+    "2017": 0.9993,
+    "2018": 1.001,
+    "2019": 1.0068,
+    "2020": 0.9938
+   },
+   "note": "unemployment rate, annual mean of monthly"
+  },
+  "gdp": {
+   "series": "GDPA",
+   "aggregation": "last",
+   "scale": 1.0,
+   "rule": "ratio",
+   "factor": 0.977470190918192,
+   "overlap_ratios": {
+    "2016": 0.9942,
+    "2017": 0.9932,
+    "2018": 0.9937,
+    "2019": 0.9922,
+    "2020": 0.9775
+   },
+   "note": "nominal GDP, annual, billions; JST vintage differs by under 1%"
+  },
+  "debtgdp": {
+   "series": "GFDEGDQ188S",
+   "aggregation": "mean",
+   "scale": 0.01,
+   "rule": "ratio",
+   "factor": 1.0474061673090307,
+   "overlap_ratios": {
+    "2016": 1.012,
+    "2017": 1.0202,
+    "2018": 1.0153,
+    "2019": 1.0228,
+    "2020": 1.0474
+   },
+   "note": "federal debt / GDP, percent -> ratio"
+  },
+  "revenue": {
+   "series": "FYFR",
+   "aggregation": "last",
+   "scale": 0.001,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 1.0004,
+    "2017": 1.0004,
+    "2018": 1.0003,
+    "2019": 1.0003,
+    "2020": 1.0004
+   },
+   "note": "federal receipts, fiscal year, millions -> billions"
+  },
+  "expenditure": {
+   "series": "FYONET",
+   "aggregation": "last",
+   "scale": 0.001,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 0.9996,
+    "2017": 1.0003,
+    "2018": 1.0003,
+    "2019": 1.0001,
+    "2020": 0.9998
+   },
+   "note": "federal outlays, fiscal year, millions -> billions"
+  },
+  "money": {
+   "series": "M2SL",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 0.9975,
+    "2017": 0.9979,
+    "2018": 0.9982,
+    "2019": 0.9982,
+    "2020": 0.9989
+   },
+   "note": "M2, annual mean of monthly, billions"
+  },
+  "narrowm": {
+   "series": "BOGMBASE",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 0.9327,
+    "2017": 1.0035,
+    "2018": 0.9263,
+    "2019": 1.0379,
+    "2020": 1.1282
+   },
+   "note": "monetary base, billions as FRED now reports it (JST US narrow money is the base)"
+  },
+  "hpnom": {
+   "series": "CSUSHPISA",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "ratio",
+   "factor": 1.3743521267544703,
+   "overlap_ratios": {
+    "2016": 1.3198,
+    "2017": 1.3248,
+    "2018": 1.3302,
+    "2019": 1.3513,
+    "2020": 1.3744
+   },
+   "note": "Case-Shiller national, Jan 2000=100: ratio chained at 2020"
+  },
+  "ca": {
+   "series": "IEABC",
+   "aggregation": "sum",
+   "scale": 0.001,
+   "rule": "ratio",
+   "factor": 1.0448900052406722,
+   "overlap_ratios": {
+    "2016": 1.0462,
+    "2017": 1.0368,
+    "2018": 1.0448,
+    "2019": 1.1678,
+    "2020": 1.0449
+   },
+   "note": "current account, quarterly millions summed -> billions; annualized by quarters observed"
+  },
+  "rgdpmad": {
+   "series": "A939RX0Q048SBEA",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "ratio",
+   "factor": 0.5504320800181983,
+   "overlap_ratios": {
+    "2016": 0.5598,
+    "2017": 0.5591,
+    "2018": 0.5591,
+    "2019": 0.5578,
+    "2020": 0.5504
+   },
+   "note": "real GDP per capita, chained 2017$ -> Maddison 1990 int$: ratio chained at 2020"
+  },
+  "tloans": {
+   "series": "TOTLL",
+   "aggregation": "mean",
+   "scale": 1.0,
+   "rule": "ratio",
+   "factor": 1.3879383138738657,
+   "overlap_ratios": {
+    "2016": 1.3654,
+    "2017": 1.3741,
+    "2018": 1.3712,
+    "2019": 1.3699,
+    "2020": 1.3879
+   },
+   "note": "loans and leases in bank credit, billions; JST total loans are broader: ratio chained at 2020"
+  },
+  "tmort": {
+   "series": "HHMSDODNS",
+   "aggregation": "mean",
+   "scale": 0.001,
+   "rule": "ratio",
+   "factor": 0.8386232500635502,
+   "overlap_ratios": {
+    "2016": 0.7504,
+    "2017": 0.7667,
+    "2018": 0.7645,
+    "2019": 0.7862,
+    "2020": 0.8386
+   },
+   "note": "household mortgages, millions -> billions; JST mortgages differ in scope: ratio chained at 2020"
+  },
+  "iy": {
+   "series": "GPDIC1/GDPC1",
+   "rule": "ratio",
+   "factor": 1.2016771033599505,
+   "overlap_ratios": {
+    "2016": 1.129,
+    "2017": 1.1569,
+    "2018": 1.1483,
+    "2019": 1.1508,
+    "2020": 1.2017
+   },
+   "note": "real investment / real GDP against JST nominal I/GDP: ratio chained at 2020"
+  },
+  "eq_dp": {
+   "series": "Shiller D/P (annual mean of monthly)",
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_ratios": {
+    "2016": 1.0,
+    "2017": 1.0,
+    "2018": 1.0,
+    "2019": 1.0,
+    "2020": 1.0
+   },
+   "note": "S&P composite dividend yield; JST eq_dp is the same concept"
+  },
+  "eq_capgain": {
+   "series": "Shiller P (annual mean of monthly), yearly change",
+   "rule": "level",
+   "factor": 1.0,
+   "overlap_differences": {
+    "2016": 0.0,
+    "2017": -0.0,
+    "2018": -0.0,
+    "2019": 0.0,
+    "2020": -0.0
+   },
+   "note": "nominal capital gain of the S&P composite against JST eq_capgain (differences, not ratios)"
+  },
+  "hpnom_shiller": {
+   "series": "Shiller Figure 3.1 nominal home price index (annual mean of monthly)",
+   "rule": "ratio",
+   "factor": 1.3740737035458577,
+   "overlap_ratios": {
+    "2016": 1.3197,
+    "2017": 1.3246,
+    "2018": 1.33,
+    "2019": 1.3511,
+    "2020": 1.3741
+   },
+   "note": "used for hpnom when it runs later than Case-Shiller in the bridge (same underlying index after 1987)"
+  }
+ },
+ "built": "2026-11-06"
+}

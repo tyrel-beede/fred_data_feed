@@ -1,76 +1,76 @@
-series,jst_column,year,jst_value,bridge_value_scaled,ratio_jst_over_bridge,difference,note
-DGS10,ltrate,2016,1.84167,1.83744,1.0023,0.00422667,"10-year Treasury constant maturity, daily; JST ltrate is percent"
-DGS10,ltrate,2017,2.33,2.32948,1.00022,0.00052,"10-year Treasury constant maturity, daily; JST ltrate is percent"
-DGS10,ltrate,2018,2.91,2.91124,0.999572,-0.00124498,"10-year Treasury constant maturity, daily; JST ltrate is percent"
-DGS10,ltrate,2019,2.14417,2.1414,1.00129,0.002767,"10-year Treasury constant maturity, daily; JST ltrate is percent"
-DGS10,ltrate,2020,0.894167,0.889203,1.00558,0.00496341,"10-year Treasury constant maturity, daily; JST ltrate is percent"
-TB3MS,stir,2016,0.39,0.3175,1.22835,0.0725,"3-month Treasury bill secondary market, monthly; JST stir is percent"
-TB3MS,stir,2017,1,0.930833,1.07431,0.0691667,"3-month Treasury bill secondary market, monthly; JST stir is percent"
-TB3MS,stir,2018,1.83,1.93917,0.943704,-0.109167,"3-month Treasury bill secondary market, monthly; JST stir is percent"
-TB3MS,stir,2019,2.16,2.06083,1.04812,0.0991667,"3-month Treasury bill secondary market, monthly; JST stir is percent"
-TB3MS,stir,2020,0.37,0.365,1.0137,0.005,"3-month Treasury bill secondary market, monthly; JST stir is percent"
-CPIAUCSL,cpi,2016,178.575,240.005,0.744046,-61.4304,"CPI-U all items, 1982-84=100; JST cpi has its own base -> ratio splice"
-CPIAUCSL,cpi,2017,182.415,245.121,0.744185,-62.7056,"CPI-U all items, 1982-84=100; JST cpi has its own base -> ratio splice"
-CPIAUCSL,cpi,2018,186.862,251.1,0.744175,-64.2374,"CPI-U all items, 1982-84=100; JST cpi has its own base -> ratio splice"
-CPIAUCSL,cpi,2019,190.248,255.653,0.744165,-65.405,"CPI-U all items, 1982-84=100; JST cpi has its own base -> ratio splice"
-CPIAUCSL,cpi,2020,192.623,258.856,0.744131,-66.2332,"CPI-U all items, 1982-84=100; JST cpi has its own base -> ratio splice"
-UNRATE,unemp,2016,4.8692,4.875,0.99881,-0.0058,"civilian unemployment rate, monthly, percent"
-UNRATE,unemp,2017,4.3552,4.35833,0.999281,-0.00313333,"civilian unemployment rate, monthly, percent"
-UNRATE,unemp,2018,3.8956,3.89167,1.00101,0.00393333,"civilian unemployment rate, monthly, percent"
-UNRATE,unemp,2019,2,3.675,0.544218,-1.675,"civilian unemployment rate, monthly, percent"
-UNRATE,unemp,2020,8.05,8.1,0.993827,-0.05,"civilian unemployment rate, monthly, percent"
-GDPA,gdp,2016,18695.1,18804.9,0.99416,-109.813,"nominal GDP, annual, billions USD"
-GDPA,gdp,2017,19479.6,19612.1,0.993244,-132.502,"nominal GDP, annual, billions USD"
-GDPA,gdp,2018,20527.2,20656.5,0.99374,-129.316,"nominal GDP, annual, billions USD"
-GDPA,gdp,2019,21372.6,21540,0.992229,-167.382,"nominal GDP, annual, billions USD"
-GDPA,gdp,2020,20893.7,21375.3,0.97747,-481.581,"nominal GDP, annual, billions USD"
-GFDEGDQ188S,debtgdp,2016,1.052,1.03955,1.01197,0.0124461,"federal debt / GDP, quarterly, percent -> JST ratio"
-GFDEGDQ188S,debtgdp,2017,1.046,1.02526,1.02023,0.0207393,"federal debt / GDP, quarterly, percent -> JST ratio"
-GFDEGDQ188S,debtgdp,2018,1.054,1.03807,1.01535,0.0159341,"federal debt / GDP, quarterly, percent -> JST ratio"
-GFDEGDQ188S,debtgdp,2019,1.068,1.04415,1.02284,0.0238513,"federal debt / GDP, quarterly, percent -> JST ratio"
-GFDEGDQ188S,debtgdp,2020,1.281,1.22302,1.04741,0.0579787,"federal debt / GDP, quarterly, percent -> JST ratio"
-FYFR,revenue,2016,3267.96,3266.69,1.00039,1.27263,"federal receipts, fiscal year, millions USD -> billions"
-FYFR,revenue,2017,3316.18,3314.89,1.00039,1.2881,"federal receipts, fiscal year, millions USD -> billions"
-FYFR,revenue,2018,3329.91,3328.75,1.00035,1.16176,"federal receipts, fiscal year, millions USD -> billions"
-FYFR,revenue,2019,3463.36,3462.2,1.00034,1.16839,"federal receipts, fiscal year, millions USD -> billions"
-FYFR,revenue,2020,3421.16,3419.96,1.00035,1.20699,"federal receipts, fiscal year, millions USD -> billions"
-FYONET,expenditure,2016,3852.61,3854.1,0.999614,-1.48814,"federal outlays, fiscal year, millions USD -> billions"
-FYONET,expenditure,2017,3981.63,3980.61,1.00026,1.02258,"federal outlays, fiscal year, millions USD -> billions"
-FYONET,expenditure,2018,4109.04,4107.74,1.00032,1.3025,"federal outlays, fiscal year, millions USD -> billions"
-FYONET,expenditure,2019,4446.96,4446.58,1.00008,0.372364,"federal outlays, fiscal year, millions USD -> billions"
-FYONET,expenditure,2020,6550.4,6551.87,0.999775,-1.47625,"federal outlays, fiscal year, millions USD -> billions"
-M2SL,money,2016,12860.2,12892.2,0.997518,-32,"M2, monthly, billions USD"
-M2SL,money,2017,13592.5,13621.5,0.99787,-29.0167,"M2, monthly, billions USD"
-M2SL,money,2018,14116.5,14141.6,0.998229,-25.05,"M2, monthly, billions USD"
-M2SL,money,2019,14836.5,14863.8,0.998168,-27.225,"M2, monthly, billions USD"
-M2SL,money,2020,17677.4,17696.6,0.998916,-19.1917,"M2, monthly, billions USD"
-BOGMBASE,narrowm,2016,3509.75,3.76309,932.678,3505.99,"monetary base, monthly, millions USD -> billions; JST US narrow money is the monetary base (doc pp. 193-194)"
-BOGMBASE,narrowm,2017,3823.71,3.81047,1003.47,3819.9,"monetary base, monthly, millions USD -> billions; JST US narrow money is the monetary base (doc pp. 193-194)"
-BOGMBASE,narrowm,2018,3372.91,3.64112,926.34,3369.27,"monetary base, monthly, millions USD -> billions; JST US narrow money is the monetary base (doc pp. 193-194)"
-BOGMBASE,narrowm,2019,3426.5,3.30143,1037.88,3423.2,"monetary base, monthly, millions USD -> billions; JST US narrow money is the monetary base (doc pp. 193-194)"
-BOGMBASE,narrowm,2020,5206.5,4.61508,1128.15,5201.88,"monetary base, monthly, millions USD -> billions; JST US narrow money is the monetary base (doc pp. 193-194)"
-CSUSHPISA,hpnom,2016,238.756,180.901,1.31981,57.8544,"Case-Shiller national index, Jan 2000=100 -> ratio splice"
-CSUSHPISA,hpnom,2017,253.522,191.363,1.32482,62.1593,"Case-Shiller national index, Jan 2000=100 -> ratio splice"
-CSUSHPISA,hpnom,2018,269.281,202.435,1.33021,66.846,"Case-Shiller national index, Jan 2000=100 -> ratio splice"
-CSUSHPISA,hpnom,2019,282.986,209.412,1.35134,73.5743,"Case-Shiller national index, Jan 2000=100 -> ratio splice"
-CSUSHPISA,hpnom,2020,305.222,222.084,1.37435,83.1376,"Case-Shiller national index, Jan 2000=100 -> ratio splice"
-IEABC,ca,2016,-397.573,-380.007,1.04623,-17.566,"balance on current account, quarterly, millions USD -> billions"
-IEABC,ca,2017,-361.702,-348.86,1.03681,-12.842,"balance on current account, quarterly, millions USD -> billions"
-IEABC,ca,2018,-438.241,-419.446,1.04481,-18.795,"balance on current account, quarterly, millions USD -> billions"
-IEABC,ca,2019,-472.145,-404.302,1.1678,-67.843,"balance on current account, quarterly, millions USD -> billions"
-IEABC,ca,2020,-616.087,-589.619,1.04489,-26.468,"balance on current account, quarterly, millions USD -> billions"
-A939RX0Q048SBEA,rgdpmad,2016,33012.8,58967.8,0.559844,-25955,"real GDP per capita, chained 2017 USD -> ratio splice to Maddison 1990 international dollars"
-A939RX0Q048SBEA,rgdpmad,2017,33543.7,60000.8,0.559054,-26457.1,"real GDP per capita, chained 2017 USD -> ratio splice to Maddison 1990 international dollars"
-A939RX0Q048SBEA,rgdpmad,2018,34338.8,61417.5,0.559104,-27078.7,"real GDP per capita, chained 2017 USD -> ratio splice to Maddison 1990 international dollars"
-A939RX0Q048SBEA,rgdpmad,2019,34961.8,62676.5,0.557814,-27714.7,"real GDP per capita, chained 2017 USD -> ratio splice to Maddison 1990 international dollars"
-A939RX0Q048SBEA,rgdpmad,2020,33646.3,61127,0.550432,-27480.7,"real GDP per capita, chained 2017 USD -> ratio splice to Maddison 1990 international dollars"
-TOTLL,tloans,2016,11698.2,8567.41,1.36543,3130.79,"loans and leases in bank credit, all commercial banks, billions; concept check pending"
-TOTLL,tloans,2017,12263.2,8924.73,1.37407,3338.47,"loans and leases in bank credit, all commercial banks, billions; concept check pending"
-TOTLL,tloans,2018,12814.9,9345.7,1.3712,3469.15,"loans and leases in bank credit, all commercial banks, billions; concept check pending"
-TOTLL,tloans,2019,13455.4,9821.88,1.36994,3633.54,"loans and leases in bank credit, all commercial banks, billions; concept check pending"
-TOTLL,tloans,2020,14528.9,10468,1.38794,4060.93,"loans and leases in bank credit, all commercial banks, billions; concept check pending"
-HHMSDODNS,tmort,2016,7146.1,9523.01,0.750404,-2376.91,"household mortgage debt, quarterly, millions -> billions; concept check pending"
-HHMSDODNS,tmort,2017,7479.9,9755.99,0.766698,-2276.09,"household mortgage debt, quarterly, millions -> billions; concept check pending"
-HHMSDODNS,tmort,2018,7662.87,10022.7,0.76455,-2359.85,"household mortgage debt, quarterly, millions -> billions; concept check pending"
-HHMSDODNS,tmort,2019,8088.82,10288.1,0.786232,-2199.26,"household mortgage debt, quarterly, millions -> billions; concept check pending"
-HHMSDODNS,tmort,2020,8896.75,10608.8,0.838623,-1712.01,"household mortgage debt, quarterly, millions -> billions; concept check pending"
+jst_column,series,year,jst,bridge_in_jst_units,ratio
+ltrate,DGS10,2016,1.84167,1.83744,1.0023
+ltrate,DGS10,2017,2.33,2.32948,1.0002
+ltrate,DGS10,2018,2.91,2.91124,0.9996
+ltrate,DGS10,2019,2.14417,2.1414,1.0013
+ltrate,DGS10,2020,0.894167,0.889203,1.0056
+stir,TB3MS,2016,0.39,0.3175,1.2283
+stir,TB3MS,2017,1,0.930833,1.0743
+stir,TB3MS,2018,1.83,1.93917,0.9437
+stir,TB3MS,2019,2.16,2.06083,1.0481
+stir,TB3MS,2020,0.37,0.365,1.0137
+cpi,CPIAUCSL,2016,178.575,240.005,0.7440
+cpi,CPIAUCSL,2017,182.415,245.121,0.7442
+cpi,CPIAUCSL,2018,186.862,251.099,0.7442
+cpi,CPIAUCSL,2019,190.248,255.653,0.7442
+cpi,CPIAUCSL,2020,192.623,258.856,0.7441
+unemp,UNRATE,2016,4.8692,4.875,0.9988
+unemp,UNRATE,2017,4.3552,4.35833,0.9993
+unemp,UNRATE,2018,3.8956,3.89167,1.0010
+unemp,UNRATE,2019,3.7,3.675,1.0068
+unemp,UNRATE,2020,8.05,8.1,0.9938
+gdp,GDPA,2016,18695.1,18804.9,0.9942
+gdp,GDPA,2017,19479.6,19612.1,0.9932
+gdp,GDPA,2018,20527.2,20656.5,0.9937
+gdp,GDPA,2019,21372.6,21540,0.9922
+gdp,GDPA,2020,20893.7,21375.3,0.9775
+debtgdp,GFDEGDQ188S,2016,1.052,1.03955,1.0120
+debtgdp,GFDEGDQ188S,2017,1.046,1.02526,1.0202
+debtgdp,GFDEGDQ188S,2018,1.054,1.03807,1.0153
+debtgdp,GFDEGDQ188S,2019,1.068,1.04415,1.0228
+debtgdp,GFDEGDQ188S,2020,1.281,1.22302,1.0474
+revenue,FYFR,2016,3267.96,3266.69,1.0004
+revenue,FYFR,2017,3316.18,3314.89,1.0004
+revenue,FYFR,2018,3329.91,3328.75,1.0003
+revenue,FYFR,2019,3463.36,3462.2,1.0003
+revenue,FYFR,2020,3421.16,3419.96,1.0004
+expenditure,FYONET,2016,3852.61,3854.1,0.9996
+expenditure,FYONET,2017,3981.63,3980.61,1.0003
+expenditure,FYONET,2018,4109.04,4107.74,1.0003
+expenditure,FYONET,2019,4446.96,4446.58,1.0001
+expenditure,FYONET,2020,6550.4,6551.87,0.9998
+money,M2SL,2016,12860.2,12892.2,0.9975
+money,M2SL,2017,13592.5,13621.5,0.9979
+money,M2SL,2018,14116.5,14141.6,0.9982
+money,M2SL,2019,14836.5,14863.8,0.9982
+money,M2SL,2020,17677.4,17696.6,0.9989
+narrowm,BOGMBASE,2016,3509.75,3763.09,0.9327
+narrowm,BOGMBASE,2017,3823.71,3810.47,1.0035
+narrowm,BOGMBASE,2018,3372.91,3641.12,0.9263
+narrowm,BOGMBASE,2019,3426.5,3301.43,1.0379
+narrowm,BOGMBASE,2020,5206.5,4615.07,1.1282
+hpnom,CSUSHPISA,2016,238.756,180.901,1.3198
+hpnom,CSUSHPISA,2017,253.522,191.363,1.3248
+hpnom,CSUSHPISA,2018,269.281,202.435,1.3302
+hpnom,CSUSHPISA,2019,282.986,209.412,1.3513
+hpnom,CSUSHPISA,2020,305.222,222.084,1.3744
+ca,IEABC,2016,-397.573,-380.007,1.0462
+ca,IEABC,2017,-361.702,-348.86,1.0368
+ca,IEABC,2018,-438.241,-419.446,1.0448
+ca,IEABC,2019,-472.145,-404.302,1.1678
+ca,IEABC,2020,-616.087,-589.619,1.0449
+rgdpmad,A939RX0Q048SBEA,2016,33012.8,58967.8,0.5598
+rgdpmad,A939RX0Q048SBEA,2017,33543.7,60000.8,0.5591
+rgdpmad,A939RX0Q048SBEA,2018,34338.8,61417.5,0.5591
+rgdpmad,A939RX0Q048SBEA,2019,34961.8,62676.5,0.5578
+rgdpmad,A939RX0Q048SBEA,2020,33646.3,61127,0.5504
+tloans,TOTLL,2016,11698.2,8567.41,1.3654
+tloans,TOTLL,2017,12263.2,8924.73,1.3741
+tloans,TOTLL,2018,12814.9,9345.7,1.3712
+tloans,TOTLL,2019,13455.4,9821.88,1.3699
+tloans,TOTLL,2020,14528.9,10468,1.3879
+tmort,HHMSDODNS,2016,7146.1,9523.01,0.7504
+tmort,HHMSDODNS,2017,7479.9,9755.99,0.7667
+tmort,HHMSDODNS,2018,7662.87,10022.7,0.7645
+tmort,HHMSDODNS,2019,8088.82,10288.1,0.7862
+tmort,HHMSDODNS,2020,8896.75,10608.8,0.8386
