@@ -1,0 +1,7 @@
+# Migration notes (migrate_memory.py, memory 2026-11-06)
+
+- standoff weights method: memory applies each LR by multiplying the target branch's WEIGHT and renormalizing (10/20: E 20x2 -> 10/25/45/40 -> /120; 10/30: R+ 10x1.5, R- 20x1.5, E 35x2 -> 15/30/35/70 -> /150). Checked: this is algebraically identical to the odds-form update the skills specify (new_t = w_t*LR / (w_t*LR + 1 - w_t), others scaled by 1/(w_t*LR + 1 - w_t)), and sequential updates compose to the product of multipliers, so no method discrepancy. The only lossy step is the rounding to 5 (10/30 H2 exact 10.0/20.0/23.3/46.7 -> logged 10/20/25/45; H3 exact 9.7/19.4/19.4/51.6 -> 10/20/20/50). Recorded as logged; exact values in cone.json 'exact'.
+- macro-dials F-20261103-ORCL-BONDS carries a Nov 3 id but was resolved in the 2026-11-02 19:35/20:30 session (the pricing was reported that evening); id kept as logged.
+- macro-dials rolling Brier 0.121 (n=12) reproduced from the twelve resolved lines: sum 1.455 / 12 = 0.12125.
+- October 2026 field, flow and discourse lines were rolled into min-max summaries in memory before migration; per-run point values for 10/17-18, 10/27 and 10/30 are not recoverable from memory except where a run line states them (lens levels, cone log lines, weights). Those summaries are stored under runs/2026-10-rolled/ as ranges.
+- The macro-dials 2026-11-02 19:35 published band 'A 79 (67-85) / B 19 (12-30) / C 2' comes from the run line; the cone log line carries only the B IQR [12.2, 30.1]; the A band is kept as published text, not as a cone field.

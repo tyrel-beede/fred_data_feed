@@ -1,0 +1,85 @@
+{
+ "hazards_per_month": {
+  "choreographed_strike_then_ceasefire": 10,
+  "disorderly_treasury_move": 10,
+  "energy_infra_strike": 12,
+  "fuse_pricing_fails_or_sweetened_by_1231": 15,
+  "gulf_state_engages_iran": 7,
+  "iran_nuclear_test": 3,
+  "red_sea_or_pipeline_shutdown": 25
+ },
+ "registered": [
+  {
+   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
+   "id": "S-20261209-SIGN",
+   "note": "held",
+   "p": 0.3,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "E criteria met by Dec 9",
+   "id": "S-20261209-E",
+   "note": "from 0.35",
+   "p": 0.4,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "US or Israeli strikes on Iranian territory before Nov 3",
+   "id": "S-20261103-STRIKE",
+   "note": "",
+   "p": 0.1,
+   "resolves": "2026-11-03"
+  },
+  {
+   "criterion": "US or Israeli strikes on Iranian territory Nov 4-30",
+   "id": "S-20261130-STRIKE",
+   "note": "from 0.40; press/crowd adjustment within +/-10",
+   "p": 0.45,
+   "resolves": "2026-11-30"
+  },
+  {
+   "criterion": "Saudi-acknowledged damage to the East-West line or Yanbu export facilities Oct 20-Nov 9",
+   "id": "S-20261109-YANBU",
+   "note": "",
+   "p": 0.3,
+   "resolves": "2026-11-09"
+  },
+  {
+   "criterion": "a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
+   "id": "S-20261209-M3",
+   "note": "",
+   "p": 0.15,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles >= 120 on any day by Dec 9",
+   "id": "S-20261209-BRENT120",
+   "note": "from 0.25; first-pass 0.20 void",
+   "p": 0.35,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles <= 90 on any day by Dec 9",
+   "id": "S-20261209-BRENT90",
+   "note": "from 0.20; first-pass 0.35 void",
+   "p": 0.15,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "id": "S-20261231-FUSE",
+   "note": "from 0.20",
+   "p": 0.1,
+   "resolves": "2026-12-31"
+  },
+  {
+   "criterion": "a new Israeli government sworn in by Dec 4",
+   "id": "S-20261204-ISRAELGOV",
+   "note": "new 10/30",
+   "p": 0.3,
+   "resolves": "2026-12-04"
+  }
+ ],
+ "resolved": [],
+ "source": "standoff-watch.md Projection ledger (Open forecasts; Hazards) 2026-10-30"
+}

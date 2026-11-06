@@ -1,0 +1,19 @@
+{
+ "H2": {
+  "E": 35,
+  "F": 35,
+  "R+": 10,
+  "R-": 20
+ },
+ "H3": {
+  "E": 40,
+  "F": 30,
+  "R+": 10,
+  "R-": 20
+ },
+ "applied": [
+  "T7 -1 x2 toward E"
+ ],
+ "method": "odds-form (= weight-multiply and renormalize), rounded to 5; exact H2 8.3/20.8/37.5/33.3, H3 12.0/20.0/28.0/40.0",
+ "source": "standoff-watch.md projection ledger: opening H2 10/25/45/20, H3 15/25/35/25; applied 10/20 T7 -> H2 10/20/35/35, H3 10/20/30/40"
+}

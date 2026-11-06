@@ -1,0 +1,35 @@
+{
+ "H2_prior": [
+  65,
+  30,
+  5
+ ],
+ "H3_prior": [
+  50,
+  45,
+  5
+ ],
+ "applied": [
+  "broadening convergence x1.5 A -> BROAD x1.33 A",
+  "IG watch->tight VOIDED (q 0)",
+  "MSFT CY26 trim as a cut x4 B at q 0.25 (judgment)",
+  "C1 -1 single-B 316->360 following CCC x1.5 B",
+  "C7 +1 list GPU rates up x1.2 A",
+  "C8 -1 late-flagged OpenAI round cut x2 B (ruling i)"
+ ],
+ "forks_added_1102": "CRWV Nov 10, NVDA Nov 17, 20y Nov 18; ANTHROPIC 0.42, HORMUZ 0.38, OILE 0.33, IG100 0.45, IG115 0.14",
+ "horizon": "2026-12-09",
+ "nonevents": [
+  "MSFT/GOOGL/AMZN restraint absent LR_non 0.85 each (p 0.09 x4, w_at 0.30)",
+  "FOMC hike absent 0.92",
+  "SLOOS >=10 absent 0.64 (p 0.30 x2, w_at 0.13)"
+ ],
+ "spec_file_then": "scratchpad/cone/spec_20261102.json (not retained)",
+ "state_block": {
+  "hi": 0.75,
+  "lo": 0.25,
+  "prev": "A",
+  "t2": 20,
+  "t3": 30
+ }
+}

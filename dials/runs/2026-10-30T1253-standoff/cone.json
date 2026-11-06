@@ -1,0 +1,20 @@
+{
+ "H2": {
+  "E": 45,
+  "F": 25,
+  "R+": 10,
+  "R-": 20
+ },
+ "H3": {
+  "E": 50,
+  "F": 20,
+  "R+": 10,
+  "R-": 20
+ },
+ "applied": [
+  "T4 +1 x1.5 toward R (R+ and R- odds x1.5)",
+  "T7 -1 x2 toward E"
+ ],
+ "method": "odds-form (= weight-multiply and renormalize), rounded to 5: H2 raw 15/30/35/70 (sum 150) -> exact 10.0/20.0/23.3/46.7 -> logged 10/20/25/45; H3 raw 15/30/30/80 (sum 155) -> exact 9.7/19.4/19.4/51.6 -> logged 10/20/20/50",
+ "source": "standoff-watch.md projection ledger 2026-10-30 (corrected 13:15 MDT; the first-pass O1 zone transition from a stale Kalshi ladder was voided)"
+}
