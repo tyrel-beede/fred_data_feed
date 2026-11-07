@@ -1,11 +1,370 @@
 {
- "aggregator_version": 2,
+ "aggregator_version": 3,
  "n_filings_10k_10q": 1625,
  "n_filings_amendments": 40,
  "n_filers_cik": 1594,
+ "n_filers_with_several_filings": 26,
+ "n_filers_financial": 329,
  "n_num_rows_used": 37810,
+ "n_dimensional_rows_set_aside": 13981,
+ "n_values_beyond_cap": 0,
+ "values_beyond_cap": [],
+ "largest_filers": {
+  "Assets|0|20101231": [
+   {
+    "cik": "310522",
+    "value": "3.22197e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "70858",
+    "value": "2.26491e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "19617",
+    "value": "2.1176e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "831001",
+    "value": "1.9139e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "72971",
+    "value": "1.25813e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   }
+  ],
+  "Assets|0|20110331": [
+   {
+    "cik": "310522",
+    "value": "3.22704e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "19617",
+    "value": "2.19816e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "831001",
+    "value": "1.94782e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "72971",
+    "value": "1.24467e+12",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "886982",
+    "value": "9.33289e+11",
+    "sector": "financial",
+    "form": "10-Q"
+   }
+  ],
+  "CashAndCashEquivalentsAtCarryingValue|0|20091231": [
+   {
+    "cik": "895421",
+    "value": "3.1991e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "1067983",
+    "value": "3.0558e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "37996",
+    "value": "2.0894e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "200406",
+    "value": "1.581e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "1137774",
+    "value": "1.3164e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   }
+  ],
+  "CashAndCashEquivalentsAtCarryingValue|0|20100331": [
+   {
+    "cik": "40545",
+    "value": "6.7908e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "895421",
+    "value": "3.5478e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "310522",
+    "value": "3.0477e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "1067983",
+    "value": "2.567e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "37996",
+    "value": "2.4356e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ],
+  "CashAndCashEquivalentsAtCarryingValue|0|20101231": [
+   {
+    "cik": "70858",
+    "value": "1.08427e+11",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "40545",
+    "value": "7.8949e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "895421",
+    "value": "4.7615e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "1067983",
+    "value": "3.8227e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "200406",
+    "value": "1.9355e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ],
+  "CashAndCashEquivalentsAtCarryingValue|0|20110331": [
+   {
+    "cik": "70858",
+    "value": "9.7542e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "40545",
+    "value": "8.2173e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "895421",
+    "value": "5.2608e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "1067983",
+    "value": "4.1178e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "200406",
+    "value": "2.2356e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ],
+  "NetCashProvidedByUsedInOperatingActivities|1|20100331": [
+   {
+    "cik": "310522",
+    "value": "-3.0885e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "70858",
+    "value": "2.3876e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "895421",
+    "value": "2.1101e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "19617",
+    "value": "1.7394e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "34088",
+    "value": "1.3046e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ],
+  "NetCashProvidedByUsedInOperatingActivities|1|20110331": [
+   {
+    "cik": "72971",
+    "value": "1.7211e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "34088",
+    "value": "1.6856e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "93410",
+    "value": "9.814e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "789019",
+    "value": "8.672e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "732717",
+    "value": "7.732e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ],
+  "NetIncomeLoss|1|20100331": [
+   {
+    "cik": "310522",
+    "value": "-1.153e+10",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "34088",
+    "value": "6.3e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "93410",
+    "value": "4.552e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "831001",
+    "value": "4.428e+09",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "789019",
+    "value": "4.006e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ],
+  "NetIncomeLoss|1|20110331": [
+   {
+    "cik": "34088",
+    "value": "1.065e+10",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "310522",
+    "value": "-6.471e+09",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "93410",
+    "value": "6.211e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "320193",
+    "value": "5.987e+09",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "19617",
+    "value": "5.555e+09",
+    "sector": "financial",
+    "form": "10-Q"
+   }
+  ],
+  "StockholdersEquity|0|20110331": [
+   {
+    "cik": "70858",
+    "value": "2.30876e+11",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "19617",
+    "value": "1.80598e+11",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "831001",
+    "value": "1.71037e+11",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "1067983",
+    "value": "1.60055e+11",
+    "sector": "financial",
+    "form": "10-Q"
+   },
+   {
+    "cik": "34088",
+    "value": "1.5148e+11",
+    "sector": "nonfinancial",
+    "form": "10-Q"
+   }
+  ]
+ },
  "set": "2011q2",
  "source_zip_sha256": "10a6f98f14d2a341e938a379ea32beb4857b01d59facf04e6e7b3c68558a95d1",
  "source_zip_bytes": 15001310,
- "n_rows": 178
+ "n_rows": 387
 }

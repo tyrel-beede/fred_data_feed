@@ -1,11 +1,17 @@
 {
- "aggregator_version": 2,
+ "aggregator_version": 3,
  "n_filings_10k_10q": 478,
  "n_filings_amendments": 9,
  "n_filers_cik": 471,
+ "n_filers_with_several_filings": 7,
+ "n_filers_financial": 77,
  "n_num_rows_used": 13460,
+ "n_dimensional_rows_set_aside": 3655,
+ "n_values_beyond_cap": 0,
+ "values_beyond_cap": [],
+ "largest_filers": {},
  "set": "2010q1",
  "source_zip_sha256": "2a4db2340ab1662d5135d7e17be1a58352c5959017350f0ef2174135f9996125",
  "source_zip_bytes": 5311282,
- "n_rows": 71
+ "n_rows": 175
 }
