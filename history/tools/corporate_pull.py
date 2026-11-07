@@ -216,13 +216,15 @@ def aggregate_fsds(zip_bytes):
     """Per (tag, qtrs, ddate): number of filers, sum and median of value, 10-K/10-Q filers only, USD, no co-registrant."""
     z = zipfile.ZipFile(io.BytesIO(zip_bytes))
     forms = {}
-    with z.open("sub.txt") as f:
+    def member(base):
+        return next((n for n in z.namelist() if n.lower().rsplit("/", 1)[-1] == base), base)
+    with z.open(member("sub.txt")) as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
             if r.get("form", "").startswith(("10-K", "10-Q")):
                 forms[r["adsh"]] = (r.get("form"), r.get("fy"), r.get("fp"), r.get("sic"))
     acc = {}
-    with z.open("num.txt") as f:
+    with z.open(member("num.txt")) as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
             if r["tag"] not in FSDS_TAGS or r["adsh"] not in forms or r.get("uom") != "USD" or r.get("coreg"):
@@ -291,9 +293,9 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None):
             url = "https://www.sec.gov" + rel_
             try:
                 data, _ = get(url, SEC_UA, tries=2, timeout=600)
+                rows, nf = aggregate_fsds(data)
             except Exception as e:  # noqa
                 errors.append(f"sec fsds {q}: {e}"); continue
-            rows, nf = aggregate_fsds(data)
             body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["tag", "qtrs", "ddate", "n_filers", "sum_usd", "median_usd", "p90_usd"])
             w.writeheader(); w.writerows(rows)
             save("SEC-FSDS", f"{q}_aggregates.csv", body.getvalue().encode(), url, manifest,
@@ -306,8 +308,8 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None):
 # ------------------------------------------------------------------------------------------------------- SEC Form 13F Data Sets
 def aggregate_13f(zip_bytes):
     z = zipfile.ZipFile(io.BytesIO(zip_bytes))
-    names = {n.lower(): n for n in z.namelist()}
-    info = names.get("infotable.tsv")
+    # the TSVs sit at the zip root in the newest sets and inside a folder named after the set in the older ones
+    info = next((n for n in z.namelist() if n.lower().rsplit("/", 1)[-1] == "infotable.tsv"), None)
     if not info:
         raise ValueError(f"no INFOTABLE.tsv in zip: {z.namelist()[:5]}")
     by_cusip, by_cusip_name = {}, {}
@@ -445,9 +447,9 @@ def pull_13f(manifest, errors, max_quarters=2, since=None):
             url = "https://www.sec.gov" + rel_
             try:
                 data, _ = get(url, SEC_UA, tries=2, timeout=900)
+                summary, top = aggregate_13f(data)
             except Exception as e:  # noqa
                 errors.append(f"sec 13f {name}: {e}"); continue
-            summary, top = aggregate_13f(data)
             summary["source_zip_sha256"] = hashlib.sha256(data).hexdigest(); summary["source_zip_bytes"] = len(data); summary["period"] = name
             save("SEC-13F", f"{name}_summary.json", json.dumps(summary, indent=1).encode(), url, manifest,
                  note=f"aggregated from the zip (not kept); VALUE unit detected: {summary['value_unit_detected']}; values in the summary are dollars")
