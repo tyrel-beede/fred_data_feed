@@ -1,6 +1,58 @@
 {
  "manifest": [
   {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2026q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2026q3.zip",
+   "bytes": 22878,
+   "sha256": "f97c8cd7889b607580c7f1ab77c6ad68ec3fde9629226b1ad6d243c3a8519413",
+   "retrieved": "2026-11-07T02:40:18Z",
+   "note": "aggregated in the workflow from the 65148008-byte zip (sha256 b6ebdc56b78526a6423f5b99f6e355afcb0510e7264324300ee5f0d3bd1bad21): 5703 10-K/10-Q filings, 308 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2026q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2026q2.zip",
+   "bytes": 23715,
+   "sha256": "d2efd5ccefa6b36855bc3b3e4b5a8e5fa17bdfec8933506942db91dcce99193e",
+   "retrieved": "2026-11-07T02:40:26Z",
+   "note": "aggregated in the workflow from the 60419016-byte zip (sha256 d7c815395cd420cfbe09b29dbae73a45406c5d0652d5ae1859ae11ea2e22df77): 6002 10-K/10-Q filings, 320 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
+   "bytes": 449,
+   "sha256": "2a88e49c11d01106e195cdae357be5ea1aecb3c25ed4554df4923cc59f4089db",
+   "retrieved": "2026-11-07T02:40:37Z",
+   "note": "aggregated in the workflow; the zip is not kept; VALUE is in dollars from 2023 (thousands before)"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
+   "bytes": 1003,
+   "sha256": "0c651587236384a40b82e8dac7ec458689f03a967a9298b89ca18fcc5a9aaacd",
+   "retrieved": "2026-11-07T02:40:37Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
+   "bytes": 449,
+   "sha256": "811a513f3b52b37a87a66902b57e0210ae90e79198ca05f11accd86b4fb471e9",
+   "retrieved": "2026-11-07T02:40:48Z",
+   "note": "aggregated in the workflow; the zip is not kept; VALUE is in dollars from 2023 (thousands before)"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
+   "bytes": 1001,
+   "sha256": "ed8ee3fe266d7b40e810c60301f83add01302c278102ebad4d1ea3988fb7bbbf",
+   "retrieved": "2026-11-07T02:40:48Z"
+  },
+  {
    "catalog": "FRED-Z1",
    "file": "history/corporate/raw/FRED-Z1/nfcb_debt.csv",
    "url": "FRED NCBDBIQ027S",
@@ -161,19 +213,9 @@
    "note": "Shiller's Figure 3.1 workbook (Irrational Exuberance): US real and nominal home price index 1890- (annual to 1952, monthly from 1953), real building cost, population, long rate, CPI; supplied by the repository owner from shillerdata.com on 2026-11-06"
   }
  ],
- "errors": [
-  "sec fsds index: HTTP Error 403: Forbidden; trying the quarterly file names directly",
-  "sec fsds 2026q3: HTTP Error 403: Forbidden",
-  "sec fsds 2026q2: HTTP Error 403: Forbidden",
-  "sec fsds 2026q1: HTTP Error 403: Forbidden",
-  "sec fsds 2025q4: HTTP Error 403: Forbidden",
-  "sec fsds 2025q3: HTTP Error 403: Forbidden",
-  "sec 13f index: HTTP Error 403: Forbidden; trying the quarterly file names directly",
-  "sec 13f 01jun2026-31aug2026_form13f: HTTP Error 403: Forbidden",
-  "sec 13f 01mar2026-31may2026_form13f: HTTP Error 403: Forbidden",
-  "sec 13f 01dec2025-28feb2026_form13f: HTTP Error 403: Forbidden",
-  "sec 13f 01sep2025-30nov2025_form13f: HTTP Error 403: Forbidden",
-  "sec 13f 01jun2025-31aug2025_form13f: HTTP Error 403: Forbidden"
- ],
- "pulls_run": "all"
+ "errors": [],
+ "pulls_run": [
+  "13f",
+  "fsds"
+ ]
 }
