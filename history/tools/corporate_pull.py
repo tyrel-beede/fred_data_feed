@@ -19,14 +19,18 @@ run to hundreds of megabytes, so the puller streams them in the runner and keeps
                    filer concentration, and the twenty most-held issuers
 
 Usage: python3 history/tools/corporate_pull.py            (environment: FRED_API_KEY)
+       SEC_CONTACT="Your Name you@example.com" python3 history/tools/corporate_pull.py --only fsds,13f   (desktop SEC run)
 """
 import csv, hashlib, heapq, html, io, json, os, re, sys, tempfile, time, urllib.parse, urllib.request, zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RAW = os.path.join(ROOT, "history", "corporate", "raw")
 UA = {"User-Agent": "fred_data_feed history layer (github.com/tyrel-beede/fred_data_feed)", "Accept-Encoding": "gzip, deflate"}
-# SEC's fair-access policy wants a client name and a contact in the User-Agent; the contact is the workflow's bot address
-SEC_UA = {"User-Agent": "fred_data_feed/1.0 (macro-dials-bot@users.noreply.github.com)", "Accept": "*/*", "Accept-Encoding": "gzip, deflate"}
+# SEC's fair-access policy wants a person or company and a contact e-mail in the User-Agent ("Name email@domain"); a
+# bot-style agent is refused with 403 even from a residential address (tested 2026-11-06). Set SEC_CONTACT to your own
+# "Name email@domain" for desktop runs; the default is the workflow's bot identity, which sec.gov does not accept
+SEC_UA = {"User-Agent": os.environ.get("SEC_CONTACT", "").strip() or "fred_data_feed/1.0 (macro-dials-bot@users.noreply.github.com)",
+          "Accept": "*/*", "Accept-Encoding": "gzip, deflate"}
 
 
 def get(url, headers=None, tries=4, timeout=300):

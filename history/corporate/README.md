@@ -55,7 +55,9 @@ are most held) beside the CFTC, EPFR, ICI, AAII and margin series the positionin
 - SEC data: public domain, under the fair-access policy (identify the client in the User-Agent, at most ten
   requests a second). **sec.gov refuses GitHub-hosted runners** (403 to every request from cloud-provider addresses,
   with or without the fair-access User-Agent), so the two SEC pulls run from a desktop:
-  `python3 history/tools/corporate_pull.py --only fsds,13f` streams the two latest quarterly zips and writes only the
-  aggregates under `raw/`; commit and push them, and the builder and the dials pick them up. 13F `VALUE` is in dollars from 2023 and in thousands before. Options lines (put/call) are
+  `SEC_CONTACT="Your Name you@example.com" python3 history/tools/corporate_pull.py --only fsds,13f` streams the two
+  latest quarterly zips and writes only the aggregates under `raw/`; commit and push them, and the builder and the
+  dials pick them up. The contact goes in the User-Agent, which sec.gov requires in "Name email" form (a bot-style
+  agent is refused with 403 even from a home address); it is read from the environment and never written to the repo. 13F `VALUE` is in dollars from 2023 and in thousands before. Options lines (put/call) are
   excluded from the issuer concentration. Restated financials appear as later filings; the aggregates take the
   first value a filer reports for a tag and period.
