@@ -174,6 +174,9 @@ def pull_shiller(manifest, errors):
 
 
 def pull_goyal_welch(manifest, errors):
+    d = os.path.join(RAW, "GOYAL-WELCH")
+    if os.path.isdir(d) and any(f.lower().endswith(".xlsx") for f in os.listdir(d)):
+        print("  GOYAL-WELCH: workbook already supplied by hand; the page is not scraped (delete the file to re-pull)"); return
     try:
         url = "https://sites.google.com/view/agoyal145"
         page, _ = get(url)
@@ -323,6 +326,29 @@ def aggregate_13f(zip_bytes):
     return summary, top
 
 
+def recent_13f_windows(n=5):
+    """The last n completed three-month 13F windows (Mar-May, Jun-Aug, Sep-Nov, Dec-Feb) as SEC file stems, newest
+    first; a window counts as completed once its last month has ended."""
+    import calendar
+    mon = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+    t = time.gmtime(); y, m = t.tm_year, t.tm_mon
+    # the newest window whose end month (Feb, May, Aug, Nov) is strictly before the current month
+    ends = [2, 5, 8, 11]
+    ey = y; em = max([e for e in ends if e < m], default=None)
+    if em is None:
+        ey, em = y - 1, 11
+    out = []
+    for _ in range(n):
+        sm = em - 2; sy = ey
+        if sm <= 0:
+            sm += 12; sy -= 1
+        out.append(f"01{mon[sm - 1]}{sy}-{calendar.monthrange(ey, em)[1]}{mon[em - 1]}{ey}_form13f")
+        em -= 3
+        if em <= 0:
+            em += 12; ey -= 1
+    return out
+
+
 def pull_13f(manifest, errors, max_quarters=2):
     try:
         links = []
@@ -332,10 +358,9 @@ def pull_13f(manifest, errors, max_quarters=2):
             links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
         except Exception as e:  # noqa
             errors.append(f"sec 13f index: {e}; trying the quarterly file names directly")
-        if not links:  # predictable names: 01jan2025-31mar2025_form13f.zip etc.
-            spans = {1: ("01jan", "31mar"), 2: ("01apr", "30jun"), 3: ("01jul", "30sep"), 4: ("01oct", "31dec")}
-            links = [(f"/files/structureddata/data/form-13f-data-sets/{spans[q][0]}{y}-{spans[q][1]}{y}_form13f.zip",
-                      f"{spans[q][0]}{y}-{spans[q][1]}{y}_form13f") for y, q in recent_quarters()]
+        if not links:  # predictable names since March 2024: three-month windows ending Feb/May/Aug/Nov, e.g.
+            # 01dec2025-28feb2026_form13f.zip, 01mar2026-31may2026_form13f.zip (calendar quarters yyyyqN_form13f.zip before 2024)
+            links = [(f"/files/structureddata/data/form-13f-data-sets/{n}.zip", n) for n in recent_13f_windows()]
         def qkey(name):  # '01jul2025-30sep2025_form13f' -> sortable (2025, 9)
             m = re.search(r"-(\d{2})([a-z]{3})(\d{4})", name.lower())
             months = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
