@@ -222,7 +222,13 @@ AGG_VERSION_FSDS = 3  # 2 (2026-11-07): one value per filer (CIK) per tag-period
 #                       beyond a per-tag plausibility cap (several times the largest company's) set aside and listed
 #                       in the sidecar; the five largest filers per large tag-period listed there too, so a sum that
 #                       moves can be traced to who moved it
-AGG_VERSION_13F = 2   # 2 (2026-11-07): only the holdings reports for the set's own report period count (late filings
+AGG_VERSION_13F = 3   # 3 (2026-11-07): a filer's unit is snapped to the nearest power of a thousand (a filer a
+#                       millionfold off is a scale error, not a unit, and is rescaled and counted as implausible);
+#                       single lines beyond $1 trillion and filers beyond $20 trillion after scaling are set aside
+#                       and counted (the first re-reduction left a $6.6 trillion issuer line and option lines worth
+#                       more than the market in a handful of sets); the total excluding option lines is reported
+#                       beside the reported total; the ten largest filers are listed with their names
+#                       2 (2026-11-07): only the holdings reports for the set's own report period count (late filings
 #                       for earlier periods and notices set aside; a restatement replaces the filer's original and a
 #                       new-holdings amendment adds to it); the VALUE unit is detected per filer, from the implied
 #                       price of its lines against the set, so a filer that reported in dollars inside a thousands-era
@@ -442,7 +448,7 @@ def select_13f_filings(z):
     for r in subs:
         a = r.get("ACCESSION_NUMBER"); c = cover.get(a, {})
         stype = (r.get("SUBMISSIONTYPE") or "").upper()
-        filings.append({"acc": a, "cik": r.get("CIK") or a, "type": stype, "filed": _iso_date(r.get("FILING_DATE")),
+        filings.append({"acc": a, "cik": r.get("CIK") or a, "type": stype, "filed": _iso_date(r.get("FILING_DATE")), "name": c.get("FILINGMANAGER_NAME") or "",
                         "period": _iso_date(c.get("REPORTCALENDARORQUARTER") or r.get("PERIODOFREPORT")),
                         "amend": (c.get("AMENDMENTTYPE") or "").upper(),
                         "is_amend": (c.get("ISAMENDMENT") or "").upper() in ("Y", "TRUE", "1") or stype.endswith("/A")})
@@ -471,7 +477,8 @@ def select_13f_filings(z):
             "n_filings_other_period": sum(1 for f in filings if f["type"].startswith("13F-HR") and f["period"] != modal),
             "n_notices": sum(1 for f in filings if f["type"].startswith("13F-NT")),
             "n_amendments_new_holdings": n_new, "n_restatements_replacing": n_restate, "n_superseded_duplicates": n_dup,
-            "filings_filter": "13F-HR for the set's report period; per filer the latest of original and restatements, plus new-holdings amendments"}
+            "filings_filter": "13F-HR for the set's report period; per filer the latest of original and restatements, plus new-holdings amendments",
+            "_names": {f["cik"]: f["name"] for f in filings if f["name"]}}
     return use, info
 
 
@@ -501,32 +508,41 @@ def _reservoir(store, counts, key, item, cap, rng):
             s[j] = item
 
 
+LINE_CAP_13F = 1e12    # no single reported position is worth a trillion dollars (the largest real ones are a third of that)
+FILER_CAP_13F = 2e13   # no manager reports twenty trillion (the largest report five to six)
+
+
 def aggregate_13f(zip_bytes):
     """Reduce a Form 13F data set to a summary (filers, total value in dollars, issuer concentration, the median
-    filer's concentration, the put/call share) and the twenty most-held issuers. Two passes over the information
-    table: the first learns each filer's VALUE unit, the second aggregates.
+    filer's concentration, the put/call share, the largest managers) and the twenty most-held issuers. Two passes
+    over the information table: the first learns each filer's VALUE unit, the second aggregates.
 
     Units. VALUE is in thousands of dollars for filings made before January 2023 and in dollars from then on, but
-    filers did not all follow the form: inside a thousands-era set a few hundred filers report in dollars (and a few
-    in thousands after the change). Scaling a whole set by the unit most filers used multiplies the others a
-    thousandfold, which is what put trillion-dollar positions into the first aggregator's top-20 lists. So the unit is
-    detected per filer: for every line, value / shares (or principal) is an implied price; the set's unit comes from
-    the median implied price of its share lines (below $1 means thousands, a $50 stock reads 0.05); each issuer's
-    reference is the median implied price across the filers holding it; and a filer whose lines sit a thousandfold
-    above (or below) their issuers' references reports in the other unit. Everything is then scaled to dollars line
-    by line, so filer totals, the top-10 heaps behind the median filer's concentration, and issuer totals agree."""
+    filers did not all follow the form: inside a thousands-era set a few hundred filers report in dollars, and for
+    several years after the change hundreds still report in thousands. Scaling a whole set by the unit most filers
+    used multiplies the others a thousandfold, which is what put trillion-dollar positions into the first
+    aggregator's top-20 lists. So the unit is detected per filer: for every line, value / shares (or principal) is
+    an implied price; the set's unit comes from the median implied price of its share lines (below $1 means
+    thousands, a $50 stock reads 0.05); each issuer's reference is the median implied price across the filers
+    holding it; and a filer whose lines sit a thousandfold above or below their issuers' references reports in the
+    other unit — snapped to the nearest power of a thousand, so a filer a millionfold off (a scale error, not a
+    unit) is rescaled too and counted as implausible. Everything is then scaled to dollars line by line, so filer
+    totals, the top-10 heaps behind the median filer's concentration and issuer totals agree. After scaling, a
+    single line beyond LINE_CAP_13F or a filer beyond FILER_CAP_13F is set aside and counted: the first
+    re-reduction left one issuer at $6.6 trillion and option lines worth more than the market in a few sets."""
     import math, random
     z = zipfile.ZipFile(io.BytesIO(zip_bytes))
     use, info = select_13f_filings(z)
+    names = info.pop("_names", {})
     rng = random.Random(13)
-    ref, ref_n, fs, fs_n, set_sample = {}, {}, {}, {}, []
+    ref, ref_n, fs, fs_n, set_sample, raw_total = {}, {}, {}, {}, [], {}
     n_seen = 0
     rows = _infotable(z)
     col = next(rows)
     def at(row, name, default=""):
         i = col.get(name)
         return row[i].strip() if i is not None and i < len(row) else default
-    for r in rows:  # pass 1: implied prices
+    for r in rows:  # pass 1: implied prices and raw totals per filing
         acc = at(r, "ACCESSION_NUMBER")
         if use is not None and acc not in use:
             continue
@@ -534,33 +550,53 @@ def aggregate_13f(zip_bytes):
             v = float(at(r, "VALUE") or 0); q = float(at(r, "SSHPRNAMT") or 0)
         except ValueError:
             continue
-        if v <= 0 or q <= 0:
+        if v <= 0:
+            continue
+        raw_total[acc] = raw_total.get(acc, 0.0) + v
+        if q <= 0:
             continue
         n_seen += 1
         p = v / q; cusip = at(r, "CUSIP")
-        _reservoir(ref, ref_n, cusip, p, 64, rng)
+        _reservoir(ref, ref_n, cusip, (acc, p), 64, rng)
         _reservoir(fs, fs_n, acc, (cusip, p), 64, rng)
         if (at(r, "SSHPRNAMTTYPE") or "SH").upper() == "SH" and n_seen % 7 == 0:
             set_sample.append(p)
     def med(xs):
         xs = sorted(xs); return xs[len(xs) // 2] if xs else 0.0
-    ref_med = {c: med(s) for c, s in ref.items()}
-    set_med = med(set_sample) if set_sample else med(ref_med.values())
+    set_med = med(set_sample) if set_sample else med(p for s in ref.values() for _, p in s)
     set_scale = 1000.0 if set_med < 1.0 else 1.0
-    filer_scale = {}
-    for acc, s in fs.items():
-        lr = [math.log10(p / ref_med[c]) for c, p in s if ref_med.get(c, 0) > 0 and p > 0]
-        r_ = med(lr)
-        rel = 1000.0 if r_ > 1.5 else (0.001 if r_ < -1.5 else 1.0)
-        filer_scale[acc] = set_scale / rel
+    def classify(ref_med):
+        out = {}
+        for acc, s in fs.items():
+            lr = [math.log10(p / ref_med[c]) for c, p in s if ref_med.get(c, 0) > 0 and p > 0]
+            out[acc] = int(round(med(lr) / 3.0)) if lr else 0  # 0: the set's unit; +1 / -1: the other unit; beyond: a scale error
+        return out
+    # each issuer's reference is the median implied price across its holders; a thinly held issuer whose few holders
+    # mix units gets a wrong median, so the references are recomputed from the holders found to be in the set's own
+    # unit and the filers classified again (one refinement is enough: the majority is large and consistent)
+    filer_k = classify({c: med(p for _, p in s) for c, s in ref.items()})
+    ref_med = {}
+    for c, s in ref.items():
+        own = [p for a, p in s if filer_k.get(a, 0) == 0]
+        ref_med[c] = med(own) if own else med(p for _, p in s)
+    filer_k = classify(ref_med)
+    filer_scale = {acc: set_scale / (1000.0 ** k) for acc, k in filer_k.items()}
+    # filers whose scaled total is beyond any manager's are set aside whole (their lines would otherwise dominate)
+    excluded = {}
+    for acc, rt in raw_total.items():
+        est = rt * filer_scale.get(acc, set_scale)
+        if est > FILER_CAP_13F:
+            filer = use.get(acc, acc) if use is not None else acc
+            excluded[acc] = {"cik": filer, "name": names.get(filer, ""), "value_scaled": f"{est:.4g}", "unit_steps": filer_k.get(acc, 0)}
     by_cusip, by_cusip_name = {}, {}
-    filer_total, filer_top = {}, {}
-    total, putcall_value, n_lines, corrected_value = 0.0, 0.0, 0, 0.0
+    filer_total, filer_top, filer_putcall = {}, {}, {}
+    total, putcall_value, n_lines, corrected_value, implausible_value = 0.0, 0.0, 0, 0.0, 0.0
+    n_lines_capped, value_lines_capped = 0, 0.0
     rows = _infotable(z)
     next(rows)
     for r in rows:  # pass 2: aggregate in dollars
         acc = at(r, "ACCESSION_NUMBER")
-        if use is not None and acc not in use:
+        if (use is not None and acc not in use) or acc in excluded:
             continue
         try:
             v = float(at(r, "VALUE") or 0)
@@ -568,17 +604,24 @@ def aggregate_13f(zip_bytes):
             continue
         sc = filer_scale.get(acc, set_scale)
         v *= sc
+        if abs(v) > LINE_CAP_13F:
+            n_lines_capped += 1; value_lines_capped += v
+            continue
         n_lines += 1
         total += v
-        if sc != set_scale:
+        k = filer_k.get(acc, 0)
+        if k != 0:
             corrected_value += v
+        if abs(k) >= 2:
+            implausible_value += v
+        filer = use.get(acc, acc) if use is not None else acc  # an original and its new-holdings amendment are one filer
         if at(r, "PUTCALL"):
             putcall_value += v
+            filer_putcall[filer] = filer_putcall.get(filer, 0.0) + v
             continue  # options lines are not holdings of the issuer's shares
         cusip = at(r, "CUSIP")
         by_cusip[cusip] = by_cusip.get(cusip, 0.0) + v
         by_cusip_name.setdefault(cusip, at(r, "NAMEOFISSUER"))
-        filer = use.get(acc, acc) if use is not None else acc  # an original and its new-holdings amendment are one filer
         filer_total[filer] = filer_total.get(filer, 0.0) + v
         h = filer_top.setdefault(filer, [])
         if len(h) < 10:
@@ -590,15 +633,22 @@ def aggregate_13f(zip_bytes):
     top10 = sum(vals[:10]) / s; top50 = sum(vals[:50]) / s
     hhi = sum((v / s) ** 2 for v in vals)
     conc = sorted(sum(filer_top[a]) / filer_total[a] for a in filer_total if filer_total[a] > 0)
-    n_corrected = sum(1 for a, sc in filer_scale.items() if sc != set_scale)
+    n_corrected = sum(1 for a, k in filer_k.items() if k != 0 and a not in excluded)
+    n_implausible = sum(1 for a, k in filer_k.items() if abs(k) >= 2 and a not in excluded)
+    largest = [{"cik": f, "name": names.get(f, ""), "value_ex_options": f"{filer_total[f]:.4g}", "share_ex_options": f"{filer_total[f] / s:.4f}",
+                "options_value": f"{filer_putcall.get(f, 0.0):.4g}", "top10_share": f"{sum(filer_top[f]) / filer_total[f]:.4f}"}
+               for f in sorted(filer_total, key=lambda f: -filer_total[f])[:10]]
     summary = {"aggregator_version": AGG_VERSION_13F, "n_filers": len(filer_total), "n_infotable_lines": n_lines,
-               "total_value_reported": f"{total:.6g}",
+               "total_value_reported": f"{total:.6g}", "total_value_ex_options": f"{total - putcall_value:.6g}",
                "value_unit_detected": "thousands (scaled x1000 to dollars)" if set_scale != 1.0 else "dollars",
                "value_unit_set": "thousands" if set_scale != 1.0 else "dollars", "set_median_implied_price": f"{set_med:.4g}",
                "n_filers_unit_corrected": n_corrected, "value_share_unit_corrected": f"{corrected_value / total:.4f}" if total else "",
+               "n_filers_unit_implausible": n_implausible, "value_share_unit_implausible": f"{implausible_value / total:.4f}" if total else "",
+               "n_lines_beyond_cap": n_lines_capped, "value_lines_beyond_cap": f"{value_lines_capped:.4g}",
+               "n_filers_beyond_cap": len(excluded), "filers_beyond_cap": sorted(excluded.values(), key=lambda x: -float(x["value_scaled"]))[:10],
                "putcall_value_share": f"{putcall_value / total:.4f}" if total else "", "n_issuers_cusip": len(by_cusip),
                "top10_issuer_share": f"{top10:.4f}", "top50_issuer_share": f"{top50:.4f}", "hhi_issuers": f"{hhi:.6f}",
-               "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else ""}
+               "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else "", "largest_filers": largest}
     summary.update(info)
     top = [{"rank": k + 1, "cusip": c, "issuer": by_cusip_name.get(c, ""), "value": f"{v:.6g}", "share": f"{v / s:.4f}"}
            for k, (c, v) in enumerate(sorted(by_cusip.items(), key=lambda kv: -kv[1])[:20])]

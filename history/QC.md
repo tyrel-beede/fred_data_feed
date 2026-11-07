@@ -1,6 +1,6 @@
 # history/ — quality control
 
-Mechanical checks run by `tools/qc.py`: **31 of 33 pass**. Re-run after any change.
+Mechanical checks run by `tools/qc.py`: **30 of 33 pass**. Re-run after any change.
 
 | check | result | evidence |
 |---|---|---|
@@ -28,14 +28,14 @@ Mechanical checks run by `tools/qc.py`: **31 of 33 pass**. Re-run after any chan
 | workflow: bridge step wired and the bridge script exists | PASS |  |
 | license: CC BY-NC-SA 4.0 and both required citations stated | PASS |  |
 | README: documents overrides, provenance classes, bitemporal fields | PASS |  |
-| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 27 quoted numbers all found |
-| SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps) | PASS | 38 checks |
+| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 28 quoted numbers all found |
+| SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps) | PASS | 46 checks |
 | SEC FSDS: a reduced set for every quarter from 2009q1 to the last completed one | PASS | 71 sets 2026q3..2009q1 |
 | SEC 13F: a reduced set for every period from 2013q2 to the last completed window | FAIL | missing ['01jun2026-31aug2026_form13f'] |
 | SEC 13F: each set's majority VALUE unit is thousands before the 2023q1 set and dollars from it | PASS | 53 sets as expected |
-| SEC 13F: no thousands-era set reduced by the first aggregator remains (their totals are known wrong; re-run with --redo) | FAIL | 39 stale: ['2013q2_form13f', '2013q3_form13f', '2013q4_form13f']..2022q4_form13f |
+| SEC 13F: every set reduced by the current aggregator (v3; older reductions carry known errors; re-run with --redo) | FAIL | 53 older: ['2013q2_form13f', '2013q3_form13f', '2013q4_form13f']..01mar2026-31may2026_form13f; versions {2: 53} |
 | SEC 13F table: one row per set, holdings dates in order, labels consistent with the set names | PASS | 53 rows 2013-03-31..2026-03-31 |
-| SEC FSDS: aggregator versions in use recorded (v3 adds the sector split and plausibility caps) | PASS | versions {1: 71}; current v3 |
+| SEC FSDS: every set reduced by the current aggregator (v3: sectors, plausibility caps, one value per filer) | FAIL | versions {2: 71}; current v3 |
 | SEC analysis: annual flow ratios within bounds (0-1.5), years and reads present | PASS | 17 years, 4 timely reads, 3 calibrations |
 
 ## Content review

@@ -592,3 +592,21 @@ stays as one view; the measured targets become the primary ones, and the horizon
   38 synthetic checks, and `qc.py` gained seven SEC checks (self-test, no gaps in either record, the unit split at
   2023q1, no stale thousands-era set, table consistency, versions in use, analysis bounds). Two fail by design until
   the desktop re-reduction lands.
+- 2026-11-07 (the re-reductions, measured): the owner's desktop re-reduced the 53 13F sets with v2 in under an hour
+  and the 71 financial-statement sets with v2 in ten minutes (not the two hours estimated). 13F: report periods as
+  the set names imply; 70–90 filers per thousands-era set reported in dollars, carrying 1–3% of value once
+  corrected; after the 2023 change 1,205 filers in the first dollar-era set still reported in thousands (18% of
+  value), thinning to 361 (4%) by the May 2026 set; holdings value $19–27 trillion in 2013–2018, $27–38 trillion in
+  2018–2019, $34–54 trillion in 2020–2022, $40–72 trillion since, against $300–480 trillion before; the median
+  filer's top-10 share 38% in 2013 rising to 54% in 2026; the top-10 issuer share 9–25%. Six sets still carried
+  option lines worth more than the market (put/call shares of 25–58% against 4–8% elsewhere) and one a $6.6
+  trillion issuer line (Brookfield, June 2021), so v3 snaps a filer's unit to the nearest power of a thousand,
+  sets aside single lines beyond $1 trillion and filers beyond $20 trillion after scaling, reports the total
+  excluding options, and lists the ten largest managers by name as a sanity check; on the real-sized synthetic set
+  it recovers the true total exactly with every mixed-unit and millionfold filer identified, in 21 seconds.
+  Financial statements: with one value per filer and dimensional rows set aside, the same December-31 sum now
+  agrees across the files it appears in (2024 assets $69–74 trillion in five files; 2025 $74–78 trillion in three)
+  — the first reduction's 10-K-file sums were the low ones, its "first value seen" having taken segment rows —
+  and the capex sum's growth correlation with the Z.1 series rose from 0.49 to 0.69 (0.75 after the phase-in),
+  the dividend and profit sums' coverage holding steady; the all-filer quarterly operating cash flow still swings
+  with the banks, which the v3 sector split addresses. Both v3 reductions are pending one desktop run.

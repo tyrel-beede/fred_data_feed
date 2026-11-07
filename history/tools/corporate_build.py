@@ -241,9 +241,11 @@ def build_sec_tables():
             # quarter the set's name implies (a set holds the filings made in its quarter, about the quarter before)
             rows.append({"period": name, "period_end": s_.get("report_period") or period_end_13f(name),
                          "aggregator_version": s_.get("aggregator_version", 1), "n_filers": s_.get("n_filers"),
-                         "total_value_usd": s_.get("total_value_reported"), "value_unit_detected": s_.get("value_unit_detected", "dollars (assumed)"),
+                         "total_value_usd": s_.get("total_value_reported"), "total_value_ex_options_usd": s_.get("total_value_ex_options", ""),
+                         "value_unit_detected": s_.get("value_unit_detected", "dollars (assumed)"),
                          "n_filers_unit_corrected": s_.get("n_filers_unit_corrected", ""), "value_share_unit_corrected": s_.get("value_share_unit_corrected", ""),
-                         "n_filings_other_period": s_.get("n_filings_other_period", ""),
+                         "n_filers_unit_implausible": s_.get("n_filers_unit_implausible", ""), "n_lines_beyond_cap": s_.get("n_lines_beyond_cap", ""),
+                         "n_filers_beyond_cap": s_.get("n_filers_beyond_cap", ""), "n_filings_other_period": s_.get("n_filings_other_period", ""),
                          "n_issuers": s_.get("n_issuers_cusip"), "top10_issuer_share": s_.get("top10_issuer_share"),
                          "top50_issuer_share": s_.get("top50_issuer_share"), "hhi_issuers": s_.get("hhi_issuers"),
                          "median_filer_top10_share": s_.get("median_filer_top10_share"), "putcall_value_share": s_.get("putcall_value_share")})

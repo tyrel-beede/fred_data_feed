@@ -282,6 +282,13 @@ for f in ("backtest.json", "test2.json", "learner_test.json", "learner_test_reru
           "learner_test_physical_era_cad2.json", "learner_test_physical_era_cad3.json", "learner_test_physical_jacks_era.json",
           "learner_test_physical_materials_jacks_era.json"):
     pool |= _aucs(f, None)
+try:  # growth correlations from the SEC calibration are quoted in the README too
+    for c in json.load(open(os.path.join(H, "corporate", "sec_analysis.json"))).get("calibration", []):
+        for k in ("growth_corr_all", "growth_corr_after_phase_in"):
+            if isinstance(c.get(k), (int, float)):
+                pool.add(f"{c[k]:.2f}")
+except Exception:  # noqa
+    pass
 for o in ov:  # override values quoted in the README are not AUCs
     try:
         pool.add(f"{float(o['override_value']):.2f}")
@@ -323,12 +330,12 @@ for _n in sorted(_have13, key=qkey_13f):
     _exp = "thousands" if qkey_13f(_n) < (2023, 3) else "dollars"  # VALUE in dollars for filings made from January 2023
     if _unit != _exp:
         _units.append((_n, _unit))
-    if _v < AGG_VERSION_13F and _exp == "thousands":
+    if _v < AGG_VERSION_13F:
         _stale.append(_n)
 check("SEC 13F: each set's majority VALUE unit is thousands before the 2023q1 set and dollars from it", not _units,
       f"unexpected {_units}" if _units else f"{len(_have13)} sets as expected")
-check("SEC 13F: no thousands-era set reduced by the first aggregator remains (their totals are known wrong; re-run with --redo)", not _stale,
-      f"{len(_stale)} stale: {_stale[:3]}..{_stale[-1]}" if _stale else f"versions {_ver}")
+check(f"SEC 13F: every set reduced by the current aggregator (v{AGG_VERSION_13F}; older reductions carry known errors; re-run with --redo)", not _stale,
+      f"{len(_stale)} older: {_stale[:3]}..{_stale[-1]}; versions {_ver}" if _stale else f"versions {_ver}")
 _t13 = list(csv.DictReader(open(os.path.join(H, "corporate", "sec_13f_quarterly.csv"))))
 _pe = [r["period_end"] for r in _t13]
 _lab = [r["period"] for r in _t13 if r["period_end"] != period_end_13f(r["period"]) and int(float(r.get("aggregator_version") or 1)) < 2]
@@ -339,7 +346,8 @@ for _q in _have:
     _mp = os.path.join(_fs, f"{_q}_meta.json")
     _v = json.load(open(_mp)).get("aggregator_version", 1) if os.path.exists(_mp) else 1
     _fv[_v] = _fv.get(_v, 0) + 1
-check("SEC FSDS: aggregator versions in use recorded (v3 adds the sector split and plausibility caps)", True, f"versions {_fv}; current v{AGG_VERSION_FSDS}")
+check(f"SEC FSDS: every set reduced by the current aggregator (v{AGG_VERSION_FSDS}: sectors, plausibility caps, one value per filer)", all(v >= AGG_VERSION_FSDS for v in _fv),
+      f"versions {_fv}; current v{AGG_VERSION_FSDS}")
 _an = json.load(open(os.path.join(H, "corporate", "sec_analysis.json")))
 _bad = []
 for _row in _an["annual"]:

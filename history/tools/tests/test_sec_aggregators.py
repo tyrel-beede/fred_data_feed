@@ -96,10 +96,32 @@ def build_13f(set_unit, nested):
     hold("H-1", "X02", 1000, set_unit, filer="8")
     hold("H-1", "X01", 50000, set_unit, putcall="PUT", filer="8")
     expect_putcall = 50000 * price["X01"]
+    # I: a scale error — values a millionfold above the set's unit (snapped to two unit steps and rescaled, counted as implausible)
+    filing("I-1", "9", "13F-HR", "14-NOV-2019", P)
+    for c in ("X04", "X05"):
+        k += 1
+        row = line("I-1", k, c, 2000, price[c], set_unit)
+        row["VALUE"] = f"{float(row['VALUE']) * 1e6:.0f}"
+        info.append(row)
+        expect_total += 2000 * price[c]; expect_shares.setdefault("9", []).append(2000 * price[c])
+    # J: one garbage line worth $3 trillion (set aside) beside three normal ones (kept)
+    filing("J-1", "10", "13F-HR", "14-NOV-2019", P)
+    k += 1
+    row = line("J-1", k, "X06", 1000, price["X06"], set_unit); row["VALUE"] = f"{3e12 / (1000.0 if set_unit == 'thousands' else 1.0):.0f}"
+    info.append(row)
+    for c in ("X07", "X09", "X10"):
+        hold("J-1", c, 1000, set_unit, filer="10")
+    # K: a filer whose scaled total is beyond any manager's (set aside whole, listed by name)
+    filing("K-1", "11", "13F-HR", "14-NOV-2019", P)
+    for _ in range(60):
+        k += 1
+        info.append(line("K-1", k, "X08", int(9e11 / price["X08"]), price["X08"], set_unit))
     conc = sorted(sum(sorted(v, reverse=True)[:10]) / sum(v) for v in expect_shares.values())
-    exp = {"report_period": "2019-09-30", "n_filers": 6, "n_filings_used": 7, "n_filings_other_period": 1, "n_notices": 1,
-           "n_restatements_replacing": 1, "n_amendments_new_holdings": 1, "n_filers_unit_corrected": 1, "value_unit_set": set_unit,
-           "total": expect_total, "x01": expect_x01, "putcall_share": expect_putcall / expect_total, "median_conc": conc[len(conc) // 2]}
+    exp = {"report_period": "2019-09-30", "n_filers": 8, "n_filings_used": 10, "n_filings_other_period": 1, "n_notices": 1,
+           "n_restatements_replacing": 1, "n_amendments_new_holdings": 1, "n_filers_unit_corrected": 2, "n_filers_unit_implausible": 1,
+           "n_lines_beyond_cap": 1, "filer_beyond_cap": ("11", "MANAGER 11"), "largest": ("1", "MANAGER 1"), "value_unit_set": set_unit,
+           "total": expect_total, "ex_options": expect_total - expect_putcall, "x01": expect_x01, "putcall_share": expect_putcall / expect_total,
+           "median_conc": conc[len(conc) // 2]}
     pre = "2019q4_form13f/" if nested else ""
     return zip_of({pre + "SUBMISSION.tsv": tsv(subs, SUB_COLS), pre + "COVERPAGE.tsv": tsv(cov, COV_COLS), pre + "INFOTABLE.tsv": tsv(info, INFO_COLS)}), exp
 
@@ -117,8 +139,14 @@ def check_13f(set_unit, nested, out):
               ("restatement replaces", s.get("n_restatements_replacing") == exp["n_restatements_replacing"]),
               ("new-holdings amendment adds", s.get("n_amendments_new_holdings") == exp["n_amendments_new_holdings"]),
               ("set unit", s["value_unit_set"] == exp["value_unit_set"]),
-              ("one filer in the other unit", s["n_filers_unit_corrected"] == exp["n_filers_unit_corrected"]),
+              ("filers in another unit, one of them a scale error", s["n_filers_unit_corrected"] == exp["n_filers_unit_corrected"]
+               and s["n_filers_unit_implausible"] == exp["n_filers_unit_implausible"]),
+              ("a trillion-dollar line set aside", s["n_lines_beyond_cap"] == exp["n_lines_beyond_cap"]),
+              ("a filer beyond any manager's size set aside and named", s["n_filers_beyond_cap"] == 1
+               and (s["filers_beyond_cap"][0]["cik"], s["filers_beyond_cap"][0]["name"]) == exp["filer_beyond_cap"]),
+              ("the largest filer listed by name", (s["largest_filers"][0]["cik"], s["largest_filers"][0]["name"]) == exp["largest"]),
               ("total in dollars", close(s["total_value_reported"], exp["total"], 1e-4)),
+              ("total excluding options", close(s["total_value_ex_options"], exp["ex_options"], 1e-4)),
               ("issuer X01 total", close(next(t["value"] for t in top if t["cusip"] == "X01"), exp["x01"], 1e-4)),
               ("put/call share", close(s["putcall_value_share"], exp["putcall_share"], 1e-3)),
               ("median filer top-10 share", close(s["median_filer_top10_share"], exp["median_conc"], 1e-3)),

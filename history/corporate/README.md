@@ -92,13 +92,23 @@ are most held) beside the CFTC, EPFR, ICI, AAII and margin series the positionin
   that ended just before it: v2 counts only the holdings reports for the set's own report period (the modal
   `REPORTCALENDARORQUARTER`), takes per filer the latest of its original and restatements plus its new-holdings
   amendments, sets notices and late reports for earlier periods aside, and records `report_period`; the quarterly
-  table's `period_end` is that date (for older summaries, the quarter the set's name implies). Summaries from the
-  first aggregator are version 1 and, for the thousands era, known wrong; `qc.py` fails until they are re-reduced
-  (`--only 13f --all --redo` from a desktop; the zips are fetched again, nothing large is kept).
-- The financial-statement sums are sensitive in two ways the first reduction did not control. The same
-  December-31 figure appears in the 10-K file and again as a comparative in later 10-Q files, and the sums differ —
-  by up to 2.1× for 2025 assets (`sec_analysis.md` section 7 lays them side by side); and all-filer operating cash
-  flow swings with the banks' and brokers' trading books. Aggregator v3 keys values by filer (CIK) rather than
+  table's `period_end` is that date (for older summaries, the quarter the set's name implies). What the v2 run
+  measured: 70–90 filers per thousands-era set in dollars (1–3% of value), and after the 2023 change 1,205 filers
+  still in thousands in the first dollar-era set (18% of value), thinning to 361 (4%) by May 2026. v3 adds what
+  that run still showed: a filer's unit is snapped to the nearest power of a thousand (a filer a millionfold off is
+  a scale error, rescaled and counted as implausible); single lines beyond $1 trillion and filers beyond $20
+  trillion after scaling are set aside and counted (six sets carried option lines worth more than the market, one a
+  $6.6 trillion issuer line); the total excluding option lines is reported beside the reported total and is the
+  table's `holdings value`; the ten largest managers are listed by name in each summary as a sanity check. Every
+  summary records its aggregator version; `qc.py` fails until every set is at the current one (`--only 13f --all
+  --redo` from a desktop; the zips are fetched again, nothing large is kept; a stopped run resumes).
+- The financial-statement sums were sensitive in two ways the first reduction did not control. The same
+  December-31 figure appears in the 10-K file and again as a comparative in later 10-Q files, and the first
+  reduction's sums differed by up to 2.1× between them — its "first value seen" per submission had taken segment
+  rows in the 10-K files, so those sums were the low ones; with one value per filer and dimensional rows set aside
+  (v2) the files agree (2024 assets $69–74 trillion across five files; `sec_analysis.md` section 7 lays them side by
+  side) and the capex sum's growth correlation with Z.1 rose from 0.49 to 0.69. All-filer operating cash flow still
+  swings with the banks' and brokers' trading books. Aggregator v3 keys values by filer (CIK) rather than
   submission, taking the latest-filed submission that carries the tag (a 10-K/A replaces its original), sets
   dimensional rows aside where the set marks them, splits every sum by sector (SIC 6000–6799 financial), sets aside
   values beyond a per-tag plausibility cap (several times the largest company's; a filer's scale error) and lists
