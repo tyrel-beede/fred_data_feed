@@ -1,6 +1,62 @@
 {
  "manifest": [
   {
+   "catalog": "EI-OIL-PRICE-1861",
+   "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.csv",
+   "url": "https://ourworldindata.org/grapher/crude-oil-prices.csv",
+   "bytes": 4919,
+   "sha256": "98014e71cb3c56b65f3c4018c8639b3dce19c95800a39dcc0636b3137022d2d0",
+   "retrieved": "2026-11-07T02:28:53Z"
+  },
+  {
+   "catalog": "EI-OIL-PRICE-1861",
+   "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.metadata.json",
+   "url": "https://ourworldindata.org/grapher/crude-oil-prices.metadata.json",
+   "bytes": 1349,
+   "sha256": "fbf73892564b4101a38056bd2976a6112e73d761b5e9997a4bec8db99a05f826",
+   "retrieved": "2026-11-07T02:28:53Z"
+  },
+  {
+   "catalog": "EIA-TOTAL-ENERGY",
+   "file": "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
+   "url": "https://api.eia.gov/v2/total-energy/data/ (annual, by msn)",
+   "bytes": 45928,
+   "sha256": "e02d0c898c8726785da6d3a7fe4317df073c1882c465ff09ef9acb8cd71e947e",
+   "retrieved": "2026-11-07T02:29:39Z"
+  },
+  {
+   "catalog": "FRED-PHYSICAL",
+   "file": "history/physical/raw/FRED-PHYSICAL/PPIACO.csv",
+   "url": "FRED PPIACO",
+   "bytes": 22303,
+   "sha256": "820e1c5f42dc30d6438761708adfc40a634b7e8688e8f0eafce9808c69a9aacc",
+   "retrieved": "2026-11-07T02:29:40Z"
+  },
+  {
+   "catalog": "FRED-PHYSICAL",
+   "file": "history/physical/raw/FRED-PHYSICAL/WTISPLC.csv",
+   "url": "FRED WTISPLC",
+   "bytes": 17148,
+   "sha256": "df0e94c37f03abd8b75732b0d989f0b12c7327ce022a128ba0db89780af65df5",
+   "retrieved": "2026-11-07T02:29:40Z"
+  },
+  {
+   "catalog": "FRED-PHYSICAL",
+   "file": "history/physical/raw/FRED-PHYSICAL/PCOPPUSDM.csv",
+   "url": "FRED PCOPPUSDM",
+   "bytes": 11133,
+   "sha256": "f8037365dda40361d2e21b5cefcd7e2eb98b45fc0dc7ca26bd319be6d728ad85",
+   "retrieved": "2026-11-07T02:29:41Z"
+  },
+  {
+   "catalog": "FRED-PHYSICAL",
+   "file": "history/physical/raw/FRED-PHYSICAL/PIORECRUSDM.csv",
+   "url": "FRED PIORECRUSDM",
+   "bytes": 9181,
+   "sha256": "fc1f5f260eaa2e9e77877cd794c5ef34d44e48ba3fa1d6964abdb7763880f3b2",
+   "retrieved": "2026-11-07T02:29:42Z"
+  },
+  {
    "catalog": "JACKS-COMMODITIES",
    "file": "history/physical/raw/JACKS-COMMODITIES/Real-commodity-prices-1850-2025.xlsx",
    "url": "https://www.sfu.ca/~djacks/data/boombust/ (hand download)",
@@ -17,22 +73,6 @@
    "sha256": "c811055a4f49b8ea615e3977ada034a8274cf8b0f233ee96bcda4d4eb42ac78d",
    "retrieved": "2026-11-07T01:03:30Z",
    "note": "the February 2026 chartbook that documents the workbook (sources, weighting schemes, trend-cycle decomposition)"
-  },
-  {
-   "catalog": "EI-OIL-PRICE-1861",
-   "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.csv",
-   "url": "https://ourworldindata.org/grapher/crude-oil-prices.csv",
-   "bytes": 4919,
-   "sha256": "98014e71cb3c56b65f3c4018c8639b3dce19c95800a39dcc0636b3137022d2d0",
-   "retrieved": "2026-11-06T20:59:00Z"
-  },
-  {
-   "catalog": "EI-OIL-PRICE-1861",
-   "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.metadata.json",
-   "url": "https://ourworldindata.org/grapher/crude-oil-prices.metadata.json",
-   "bytes": 1349,
-   "sha256": "68a4b5029a8548d7cb22335eb7f57673cc005b39486c5ff19f1a53e1119eaecd",
-   "retrieved": "2026-11-06T20:59:00Z"
   },
   {
    "catalog": "CHAT",
@@ -65,14 +105,6 @@
    "bytes": 19199962,
    "sha256": "9855ec7e412e0f5c833169536bf4c8906754635ced63fada17b92ac27bb2deff",
    "retrieved": "2026-11-06T20:59:12Z"
-  },
-  {
-   "catalog": "EIA-TOTAL-ENERGY",
-   "file": "history/physical/raw/EIA-TOTAL-ENERGY/us_primary_energy_annual.csv",
-   "url": "https://api.eia.gov/v2/total-energy/data/ (annual, by msn)",
-   "bytes": 45928,
-   "sha256": "e02d0c898c8726785da6d3a7fe4317df073c1882c465ff09ef9acb8cd71e947e",
-   "retrieved": "2026-11-06T20:59:58Z"
   },
   {
    "catalog": "EIA-HISTORICAL-1635",
@@ -777,41 +809,8 @@
    "bytes": 49786,
    "sha256": "c4d7a00c7f8bdc7841e8ddea17bee2152a70b53e16f2ec6e985e3e692e3db048",
    "retrieved": "2026-11-06T21:11:34Z"
-  },
-  {
-   "catalog": "FRED-PHYSICAL",
-   "file": "history/physical/raw/FRED-PHYSICAL/PPIACO.csv",
-   "url": "FRED PPIACO",
-   "bytes": 22303,
-   "sha256": "820e1c5f42dc30d6438761708adfc40a634b7e8688e8f0eafce9808c69a9aacc",
-   "retrieved": "2026-11-06T21:11:34Z"
-  },
-  {
-   "catalog": "FRED-PHYSICAL",
-   "file": "history/physical/raw/FRED-PHYSICAL/WTISPLC.csv",
-   "url": "FRED WTISPLC",
-   "bytes": 17148,
-   "sha256": "df0e94c37f03abd8b75732b0d989f0b12c7327ce022a128ba0db89780af65df5",
-   "retrieved": "2026-11-06T21:11:35Z"
-  },
-  {
-   "catalog": "FRED-PHYSICAL",
-   "file": "history/physical/raw/FRED-PHYSICAL/PCOPPUSDM.csv",
-   "url": "FRED PCOPPUSDM",
-   "bytes": 11133,
-   "sha256": "f8037365dda40361d2e21b5cefcd7e2eb98b45fc0dc7ca26bd319be6d728ad85",
-   "retrieved": "2026-11-06T21:11:36Z"
-  },
-  {
-   "catalog": "FRED-PHYSICAL",
-   "file": "history/physical/raw/FRED-PHYSICAL/PIORECRUSDM.csv",
-   "url": "FRED PIORECRUSDM",
-   "bytes": 9181,
-   "sha256": "fc1f5f260eaa2e9e77877cd794c5ef34d44e48ba3fa1d6964abdb7763880f3b2",
-   "retrieved": "2026-11-06T21:11:38Z"
   }
  ],
- "errors": [
-  "jacks index: <urlopen error [Errno 110] Connection timed out>"
- ]
+ "errors": [],
+ "pulls_run": "all except jacks (slow catalogs on a 30-day refresh)"
 }
