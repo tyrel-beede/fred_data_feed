@@ -2,6 +2,644 @@
  "manifest": [
   {
    "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2026q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2026q1.zip",
+   "bytes": 23670,
+   "sha256": "76d38d77f394cf4ad8f72e661720276eede36f762b76b6307ad3590d5054a4bb",
+   "retrieved": "2026-11-07T15:12:58Z",
+   "note": "aggregated in the workflow from the 85259424-byte zip (sha256 d18c01c615da8f5cd46273b0dacaeee5b1163f4089171da0f84153a5f3c362f6): 5319 10-K/10-Q filings, 323 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2025q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2025q4.zip",
+   "bytes": 25513,
+   "sha256": "eed8e58c07bb3447e307f1e101614bdd28037772f8ee11b477997b8b36188f61",
+   "retrieved": "2026-11-07T15:13:07Z",
+   "note": "aggregated in the workflow from the 65830170-byte zip (sha256 2b36ac3850c022cf19edd882e31c3c453c7666677b9fdd2e1f7748fdb5768c6e): 5721 10-K/10-Q filings, 344 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2025q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2025q3.zip",
+   "bytes": 24061,
+   "sha256": "1f9794a7e806cd0c98ea8e6d65e1e73cd18b684cd65e7b43893ede6d5d0f797f",
+   "retrieved": "2026-11-07T15:13:19Z",
+   "note": "aggregated in the workflow from the 127842298-byte zip (sha256 ebe25fa74c3655f4738ed9eb144af3953c3981c80f57d74829fb9ad68b114710): 5756 10-K/10-Q filings, 329 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2025q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2025q2.zip",
+   "bytes": 24224,
+   "sha256": "8e6196206c93f6c8517dddc7ae35d26bb30f5f39eddceecae8b5ba81ca01da3d",
+   "retrieved": "2026-11-07T15:13:30Z",
+   "note": "aggregated in the workflow from the 78973768-byte zip (sha256 81bf19bdb5606d5ee0164a8de8b7e96d5546170e42e59bcbf95b652ca83ac5d7): 5964 10-K/10-Q filings, 329 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2025q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2025q1.zip",
+   "bytes": 25236,
+   "sha256": "84144f0532f70b37db3ba5c95356febc72ca01e7271410d6b3f27622876432db",
+   "retrieved": "2026-11-07T15:13:43Z",
+   "note": "aggregated in the workflow from the 127765057-byte zip (sha256 4386e7057cc216b6fc729d8f957998acb831d29be7b16f6d8ed0f6b1ab74eba5): 5305 10-K/10-Q filings, 344 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2024q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2024q4.zip",
+   "bytes": 27174,
+   "sha256": "7601e0f972399bf056592db49aebddfcb31c072b8d35e7c8493081c5e63e0767",
+   "retrieved": "2026-11-07T15:13:55Z",
+   "note": "aggregated in the workflow from the 122932548-byte zip (sha256 9a2cbbaf39c94aa642b33d512f4def92b198d3bfd12d2267bcd27abe55b9902d): 5910 10-K/10-Q filings, 368 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2024q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2024q3.zip",
+   "bytes": 24786,
+   "sha256": "ce60d21232323ac947e8148261c607835dafef018642fe03102bdb25c3041c0a",
+   "retrieved": "2026-11-07T15:14:07Z",
+   "note": "aggregated in the workflow from the 118280418-byte zip (sha256 b1823f2d65189f0d5ecbb1968d683c59df762129ae1b23bda0394093a69e0da9): 5980 10-K/10-Q filings, 339 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2024q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2024q2.zip",
+   "bytes": 28072,
+   "sha256": "ade563a50397465a2485e88c2c562e86e2c6d2c33d356c3bdb5c495a87e08f57",
+   "retrieved": "2026-11-07T15:14:19Z",
+   "note": "aggregated in the workflow from the 119119954-byte zip (sha256 698796e9f0946501d3dc74e7696a6c8c71cf32b66026e053722a784236b37761): 6637 10-K/10-Q filings, 384 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2024q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2024q1.zip",
+   "bytes": 26792,
+   "sha256": "64f932efe290eecae52d24acfe7a0abad145510170112ab8296a06998843a7ff",
+   "retrieved": "2026-11-07T15:14:30Z",
+   "note": "aggregated in the workflow from the 124336804-byte zip (sha256 94c7894b00903f8ff7186c4250ba1c1daa1bde8b3a0b26fae68f72608b2ffc9b): 5170 10-K/10-Q filings, 366 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2023q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2023q4.zip",
+   "bytes": 27383,
+   "sha256": "36c75ff22d159902e0c8a3e92cc5b1d7d099690a07ca7ee3e46ec86cd76c5e91",
+   "retrieved": "2026-11-07T15:14:42Z",
+   "note": "aggregated in the workflow from the 120272357-byte zip (sha256 ad23c5505e59b7305e16bfebb8bb839476689330b85a3e1ce216f809b18d1521): 6281 10-K/10-Q filings, 373 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2023q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2023q3.zip",
+   "bytes": 25047,
+   "sha256": "9a41277a401dbc998d465ecd7bbb089066131be6440a5f3d640d4f059d054beb",
+   "retrieved": "2026-11-07T15:14:55Z",
+   "note": "aggregated in the workflow from the 117776944-byte zip (sha256 f075d721dde4393dabd49c1746578294ada4665ec29c85c2b3184f44f6f09187): 6299 10-K/10-Q filings, 342 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2023q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2023q2.zip",
+   "bytes": 27277,
+   "sha256": "37967661921f4bc347245f277a95f539bd19ecbc38496f438a772134f3dd035d",
+   "retrieved": "2026-11-07T15:15:06Z",
+   "note": "aggregated in the workflow from the 116914392-byte zip (sha256 f028f1e8d24313e7619aa87c7c683a459452e7e81a8e5ba72d7ce39ddf62bda9): 6935 10-K/10-Q filings, 373 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2023q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2023q1.zip",
+   "bytes": 27743,
+   "sha256": "7a88fa5a82ff54618127ae4e34b2aa00f133939f995520e6bed7882b367f591e",
+   "retrieved": "2026-11-07T15:15:18Z",
+   "note": "aggregated in the workflow from the 113974946-byte zip (sha256 479638c1be4088fa2ae42d2947468913eaff5ad0f093c412ba4340af8a8f791e): 5911 10-K/10-Q filings, 378 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2022q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2022q4.zip",
+   "bytes": 27939,
+   "sha256": "0a4728de0326cb10a536b169be49433d0a52ac62aea0ab79fc6e786b4a6aff4d",
+   "retrieved": "2026-11-07T15:15:30Z",
+   "note": "aggregated in the workflow from the 111091525-byte zip (sha256 83bdc7a9545479eb64d118688c888ba8e7554ebc774f3ab8a8b0cc1decb87f28): 6792 10-K/10-Q filings, 381 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2022q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2022q3.zip",
+   "bytes": 26302,
+   "sha256": "b40a6b4d142a4ec75db191784adf0126fee3c50d07eb6ef48e33410341447f84",
+   "retrieved": "2026-11-07T15:15:40Z",
+   "note": "aggregated in the workflow from the 97589396-byte zip (sha256 4bbfdc953177acf1a430a9f0a624dd8244bc81292d42872107d0446d06167c26): 6744 10-K/10-Q filings, 361 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2022q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2022q2.zip",
+   "bytes": 28105,
+   "sha256": "b13d9b2771c960414e08086495d3f440f8ded6aa84d1cc64f7102d8c44a3f055",
+   "retrieved": "2026-11-07T15:15:50Z",
+   "note": "aggregated in the workflow from the 97089251-byte zip (sha256 8939a4cafeabf7c94bde48be0e8c444f6332e4a9663698a89242eddd1036d27e): 7352 10-K/10-Q filings, 385 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2022q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2022q1.zip",
+   "bytes": 28048,
+   "sha256": "9caebab91e80361fef7571ddb4332f3f7a6643526887f6cd51b98633fa2d2eca",
+   "retrieved": "2026-11-07T15:16:01Z",
+   "note": "aggregated in the workflow from the 103669919-byte zip (sha256 2ebeef77727a383f878bc28ff22498fd292a8dbab04216877b4b130ca00c1520): 6373 10-K/10-Q filings, 383 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2021q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2021q4.zip",
+   "bytes": 27622,
+   "sha256": "a7aa3a6eea0628e41e84bb7a2c0aee2890a541201cd92a45bd577afa032bc8b7",
+   "retrieved": "2026-11-07T15:16:12Z",
+   "note": "aggregated in the workflow from the 102642081-byte zip (sha256 30d21449c0488e71dfb88ba8f85644a0e72194864e95111b3c1c120b3514c594): 6955 10-K/10-Q filings, 379 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2021q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2021q3.zip",
+   "bytes": 28493,
+   "sha256": "74bbf5d18b09d073f23c3f7449537241cf3d2f050f32d854e13c971845b49df9",
+   "retrieved": "2026-11-07T15:16:22Z",
+   "note": "aggregated in the workflow from the 97252395-byte zip (sha256 0fae2ceb149c0fe7e83b35b19157f910c864dee7e25d5ecf8b93dc42ee261b99): 6845 10-K/10-Q filings, 395 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2021q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2021q2.zip",
+   "bytes": 29797,
+   "sha256": "628e758484834b8dde29088c41157db2f8c2cb762f5b20c2691750749f873559",
+   "retrieved": "2026-11-07T15:16:31Z",
+   "note": "aggregated in the workflow from the 90864175-byte zip (sha256 528b91432896eba74661c20481edb327809f3a0bf00e01d81821fe8e6078bc33): 6882 10-K/10-Q filings, 408 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2021q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2021q1.zip",
+   "bytes": 29814,
+   "sha256": "df120808678f373f751021139be77b45bb19f88213a97c1b4b0a3d415f2848a2",
+   "retrieved": "2026-11-07T15:16:42Z",
+   "note": "aggregated in the workflow from the 97900752-byte zip (sha256 6a776a9fa3d974476101efa9a4bfc531b7cdc2763abd45a6f70dd240a223843b): 5579 10-K/10-Q filings, 404 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2020q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q4.zip",
+   "bytes": 28308,
+   "sha256": "e1a0931ac096758895f12f4e015864d70f4598b0adb0e19e40f27691165bf090",
+   "retrieved": "2026-11-07T15:16:51Z",
+   "note": "aggregated in the workflow from the 89811373-byte zip (sha256 7cabec2c9b90511983623e6db3869b24c7a894466bd409f060a8da32790ae68e): 5868 10-K/10-Q filings, 389 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2020q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q3.zip",
+   "bytes": 28925,
+   "sha256": "692bff9047c99108ad2e069f8e775464159a3089697709523f1c989801d9bc55",
+   "retrieved": "2026-11-07T15:17:01Z",
+   "note": "aggregated in the workflow from the 87582976-byte zip (sha256 6a402070d4b1f12db0d2256533b38705735684ecb58bc12ce53a61dd12abe26e): 5905 10-K/10-Q filings, 397 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2020q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q2.zip",
+   "bytes": 28492,
+   "sha256": "8bb794f8522061b268aa065bf3f0dd5a01af1a2791ac4744255cb3cec8703a63",
+   "retrieved": "2026-11-07T15:17:11Z",
+   "note": "aggregated in the workflow from the 82008710-byte zip (sha256 bd796ea10c88e21205da013f9c3f6a20b2b14d3de94f0075e9f529e0ef9a3543): 5925 10-K/10-Q filings, 386 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2020q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q1.zip",
+   "bytes": 30719,
+   "sha256": "6b91de4e6243554d8b7f273b591d00974b3920a2d5dc8e253b76800273ced15f",
+   "retrieved": "2026-11-07T15:17:21Z",
+   "note": "aggregated in the workflow from the 96584608-byte zip (sha256 48ed9834c66d565c21130d087eae941b25770e2d7cc8351d17652612289fcd67): 5312 10-K/10-Q filings, 417 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2019q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2019q4.zip",
+   "bytes": 28986,
+   "sha256": "aa1a9a1791c9ab88e1df8edb3a09588217d7ea420da365d03d87a557ca0488c0",
+   "retrieved": "2026-11-07T15:17:31Z",
+   "note": "aggregated in the workflow from the 98753299-byte zip (sha256 1f997c123b6d2fe892eeca0a5f12687e718ab5ae031f148b4a5d82f2689daec3): 5955 10-K/10-Q filings, 398 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2019q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2019q3.zip",
+   "bytes": 27597,
+   "sha256": "b9eea1bb537d432455f9bad6ce6de9ad3eceb1ed2cec1e66511310ab596a5f81",
+   "retrieved": "2026-11-07T15:17:41Z",
+   "note": "aggregated in the workflow from the 89829588-byte zip (sha256 4c57e36f04b54a2b9917537e12974cba68353f765affbf168bd506478780e13e): 5932 10-K/10-Q filings, 380 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2019q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2019q2.zip",
+   "bytes": 31073,
+   "sha256": "2bf0a260bf4c8917a79ec3fcfb35483132f837f71f1d6208eb84ffbbdcb5a21c",
+   "retrieved": "2026-11-07T15:17:50Z",
+   "note": "aggregated in the workflow from the 90155728-byte zip (sha256 765e42efd43687b4ac4ea59c83213857a52dca0a4bd5c490034bd5bea2b6fac3): 6626 10-K/10-Q filings, 425 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2019q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2019q1.zip",
+   "bytes": 31678,
+   "sha256": "77e1af040950c3d6085a150d96fd4b19101655ca3102d24b7fd61a62f2a5180a",
+   "retrieved": "2026-11-07T15:18:01Z",
+   "note": "aggregated in the workflow from the 95895180-byte zip (sha256 49f6f0a00b6f1792d22893a3e261f7a329377048eb826079f1a16c7895b76d9d): 5222 10-K/10-Q filings, 435 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2018q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2018q4.zip",
+   "bytes": 31137,
+   "sha256": "2147a132bd9803d488061a83061c36bf3abf77ae9ef42e5ad3e21e55873227c5",
+   "retrieved": "2026-11-07T15:18:09Z",
+   "note": "aggregated in the workflow from the 62895777-byte zip (sha256 ecc103d0979dacdf6cfcc7f0b2273f7b6046c41a3aa7f2e2aacfb8ccd45bc122): 6143 10-K/10-Q filings, 431 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2018q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2018q3.zip",
+   "bytes": 29174,
+   "sha256": "e887baa9ce466f86c62874e68bb9ddd6e27d0b8fcf4fe7b09d2c1e9cf7e28293",
+   "retrieved": "2026-11-07T15:18:18Z",
+   "note": "aggregated in the workflow from the 87202498-byte zip (sha256 30030056223c456d5cb7a42722ffa990345fda12deb5cfff723b1ae47dc9bf8d): 6133 10-K/10-Q filings, 407 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2018q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2018q2.zip",
+   "bytes": 32695,
+   "sha256": "9c7950b19a62ed1eebfe432a060c09572a73d9b983a74879728903d67257e05b",
+   "retrieved": "2026-11-07T15:18:27Z",
+   "note": "aggregated in the workflow from the 91972487-byte zip (sha256 99daaf8af1fb1ba94b100613536d9dbee5e9a356f0736190963a3a68af623d54): 6841 10-K/10-Q filings, 460 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2018q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2018q1.zip",
+   "bytes": 32085,
+   "sha256": "707a0adef777552fbfc63a9e4dede7b2c39fef0e1dfc3908ed884a0183fbd73d",
+   "retrieved": "2026-11-07T15:18:37Z",
+   "note": "aggregated in the workflow from the 93176693-byte zip (sha256 f7f0083d28779ff373cd097ded88d5408eae9cc178f89014ca3ed8b24dc84185): 5493 10-K/10-Q filings, 456 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2017q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2017q4.zip",
+   "bytes": 31718,
+   "sha256": "4c7682f4a1a78910752c77d26358915bded9c76d2835527bfa9a2d7a81479854",
+   "retrieved": "2026-11-07T15:18:46Z",
+   "note": "aggregated in the workflow from the 76051784-byte zip (sha256 be03bfd71f356a7f53d82a40ee907bb51aec4f61d6ce97f059f2df785bc37658): 6340 10-K/10-Q filings, 447 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2017q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2017q3.zip",
+   "bytes": 29177,
+   "sha256": "4e419e6a3df460350e5850e7321fc349af36b21cfd4f3dc98e5cc7ba377a969b",
+   "retrieved": "2026-11-07T15:18:55Z",
+   "note": "aggregated in the workflow from the 74356472-byte zip (sha256 5aa58d799c4fb3f5f98974eb713696d1aebe747a01a794e7ac58517631b5735d): 6289 10-K/10-Q filings, 415 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2017q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2017q2.zip",
+   "bytes": 31716,
+   "sha256": "8f42a0c38ae351525b628e50f90043d68bbe0ae9a145f4dcf215fdfa2c9dea85",
+   "retrieved": "2026-11-07T15:19:03Z",
+   "note": "aggregated in the workflow from the 71429748-byte zip (sha256 63a590d7deaac8f82d22f08cb2ada46f199341ecc7e7a8a0a7d6a181cec1d53b): 6822 10-K/10-Q filings, 449 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2017q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2017q1.zip",
+   "bytes": 34797,
+   "sha256": "1029b95f32231504f3114e2659ac6e2a4c8c89aa0d2d571932ef973365f7d0a4",
+   "retrieved": "2026-11-07T15:19:13Z",
+   "note": "aggregated in the workflow from the 92433981-byte zip (sha256 ffb6989983c4c9f87e2f39166b20e4a21f024f0fe1adccc199e08da5fc94a915): 5964 10-K/10-Q filings, 493 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2016q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2016q4.zip",
+   "bytes": 32375,
+   "sha256": "7a648989433e7c4f1295c3e5dbb8eea7e121b28c18385fd4bb1a85eb466603af",
+   "retrieved": "2026-11-07T15:19:22Z",
+   "note": "aggregated in the workflow from the 79400707-byte zip (sha256 b8a9550c386ea95eefcc95fc3b3c19f2b1428c0a7f46d5d547a671c3f9284e26): 6545 10-K/10-Q filings, 455 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2016q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2016q3.zip",
+   "bytes": 23478,
+   "sha256": "8b9a22d6757635be48881a25bb27412be5f9cc0ba59a6e588d4c74cf671bf4e3",
+   "retrieved": "2026-11-07T15:19:30Z",
+   "note": "aggregated in the workflow from the 71116399-byte zip (sha256 4d014b8ee4476887aba067c59bfef967d4b12c905d4b1b3f89e8ff7ff7310156): 5963 10-K/10-Q filings, 333 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2016q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2016q2.zip",
+   "bytes": 33039,
+   "sha256": "4fd5580ada464d88704f2511cb15978ebbb42d346ff462b1111c146d5e66e7f5",
+   "retrieved": "2026-11-07T15:19:38Z",
+   "note": "aggregated in the workflow from the 73848835-byte zip (sha256 e91daef1f83ab3a6a7a25425f1f09ac6c100be8e42ac7a54e539e1b0c303449c): 7097 10-K/10-Q filings, 466 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2016q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2016q1.zip",
+   "bytes": 35992,
+   "sha256": "bf173bdeaa4208dd9fab0bd4e515ad78cc1176b2da33df850faccfef3588b914",
+   "retrieved": "2026-11-07T15:19:48Z",
+   "note": "aggregated in the workflow from the 95470843-byte zip (sha256 5c89a6badede1b47ab540913c7484795c7fc4c2a4672ac601b34b8c0afe5a698): 6269 10-K/10-Q filings, 510 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2015q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2015q4.zip",
+   "bytes": 32627,
+   "sha256": "08ac5600d2a4f25f1694a1bc465f72db5d7324d6f6bd6534fbfc32488ca8b477",
+   "retrieved": "2026-11-07T15:19:58Z",
+   "note": "aggregated in the workflow from the 83007568-byte zip (sha256 1723b41ef2a1d3ea6595f6052ef229a80e03cd183391ca9e297a894f9e589d83): 7018 10-K/10-Q filings, 460 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2015q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2015q3.zip",
+   "bytes": 32220,
+   "sha256": "a67f4586c3e6529ab80302913080c1ad59ce5a1d164c30bb1efdd847abde28a0",
+   "retrieved": "2026-11-07T15:20:07Z",
+   "note": "aggregated in the workflow from the 82751989-byte zip (sha256 9301fa2e346aa6b3a48a36cafab80d1aab5d7970e60bfd168d53ba852a4deca9): 7163 10-K/10-Q filings, 456 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2015q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2015q2.zip",
+   "bytes": 35399,
+   "sha256": "fb571f2e5fcf845da05407f87bd5ca9fe08e4de63c312173455552e1a790351e",
+   "retrieved": "2026-11-07T15:20:16Z",
+   "note": "aggregated in the workflow from the 78908272-byte zip (sha256 d3cac325930af6ef145d26fb7e035d7933e900ce174a11adaabb33abd87fbfa1): 7732 10-K/10-Q filings, 503 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2015q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2015q1.zip",
+   "bytes": 36401,
+   "sha256": "4498ff6986b6024e0fa437d396705552b1f15d7805166d248d8c301bbde7b39d",
+   "retrieved": "2026-11-07T15:20:27Z",
+   "note": "aggregated in the workflow from the 98944359-byte zip (sha256 baa9e434480b8299593b781e8156f855e0c4548677329f166f495cbae287e52e): 6690 10-K/10-Q filings, 518 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2014q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2014q4.zip",
+   "bytes": 34751,
+   "sha256": "1c26d06985249fde8e2d071441e8e3891c74849f98fbda03c01aa59a2a5249be",
+   "retrieved": "2026-11-07T15:20:37Z",
+   "note": "aggregated in the workflow from the 87639973-byte zip (sha256 c82395b7df380a95b30d652784372a5439dea9ed750d89784822bb643cbc4930): 7440 10-K/10-Q filings, 491 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2014q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2014q3.zip",
+   "bytes": 33633,
+   "sha256": "0342406432b19cc3cbbca9b4de804a7993f9458c2b71b09d6b3dd10c54188e81",
+   "retrieved": "2026-11-07T15:20:47Z",
+   "note": "aggregated in the workflow from the 87408142-byte zip (sha256 4d10510a2f17a6da8012d83f66bed7fbb434bca2529f7b2a92043c522d2c52b1): 7438 10-K/10-Q filings, 478 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2014q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2014q2.zip",
+   "bytes": 37646,
+   "sha256": "922b9267bae61a8cb66d00332e0fba45702b7a4971d688a85c2cc8b6b86482a4",
+   "retrieved": "2026-11-07T15:20:56Z",
+   "note": "aggregated in the workflow from the 85032839-byte zip (sha256 ab03600231a08369a980a31dde8bb78b6cd49f56d39ab7b90ca5bc0cfd52aa7f): 8011 10-K/10-Q filings, 542 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2014q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2014q1.zip",
+   "bytes": 39415,
+   "sha256": "76d20171771d5697b7c1362db3b0aa01b260ed2d75d626718b94d30c6d94904c",
+   "retrieved": "2026-11-07T15:21:07Z",
+   "note": "aggregated in the workflow from the 102843522-byte zip (sha256 bf55481c6e0088fb45e8efeb2d8de6912a9c3533da918376a24ca5f84144680f): 6785 10-K/10-Q filings, 567 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2013q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2013q4.zip",
+   "bytes": 38118,
+   "sha256": "c3073036152e03563d732d752e17851a4e15cae9a79a9e9bb5368502d91710cd",
+   "retrieved": "2026-11-07T15:21:17Z",
+   "note": "aggregated in the workflow from the 92335773-byte zip (sha256 7781ac25ddbd4f6eb8eb85e838656181fb06e8bc16b1dd5efccb9e21f8f5baa7): 7520 10-K/10-Q filings, 542 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2013q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2013q3.zip",
+   "bytes": 38218,
+   "sha256": "556250e5f11440fb374aa5b8f21333263cd2d126df17817488a32b37ba242b30",
+   "retrieved": "2026-11-07T15:21:28Z",
+   "note": "aggregated in the workflow from the 98355005-byte zip (sha256 c9134387b650a9194f14b3f832f16aa1a72255c20a0e0b954001a643933cc849): 7652 10-K/10-Q filings, 549 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2013q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2013q2.zip",
+   "bytes": 40409,
+   "sha256": "5b9a158d73b1a8c87d2b5b09eed28e903b9cc19b6dfdfff75b293124af7186f2",
+   "retrieved": "2026-11-07T15:21:38Z",
+   "note": "aggregated in the workflow from the 96917655-byte zip (sha256 7cc764386ea9cb01d62e1a9f4fac38dc9c741e96886a953ddaad2def4eb489c7): 8408 10-K/10-Q filings, 580 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2013q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2013q1.zip",
+   "bytes": 39807,
+   "sha256": "ce720723db48b94a7cd0f9e0451f37281be371452aa0d01dd0f5114a8f689966",
+   "retrieved": "2026-11-07T15:21:47Z",
+   "note": "aggregated in the workflow from the 99173442-byte zip (sha256 329f4e3e40c0351001037ad1dea3fd28c07100f6f6d6d64d5998ea01b060a790): 6475 10-K/10-Q filings, 572 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2012q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2012q4.zip",
+   "bytes": 39966,
+   "sha256": "b10e31bc4d9a8d14c8982fdb77852663dc90ce9e37047a3957dee46e2ef6393b",
+   "retrieved": "2026-11-07T15:21:57Z",
+   "note": "aggregated in the workflow from the 95805256-byte zip (sha256 af6629de7547f5d75c85abf170550b9466768071fcd419d5fdf1a1d026436e98): 7824 10-K/10-Q filings, 571 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2012q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2012q3.zip",
+   "bytes": 34268,
+   "sha256": "3c655f1262f82a0e41f86002b38bf8911bf4120cf5cfebda0f1ada77b489c585",
+   "retrieved": "2026-11-07T15:22:07Z",
+   "note": "aggregated in the workflow from the 89608234-byte zip (sha256 a5b705fab7948837fc890d820c2b809d4afdb0ff1836129ad5a16127275f0ebf): 7715 10-K/10-Q filings, 488 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2012q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2012q2.zip",
+   "bytes": 37570,
+   "sha256": "7f08903efcb2fcb56e86e9d770806d958473247c86e20067375cdd95c99cc185",
+   "retrieved": "2026-11-07T15:22:15Z",
+   "note": "aggregated in the workflow from the 80075771-byte zip (sha256 0dbb10aa316c674f07849a28e67a25a0a59bd6ef2bc214cd1800c8a2d2a05df6): 8646 10-K/10-Q filings, 535 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2012q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2012q1.zip",
+   "bytes": 37183,
+   "sha256": "88bdb8a9c73f2a86a8d22a461795d6d202cd4b18d1bc9ed8e9d8c636cf77f718",
+   "retrieved": "2026-11-07T15:22:24Z",
+   "note": "aggregated in the workflow from the 85474601-byte zip (sha256 42ed1a5ecac978d4338bd51cd4bc15bf60cc821291eea492f8172fc4e803d5f6): 7128 10-K/10-Q filings, 530 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2011q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2011q4.zip",
+   "bytes": 31003,
+   "sha256": "1e373f47dc6a1402f530ef7d3befa2df914de681cda033c96227e30debe5657d",
+   "retrieved": "2026-11-07T15:22:32Z",
+   "note": "aggregated in the workflow from the 64306658-byte zip (sha256 0f674f68094cc65c83da3c142775dcfd091250e293783c3e8211ee4e97bc083f): 7378 10-K/10-Q filings, 438 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2011q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2011q3.zip",
+   "bytes": 22737,
+   "sha256": "eb790293833d39d9a0c4c8c1e2aca339c004159bb42e32a8eb87bff231f8c279",
+   "retrieved": "2026-11-07T15:22:39Z",
+   "note": "aggregated in the workflow from the 57941919-byte zip (sha256 43b9beb243c6686a29df5cf817ed2cb3a7c86a7398bbc56e2fb4d0cf4784ac28): 6980 10-K/10-Q filings, 319 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2011q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2011q2.zip",
+   "bytes": 13705,
+   "sha256": "6d78b3afaa2019fca39ab3d79138fb1a4a85bd1e5ad1b60dfa9ade343dd57bc5",
+   "retrieved": "2026-11-07T15:22:42Z",
+   "note": "aggregated in the workflow from the 15001310-byte zip (sha256 10a6f98f14d2a341e938a379ea32beb4857b01d59facf04e6e7b3c68558a95d1): 1625 10-K/10-Q filings, 188 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2011q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2011q1.zip",
+   "bytes": 15988,
+   "sha256": "49c178e0dfaae7def84f7f2f3f2525d9b89524ec696b035013c7ba1a98ca3a4b",
+   "retrieved": "2026-11-07T15:22:47Z",
+   "note": "aggregated in the workflow from the 19615544-byte zip (sha256 e63b781a5e57e55d68e110a06d3f697e942a60e17f093bbdc1a16ac7152a7df5): 1461 10-K/10-Q filings, 222 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2010q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q4.zip",
+   "bytes": 13941,
+   "sha256": "b3cd8b751cee21460fa536839c0d7d6e77771cbebcc0a17e7ef0ff85ffd9536e",
+   "retrieved": "2026-11-07T15:22:50Z",
+   "note": "aggregated in the workflow from the 14679781-byte zip (sha256 3dc43a8559cba9e1a9bb5a283a99e1fdfd2b0eaa7a9460887d5b4c70d69cef63): 1438 10-K/10-Q filings, 189 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2010q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q3.zip",
+   "bytes": 11102,
+   "sha256": "1c39bded9ed0fc127dc31217389779ae6ad87d27d341feb79d7531ae703235ab",
+   "retrieved": "2026-11-07T15:22:54Z",
+   "note": "aggregated in the workflow from the 13745950-byte zip (sha256 52014faf614ca0d7b8040e364f5b3e99f28d5e96b711aa922b490056e2c1d7b5): 1368 10-K/10-Q filings, 152 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2010q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q2.zip",
+   "bytes": 4571,
+   "sha256": "1993ba9259eb2a2190d712c774ac0715724820359dcec0e22c00aea20f746411",
+   "retrieved": "2026-11-07T15:22:56Z",
+   "note": "aggregated in the workflow from the 3994236-byte zip (sha256 25f416b020fd3e62a67dbf8c6522c9f239e716099b61cf5d05a59a91ffdef1f1): 478 10-K/10-Q filings, 63 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2010q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q1.zip",
+   "bytes": 5211,
+   "sha256": "46281a4d420852ef64342b81eb092db866dd8ac20bd5ddea7fedd9905aa00154",
+   "retrieved": "2026-11-07T15:22:59Z",
+   "note": "aggregated in the workflow from the 5311282-byte zip (sha256 2a4db2340ab1662d5135d7e17be1a58352c5959017350f0ef2174135f9996125): 478 10-K/10-Q filings, 72 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2009q4_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2009q4.zip",
+   "bytes": 5777,
+   "sha256": "5671b4adbd92b5fe908b3572d8a8007cf0589ac253f72e9d78ef355e18fe4b86",
+   "retrieved": "2026-11-07T15:23:02Z",
+   "note": "aggregated in the workflow from the 4050938-byte zip (sha256 ad23b114ecb430c3a05ee2f2be799e966a67591ef098c44311b2f1f632d3ea82): 474 10-K/10-Q filings, 79 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2009q3_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2009q3.zip",
+   "bytes": 5004,
+   "sha256": "cbb6ea519f1354155cb572a7d901812494284b826d9d9b9e768ca3a640354471",
+   "retrieved": "2026-11-07T15:23:04Z",
+   "note": "aggregated in the workflow from the 3544077-byte zip (sha256 dca07de82a7c40d28108cd3ba4fbce4225a9c5bd2bd9deea7167ff4992c8ddfa): 430 10-K/10-Q filings, 68 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2009q2_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2009q2.zip",
+   "bytes": 52,
+   "sha256": "74fcb3c7db7359b1528b1ea8de9213ce74059acd8ed715bc84334a71a050689f",
+   "retrieved": "2026-11-07T15:23:07Z",
+   "note": "aggregated in the workflow from the 144894-byte zip (sha256 09d38a3fdea044be2728488ecb000fef8b5220fda805c601d2337afd1da333a8): 20 10-K/10-Q filings, 0 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-FSDS",
+   "file": "history/corporate/raw/SEC-FSDS/2009q1_aggregates.csv",
+   "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2009q1.zip",
+   "bytes": 52,
+   "sha256": "74fcb3c7db7359b1528b1ea8de9213ce74059acd8ed715bc84334a71a050689f",
+   "retrieved": "2026-11-07T15:23:09Z",
+   "note": "aggregated in the workflow from the 13540-byte zip (sha256 181327faaa37c2a3b47cb6727004960b762954d908697b252d12bea245b9d26e): 0 10-K/10-Q filings, 0 tag-period rows; the zip is not kept"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
+   "bytes": 483,
+   "sha256": "21a42358f41adaacd98164e73b7ab9bcaa5bf25dd054c529cccc1de6ef2c9dbc",
+   "retrieved": "2026-11-07T15:23:21Z",
+   "note": "aggregated from the zip (not kept); VALUE unit detected: dollars; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
+   "bytes": 1112,
+   "sha256": "1acafdb04914afe375b13d457fca198e6266e0ecb92b2e09a8125b6c0ddbbe71",
+   "retrieved": "2026-11-07T15:23:21Z"
+  },
+  {
+   "catalog": "SEC-FSDS",
    "file": "history/corporate/raw/SEC-FSDS/2026q3_aggregates.csv",
    "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2026q3.zip",
    "bytes": 22878,
@@ -213,7 +851,9 @@
    "note": "Shiller's Figure 3.1 workbook (Irrational Exuberance): US real and nominal home price index 1890- (annual to 1952, monthly from 1953), real building cost, population, long rate, CPI; supplied by the repository owner from shillerdata.com on 2026-11-06"
   }
  ],
- "errors": [],
+ "errors": [
+  "sec 13f: no INFOTABLE.tsv in zip: ['01JUN2025-31AUG2025_form13f/', '01JUN2025-31AUG2025_form13f/COVERPAGE.tsv', '01JUN2025-31AUG2025_form13f/FORM13F_metadata.json', '01JUN2025-31AUG2025_form13f/FORM13F_readme.htm', '01JUN2025-31AUG2025_form13f/INFOTABLE.tsv']"
+ ],
  "pulls_run": [
   "13f",
   "fsds"
