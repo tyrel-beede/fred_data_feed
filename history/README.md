@@ -27,8 +27,9 @@ What stands at revision one — commit `bb2e0fc` plus this note; the `history-v1
   oil since 1861, CHAT technology adoption, USGS minerals, the commodity PPI, US energy from 1635, European energy
   from 1800); the network's topology from the regime columns; the corporate layer (Z.1 from 1945, BEA profits from
   1929, Shiller from 1871, home prices from 1890; Goyal–Welch from 1871 and Jacks's 42 world commodity prices from
-  1850, both supplied by hand). 98 physical and 17 corporate files pulled by the workflow with hashes; the one
-  desktop-only source still outstanding (the SEC data sets) is documented in `HANDOFF.md`.
+  1850, both supplied by hand; the SEC financial-statement and 13F data sets for the two latest quarters, pulled
+  from the owner's desktop). 98 physical and 17 corporate files pulled by the workflow with hashes; the four
+  desktop-only sources are all in, with their refresh cadence in `HANDOFF.md`.
 - **The four parts of the foundation as artifacts**: the climatology by measured topology era (`climatology/`), the
   analog library with a full 20-feature live query and measured join rules (`analogs/`, `bridge/join_rules.json`),
   the voice ledger (`dalio/reads.csv`, 193 reads graded for falsifiability, unscored), the mechanisms (templates,

@@ -61,6 +61,8 @@ expected = [
     "history/analogs/learner_test_physical_measured_era.md",
     "history/tools/live_query.py", "history/bridge/join_rules.json", "history/analogs/us_2026ytd_query.json",
     "history/HANDOFF.md", "history/tools/noise_band.py", "history/analogs/noise_band.md",
+    "history/corporate/sec_fsds_quarterly.csv", "history/corporate/sec_13f_quarterly.csv",
+    "history/corporate/raw/SEC-FSDS/2026q3_aggregates.csv", "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_summary.json",
     "history/physical/jacks_features.csv", "history/physical/raw/JACKS-COMMODITIES/Real-commodity-prices-1850-2025.xlsx",
     "history/analogs/learner_test_physical_jacks_era.md", "history/analogs/learner_test_physical_materials_jacks_era.md",
     "history/analogs/learner_test_physical_era_cad1.md", "history/analogs/learner_test_physical_era_cad2.md", "history/analogs/learner_test_physical_era_cad3.md",

@@ -45,30 +45,30 @@
   {
    "id": "SEC-FSDS",
    "layer": "bridge",
-   "status": "local run",
+   "status": "pulled (desktop run 2026-11-06)",
    "title": "SEC Financial Statement Data Sets: every number in 10-K/10-Q XBRL financial statements, quarterly 2009q1-",
    "coverage": "all SEC registrants filing XBRL, 2009-",
    "retrieval": "workflow: the two latest quarterly zips (60-120 MB each) streamed in the runner; only per-tag aggregates are kept (raw/SEC-FSDS/<yyyyqN>_aggregates.csv): filer count, sum, median and p90 for assets, liabilities, equity, long-term debt, cash, inventories, revenue, net income, interest, operating cash flow, capex, buybacks, dividends, depreciation; 10-K/10-Q forms only, USD, no co-registrants",
    "license": "public domain (SEC); fair-access policy: identify the client in the User-Agent, at most 10 requests a second",
    "provenance_class": "counted (self-reported, audited, as filed; restatements appear as later filings)",
    "feeds": [
-    "the live dials' capital/capex group: aggregate capex, buybacks, dividends and cash against revenue and debt, quarter by quarter, one quarter stale"
+    "sec_fsds_quarterly.csv: per period end and tag, filer count and sum for 3-month, year-to-date and annual rows (10-Q cash flows are year-to-date); the live dials' capex, buyback, dividend and cash read"
    ],
-   "note": "sec.gov answers 403 to every request from GitHub-hosted runners (cloud-provider addresses are blocked), with or without the fair-access User-Agent; run from a desktop instead: python3 history/tools/corporate_pull.py --only fsds,13f (streams the two latest quarterly zips, keeps only the aggregates under history/corporate/raw/), then commit and push"
+   "note": "sec.gov refuses GitHub-hosted runners; pulled from the owner's desktop with python3 history/tools/corporate_pull.py --only fsds,13f (the fair-access User-Agent is read from SEC_CONTACT); the two latest quarters are in raw/, reduced by corporate_build.py to sec_fsds_quarterly.csv / sec_13f_quarterly.csv"
   },
   {
    "id": "SEC-13F",
    "layer": "bridge",
-   "status": "local run",
+   "status": "pulled (desktop run 2026-11-06)",
    "title": "SEC Form 13F Data Sets: institutional investment managers' quarterly holdings (long positions in 13(f) securities), structured from 2013q2",
    "coverage": "managers with $100M+ in 13(f) securities, 2013-; 45-day filing lag",
    "retrieval": "workflow: the two latest quarterly zips streamed in the runner; only summaries are kept (raw/SEC-13F/<period>_summary.json: filers, total value, distinct issuers, top-10 and top-50 issuer shares, Herfindahl, median filer top-10 concentration; <period>_top20.csv: the twenty most-held issuers)",
    "license": "public domain (SEC)",
    "provenance_class": "counted (self-reported, long-only, no shorts or most derivatives; VALUE in dollars from 2023, thousands before)",
    "feeds": [
-    "the live dials' positioning group: crowding and concentration of institutional holdings, beside CFTC, EPFR, ICI, AAII and margin"
+    "sec_13f_quarterly.csv: filers, total value, issuers, top-10/top-50 issuer shares, Herfindahl, median filer top-10 concentration, put/call share; the positioning group's crowding read"
    ],
-   "note": "sec.gov answers 403 to every request from GitHub-hosted runners (cloud-provider addresses are blocked), with or without the fair-access User-Agent; run from a desktop instead: python3 history/tools/corporate_pull.py --only fsds,13f (streams the two latest quarterly zips, keeps only the aggregates under history/corporate/raw/), then commit and push"
+   "note": "sec.gov refuses GitHub-hosted runners; pulled from the owner's desktop with python3 history/tools/corporate_pull.py --only fsds,13f (the fair-access User-Agent is read from SEC_CONTACT); the two latest quarters are in raw/, reduced by corporate_build.py to sec_fsds_quarterly.csv / sec_13f_quarterly.csv"
   }
  ]
 }

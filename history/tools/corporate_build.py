@@ -200,7 +200,48 @@ def read_goyal_welch():
     return out
 
 
+def build_sec_tables():
+    """Reduce the SEC aggregates the puller keeps to two small tables for the live dials:
+    sec_fsds_quarterly.csv  per period end (ddate): for each tag, the filer count and sum for the 3-month (qtrs=1),
+                            year-to-date (qtrs=2,3) and annual (qtrs=4) rows with the most filers in any quarterly file;
+                            10-Q cash-flow statements are year-to-date, so the June, September and December flows are
+                            the qtrs=2/3/4 rows, and a single quarter's flow is the difference between successive ones
+                            for the same filer set (not computed here)
+    sec_13f_quarterly.csv   per period: filers, total value, issuers, top-10 and top-50 shares, Herfindahl, median
+                            filer top-10 concentration, put/call value share"""
+    d = os.path.join(RAW, "SEC-FSDS")
+    best = {}
+    if os.path.isdir(d):
+        for fn in sorted(os.listdir(d)):
+            if not fn.endswith("_aggregates.csv"):
+                continue
+            for r in csv.DictReader(open(os.path.join(d, fn))):
+                k = (r["ddate"], r["tag"], r["qtrs"])
+                if k not in best or int(r["n_filers"]) > int(best[k]["n_filers"]):
+                    best[k] = {**r, "source_file": fn}
+        with open(os.path.join(CORP, "sec_fsds_quarterly.csv"), "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=["ddate", "tag", "qtrs", "n_filers", "sum_usd", "median_usd", "p90_usd", "source_file"])
+            w.writeheader()
+            for k in sorted(best):
+                w.writerow({c: best[k][c] for c in w.fieldnames})
+    d13 = os.path.join(RAW, "SEC-13F")
+    rows = []
+    if os.path.isdir(d13):
+        for fn in sorted(os.listdir(d13)):
+            if fn.endswith("_summary.json"):
+                s_ = json.load(open(os.path.join(d13, fn)))
+                rows.append({"period": s_.get("period"), "n_filers": s_.get("n_filers"), "total_value_usd": s_.get("total_value_reported"),
+                             "n_issuers": s_.get("n_issuers_cusip"), "top10_issuer_share": s_.get("top10_issuer_share"),
+                             "top50_issuer_share": s_.get("top50_issuer_share"), "hhi_issuers": s_.get("hhi_issuers"),
+                             "median_filer_top10_share": s_.get("median_filer_top10_share"), "putcall_value_share": s_.get("putcall_value_share")})
+        if rows:
+            with open(os.path.join(CORP, "sec_13f_quarterly.csv"), "w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    print(f"sec tables: {len(best)} fsds tag-period rows, {len(rows)} 13f periods")
+
+
 def main():
+    build_sec_tables()
     meta = {}
     mp = os.path.join(RAW, "FRED-Z1", "series_used.json")
     if os.path.exists(mp):

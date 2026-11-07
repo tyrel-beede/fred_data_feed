@@ -21,6 +21,15 @@ Corporate-sector records, in two parts with different depths and different jobs:
 - `raw/` — what the workflow fetched, with `manifest.json` (URL, size, SHA-256, time, and for the FRED series the
   resolved id, title, units and frequency in `raw/FRED-Z1/series_used.json`; the puller resolves each series by its
   exact FRED title at run time rather than trusting a remembered id).
+- `sec_fsds_quarterly.csv`, `sec_13f_quarterly.csv` — the SEC aggregates reduced to two tables for the live dials (built
+  by `../tools/corporate_build.py` from `raw/SEC-FSDS/` and `raw/SEC-13F/`): per period end and tag, the filer count
+  and sum for the 3-month, year-to-date and annual rows (10-Q cash-flow statements are year-to-date, so a single
+  quarter's flow is the difference between successive rows); and per 13F period, filers, total value, issuers,
+  top-10 and top-50 issuer shares, Herfindahl, the median filer's top-10 concentration and the put/call share. First
+  readings: 9,361 filers reporting $71 trillion for the quarter ended December 2025 and 9,711 reporting $82 trillion
+  for March 2026, the ten largest issuers 24% and 23% of the total, the median filer with 54% of its value in its
+  ten largest positions; capital expenditures of $249 billion across 2,325 filers in the March 2026 quarter against
+  buybacks of $263 billion across 1,402 and operating cash flow of $407 billion across 4,327.
 - `us_corporate_annual.csv` — built by `../tools/corporate_build.py`, one row per year, every value computable at year
   end (balance-sheet levels at Q4, flows as annual averages of the quarterly series, nominal GDP from FRED from 1947
   and the JST sheet before): nonfinancial corporate debt/GDP, equity market value/GDP, net worth growth over three

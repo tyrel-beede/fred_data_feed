@@ -386,7 +386,8 @@
    "license": "academic use with citation",
    "provenance_class": "compiled (CRSP, Shiller, FRED and the authors' own construction)",
    "local_files": [
-    "history/corporate/catalog.json"
+    "history/corporate/raw/GOYAL-WELCH/Data2025.xlsx",
+    "history/corporate/us_corporate_annual.csv"
    ],
    "note": "the workbook goes under history/corporate/raw/GOYAL-WELCH/ (PredictorData<year>.xlsx) when the page cannot be resolved by the workflow"
   },
@@ -399,7 +400,8 @@
    "license": "public domain; SEC fair-access policy",
    "provenance_class": "counted (as filed in XBRL; self-reported, audited)",
    "local_files": [
-    "history/corporate/raw/manifest.json"
+    "history/corporate/raw/SEC-FSDS/2026q3_aggregates.csv",
+    "history/corporate/sec_fsds_quarterly.csv"
    ],
    "note": "aggregates land as history/corporate/raw/SEC-FSDS/<yyyyqN>_aggregates.csv; the zips are hashed in the manifest and not kept"
   },
@@ -412,7 +414,8 @@
    "license": "public domain; SEC fair-access policy",
    "provenance_class": "counted (self-reported holdings of 13(f) securities; long-only; 45-day lag)",
    "local_files": [
-    "history/corporate/raw/manifest.json"
+    "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_summary.json",
+    "history/corporate/sec_13f_quarterly.csv"
    ],
    "note": "summaries land as history/corporate/raw/SEC-13F/<period>_summary.json and <period>_top20.csv"
   }
