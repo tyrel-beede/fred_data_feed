@@ -1,0 +1,5 @@
+# 2026-10-30T1253-standoff
+
+Verbatim run line from /areas/standoff-watch.md (migrated memory 2026-11-06):
+
+2026-10-30 12:53 MDT (full run, triggered by the Oct 30 selloff conversation) | T: T4 +1 ×1.5 R (Trump "end soon"); T7 −1 ×2 E (limpet, sinking, record month); T3 0 but strongest since July (Qatar draft revisions in Tehran, Vance letter); T1/T2/T5/T6 0 | M: M1 in force · M2 ≥4 record month · M3 stress (carried) · M4 none (US "cleared" claim disputed) · M5 FM to early Nov · M7 20–60 (UKMTO ~40/day) · M8 10–13 with 8.5–14 weekly swings · M9 flowing-contested (Oct 27 Houthi claim unacknowledged; Egypt authorizes Saudi support) | O1 Brent Jan ~113.5 / Dec expiry ~117.6 (10/30), zone 100–120 unchanged (first pass misread ~97 from a Kalshi ladder; corrected 13:15 MDT); O2 Dec–Jan ≈ 4.1 widening; O8 reg 4.2471 (10/28); O9 supply-type day | F1 Sep PCE 0.5/3.6 headline, 0.3/3.1 core, floor month 8–9; F3 Oct hold 10–2, Dec hike 79.6% (10/30); F4 10y 4.91 | M3 6–10% (Oct 14) | fuse strained (Apollo GPU lease, Oct 26, pricing pending) | weights H2 R+10/R−20/F25/E45, H3 R+10/R−20/F20/E50 | Brier n/a (first resolution Nov 3) | grade-mode: no

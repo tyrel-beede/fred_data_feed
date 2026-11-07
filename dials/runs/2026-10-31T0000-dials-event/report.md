@@ -1,0 +1,5 @@
+# 2026-10-31T0000-dials-event
+
+Verbatim run line from /areas/macro-dials.md (migrated memory 2026-11-06):
+
+2026-10-31 (event-mode: SPCX Q3 official transcript; stage notes only; full detail in [[spacex-tesla-article]]) | compute 1.7 GW at 9/30, ~2 GW Oct, 2.5–3 GW YE26, "+10 GW incremental 2027 → ~13 GW"; 200k GB300/month; 440k Vera Rubin cluster by end-Q2'27 | pricing: new deployments "slightly above the $30–50 per watt range", payback "<1 year"; rents "at effectively the spot-market rate", short contracts renewing higher — no take-or-pay by choice (S3 inverted); 50/50 internal/external goal | financing: IG, "several debt pools", OCF + debt + vendor/customer partnerships; self-funding from 1H27; backlog $63B ($17.5B deferred); Q4 capex $35–40B; Q1'27 revenue $33–37B; ARR $100B YE26, "$500B–$1T" YE27 (Musk) | Tesla–SpaceX combination under special committees | Maguire model (X 10/30–11/1; Musk "I think we can do better"): 10.2 GW YE27 vs Musk 13; ~$421B ARR vs $500B–1T; self-funding Q1'28 vs 1H27 — management discounted 25–50%; $40B/GW on 100% of GW conflicts with the 50/50 split | queued forks F-SPCX-GW27 / -SELFFUND / -PRICE for the Q4 call

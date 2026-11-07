@@ -1,0 +1,50 @@
+{
+ "P1_ici": {
+  "error": "",
+  "group": "P1_ici",
+  "last_as_of": "2026-10-28",
+  "last_file": "dials/flows/2026-11-05.json",
+  "last_run_at": "2026-11-05T05:26:09-07:00",
+  "status": "ok"
+ },
+ "P5_sentiment": {
+  "error": "CBOE total/equity put/call printed only through 2026-11-03 (thetrading.tools lags a session; 11-04 and 11-05 not available); VIX9D from the repo price file only, VIX6M/VIX1Y not available.",
+  "group": "P5_sentiment",
+  "last_as_of": "2026-11-05",
+  "last_file": "dials/flows/2026-11-06.json",
+  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "status": "partial"
+ },
+ "P8_calendar": {
+  "error": "ORCL (12-14), AVGO (12-09 or 12-10 - aggregators disagree) and MU (12-23) next earnings dates remain aggregator estimates (verified:false); none falls inside ten days. Meta USD 15bn FWP on sec.gov unreachable (client_error) - Meta USD and EUR final terms are press-sourced, two EUR tranches still missing. New deals (Apple, ING loan sale, SpaceX financing sell-down, Meta option exercise) are press-only (primary:false). Bill auction results from a secondary site (repo auction files have no rows after 2026-10-22 / no bills); no tails computed (no when-issued source). TreasuryDirect pages robots_disallowed; Renaissance week-ahead / weekly recap for 11-06 not yet posted.",
+  "group": "P8_calendar",
+  "last_as_of": "2026-11-05",
+  "last_file": "dials/calendar/2026-11-06.json",
+  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "status": "partial"
+ },
+ "P9_custody": {
+  "error": "H.4.1 release of 2026-11-05 not reachable (federalreserve.gov current PDF still served the 10-29 release; index page PROVENANCE_REQUIRED) - WMTSECL1 2026-11-04 is the repo/FRED value, not cross-checked. MOF weekly: latest PDF is the 2026-10-29 release (week to 10-24); the 10-25..10-31 week was not posted.",
+  "group": "P9_custody",
+  "last_as_of": "2026-11-04",
+  "last_file": "dials/flows/2026-11-06.json",
+  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "status": "partial"
+ },
+ "events": {
+  "error": "",
+  "group": "events",
+  "last_as_of": "2026-11-05",
+  "last_file": "dials/events/2026-11-06.json",
+  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "status": "ok"
+ },
+ "voices": {
+  "error": "Michael Burry unreachable: config url https://cassandraunchained.substack.com could not be opened and the post index of the search-surfaced https://michaeljburry.substack.com ('Cassandra Unchained, by Michael Burry') was not readable for the gate window. WebFetch of every roster url taken verbatim from config.json returned PROVENANCE_REQUIRED (unattended permission prompt, not retried); voices were read through search-surfaced links instead, so these owned index pages were NOT read and an in-gate post there cannot be ruled out: Dalio Substack, Tooze index, lynalden.com home, Oaktree insights, GMO research library, Sequoia article index. Quiet on search only (low confidence): Grantham, Cahn, Baker. David Kostin retired from Goldman in 2025 (Ben Snider is Chief US Equity Strategist) - roster entry is stale. Hartnett: the in-gate Flow Show was read via write-ups that carry no EPFR flow table or Bull & Bear reading. N5: WSJ Heard on the Street and FT Alphaville surfaced nothing dated; the 'term premium OR Treasury auction' query returned no argument piece.",
+  "group": "voices",
+  "last_as_of": "2026-11-05",
+  "last_file": "dials/voices/2026-11-05.json",
+  "last_run_at": "2026-11-05T05:03:33-07:00",
+  "status": "partial"
+ }
+}

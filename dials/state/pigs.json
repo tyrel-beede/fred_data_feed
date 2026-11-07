@@ -1,0 +1,161 @@
+{
+ "column_runs": [
+  "2026-10-30T2000-column"
+ ],
+ "graded": [
+  {
+   "basis": "SPX -1.4% Oct 19-30 (range +1.5/-1.7%), SMH -4.7% vs +/-4% / +/-8% lines",
+   "grade": "cost",
+   "graded_in_run": "2026-10-30T2000-column",
+   "graded_on": "2026-10-30",
+   "id": "PG-20261018-CONVEX"
+  },
+  {
+   "basis": "SPCX +7.79% on Oct 21 with capex raised vs a +/-8% line",
+   "grade": "cost",
+   "graded_in_run": "2026-10-30T2000-column",
+   "graded_on": "2026-10-27",
+   "id": "PG-20261018-SPCX"
+  },
+  {
+   "basis": "AMZN -7% premarket, closed -1.4% vs a +/-6% line",
+   "grade": "cost",
+   "graded_in_run": "2026-10-30T2000-column",
+   "graded_on": "2026-10-30",
+   "id": "PG-20261027-AMZN-TAPE"
+  },
+  {
+   "basis": "two dissents for a hike; 2y 4.67 vs 4.68 prior = 1 bp vs an 8 bp line",
+   "grade": "cost",
+   "graded_in_run": "2026-10-30T2000-column",
+   "graded_on": "2026-10-30",
+   "id": "PG-20261027-DISSENT"
+  }
+ ],
+ "n_open": 14,
+ "open": [
+  {
+   "criterion": "no hike on Dec 9, or Dec-hike odds < 60% at any point before",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261018-DEC-HIKE",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-09",
+   "status_1030": "odds 78-80 vs dashboard 80; four-week limit at the next column"
+  },
+  {
+   "criterion": "equal-weight basket (IWM, XHB, E7 neoclouds) outperforms the top-8 equal-weight by > 3 pts from the Oct 16 close to Nov 13",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261018-PERIPHERY-REBOUND",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-11-13",
+   "status_1030": "live; +5.1 pts above the line (10/30)"
+  },
+  {
+   "criterion": "gold +5% from Oct 16 by Nov 13 together with a 30y tail >= 2 bp or custody down 4 straight weeks",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261018-TAIL",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-11-13",
+   "status_1030": "against: gold -6.9% since 10/16"
+  },
+  {
+   "criterion": "IG OAS > 100 or E6 3m < -15 by Dec 9; void if no B element",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261018-UNMOVED",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-09",
+   "status_1030": "IG 89, E6 3m -1.5, no B element; four-week limit at the next column"
+  },
+  {
+   "criterion": "AVGO close on Dec 1 >= +/-8% from 329.17 (10/26)",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261027-AVGO-SPV",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-01",
+   "status_1030": "326.08 = -0.9%"
+  },
+  {
+   "criterion": "CRWV 5y CDS <= 900 bp on any day by Dec 9 -> paid; else cost",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261027-CRWV-80",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-09",
+   "status_1030": "CDS ~1,138"
+  },
+  {
+   "criterion": "NVDA close on Nov 19 >= +/-10% from 216.00 (10/26)",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261027-NVDA-LAST-NODE",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-11-19",
+   "status_1030": "204.64 = -5.3%"
+  },
+  {
+   "criterion": "HY OAS >= 400 on any day by Dec 9 -> paid; else cost",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261027-SINGLE-B",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-09",
+   "status_1030": "HY 326, single-B 332, CCC 1,325; not killed"
+  },
+  {
+   "criterion": "paid if on Nov 20 >= 63.7% above the 200d AND the A/D line > its Oct 29 level; cost if either fails",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261030-BREADTH-TREND",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-11-20",
+   "status_1030": "new"
+  },
+  {
+   "criterion": "equal-weight (LRCX, AMAT, 000660.KS, 005930.KS) beats top-8 equal-weight by > 5 pts from Oct 30 -> paid; void if a B element fires first",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261030-JUNE-TOP",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-09",
+   "status_1030": "new"
+  },
+  {
+   "criterion": "MU/SMH ratio down > 10% from 1.693 (10/30) -> paid; else cost",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261030-LAST-SUPPLIER",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-18",
+   "status_1030": "new"
+  },
+  {
+   "criterion": "10y close >= 5.20 on any day by Nov 13, or a 30y tail >= 2 bp on Nov 12 -> paid; else cost",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261030-SHELTER",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-11-13",
+   "status_1030": "new"
+  },
+  {
+   "criterion": "top-8 dispersion sigma >= 12 with SPX within 5% of its high -> paid; sigma < 7 or SPX > 5% down -> cost",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261030-UNHEDGED-NAMES",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-11-20",
+   "status_1030": "new"
+  },
+  {
+   "criterion": "WTI front-month close outside $90-120 on any day by Dec 9 -> paid; else cost",
+   "first_seen_run": "2026-10-30T2000-column",
+   "id": "PG-20261030-UNOWNED-OIL",
+   "last_seen_run": "2026-10-30T2000-column",
+   "resolves": "2026-12-09",
+   "status_1030": "new"
+  }
+ ],
+ "retired": [],
+ "tally_logged": {
+  "cost": 4,
+  "paid": 0,
+  "void": 0
+ },
+ "tally_recomputed": {
+  "cost": 4,
+  "paid": 0,
+  "void": 0
+ }
+}

@@ -1,0 +1,3 @@
+run_id,run_at,H2_Rp,H2_Rm,H2_F,H2_E,H3_Rp,H3_Rm,H3_F,H3_E,method
+2026-10-20T0620-standoff,2026-10-20T06:20-06:00,10,20,35,35,10,20,30,40,"odds-form (= weight-multiply and renormalize), rounded to 5; exact H2 8.3/20.8/37.5/33.3, H3 12.0/20.0/28.0/40.0"
+2026-10-30T1253-standoff,2026-10-30T12:53-06:00,10,20,25,45,10,20,20,50,"odds-form (= weight-multiply and renormalize), rounded to 5: H2 raw 15/30/35/70 (sum 150) -> exact 10.0/20.0/23.3/46.7 -> logged 10/20/25/45; H3 raw 15/30/30/80 (sum 155) -> exact 9.7/19.4/19.4/51.6 -> logged 10/20/20/50"
