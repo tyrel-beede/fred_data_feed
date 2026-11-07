@@ -1,19 +1,108 @@
 {
- "aggregator_version": 2,
+ "aggregator_version": 3,
  "n_filers": 69,
  "n_infotable_lines": 27164,
  "total_value_reported": "3.45502e+11",
+ "total_value_ex_options": "3.39013e+11",
  "value_unit_detected": "thousands (scaled x1000 to dollars)",
  "value_unit_set": "thousands",
  "set_median_implied_price": "0.04252",
  "n_filers_unit_corrected": 1,
  "value_share_unit_corrected": "0.0021",
+ "n_filers_unit_implausible": 0,
+ "value_share_unit_implausible": "0.0000",
+ "n_lines_beyond_cap": 0,
+ "value_lines_beyond_cap": "0",
+ "n_filers_beyond_cap": 0,
+ "filers_beyond_cap": [],
  "putcall_value_share": "0.0188",
  "n_issuers_cusip": 5012,
  "top10_issuer_share": "0.1190",
  "top50_issuer_share": "0.3360",
  "hhi_issuers": "0.003687",
  "median_filer_top10_share": "0.3777",
+ "largest_filers": [
+  {
+   "cik": "0000728889",
+   "name": "OPPENHEIMER FUNDS INC",
+   "value_ex_options": "1.341e+11",
+   "share_ex_options": "0.3957",
+   "options_value": "1.102e+06",
+   "top10_share": "0.0856"
+  },
+  {
+   "cik": "0000947263",
+   "name": "TORONTO DOMINION BANK",
+   "value_ex_options": "2.49e+10",
+   "share_ex_options": "0.0734",
+   "options_value": "2.188e+09",
+   "top10_share": "0.5289"
+  },
+  {
+   "cik": "0000873630",
+   "name": "HSBC HOLDINGS PLC",
+   "value_ex_options": "2.437e+10",
+   "share_ex_options": "0.0719",
+   "options_value": "3.3e+09",
+   "top10_share": "0.1117"
+  },
+  {
+   "cik": "0000009631",
+   "name": "BANK OF NOVA SCOTIA /",
+   "value_ex_options": "2.089e+10",
+   "share_ex_options": "0.0616",
+   "options_value": "0",
+   "top10_share": "0.6192"
+  },
+  {
+   "cik": "0000014661",
+   "name": "BROWN BROTHERS HARRIMAN & CO",
+   "value_ex_options": "1.937e+10",
+   "share_ex_options": "0.0571",
+   "options_value": "0",
+   "top10_share": "0.4246"
+  },
+  {
+   "cik": "0001283718",
+   "name": "CANADA PENSION PLAN INVESTMENT BOARD",
+   "value_ex_options": "1.927e+10",
+   "share_ex_options": "0.0568",
+   "options_value": "0",
+   "top10_share": "0.2140"
+  },
+  {
+   "cik": "0001472190",
+   "name": "PGGM Investments",
+   "value_ex_options": "1.726e+10",
+   "share_ex_options": "0.0509",
+   "options_value": "0",
+   "top10_share": "0.2150"
+  },
+  {
+   "cik": "0001569758",
+   "name": "Carmignac Gestion",
+   "value_ex_options": "1.24e+10",
+   "share_ex_options": "0.0366",
+   "options_value": "0",
+   "top10_share": "0.5681"
+  },
+  {
+   "cik": "0001223779",
+   "name": "TEXAS PERMANENT SCHOOL FUND",
+   "value_ex_options": "9.618e+09",
+   "share_ex_options": "0.0284",
+   "options_value": "0",
+   "top10_share": "0.1424"
+  },
+  {
+   "cik": "0001453415",
+   "name": "CORNERSTONE CAPITAL MANAGEMENT HOLDINGS LLC.",
+   "value_ex_options": "8.136e+09",
+   "share_ex_options": "0.0240",
+   "options_value": "0",
+   "top10_share": "0.0908"
+  }
+ ],
  "report_period": "2013-03-31",
  "n_filings_in_set": 166,
  "n_filings_used": 70,

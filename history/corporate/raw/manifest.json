@@ -1,6 +1,924 @@
 {
  "manifest": [
   {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2026-31aug2026_form13f_summary.json",
+   "url": "https://www.sec.gov/files/datastandardsinnovation/data/form-13f-data-sets/01jun2026-31aug2026_form13f.zip",
+   "bytes": 3205,
+   "sha256": "296ad015012de3ffee6d606edcd857fdab0009036c31215463b39ebaea547ade",
+   "retrieved": "2026-11-07T17:30:05Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2026-06-30; set unit dollars, 345 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2026-31aug2026_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/datastandardsinnovation/data/form-13f-data-sets/01jun2026-31aug2026_form13f.zip",
+   "bytes": 1047,
+   "sha256": "5d784e591dd32412d1639b8ac1cb04a063724b5e105f3fe47692bc3844ac5b19",
+   "retrieved": "2026-11-07T17:30:05Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
+   "bytes": 3216,
+   "sha256": "4c53f7e35d7f39decf88f8c2f76a531d356b9eb2c0f592e44b858327a8126e46",
+   "retrieved": "2026-11-07T17:30:25Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2026-03-31; set unit dollars, 361 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
+   "bytes": 1017,
+   "sha256": "b28d1de23cfdf24d23a7f2f5378bb8601f8f996ec5d37aa7d4b240ee02008121",
+   "retrieved": "2026-11-07T17:30:25Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
+   "bytes": 3166,
+   "sha256": "7e58b174c8be1476383ac40a00df2b8e2eef0146045928f0fd73d7801744153f",
+   "retrieved": "2026-11-07T17:30:44Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-12-31; set unit dollars, 391 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
+   "bytes": 1004,
+   "sha256": "9c9354789c1854deabccf13562d4648e256e1d809760e950f2839d87c4f7eaa6",
+   "retrieved": "2026-11-07T17:30:44Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
+   "bytes": 3194,
+   "sha256": "7f9e8ffa2d3ec2156eb9e459069005fb25aab3867275897804eebed8d3902c0e",
+   "retrieved": "2026-11-07T17:31:02Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-09-30; set unit dollars, 375 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
+   "bytes": 1107,
+   "sha256": "24618260c4a0e0af4572aa931dd35595a76f1241c5b9d79b7441b013aab22f5f",
+   "retrieved": "2026-11-07T17:31:02Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2025-31aug2025_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
+   "bytes": 3194,
+   "sha256": "d05f120c1cc23a253d9b9198bb1c2e097c0dd97e25fe26f6d03dd9753906a3b0",
+   "retrieved": "2026-11-07T17:31:20Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-06-30; set unit dollars, 443 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2025-31aug2025_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
+   "bytes": 995,
+   "sha256": "129e46613c8cf6990547d2d5ed67abba71aff30e9857d2512bdbcff3f8c9b020",
+   "retrieved": "2026-11-07T17:31:20Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2025-31may2025_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
+   "bytes": 3196,
+   "sha256": "cb8e574230ed03d34f125f835c36bddb9d854c3125f5cd548069bee0924402cc",
+   "retrieved": "2026-11-07T17:31:39Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-03-31; set unit dollars, 462 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2025-31may2025_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
+   "bytes": 1124,
+   "sha256": "7b80089670bf052941207477c3b1eaafd90ef981cfe28d4fe2f457ea90d79827",
+   "retrieved": "2026-11-07T17:31:39Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2024-28feb2025_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
+   "bytes": 3197,
+   "sha256": "f1688f6653a76c383efdaf39ca05b4bfbf2a3c6d8cb13d2365701561005f2a86",
+   "retrieved": "2026-11-07T17:31:57Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-12-31; set unit dollars, 517 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2024-28feb2025_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
+   "bytes": 1005,
+   "sha256": "6d71aad771760decd83e7a3e33ff783197a143cbff9cf4dd3e5ce4fa63d0d1ac",
+   "retrieved": "2026-11-07T17:31:57Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2024-30nov2024_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
+   "bytes": 3203,
+   "sha256": "8779c24af21810646f127ec5f9d521a3d15981795860e969728474e35ce19feb",
+   "retrieved": "2026-11-07T17:32:18Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-09-30; set unit dollars, 540 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2024-30nov2024_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
+   "bytes": 1038,
+   "sha256": "9b0e2fcdf9aa13c481cd7e8b6f6b783ce3a901597508e6cc1b536a0e9e17b2c1",
+   "retrieved": "2026-11-07T17:32:18Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2024-31aug2024_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
+   "bytes": 3186,
+   "sha256": "42498db2d104c75af49e49dce41e5ef487757685f0e461df5385f42c4968c2db",
+   "retrieved": "2026-11-07T17:32:35Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-06-30; set unit dollars, 561 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2024-31aug2024_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
+   "bytes": 1071,
+   "sha256": "84caa0dcdec58777bfb0c1deea82bc505f90ef0209e82372489277d56b940786",
+   "retrieved": "2026-11-07T17:32:35Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2024-31may2024_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
+   "bytes": 3206,
+   "sha256": "8f19ae9880eaefda6f8220fe354db798261c3dda770c3cff6016308f918d03e6",
+   "retrieved": "2026-11-07T17:32:53Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-03-31; set unit dollars, 605 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2024-31may2024_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
+   "bytes": 1041,
+   "sha256": "b6c129c69f533c691dd95843f3b746756afba94c3e1ae0dff5bc4280ec800f43",
+   "retrieved": "2026-11-07T17:32:53Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jan2024-29feb2024_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
+   "bytes": 3193,
+   "sha256": "1667953510c0683d597997ab3941a6f9f490d9cf1718b6ed9e92b886ad69c314",
+   "retrieved": "2026-11-07T17:33:10Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-12-31; set unit dollars, 640 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jan2024-29feb2024_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
+   "bytes": 1005,
+   "sha256": "b051c689b8b93d6868e644ff16ca74b1d6238342b8a410188aa6a4fafb611729",
+   "retrieved": "2026-11-07T17:33:10Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
+   "bytes": 3201,
+   "sha256": "816d839e3798a444ff30168b2a4725646efe103bbd080d9dad8c0b50ecdaddbd",
+   "retrieved": "2026-11-07T17:33:27Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-09-30; set unit dollars, 691 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
+   "bytes": 1014,
+   "sha256": "fc70b863fca5cb6c33cf81b2bc8476e3efd7d5cfd015c707a623c13015aed220",
+   "retrieved": "2026-11-07T17:33:27Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
+   "bytes": 3174,
+   "sha256": "fabf7306bd81ed804cd30676e1d1d5319cc81f1dad50ad451933664f475f4b3f",
+   "retrieved": "2026-11-07T17:33:42Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-06-30; set unit dollars, 768 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
+   "bytes": 1021,
+   "sha256": "b0cb666ab82b34d37fdb86c564de6ec4da8d46cdffa956800c9faf137f615b3e",
+   "retrieved": "2026-11-07T17:33:42Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
+   "bytes": 3192,
+   "sha256": "0f58f621d086c5db4eeacf16b99e3550bbd6e599d79f35b5d3dbea352e719529",
+   "retrieved": "2026-11-07T17:33:57Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-03-31; set unit dollars, 851 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
+   "bytes": 1009,
+   "sha256": "e0a0435761dcc7fe7c1fff4057c877cc2e0300dc45bd6ce408a223d19fb91145",
+   "retrieved": "2026-11-07T17:33:57Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
+   "bytes": 3195,
+   "sha256": "16e70ed9524f1976c6e031df77fa534e6d3a6c93940f40f24ad6cd9b300146bb",
+   "retrieved": "2026-11-07T17:34:13Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-12-31; set unit dollars, 1205 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
+   "bytes": 1029,
+   "sha256": "4125ebbc75601ff29b48aa63fd3f86a7a63973a16d356988a0415ee69bbd8e14",
+   "retrieved": "2026-11-07T17:34:13Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
+   "bytes": 3223,
+   "sha256": "f0e77d441f5f737ec20c71398b439e6c75435d29f13f84705e45857103b4d116",
+   "retrieved": "2026-11-07T17:34:27Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-09-30; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
+   "bytes": 1057,
+   "sha256": "2b034dc55c55c419191d58f4579741afa397eda9963f2743a2967358293094fd",
+   "retrieved": "2026-11-07T17:34:27Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
+   "bytes": 3225,
+   "sha256": "5adeb6d1202c54babb580dc4785fff4c52a8e71e4bc5d140d93046e9fdf08790",
+   "retrieved": "2026-11-07T17:34:43Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
+   "bytes": 1108,
+   "sha256": "5b7dd93eb74c87de49e71960195b47240e201ebde3a287caa9d526f30e64edf0",
+   "retrieved": "2026-11-07T17:34:43Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
+   "bytes": 3221,
+   "sha256": "1631deac7f74f418034b02893c9c85cc4a9f95b893561cea03e02929570dc7fa",
+   "retrieved": "2026-11-07T17:34:58Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
+   "bytes": 1072,
+   "sha256": "80e7fa1040938d0ba4614f3f88a2e19e99310564573fbd047950b16923544fa0",
+   "retrieved": "2026-11-07T17:34:58Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
+   "bytes": 3233,
+   "sha256": "1f058efa4e532b2f22b7cca3420d29c2afb29e79b2fa0f2778e111e7c5d98d97",
+   "retrieved": "2026-11-07T17:35:13Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-12-31; set unit thousands, 97 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
+   "bytes": 1025,
+   "sha256": "bb32839471e072866e5bd67212cd3bd700e48312ca3d40a38701b6bb3c3b841c",
+   "retrieved": "2026-11-07T17:35:13Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
+   "bytes": 3222,
+   "sha256": "129a305a4c31e7c8ba1778a2f62d8ef016a799a21fc6eebad6124c89fc5a46e6",
+   "retrieved": "2026-11-07T17:35:28Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-09-30; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
+   "bytes": 1055,
+   "sha256": "c052ea18e568fdcbb5eefd2b9080ed866bd2102819e76819925aa8b3774c1255",
+   "retrieved": "2026-11-07T17:35:28Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
+   "bytes": 3238,
+   "sha256": "f8c9d69e11c49e45969ad6c3a53f5d36eed7848249ffa9de0a1271d030e7cbef",
+   "retrieved": "2026-11-07T17:35:44Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-06-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
+   "bytes": 1028,
+   "sha256": "492325208cd5e04fea16cc0585dcd9756c5ba30596717488392ba56c3306753b",
+   "retrieved": "2026-11-07T17:35:44Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
+   "bytes": 3232,
+   "sha256": "3fb5a82ceff43e339ce26827600dd80370291680299df365d46dce7ed84109c5",
+   "retrieved": "2026-11-07T17:35:57Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
+   "bytes": 1017,
+   "sha256": "33c6e80964cae5a6eb3d44d3f68edc257f017b53bdf7f09d7550ef7d828b13ea",
+   "retrieved": "2026-11-07T17:35:57Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
+   "bytes": 3364,
+   "sha256": "dc350062083d05c044e00643f6108590c6011a2556b217cb48675bc2a84bd6ca",
+   "retrieved": "2026-11-07T17:36:11Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-12-31; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
+   "bytes": 1101,
+   "sha256": "ba96024585066c94f26a2122c2374163fe8355a2fc3403f8a73c95f3b7b92310",
+   "retrieved": "2026-11-07T17:36:11Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
+   "bytes": 3231,
+   "sha256": "572927c643688a59ed1cab806f66c5729c0d8cdc32db53f22c3e261ed1cf6c9e",
+   "retrieved": "2026-11-07T17:36:23Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-09-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
+   "bytes": 1044,
+   "sha256": "2628b65d68d4c09f4e35d943feda253ae2c74315959ba2afd40518b0c2c3c0cb",
+   "retrieved": "2026-11-07T17:36:23Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
+   "bytes": 3357,
+   "sha256": "2ad2a7fb8a6a3f93648cfb85056ad4743e2a36a8627559cd12922c2392a2ba88",
+   "retrieved": "2026-11-07T17:36:35Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
+   "bytes": 1008,
+   "sha256": "f61154fe28dace7bc78fb981fd1c54b284a798ae74cde8399b5c1ff7d01d97cc",
+   "retrieved": "2026-11-07T17:36:35Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
+   "bytes": 3230,
+   "sha256": "dab594957af64ae28de04d2a98867a7e8f9763d18e9e9811e2bc9dcb8333f127",
+   "retrieved": "2026-11-07T17:36:48Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-03-31; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
+   "bytes": 996,
+   "sha256": "c81d71eba8b827b500696ea5b3534d2d4d06c2ace72471adff51d22018710cd6",
+   "retrieved": "2026-11-07T17:36:48Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
+   "bytes": 3239,
+   "sha256": "adb9d8a3637952965a0febeef753671517fa6b99932db173689d222279bfe8e0",
+   "retrieved": "2026-11-07T17:37:00Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-12-31; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
+   "bytes": 1100,
+   "sha256": "7c6a1c3da6171f678237dfd6fc52b3cb4c1f36505a4e0c9f31d84a81238157cc",
+   "retrieved": "2026-11-07T17:37:00Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
+   "bytes": 3249,
+   "sha256": "42a6aee5e2d0256f20a79e1c4d1f4a3d23de5eedb7334d3b18dc483dc4d257bd",
+   "retrieved": "2026-11-07T17:37:12Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-09-30; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
+   "bytes": 1015,
+   "sha256": "27327fc19f4345a5caf1d476903d43918b77421432ec1f48f0b2ae436ef94b46",
+   "retrieved": "2026-11-07T17:37:12Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
+   "bytes": 3221,
+   "sha256": "08278da0e48c83ff1fe216be19cb3e5b948d695480e59f6000528af16ba1e236",
+   "retrieved": "2026-11-07T17:37:24Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
+   "bytes": 1009,
+   "sha256": "8fd42ed304337780c54d506526cf07808527d975d848fc44d27580dfd0edc1f4",
+   "retrieved": "2026-11-07T17:37:24Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
+   "bytes": 3236,
+   "sha256": "a5604611aa66dfe0e2f5a2abf58fdc3408955fa4256b73b1a7e7451d8f88e784",
+   "retrieved": "2026-11-07T17:37:36Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-03-31; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
+   "bytes": 1007,
+   "sha256": "221c8eefc91572b379807164586f483b4d98ffe588097675bf5e09ed6243d512",
+   "retrieved": "2026-11-07T17:37:36Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
+   "bytes": 3228,
+   "sha256": "72288966241a949fda1ba286de47f9734d0786869f27c01b28c838084f9f46b0",
+   "retrieved": "2026-11-07T17:37:48Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-12-31; set unit thousands, 73 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
+   "bytes": 1081,
+   "sha256": "0855a9dd21a33f98e7626372211165d334191b0972a9eb5841defc142eb4a5f4",
+   "retrieved": "2026-11-07T17:37:48Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
+   "bytes": 3222,
+   "sha256": "5f1def3e03919811733c5b4ed3027c42f1505f18cfdedec8028cac13ff78462d",
+   "retrieved": "2026-11-07T17:37:59Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
+   "bytes": 1084,
+   "sha256": "125dac81702dc333ce6528b76f34ffb9d6151ba9b8c02f0e14942257a0c6b41c",
+   "retrieved": "2026-11-07T17:37:59Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
+   "bytes": 3235,
+   "sha256": "c2d181c8c09bc23e2bc0e013221a4eaa1c1c117f03bc4c53f96c502a1efb70ab",
+   "retrieved": "2026-11-07T17:38:11Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-06-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
+   "bytes": 1014,
+   "sha256": "6e6d4c56a2b6761c1ed985d949599d9dec3fbebf2bc0671c8ec573aa708e4ed5",
+   "retrieved": "2026-11-07T17:38:11Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
+   "bytes": 3225,
+   "sha256": "d227a9d21a0d8ed6a99e88cb631f599f58573a2ea0e30f77b2dcfde0727be61a",
+   "retrieved": "2026-11-07T17:38:23Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
+   "bytes": 1002,
+   "sha256": "8906ac26e8109a566d15b60b75af3862107ca43263f3f6f9521d50b887bbddfd",
+   "retrieved": "2026-11-07T17:38:23Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
+   "bytes": 3231,
+   "sha256": "7e8d8c5c373e736421914bc7465e6a505fae3ffd0c6a3dc1c8ee8d60dee2a1af",
+   "retrieved": "2026-11-07T17:38:34Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
+   "bytes": 989,
+   "sha256": "6af309818dedf7ebd8607b32090d6c5dbc2b640b9e7f6c9472bd5fbf2b300d03",
+   "retrieved": "2026-11-07T17:38:34Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
+   "bytes": 3230,
+   "sha256": "a31dfbc92fb9b810fa9f560e91db9eaf40a9905ef9d249a8f757fb902376d946",
+   "retrieved": "2026-11-07T17:38:45Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-09-30; set unit thousands, 70 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
+   "bytes": 1134,
+   "sha256": "d732f310d66e12077ae18460dee53ee5436dff318bd3b4b25fe7c001b5e5d838",
+   "retrieved": "2026-11-07T17:38:45Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
+   "bytes": 3232,
+   "sha256": "e53ce9d7ad25cdfa405e4d46574ddf887c886773c85819a40498174c1620da4f",
+   "retrieved": "2026-11-07T17:38:55Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
+   "bytes": 1012,
+   "sha256": "53f87bfdeda10049d50db2bf12bf6a677f7fa1c24166cf43344524c342c6cbb5",
+   "retrieved": "2026-11-07T17:38:55Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
+   "bytes": 3214,
+   "sha256": "9f1be138f08f98dc3ebda27ce243935a24e88aee8100ed67bf465b2dffa7850f",
+   "retrieved": "2026-11-07T17:39:06Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-03-31; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
+   "bytes": 1125,
+   "sha256": "a7a7aff2338f6e59afa1264245cb7c229fe7f78f6fdc7cb41b7d2f0f231f6e9b",
+   "retrieved": "2026-11-07T17:39:06Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
+   "bytes": 3252,
+   "sha256": "462ab4e70d82eaf7abfdda90ef7b652ddf811727abd14892cc8fb1f28f0c016b",
+   "retrieved": "2026-11-07T17:39:17Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
+   "bytes": 1000,
+   "sha256": "7a427b8ad7036fbaebd62b24c10e2a84fe3f69a08716170f56d9483512401644",
+   "retrieved": "2026-11-07T17:39:17Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
+   "bytes": 3264,
+   "sha256": "f89e070e3a8e58493c216aa6972a23590232ba5246b3f8e4714470c474ec9043",
+   "retrieved": "2026-11-07T17:39:27Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-09-30; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
+   "bytes": 1012,
+   "sha256": "12f17868f9527396bfcca4d8c5e1c387edf68afeca3b8c021ea49eb3c6cae424",
+   "retrieved": "2026-11-07T17:39:27Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
+   "bytes": 3283,
+   "sha256": "a73e25910cc82a6f7ef4b7dce5c206d724ea6e87b85bb72c8da49b52ee7281db",
+   "retrieved": "2026-11-07T17:39:38Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
+   "bytes": 1006,
+   "sha256": "f7c16a11a4d0ce4e7648c9a4a6846eececb4ae479ea676e59315146e9a438c43",
+   "retrieved": "2026-11-07T17:39:38Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
+   "bytes": 3265,
+   "sha256": "9cdff9bb6dcdf4ba3aecab1051cd8621777d680ffb0e152e5248ed825c815e2f",
+   "retrieved": "2026-11-07T17:39:48Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-03-31; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
+   "bytes": 1020,
+   "sha256": "79eb803b29a102711cde4949b04a43578c30a9231eee8b2c3e514716e8b31d18",
+   "retrieved": "2026-11-07T17:39:48Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
+   "bytes": 3260,
+   "sha256": "a773f4b27e3f56b4834151c53d4167d8bd322a040f6de9b55eb07cf8081e5722",
+   "retrieved": "2026-11-07T17:39:58Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-12-31; set unit thousands, 87 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
+   "bytes": 1013,
+   "sha256": "feb77c729bfbd615ee38ca33e4e9f817b61cfc7f54a4e3998e04bf2243d59541",
+   "retrieved": "2026-11-07T17:39:58Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
+   "bytes": 3260,
+   "sha256": "51ec708f08a283ad0e1178a3368c43f03a9420ee5d4f7f9c0a0f10d3fded81be",
+   "retrieved": "2026-11-07T17:40:09Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-09-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
+   "bytes": 1010,
+   "sha256": "85ef1e568290488b5c853d75ca7110d9a701800322d30cb7e2e191fc4a69d324",
+   "retrieved": "2026-11-07T17:40:09Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
+   "bytes": 3261,
+   "sha256": "bb64e9db0fb2433ab417d09ed710066a736f65694536bb68e454e4ddc0b5258c",
+   "retrieved": "2026-11-07T17:40:20Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-06-30; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
+   "bytes": 1010,
+   "sha256": "4932d4f7005ddf00a0c2584b864826a2ddee2d0b3c3ac16f9e30b6f45597fbba",
+   "retrieved": "2026-11-07T17:40:20Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
+   "bytes": 3266,
+   "sha256": "80e92a42b9462215aadceb880b6dfb1f3cbe0aeee29f8f2301ee40a71b72dfda",
+   "retrieved": "2026-11-07T17:40:30Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
+   "bytes": 1025,
+   "sha256": "a790c455fc3994b254f44ac449c0cbb28c3830cc135e56252c1a5ef3747692e8",
+   "retrieved": "2026-11-07T17:40:30Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
+   "bytes": 3274,
+   "sha256": "9b3de670f6881f5d23501ca49eca2e02cabbb76f251ead94336fd6ba99ff7ebc",
+   "retrieved": "2026-11-07T17:40:41Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-12-31; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
+   "bytes": 1153,
+   "sha256": "83aec0f0baf1d698b7499852c6daae677aad4c32b64c4f1b6387bd90ea65a4d9",
+   "retrieved": "2026-11-07T17:40:41Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
+   "bytes": 3261,
+   "sha256": "647926a795c64071515cfd2ebfc3a069ea8e708eabc36d980716cbe16cd4fcca",
+   "retrieved": "2026-11-07T17:40:50Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-09-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
+   "bytes": 1025,
+   "sha256": "5b0cb773edab97f5103eefd301b67cc9948b03582ac3c4e6d963adc6bf71becd",
+   "retrieved": "2026-11-07T17:40:50Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
+   "bytes": 3256,
+   "sha256": "f4f05634b8c99e497739230f44da6dfe40d114092f90576928414b8239bfddbb",
+   "retrieved": "2026-11-07T17:41:00Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-06-30; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
+   "bytes": 999,
+   "sha256": "64420d632cc1f61657e4b0406825f55305e9e3ebc358eca92ed0b9ae4595b21d",
+   "retrieved": "2026-11-07T17:41:00Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
+   "bytes": 3252,
+   "sha256": "2cbd789f80332f13bbffd7857a3fa0c46693c4294a673a172d25f9e105c1b416",
+   "retrieved": "2026-11-07T17:41:10Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-03-31; set unit thousands, 79 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
+   "bytes": 1037,
+   "sha256": "66152c98539050f2d15d073a7f01ba8df93224fbbb4a59119e0735667c41daf8",
+   "retrieved": "2026-11-07T17:41:10Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q1_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
+   "bytes": 3245,
+   "sha256": "e38b13bc7f625e56674d78c3f38eaf9ab03ce0372a37c66b7b1cf9a896f18da5",
+   "retrieved": "2026-11-07T17:41:19Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-12-31; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q1_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
+   "bytes": 1044,
+   "sha256": "34fa4441458acfa11965c9db7aeaa9f055c587edce653e4ee0b45968f425be5f",
+   "retrieved": "2026-11-07T17:41:19Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q4_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
+   "bytes": 3268,
+   "sha256": "e8044f4a8e5728dcb9b990478e7dcfabe26dfa9769e84f50bb966070ae6912f8",
+   "retrieved": "2026-11-07T17:41:28Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q4_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
+   "bytes": 1034,
+   "sha256": "7d4b6adb5631bd334ce5ba02c821607884e03a6fc2920ce88b6f1e329e81ffd7",
+   "retrieved": "2026-11-07T17:41:28Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q3_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
+   "bytes": 3256,
+   "sha256": "57a3086ac6f2c4b37040610c608872a2f3e82601da31ed315af2ccf76fe14252",
+   "retrieved": "2026-11-07T17:41:37Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q3_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
+   "bytes": 1034,
+   "sha256": "7fb2ef964eb62398a77823266b2fc44ff144e38082706e92f4885ccf980d72ee",
+   "retrieved": "2026-11-07T17:41:37Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q2_form13f_summary.json",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
+   "bytes": 3239,
+   "sha256": "ee01414d9f56f228d358011f425d7531e1ca06878be63b3596c896109b8bc7c0",
+   "retrieved": "2026-11-07T17:41:40Z",
+   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-03-31; set unit thousands, 1 filers in the other unit rescaled; values in the summary are dollars"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q2_form13f_top20.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
+   "bytes": 1038,
+   "sha256": "68d4630f4d337acdbbec89e08c51ab5c9ee30b5cb83ffc714096c9001fef6953",
+   "retrieved": "2026-11-07T17:41:40Z"
+  },
+  {
    "catalog": "SEC-FSDS",
    "file": "history/corporate/raw/SEC-FSDS/2026q3_aggregates.csv",
    "url": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2026q3.zip",
@@ -1208,907 +2126,6 @@
    "retrieved": "2026-11-07T17:05:50Z"
   },
   {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
-   "bytes": 1028,
-   "sha256": "4ef1358803b644ed9a400f80d9e918892bdfe5c703717c00dedc6b667e14856d",
-   "retrieved": "2026-11-07T16:21:40Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2026-03-31; set unit dollars, 361 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
-   "bytes": 1017,
-   "sha256": "b28d1de23cfdf24d23a7f2f5378bb8601f8f996ec5d37aa7d4b240ee02008121",
-   "retrieved": "2026-11-07T16:21:40Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
-   "bytes": 1027,
-   "sha256": "a871220090dad35e6228b920ad5149b91819014c761b61cc5841f913dc6ecb74",
-   "retrieved": "2026-11-07T16:21:58Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2025-12-31; set unit dollars, 391 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
-   "bytes": 1004,
-   "sha256": "9c9354789c1854deabccf13562d4648e256e1d809760e950f2839d87c4f7eaa6",
-   "retrieved": "2026-11-07T16:21:58Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
-   "bytes": 1026,
-   "sha256": "05efb88ff4d1d94b1ea26261f1e8fb07ba5509cd78d2fb8c8ff9cdf0baccb5ad",
-   "retrieved": "2026-11-07T16:22:15Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2025-09-30; set unit dollars, 375 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
-   "bytes": 1107,
-   "sha256": "24618260c4a0e0af4572aa931dd35595a76f1241c5b9d79b7441b013aab22f5f",
-   "retrieved": "2026-11-07T16:22:15Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01jun2025-31aug2025_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
-   "bytes": 1027,
-   "sha256": "75977d8486225833f6b18f3e3fd98c9cc7eab58fa21532e3a15b98ef75b1bd73",
-   "retrieved": "2026-11-07T16:22:32Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2025-06-30; set unit dollars, 443 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01jun2025-31aug2025_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
-   "bytes": 995,
-   "sha256": "129e46613c8cf6990547d2d5ed67abba71aff30e9857d2512bdbcff3f8c9b020",
-   "retrieved": "2026-11-07T16:22:32Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01mar2025-31may2025_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
-   "bytes": 1026,
-   "sha256": "db78ba87f8f520bd46ee1232e7ab625fdb5fd6785be9a9fdbf0be1e833811f66",
-   "retrieved": "2026-11-07T16:22:50Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2025-03-31; set unit dollars, 462 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01mar2025-31may2025_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
-   "bytes": 1124,
-   "sha256": "7b80089670bf052941207477c3b1eaafd90ef981cfe28d4fe2f457ea90d79827",
-   "retrieved": "2026-11-07T16:22:50Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01dec2024-28feb2025_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
-   "bytes": 1027,
-   "sha256": "1af6bbb0422ac379fc9862fa443768089675b3a722385133c7af564473657c77",
-   "retrieved": "2026-11-07T16:23:07Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2024-12-31; set unit dollars, 517 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01dec2024-28feb2025_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
-   "bytes": 1005,
-   "sha256": "6d71aad771760decd83e7a3e33ff783197a143cbff9cf4dd3e5ce4fa63d0d1ac",
-   "retrieved": "2026-11-07T16:23:07Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01sep2024-30nov2024_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
-   "bytes": 1024,
-   "sha256": "92062ab0b6c7d52195e4d5278f1c6c4851ffbea611c97150e489f9ce3eb52217",
-   "retrieved": "2026-11-07T16:23:23Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2024-09-30; set unit dollars, 540 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01sep2024-30nov2024_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
-   "bytes": 1038,
-   "sha256": "9b0e2fcdf9aa13c481cd7e8b6f6b783ce3a901597508e6cc1b536a0e9e17b2c1",
-   "retrieved": "2026-11-07T16:23:23Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01jun2024-31aug2024_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
-   "bytes": 1026,
-   "sha256": "a153acf8b72c2512a1f521ef74d78cac0438238ea20ece52e6edabb722392703",
-   "retrieved": "2026-11-07T16:23:40Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2024-06-30; set unit dollars, 561 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01jun2024-31aug2024_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
-   "bytes": 1071,
-   "sha256": "84caa0dcdec58777bfb0c1deea82bc505f90ef0209e82372489277d56b940786",
-   "retrieved": "2026-11-07T16:23:40Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01mar2024-31may2024_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
-   "bytes": 1025,
-   "sha256": "8a7fb7356026f6d5209b8cee20526a3ec5358a516e6d9763d8aa51851bd2dbfc",
-   "retrieved": "2026-11-07T16:23:55Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2024-03-31; set unit dollars, 605 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01mar2024-31may2024_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
-   "bytes": 1041,
-   "sha256": "b6c129c69f533c691dd95843f3b746756afba94c3e1ae0dff5bc4280ec800f43",
-   "retrieved": "2026-11-07T16:23:55Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01jan2024-29feb2024_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
-   "bytes": 1026,
-   "sha256": "2d465430c2d998766e0bd4ad96cd7f7b4c7e217165d8e03454fa84c71565edde",
-   "retrieved": "2026-11-07T16:24:10Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2023-12-31; set unit dollars, 640 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/01jan2024-29feb2024_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
-   "bytes": 1005,
-   "sha256": "b051c689b8b93d6868e644ff16ca74b1d6238342b8a410188aa6a4fafb611729",
-   "retrieved": "2026-11-07T16:24:10Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
-   "bytes": 1012,
-   "sha256": "a3eaa4e702a448ad2c05888c1ed38894859548ae287ba5e4772845c71472d2af",
-   "retrieved": "2026-11-07T16:24:25Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2023-09-30; set unit dollars, 691 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
-   "bytes": 1014,
-   "sha256": "fc70b863fca5cb6c33cf81b2bc8476e3efd7d5cfd015c707a623c13015aed220",
-   "retrieved": "2026-11-07T16:24:25Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
-   "bytes": 1013,
-   "sha256": "e7e30b4e867d333d8030f376cada9175133409bcd450c384c03a7e1375d3ef73",
-   "retrieved": "2026-11-07T16:24:39Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2023-06-30; set unit dollars, 768 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
-   "bytes": 1013,
-   "sha256": "f1f1dc4630481ee8af097d34a258a7ef5c51a410abb15ab4af27430e81857414",
-   "retrieved": "2026-11-07T16:24:39Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
-   "bytes": 1014,
-   "sha256": "c66dcb96aed6c0526695e5a5e622a09ef1967ce67010c278c57035fedb83b59f",
-   "retrieved": "2026-11-07T16:24:53Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2023-03-31; set unit dollars, 851 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
-   "bytes": 1007,
-   "sha256": "a0141d619c8d60fef352352c6b5396b5aa7904a8f8369f50f66b0fc8efdc95bc",
-   "retrieved": "2026-11-07T16:24:53Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
-   "bytes": 1015,
-   "sha256": "a38c619a4bda47f9f4e007296a9ee633fde2add339e0dfd2ff41e1ca9f2c1eaf",
-   "retrieved": "2026-11-07T16:25:08Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2022-12-31; set unit dollars, 1205 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2023q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
-   "bytes": 1029,
-   "sha256": "4125ebbc75601ff29b48aa63fd3f86a7a63973a16d356988a0415ee69bbd8e14",
-   "retrieved": "2026-11-07T16:25:08Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
-   "bytes": 1044,
-   "sha256": "3c982eb3c2d25f64dd4393464b14d3dcbed73df66d7f98171b951b68050e9976",
-   "retrieved": "2026-11-07T16:25:22Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2022-09-30; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
-   "bytes": 1057,
-   "sha256": "39234e8a7476635a33f348a02297550ec4937e413681b2eba3eeda449b85c3db",
-   "retrieved": "2026-11-07T16:25:22Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
-   "bytes": 1045,
-   "sha256": "198ad43c71fc89b32a20479419c4edd621b0aa59e675d27f80cfdc000ca9451b",
-   "retrieved": "2026-11-07T16:25:36Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2022-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
-   "bytes": 1105,
-   "sha256": "f0dc46a9ec68f027e1dbc4c2f5bbb49db3fe52a68dedc56f165a0cb0e2ba74da",
-   "retrieved": "2026-11-07T16:25:36Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
-   "bytes": 1041,
-   "sha256": "c161d807e7d4a8cfdc5ebb0b2b51df4fd8c1f369cae9d8784272ed0823497912",
-   "retrieved": "2026-11-07T16:25:50Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2022-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
-   "bytes": 1072,
-   "sha256": "79f3a25a5b2a92744e24770a1b10c7daa8f8e2b81abd5ed90e7d0145d437a5a8",
-   "retrieved": "2026-11-07T16:25:50Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "92d410b86c817de68b2a89bdf1389547ec7552c384f0a5030f5f761b710c9a57",
-   "retrieved": "2026-11-07T16:26:04Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2021-12-31; set unit thousands, 97 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2022q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
-   "bytes": 1027,
-   "sha256": "ec5c111641d8079c1b6c5e77e57664c1374bb33ec4c5dce61c68426ad32b2aae",
-   "retrieved": "2026-11-07T16:26:04Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
-   "bytes": 1045,
-   "sha256": "ba3525a15ed3e11c5356cd21d6c6e37d69231b37ae7d457d98bb11d8c3a2b953",
-   "retrieved": "2026-11-07T16:26:21Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2021-09-30; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
-   "bytes": 1058,
-   "sha256": "57720c4f8c00df4ef1f94645084b451b80e9ca043ae56e258a4210f1384d6f43",
-   "retrieved": "2026-11-07T16:26:21Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
-   "bytes": 1044,
-   "sha256": "13d7758bfa3804843a6dab48df56d78465a7b70622c0e62ea29f6d87ae30e54c",
-   "retrieved": "2026-11-07T16:26:34Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2021-06-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
-   "bytes": 1033,
-   "sha256": "44554599239fb139211b15944604b3c55a94a90c972aba6151ef58b62afaf198",
-   "retrieved": "2026-11-07T16:26:34Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
-   "bytes": 1043,
-   "sha256": "ac4ea0051da1d1de9e97e5994473f869eca37b99a5da2a5db165b9213d4ec855",
-   "retrieved": "2026-11-07T16:26:47Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2021-03-31; set unit thousands, 79 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
-   "bytes": 999,
-   "sha256": "88a3614e784ab0bb716419b05720757a2f9a5bc911e515fc7fb7020ac9729a80",
-   "retrieved": "2026-11-07T16:26:47Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "e4730aa7d0421ce99b868f6e9ea92be4815024b6c1b70aba8129aa11158e6676",
-   "retrieved": "2026-11-07T16:26:59Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2020-12-31; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2021q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
-   "bytes": 1108,
-   "sha256": "90946dde57189870d2a14179be1460f976e441dd6133e4853d9e7d38b09bd27a",
-   "retrieved": "2026-11-07T16:26:59Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
-   "bytes": 1044,
-   "sha256": "765b013cb24fae11dd604ddeb304a0e99d88a512af5b4822bd66b90649f73ea5",
-   "retrieved": "2026-11-07T16:27:11Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2020-09-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
-   "bytes": 1042,
-   "sha256": "ab17930b90dd1ab13d7badb140ba1ef9431808f865ec82eff12dfb8acc321bd9",
-   "retrieved": "2026-11-07T16:27:11Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
-   "bytes": 1044,
-   "sha256": "68b5d3f318185dde5d3efda29d83f3a21b0495a011462d24737e2a7e3a02e955",
-   "retrieved": "2026-11-07T16:27:22Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2020-06-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
-   "bytes": 1009,
-   "sha256": "2f3272cd38781cd06da728fe3c6dedd8697ea48d1d40573a4d46bd37767f8183",
-   "retrieved": "2026-11-07T16:27:22Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
-   "bytes": 1043,
-   "sha256": "295c8b24327699f8563854274f8a431c0282d2ef44e22638870a8a99d5803927",
-   "retrieved": "2026-11-07T16:27:34Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2020-03-31; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
-   "bytes": 995,
-   "sha256": "368c7c70d8e4cba23742bffec4bac1215ae61fc315d4319fc6bc1adee67cc404",
-   "retrieved": "2026-11-07T16:27:34Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "8548d80d6bb99298e35b2f23b2fbb7a40281e5bd2244f6498e82af1495f04669",
-   "retrieved": "2026-11-07T16:27:46Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2019-12-31; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2020q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
-   "bytes": 1098,
-   "sha256": "cda38bda681b08b51d12d403b712e81af92676eb682269fb7d3adccaa629b1bc",
-   "retrieved": "2026-11-07T16:27:46Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
-   "bytes": 1043,
-   "sha256": "279ba5d406fb0d848c9cc903b8a3ade6b581c4e146e845426388f808ffb4f7aa",
-   "retrieved": "2026-11-07T16:27:57Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2019-09-30; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
-   "bytes": 1018,
-   "sha256": "9bf9905a2906fe5a44e5f59a1a4b6cddc9798f0ecbcc6222d476a31ccbe77251",
-   "retrieved": "2026-11-07T16:27:57Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
-   "bytes": 1043,
-   "sha256": "26df9becc3d69505689ff40e7028a2586bca07c566f3fb2abdaa02cc60edc428",
-   "retrieved": "2026-11-07T16:28:08Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2019-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
-   "bytes": 1009,
-   "sha256": "844c4d929640323cfefed19a2fe06d9a17f52f6a1cc1e838e913a0fe90a48504",
-   "retrieved": "2026-11-07T16:28:08Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
-   "bytes": 1044,
-   "sha256": "7bf0edc5819a0317dfaa43eea112885e9e11c1f0665106c8bca2fed6cbc7a95a",
-   "retrieved": "2026-11-07T16:28:20Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2019-03-31; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
-   "bytes": 1004,
-   "sha256": "98d2260b5e72af03eefeb75b2290e49816354f2ec08fb8c88491d2e277f3dec0",
-   "retrieved": "2026-11-07T16:28:20Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "b4db9fef2e5666cc0a4ea454e59d5c2073213e2d7c6631f283aa8f844eca9e06",
-   "retrieved": "2026-11-07T16:28:32Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2018-12-31; set unit thousands, 73 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2019q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
-   "bytes": 1079,
-   "sha256": "e2738fab5f35232cf7cccc481d44b4ba258e32fad65e8d955887ab01e3b82498",
-   "retrieved": "2026-11-07T16:28:32Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
-   "bytes": 1044,
-   "sha256": "3b664a808ceede2f4789c57daee031589db23135706f0c7b89e5e3ac38b16ee4",
-   "retrieved": "2026-11-07T16:28:42Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2018-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
-   "bytes": 1086,
-   "sha256": "e4903df1152230b1c3ff9048cb2c566b6ac4b7c109ddda92db75fca38b1e2d78",
-   "retrieved": "2026-11-07T16:28:42Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
-   "bytes": 1045,
-   "sha256": "23f48a702e2d1e83e48fba5bd24e28929a68746e35ecaf9ead752af245490a4b",
-   "retrieved": "2026-11-07T16:28:53Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2018-06-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
-   "bytes": 1015,
-   "sha256": "93ea6ddfeb0219ce3e20cbbe84156ceb5f315fc0c2bf0caccd56f6f8d2c68c53",
-   "retrieved": "2026-11-07T16:28:53Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
-   "bytes": 1045,
-   "sha256": "69d570d87cf4780f502c5b28a7812475f4eaa83b713e19b7a5905152720d8abb",
-   "retrieved": "2026-11-07T16:29:04Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2018-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
-   "bytes": 1002,
-   "sha256": "8906ac26e8109a566d15b60b75af3862107ca43263f3f6f9521d50b887bbddfd",
-   "retrieved": "2026-11-07T16:29:04Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "38ac0e30582b09d5e05901638321733ec1e4a5ab2dde281381109dea3eba5b55",
-   "retrieved": "2026-11-07T16:29:15Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2017-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2018q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
-   "bytes": 989,
-   "sha256": "6af309818dedf7ebd8607b32090d6c5dbc2b640b9e7f6c9472bd5fbf2b300d03",
-   "retrieved": "2026-11-07T16:29:15Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
-   "bytes": 1042,
-   "sha256": "ca9fd4ce7338eda503176cf6d5e395fb752cce04e8465bc3795bd258b40acb1e",
-   "retrieved": "2026-11-07T16:29:25Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2017-09-30; set unit thousands, 70 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
-   "bytes": 1134,
-   "sha256": "d732f310d66e12077ae18460dee53ee5436dff318bd3b4b25fe7c001b5e5d838",
-   "retrieved": "2026-11-07T16:29:25Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
-   "bytes": 1045,
-   "sha256": "7a52a20c2360adb4b190529d47c2ffec848ea6593855b5ccb91db282bfa3276e",
-   "retrieved": "2026-11-07T16:29:35Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2017-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
-   "bytes": 1012,
-   "sha256": "53f87bfdeda10049d50db2bf12bf6a677f7fa1c24166cf43344524c342c6cbb5",
-   "retrieved": "2026-11-07T16:29:35Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
-   "bytes": 1043,
-   "sha256": "507850dd51323ef69d212779a5355c4da8bba8910f545efe7d9b536ab0039f99",
-   "retrieved": "2026-11-07T16:29:45Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2017-03-31; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
-   "bytes": 1125,
-   "sha256": "a7a7aff2338f6e59afa1264245cb7c229fe7f78f6fdc7cb41b7d2f0f231f6e9b",
-   "retrieved": "2026-11-07T16:29:45Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "4c6af8e2d2bc2000d3d8aa2b72e8107a7706ee4bd1477eb431a3f3e2ca569bfa",
-   "retrieved": "2026-11-07T16:29:55Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2016-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2017q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
-   "bytes": 1000,
-   "sha256": "7a427b8ad7036fbaebd62b24c10e2a84fe3f69a08716170f56d9483512401644",
-   "retrieved": "2026-11-07T16:29:55Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
-   "bytes": 1043,
-   "sha256": "7f8a1555f880277518786eb8dc26d1389b1df7d543ab056200d6a3ed0542a244",
-   "retrieved": "2026-11-07T16:30:04Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2016-09-30; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
-   "bytes": 1012,
-   "sha256": "12f17868f9527396bfcca4d8c5e1c387edf68afeca3b8c021ea49eb3c6cae424",
-   "retrieved": "2026-11-07T16:30:04Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
-   "bytes": 1043,
-   "sha256": "df7ed263575d34ad1397fe3cc287b10384efea5eb89cd024e87522f2e31fc5b8",
-   "retrieved": "2026-11-07T16:30:14Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2016-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
-   "bytes": 1006,
-   "sha256": "f7c16a11a4d0ce4e7648c9a4a6846eececb4ae479ea676e59315146e9a438c43",
-   "retrieved": "2026-11-07T16:30:14Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
-   "bytes": 1045,
-   "sha256": "5f0de340b10c950073b18d1e51a14f0c935243057bddd4821c3dc93445484860",
-   "retrieved": "2026-11-07T16:30:24Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2016-03-31; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
-   "bytes": 1020,
-   "sha256": "79eb803b29a102711cde4949b04a43578c30a9231eee8b2c3e514716e8b31d18",
-   "retrieved": "2026-11-07T16:30:24Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
-   "bytes": 1043,
-   "sha256": "d65d6a1799e74ba14e503392755a6de5151d1e5bdb50fc1b72ab728982ee5086",
-   "retrieved": "2026-11-07T16:30:34Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2015-12-31; set unit thousands, 87 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2016q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
-   "bytes": 1013,
-   "sha256": "feb77c729bfbd615ee38ca33e4e9f817b61cfc7f54a4e3998e04bf2243d59541",
-   "retrieved": "2026-11-07T16:30:34Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
-   "bytes": 1043,
-   "sha256": "fa8b99773d32e1f7cd8e2093bf353a5c453e98d01eda7123f035da23226c8a9e",
-   "retrieved": "2026-11-07T16:30:44Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2015-09-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
-   "bytes": 1010,
-   "sha256": "85ef1e568290488b5c853d75ca7110d9a701800322d30cb7e2e191fc4a69d324",
-   "retrieved": "2026-11-07T16:30:44Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
-   "bytes": 1045,
-   "sha256": "f66500944b76d4d01f358231f43097f9bd598a2498c17883abef777f829b11c3",
-   "retrieved": "2026-11-07T16:30:54Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2015-06-30; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
-   "bytes": 1010,
-   "sha256": "4932d4f7005ddf00a0c2584b864826a2ddee2d0b3c3ac16f9e30b6f45597fbba",
-   "retrieved": "2026-11-07T16:30:54Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
-   "bytes": 1045,
-   "sha256": "df77a8532f545ba7e635d345f62092505f1dc6ff8e384fdeb2234fe8fbcfaed6",
-   "retrieved": "2026-11-07T16:31:04Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2015-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
-   "bytes": 1025,
-   "sha256": "a790c455fc3994b254f44ac449c0cbb28c3830cc135e56252c1a5ef3747692e8",
-   "retrieved": "2026-11-07T16:31:04Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "5ab641ea03a236973604e33acccbd4a8095315ec8df6ccd4d0bfc07bad877c9c",
-   "retrieved": "2026-11-07T16:31:14Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2014-12-31; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2015q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
-   "bytes": 1153,
-   "sha256": "83aec0f0baf1d698b7499852c6daae677aad4c32b64c4f1b6387bd90ea65a4d9",
-   "retrieved": "2026-11-07T16:31:14Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
-   "bytes": 1044,
-   "sha256": "ffb098f1077294a3f3b20ffcb5dcb4bcc2d0a09bac47405d5d7e83822aa8c75b",
-   "retrieved": "2026-11-07T16:31:24Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2014-09-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
-   "bytes": 1025,
-   "sha256": "5b0cb773edab97f5103eefd301b67cc9948b03582ac3c4e6d963adc6bf71becd",
-   "retrieved": "2026-11-07T16:31:24Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
-   "bytes": 1045,
-   "sha256": "34ed53282fbbd10dc636c29eb8943bb88a7e6d21d23c5c51ca9672e260783c52",
-   "retrieved": "2026-11-07T16:31:33Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2014-06-30; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
-   "bytes": 1000,
-   "sha256": "ce09592bed3bcc0c779a482be8ee771c0c8a66a571f1f8ea3cdff5d6f0cc6288",
-   "retrieved": "2026-11-07T16:31:33Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
-   "bytes": 1044,
-   "sha256": "4f11cdd75c644c1a2db3c16141fcf5e578670d6bb97d55950cd3822a8c09e8ef",
-   "retrieved": "2026-11-07T16:31:42Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2014-03-31; set unit thousands, 79 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
-   "bytes": 1037,
-   "sha256": "66152c98539050f2d15d073a7f01ba8df93224fbbb4a59119e0735667c41daf8",
-   "retrieved": "2026-11-07T16:31:42Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q1_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
-   "bytes": 1045,
-   "sha256": "621337ba6a12317325488c21fec331b882ad306c2aa2222c7067be97dd527a08",
-   "retrieved": "2026-11-07T16:31:51Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2013-12-31; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2014q1_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
-   "bytes": 1044,
-   "sha256": "34fa4441458acfa11965c9db7aeaa9f055c587edce653e4ee0b45968f425be5f",
-   "retrieved": "2026-11-07T16:31:51Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2013q4_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
-   "bytes": 1044,
-   "sha256": "561f0d870762221e0c8a61dec9bf9fb777b7e46128d7c645e43f24ee7c4ef2de",
-   "retrieved": "2026-11-07T16:32:00Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2013-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2013q4_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
-   "bytes": 1034,
-   "sha256": "7d4b6adb5631bd334ce5ba02c821607884e03a6fc2920ce88b6f1e329e81ffd7",
-   "retrieved": "2026-11-07T16:32:00Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2013q3_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
-   "bytes": 1045,
-   "sha256": "57a9192f56267b003bde49aeb91378fdd5fc013d0894d8e4d3d040e330264414",
-   "retrieved": "2026-11-07T16:32:09Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2013-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2013q3_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
-   "bytes": 1034,
-   "sha256": "7fb2ef964eb62398a77823266b2fc44ff144e38082706e92f4885ccf980d72ee",
-   "retrieved": "2026-11-07T16:32:09Z"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2013q2_form13f_summary.json",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
-   "bytes": 1028,
-   "sha256": "489e034e2ebab24bda8e958ddc5f3995c3c431b75638f758d3cd7652afd01a07",
-   "retrieved": "2026-11-07T16:32:12Z",
-   "note": "aggregated from the zip (not kept) by aggregator v2; report period 2013-03-31; set unit thousands, 1 filers in the other unit rescaled; values in the summary are dollars"
-  },
-  {
-   "catalog": "SEC-13F",
-   "file": "history/corporate/raw/SEC-13F/2013q2_form13f_top20.csv",
-   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
-   "bytes": 1038,
-   "sha256": "68d4630f4d337acdbbec89e08c51ab5c9ee30b5cb83ffc714096c9001fef6953",
-   "retrieved": "2026-11-07T16:32:12Z"
-  },
-  {
    "catalog": "FRED-Z1",
    "file": "history/corporate/raw/FRED-Z1/nfcb_debt.csv",
    "url": "FRED NCBDBIQ027S",
@@ -2269,11 +2286,8 @@
    "note": "Shiller's Figure 3.1 workbook (Irrational Exuberance): US real and nominal home price index 1890- (annual to 1952, monthly from 1953), real building cost, population, long rate, CPI; supplied by the repository owner from shillerdata.com on 2026-11-06"
   }
  ],
- "errors": [
-  "sec 13f 01jun2026-31aug2026_form13f: HTTP Error 404: Not Found"
- ],
+ "errors": [],
  "pulls_run": [
-  "13f",
-  "fsds"
+  "13f"
  ]
 }

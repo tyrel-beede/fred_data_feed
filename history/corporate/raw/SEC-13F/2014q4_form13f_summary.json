@@ -1,19 +1,108 @@
 {
- "aggregator_version": 2,
+ "aggregator_version": 3,
  "n_filers": 3744,
  "n_infotable_lines": 1497497,
  "total_value_reported": "2.18869e+13",
+ "total_value_ex_options": "2.08864e+13",
  "value_unit_detected": "thousands (scaled x1000 to dollars)",
  "value_unit_set": "thousands",
  "set_median_implied_price": "0.04457",
  "n_filers_unit_corrected": 71,
  "value_share_unit_corrected": "0.0135",
+ "n_filers_unit_implausible": 0,
+ "value_share_unit_implausible": "0.0000",
+ "n_lines_beyond_cap": 0,
+ "value_lines_beyond_cap": "0",
+ "n_filers_beyond_cap": 0,
+ "filers_beyond_cap": [],
  "putcall_value_share": "0.0457",
  "n_issuers_cusip": 23870,
  "top10_issuer_share": "0.0935",
  "top50_issuer_share": "0.2730",
  "hhi_issuers": "0.002434",
  "median_filer_top10_share": "0.4122",
+ "largest_filers": [
+  {
+   "cik": "0000102909",
+   "name": "VANGUARD GROUP INC",
+   "value_ex_options": "1.283e+12",
+   "share_ex_options": "0.0614",
+   "options_value": "0",
+   "top10_share": "0.1250"
+  },
+  {
+   "cik": "0000093751",
+   "name": "State Street Corp",
+   "value_ex_options": "9.294e+11",
+   "share_ex_options": "0.0445",
+   "options_value": "0",
+   "top10_share": "0.1496"
+  },
+  {
+   "cik": "0000315066",
+   "name": "FMR LLC",
+   "value_ex_options": "7.384e+11",
+   "share_ex_options": "0.0354",
+   "options_value": "7.053e+06",
+   "top10_share": "0.1308"
+  },
+  {
+   "cik": "0000913414",
+   "name": "BlackRock Institutional Trust Company, N.A.",
+   "value_ex_options": "5.958e+11",
+   "share_ex_options": "0.0285",
+   "options_value": "1.382e+08",
+   "top10_share": "0.1393"
+  },
+  {
+   "cik": "0000080255",
+   "name": "PRICE T ROWE ASSOCIATES INC /MD/",
+   "value_ex_options": "4.581e+11",
+   "share_ex_options": "0.0219",
+   "options_value": "9.76e+05",
+   "top10_share": "0.1208"
+  },
+  {
+   "cik": "0000019617",
+   "name": "JPMORGAN CHASE & CO",
+   "value_ex_options": "3.979e+11",
+   "share_ex_options": "0.0191",
+   "options_value": "2.396e+10",
+   "top10_share": "0.0847"
+  },
+  {
+   "cik": "0001390777",
+   "name": "Bank of New York Mellon Corp",
+   "value_ex_options": "3.662e+11",
+   "share_ex_options": "0.0175",
+   "options_value": "1.89e+05",
+   "top10_share": "0.0624"
+  },
+  {
+   "cik": "0000902219",
+   "name": "WELLINGTON MANAGEMENT CO LLP",
+   "value_ex_options": "3.63e+11",
+   "share_ex_options": "0.0174",
+   "options_value": "0",
+   "top10_share": "0.1571"
+  },
+  {
+   "cik": "0001422849",
+   "name": "Capital World Investors",
+   "value_ex_options": "3.56e+11",
+   "share_ex_options": "0.0170",
+   "options_value": "0",
+   "top10_share": "0.2374"
+  },
+  {
+   "cik": "0001006249",
+   "name": "BlackRock Fund Advisors",
+   "value_ex_options": "3.539e+11",
+   "share_ex_options": "0.0169",
+   "options_value": "0",
+   "top10_share": "0.0997"
+  }
+ ],
  "report_period": "2014-09-30",
  "n_filings_in_set": 5465,
  "n_filings_used": 3777,

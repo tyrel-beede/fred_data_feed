@@ -1,19 +1,108 @@
 {
- "aggregator_version": 2,
+ "aggregator_version": 3,
  "n_filers": 3400,
  "n_infotable_lines": 1409234,
  "total_value_reported": "2.23932e+13",
+ "total_value_ex_options": "2.15712e+13",
  "value_unit_detected": "thousands (scaled x1000 to dollars)",
  "value_unit_set": "thousands",
  "set_median_implied_price": "0.0415",
  "n_filers_unit_corrected": 69,
  "value_share_unit_corrected": "0.1680",
+ "n_filers_unit_implausible": 0,
+ "value_share_unit_implausible": "0.0000",
+ "n_lines_beyond_cap": 0,
+ "value_lines_beyond_cap": "0",
+ "n_filers_beyond_cap": 0,
+ "filers_beyond_cap": [],
  "putcall_value_share": "0.0367",
  "n_issuers_cusip": 24271,
  "top10_issuer_share": "0.1215",
  "top50_issuer_share": "0.3024",
  "hhi_issuers": "0.003214",
  "median_filer_top10_share": "0.4040",
+ "largest_filers": [
+  {
+   "cik": "0001086619",
+   "name": "SCHRODER INVESTMENT MANAGEMENT GROUP",
+   "value_ex_options": "3.36e+12",
+   "share_ex_options": "0.1558",
+   "options_value": "0",
+   "top10_share": "0.2729"
+  },
+  {
+   "cik": "0000102909",
+   "name": "Vanguard Group Inc",
+   "value_ex_options": "1.024e+12",
+   "share_ex_options": "0.0475",
+   "options_value": "0",
+   "top10_share": "0.1232"
+  },
+  {
+   "cik": "0000093751",
+   "name": "State Street Corp",
+   "value_ex_options": "8.115e+11",
+   "share_ex_options": "0.0376",
+   "options_value": "0",
+   "top10_share": "0.1515"
+  },
+  {
+   "cik": "0001390777",
+   "name": "Bank of New York Mellon Corp",
+   "value_ex_options": "6.65e+11",
+   "share_ex_options": "0.0308",
+   "options_value": "6.096e+06",
+   "top10_share": "0.0384"
+  },
+  {
+   "cik": "0000315066",
+   "name": "FMR LLC",
+   "value_ex_options": "6.526e+11",
+   "share_ex_options": "0.0303",
+   "options_value": "0",
+   "top10_share": "0.1016"
+  },
+  {
+   "cik": "0000913414",
+   "name": "BlackRock Institutional Trust Company, N.A.",
+   "value_ex_options": "5.175e+11",
+   "share_ex_options": "0.0240",
+   "options_value": "1.955e+07",
+   "top10_share": "0.1360"
+  },
+  {
+   "cik": "0000080255",
+   "name": "PRICE T ROWE ASSOCIATES INC /MD/",
+   "value_ex_options": "4.003e+11",
+   "share_ex_options": "0.0186",
+   "options_value": "6.883e+07",
+   "top10_share": "0.1204"
+  },
+  {
+   "cik": "0001422849",
+   "name": "Capital World Investors",
+   "value_ex_options": "3.293e+11",
+   "share_ex_options": "0.0153",
+   "options_value": "0",
+   "top10_share": "0.2235"
+  },
+  {
+   "cik": "0000019617",
+   "name": "JPMORGAN CHASE & CO",
+   "value_ex_options": "3.251e+11",
+   "share_ex_options": "0.0151",
+   "options_value": "1.233e+10",
+   "top10_share": "0.0780"
+  },
+  {
+   "cik": "0000902219",
+   "name": "WELLINGTON MANAGEMENT CO LLP",
+   "value_ex_options": "3.194e+11",
+   "share_ex_options": "0.0148",
+   "options_value": "0",
+   "top10_share": "0.1342"
+  }
+ ],
  "report_period": "2013-09-30",
  "n_filings_in_set": 5043,
  "n_filings_used": 3426,

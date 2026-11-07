@@ -1,19 +1,108 @@
 {
- "aggregator_version": 2,
+ "aggregator_version": 3,
  "n_filers": 6846,
  "n_infotable_lines": 2474328,
- "total_value_reported": "4.11866e+13",
+ "total_value_reported": "4.11908e+13",
+ "total_value_ex_options": "3.853e+13",
  "value_unit_detected": "dollars",
  "value_unit_set": "dollars",
  "set_median_implied_price": "42.51",
  "n_filers_unit_corrected": 851,
  "value_share_unit_corrected": "0.1055",
+ "n_filers_unit_implausible": 1,
+ "value_share_unit_implausible": "0.0001",
+ "n_lines_beyond_cap": 0,
+ "value_lines_beyond_cap": "0",
+ "n_filers_beyond_cap": 0,
+ "filers_beyond_cap": [],
  "putcall_value_share": "0.0646",
  "n_issuers_cusip": 24071,
- "top10_issuer_share": "0.1598",
+ "top10_issuer_share": "0.1597",
  "top50_issuer_share": "0.3362",
  "hhi_issuers": "0.005292",
  "median_filer_top10_share": "0.5290",
+ "largest_filers": [
+  {
+   "cik": "0000102909",
+   "name": "VANGUARD GROUP INC",
+   "value_ex_options": "3.926e+12",
+   "share_ex_options": "0.1019",
+   "options_value": "0",
+   "top10_share": "0.1942"
+  },
+  {
+   "cik": "0001364742",
+   "name": "BlackRock Inc.",
+   "value_ex_options": "3.376e+12",
+   "share_ex_options": "0.0876",
+   "options_value": "1.381e+10",
+   "top10_share": "0.0911"
+  },
+  {
+   "cik": "0000093751",
+   "name": "STATE STREET CORP",
+   "value_ex_options": "1.772e+12",
+   "share_ex_options": "0.0460",
+   "options_value": "0",
+   "top10_share": "0.2088"
+  },
+  {
+   "cik": "0000315066",
+   "name": "FMR LLC",
+   "value_ex_options": "1.093e+12",
+   "share_ex_options": "0.0284",
+   "options_value": "3664",
+   "top10_share": "0.1986"
+  },
+  {
+   "cik": "0000895421",
+   "name": "MORGAN STANLEY",
+   "value_ex_options": "9.326e+11",
+   "share_ex_options": "0.0242",
+   "options_value": "0",
+   "top10_share": "0.0802"
+  },
+  {
+   "cik": "0000070858",
+   "name": "BANK OF AMERICA CORP /DE/",
+   "value_ex_options": "8.706e+11",
+   "share_ex_options": "0.0226",
+   "options_value": "1.03e+11",
+   "top10_share": "0.0886"
+  },
+  {
+   "cik": "0001214717",
+   "name": "GEODE CAPITAL MANAGEMENT, LLC",
+   "value_ex_options": "7.701e+11",
+   "share_ex_options": "0.0200",
+   "options_value": "0",
+   "top10_share": "0.2314"
+  },
+  {
+   "cik": "0000019617",
+   "name": "JPMORGAN CHASE & CO",
+   "value_ex_options": "7.7e+11",
+   "share_ex_options": "0.0200",
+   "options_value": "5.087e+10",
+   "top10_share": "0.1261"
+  },
+  {
+   "cik": "0000080255",
+   "name": "PRICE T ROWE ASSOCIATES INC /MD/",
+   "value_ex_options": "6.68e+11",
+   "share_ex_options": "0.0173",
+   "options_value": "3.948e+06",
+   "top10_share": "0.2648"
+  },
+  {
+   "cik": "0000902219",
+   "name": "WELLINGTON MANAGEMENT GROUP LLP",
+   "value_ex_options": "5.046e+11",
+   "share_ex_options": "0.0131",
+   "options_value": "0",
+   "top10_share": "0.1618"
+  }
+ ],
  "report_period": "2023-03-31",
  "n_filings_in_set": 9113,
  "n_filings_used": 6873,

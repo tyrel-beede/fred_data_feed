@@ -1,0 +1,118 @@
+{
+ "aggregator_version": 3,
+ "n_filers": 8855,
+ "n_infotable_lines": 3433416,
+ "total_value_reported": "8.30638e+13",
+ "total_value_ex_options": "7.65177e+13",
+ "value_unit_detected": "dollars",
+ "value_unit_set": "dollars",
+ "set_median_implied_price": "75.16",
+ "n_filers_unit_corrected": 345,
+ "value_share_unit_corrected": "0.0548",
+ "n_filers_unit_implausible": 1,
+ "value_share_unit_implausible": "0.0097",
+ "n_lines_beyond_cap": 0,
+ "value_lines_beyond_cap": "0",
+ "n_filers_beyond_cap": 0,
+ "filers_beyond_cap": [],
+ "putcall_value_share": "0.0788",
+ "n_issuers_cusip": 26106,
+ "top10_issuer_share": "0.2326",
+ "top50_issuer_share": "0.4302",
+ "hhi_issuers": "0.007911",
+ "median_filer_top10_share": "0.5419",
+ "largest_filers": [
+  {
+   "cik": "0002012383",
+   "name": "BlackRock, Inc.",
+   "value_ex_options": "6.713e+12",
+   "share_ex_options": "0.0877",
+   "options_value": "1.696e+10",
+   "top10_share": "0.1238"
+  },
+  {
+   "cik": "0002100119",
+   "name": "VANGUARD CAPITAL MANAGEMENT LLC",
+   "value_ex_options": "4.68e+12",
+   "share_ex_options": "0.0612",
+   "options_value": "0",
+   "top10_share": "0.3256"
+  },
+  {
+   "cik": "0000093751",
+   "name": "STATE STREET CORP",
+   "value_ex_options": "3.371e+12",
+   "share_ex_options": "0.0441",
+   "options_value": "0",
+   "top10_share": "0.2903"
+  },
+  {
+   "cik": "0000315066",
+   "name": "FMR LLC",
+   "value_ex_options": "2.304e+12",
+   "share_ex_options": "0.0301",
+   "options_value": "2.666e+07",
+   "top10_share": "0.2355"
+  },
+  {
+   "cik": "0002100121",
+   "name": "VANGUARD PORTFOLIO MANAGEMENT LLC",
+   "value_ex_options": "2.219e+12",
+   "share_ex_options": "0.0290",
+   "options_value": "0",
+   "top10_share": "0.2157"
+  },
+  {
+   "cik": "0000895421",
+   "name": "MORGAN STANLEY",
+   "value_ex_options": "1.891e+12",
+   "share_ex_options": "0.0247",
+   "options_value": "0",
+   "top10_share": "0.0987"
+  },
+  {
+   "cik": "0001214717",
+   "name": "GEODE CAPITAL MANAGEMENT, LLC",
+   "value_ex_options": "1.875e+12",
+   "share_ex_options": "0.0245",
+   "options_value": "0",
+   "top10_share": "0.2710"
+  },
+  {
+   "cik": "0000019617",
+   "name": "JPMORGAN CHASE & CO",
+   "value_ex_options": "1.712e+12",
+   "share_ex_options": "0.0224",
+   "options_value": "9.471e+10",
+   "top10_share": "0.1521"
+  },
+  {
+   "cik": "0000070858",
+   "name": "BANK OF AMERICA CORP /DE/",
+   "value_ex_options": "1.552e+12",
+   "share_ex_options": "0.0203",
+   "options_value": "0",
+   "top10_share": "0.1016"
+  },
+  {
+   "cik": "0000914208",
+   "name": "Invesco Ltd.",
+   "value_ex_options": "1.264e+12",
+   "share_ex_options": "0.0165",
+   "options_value": "5.556e+07",
+   "top10_share": "0.2438"
+  }
+ ],
+ "report_period": "2026-06-30",
+ "n_filings_in_set": 11852,
+ "n_filings_used": 8892,
+ "n_filings_other_period": 900,
+ "n_notices": 1952,
+ "n_amendments_new_holdings": 36,
+ "n_restatements_replacing": 105,
+ "n_superseded_duplicates": 108,
+ "filings_filter": "13F-HR for the set's report period; per filer the latest of original and restatements, plus new-holdings amendments",
+ "source_zip_sha256": "4db97d5652e262de51617971104e06313211de4d092e6bcb5d7bf34ee7efe054",
+ "source_zip_bytes": 100719015,
+ "period": "01jun2026-31aug2026_form13f"
+}
