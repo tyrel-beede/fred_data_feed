@@ -372,6 +372,35 @@ def all_quarters(since_year=2009):
     return out[::-1]
 
 
+# The SEC has served the data sets from more than one path: the financial-statement sets under /files/dera/data/,
+# the 13F sets under /files/structureddata/data/ and, from the Jun-Aug 2026 window, /files/datastandardsinnovation/data/.
+# A predictable file name is tried under each until one answers; the index pages are read for whatever path they link.
+SEC_PATHS_FSDS = ["/files/dera/data/financial-statement-data-sets/", "/files/datastandardsinnovation/data/financial-statement-data-sets/",
+                  "/files/structureddata/data/financial-statement-data-sets/"]
+SEC_PATHS_13F = ["/files/structureddata/data/form-13f-data-sets/", "/files/datastandardsinnovation/data/form-13f-data-sets/",
+                 "/files/dera/data/form-13f-data-sets/"]
+
+
+def get_sec_zip(rels, timeout):
+    """Fetch the first of the candidate paths that answers; a 404 moves on to the next, any other failure is raised.
+    Returns (data, url)."""
+    import urllib.error
+    last = None
+    for rel_ in rels:
+        url = "https://www.sec.gov" + rel_
+        try:
+            data, _ = get(url, SEC_UA, tries=2, timeout=timeout)
+            return data, url
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code != 404:
+                raise
+        except Exception as e:  # noqa
+            last = e
+            raise
+    raise last if last else ValueError("no candidate path")
+
+
 def pull_fsds(manifest, errors, max_quarters=2, since=None, redo=False):
     """since: a year (int) from which every quarter is a candidate (the data sets begin 2009q1); None = the recent ones.
     redo: fetch and reduce again the sets whose aggregates are already in raw/ (after an aggregator change)."""
@@ -380,22 +409,27 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None, redo=False):
         try:  # the index page lists the zips; it sits behind bot protection that answers 403 to cloud addresses
             idx = "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets"
             page, _ = get(idx, SEC_UA, tries=2)
-            links = sorted(set(re.findall(r'href="(/files/dera/data/financial-statement-data-sets/(\d{4}q[1-4])\.zip)"', page.decode("utf-8", "replace"))), reverse=True)
+            links = sorted(set(re.findall(r'href="(/files/[^"]+/financial-statement-data-sets/(\d{4}q[1-4])\.zip)"', page.decode("utf-8", "replace"))), reverse=True)
         except Exception as e:  # noqa
             errors.append(f"sec fsds index: {e}; trying the quarterly file names directly")
-        if not links:  # the file names are predictable: yyyyqN.zip
-            qs = all_quarters(since) if since else recent_quarters()
-            links = [(f"/files/dera/data/financial-statement-data-sets/{y}q{q}.zip", f"{y}q{q}") for y, q in qs]
+        # the predictable names (yyyyqN.zip) are tried under every known path as well as whatever the index lists
+        qs = all_quarters(since) if since else recent_quarters()
+        cands = {}
+        for rel_, q in links:
+            cands.setdefault(q, []).append(rel_)
+        for y, q in qs:
+            name = f"{y}q{q}"
+            cands.setdefault(name, [])
+            cands[name] += [p + name + ".zip" for p in SEC_PATHS_FSDS if p + name + ".zip" not in cands[name]]
         if since:
-            links = [(rel_, q) for rel_, q in links if int(q[:4]) >= since]
+            cands = {q: v for q, v in cands.items() if int(q[:4]) >= since}
         done = _done_sets("SEC-FSDS", "_aggregates.csv", redo)
         n = 0
-        for rel_, q in links:
+        for q in sorted(cands, reverse=True):
             if q in done or n >= max_quarters:
                 continue
-            url = "https://www.sec.gov" + rel_
             try:
-                data, _ = get(url, SEC_UA, tries=2, timeout=600)
+                data, url = get_sec_zip(cands[q], timeout=600)
                 rows, meta = aggregate_fsds(data)
             except Exception as e:  # noqa
                 errors.append(f"sec fsds {q}: {e}"); continue
@@ -739,25 +773,27 @@ def pull_13f(manifest, errors, max_quarters=2, since=None, redo=False):
         try:
             idx = "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets"
             page, _ = get(idx, SEC_UA, tries=2)
-            links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
+            links = re.findall(r'href="(/files/[^"]+/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
         except Exception as e:  # noqa
             errors.append(f"sec 13f index: {e}; trying the quarterly file names directly")
-        # the predictable names (yyyyqN_form13f through 2023, the windows from 2024) are tried as well as whatever the
-        # index lists, so a set the page has not linked yet, or links under another path, is still fetched
+        # the predictable names (yyyyqN_form13f through 2023, the windows from 2024) are tried under every known path
+        # as well as whatever the index lists, so a set the page has not linked yet, or serves from a new path, is fetched
         names = all_13f_names(since) if since else recent_13f_windows()
-        listed = {name for _, name in links}
-        links += [(f"/files/structureddata/data/form-13f-data-sets/{n}.zip", n) for n in names if n not in listed]
+        cands = {}
+        for rel_, name in links:
+            cands.setdefault(name, []).append(rel_)
+        for name in names:
+            cands.setdefault(name, [])
+            cands[name] += [p + name + ".zip" for p in SEC_PATHS_13F if p + name + ".zip" not in cands[name]]
         if since:
-            links = [(rel_, name) for rel_, name in links if qkey_13f(name)[0] >= since]
-        links = sorted(set(links), key=lambda t: qkey_13f(t[1]), reverse=True)
+            cands = {k: v for k, v in cands.items() if qkey_13f(k)[0] >= since}
         done = _done_sets("SEC-13F", "_summary.json", redo)
         n = 0
-        for rel_, name in links:
+        for name in sorted(cands, key=qkey_13f, reverse=True):
             if name in done or n >= max_quarters:
                 continue
-            url = "https://www.sec.gov" + rel_
             try:
-                data, _ = get(url, SEC_UA, tries=2, timeout=900)
+                data, url = get_sec_zip(cands[name], timeout=900)
                 summary, top = aggregate_13f(data)
             except Exception as e:  # noqa
                 errors.append(f"sec 13f {name}: {e}"); continue
