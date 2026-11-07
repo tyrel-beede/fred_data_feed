@@ -27,9 +27,10 @@ What stands at revision one — commit `bb2e0fc` plus this note; the `history-v1
   oil since 1861, CHAT technology adoption, USGS minerals, the commodity PPI, US energy from 1635, European energy
   from 1800); the network's topology from the regime columns; the corporate layer (Z.1 from 1945, BEA profits from
   1929, Shiller from 1871, home prices from 1890; Goyal–Welch from 1871 and Jacks's 42 world commodity prices from
-  1850, both supplied by hand; the SEC financial-statement and 13F data sets for the two latest quarters, pulled
-  from the owner's desktop). 98 physical and 17 corporate files pulled by the workflow with hashes; the four
-  desktop-only sources are all in, with their refresh cadence in `HANDOFF.md`.
+  1850, both supplied by hand; the SEC financial-statement data sets for every quarter since 2009 and the 13F data
+  sets since 2013, pulled from the owner's desktop and reduced to aggregates). 98 physical and 17 corporate files
+  pulled by the workflow with hashes; the four desktop-only sources are all in, with their refresh cadence in
+  `HANDOFF.md`.
 - **The four parts of the foundation as artifacts**: the climatology by measured topology era (`climatology/`), the
   analog library with a full 20-feature live query and measured join rules (`analogs/`, `bridge/join_rules.json`),
   the voice ledger (`dalio/reads.csv`, 193 reads graded for falsifiability, unscored), the mechanisms (templates,
@@ -45,8 +46,34 @@ What stands at revision one — commit `bb2e0fc` plus this note; the `history-v1
 - **What it does not do**: forecast the dials' branches by itself; learn from the handful of eras; see the micro layer
   before 2009; bridge any country but the United States. No investment advice.
 
+The revision-one pass closed with the SEC backfill and its quality-control check (2026-11-07): the full
+financial-statement and 13F records in, the 13F reduction found wrong before 2023 and rewritten (units detected per
+filer, the set's own report period, amendments handled), the financial-statement reduction split by sector and capped
+for scale errors, a synthetic self-test for both, `corporate/sec_analysis.md` as the SEC layer's read over its record,
+and seven SEC checks in `QC.md` — two of which fail by design until the re-reduction runs from the owner's desktop
+(`HANDOFF.md`). The tag goes on the commit that closes that run.
+
 Queued after the tag: conformal bands, mile-marker timing, the voice ledger scored against outcomes, the diffusion
 panel past 2003, the bridge for other countries, a windowed climatology for young eras.
+
+## Where things live
+
+| to find… | open | built by |
+|---|---|---|
+| the measured record (18 countries, 1870–2020) and its features | `jst/jst_r6.csv`, `jst/features.csv`, `jst/data_dictionary.md` | `tools/jst_build.py` |
+| the crisis chronology and the two overrides | `jst/crises_chronology.csv`, `jst/overrides.csv` | `tools/jst_build.py` |
+| the climatology by era and regime | `climatology/*.csv`, `climatology/README.md` | `tools/climatology.py` |
+| the network's topology (subnets, breaks) | `jst/topology.csv`, `analogs/topology_test.md` | `tools/topology.py` |
+| the analog cone's skill and the learners' numbers | `analogs/learner_test_physical_era*.md`, `analogs/noise_band.md` | `tools/learner_test.py`, `tools/noise_band.py` |
+| the ladders (conditional event rates after a signal) | `analogs/lag_test.md` | `tools/lag_test.py` |
+| the live US query and its nearest analogs | `analogs/us_2026ytd.md`, `analogs/us_2026ytd_query.json`, `bridge/join_rules.json` | `tools/live_query.py`, `tools/analogs.py` |
+| the physical layer (energy, oil, diffusion, materials, commodities) | `physical/*_features.csv`, `physical/README.md`, `physical/catalog.json` | `tools/physical_pull.py`, `physical_build.py`, `physical_build2.py` |
+| the long corporate anchors (Z.1, BEA, Shiller, Goyal–Welch) | `corporate/us_corporate_annual.csv`, `corporate/README.md` | `tools/corporate_pull.py`, `corporate_build.py` |
+| the SEC layer: quarterly tables and the read over its record | `corporate/sec_fsds_quarterly.csv`, `corporate/sec_13f_quarterly.csv`, `corporate/sec_analysis.md` | `tools/corporate_pull.py` (desktop), `corporate_build.py`, `sec_analysis.py` |
+| the voice ledger and the Dalio encodings | `dalio/reads.csv`, `dalio/*_template.json`, `dalio/*.md` | `tools/assemble.py` |
+| what runs from a desktop, and the tag | `HANDOFF.md` | — |
+| the checks and their evidence | `QC.md` (mechanical), `QC_review.md` (content) | `tools/qc.py`, `tools/tests/` |
+| every source, license and citation | `sources.json`, `physical/catalog.json`, `corporate/catalog.json` | — |
 
 ## Layout
 
@@ -95,8 +122,9 @@ history/
   climatology/              the unconditional distributions by topology era and regime: every base feature's percentiles,
                             the forward outcomes, the event base rates (tools/climatology.py)
   corporate/                the corporate layer: Z.1 and BEA via FRED, Shiller, Goyal-Welch (long-record US anchors) and
-                            the SEC financial-statement and 13F data sets aggregated in the workflow (the bridge and
-                            live cone); us_corporate_annual.csv, catalog, README
+                            the SEC financial-statement and 13F data sets reduced to aggregates (the bridge and live
+                            cone); us_corporate_annual.csv, sec_fsds_quarterly.csv, sec_13f_quarterly.csv,
+                            sec_analysis.md/json (the SEC layer over its record), catalog, README
   physical/                 the physical layer: OWID extract (CO2, energy), oil prices since 1861, the CHAT technology-
                             diffusion panel, USGS mineral statistics and FRED commodity prices (raw/ pulled by the
                             workflow), the derived footprint, oil, diffusion and materials features, and the catalog
@@ -115,12 +143,16 @@ history/
     physical_pull.py, physical_build.py, physical_build2.py   the physical layer: the workflow's raw pulls, the
                             energy/CO2/oil features, the diffusion and materials features
     corporate_pull.py, corporate_build.py   the corporate layer: the workflow's pulls (FRED-resolved Z.1 and BEA
-                            series, Shiller, Goyal-Welch, SEC aggregates) and the US annual series
+                            series, Shiller, Goyal-Welch) and the SEC reductions (desktop; --redo, --selftest), the US
+                            annual series and the two SEC quarterly tables
+    sec_analysis.py         the SEC layer over its record: annual flows and ratios, the timely read, calibration
+                            against Z.1 and NIPA, the 13F concentration series -> corporate/sec_analysis.md
+    tests/                  test_sec_aggregators.py: the SEC aggregators on synthetic data sets (run by qc.py)
     climatology.py          the climatology tables by measured topology era and regime -> climatology/
     noise_band.py           the cadence noise band from the shifted-refit runs -> analogs/noise_band.md
     live_query.py           the live US query vector (all 20 features) from the JST sheet, the bridge and Shiller, with
                             the join rules measured on the 2016-2020 overlap -> bridge/join_rules.json
-    qc.py                   mechanical checks -> QC.md
+    qc.py                   mechanical checks -> QC.md (33 at revision one)
 ```
 
 ## The JST dataset
@@ -388,6 +420,24 @@ and so stay out of the panel learners (a learner would read the missingness as t
 query vector and to the corporate reads in the voice ledger. `corporate/README.md` and `corporate/catalog.json`
 carry the routes, licenses and provenance notes.
 
+The SEC side is the one place in the history layer where the record had to be reduced before it could be kept: the
+quarterly zips run to hundreds of megabytes, sec.gov refuses cloud addresses, so the owner's desktop streams every
+set (71 financial-statement quarters since 2009, 54 13F sets since 2013) and keeps only aggregates. The first
+reduction was wrong for 13F before 2023 — the form's unit changed from thousands to dollars in 2023, and inside the
+thousands-era sets a few hundred filers reported in dollars; scaling a set by its majority unit multiplied them a
+thousandfold — and the quality-control pass that found it (totals of $300–480 trillion against a $50 trillion
+market, trillion-dollar single positions, the median filer's concentration a thousand times too small) rewrote both
+reductions: units detected per filer from the implied price of its lines, only each set's own report-period filings
+counted, amendments handled, the financial-statement sums split by sector (banks' operating cash flow swings with
+their trading books) and screened for scale errors, every set stamped with its aggregator version, and a synthetic
+self-test under `tools/tests/`. `tools/sec_analysis.py` then reads the layer over its record — annual flows and
+ratios of the December-fiscal-year filers with the latest year's percentile, the timely year-to-date read, the
+calibration of the sums against Z.1 and NIPA (coverage near a quarter, growth correlation 0.4–0.5), the 13F
+concentration series — and a consistency section that lays the same period's sum from every file it appears in side
+by side, so a file whose values are inflated is visible rather than averaged in. What the first reduction got right
+stands; what it got wrong is marked stale in the tables, in `QC.md` and in the analysis until the desktop
+re-reduction replaces it (`HANDOFF.md`).
+
 ## The network's topology (`tools/topology.py`, `jst/topology.csv`, `analogs/topology_test.md`)
 
 Nodes come and go from subnets, and the JST regime columns record it: `peg_type` (BASE, PEG, FLOAT) and `peg_base`
@@ -519,3 +569,26 @@ stays as one view; the measured targets become the primary ones, and the horizon
   `us_corporate_annual.csv` spot-checked — NIPA profits before tax 10% of GDP in 1929, 3% in 1933; nonfinancial
   corporate equities 0.42× GDP in 1950, 1.30× in 2000, 2.1× in 2024; dividends 30% of after-tax profits in 1973,
   88% in 2000 — against the published series.
+- 2026-11-07 (SEC backfill and quality control): inventory after the owner's desktop runs — 71 financial-statement
+  sets 2009q1–2026q3 without a gap (2009q1–q2 header-only: no tag reaches twenty filers before the phase-in) and 53 of
+  the SEC's 54 13F sets (the Jun–Aug 2026 window, published after the run, and the first 2024 window named
+  `01jan2024-29feb2024` rather than the December start the name generator assumed; both fixed in the puller, which now
+  tries the predictable names as well as the index's links). The rebuilt 13F table showed totals of $329 trillion
+  for the 2014q4 set and $478 trillion for 2022q2 against $47 trillion for 2023q4, a Gilead convertible at $12
+  trillion in a top-20 list, and the median filer's top-10 share at 0.04% before 2023 and 54% after: inside the
+  thousands-era sets a few hundred filers report in dollars and the set-wide scaling multiplied them a thousandfold,
+  and the per-filer heaps behind the median were never scaled. Aggregator v2 (13F) detects the unit per filer from
+  the implied price of its lines against each issuer's cross-filer reference, keeps only the set's own report-period
+  holdings reports (a restatement replaces its original, a new-holdings amendment adds to it, notices and late
+  reports for earlier periods set aside) and records the report period; on a synthetic set the size of a real one
+  (2.8 million lines, 7,500 filers, 2% in the other unit) it recovers the true total exactly and every mixed-unit
+  filer, in 19 seconds. The financial-statement sums were checked across files: the same December-31 assets appear
+  in the 10-K file and in later 10-Q comparatives files with sums that differ by up to 2.1× (2025: $35.5 trillion
+  in the 10-K file, $74.2 trillion in the following quarter's), and all-filer operating cash flow for a single
+  quarter swings threefold year to year with banks' trading books; aggregator v3 keys values by filer rather than
+  submission (a 10-K/A no longer counts beside its original), splits the sums by sector, sets aside values beyond a
+  per-tag plausibility cap and lists the five largest filers per key in a sidecar, so the next re-reduction can
+  say which file carries the inflation. Both aggregators carry a version, `--redo` re-fetches, `--selftest` runs
+  38 synthetic checks, and `qc.py` gained seven SEC checks (self-test, no gaps in either record, the unit split at
+  2023q1, no stale thousands-era set, table consistency, versions in use, analysis bounds). Two fail by design until
+  the desktop re-reduction lands.

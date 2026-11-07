@@ -214,9 +214,14 @@ FSDS_TAGS = {"SalesRevenueNet", "SalesRevenueGoodsNet",  # the pre-2018 revenue 
 
 # Aggregator versions, recorded beside each set's aggregates so qc.py can tell a set reduced by an older rule from a
 # current one (a set is re-reduced with --redo, which fetches its zip again).
-AGG_VERSION_FSDS = 2  # 2 (2026-11-07): one value per filer (CIK) per tag-period from the latest-filed submission that
+AGG_VERSION_FSDS = 3  # 2 (2026-11-07): one value per filer (CIK) per tag-period from the latest-filed submission that
 #                       carries it, so a 10-K/A replaces its original instead of counting beside it; dimensional
 #                       (segment) rows set aside where the set marks them; filing counts in <q>_meta.json
+#                       3 (2026-11-07): rows per sector (all / nonfinancial / financial, by SIC 6000-6799), since the
+#                       all-filer sums of operating cash flow swing with banks' and brokers' trading books; values
+#                       beyond a per-tag plausibility cap (several times the largest company's) set aside and listed
+#                       in the sidecar; the five largest filers per large tag-period listed there too, so a sum that
+#                       moves can be traced to who moved it
 AGG_VERSION_13F = 2   # 2 (2026-11-07): only the holdings reports for the set's own report period count (late filings
 #                       for earlier periods and notices set aside; a restatement replaces the filer's original and a
 #                       new-holdings amendment adds to it); the VALUE unit is detected per filer, from the implied
@@ -231,48 +236,108 @@ def _member(z, base):
     return next((n for n in z.namelist() if n.lower().rsplit("/", 1)[-1] == base.lower()), None)
 
 
+# Plausibility caps per tag, in dollars: several times the largest company's figure (JPMorgan's assets near $4tn,
+# Walmart's revenue near $700bn, Apple's net income, operating cash flow and buybacks near $100-120bn). A value beyond
+# its cap is a filer's scale error (a figure reported in dollars but tagged as thousands, say); it is set aside from
+# the sums and listed in the set's sidecar.
+FSDS_CAPS = {"Assets": 2e13, "Liabilities": 2e13, "StockholdersEquity": 3e12, "LongTermDebt": 1.5e12, "LongTermDebtNoncurrent": 1.5e12,
+             "CashAndCashEquivalentsAtCarryingValue": 1.5e12, "InventoryNet": 5e11, "Revenues": 3e12, "SalesRevenueNet": 3e12,
+             "SalesRevenueGoodsNet": 3e12, "RevenueFromContractWithCustomerExcludingAssessedTax": 3e12, "NetIncomeLoss": 6e11,
+             "InterestExpense": 3e11, "NetCashProvidedByUsedInOperatingActivities": 1.2e12, "PaymentsToAcquirePropertyPlantAndEquipment": 4e11,
+             "PaymentsForRepurchaseOfCommonStock": 4e11, "PaymentsOfDividends": 2e11, "PaymentsOfDividendsCommonStock": 2e11,
+             "DepreciationDepletionAndAmortization": 3e11}
+FSDS_SECTORS = ("all", "nonfinancial", "financial")
+
+
+def fsds_sector(sic):
+    """SIC 6000-6799 (depository and non-depository credit, brokers, insurance, real estate including REITs) is the
+    financial sector; everything else, including blank, nonfinancial."""
+    try:
+        s = int(sic)
+    except (TypeError, ValueError):
+        return "nonfinancial"
+    return "financial" if 6000 <= s <= 6799 else "nonfinancial"
+
+
+def _done_sets(cat, suffix, redo):
+    """The set names already reduced: every one in raw/, or with redo only those the current aggregator produced
+    (so a stopped --redo run picks up where it left off)."""
+    d = os.path.join(RAW, cat)
+    if not os.path.isdir(d):
+        return set()
+    names = {f[:-len(suffix)] for f in os.listdir(d) if f.endswith(suffix)}
+    if not redo:
+        return names
+    current = AGG_VERSION_FSDS if cat == "SEC-FSDS" else AGG_VERSION_13F
+    done = set()
+    for n in names:
+        mp = os.path.join(d, f"{n}_meta.json" if cat == "SEC-FSDS" else f"{n}_summary.json")
+        try:
+            if int(json.load(open(mp)).get("aggregator_version", 1)) >= current:
+                done.add(n)
+        except Exception:  # noqa
+            pass
+    return done
+
+
 def aggregate_fsds(zip_bytes):
-    """Per (tag, qtrs, ddate): number of filers, sum, median and 90th percentile of value; 10-K/10-Q forms only, USD,
-    no co-registrant rows, no dimensional (segment) rows; one value per filer (CIK) per tag-period, taken from the
-    latest-filed submission that carries it (an amendment replaces its original rather than counting beside it).
-    Returns (rows, meta)."""
+    """Per (sector, tag, qtrs, ddate): number of filers, sum, median and 90th percentile of value; 10-K/10-Q forms
+    only, USD, no co-registrant rows, no dimensional (segment) rows, no values beyond the tag's plausibility cap; one
+    value per filer (CIK) per tag-period, taken from the latest-filed submission that carries it (an amendment
+    replaces its original rather than counting beside it). Sectors: all filers, nonfinancial (SIC outside 6000-6799),
+    financial. Returns (rows, meta); meta lists the values set aside and the five largest filers per large key."""
     z = zipfile.ZipFile(io.BytesIO(zip_bytes))
-    forms = {}  # adsh -> (cik, filed, form)
+    forms = {}  # adsh -> (cik, filed, form, sector)
     with z.open(_member(z, "sub.txt") or "sub.txt") as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
             form = (r.get("form") or "").strip()
             if form.startswith(("10-K", "10-Q")):
-                forms[r["adsh"]] = ((r.get("cik") or "").strip() or r["adsh"], (r.get("filed") or "").strip(), form)
-    acc = {}  # (tag, qtrs, ddate) -> cik -> (filed, adsh, value)
-    n_used = 0
+                forms[r["adsh"]] = ((r.get("cik") or "").strip() or r["adsh"], (r.get("filed") or "").strip(), form, fsds_sector(r.get("sic")))
+    acc = {}  # (tag, qtrs, ddate) -> cik -> (filed, adsh, value, sector)
+    n_used, n_dim, capped = 0, 0, []
     with z.open(_member(z, "num.txt") or "num.txt") as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
             if r["tag"] not in FSDS_TAGS or r["adsh"] not in forms or r.get("uom") != "USD" or r.get("coreg"):
                 continue
             if (r.get("segments") or "").strip() or (r.get("dimh") or "").strip() not in ("", "0x00000000"):
+                n_dim += 1
                 continue  # a segment or member value, not the consolidated figure
             try:
                 v = float(r["value"])
             except (TypeError, ValueError):
                 continue
+            cik, filed, form, sector = forms[r["adsh"]]
+            if abs(v) > FSDS_CAPS.get(r["tag"], 2e13):
+                if len(capped) < 50:
+                    capped.append({"cik": cik, "adsh": r["adsh"], "form": form, "tag": r["tag"], "qtrs": r["qtrs"], "ddate": r["ddate"], "value": f"{v:.6g}"})
+                continue
             n_used += 1
-            cik, filed, _ = forms[r["adsh"]]
             d = acc.setdefault((r["tag"], r["qtrs"], r["ddate"]), {})
             cur = d.get(cik)
             if cur is None or (filed, r["adsh"]) > (cur[0], cur[1]):  # the latest-filed submission wins; within one, the first value seen
-                d[cik] = (filed, r["adsh"], v)
-    rows = []
+                d[cik] = (filed, r["adsh"], v, sector)
+    rows, top = [], {}
     for (tag, qtrs, ddate), d in sorted(acc.items()):
-        vals = sorted(x[2] for x in d.values())
-        if len(vals) < 20:
-            continue
-        rows.append({"tag": tag, "qtrs": qtrs, "ddate": ddate, "n_filers": len(vals), "sum_usd": f"{sum(vals):.6g}",
-                     "median_usd": f"{vals[len(vals) // 2]:.6g}", "p90_usd": f"{vals[int(len(vals) * 0.9)]:.6g}"})
+        for sector in FSDS_SECTORS:
+            vals = sorted(x[2] for x in d.values() if sector == "all" or x[3] == sector)
+            if len(vals) < 20:
+                continue
+            rows.append({"sector": sector, "tag": tag, "qtrs": qtrs, "ddate": ddate, "n_filers": len(vals), "sum_usd": f"{sum(vals):.6g}",
+                         "median_usd": f"{vals[len(vals) // 2]:.6g}", "p90_usd": f"{vals[int(len(vals) * 0.9)]:.6g}"})
+        if len(d) >= 1000:
+            big = sorted(d.items(), key=lambda kv: -abs(kv[1][2]))[:5]
+            top[f"{tag}|{qtrs}|{ddate}"] = [{"cik": cik, "value": f"{x[2]:.6g}", "sector": x[3], "form": forms[x[1]][2]} for cik, x in big]
+    per_cik = {}
+    for cik, _, _, _ in forms.values():
+        per_cik[cik] = per_cik.get(cik, 0) + 1
     meta = {"aggregator_version": AGG_VERSION_FSDS, "n_filings_10k_10q": len(forms),
             "n_filings_amendments": sum(1 for v in forms.values() if "/A" in v[2]),
-            "n_filers_cik": len({v[0] for v in forms.values()}), "n_num_rows_used": n_used}
+            "n_filers_cik": len(per_cik), "n_filers_with_several_filings": sum(1 for n in per_cik.values() if n > 1),
+            "n_filers_financial": len({v[0] for v in forms.values() if v[3] == "financial"}),
+            "n_num_rows_used": n_used, "n_dimensional_rows_set_aside": n_dim, "n_values_beyond_cap": len(capped),
+            "values_beyond_cap": capped, "largest_filers": top}
     return rows, meta
 
 
@@ -317,10 +382,10 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None, redo=False):
             links = [(f"/files/dera/data/financial-statement-data-sets/{y}q{q}.zip", f"{y}q{q}") for y, q in qs]
         if since:
             links = [(rel_, q) for rel_, q in links if int(q[:4]) >= since]
-        done = set(os.listdir(os.path.join(RAW, "SEC-FSDS"))) if os.path.isdir(os.path.join(RAW, "SEC-FSDS")) and not redo else set()
+        done = _done_sets("SEC-FSDS", "_aggregates.csv", redo)
         n = 0
         for rel_, q in links:
-            if f"{q}_aggregates.csv" in done or n >= max_quarters:
+            if q in done or n >= max_quarters:
                 continue
             url = "https://www.sec.gov" + rel_
             try:
@@ -328,7 +393,7 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None, redo=False):
                 rows, meta = aggregate_fsds(data)
             except Exception as e:  # noqa
                 errors.append(f"sec fsds {q}: {e}"); continue
-            body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["tag", "qtrs", "ddate", "n_filers", "sum_usd", "median_usd", "p90_usd"])
+            body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["sector", "tag", "qtrs", "ddate", "n_filers", "sum_usd", "median_usd", "p90_usd"])
             w.writeheader(); w.writerows(rows)
             meta.update({"set": q, "source_zip_sha256": hashlib.sha256(data).hexdigest(), "source_zip_bytes": len(data), "n_rows": len(rows)})
             save("SEC-FSDS", f"{q}_aggregates.csv", body.getvalue().encode(), url, manifest,
@@ -573,9 +638,11 @@ def all_13f_names(since_year=2013):
         for q in (1, 2, 3, 4):
             if (y, q) >= (2013, 2):
                 out.append(f"{y}q{q}_form13f")
-    # windows from March 2024: Mar-May, Jun-Aug, Sep-Nov, Dec-Feb
+    # windows from 2024: Jan-Feb 2024 (two months, after the 2023q4 set), then Mar-May, Jun-Aug, Sep-Nov, Dec-Feb
     t = time.gmtime()
-    ey, em = 2024, 2  # the first window ends February 2024 (the Dec 2023-Feb 2024 filings)
+    if since_year <= 2024:
+        out.append("01jan2024-29feb2024_form13f")
+    ey, em = 2024, 5
     while (ey, em) < (t.tm_year, t.tm_mon):  # a window counts once its end month has ended
         sm = em - 2; sy = ey
         if sm <= 0:
@@ -625,16 +692,18 @@ def pull_13f(manifest, errors, max_quarters=2, since=None, redo=False):
             links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
         except Exception as e:  # noqa
             errors.append(f"sec 13f index: {e}; trying the quarterly file names directly")
-        if not links:  # predictable names: yyyyqN_form13f.zip through 2023, three-month windows from March 2024
-            names = all_13f_names(since) if since else recent_13f_windows()
-            links = [(f"/files/structureddata/data/form-13f-data-sets/{n}.zip", n) for n in names]
+        # the predictable names (yyyyqN_form13f through 2023, the windows from 2024) are tried as well as whatever the
+        # index lists, so a set the page has not linked yet, or links under another path, is still fetched
+        names = all_13f_names(since) if since else recent_13f_windows()
+        listed = {name for _, name in links}
+        links += [(f"/files/structureddata/data/form-13f-data-sets/{n}.zip", n) for n in names if n not in listed]
         if since:
             links = [(rel_, name) for rel_, name in links if qkey_13f(name)[0] >= since]
         links = sorted(set(links), key=lambda t: qkey_13f(t[1]), reverse=True)
-        done = set(os.listdir(os.path.join(RAW, "SEC-13F"))) if os.path.isdir(os.path.join(RAW, "SEC-13F")) and not redo else set()
+        done = _done_sets("SEC-13F", "_summary.json", redo)
         n = 0
         for rel_, name in links:
-            if f"{name}_summary.json" in done or n >= max_quarters:
+            if name in done or n >= max_quarters:
                 continue
             url = "https://www.sec.gov" + rel_
             try:
@@ -662,8 +731,8 @@ def main():
     ap.add_argument("--quarters", type=int, default=2, help="how many SEC data sets to fetch per run, per set (default 2; the run is resumable: sets already in raw/ are skipped)")
     ap.add_argument("--since", type=int, default=0, help="backfill: consider every SEC data set from this year on (FSDS begin 2009, 13F 2013)")
     ap.add_argument("--all", action="store_true", help="backfill everything: --since 2009 --quarters 200")
-    ap.add_argument("--redo", action="store_true", help="SEC sets: fetch and reduce again the sets already in raw/ (after an aggregator "
-                    "change; the summaries record the aggregator version). Typically --only 13f --all --redo")
+    ap.add_argument("--redo", action="store_true", help="SEC sets: fetch and reduce again the sets in raw/ that an older aggregator produced "
+                    "(each summary records its aggregator version, so a stopped run resumes). Typically --only 13f --all --redo")
     ap.add_argument("--selftest", action="store_true", help="run the SEC aggregators on synthetic data sets and exit (no network)")
     a = ap.parse_args()
     if a.selftest:

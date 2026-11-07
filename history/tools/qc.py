@@ -73,6 +73,8 @@ expected = [
     "history/physical/raw/EIA-HISTORICAL-1635/U.S._Primary_Energy_Consumption_1635-1945.pdf",
     "history/tools/topology.py", "history/jst/topology.csv", "history/analogs/topology_test.md",
     "history/analogs/learner_test_physical_topology_era.md",
+    "history/tools/sec_analysis.py", "history/corporate/sec_analysis.md", "history/corporate/sec_analysis.json",
+    "history/tools/tests/test_sec_aggregators.py",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")
@@ -289,6 +291,63 @@ quoted = set(_re.findall(r"\b0\.[5-9]\d\b", readme))
 unsupported = sorted(q for q in quoted if q not in pool)
 check("README: every quoted AUC-like number (0.5x-0.9x) appears in a result file", not unsupported,
       f"{len(quoted)} quoted; unsupported {unsupported}" if unsupported else f"{len(quoted)} quoted numbers all found")
+
+# ------------------------------------------------------------------ 14. the SEC layer
+sys.path.insert(0, os.path.join(H, "tools", "tests"))
+try:
+    import test_sec_aggregators as _tsa
+    _res = _tsa.run()
+    _bad = [n for n, ok in _res if not ok]
+    check("SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps)", not _bad,
+          f"failed: {_bad}" if _bad else f"{len(_res)} checks")
+except Exception as _e:  # noqa
+    check("SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps)", False, str(_e)[:160])
+from corporate_pull import all_quarters, all_13f_names, qkey_13f, period_end_13f, AGG_VERSION_13F, AGG_VERSION_FSDS  # noqa: E402
+_fs = os.path.join(H, "corporate", "raw", "SEC-FSDS")
+_have = {f.replace("_aggregates.csv", "") for f in os.listdir(_fs) if f.endswith("_aggregates.csv")} if os.path.isdir(_fs) else set()
+_want = [f"{y}q{q}" for y, q in all_quarters(2009)]
+_gaps = [q for q in _want if q not in _have]
+check("SEC FSDS: a reduced set for every quarter from 2009q1 to the last completed one", not _gaps,
+      f"missing {_gaps}" if _gaps else f"{len(_have)} sets {_want[0]}..{_want[-1]}")
+_f13 = os.path.join(H, "corporate", "raw", "SEC-13F")
+_have13 = {f.replace("_summary.json", "") for f in os.listdir(_f13) if f.endswith("_summary.json")} if os.path.isdir(_f13) else set()
+_want13 = all_13f_names(2013)
+_gaps13 = [n for n in _want13 if n not in _have13]
+check("SEC 13F: a reduced set for every period from 2013q2 to the last completed window", not _gaps13,
+      f"missing {_gaps13}" if _gaps13 else f"{len(_have13)} sets {_want13[0]}..{_want13[-1]}")
+_units, _stale, _ver = [], [], {}
+for _n in sorted(_have13, key=qkey_13f):
+    _s = json.load(open(os.path.join(_f13, f"{_n}_summary.json")))
+    _v = int(_s.get("aggregator_version", 1)); _ver[_v] = _ver.get(_v, 0) + 1
+    _unit = _s.get("value_unit_set") or ("thousands" if str(_s.get("value_unit_detected", "")).startswith("thousands") else "dollars")
+    _exp = "thousands" if qkey_13f(_n) < (2023, 3) else "dollars"  # VALUE in dollars for filings made from January 2023
+    if _unit != _exp:
+        _units.append((_n, _unit))
+    if _v < AGG_VERSION_13F and _exp == "thousands":
+        _stale.append(_n)
+check("SEC 13F: each set's majority VALUE unit is thousands before the 2023q1 set and dollars from it", not _units,
+      f"unexpected {_units}" if _units else f"{len(_have13)} sets as expected")
+check("SEC 13F: no thousands-era set reduced by the first aggregator remains (their totals are known wrong; re-run with --redo)", not _stale,
+      f"{len(_stale)} stale: {_stale[:3]}..{_stale[-1]}" if _stale else f"versions {_ver}")
+_t13 = list(csv.DictReader(open(os.path.join(H, "corporate", "sec_13f_quarterly.csv"))))
+_pe = [r["period_end"] for r in _t13]
+_lab = [r["period"] for r in _t13 if r["period_end"] != period_end_13f(r["period"]) and int(float(r.get("aggregator_version") or 1)) < 2]
+check("SEC 13F table: one row per set, holdings dates in order, labels consistent with the set names", len(_t13) == len(_have13) and _pe == sorted(_pe) and not _lab,
+      f"{len(_t13)} rows {_pe[0]}..{_pe[-1]}" + (f"; label mismatches {_lab}" if _lab else ""))
+_fv = {}
+for _q in _have:
+    _mp = os.path.join(_fs, f"{_q}_meta.json")
+    _v = json.load(open(_mp)).get("aggregator_version", 1) if os.path.exists(_mp) else 1
+    _fv[_v] = _fv.get(_v, 0) + 1
+check("SEC FSDS: aggregator versions in use recorded (v3 adds the sector split and plausibility caps)", True, f"versions {_fv}; current v{AGG_VERSION_FSDS}")
+_an = json.load(open(os.path.join(H, "corporate", "sec_analysis.json")))
+_bad = []
+for _row in _an["annual"]:
+    for _k in ("capex_ocf", "buybacks_ocf", "dividends_ocf"):
+        if _row.get(_k) is not None and not (0 <= _row[_k] <= 1.5):
+            _bad.append((_row["year"], _k, round(_row[_k], 3)))
+check("SEC analysis: annual flow ratios within bounds (0-1.5), years and reads present", not _bad and len(_an["annual"]) >= 13 and _an["ytd_reads"],
+      f"out of bounds {_bad}" if _bad else f"{len(_an['annual'])} years, {len(_an['ytd_reads'])} timely reads, {len(_an['calibration'])} calibrations")
 
 # ------------------------------------------------------------------ report
 n_ok = sum(1 for _, ok, _ in results if ok)

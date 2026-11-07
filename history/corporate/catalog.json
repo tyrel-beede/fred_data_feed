@@ -26,7 +26,7 @@
    "feeds": [
     "us_corporate_annual.csv: CAPE, real earnings growth 1y/3y, real price growth 3y, earnings yield minus the long rate"
    ],
-   "note": "the Yale server serves a copy last updated September 2023 (https refused, http answers); shillerdata.com's page exposes no plain link to the workbook. To bring it current: download ie_data.xls from shillerdata.com and put it at history/corporate/raw/SHILLER/ie_data.xls \u2014 the builder prefers it over ie_data_yale.xls"
+   "note": "the Yale server serves a copy last updated September 2023 (https refused, http answers); shillerdata.com's page exposes no plain link to the workbook. To bring it current: download ie_data.xls from shillerdata.com and put it at history/corporate/raw/SHILLER/ie_data.xls — the builder prefers it over ie_data_yale.xls"
   },
   {
    "id": "GOYAL-WELCH",
@@ -45,30 +45,32 @@
   {
    "id": "SEC-FSDS",
    "layer": "bridge",
-   "status": "pulled (desktop run 2026-11-06)",
+   "status": "backfilled (desktop runs 2026-11-06: 71 sets 2009q1-2026q3); re-reduction with aggregator v3 pending (--only fsds --all --redo)",
    "title": "SEC Financial Statement Data Sets: every number in 10-K/10-Q XBRL financial statements, quarterly 2009q1-",
    "coverage": "all SEC registrants filing XBRL, 2009-",
-   "retrieval": "workflow: the two latest quarterly zips (60-120 MB each) streamed in the runner; only per-tag aggregates are kept (raw/SEC-FSDS/<yyyyqN>_aggregates.csv): filer count, sum, median and p90 for assets, liabilities, equity, long-term debt, cash, inventories, revenue, net income, interest, operating cash flow, capex, buybacks, dividends, depreciation; 10-K/10-Q forms only, USD, no co-registrants",
+   "retrieval": "desktop (sec.gov refuses cloud addresses): every quarterly zip (20-120 MB) streamed and reduced; only aggregates kept (raw/SEC-FSDS/<yyyyqN>_aggregates.csv: per sector [all / nonfinancial / financial by SIC, v3], tag, qtrs and period end, the filer count, sum, median and p90 for assets, liabilities, equity, long-term debt, cash, inventories, revenue, net income, interest, operating cash flow, capex, buybacks, dividends, depreciation; 10-K/10-Q forms only, USD, no co-registrants, no dimensional rows, one value per filer from its latest-filed submission, values beyond a per-tag plausibility cap set aside; <yyyyqN>_meta.json: filing counts, values set aside, the five largest filers per large key, aggregator version)",
    "license": "public domain (SEC); fair-access policy: identify the client in the User-Agent, at most 10 requests a second",
    "provenance_class": "counted (self-reported, audited, as filed; restatements appear as later filings)",
    "feeds": [
-    "sec_fsds_quarterly.csv: per period end and tag, filer count and sum for 3-month, year-to-date and annual rows (10-Q cash flows are year-to-date); the live dials' capex, buyback, dividend and cash read"
+    "sec_fsds_quarterly.csv: per sector, period end and tag, filer count and sum for 3-month, year-to-date and annual rows (10-Q cash flows are year-to-date); the live dials' capex, buyback, dividend and cash read",
+    "sec_analysis.md/json: annual flows and ratios 2009-, the timely read, calibration against Z.1 and NIPA, the cross-file consistency check"
    ],
-   "note": "sec.gov refuses GitHub-hosted runners; pulled from the owner's desktop with python3 history/tools/corporate_pull.py --only fsds,13f (the fair-access User-Agent is read from SEC_CONTACT); the two latest quarters are in raw/, reduced by corporate_build.py to sec_fsds_quarterly.csv / sec_13f_quarterly.csv"
+   "note": "pulled from the owner's desktop with SEC_CONTACT set (the fair-access User-Agent); --all backfills, --redo re-reduces after an aggregator change (resumable by version), --selftest runs the synthetic checks; the first reduction's sums for the same period differ across the files it appears in (up to 2.1x for 2025 assets) and all-filer operating cash flow swings with banks' trading books — both addressed by v3 (sector split, caps, per-filer keys), pending the re-reduction"
   },
   {
    "id": "SEC-13F",
    "layer": "bridge",
-   "status": "pulled (desktop run 2026-11-06)",
+   "status": "backfilled (desktop runs 2026-11-06: 53 of 54 sets 2013q2-); re-reduction with aggregator v2 REQUIRED (--only 13f --all --redo): the thousands-era summaries are known wrong",
    "title": "SEC Form 13F Data Sets: institutional investment managers' quarterly holdings (long positions in 13(f) securities), structured from 2013q2",
    "coverage": "managers with $100M+ in 13(f) securities, 2013-; 45-day filing lag",
-   "retrieval": "workflow: the two latest quarterly zips streamed in the runner; only summaries are kept (raw/SEC-13F/<period>_summary.json: filers, total value, distinct issuers, top-10 and top-50 issuer shares, Herfindahl, median filer top-10 concentration; <period>_top20.csv: the twenty most-held issuers)",
+   "retrieval": "desktop (sec.gov refuses cloud addresses): every data-set zip (50-100 MB) streamed and reduced in two passes; only summaries kept (raw/SEC-13F/<period>_summary.json: report period, filings used and set aside, filers, total value in dollars, the set's unit and the filers found in the other unit, distinct issuers, top-10 and top-50 issuer shares, Herfindahl, median filer top-10 concentration, put/call share, aggregator version; <period>_top20.csv: the twenty most-held issuers)",
    "license": "public domain (SEC)",
-   "provenance_class": "counted (self-reported, long-only, no shorts or most derivatives; VALUE in dollars from 2023, thousands before)",
+   "provenance_class": "counted (self-reported, long-only, no shorts or most derivatives; VALUE in dollars from the filings made in 2023, thousands before, with filers that did not follow the form — detected per filer from the implied price of its lines, v2)",
    "feeds": [
-    "sec_13f_quarterly.csv: filers, total value, issuers, top-10/top-50 issuer shares, Herfindahl, median filer top-10 concentration, put/call share; the positioning group's crowding read"
+    "sec_13f_quarterly.csv: holdings date, filers, total value, issuers, top-10/top-50 issuer shares, Herfindahl, median filer top-10 concentration, put/call share, unit corrections; the positioning group's crowding read",
+    "sec_analysis.md/json: the concentration series against Z.1 corporate equities, with each period's status (current / provisional / stale)"
    ],
-   "note": "sec.gov refuses GitHub-hosted runners; pulled from the owner's desktop with python3 history/tools/corporate_pull.py --only fsds,13f (the fair-access User-Agent is read from SEC_CONTACT); the two latest quarters are in raw/, reduced by corporate_build.py to sec_fsds_quarterly.csv / sec_13f_quarterly.csv"
+   "note": "pulled from the owner's desktop with SEC_CONTACT set; the first aggregator scaled each set by its majority unit and multiplied the filers in the other unit a thousandfold ($300-480 trillion totals before 2023); v2 (2026-11-07) detects the unit per filer, keeps only the set's own report-period holdings reports (restatements replace, new-holdings amendments add, notices and late reports set aside) and records the report period; a data set holds the filings made in its quarter, about the quarter before, and the table's period_end is the holdings date; the Jun-Aug 2026 window and the first 2024 window (01jan2024-29feb2024) are fetched by the fixed name list"
   }
  ]
 }

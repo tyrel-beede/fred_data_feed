@@ -215,12 +215,18 @@ def build_sec_tables():
         for fn in sorted(os.listdir(d)):
             if not fn.endswith("_aggregates.csv"):
                 continue
+            q = fn.replace("_aggregates.csv", "")
+            mp = os.path.join(d, f"{q}_meta.json")
+            ver = json.load(open(mp)).get("aggregator_version", 1) if os.path.exists(mp) else 1
             for r in csv.DictReader(open(os.path.join(d, fn))):
-                k = (r["ddate"], r["tag"], r["qtrs"])
-                if k not in best or int(r["n_filers"]) > int(best[k]["n_filers"]):
-                    best[k] = {**r, "source_file": fn}
+                sector = r.get("sector") or "all"  # aggregates before v3 are all filers
+                k = (sector, r["ddate"], r["tag"], r["qtrs"])
+                # for a (sector, period, tag) reported in several quarterly files (10-K originals, then 10-Q comparatives),
+                # the file with the most filers; among equals, the one reduced by the newer aggregator
+                if k not in best or (int(r["n_filers"]), ver) > (int(best[k]["n_filers"]), best[k]["aggregator_version"]):
+                    best[k] = {**r, "sector": sector, "source_file": fn, "aggregator_version": ver}
         with open(os.path.join(CORP, "sec_fsds_quarterly.csv"), "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=["ddate", "tag", "qtrs", "n_filers", "sum_usd", "median_usd", "p90_usd", "source_file"])
+            w = csv.DictWriter(f, fieldnames=["sector", "ddate", "tag", "qtrs", "n_filers", "sum_usd", "median_usd", "p90_usd", "source_file", "aggregator_version"])
             w.writeheader()
             for k in sorted(best):
                 w.writerow({c: best[k][c] for c in w.fieldnames})

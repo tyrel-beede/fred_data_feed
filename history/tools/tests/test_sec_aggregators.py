@@ -155,14 +155,24 @@ def check_fsds(out):
     subs.append({"adsh": "0000000099-20-000001", "cik": "99", "name": "CO 99", "sic": "3570", "form": "8-K", "period": "20191231", "fy": "2019", "fp": "FY",
                  "filed": "20200228", "prevrpt": "0", "detail": "0", "instance": "x", "nciks": "1", "aciks": ""})
     nums.append({"adsh": "0000000099-20-000001", "tag": "NetIncomeLoss", "version": "us-gaap/2019", "coreg": "", "ddate": "20191231", "qtrs": "4", "uom": "USD", "segments": "", "value": "5e9", "footnote": ""})
+    # a bank (SIC 6021) among the filers, and one filer whose net income is beyond any company's (a scale error)
+    subs[9]["sic"] = "6021"
+    nums.append({"adsh": "0000000012-20-000001", "tag": "NetIncomeLoss", "version": "us-gaap/2019", "coreg": "", "ddate": "20181231", "qtrs": "4", "uom": "USD", "segments": "", "value": "5e12", "footnote": ""})
     data = zip_of({"2020q1/sub.txt": tsv(subs, SUB_FSDS), "2020q1/num.txt": tsv(nums, NUM_FSDS)})
     rows, meta = cp.aggregate_fsds(data)
-    ni = next((r for r in rows if r["tag"] == "NetIncomeLoss"), {}); at = next((r for r in rows if r["tag"] == "Assets"), {})
+    def row(tag, sector="all"):
+        return next((r for r in rows if r["tag"] == tag and r["sector"] == sector and r["ddate"] == "20191231"), {})
+    ni, at = row("NetIncomeLoss"), row("Assets")
     exp_ni = sum(c * 1e6 for c in range(2, 26)) + 999e6
     out.append(("FSDS: one value per filer, the amendment replacing its original", ni.get("n_filers") == 25 and abs(float(ni.get("sum_usd", 0)) - exp_ni) < 1))
     out.append(("FSDS: a tag the amendment does not carry keeps the original's value", at.get("n_filers") == 25 and abs(float(at.get("sum_usd", 0)) - sum(c * 1e7 for c in range(1, 26))) < 1))
-    out.append(("FSDS: co-registrant, segment, off-list, non-USD and 8-K rows set aside", len(rows) == 2))
-    out.append(("FSDS: filing counts", meta["n_filings_10k_10q"] == 26 and meta["n_filings_amendments"] == 1 and meta["n_filers_cik"] == 25))
+    out.append(("FSDS: co-registrant, segment, off-list, non-USD and 8-K rows set aside", len({(r["tag"], r["ddate"]) for r in rows}) == 2))
+    nf = row("NetIncomeLoss", "nonfinancial")
+    out.append(("FSDS: the nonfinancial sector leaves the bank out", nf.get("n_filers") == 24 and abs(float(nf.get("sum_usd", 0)) - (exp_ni - 10e6)) < 1
+                and meta["n_filers_financial"] == 1 and not row("NetIncomeLoss", "financial")))
+    out.append(("FSDS: a value beyond the plausibility cap is set aside and listed", meta["n_values_beyond_cap"] == 1 and meta["values_beyond_cap"][0]["cik"] == "12"
+                and not any(r["ddate"] == "20181231" for r in rows)))
+    out.append(("FSDS: filing counts", meta["n_filings_10k_10q"] == 26 and meta["n_filings_amendments"] == 1 and meta["n_filers_cik"] == 25 and meta["n_filers_with_several_filings"] == 1))
     out.append(("FSDS: aggregator version", meta["aggregator_version"] == cp.AGG_VERSION_FSDS))
 
 
