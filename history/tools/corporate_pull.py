@@ -222,7 +222,14 @@ AGG_VERSION_FSDS = 3  # 2 (2026-11-07): one value per filer (CIK) per tag-period
 #                       beyond a per-tag plausibility cap (several times the largest company's) set aside and listed
 #                       in the sidecar; the five largest filers per large tag-period listed there too, so a sum that
 #                       moves can be traced to who moved it
-AGG_VERSION_13F = 3   # 3 (2026-11-07): a filer's unit is snapped to the nearest power of a thousand (a filer a
+AGG_VERSION_13F = 4   # 4 (2026-11-07): a filer whose option lines exceed $2 trillion after scaling is set aside whole
+#                       (an options market maker's mis-scaled book put a quarter of all reported value into options in
+#                       two sets without tripping the line or filer caps); a curated exclusions file
+#                       (corporate/sec_13f_exclusions.csv: cik, set, reason) is applied at aggregation and recorded;
+#                       the 200 largest managers are listed per set, so a manager whose holdings jump a thousandfold
+#                       against the neighbouring sets (a filer that scaled both value and shares) can be found and
+#                       excluded by name
+#                       3 (2026-11-07): a filer's unit is snapped to the nearest power of a thousand (a filer a
 #                       millionfold off is a scale error, not a unit, and is rescaled and counted as implausible);
 #                       single lines beyond $1 trillion and filers beyond $20 trillion after scaling are set aside
 #                       and counted (the first re-reduction left a $6.6 trillion issuer line and option lines worth
@@ -544,9 +551,55 @@ def _reservoir(store, counts, key, item, cap, rng):
 
 LINE_CAP_13F = 1e12    # no single reported position is worth a trillion dollars (the largest real ones are a third of that)
 FILER_CAP_13F = 2e13   # no manager reports twenty trillion (the largest report five to six)
+FILER_OPTIONS_CAP_13F = 2e12  # no manager's option lines are worth two trillion (the largest options books report a few hundred billion)
+EXCLUSIONS_13F = os.path.join(ROOT, "history", "corporate", "sec_13f_exclusions.csv")
 
 
-def aggregate_13f(zip_bytes):
+def load_13f_exclusions(path=EXCLUSIONS_13F):
+    """Curated exclusions: rows of cik, set ('*' for every set), reason, measured. Returns {cik: {set: reason}}."""
+    out = {}
+    if not os.path.exists(path):
+        return out
+    for r in csv.DictReader(open(path)):
+        cik = (r.get("cik") or "").strip().lstrip("0") or "0"
+        if cik and (r.get("set") or "").strip():
+            out.setdefault(cik, {})[r["set"].strip()] = r.get("reason", "")
+    return out
+
+
+NEIGHBOR_RATIO_13F = 20.0   # a manager twenty times larger or smaller than in the neighbouring sets scaled both columns
+NEIGHBOR_MIN_VALUE_13F = 2e11  # the persistence check applies to managers above $200 billion
+
+
+def load_13f_managers(name):
+    """The managers file of a set (its two thousand largest managers, written by aggregator v4): {cik: holdings}."""
+    p = os.path.join(RAW, "SEC-13F", f"{name}_managers.csv")
+    if not os.path.exists(p):
+        return None
+    out = {}
+    for r in csv.DictReader(open(p)):
+        try:
+            out[(r["cik"] or "").lstrip("0") or "0"] = float(r["value"])
+        except (ValueError, KeyError):
+            pass
+    return out
+
+
+def neighbors_13f(name):
+    """The managers files of the sets just before and after this one, where they exist: {set name: {cik: holdings}}."""
+    names = all_13f_names(2013)[::-1]  # oldest first
+    out = {}
+    if name in names:
+        i = names.index(name)
+        for j in (i - 1, i + 1):
+            if 0 <= j < len(names):
+                m = load_13f_managers(names[j])
+                if m:
+                    out[names[j]] = m
+    return out
+
+
+def aggregate_13f(zip_bytes, set_name="", exclusions=None, neighbors=None):
     """Reduce a Form 13F data set to a summary (filers, total value in dollars, issuer concentration, the median
     filer's concentration, the put/call share, the largest managers) and the twenty most-held issuers. Two passes
     over the information table: the first learns each filer's VALUE unit, the second aggregates.
@@ -568,8 +621,29 @@ def aggregate_13f(zip_bytes):
     z = zipfile.ZipFile(io.BytesIO(zip_bytes))
     use, info = select_13f_filings(z)
     names = info.pop("_names", {})
+    exclusions = load_13f_exclusions() if exclusions is None else exclusions
+    neighbors = neighbors or {}
+    def curated(filer):
+        rules = exclusions.get((filer or "").lstrip("0") or "0", {})
+        return rules.get(set_name) or rules.get("*")
+    def persistent(filer, holdings):
+        """None if the manager's holdings sit within NEIGHBOR_RATIO of the neighbouring sets' (or no check is possible),
+        else the reason it is set aside: present in a neighbour at a ratio beyond it, or absent from both neighbours'
+        two thousand largest while above the threshold."""
+        if holdings < NEIGHBOR_MIN_VALUE_13F or not neighbors:
+            return None
+        key = (filer or "").lstrip("0") or "0"
+        seen = {n: m[key] for n, m in neighbors.items() if key in m}
+        if seen:
+            worst = max(max(holdings / v, v / holdings) if v > 0 else float("inf") for v in seen.values())
+            if worst > NEIGHBOR_RATIO_13F and all((max(holdings / v, v / holdings) if v > 0 else float("inf")) > NEIGHBOR_RATIO_13F for v in seen.values()):
+                return "not persistent: " + ", ".join(f"{v:.3g} in {n}" for n, v in seen.items()) + f" against {holdings:.3g} here"
+            return None
+        if len(neighbors) >= 2:
+            return f"absent from the neighbouring sets' two thousand largest managers ({', '.join(neighbors)}) while {holdings:.3g} here"
+        return None
     rng = random.Random(13)
-    ref, ref_n, fs, fs_n, set_sample, raw_total = {}, {}, {}, {}, [], {}
+    ref, ref_n, fs, fs_n, set_sample, raw_total, raw_options, raw_big = {}, {}, {}, {}, [], {}, {}, {}
     n_seen = 0
     rows = _infotable(z)
     col = next(rows)
@@ -587,6 +661,13 @@ def aggregate_13f(zip_bytes):
         if v <= 0:
             continue
         raw_total[acc] = raw_total.get(acc, 0.0) + v
+        hb = raw_big.setdefault(acc, [])  # the filing's five largest raw lines, so lines beyond the cap can be left out of its estimate
+        if len(hb) < 5:
+            heapq.heappush(hb, v)
+        elif v > hb[0]:
+            heapq.heapreplace(hb, v)
+        if at(r, "PUTCALL"):
+            raw_options[acc] = raw_options.get(acc, 0.0) + v
         if q <= 0:
             continue
         n_seen += 1
@@ -615,15 +696,23 @@ def aggregate_13f(zip_bytes):
         ref_med[c] = med(own) if own else med(p for _, p in s)
     filer_k = classify(ref_med)
     filer_scale = {acc: set_scale / (1000.0 ** k) for acc, k in filer_k.items()}
-    # filers whose scaled total is beyond any manager's are set aside whole (their lines would otherwise dominate)
-    excluded = {}
+    # filers whose scaled total, or option book, is beyond any manager's are set aside whole (their lines would
+    # otherwise dominate), and so are the curated exclusions
+    excluded, curated_applied = {}, []
     for acc, rt in raw_total.items():
-        est = rt * filer_scale.get(acc, set_scale)
-        if est > FILER_CAP_13F:
-            filer = use.get(acc, acc) if use is not None else acc
-            excluded[acc] = {"cik": filer, "name": names.get(filer, ""), "value_scaled": f"{est:.4g}", "unit_steps": filer_k.get(acc, 0)}
+        sc = filer_scale.get(acc, set_scale)
+        est = (rt - sum(v for v in raw_big.get(acc, []) if v * sc > LINE_CAP_13F)) * sc  # as pass 2 will count it, lines beyond the cap left out
+        opt = raw_options.get(acc, 0.0) * sc
+        filer = use.get(acc, acc) if use is not None else acc
+        why = curated(filer) or ("total beyond cap" if est > FILER_CAP_13F else "") or ("options beyond cap" if opt > FILER_OPTIONS_CAP_13F else "") \
+            or persistent(filer, est - opt)
+        if why:
+            excluded[acc] = {"cik": filer, "name": names.get(filer, ""), "value_scaled": f"{est:.4g}", "options_scaled": f"{opt:.4g}",
+                             "unit_steps": filer_k.get(acc, 0), "why": why}
+            if why not in ("total beyond cap", "options beyond cap"):
+                curated_applied.append({"cik": filer, "name": names.get(filer, ""), "value": f"{est - opt:.4g}", "reason": why})
     by_cusip, by_cusip_name = {}, {}
-    filer_total, filer_top, filer_putcall = {}, {}, {}
+    filer_total, filer_top, filer_putcall, filer_lines = {}, {}, {}, {}
     total, putcall_value, n_lines, corrected_value, implausible_value = 0.0, 0.0, 0, 0.0, 0.0
     n_lines_capped, value_lines_capped = 0, 0.0
     rows = _infotable(z)
@@ -657,6 +746,7 @@ def aggregate_13f(zip_bytes):
         by_cusip[cusip] = by_cusip.get(cusip, 0.0) + v
         by_cusip_name.setdefault(cusip, at(r, "NAMEOFISSUER"))
         filer_total[filer] = filer_total.get(filer, 0.0) + v
+        filer_lines[filer] = filer_lines.get(filer, 0) + 1
         h = filer_top.setdefault(filer, [])
         if len(h) < 10:
             heapq.heappush(h, v)
@@ -669,9 +759,13 @@ def aggregate_13f(zip_bytes):
     conc = sorted(sum(filer_top[a]) / filer_total[a] for a in filer_total if filer_total[a] > 0)
     n_corrected = sum(1 for a, k in filer_k.items() if k != 0 and a not in excluded)
     n_implausible = sum(1 for a, k in filer_k.items() if abs(k) >= 2 and a not in excluded)
+    ranked = sorted(filer_total, key=lambda f: -filer_total[f])
     largest = [{"cik": f, "name": names.get(f, ""), "value_ex_options": f"{filer_total[f]:.4g}", "share_ex_options": f"{filer_total[f] / s:.4f}",
                 "options_value": f"{filer_putcall.get(f, 0.0):.4g}", "top10_share": f"{sum(filer_top[f]) / filer_total[f]:.4f}"}
-               for f in sorted(filer_total, key=lambda f: -filer_total[f])[:10]]
+               for f in ranked[:10]]
+    managers = [{"cik": f, "name": names.get(f, ""), "value": f"{filer_total[f]:.4g}", "options": f"{filer_putcall.get(f, 0.0):.4g}",
+                 "n": filer_lines.get(f, 0), "unit_steps": filer_k.get(next((a for a in (use or {}) if use[a] == f), f), 0) if use is not None else 0}
+                for f in ranked[:2000]]
     summary = {"aggregator_version": AGG_VERSION_13F, "n_filers": len(filer_total), "n_infotable_lines": n_lines,
                "total_value_reported": f"{total:.6g}", "total_value_ex_options": f"{total - putcall_value:.6g}",
                "value_unit_detected": "thousands (scaled x1000 to dollars)" if set_scale != 1.0 else "dollars",
@@ -682,8 +776,10 @@ def aggregate_13f(zip_bytes):
                "n_filers_beyond_cap": len(excluded), "filers_beyond_cap": sorted(excluded.values(), key=lambda x: -float(x["value_scaled"]))[:10],
                "putcall_value_share": f"{putcall_value / total:.4f}" if total else "", "n_issuers_cusip": len(by_cusip),
                "top10_issuer_share": f"{top10:.4f}", "top50_issuer_share": f"{top50:.4f}", "hhi_issuers": f"{hhi:.6f}",
-               "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else "", "largest_filers": largest}
+               "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else "", "largest_filers": largest,
+               "exclusions_applied": curated_applied, "neighbors_checked": sorted(neighbors), "managers_top200": managers[:200]}
     summary.update(info)
+    summary["_managers"] = managers
     top = [{"rank": k + 1, "cusip": c, "issuer": by_cusip_name.get(c, ""), "value": f"{v:.6g}", "share": f"{v / s:.4f}"}
            for k, (c, v) in enumerate(sorted(by_cusip.items(), key=lambda kv: -kv[1])[:20])]
     return summary, top
@@ -794,9 +890,12 @@ def pull_13f(manifest, errors, max_quarters=2, since=None, redo=False):
                 continue
             try:
                 data, url = get_sec_zip(cands[name], timeout=900)
-                summary, top = aggregate_13f(data)
+                summary, top = aggregate_13f(data, set_name=name, neighbors=neighbors_13f(name))
             except Exception as e:  # noqa
                 errors.append(f"sec 13f {name}: {e}"); continue
+            managers = summary.pop("_managers", [])
+            body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["cik", "name", "value", "options", "n", "unit_steps"]); w.writeheader(); w.writerows(managers)
+            save("SEC-13F", f"{name}_managers.csv", body.getvalue().encode(), url, manifest, note="the two thousand largest managers (holdings excluding options, in dollars)")
             summary["source_zip_sha256"] = hashlib.sha256(data).hexdigest(); summary["source_zip_bytes"] = len(data); summary["period"] = name
             save("SEC-13F", f"{name}_summary.json", json.dumps(summary, indent=1).encode(), url, manifest,
                  note=f"aggregated from the zip (not kept) by aggregator v{AGG_VERSION_13F}; report period {summary.get('report_period', '?')}; "

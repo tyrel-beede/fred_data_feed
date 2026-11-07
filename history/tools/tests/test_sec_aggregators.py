@@ -116,8 +116,24 @@ def build_13f(set_unit, nested):
     for _ in range(60):
         k += 1
         info.append(line("K-1", k, "X08", int(9e11 / price["X08"]), price["X08"], set_unit))
+    # L: an options market maker whose option lines are worth $3 trillion after scaling (set aside whole, by the options cap)
+    filing("L-1", "12", "13F-HR", "14-NOV-2019", P)
+    for _ in range(30):
+        k += 1
+        info.append(line("L-1", k, "X03", int(1e11 / price["X03"]), price["X03"], set_unit, putcall="CALL"))
+    k += 1
+    info.append(line("L-1", k, "X02", 5000, price["X02"], set_unit))
+    # N: a $500 billion manager (500 lines of a billion) whose persistence against the neighbouring sets is tested separately
+    filing("N-1", "14", "13F-HR", "14-NOV-2019", P)
+    for _ in range(500):
+        k += 1
+        info.append(line("N-1", k, "X10", int(1e9 / price["X10"]), price["X10"], set_unit))
+    # M: a filer excluded by the curated list for this set (its lines are ordinary)
+    filing("M-1", "13", "13F-HR", "14-NOV-2019", P)
+    k += 1
+    info.append(line("M-1", k, "X01", 7000, price["X01"], set_unit))
     conc = sorted(sum(sorted(v, reverse=True)[:10]) / sum(v) for v in expect_shares.values())
-    exp = {"report_period": "2019-09-30", "n_filers": 8, "n_filings_used": 10, "n_filings_other_period": 1, "n_notices": 1,
+    exp = {"report_period": "2019-09-30", "n_filers": 8, "n_filings_used": 13, "n_filings_other_period": 1, "n_notices": 1,
            "n_restatements_replacing": 1, "n_amendments_new_holdings": 1, "n_filers_unit_corrected": 2, "n_filers_unit_implausible": 1,
            "n_lines_beyond_cap": 1, "filer_beyond_cap": ("11", "MANAGER 11"), "largest": ("1", "MANAGER 1"), "value_unit_set": set_unit,
            "total": expect_total, "ex_options": expect_total - expect_putcall, "x01": expect_x01, "putcall_share": expect_putcall / expect_total,
@@ -128,7 +144,11 @@ def build_13f(set_unit, nested):
 
 def check_13f(set_unit, nested, out):
     data, exp = build_13f(set_unit, nested)
-    s, top = cp.aggregate_13f(data)
+    nb = {"2019q3_form13f": {"14": 5e8}, "2020q1_form13f": {"14": 5e8}}
+    s, top = cp.aggregate_13f(data, set_name="2019q4_form13f", exclusions={"13": {"2019q4_form13f": "test: holdings a thousandfold above the neighbouring sets"}}, neighbors=nb)
+    s_absent2, _ = cp.aggregate_13f(data, set_name="2019q4_form13f", exclusions={}, neighbors={"2019q3_form13f": {"1": 1.3e8}, "2020q1_form13f": {"1": 1.3e8}})
+    s_absent1, _ = cp.aggregate_13f(data, set_name="2019q4_form13f", exclusions={}, neighbors={"2019q3_form13f": {"1": 1.3e8}})
+    s_steady, _ = cp.aggregate_13f(data, set_name="2019q4_form13f", exclusions={}, neighbors={"2019q3_form13f": {"14": 4e11}, "2020q1_form13f": {"14": 6e11}})
     def close(a, b, tol=1e-6):
         return abs(float(a) - float(b)) <= tol * max(1.0, abs(float(b)))
     checks = [("report period", s.get("report_period") == exp["report_period"]),
@@ -142,8 +162,16 @@ def check_13f(set_unit, nested, out):
               ("filers in another unit, one of them a scale error", s["n_filers_unit_corrected"] == exp["n_filers_unit_corrected"]
                and s["n_filers_unit_implausible"] == exp["n_filers_unit_implausible"]),
               ("a trillion-dollar line set aside", s["n_lines_beyond_cap"] == exp["n_lines_beyond_cap"]),
-              ("a filer beyond any manager's size set aside and named", s["n_filers_beyond_cap"] == 1
+              ("a filer beyond any manager's size set aside and named", s["n_filers_beyond_cap"] == 4
                and (s["filers_beyond_cap"][0]["cik"], s["filers_beyond_cap"][0]["name"]) == exp["filer_beyond_cap"]),
+              ("an options book beyond the cap set aside whole", any(x["cik"] == "12" and x["why"] == "options beyond cap" for x in s["filers_beyond_cap"])),
+              ("a curated exclusion applied and recorded", [(x["cik"], x["name"], x["reason"]) for x in s["exclusions_applied"] if x["cik"] == "13"] == [("13", "MANAGER 13", "test: holdings a thousandfold above the neighbouring sets")]
+               and not any(m["cik"] == "13" for m in s["managers_top200"])),
+              ("the two hundred largest managers listed with their line counts", s["managers_top200"][0]["cik"] == "1" and s["managers_top200"][0]["n"] == 12),
+              ("persistence: a manager a thousandfold off its neighbours is set aside", any(x["cik"] == "14" and x["why"].startswith("not persistent") for x in s["filers_beyond_cap"])),
+              ("persistence: absent from both neighbours' lists while above the threshold -> set aside", any(x["cik"] == "14" and x["why"].startswith("absent") for x in s_absent2["filers_beyond_cap"])),
+              ("persistence: absent from a single neighbour -> kept (a new entrant cannot be told from an error)", not any(x["cik"] == "14" for x in s_absent1["filers_beyond_cap"]) and s_absent1["n_filers"] == 10),
+              ("persistence: a manager within range of its neighbours -> kept", not any(x["cik"] == "14" for x in s_steady["filers_beyond_cap"]) and s_steady["n_filers"] == 10),
               ("the largest filer listed by name", (s["largest_filers"][0]["cik"], s["largest_filers"][0]["name"]) == exp["largest"]),
               ("total in dollars", close(s["total_value_reported"], exp["total"], 1e-4)),
               ("total excluding options", close(s["total_value_ex_options"], exp["ex_options"], 1e-4)),
