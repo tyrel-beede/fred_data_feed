@@ -27,7 +27,7 @@ import csv, json, math, os, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from corporate_build import read_fred, annual_mean, units_scale, CORP, RAW  # noqa: E402
-from corporate_pull import AGG_VERSION_13F  # noqa: E402
+from corporate_pull import AGG_VERSION_13F, AGG_VERSION_13F_ACCEPTED  # noqa: E402
 
 FSDS = os.path.join(CORP, "sec_fsds_quarterly.csv")
 F13 = os.path.join(CORP, "sec_13f_quarterly.csv")
@@ -188,7 +188,7 @@ def load_13f():
         # current: the aggregator in force; provisional: an earlier per-filer reduction (v2: right in the main, but a few
         # sets carry garbage option lines and one trillion-dollar issuer line) or a v1 dollar-era set; stale: a v1
         # thousands-era set (known wrong); partial: the SEC's first, incomplete set
-        if v >= AGG_VERSION_13F:
+        if v >= AGG_VERSION_13F_ACCEPTED:
             r["status"] = "current"
         elif v >= 2 or unit.startswith("dollars"):
             r["status"] = "provisional"
@@ -213,13 +213,15 @@ def analyze_13f(rows):
         pe = r["period_end"]
         q_start = f"{pe[:4]}-{'%02d' % (((int(pe[5:7]) - 1) // 3) * 3 + 1)}-01" if len(pe) >= 7 else ""
         z = eq.get(q_start)
-        tv = float(r["total_value_ex_options_usd"] or r["total_value_usd"]) if (r.get("total_value_ex_options_usd") or r.get("total_value_usd")) else None
+        tv = float(r.get("holdings_value_adjusted_usd") or r.get("total_value_ex_options_usd") or r["total_value_usd"]) \
+            if (r.get("holdings_value_adjusted_usd") or r.get("total_value_ex_options_usd") or r.get("total_value_usd")) else None
         used.append({"period": r["period"], "period_end": pe, "status": r["status"], "n_filers": int(r["n_filers"] or 0), "total_value": tv,
                      "z1_nfcb_equities": z * sc if z is not None else None, "coverage": (tv / (z * sc)) if (z and tv) else None,
                      "top10_issuer_share": float(r["top10_issuer_share"] or "nan"), "top50_issuer_share": float(r["top50_issuer_share"] or "nan"),
                      "hhi_issuers": float(r["hhi_issuers"] or "nan"), "median_filer_top10_share": float(r["median_filer_top10_share"] or "nan"),
                      "putcall_value_share": float(r["putcall_value_share"] or "nan"), "n_issuers": int(r["n_issuers"] or 0),
-                     "n_filers_unit_corrected": r.get("n_filers_unit_corrected") or "", "value_share_unit_corrected": r.get("value_share_unit_corrected") or ""})
+                     "n_filers_unit_corrected": r.get("n_filers_unit_corrected") or "", "value_share_unit_corrected": r.get("value_share_unit_corrected") or "",
+                     "n_managers_flagged_at_build": int(float(r.get("n_managers_flagged_at_build") or 0))})
     latest = used[-1] if used else None
     pr = {}
     if latest:
@@ -362,13 +364,15 @@ def write_md(annual, reads, calib, f13, consistency, first_sums, when):
               f"lines and filers beyond any real size set aside), {f13['n_provisional']} provisional (an earlier reduction: right in the main, but a few "
               f"sets carry option lines worth more than the market or a trillion-dollar issuer line), {f13['n_stale']} stale (the first reduction, "
               f"thousands era, known wrong), {f13['n_partial']} partial (the SEC's first, incomplete set, left out). Re-reduce with "
-              "`corporate_pull.py --only 13f --all --redo` from a desktop. Value is the total excluding option lines where the summary carries it.", "",
-              "| holdings date | status | filers | holdings value ($tn) | / Z.1 NFC equities | top-10 issuer share | HHI (issuers) | median filer top-10 share | put/call share | filers rescaled |",
-              "|---|---|---|---|---|---|---|---|---|---|"]
+              "`corporate_pull.py --only 13f --all --redo` from a desktop. Holdings value is the total excluding option lines, less the managers the "
+              "build-time history audit flags (`sec_13f_flags.csv`: a manager counted twenty times off its own holdings in the nearest sets, or absent "
+              "from every other set; the count per period is the last column).", "",
+              "| holdings date | status | filers | holdings value ($tn) | / Z.1 NFC equities | top-10 issuer share | HHI (issuers) | median filer top-10 share | put/call share | filers rescaled | flagged |",
+              "|---|---|---|---|---|---|---|---|---|---|---|"]
         for u in f13["periods"]:
             L.append(f"| {u['period_end']} | {u['status']} | {u['n_filers']:,} | {fmt(u['total_value'] / 1e12 if u['total_value'] else None, 1)} | {fmt(u['coverage'])} | "
                      f"{fmt_pct(u['top10_issuer_share'], 1)} | {fmt(u['hhi_issuers'], 4)} | {fmt_pct(u['median_filer_top10_share'], 1)} | {fmt_pct(u['putcall_value_share'], 1)} | "
-                     f"{u['n_filers_unit_corrected']} |")
+                     f"{u['n_filers_unit_corrected']} | {u['n_managers_flagged_at_build'] or ''} |")
         lt = f13["latest"]; pr13 = f13["latest_percentiles"]
         L += ["", f"Latest ({lt['period_end']}): the ten most-held issuers are {fmt_pct(lt['top10_issuer_share'], 1)} of reported value "
               f"(percentile {fmt_pct(pr13.get('top10_issuer_share'))} of the usable record), the median filer holds {fmt_pct(lt['median_filer_top10_share'], 1)} of its value in "

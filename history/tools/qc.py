@@ -74,7 +74,7 @@ expected = [
     "history/tools/topology.py", "history/jst/topology.csv", "history/analogs/topology_test.md",
     "history/analogs/learner_test_physical_topology_era.md",
     "history/tools/sec_analysis.py", "history/corporate/sec_analysis.md", "history/corporate/sec_analysis.json",
-    "history/tools/tests/test_sec_aggregators.py",
+    "history/tools/tests/test_sec_aggregators.py", "history/corporate/sec_13f_exclusions.csv", "history/corporate/sec_13f_flags.csv",
 ]
 missing = [p for p in expected if not os.path.exists(os.path.join(ROOT, p)) and not p.endswith("QC.md")]
 check("inventory: every expected file exists", not missing, f"missing: {missing}" if missing else f"{len(expected)} files")
@@ -309,7 +309,7 @@ try:
           f"failed: {_bad}" if _bad else f"{len(_res)} checks")
 except Exception as _e:  # noqa
     check("SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps)", False, str(_e)[:160])
-from corporate_pull import all_quarters, all_13f_names, qkey_13f, period_end_13f, AGG_VERSION_13F, AGG_VERSION_FSDS  # noqa: E402
+from corporate_pull import all_quarters, all_13f_names, qkey_13f, period_end_13f, AGG_VERSION_13F, AGG_VERSION_13F_ACCEPTED, AGG_VERSION_FSDS  # noqa: E402
 _fs = os.path.join(H, "corporate", "raw", "SEC-FSDS")
 _have = {f.replace("_aggregates.csv", "") for f in os.listdir(_fs) if f.endswith("_aggregates.csv")} if os.path.isdir(_fs) else set()
 _want = [f"{y}q{q}" for y, q in all_quarters(2009)]
@@ -330,12 +330,16 @@ for _n in sorted(_have13, key=qkey_13f):
     _exp = "thousands" if qkey_13f(_n) < (2023, 3) else "dollars"  # VALUE in dollars for filings made from January 2023
     if _unit != _exp:
         _units.append((_n, _unit))
-    if _v < AGG_VERSION_13F:
+    if _v < AGG_VERSION_13F_ACCEPTED:
         _stale.append(_n)
 check("SEC 13F: each set's majority VALUE unit is thousands before the 2023q1 set and dollars from it", not _units,
       f"unexpected {_units}" if _units else f"{len(_have13)} sets as expected")
-check(f"SEC 13F: every set reduced by the current aggregator (v{AGG_VERSION_13F}; older reductions carry known errors; re-run with --redo)", not _stale,
+check(f"SEC 13F: every set reduced by an accepted aggregator (v{AGG_VERSION_13F_ACCEPTED} or later; current v{AGG_VERSION_13F}; older reductions carry known errors)", not _stale,
       f"{len(_stale)} older: {_stale[:3]}..{_stale[-1]}; versions {_ver}" if _stale else f"versions {_ver}")
+_flags = list(csv.DictReader(open(os.path.join(H, "corporate", "sec_13f_flags.csv")))) if os.path.exists(os.path.join(H, "corporate", "sec_13f_flags.csv")) else []
+_bigflag = [(f["set"], f["name"], f["share_of_set"]) for f in _flags if float(f["share_of_set"] or 0) > 0.02]
+check("SEC 13F: the build-time history audit finds no flagged manager above 2% of its set's holdings (flags are left out of the adjusted value)", not _bigflag,
+      f"above 2%: {_bigflag}" if _bigflag else f"{len(_flags)} flagged managers, largest {max((float(f['share_of_set']) for f in _flags), default=0):.1%} of a set")
 _t13 = list(csv.DictReader(open(os.path.join(H, "corporate", "sec_13f_quarterly.csv"))))
 _pe = [r["period_end"] for r in _t13]
 _lab = [r["period"] for r in _t13 if r["period_end"] != period_end_13f(r["period"]) and int(float(r.get("aggregator_version") or 1)) < 2]

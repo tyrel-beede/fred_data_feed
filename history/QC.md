@@ -1,10 +1,10 @@
 # history/ — quality control
 
-Mechanical checks run by `tools/qc.py`: **32 of 33 pass**. Re-run after any change.
+Mechanical checks run by `tools/qc.py`: **34 of 34 pass**. Re-run after any change.
 
 | check | result | evidence |
 |---|---|---|
-| inventory: every expected file exists | PASS | 127 files |
+| inventory: every expected file exists | PASS | 129 files |
 | parse: every JSON parses and every CSV is rectangular | PASS | ok |
 | jst_r6: 2,718 rows, 18 countries x 1870-2020, no duplicate country-year | PASS | rows 2718, countries 18 |
 | jst_r6: 59 columns | PASS | 59 columns |
@@ -28,12 +28,13 @@ Mechanical checks run by `tools/qc.py`: **32 of 33 pass**. Re-run after any chan
 | workflow: bridge step wired and the bridge script exists | PASS |  |
 | license: CC BY-NC-SA 4.0 and both required citations stated | PASS |  |
 | README: documents overrides, provenance classes, bitemporal fields | PASS |  |
-| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 28 quoted numbers all found |
-| SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps) | PASS | 60 checks |
+| README: every quoted AUC-like number (0.5x-0.9x) appears in a result file | PASS | 30 quoted numbers all found |
+| SEC aggregators: the synthetic self-test passes (units per filer, report period, amendments, sectors, caps) | PASS | 64 checks |
 | SEC FSDS: a reduced set for every quarter from 2009q1 to the last completed one | PASS | 71 sets 2026q3..2009q1 |
 | SEC 13F: a reduced set for every period from 2013q2 to the last completed window | PASS | 54 sets 01jun2026-31aug2026_form13f..2013q2_form13f |
 | SEC 13F: each set's majority VALUE unit is thousands before the 2023q1 set and dollars from it | PASS | 54 sets as expected |
-| SEC 13F: every set reduced by the current aggregator (v4; older reductions carry known errors; re-run with --redo) | FAIL | 54 older: ['2013q2_form13f', '2013q3_form13f', '2013q4_form13f']..01jun2026-31aug2026_form13f; versions {3: 54} |
+| SEC 13F: every set reduced by an accepted aggregator (v4 or later; current v5; older reductions carry known errors) | PASS | versions {4: 54} |
+| SEC 13F: the build-time history audit finds no flagged manager above 2% of its set's holdings (flags are left out of the adjusted value) | PASS | 9 flagged managers, largest 1.3% of a set |
 | SEC 13F table: one row per set, holdings dates in order, labels consistent with the set names | PASS | 54 rows 2013-03-31..2026-06-30 |
 | SEC FSDS: every set reduced by the current aggregator (v3: sectors, plausibility caps, one value per filer) | PASS | versions {3: 71}; current v3 |
 | SEC analysis: annual flow ratios within bounds (0-1.5), years and reads present | PASS | 17 years, 4 timely reads, 3 calibrations |

@@ -46,8 +46,17 @@ Corporate-sector records, in two parts with different depths and different jobs:
 - `raw/SEC-FSDS/<q>_meta.json` (v3) and the `aggregator_version` field in every 13F summary — what each reduction
   did: filings and amendments counted, filers by sector, values set aside beyond the plausibility caps, the five
   largest filers per large tag-period; for 13F the report period, the filings used and set aside, the set's unit and
-  the filers rescaled. `../tools/tests/test_sec_aggregators.py` runs both aggregators on synthetic sets (also
-  `corporate_pull.py --selftest`; `qc.py` runs it).
+  the filers rescaled, the filers and option books set aside, the curated exclusions applied, the ten largest
+  managers by name. `raw/SEC-13F/<set>_managers.csv` (v4) lists each set's two thousand largest managers (holdings
+  excluding options, option value, lines, unit step): the record that makes a mis-scaled filer visible by name.
+- `sec_13f_exclusions.csv` — the curated exclusions (cik, set, reason, measured), applied at aggregation and recorded
+  in the summaries; eighteen cases found in the v3 manager lists, all filers that scaled both value and shares.
+- `sec_13f_flags.csv` — written by `../tools/corporate_build.py`'s history audit over the manager lists: a manager
+  counted at $200bn or more whose holdings are twenty times off its own median in the nearest sets listing it (the
+  scaling a thousandfold apart that lands within range is the right one), or absent from every other set while a
+  later set exists. Flagged managers are left out of the table's `holdings_value_adjusted_usd` until the next
+  re-reduction applies the same test at aggregation (v5). `../tools/tests/test_sec_aggregators.py` runs both
+  aggregators on synthetic sets (also `corporate_pull.py --selftest`; `qc.py` runs it).
 - `us_corporate_annual.csv` — built by `../tools/corporate_build.py`, one row per year, every value computable at year
   end (balance-sheet levels at Q4, flows as annual averages of the quarterly series, nominal GDP from FRED from 1947
   and the JST sheet before): nonfinancial corporate debt/GDP, equity market value/GDP, net worth growth over three
@@ -94,14 +103,21 @@ are most held) beside the CFTC, EPFR, ICI, AAII and margin series the positionin
   amendments, sets notices and late reports for earlier periods aside, and records `report_period`; the quarterly
   table's `period_end` is that date (for older summaries, the quarter the set's name implies). What the v2 run
   measured: 70–90 filers per thousands-era set in dollars (1–3% of value), and after the 2023 change 1,205 filers
-  still in thousands in the first dollar-era set (18% of value), thinning to 361 (4%) by May 2026. v3 adds what
-  that run still showed: a filer's unit is snapped to the nearest power of a thousand (a filer a millionfold off is
-  a scale error, rescaled and counted as implausible); single lines beyond $1 trillion and filers beyond $20
-  trillion after scaling are set aside and counted (six sets carried option lines worth more than the market, one a
-  $6.6 trillion issuer line); the total excluding option lines is reported beside the reported total and is the
-  table's `holdings value`; the ten largest managers are listed by name in each summary as a sanity check. Every
-  summary records its aggregator version; `qc.py` fails until every set is at the current one (`--only 13f --all
-  --redo` from a desktop; the zips are fetched again, nothing large is kept; a stopped run resumes).
+  still in thousands in the first dollar-era set (18% of value), thinning to 345 (4%) by August 2026. v3 added what
+  that run still showed: a filer's unit is snapped to the nearest power of a thousand; single lines beyond $1
+  trillion and filers beyond $20 trillion after scaling are set aside (a $6.6 trillion Brookfield line; Group One
+  Trading at $20–42 trillion); the total excluding option lines is reported beside the reported total and is the
+  table's holdings value; the ten largest managers are listed by name. v4 added what the manager lists then showed:
+  a filer that scales both value and shares a thousandfold looks normal line by line and lands among the largest
+  managers (Amundi Pioneer at $6.6 trillion, a fifth of the September 2019 set; Schroders at $3.4 trillion in 2013;
+  a dozen smaller names, each in one set and absent from every other) — the curated exclusions file carries them;
+  an options market maker's book beyond $2 trillion loses its option lines (Group One's was a quarter of two sets'
+  reported value); and the two thousand largest managers are written per set. v5 (the aggregator in force; applied
+  by the next refresh) checks a filer's unit against the manager's own history in the nearest sets, which corrects
+  the remaining class — a filer that put its shares in thousands reads as reporting in millions and is scaled a
+  thousandfold up (Alaska Permanent Fund at $809 billion in June 2026, Beach Point at $235 billion) — and sets aside
+  only a manager no scaling can place. Every summary records its aggregator version; `qc.py` requires every set at
+  v4 or later and no flagged manager above 2% of its set.
 - The financial-statement sums were sensitive in two ways the first reduction did not control. The same
   December-31 figure appears in the 10-K file and again as a comparative in later 10-Q files, and the first
   reduction's sums differed by up to 2.1× between them — its "first value seen" per submission had taken segment

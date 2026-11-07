@@ -222,7 +222,17 @@ AGG_VERSION_FSDS = 3  # 2 (2026-11-07): one value per filer (CIK) per tag-period
 #                       beyond a per-tag plausibility cap (several times the largest company's) set aside and listed
 #                       in the sidecar; the five largest filers per large tag-period listed there too, so a sum that
 #                       moves can be traced to who moved it
-AGG_VERSION_13F = 4   # 4 (2026-11-07): a filer whose option lines exceed $2 trillion after scaling is set aside whole
+AGG_VERSION_13F_ACCEPTED = 4  # sets reduced by this version or later are accepted: the v4 summaries carry the manager
+#                       lists, so what v5 corrects at aggregation is measured at build time (corporate_build.py's audit
+#                       -> sec_13f_flags.csv) and left out of the table's adjusted holdings value until the next --redo
+AGG_VERSION_13F = 5   # 5 (2026-11-07): the unit chosen for a filer is checked against the manager's own history (its
+#                       holdings in the other sets' manager lists): among the scalings a thousandfold apart, the one
+#                       that lands within twenty times its median is used — which corrects a filer that put its shares
+#                       in thousands (the implied-price test reads it as reporting in millions) and a filer that scaled
+#                       both value and shares (it reads as normal), and sets aside only a filer no scaling can place;
+#                       an options book beyond the cap now loses its option lines, not its holdings; a manager absent
+#                       from every other set while above $200 billion is set aside only once a later set exists
+#                       4 (2026-11-07): a filer whose option lines exceed $2 trillion after scaling is set aside whole
 #                       (an options market maker's mis-scaled book put a quarter of all reported value into options in
 #                       two sets without tripping the line or filer caps); a curated exclusions file
 #                       (corporate/sec_13f_exclusions.csv: cik, set, reason) is applied at aggregation and recorded;
@@ -567,8 +577,8 @@ def load_13f_exclusions(path=EXCLUSIONS_13F):
     return out
 
 
-NEIGHBOR_RATIO_13F = 20.0   # a manager twenty times larger or smaller than in the neighbouring sets scaled both columns
-NEIGHBOR_MIN_VALUE_13F = 2e11  # the persistence check applies to managers above $200 billion
+NEIGHBOR_RATIO_13F = 20.0   # a manager's holdings do not move twenty times against its own history in the other sets
+NEIGHBOR_MIN_VALUE_13F = 2e11  # the history check applies where a scaling would put the manager above $200 billion
 
 
 def load_13f_managers(name):
@@ -585,21 +595,18 @@ def load_13f_managers(name):
     return out
 
 
-def neighbors_13f(name):
-    """The managers files of the sets just before and after this one, where they exist: {set name: {cik: holdings}}."""
-    names = all_13f_names(2013)[::-1]  # oldest first
+def history_13f(name):
+    """Every other set's managers file that exists: {set name: {cik: holdings}}, the manager's own history."""
     out = {}
-    if name in names:
-        i = names.index(name)
-        for j in (i - 1, i + 1):
-            if 0 <= j < len(names):
-                m = load_13f_managers(names[j])
-                if m:
-                    out[names[j]] = m
+    for n in all_13f_names(2013):
+        if n != name:
+            m = load_13f_managers(n)
+            if m:
+                out[n] = m
     return out
 
 
-def aggregate_13f(zip_bytes, set_name="", exclusions=None, neighbors=None):
+def aggregate_13f(zip_bytes, set_name="", exclusions=None, history=None):
     """Reduce a Form 13F data set to a summary (filers, total value in dollars, issuer concentration, the median
     filer's concentration, the put/call share, the largest managers) and the twenty most-held issuers. Two passes
     over the information table: the first learns each filer's VALUE unit, the second aggregates.
@@ -622,26 +629,44 @@ def aggregate_13f(zip_bytes, set_name="", exclusions=None, neighbors=None):
     use, info = select_13f_filings(z)
     names = info.pop("_names", {})
     exclusions = load_13f_exclusions() if exclusions is None else exclusions
-    neighbors = neighbors or {}
+    history = history or {}
+    later_exists = any(qkey_13f(n) > qkey_13f(set_name) for n in history) if set_name else False
+    def qdist(n):  # distance in quarters between a set and this one
+        a, b = qkey_13f(n), qkey_13f(set_name)
+        return abs((a[0] - b[0]) * 12 + (a[1] - b[1])) / 3.0
+    hist_sets = sorted(history, key=qdist)
+    hist_any = {}
+    for n in hist_sets:
+        for cik in history[n]:
+            hist_any[cik] = True
     def curated(filer):
         rules = exclusions.get((filer or "").lstrip("0") or "0", {})
         return rules.get(set_name) or rules.get("*")
-    def persistent(filer, holdings):
-        """None if the manager's holdings sit within NEIGHBOR_RATIO of the neighbouring sets' (or no check is possible),
-        else the reason it is set aside: present in a neighbour at a ratio beyond it, or absent from both neighbours'
-        two thousand largest while above the threshold."""
-        if holdings < NEIGHBOR_MIN_VALUE_13F or not neighbors:
-            return None
+    def against_history(filer, holdings0, k):
+        """holdings0: the manager's holdings at the set's own unit (k = 0). Checks managers counted at NEIGHBOR_MIN_VALUE
+        or more against their own history — the median of their holdings in the four nearest sets that list them
+        (nearest, because managers grow and merge over a decade). Returns (k_to_use, note, reason): k_to_use is the
+        unit step whose holdings land nearest that median when within NEIGHBOR_RATIO (a filer that put its shares
+        in thousands, or scaled both columns, is corrected rather than dropped); note records a change; reason, when
+        no scaling a thousandfold apart lands within the ratio, or the manager is absent from every other set while a
+        later set exists, is why it is set aside."""
         key = (filer or "").lstrip("0") or "0"
-        seen = {n: m[key] for n, m in neighbors.items() if key in m}
-        if seen:
-            worst = max(max(holdings / v, v / holdings) if v > 0 else float("inf") for v in seen.values())
-            if worst > NEIGHBOR_RATIO_13F and all((max(holdings / v, v / holdings) if v > 0 else float("inf")) > NEIGHBOR_RATIO_13F for v in seen.values()):
-                return "not persistent: " + ", ".join(f"{v:.3g} in {n}" for n, v in seen.items()) + f" against {holdings:.3g} here"
-            return None
-        if len(neighbors) >= 2:
-            return f"absent from the neighbouring sets' two thousand largest managers ({', '.join(neighbors)}) while {holdings:.3g} here"
-        return None
+        counted = holdings0 / (1000.0 ** k)
+        if counted < NEIGHBOR_MIN_VALUE_13F or not history:
+            return k, "", ""
+        near = [history[n][key] for n in hist_sets if key in history[n] and history[n][key] > 0][:4]
+        if not near:
+            if key not in hist_any and later_exists:
+                return k, "", f"absent from every other set's two thousand largest managers while {counted:.3g} here"
+            return k, "", ""
+        near = sorted(near); med_h = near[len(near) // 2]
+        if abs(math.log10(counted / med_h)) <= math.log10(NEIGHBOR_RATIO_13F):
+            return k, "", ""
+        cand = {m: holdings0 / (1000.0 ** m) for m in (-2, -1, 0, 1, 2)}
+        best = min(cand, key=lambda m: abs(math.log10(cand[m] / med_h)) if cand[m] > 0 else 99)
+        if abs(math.log10(cand[best] / med_h)) > math.log10(NEIGHBOR_RATIO_13F):
+            return k, "", f"not persistent: {counted:.3g} here against a median of {med_h:.3g} in the {len(near)} nearest sets listing it, and no scaling a thousandfold apart lands within {NEIGHBOR_RATIO_13F:g}x"
+        return best, f"unit step {k} -> {best}: {counted:.3g} against a median of {med_h:.3g} in the {len(near)} nearest sets listing it", ""
     rng = random.Random(13)
     ref, ref_n, fs, fs_n, set_sample, raw_total, raw_options, raw_big = {}, {}, {}, {}, [], {}, {}, {}
     n_seen = 0
@@ -695,22 +720,31 @@ def aggregate_13f(zip_bytes, set_name="", exclusions=None, neighbors=None):
         own = [p for a, p in s if filer_k.get(a, 0) == 0]
         ref_med[c] = med(own) if own else med(p for _, p in s)
     filer_k = classify(ref_med)
-    filer_scale = {acc: set_scale / (1000.0 ** k) for acc, k in filer_k.items()}
-    # filers whose scaled total, or option book, is beyond any manager's are set aside whole (their lines would
-    # otherwise dominate), and so are the curated exclusions
-    excluded, curated_applied = {}, []
+    # the unit of a filer is checked against the manager's own history where it exists (a manager's holdings do not
+    # change a thousandfold in a quarter); then filers whose total is beyond any manager's, whose option book is
+    # (their option lines are set aside), or whom no scaling can place, are set aside, and so are the curated exclusions
+    excluded, curated_applied, unit_overrides, options_set_aside = {}, [], [], {}
     for acc, rt in raw_total.items():
-        sc = filer_scale.get(acc, set_scale)
+        filer = use.get(acc, acc) if use is not None else acc
+        k0 = filer_k.get(acc, 0)
+        big0 = sum(v for v in raw_big.get(acc, []) if v * set_scale / (1000.0 ** k0) > LINE_CAP_13F)  # lines the cap will remove
+        holdings0 = (rt - raw_options.get(acc, 0.0) - big0) * set_scale  # at the set's unit
+        k, note, why = against_history(filer, holdings0, k0)
+        if note:
+            filer_k[acc] = k
+            unit_overrides.append({"cik": filer, "name": names.get(filer, ""), "note": note})
+        sc = set_scale / (1000.0 ** k)
         est = (rt - sum(v for v in raw_big.get(acc, []) if v * sc > LINE_CAP_13F)) * sc  # as pass 2 will count it, lines beyond the cap left out
         opt = raw_options.get(acc, 0.0) * sc
-        filer = use.get(acc, acc) if use is not None else acc
-        why = curated(filer) or ("total beyond cap" if est > FILER_CAP_13F else "") or ("options beyond cap" if opt > FILER_OPTIONS_CAP_13F else "") \
-            or persistent(filer, est - opt)
+        why = curated(filer) or ("total beyond cap" if est - opt > FILER_CAP_13F else "") or why
+        if opt > FILER_OPTIONS_CAP_13F and not why:
+            options_set_aside[acc] = {"cik": filer, "name": names.get(filer, ""), "options_scaled": f"{opt:.4g}"}
         if why:
             excluded[acc] = {"cik": filer, "name": names.get(filer, ""), "value_scaled": f"{est:.4g}", "options_scaled": f"{opt:.4g}",
-                             "unit_steps": filer_k.get(acc, 0), "why": why}
-            if why not in ("total beyond cap", "options beyond cap"):
+                             "unit_steps": k, "why": why}
+            if why != "total beyond cap":
                 curated_applied.append({"cik": filer, "name": names.get(filer, ""), "value": f"{est - opt:.4g}", "reason": why})
+    filer_scale = {acc: set_scale / (1000.0 ** k) for acc, k in filer_k.items()}
     by_cusip, by_cusip_name = {}, {}
     filer_total, filer_top, filer_putcall, filer_lines = {}, {}, {}, {}
     total, putcall_value, n_lines, corrected_value, implausible_value = 0.0, 0.0, 0, 0.0, 0.0
@@ -739,6 +773,13 @@ def aggregate_13f(zip_bytes, set_name="", exclusions=None, neighbors=None):
             implausible_value += v
         filer = use.get(acc, acc) if use is not None else acc  # an original and its new-holdings amendment are one filer
         if at(r, "PUTCALL"):
+            if acc in options_set_aside:
+                total -= v; n_lines -= 1
+                if k != 0:
+                    corrected_value -= v
+                if abs(k) >= 2:
+                    implausible_value -= v
+                continue  # an option book beyond any manager's: its option lines are set aside, its holdings kept
             putcall_value += v
             filer_putcall[filer] = filer_putcall.get(filer, 0.0) + v
             continue  # options lines are not holdings of the issuer's shares
@@ -777,7 +818,9 @@ def aggregate_13f(zip_bytes, set_name="", exclusions=None, neighbors=None):
                "putcall_value_share": f"{putcall_value / total:.4f}" if total else "", "n_issuers_cusip": len(by_cusip),
                "top10_issuer_share": f"{top10:.4f}", "top50_issuer_share": f"{top50:.4f}", "hhi_issuers": f"{hhi:.6f}",
                "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else "", "largest_filers": largest,
-               "exclusions_applied": curated_applied, "neighbors_checked": sorted(neighbors), "managers_top200": managers[:200]}
+               "exclusions_applied": curated_applied, "unit_overrides_from_history": unit_overrides,
+               "n_filers_options_set_aside": len(options_set_aside), "filers_options_set_aside": list(options_set_aside.values())[:10],
+               "history_sets_checked": len(history), "managers_top200": managers[:200]}
     summary.update(info)
     summary["_managers"] = managers
     top = [{"rank": k + 1, "cusip": c, "issuer": by_cusip_name.get(c, ""), "value": f"{v:.6g}", "share": f"{v / s:.4f}"}
@@ -890,7 +933,7 @@ def pull_13f(manifest, errors, max_quarters=2, since=None, redo=False):
                 continue
             try:
                 data, url = get_sec_zip(cands[name], timeout=900)
-                summary, top = aggregate_13f(data, set_name=name, neighbors=neighbors_13f(name))
+                summary, top = aggregate_13f(data, set_name=name, history=history_13f(name))
             except Exception as e:  # noqa
                 errors.append(f"sec 13f {name}: {e}"); continue
             managers = summary.pop("_managers", [])

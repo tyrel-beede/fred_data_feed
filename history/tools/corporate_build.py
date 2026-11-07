@@ -234,14 +234,18 @@ def build_sec_tables():
     rows = []
     if os.path.isdir(d13):
         from corporate_pull import qkey_13f, period_end_13f
+        flags = audit_13f_managers(d13)
         for fn in sorted((f for f in os.listdir(d13) if f.endswith("_summary.json")), key=lambda f: qkey_13f(f.replace("_summary.json", ""))):
             s_ = json.load(open(os.path.join(d13, fn)))
             name = s_.get("period") or fn.replace("_summary.json", "")
+            fl = flags.get(name, [])
+            adjusted = (float(s_["total_value_ex_options"]) - sum(x["value"] - x.get("corrected", 0.0) for x in fl)) if s_.get("total_value_ex_options") else None
             # the holdings date: measured from the filings by aggregator v2 (report_period); for an older summary, the
             # quarter the set's name implies (a set holds the filings made in its quarter, about the quarter before)
             rows.append({"period": name, "period_end": s_.get("report_period") or period_end_13f(name),
                          "aggregator_version": s_.get("aggregator_version", 1), "n_filers": s_.get("n_filers"),
                          "total_value_usd": s_.get("total_value_reported"), "total_value_ex_options_usd": s_.get("total_value_ex_options", ""),
+                         "holdings_value_adjusted_usd": f"{adjusted:.6g}" if adjusted is not None else "", "n_managers_flagged_at_build": len(fl),
                          "value_unit_detected": s_.get("value_unit_detected", "dollars (assumed)"),
                          "n_filers_unit_corrected": s_.get("n_filers_unit_corrected", ""), "value_share_unit_corrected": s_.get("value_share_unit_corrected", ""),
                          "n_filers_unit_implausible": s_.get("n_filers_unit_implausible", ""), "n_lines_beyond_cap": s_.get("n_lines_beyond_cap", ""),
@@ -252,7 +256,67 @@ def build_sec_tables():
         if rows:
             with open(os.path.join(CORP, "sec_13f_quarterly.csv"), "w", newline="") as f:
                 w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
-    print(f"sec tables: {len(best)} fsds tag-period rows, {len(rows)} 13f periods")
+        with open(os.path.join(CORP, "sec_13f_flags.csv"), "w", newline="") as f:
+            w = csv.writer(f); w.writerow(["set", "report_period", "cik", "name", "value_usd", "share_of_set", "corrected_usd", "reason"])
+            for name in sorted(flags, key=qkey_13f):
+                for x in flags[name]:
+                    w.writerow([name, x["report_period"], x["cik"], x["name"], f"{x['value']:.4g}", f"{x['share']:.4f}", f"{x.get('corrected', 0.0):.4g}", x["reason"]])
+    print(f"sec tables: {len(best)} fsds tag-period rows, {len(rows)} 13f periods, {sum(len(v) for v in flags.values())} managers flagged at build")
+
+
+def audit_13f_managers(d13, min_value=2e11, ratio=20.0):
+    """The history audit over every set's two thousand largest managers (aggregator v4 and later write them), the
+    same test aggregator v5 applies at run time: a manager's holdings do not move twenty times against its own
+    median in the other sets. For a manager above min_value (at the set's unit or at a scaling a thousandfold apart)
+    the scaling that lands within the ratio of its median is the right one — a filer that put its shares in thousands,
+    or scaled both value and shares, is corrected rather than dropped; a manager no scaling can place, or one absent
+    from every other set while a later set exists, is a flag. Managers the summary already set aside, corrected from
+    history or listed in the curated file are not re-flagged. Returns {set name: [flags]}; each flag carries the
+    manager's holdings as the summary counted them, so the table's adjusted holdings value leaves them out (and adds
+    back the history-corrected size). Add persistent cases to corporate/sec_13f_exclusions.csv."""
+    import math
+    from corporate_pull import all_13f_names, load_13f_managers, load_13f_exclusions, qkey_13f
+    names = [n for n in all_13f_names(2013)[::-1] if os.path.exists(os.path.join(d13, f"{n}_managers.csv"))]
+    mgr = {n: load_13f_managers(n) or {} for n in names}
+    nm, periods, handled, totals = {}, {}, {}, {}
+    for n in names:
+        for r in csv.DictReader(open(os.path.join(d13, f"{n}_managers.csv"))):
+            nm[(r["cik"] or "").lstrip("0") or "0"] = r["name"]
+        s_ = json.load(open(os.path.join(d13, f"{n}_summary.json")))
+        periods[n] = s_.get("report_period", ""); totals[n] = float(s_.get("total_value_ex_options") or 0) or 1.0
+        handled[n] = {(x["cik"] or "").lstrip("0") or "0" for k in ("exclusions_applied", "filers_beyond_cap", "unit_overrides_from_history") for x in s_.get(k, [])}
+    curated = load_13f_exclusions()
+    out = {}
+    for n in names:
+        later = any(qkey_13f(m) > qkey_13f(n) for m in names)
+        def qdist(m, n=n):
+            a, b = qkey_13f(m), qkey_13f(n)
+            return abs((a[0] - b[0]) * 12 + (a[1] - b[1])) / 3.0
+        others = sorted((m for m in names if m != n), key=qdist)
+        for cik, v in mgr[n].items():
+            if cik in handled[n] or v < min_value:
+                continue
+            rule = curated.get(cik, {})
+            flag = None
+            if rule.get(n) or rule.get("*"):
+                flag = {"reason": "curated, not yet applied at aggregation: " + (rule.get(n) or rule.get("*")), "corrected": 0.0}
+            else:
+                near = [mgr[m][cik] for m in others if mgr[m].get(cik)][:4]
+                if not near:
+                    if later and not any(cik in mgr[m] for m in others):
+                        flag = {"reason": f"absent from every other set's two thousand largest managers while {v:.3g} here", "corrected": 0.0}
+                else:
+                    near = sorted(near); med = near[len(near) // 2]
+                    if abs(math.log10(v / med)) > math.log10(ratio):
+                        cand = {k: v / (1000.0 ** k) for k in (-2, -1, 0, 1, 2)}
+                        best = min(cand, key=lambda k: abs(math.log10(cand[k] / med)))
+                        if abs(math.log10(cand[best] / med)) > math.log10(ratio):
+                            flag = {"reason": f"not persistent: {v:.3g} here against a median of {med:.3g} in the {len(near)} nearest sets listing it; no scaling a thousandfold apart lands within {ratio:g}x", "corrected": 0.0}
+                        else:
+                            flag = {"reason": f"history says {cand[best]:.3g} (median {med:.3g} in the {len(near)} nearest sets listing it), counted as {v:.3g}: {abs(best)} unit step{'s' if abs(best) > 1 else ''} off", "corrected": cand[best]}
+            if flag:
+                out.setdefault(n, []).append({"cik": cik, "name": nm.get(cik, ""), "value": v, "share": v / totals[n], "report_period": periods[n], **flag})
+    return out
 
 
 def main():

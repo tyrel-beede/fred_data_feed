@@ -50,8 +50,8 @@ The revision-one pass closed with the SEC backfill and its quality-control check
 financial-statement and 13F records in, the 13F reduction found wrong before 2023 and rewritten (units detected per
 filer, the set's own report period, amendments handled), the financial-statement reduction split by sector and capped
 for scale errors, a synthetic self-test for both, `corporate/sec_analysis.md` as the SEC layer's read over its record,
-and seven SEC checks in `QC.md` — two of which fail by design until the re-reduction runs from the owner's desktop
-(`HANDOFF.md`). The tag goes on the commit that closes that run.
+and eight SEC checks in `QC.md`, all green after four desktop re-reductions on 2026-11-07. The tag goes on the commit
+that closed that pass (`HANDOFF.md`).
 
 Queued after the tag: conformal bands, mile-marker timing, the voice ledger scored against outcomes, the diffusion
 panel past 2003, the bridge for other countries, a windowed climatology for young eras.
@@ -70,6 +70,7 @@ panel past 2003, the bridge for other countries, a windowed climatology for youn
 | the physical layer (energy, oil, diffusion, materials, commodities) | `physical/*_features.csv`, `physical/README.md`, `physical/catalog.json` | `tools/physical_pull.py`, `physical_build.py`, `physical_build2.py` |
 | the long corporate anchors (Z.1, BEA, Shiller, Goyal–Welch) | `corporate/us_corporate_annual.csv`, `corporate/README.md` | `tools/corporate_pull.py`, `corporate_build.py` |
 | the SEC layer: quarterly tables and the read over its record | `corporate/sec_fsds_quarterly.csv`, `corporate/sec_13f_quarterly.csv`, `corporate/sec_analysis.md` | `tools/corporate_pull.py` (desktop), `corporate_build.py`, `sec_analysis.py` |
+| which 13F filers were set aside, and why | `corporate/sec_13f_exclusions.csv` (curated), `corporate/sec_13f_flags.csv` (the history audit), each set's `raw/SEC-13F/<set>_summary.json` and `_managers.csv` | `tools/corporate_pull.py`, `corporate_build.py` |
 | the voice ledger and the Dalio encodings | `dalio/reads.csv`, `dalio/*_template.json`, `dalio/*.md` | `tools/assemble.py` |
 | what runs from a desktop, and the tag | `HANDOFF.md` | — |
 | the checks and their evidence | `QC.md` (mechanical), `QC_review.md` (content) | `tools/qc.py`, `tools/tests/` |
@@ -152,7 +153,7 @@ history/
     noise_band.py           the cadence noise band from the shifted-refit runs -> analogs/noise_band.md
     live_query.py           the live US query vector (all 20 features) from the JST sheet, the bridge and Shiller, with
                             the join rules measured on the 2016-2020 overlap -> bridge/join_rules.json
-    qc.py                   mechanical checks -> QC.md (33 at revision one)
+    qc.py                   mechanical checks -> QC.md (34 at revision one)
 ```
 
 ## The JST dataset
@@ -610,3 +611,22 @@ stays as one view; the measured targets become the primary ones, and the horizon
   and the capex sum's growth correlation with the Z.1 series rose from 0.49 to 0.69 (0.75 after the phase-in),
   the dividend and profit sums' coverage holding steady; the all-filer quarterly operating cash flow still swings
   with the banks, which the v3 sector split addresses. Both v3 reductions are pending one desktop run.
+- 2026-11-07 (the re-reductions, second and third rounds): the v3 run cleared the first class of error and its
+  manager lists exposed a second — a filer that scales both value and shares a thousandfold looks normal line by
+  line, and landed among the ten largest managers in thirteen sets (Amundi Pioneer at $6.6 trillion, a fifth of the
+  September 2019 set; Schroders at $3.4 trillion in 2013; Janney, HAP Trading, Feltz Wealth Plan, Parplus, Mint
+  Tower, ADAMCAPITAL, Harvest Volatility, Comerica, Bluefin, J. Stern), while an options market maker's book was a
+  quarter of two sets' reported value. v4 set those aside by name (curated exclusions with the evidence), capped
+  option books, and wrote each set's two thousand largest managers; the v4 run then showed the last class — a filer
+  that puts its shares in thousands reads as reporting in millions and is scaled a thousandfold up (Alaska Permanent
+  Fund at $809 billion, Banque Cantonale Vaudoise at $722 billion, Beach Point at $235 billion), nine managers in
+  all, none above 1.3% of a set. v5 checks every filer's unit against the manager's own history in the nearest sets;
+  the build-time audit applies the same test to the v4 lists and leaves the nine out of the adjusted holdings
+  value. The record that stands: holdings excluding options $17 trillion in mid-2013, $75 trillion in June 2026,
+  0.85–0.91× the Z.1 market value of nonfinancial corporate equities throughout; the ten most-held issuers 10% of
+  value in 2013 and 23% in 2026; the median manager's top-10 share 41% rising to 54%; put/call lines 4–8%; the ten
+  largest managers in the latest set BlackRock, Vanguard (two entities), State Street, FMR, Morgan Stanley, Geode,
+  JPMorgan, Bank of America and Invesco. Financial statements at v3: the nonfinancial rows remove the banks' swings
+  (first-quarter operating cash flow 399 → 486 $bn year on year, against 134 → 407 for all filers), no value beyond
+  the plausibility caps in any set, 220–340 thousand dimensional rows set aside per set, and the largest asset
+  holders JPMorgan, Fannie Mae, Freddie Mac, Bank of America and Citigroup. `QC.md` 34 of 34.
