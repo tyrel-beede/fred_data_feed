@@ -181,7 +181,8 @@ def read_goyal_welch():
     wb = openpyxl.load_workbook(os.path.join(d, sorted(files)[-1]), read_only=True, data_only=True)
     ws = next((wb[s] for s in wb.sheetnames if "annual" in s.lower()), wb.worksheets[0])
     rows = [list(r) for r in ws.iter_rows(values_only=True)]
-    hdr = [str(c).strip().lower() if c is not None else "" for c in rows[0]]
+    # column names as the workbook spells them; the 2025 edition (Data2025.xlsx) writes book-to-market as "b/m"
+    hdr = [str(c).strip().lower().replace("/", "") if c is not None else "" for c in rows[0]]
     out = {}
     for r in rows[1:]:
         try:

@@ -138,8 +138,8 @@
   },
   {
    "id": "JACKS-COMMODITIES",
-   "status": "local run",
-   "title": "Real commodity prices 1850-2015, 40 commodities (Jacks 2013, 'From boom to bust')",
+   "status": "attached",
+   "title": "Real commodity prices 1850-2025, 42 commodities (Jacks 2019, 'From boom to bust'; February 2026 update)",
    "coverage": "world, annual",
    "retrieval": "the author's data page (sfu.ca/~djacks/data/boombust) has timed out from the Actions runner on every run, so the scheduled pull leaves it out; run from a desktop: python3 history/tools/physical_pull.py --only jacks (saves the page's spreadsheets under history/physical/raw/JACKS-COMMODITIES/), then commit and push; fallback: the openICPSR deposit doi 10.3886/E198401V1 (free login), attached under the same folder",
    "license": "research use",
@@ -147,7 +147,7 @@
     "commodity_supercycle_phase",
     "terms_of_trade proxies by exporter/importer"
    ],
-   "note": "42 commodities 1850-2023 with three real price indices from 1900 (2023 update); updated about once a year; 'freely provided to all comers', cite Jacks (2019) Cliometrica 13(2)"
+   "note": "February 2026 edition supplied by hand 2026-11-06 with its chartbook: 42 commodities 1850-2025 and three real price indices (1975 shares, 2019 shares, equal weights) plus sub-indices from 1900; updated about once a year; 'freely provided to all comers', cite Jacks (2019) Cliometrica 13(2); no builder reads it yet"
   },
   {
    "id": "USGS-MINERALS",

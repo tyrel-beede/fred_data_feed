@@ -51,7 +51,7 @@ are most held) beside the CFTC, EPFR, ICI, AAII and margin series the positionin
   hand-downloaded `ie_data.xls` placed beside it takes precedence in the builder. The last resort in the puller is
   datahub.io's scripted mirror of the same workbook, flagged `MIRROR` in the manifest.
 - Goyal–Welch is distributed from Amit Goyal's page as a Drive-hosted workbook that the puller may not be able to
-  resolve; when it cannot, the workbook goes under `raw/GOYAL-WELCH/` by hand (`PredictorData<year>.xlsx`).
+  resolve; when it cannot, the workbook goes under `raw/GOYAL-WELCH/` by hand (`the predictor workbook (PredictorData<year>.xlsx or Data<year>.xlsx)`).
 - SEC data: public domain, under the fair-access policy (identify the client in the User-Agent, at most ten
   requests a second). **sec.gov refuses GitHub-hosted runners** (403 to every request from cloud-provider addresses,
   with or without the fair-access User-Agent), so the two SEC pulls run from a desktop:

@@ -125,10 +125,10 @@
   "real_price_growth_3y": 153,
   "earnings_yield_minus_long_rate": 156,
   "real_home_price_growth_3y": 134,
-  "gw_ntis": 0,
-  "gw_bm": 0,
-  "gw_dfy": 0,
-  "gw_svar": 0
+  "gw_ntis": 100,
+  "gw_bm": 105,
+  "gw_dfy": 107,
+  "gw_svar": 141
  },
  "spans": {
   "nfcb_debt_gdp": [
@@ -182,6 +182,22 @@
   "real_home_price_growth_3y": [
    1893,
    2026
+  ],
+  "gw_ntis": [
+   1926,
+   2025
+  ],
+  "gw_bm": [
+   1921,
+   2025
+  ],
+  "gw_dfy": [
+   1919,
+   2025
+  ],
+  "gw_svar": [
+   1885,
+   2025
   ]
  }
 }

@@ -31,7 +31,7 @@
   {
    "id": "GOYAL-WELCH",
    "layer": "history",
-   "status": "attach",
+   "status": "attached",
    "title": "Goyal and Welch, equity-premium predictor data (annual 1871-, updated yearly): dividends, earnings, book-to-market, net equity issuance, default and term spreads, inflation, stock variance",
    "coverage": "US, annual 1871- (some series from 1919/1926)",
    "retrieval": "workflow: Amit Goyal's page (Google Sites) -> the Drive-hosted PredictorData workbook; if the link cannot be resolved, attach PredictorData<year>.xlsx under raw/GOYAL-WELCH/",
@@ -40,7 +40,7 @@
    "feeds": [
     "net equity issuance (ntis), book-to-market (bm), default yield spread (dfy, 1919-), stock variance (svar): counted corporate-finance variables with a crisis literature"
    ],
-   "note": "Amit Goyal's page exposes no Drive link the workflow can resolve; download PredictorData<year>.xlsx from the page and put it under history/corporate/raw/GOYAL-WELCH/; corporate_build.py reads the annual sheet"
+   "note": "Data2025.xlsx supplied by hand 2026-11-06 (Amit Goyal's page, the 2025 edition, to 2025:12); corporate_build.py reads the Annual sheet and accepts the workbook's b/m spelling of book-to-market"
   },
   {
    "id": "SEC-FSDS",

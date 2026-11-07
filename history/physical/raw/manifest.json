@@ -1,6 +1,24 @@
 {
  "manifest": [
   {
+   "catalog": "JACKS-COMMODITIES",
+   "file": "history/physical/raw/JACKS-COMMODITIES/Real-commodity-prices-1850-2025.xlsx",
+   "url": "https://www.sfu.ca/~djacks/data/boombust/ (hand download)",
+   "bytes": 122156,
+   "sha256": "565ca6921e2c2aa54345a8e5baa4326b35fbff40d0a4e157b625791a680db019",
+   "retrieved": "2026-11-07T01:03:30Z",
+   "note": "supplied by hand 2026-11-06: February 2026 edition, 42 commodities 1850-2025 (sheet Commodities), three indices 1900-2025 (Indices), sub-indices (Sub-indices); cite Jacks (2019) Cliometrica 13(2)"
+  },
+  {
+   "catalog": "JACKS-COMMODITIES",
+   "file": "history/physical/raw/JACKS-COMMODITIES/Chartbook-for-From-Boom-to-Bust-2602.pdf",
+   "url": "https://www.sfu.ca/~djacks/data/boombust/ (hand download)",
+   "bytes": 397475,
+   "sha256": "c811055a4f49b8ea615e3977ada034a8274cf8b0f233ee96bcda4d4eb42ac78d",
+   "retrieved": "2026-11-07T01:03:30Z",
+   "note": "the February 2026 chartbook that documents the workbook (sources, weighting schemes, trend-cycle decomposition)"
+  },
+  {
    "catalog": "EI-OIL-PRICE-1861",
    "file": "history/physical/raw/EI-OIL-PRICE-1861/crude-oil-prices.csv",
    "url": "https://ourworldindata.org/grapher/crude-oil-prices.csv",
