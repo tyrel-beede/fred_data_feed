@@ -212,37 +212,68 @@ FSDS_TAGS = {"SalesRevenueNet", "SalesRevenueGoodsNet",  # the pre-2018 revenue 
              "PaymentsForRepurchaseOfCommonStock", "PaymentsOfDividends", "PaymentsOfDividendsCommonStock", "DepreciationDepletionAndAmortization"}
 
 
+# Aggregator versions, recorded beside each set's aggregates so qc.py can tell a set reduced by an older rule from a
+# current one (a set is re-reduced with --redo, which fetches its zip again).
+AGG_VERSION_FSDS = 2  # 2 (2026-11-07): one value per filer (CIK) per tag-period from the latest-filed submission that
+#                       carries it, so a 10-K/A replaces its original instead of counting beside it; dimensional
+#                       (segment) rows set aside where the set marks them; filing counts in <q>_meta.json
+AGG_VERSION_13F = 2   # 2 (2026-11-07): only the holdings reports for the set's own report period count (late filings
+#                       for earlier periods and notices set aside; a restatement replaces the filer's original and a
+#                       new-holdings amendment adds to it); the VALUE unit is detected per filer, from the implied
+#                       price of its lines against the set, so a filer that reported in dollars inside a thousands-era
+#                       set is no longer multiplied a thousandfold; the median filer's top-10 share is computed on the
+#                       same scaled values as its total; the report period is recorded
+
+
+def _member(z, base):
+    """The zip member whose basename is base (case-insensitive): at the root in the newest sets, inside a folder
+    named after the set in the older ones."""
+    return next((n for n in z.namelist() if n.lower().rsplit("/", 1)[-1] == base.lower()), None)
+
+
 def aggregate_fsds(zip_bytes):
-    """Per (tag, qtrs, ddate): number of filers, sum and median of value, 10-K/10-Q filers only, USD, no co-registrant."""
+    """Per (tag, qtrs, ddate): number of filers, sum, median and 90th percentile of value; 10-K/10-Q forms only, USD,
+    no co-registrant rows, no dimensional (segment) rows; one value per filer (CIK) per tag-period, taken from the
+    latest-filed submission that carries it (an amendment replaces its original rather than counting beside it).
+    Returns (rows, meta)."""
     z = zipfile.ZipFile(io.BytesIO(zip_bytes))
-    forms = {}
-    def member(base):
-        return next((n for n in z.namelist() if n.lower().rsplit("/", 1)[-1] == base), base)
-    with z.open(member("sub.txt")) as f:
+    forms = {}  # adsh -> (cik, filed, form)
+    with z.open(_member(z, "sub.txt") or "sub.txt") as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
-            if r.get("form", "").startswith(("10-K", "10-Q")):
-                forms[r["adsh"]] = (r.get("form"), r.get("fy"), r.get("fp"), r.get("sic"))
-    acc = {}
-    with z.open(member("num.txt")) as f:
+            form = (r.get("form") or "").strip()
+            if form.startswith(("10-K", "10-Q")):
+                forms[r["adsh"]] = ((r.get("cik") or "").strip() or r["adsh"], (r.get("filed") or "").strip(), form)
+    acc = {}  # (tag, qtrs, ddate) -> cik -> (filed, adsh, value)
+    n_used = 0
+    with z.open(_member(z, "num.txt") or "num.txt") as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
             if r["tag"] not in FSDS_TAGS or r["adsh"] not in forms or r.get("uom") != "USD" or r.get("coreg"):
                 continue
+            if (r.get("segments") or "").strip() or (r.get("dimh") or "").strip() not in ("", "0x00000000"):
+                continue  # a segment or member value, not the consolidated figure
             try:
                 v = float(r["value"])
             except (TypeError, ValueError):
                 continue
-            k = (r["tag"], r["qtrs"], r["ddate"])
-            acc.setdefault(k, {}).setdefault(r["adsh"], v)  # one value per filer per key (the first seen)
+            n_used += 1
+            cik, filed, _ = forms[r["adsh"]]
+            d = acc.setdefault((r["tag"], r["qtrs"], r["ddate"]), {})
+            cur = d.get(cik)
+            if cur is None or (filed, r["adsh"]) > (cur[0], cur[1]):  # the latest-filed submission wins; within one, the first value seen
+                d[cik] = (filed, r["adsh"], v)
     rows = []
     for (tag, qtrs, ddate), d in sorted(acc.items()):
-        vals = sorted(d.values())
+        vals = sorted(x[2] for x in d.values())
         if len(vals) < 20:
             continue
         rows.append({"tag": tag, "qtrs": qtrs, "ddate": ddate, "n_filers": len(vals), "sum_usd": f"{sum(vals):.6g}",
                      "median_usd": f"{vals[len(vals) // 2]:.6g}", "p90_usd": f"{vals[int(len(vals) * 0.9)]:.6g}"})
-    return rows, len(forms)
+    meta = {"aggregator_version": AGG_VERSION_FSDS, "n_filings_10k_10q": len(forms),
+            "n_filings_amendments": sum(1 for v in forms.values() if "/A" in v[2]),
+            "n_filers_cik": len({v[0] for v in forms.values()}), "n_num_rows_used": n_used}
+    return rows, meta
 
 
 def recent_quarters(n=5):
@@ -270,8 +301,9 @@ def all_quarters(since_year=2009):
     return out[::-1]
 
 
-def pull_fsds(manifest, errors, max_quarters=2, since=None):
-    """since: a year (int) from which every quarter is a candidate (the data sets begin 2009q1); None = the recent ones."""
+def pull_fsds(manifest, errors, max_quarters=2, since=None, redo=False):
+    """since: a year (int) from which every quarter is a candidate (the data sets begin 2009q1); None = the recent ones.
+    redo: fetch and reduce again the sets whose aggregates are already in raw/ (after an aggregator change)."""
     try:
         links = []
         try:  # the index page lists the zips; it sits behind bot protection that answers 403 to cloud addresses
@@ -285,7 +317,7 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None):
             links = [(f"/files/dera/data/financial-statement-data-sets/{y}q{q}.zip", f"{y}q{q}") for y, q in qs]
         if since:
             links = [(rel_, q) for rel_, q in links if int(q[:4]) >= since]
-        done = set(os.listdir(os.path.join(RAW, "SEC-FSDS"))) if os.path.isdir(os.path.join(RAW, "SEC-FSDS")) else set()
+        done = set(os.listdir(os.path.join(RAW, "SEC-FSDS"))) if os.path.isdir(os.path.join(RAW, "SEC-FSDS")) and not redo else set()
         n = 0
         for rel_, q in links:
             if f"{q}_aggregates.csv" in done or n >= max_quarters:
@@ -293,73 +325,216 @@ def pull_fsds(manifest, errors, max_quarters=2, since=None):
             url = "https://www.sec.gov" + rel_
             try:
                 data, _ = get(url, SEC_UA, tries=2, timeout=600)
-                rows, nf = aggregate_fsds(data)
+                rows, meta = aggregate_fsds(data)
             except Exception as e:  # noqa
                 errors.append(f"sec fsds {q}: {e}"); continue
             body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["tag", "qtrs", "ddate", "n_filers", "sum_usd", "median_usd", "p90_usd"])
             w.writeheader(); w.writerows(rows)
+            meta.update({"set": q, "source_zip_sha256": hashlib.sha256(data).hexdigest(), "source_zip_bytes": len(data), "n_rows": len(rows)})
             save("SEC-FSDS", f"{q}_aggregates.csv", body.getvalue().encode(), url, manifest,
-                 note=f"aggregated in the workflow from the {len(data)}-byte zip (sha256 {hashlib.sha256(data).hexdigest()}): {nf} 10-K/10-Q filings, {len(rows)} tag-period rows; the zip is not kept")
+                 note=f"aggregated from the {len(data)}-byte zip (sha256 {meta['source_zip_sha256']}): {meta['n_filings_10k_10q']} 10-K/10-Q filings "
+                      f"({meta['n_filings_amendments']} amendments) from {meta['n_filers_cik']} filers, {len(rows)} tag-period rows; aggregator v{AGG_VERSION_FSDS}; the zip is not kept")
+            save("SEC-FSDS", f"{q}_meta.json", json.dumps(meta, indent=1).encode(), url, manifest)
             n += 1; time.sleep(2)
     except Exception as e:  # noqa
         errors.append(f"sec fsds: {e}")
 
 
 # ------------------------------------------------------------------------------------------------------- SEC Form 13F Data Sets
-def aggregate_13f(zip_bytes):
-    z = zipfile.ZipFile(io.BytesIO(zip_bytes))
-    # the TSVs sit at the zip root in the newest sets and inside a folder named after the set in the older ones
-    info = next((n for n in z.namelist() if n.lower().rsplit("/", 1)[-1] == "infotable.tsv"), None)
-    if not info:
+def _iso_date(s):
+    """'30-SEP-2014', '2014-09-30', '09/30/2014' or '20140930' -> '2014-09-30'; anything else unchanged."""
+    s = (s or "").strip()
+    for fmt in ("%d-%b-%Y", "%Y-%m-%d", "%m/%d/%Y", "%Y%m%d", "%d-%b-%y"):
+        try:
+            return time.strftime("%Y-%m-%d", time.strptime(s, fmt))
+        except ValueError:
+            continue
+    return s
+
+
+def _tsv_rows(z, base):
+    """All rows of a small TSV member (SUBMISSION, COVERPAGE) with upper-case, stripped keys; None if the set lacks it."""
+    name = _member(z, base)
+    if not name:
+        return None
+    with z.open(name) as f:
+        rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
+        return [{(k or "").strip().upper(): (v or "").strip() for k, v in r.items()} for r in rd]
+
+
+def select_13f_filings(z):
+    """Which filings of a 13F data set count, and for which report period. A quarterly data set holds the filings
+    *made* in the quarter: mostly holdings reports for the quarter that ended just before it, plus late reports for
+    earlier periods, notices (13F-NT, no table) and amendments. Returns (use, info): use maps the accession numbers to
+    count onto the filer (CIK) they belong to — the latest-filed of each filer's original and restatements for the
+    set's own report period, plus its new-holdings amendments — or None when the set has no submission table (then
+    every accession in the information table counts, as the first aggregator did)."""
+    subs = _tsv_rows(z, "SUBMISSION.tsv")
+    if not subs:
+        return None, {"filings_filter": "none (no SUBMISSION.tsv in the set)"}
+    cover = {r.get("ACCESSION_NUMBER"): r for r in (_tsv_rows(z, "COVERPAGE.tsv") or [])}
+    filings = []
+    for r in subs:
+        a = r.get("ACCESSION_NUMBER"); c = cover.get(a, {})
+        stype = (r.get("SUBMISSIONTYPE") or "").upper()
+        filings.append({"acc": a, "cik": r.get("CIK") or a, "type": stype, "filed": _iso_date(r.get("FILING_DATE")),
+                        "period": _iso_date(c.get("REPORTCALENDARORQUARTER") or r.get("PERIODOFREPORT")),
+                        "amend": (c.get("AMENDMENTTYPE") or "").upper(),
+                        "is_amend": (c.get("ISAMENDMENT") or "").upper() in ("Y", "TRUE", "1") or stype.endswith("/A")})
+    periods = {}
+    for f in filings:
+        if f["type"].startswith("13F-HR"):
+            periods[f["period"]] = periods.get(f["period"], 0) + 1
+    if not periods:
+        return None, {"filings_filter": "none (no 13F-HR filings listed in SUBMISSION.tsv)"}
+    modal = max(periods.items(), key=lambda kv: kv[1])[0]
+    by_cik = {}
+    for f in filings:
+        if f["type"].startswith("13F-HR") and f["period"] == modal:
+            by_cik.setdefault(f["cik"], []).append(f)
+    use, n_new, n_restate, n_dup = {}, 0, 0, 0
+    for cik, fs in by_cik.items():
+        new = [f for f in fs if f["is_amend"] and f["amend"].startswith("NEW")]
+        base = sorted((f for f in fs if f not in new), key=lambda f: (f["filed"], f["acc"]))
+        if base:
+            keep = base[-1]
+            use[keep["acc"]] = cik
+            n_restate += int(keep["is_amend"]); n_dup += len(base) - 1
+        for f in new:
+            use[f["acc"]] = cik; n_new += 1
+    info = {"report_period": modal, "n_filings_in_set": len(filings), "n_filings_used": len(use),
+            "n_filings_other_period": sum(1 for f in filings if f["type"].startswith("13F-HR") and f["period"] != modal),
+            "n_notices": sum(1 for f in filings if f["type"].startswith("13F-NT")),
+            "n_amendments_new_holdings": n_new, "n_restatements_replacing": n_restate, "n_superseded_duplicates": n_dup,
+            "filings_filter": "13F-HR for the set's report period; per filer the latest of original and restatements, plus new-holdings amendments"}
+    return use, info
+
+
+def _infotable(z):
+    """Stream the information table: first a dict of column name (upper-cased; the case differs across sets) ->
+    index, then each row as a list. Plain rows rather than dicts: the table runs to three million lines and is read
+    twice."""
+    name = _member(z, "INFOTABLE.tsv")
+    if not name:
         raise ValueError(f"no INFOTABLE.tsv in zip: {z.namelist()[:5]}")
+    with z.open(name) as f:
+        rd = csv.reader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
+        header = [(c or "").strip().upper() for c in next(rd, [])]
+        yield {c: i for i, c in enumerate(header)}
+        for row in rd:
+            yield row
+
+
+def _reservoir(store, counts, key, item, cap, rng):
+    n = counts.get(key, 0) + 1; counts[key] = n
+    s = store.setdefault(key, [])
+    if len(s) < cap:
+        s.append(item)
+    else:
+        j = rng.randrange(n)
+        if j < cap:
+            s[j] = item
+
+
+def aggregate_13f(zip_bytes):
+    """Reduce a Form 13F data set to a summary (filers, total value in dollars, issuer concentration, the median
+    filer's concentration, the put/call share) and the twenty most-held issuers. Two passes over the information
+    table: the first learns each filer's VALUE unit, the second aggregates.
+
+    Units. VALUE is in thousands of dollars for filings made before January 2023 and in dollars from then on, but
+    filers did not all follow the form: inside a thousands-era set a few hundred filers report in dollars (and a few
+    in thousands after the change). Scaling a whole set by the unit most filers used multiplies the others a
+    thousandfold, which is what put trillion-dollar positions into the first aggregator's top-20 lists. So the unit is
+    detected per filer: for every line, value / shares (or principal) is an implied price; the set's unit comes from
+    the median implied price of its share lines (below $1 means thousands, a $50 stock reads 0.05); each issuer's
+    reference is the median implied price across the filers holding it; and a filer whose lines sit a thousandfold
+    above (or below) their issuers' references reports in the other unit. Everything is then scaled to dollars line
+    by line, so filer totals, the top-10 heaps behind the median filer's concentration, and issuer totals agree."""
+    import math, random
+    z = zipfile.ZipFile(io.BytesIO(zip_bytes))
+    use, info = select_13f_filings(z)
+    rng = random.Random(13)
+    ref, ref_n, fs, fs_n, set_sample = {}, {}, {}, {}, []
+    n_seen = 0
+    rows = _infotable(z)
+    col = next(rows)
+    def at(row, name, default=""):
+        i = col.get(name)
+        return row[i].strip() if i is not None and i < len(row) else default
+    for r in rows:  # pass 1: implied prices
+        acc = at(r, "ACCESSION_NUMBER")
+        if use is not None and acc not in use:
+            continue
+        try:
+            v = float(at(r, "VALUE") or 0); q = float(at(r, "SSHPRNAMT") or 0)
+        except ValueError:
+            continue
+        if v <= 0 or q <= 0:
+            continue
+        n_seen += 1
+        p = v / q; cusip = at(r, "CUSIP")
+        _reservoir(ref, ref_n, cusip, p, 64, rng)
+        _reservoir(fs, fs_n, acc, (cusip, p), 64, rng)
+        if (at(r, "SSHPRNAMTTYPE") or "SH").upper() == "SH" and n_seen % 7 == 0:
+            set_sample.append(p)
+    def med(xs):
+        xs = sorted(xs); return xs[len(xs) // 2] if xs else 0.0
+    ref_med = {c: med(s) for c, s in ref.items()}
+    set_med = med(set_sample) if set_sample else med(ref_med.values())
+    set_scale = 1000.0 if set_med < 1.0 else 1.0
+    filer_scale = {}
+    for acc, s in fs.items():
+        lr = [math.log10(p / ref_med[c]) for c, p in s if ref_med.get(c, 0) > 0 and p > 0]
+        r_ = med(lr)
+        rel = 1000.0 if r_ > 1.5 else (0.001 if r_ < -1.5 else 1.0)
+        filer_scale[acc] = set_scale / rel
     by_cusip, by_cusip_name = {}, {}
     filer_total, filer_top = {}, {}
-    total, putcall_value, n_lines = 0.0, 0.0, 0
-    line_values = []
-    with z.open(info) as f:
-        rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
-        for r in rd:
-            try:
-                v = float(r.get("VALUE") or 0)
-            except ValueError:
-                continue
-            n_lines += 1
-            if v > 0 and n_lines % 7 == 0:  # a sample of positive line values for the unit check
-                line_values.append(v)
-            acc = r.get("ACCESSION_NUMBER"); cusip = (r.get("CUSIP") or "").strip()
-            total += v
-            if (r.get("PUTCALL") or "").strip():
-                putcall_value += v
-                continue  # options lines are not holdings of the issuer's shares
-            by_cusip[cusip] = by_cusip.get(cusip, 0.0) + v
-            by_cusip_name.setdefault(cusip, (r.get("NAMEOFISSUER") or "").strip())
-            filer_total[acc] = filer_total.get(acc, 0.0) + v
-            h = filer_top.setdefault(acc, [])
-            if len(h) < 10:
-                heapq.heappush(h, v)
-            elif v > h[0]:
-                heapq.heapreplace(h, v)
-    # VALUE is in dollars for filings made from January 2023 and in thousands before; detect the unit from the median line
-    # (a typical position is millions of dollars, thousands of thousands) and normalize everything to dollars
-    scale = 1.0
-    if line_values:
-        line_values.sort()
-        if line_values[len(line_values) // 2] < 1e5:
-            scale = 1000.0
-    if scale != 1.0:
-        by_cusip = {k: v * scale for k, v in by_cusip.items()}
-        filer_total = {k: v * scale for k, v in filer_total.items()}
-        total *= scale; putcall_value *= scale
+    total, putcall_value, n_lines, corrected_value = 0.0, 0.0, 0, 0.0
+    rows = _infotable(z)
+    next(rows)
+    for r in rows:  # pass 2: aggregate in dollars
+        acc = at(r, "ACCESSION_NUMBER")
+        if use is not None and acc not in use:
+            continue
+        try:
+            v = float(at(r, "VALUE") or 0)
+        except ValueError:
+            continue
+        sc = filer_scale.get(acc, set_scale)
+        v *= sc
+        n_lines += 1
+        total += v
+        if sc != set_scale:
+            corrected_value += v
+        if at(r, "PUTCALL"):
+            putcall_value += v
+            continue  # options lines are not holdings of the issuer's shares
+        cusip = at(r, "CUSIP")
+        by_cusip[cusip] = by_cusip.get(cusip, 0.0) + v
+        by_cusip_name.setdefault(cusip, at(r, "NAMEOFISSUER"))
+        filer = use.get(acc, acc) if use is not None else acc  # an original and its new-holdings amendment are one filer
+        filer_total[filer] = filer_total.get(filer, 0.0) + v
+        h = filer_top.setdefault(filer, [])
+        if len(h) < 10:
+            heapq.heappush(h, v)
+        elif v > h[0]:
+            heapq.heapreplace(h, v)
     vals = sorted(by_cusip.values(), reverse=True)
     s = sum(vals) or 1.0
     top10 = sum(vals[:10]) / s; top50 = sum(vals[:50]) / s
     hhi = sum((v / s) ** 2 for v in vals)
     conc = sorted(sum(filer_top[a]) / filer_total[a] for a in filer_total if filer_total[a] > 0)
-    summary = {"n_filers": len(filer_total), "n_infotable_lines": n_lines, "total_value_reported": f"{total:.6g}",
-               "value_unit_detected": "thousands (scaled x1000 to dollars)" if scale != 1.0 else "dollars",
+    n_corrected = sum(1 for a, sc in filer_scale.items() if sc != set_scale)
+    summary = {"aggregator_version": AGG_VERSION_13F, "n_filers": len(filer_total), "n_infotable_lines": n_lines,
+               "total_value_reported": f"{total:.6g}",
+               "value_unit_detected": "thousands (scaled x1000 to dollars)" if set_scale != 1.0 else "dollars",
+               "value_unit_set": "thousands" if set_scale != 1.0 else "dollars", "set_median_implied_price": f"{set_med:.4g}",
+               "n_filers_unit_corrected": n_corrected, "value_share_unit_corrected": f"{corrected_value / total:.4f}" if total else "",
                "putcall_value_share": f"{putcall_value / total:.4f}" if total else "", "n_issuers_cusip": len(by_cusip),
                "top10_issuer_share": f"{top10:.4f}", "top50_issuer_share": f"{top50:.4f}", "hhi_issuers": f"{hhi:.6f}",
                "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else ""}
+    summary.update(info)
     top = [{"rank": k + 1, "cusip": c, "issuer": by_cusip_name.get(c, ""), "value": f"{v:.6g}", "share": f"{v / s:.4f}"}
            for k, (c, v) in enumerate(sorted(by_cusip.items(), key=lambda kv: -kv[1])[:20])]
     return summary, top
@@ -423,8 +598,25 @@ def qkey_13f(name):
     return (int(m.group(3)), months.get(m.group(2), 0)) if m else (0, 0)
 
 
-def pull_13f(manifest, errors, max_quarters=2, since=None):
-    """since: a year (int) from which every data set is a candidate (the sets begin 2013q2); None = the recent ones."""
+def period_end_13f(name):
+    """The holdings date a data set is mostly about, from its name alone: a quarterly set (filings made in the
+    quarter) reports the quarter that ended just before it — '2014q4_form13f' -> 2014-09-30 — and a three-month
+    window (filings made Mar-May, Jun-Aug, Sep-Nov, Dec-Feb) reports the quarter ending in its first month —
+    '01mar2024-31may2024_form13f' -> 2024-03-31. The summaries' report_period (from the filings themselves) is the
+    measured value; this is the fallback for summaries written before it was recorded."""
+    import calendar
+    y, m = qkey_13f(name)
+    if not y:
+        return ""
+    m -= 3 if re.match(r"\d{4}q[1-4]", name.lower()) else 2
+    if m <= 0:
+        y, m = y - 1, m + 12
+    return "%d-%02d-%02d" % (y, m, calendar.monthrange(y, m)[1])
+
+
+def pull_13f(manifest, errors, max_quarters=2, since=None, redo=False):
+    """since: a year (int) from which every data set is a candidate (the sets begin 2013q2); None = the recent ones.
+    redo: fetch and reduce again the sets whose summaries are already in raw/ (after an aggregator change)."""
     try:
         links = []
         try:
@@ -439,7 +631,7 @@ def pull_13f(manifest, errors, max_quarters=2, since=None):
         if since:
             links = [(rel_, name) for rel_, name in links if qkey_13f(name)[0] >= since]
         links = sorted(set(links), key=lambda t: qkey_13f(t[1]), reverse=True)
-        done = set(os.listdir(os.path.join(RAW, "SEC-13F"))) if os.path.isdir(os.path.join(RAW, "SEC-13F")) else set()
+        done = set(os.listdir(os.path.join(RAW, "SEC-13F"))) if os.path.isdir(os.path.join(RAW, "SEC-13F")) and not redo else set()
         n = 0
         for rel_, name in links:
             if f"{name}_summary.json" in done or n >= max_quarters:
@@ -452,7 +644,8 @@ def pull_13f(manifest, errors, max_quarters=2, since=None):
                 errors.append(f"sec 13f {name}: {e}"); continue
             summary["source_zip_sha256"] = hashlib.sha256(data).hexdigest(); summary["source_zip_bytes"] = len(data); summary["period"] = name
             save("SEC-13F", f"{name}_summary.json", json.dumps(summary, indent=1).encode(), url, manifest,
-                 note=f"aggregated from the zip (not kept); VALUE unit detected: {summary['value_unit_detected']}; values in the summary are dollars")
+                 note=f"aggregated from the zip (not kept) by aggregator v{AGG_VERSION_13F}; report period {summary.get('report_period', '?')}; "
+                      f"set unit {summary['value_unit_set']}, {summary['n_filers_unit_corrected']} filers in the other unit rescaled; values in the summary are dollars")
             body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["rank", "cusip", "issuer", "value", "share"]); w.writeheader(); w.writerows(top)
             save("SEC-13F", f"{name}_top20.csv", body.getvalue().encode(), url, manifest)
             n += 1; time.sleep(2)
@@ -469,7 +662,14 @@ def main():
     ap.add_argument("--quarters", type=int, default=2, help="how many SEC data sets to fetch per run, per set (default 2; the run is resumable: sets already in raw/ are skipped)")
     ap.add_argument("--since", type=int, default=0, help="backfill: consider every SEC data set from this year on (FSDS begin 2009, 13F 2013)")
     ap.add_argument("--all", action="store_true", help="backfill everything: --since 2009 --quarters 200")
+    ap.add_argument("--redo", action="store_true", help="SEC sets: fetch and reduce again the sets already in raw/ (after an aggregator "
+                    "change; the summaries record the aggregator version). Typically --only 13f --all --redo")
+    ap.add_argument("--selftest", action="store_true", help="run the SEC aggregators on synthetic data sets and exit (no network)")
     a = ap.parse_args()
+    if a.selftest:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tests"))
+        import test_sec_aggregators
+        return test_sec_aggregators.main()
     if a.all:
         a.since, a.quarters = 2009, 200
     only = {x.strip() for x in a.only.split(",") if x.strip()}
@@ -482,9 +682,9 @@ def main():
     if not only or "goyal" in only:
         pull_goyal_welch(manifest, errors)
     if not only or "fsds" in only:
-        pull_fsds(manifest, errors, max_quarters=a.quarters, since=a.since or None)
+        pull_fsds(manifest, errors, max_quarters=a.quarters, since=a.since or None, redo=a.redo)
     if not only or "13f" in only:
-        pull_13f(manifest, errors, max_quarters=a.quarters, since=a.since or None)
+        pull_13f(manifest, errors, max_quarters=a.quarters, since=a.since or None, redo=a.redo)
     out = {"manifest": manifest, "errors": errors, "pulls_run": sorted(only) if only else "all"}
     prev = os.path.join(RAW, "manifest.json")
     if os.path.exists(prev):

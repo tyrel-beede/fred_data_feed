@@ -227,11 +227,17 @@ def build_sec_tables():
     d13 = os.path.join(RAW, "SEC-13F")
     rows = []
     if os.path.isdir(d13):
-        from corporate_pull import qkey_13f
+        from corporate_pull import qkey_13f, period_end_13f
         for fn in sorted((f for f in os.listdir(d13) if f.endswith("_summary.json")), key=lambda f: qkey_13f(f.replace("_summary.json", ""))):
             s_ = json.load(open(os.path.join(d13, fn)))
-            rows.append({"period": s_.get("period"), "period_end": "%d-%02d" % qkey_13f(s_.get("period") or fn), "n_filers": s_.get("n_filers"),
+            name = s_.get("period") or fn.replace("_summary.json", "")
+            # the holdings date: measured from the filings by aggregator v2 (report_period); for an older summary, the
+            # quarter the set's name implies (a set holds the filings made in its quarter, about the quarter before)
+            rows.append({"period": name, "period_end": s_.get("report_period") or period_end_13f(name),
+                         "aggregator_version": s_.get("aggregator_version", 1), "n_filers": s_.get("n_filers"),
                          "total_value_usd": s_.get("total_value_reported"), "value_unit_detected": s_.get("value_unit_detected", "dollars (assumed)"),
+                         "n_filers_unit_corrected": s_.get("n_filers_unit_corrected", ""), "value_share_unit_corrected": s_.get("value_share_unit_corrected", ""),
+                         "n_filings_other_period": s_.get("n_filings_other_period", ""),
                          "n_issuers": s_.get("n_issuers_cusip"), "top10_issuer_share": s_.get("top10_issuer_share"),
                          "top50_issuer_share": s_.get("top50_issuer_share"), "hhi_issuers": s_.get("hhi_issuers"),
                          "median_filer_top10_share": s_.get("median_filer_top10_share"), "putcall_value_share": s_.get("putcall_value_share")})
