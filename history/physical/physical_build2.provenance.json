@@ -107,5 +107,191 @@
    }
   },
   "ppi_years": 108
+ },
+ "jacks": {
+  "years": 176,
+  "commodities": [
+   [
+    "Animal products",
+    "Beef"
+   ],
+   [
+    "Animal products",
+    "Hides"
+   ],
+   [
+    "Animal products",
+    "Lamb"
+   ],
+   [
+    "Animal products",
+    "Pork"
+   ],
+   [
+    "Energy",
+    "Coal"
+   ],
+   [
+    "Energy",
+    "Natural gas"
+   ],
+   [
+    "Energy",
+    "Petroleum"
+   ],
+   [
+    "Grains",
+    "Barley"
+   ],
+   [
+    "Grains",
+    "Corn"
+   ],
+   [
+    "Grains",
+    "Rice"
+   ],
+   [
+    "Grains",
+    "Rye"
+   ],
+   [
+    "Grains",
+    "Wheat"
+   ],
+   [
+    "Metals",
+    "Aluminum"
+   ],
+   [
+    "Metals",
+    "Chromium"
+   ],
+   [
+    "Metals",
+    "Copper"
+   ],
+   [
+    "Metals",
+    "Lead"
+   ],
+   [
+    "Metals",
+    "Manganese"
+   ],
+   [
+    "Metals",
+    "Nickel"
+   ],
+   [
+    "Metals",
+    "Steel"
+   ],
+   [
+    "Metals",
+    "Tin"
+   ],
+   [
+    "Metals",
+    "Zinc"
+   ],
+   [
+    "Minerals",
+    "Bauxite"
+   ],
+   [
+    "Minerals",
+    "Iron ore"
+   ],
+   [
+    "Minerals",
+    "Phosphate"
+   ],
+   [
+    "Minerals",
+    "Potash"
+   ],
+   [
+    "Minerals",
+    "Sulfur"
+   ],
+   [
+    "Precious Metals",
+    "Gold"
+   ],
+   [
+    "Precious Metals",
+    "Platinum"
+   ],
+   [
+    "Precious Metals",
+    "Silver"
+   ],
+   [
+    "Softs",
+    "Cocoa"
+   ],
+   [
+    "Softs",
+    "Coffee"
+   ],
+   [
+    "Softs",
+    "Cotton"
+   ],
+   [
+    "Softs",
+    "Cottonseed"
+   ],
+   [
+    "Softs",
+    "Palm oil"
+   ],
+   [
+    "Softs",
+    "Peanuts"
+   ],
+   [
+    "Softs",
+    "Rubber"
+   ],
+   [
+    "Softs",
+    "Saw logs"
+   ],
+   [
+    "Softs",
+    "Soybeans"
+   ],
+   [
+    "Softs",
+    "Sugar"
+   ],
+   [
+    "Softs",
+    "Tea"
+   ],
+   [
+    "Softs",
+    "Tobacco"
+   ],
+   [
+    "Softs",
+    "Wool"
+   ]
+  ],
+  "coverage": {
+   "jacks_real_index_1y": 175,
+   "jacks_real_index_3y": 173,
+   "jacks_anom": 167,
+   "jacks_breadth_3y": 173,
+   "jacks_dispersion_3y": 173,
+   "jacks_energy_3y": 123,
+   "jacks_metals_3y": 173,
+   "jacks_grains_3y": 173,
+   "jacks_grown_vs_ground_3y": 173,
+   "jacks_n_3y": 176
+  },
+  "file": "history/physical/raw/JACKS-COMMODITIES/Real-commodity-prices-1850-2025.xlsx"
  }
 }

@@ -2915,6 +2915,90 @@
     "rate_post1950": 0.5
    }
   ],
+  "gdp_fall_3y (Jacks rungs)": [
+   {
+    "stage": "unconditional",
+    "n": 2612,
+    "rate": 0.11485451761102604
+   },
+   {
+    "stage": "broad real commodity boom at T (Jacks breadth >= 2/3 of 42 commodities up over 3y)",
+    "n": 423,
+    "rate": 0.1607565011820331,
+    "rate_pre1950": 0.19555555555555557,
+    "rate_post1950": 0.12121212121212122
+   },
+   {
+    "stage": "loans/GDP high (top tercile) at T-3",
+    "n": 173,
+    "rate": 0.1791907514450867,
+    "rate_pre1950": 0.2894736842105263,
+    "rate_post1950": 0.14814814814814814
+   },
+   {
+    "stage": "real house prices 3y growth <= 0 at T",
+    "n": 63,
+    "rate": 0.2222222222222222,
+    "rate_pre1950": 0.47368421052631576,
+    "rate_post1950": 0.11363636363636363
+   }
+  ],
+  "credit_contraction_3y (Jacks rungs)": [
+   {
+    "stage": "unconditional",
+    "n": 2355,
+    "rate": 0.16857749469214436
+   },
+   {
+    "stage": "loans/GDP high (top tercile) at T-3",
+    "n": 732,
+    "rate": 0.3005464480874317,
+    "rate_pre1950": 0.41904761904761906,
+    "rate_post1950": 0.25287356321839083
+   },
+   {
+    "stage": "real equity 3y gain <= 0 at T-1",
+    "n": 275,
+    "rate": 0.41818181818181815,
+    "rate_pre1950": 0.5569620253164557,
+    "rate_post1950": 0.3622448979591837
+   },
+   {
+    "stage": "real commodity bust at T (Jacks equal-weight index down >= 15% over 3y)",
+    "n": 53,
+    "rate": 0.6226415094339622,
+    "rate_pre1950": 0.6923076923076923,
+    "rate_post1950": 0.6
+   }
+  ],
+  "dd30_3y (Jacks rungs)": [
+   {
+    "stage": "unconditional",
+    "n": 2224,
+    "rate": 0.12455035971223022
+   },
+   {
+    "stage": "broad real commodity boom at T (Jacks breadth >= 2/3)",
+    "n": 362,
+    "rate": 0.2569060773480663,
+    "rate_pre1950": 0.15591397849462366,
+    "rate_post1950": 0.36363636363636365
+   },
+   {
+    "stage": "r - g low (bottom tercile) at T",
+    "n": 136,
+    "rate": 0.38235294117647056,
+    "rate_pre1950": 0.2441860465116279,
+    "rate_post1950": 0.62
+   },
+   {
+    "stage": "dividend yield low (bottom tercile) at T",
+    "n": 25,
+    "rate": 0.84,
+    "rate_pre1950": 0.6666666666666666,
+    "rate_post1950": 0.8947368421052632
+   }
+  ],
   "dd30_3y (materials rungs)": [
    {
     "stage": "unconditional",

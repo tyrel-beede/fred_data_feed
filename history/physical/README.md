@@ -63,8 +63,11 @@ Physics enters the system in two roles, and only one of them shows up as backtes
   gap for these eight countries back to 1873 from it (777 country-years, `energy_src` = kmw, both endpoints from the
   same source), and builds `fgap_merged_3y` / `fgap_anom_merged_3y` — the footprint gap from measured energy where it
   exists (`fgap_src` = energy: 1,723 rows) and from the CO2 proxy elsewhere (887 rows).
+- `jacks_features.csv` — Jacks's 42 real commodity prices 1850–2025 (`raw/JACKS-COMMODITIES/`, supplied by hand) as
+  global-at-t features: the equal-weight index's changes and anomaly, breadth and dispersion, the energy, metals and
+  grains groups, grown-minus-in-the-ground (`physical_build2.py`, `build_jacks`; results below).
 - `catalog.json` — the catalog of long-running physical series: what is pulled, what the workflow can retrieve by URL,
-  and what has to be supplied as a file (the Jacks commodity panel, ore-grade compilations).
+  and what has to be supplied as a file (ore-grade compilations; the Jacks panel arrived by hand on 2026-11-06).
 
 ## How it is tested, and what the first slice did
 
@@ -188,6 +191,30 @@ Read against the cadence noise band (`../analogs/noise_band.md`: mean range 0.03
 single cells up to 0.07): the oil price's GDP-fall gain (+0.08, logit) clears it, its drawdown gain (+0.03, trees) sits
 at the band's edge and rests on the top-decile lift (40% against 14%), the materials label move (+0.08, logit) clears
 it but is the 2008 call, and every diffusion and measured-energy difference sits inside it.
+
+**Jacks's world commodity panel (fifth run, 2026-11-06).** The February 2026 edition arrived by hand: 42 real commodity
+prices, 1850–2025 (deflated by the US CPI, 1900 = 100), in seven groups from animal products to precious metals.
+`physical_build2.py` turns it into `jacks_features.csv`: an equal-weight index chained from 1850 (log changes over
+one and three years, and the index against its own history), the breadth and dispersion of three-year changes
+across the 42, the energy, metals and grains groups, and grown-minus-in-the-ground. It reads the record as the
+record is: breadth 71% and the index +29% into 1917, −42% by 1920 with metals −64%; breadth 95% and energy +67% into
+1974; −27% by 1986; +43% into 2008 with metals +52%; energy +82% into 2022 and −81% by 2025.
+
+As nine learner columns (`../analogs/learner_test_physical_jacks_era.md`) it does what the USGS basket did, more
+strongly: the GDP-fall logit drops 0.68 → 0.59 (0.73 → 0.63 before 2004) and the trees 0.63 → 0.58, both beyond the
+band; the label logit 0.58 → 0.55 overall while reaching 0.81 from 2004 — the 2008 call once more; the drawdown,
+contraction and unemployment scores stay inside the band. With the USGS basket as well (17 global columns) the
+GDP-fall logit is at 0.53. The weights show the mechanism: the index's three-year change takes +1.3 on the GDP fall
+and −1.7 on the label beside breadth at +1.1, collinear columns with opposite signs — a linear learner reading the
+calendar off a global series. Three global-at-t families have now given the same answer.
+
+On the mile-marker ladders the panel earns its place: after a high loans/GDP at T−3 and a flat equity market at
+T−1, a **real commodity bust at T** (the equal-weight index down 15% or more over three years) lifts the credit
+contraction rate from 42% to 62% (n = 53; 69% before 1950, 60% after); a **broad commodity boom at T** (two-thirds of
+the 42 up over three years) lifts the drawdown rate from 12% to 26%, to 38% with a low r−g and to 84% with a low
+dividend yield beside it (n = 25, 89% after 1950); and the boom rung reads 16% → 18% → 22% on the GDP fall with the
+credit and house rungs (47% before 1950). A measured conditional rate on a global signal is the form that survives;
+nine weights on it are not.
 
 What the second slice settles: the oil price stays the physical feature that earns its place; materials add a view
 of the label and of the shock channel at the cost of a linear learner's stability (the trees are the right learner

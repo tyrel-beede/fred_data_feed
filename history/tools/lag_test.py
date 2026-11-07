@@ -111,7 +111,9 @@ def main():
     ppi3 = side(os.path.join(ROOT, "history", "physical", "materials_features.csv"), None, "ppi_commod_real_3y", by_year=True)
     metals_anom = side(os.path.join(ROOT, "history", "physical", "materials_features.csv"), None, "metals_real_price_anom", by_year=True)
     wm_accel = side(os.path.join(ROOT, "history", "physical", "materials_features.csv"), None, "world_metals_prod_accel", by_year=True)
-    has_d, has_m = not np.all(np.isnan(tech_g)), not np.all(np.isnan(ppi3))
+    jb = side(os.path.join(ROOT, "history", "physical", "jacks_features.csv"), None, "jacks_breadth_3y", by_year=True)
+    ji3 = side(os.path.join(ROOT, "history", "physical", "jacks_features.csv"), None, "jacks_real_index_3y", by_year=True)
+    has_d, has_m, has_j = not np.all(np.isnan(tech_g)), not np.all(np.isnan(ppi3)), not np.all(np.isnan(jb))
     ladders = {
         "credit_contraction_3y": [("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
                                   ("real equity 3y gain <= 0 at T-1", col("real_eq_capgain_3y", 1) <= 0),
@@ -130,6 +132,19 @@ def main():
             ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
             ("real equity 3y gain <= 0 at T-1", col("real_eq_capgain_3y", 1) <= 0),
             ("technology diffusion slow (bottom tercile of tech_growth_3y) at T", tech_g <= np.nanpercentile(tech_g, 33))]
+    if has_j:
+        ladders["gdp_fall_3y (Jacks rungs)"] = [
+            ("broad real commodity boom at T (Jacks breadth >= 2/3 of 42 commodities up over 3y)", jb >= 2.0 / 3),
+            ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
+            ("real house prices 3y growth <= 0 at T", col("real_hp_growth_3y", 0) <= 0)]
+        ladders["credit_contraction_3y (Jacks rungs)"] = [
+            ("loans/GDP high (top tercile) at T-3", tercile_flag("loans_gdp", 3, True)),
+            ("real equity 3y gain <= 0 at T-1", col("real_eq_capgain_3y", 1) <= 0),
+            ("real commodity bust at T (Jacks equal-weight index down >= 15% over 3y)", ji3 <= -0.15)]
+        ladders["dd30_3y (Jacks rungs)"] = [
+            ("broad real commodity boom at T (Jacks breadth >= 2/3)", jb >= 2.0 / 3),
+            ("r - g low (bottom tercile) at T", tercile_flag("r_minus_g", 0, False)),
+            ("dividend yield low (bottom tercile) at T", tercile_flag("eq_dp", 0, False))]
     if has_m:
         ladders["dd30_3y (materials rungs)"] = [
             ("metals real price above its own history (top tercile anomaly) at T", metals_anom >= np.nanpercentile(metals_anom, 67)),

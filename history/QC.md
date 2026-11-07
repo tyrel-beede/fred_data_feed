@@ -4,7 +4,7 @@ Mechanical checks run by `tools/qc.py`: **25 of 25 pass**. Re-run after any chan
 
 | check | result | evidence |
 |---|---|---|
-| inventory: every expected file exists | PASS | 115 files |
+| inventory: every expected file exists | PASS | 119 files |
 | parse: every JSON parses and every CSV is rectangular | PASS | ok |
 | jst_r6: 2,718 rows, 18 countries x 1870-2020, no duplicate country-year | PASS | rows 2718, countries 18 |
 | jst_r6: 59 columns | PASS | 59 columns |

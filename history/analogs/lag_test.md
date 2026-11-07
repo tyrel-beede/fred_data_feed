@@ -135,6 +135,33 @@ Conditional frequency of the event given each marker in turn (all markers comput
 | real equity 3y gain <= 0 at T-1 | 275 | 42% | 56% | 36% |
 | technology diffusion slow (bottom tercile of tech_growth_3y) at T | 69 | 54% | 58% | 50% |
 
+### gdp_fall_3y (Jacks rungs)
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2612 | 11% | — | — |
+| broad real commodity boom at T (Jacks breadth >= 2/3 of 42 commodities up over 3y) | 423 | 16% | 20% | 12% |
+| loans/GDP high (top tercile) at T-3 | 173 | 18% | 29% | 15% |
+| real house prices 3y growth <= 0 at T | 63 | 22% | 47% | 11% |
+
+### credit_contraction_3y (Jacks rungs)
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2355 | 17% | — | — |
+| loans/GDP high (top tercile) at T-3 | 732 | 30% | 42% | 25% |
+| real equity 3y gain <= 0 at T-1 | 275 | 42% | 56% | 36% |
+| real commodity bust at T (Jacks equal-weight index down >= 15% over 3y) | 53 | 62% | 69% | 60% |
+
+### dd30_3y (Jacks rungs)
+
+| stage | n | event rate | pre-1950 | post-1950 |
+|---|---|---|---|---|
+| unconditional | 2224 | 12% | — | — |
+| broad real commodity boom at T (Jacks breadth >= 2/3) | 362 | 26% | 16% | 36% |
+| r - g low (bottom tercile) at T | 136 | 38% | 24% | 62% |
+| dividend yield low (bottom tercile) at T | 25 | 84% | 67% | 89% |
+
 ### dd30_3y (materials rungs)
 
 | stage | n | event rate | pre-1950 | post-1950 |

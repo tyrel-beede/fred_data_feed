@@ -44,6 +44,9 @@ DIFFUSION = ["tech_growth_3y", "tech_accel_3y", "tech_max_growth_3y", "tech_fron
 # grows with the calendar and drops to zero after 2003, so a learner would read it as a clock
 MATERIALS = ["metals_real_price_1y", "metals_real_price_3y", "metals_real_price_anom", "world_metals_prod_3y",
              "world_metals_prod_accel", "gold_real_3y", "ppi_commod_real_1y", "ppi_commod_real_3y"]
+# Jacks's world commodity panel (physical_build2.py build_jacks): global at t, 1853-
+JACKS = ["jacks_real_index_1y", "jacks_real_index_3y", "jacks_anom", "jacks_breadth_3y", "jacks_dispersion_3y",
+         "jacks_energy_3y", "jacks_metals_3y", "jacks_grains_3y", "jacks_grown_vs_ground_3y"]
 # the network's topology (topology.py): the node's subnet, its tenure and moves, the panel's fragmentation and churn
 TOPOLOGY = ["in_peg", "is_base", "bloc_size", "bloc_share", "bloc_tenure", "regime_change_3y", "bloc_churn_3y", "base_changed_5y",
             "n_blocs", "panel_peg_share", "panel_changes_3y", "years_since_break"]
@@ -55,6 +58,7 @@ def main():
     ap.add_argument("--diffusion", action="store_true", help="add the technology-diffusion features (history/physical/diffusion_features.csv)")
     ap.add_argument("--materials", action="store_true", help="add the materials features, global at t (history/physical/materials_features.csv)")
     ap.add_argument("--topology", action="store_true", help="add the network-topology features (history/jst/topology.csv)")
+    ap.add_argument("--jacks", action="store_true", help="add the Jacks world-commodity features, global at t (history/physical/jacks_features.csv)")
     ap.add_argument("--measured-energy", action="store_true",
                     help="with --physical: use the footprint gap from measured energy where it exists (fgap_merged_3y, fgap_anom_merged_3y) instead of the CO2 proxy")
     ap.add_argument("--no-horizon", action="store_true"); ap.add_argument("--tag", default="")
@@ -81,6 +85,12 @@ def main():
             p = mt.get(int(r["year"]), {})
             for c in MATERIALS:
                 r[c] = p.get(c, "")
+    if a.jacks:
+        jk = {int(r["year"]): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "physical", "jacks_features.csv")))}
+        for r in rows:
+            p = jk.get(int(r["year"]), {})
+            for c in JACKS:
+                r[c] = p.get(c, "")
     if a.topology:
         tp = {(r["iso"], int(r["year"])): r for r in csv.DictReader(open(os.path.join(ROOT, "history", "jst", "topology.csv")))}
         for r in rows:
@@ -100,9 +110,9 @@ def main():
                 out[n] = float(rows[j][name])
         return out
 
-    extra = (PHYSICAL if a.physical else []) + (DIFFUSION if a.diffusion else []) + (MATERIALS if a.materials else []) + (TOPOLOGY if a.topology else [])
+    extra = (PHYSICAL if a.physical else []) + (DIFFUSION if a.diffusion else []) + (MATERIALS if a.materials else []) + (JACKS if a.jacks else []) + (TOPOLOGY if a.topology else [])
     added = [(n, f) for n, f, on in (("physical", PHYSICAL, a.physical), ("diffusion", DIFFUSION, a.diffusion), ("materials", MATERIALS, a.materials),
-                                     ("topology", TOPOLOGY, a.topology)) if on]
+                                     ("jacks", JACKS, a.jacks), ("topology", TOPOLOGY, a.topology)) if on]
     names = BASE + NETWORK + RANK + FLUX + [f"{f}_lag{k}" for f, k in LEADS] + extra
     X = np.column_stack([col(f) for f in BASE + NETWORK + RANK + FLUX] + [col(f, k) for f, k in LEADS] + [col(f) for f in extra])
     lg3, eq1, hp0 = col("loans_gdp", 3), col("real_eq_capgain_3y", 1), col("real_hp_growth_3y", 0)
@@ -209,7 +219,7 @@ def main():
             print("horizon logit", target, {h: round(v, 3) for h, v in curve.items() if v})
 
     os.makedirs(os.path.join(ROOT, "history", "analogs"), exist_ok=True)
-    suffix = ("_physical" if a.physical else "") + ("_measured" if a.measured_energy else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + ("_topology" if a.topology else "") + a.tag
+    suffix = ("_physical" if a.physical else "") + ("_measured" if a.measured_energy else "") + ("_diffusion" if a.diffusion else "") + ("_materials" if a.materials else "") + ("_jacks" if a.jacks else "") + ("_topology" if a.topology else "") + a.tag
     json.dump(rep, open(os.path.join(ROOT, "history", "analogs", f"learner_test{suffix}.json"), "w"), indent=1)
     L = ["# A learner that can weight — walk-forward", "",
          "Models are refit every 4 years; a model fit at t forecasts years t..t+3 and is trained only on rows whose outcome window closed before t (training from 1880, queries "

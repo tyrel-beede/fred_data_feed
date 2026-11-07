@@ -37,6 +37,9 @@ Outputs (all derived, this script; every value computable at year t from data da
     world_metals_prod_accel  that growth minus the same three years earlier
     gold_real_3y         3-year log change of gold's real unit value
     ppi_commod_real_1y, ppi_commod_real_3y   log change of the all-commodity PPI deflated by the US CPI (1913-)
+  history/physical/jacks_features.csv      per year (global): Jacks's 42 real commodity prices 1850-2025 as an equal-weight
+    index (1- and 3-year log changes, the index against its own history), breadth and dispersion of 3-year changes,
+    the energy, metals and grains groups, and grown-minus-in-the-ground (see build_jacks)
 Usage: python3 -I history/tools/physical_build2.py
 """
 import csv, json, os, re, sys
@@ -278,6 +281,87 @@ def build_materials(jst):
     return {"years": len(rows), "coverage": cov, "basket": meta, "ppi_years": len(ppi_real)}
 
 
+# ------------------------------------------------------------------------------------------------------- Jacks
+JACKS = os.path.join(RAW, "JACKS-COMMODITIES", "Real-commodity-prices-1850-2025.xlsx")
+
+
+def build_jacks():
+    """Jacks's real commodity prices (42 commodities, 1850-2025, deflated by the US CPI, 1900 = 100) -> per-year global
+    features in history/physical/jacks_features.csv:
+      jacks_real_index_1y, jacks_real_index_3y   log change of an equal-weight index (geometric mean of the commodities
+                                                 available at both ends; the index itself starts 1850, Jacks's own 1900)
+      jacks_anom                                 the equal-weight index against its own history to t (log, >= 10 years)
+      jacks_breadth_3y                           share of commodities whose real price is higher than three years earlier
+      jacks_dispersion_3y                        cross-commodity standard deviation of the 3-year log change
+      jacks_energy_3y, jacks_metals_3y, jacks_grains_3y   group equal-weight indices, 3-year log change
+      jacks_grown_vs_ground_3y                   3-year log change of the grown (grains, softs, animal products) index minus
+                                                 the in-the-ground (energy, metals, minerals) index: the composition of a boom
+    Every value at t uses prices of years <= t."""
+    if not os.path.exists(JACKS):
+        print("Jacks workbook missing; skipping"); return None
+    import openpyxl, warnings
+    warnings.filterwarnings("ignore")
+    wb = openpyxl.load_workbook(JACKS, read_only=True, data_only=True)
+    rows = list(wb["Commodities"].iter_rows(values_only=True))
+    groups, names = rows[0], rows[1]
+    cols, g = [], None
+    for j, (grp, nm) in enumerate(zip(groups, names)):
+        if grp:
+            g = str(grp).strip()
+        if nm and str(nm).strip().lower() != "year":
+            cols.append((j, g, str(nm).strip()))
+    P = {}  # year -> {commodity: real price}
+    for r in rows[2:]:
+        if r[0] is None or not re.fullmatch(r"\d{4}", str(r[0])):
+            continue
+        y = int(r[0])
+        P[y] = {nm: nan(r[j]) for j, g, nm in cols}
+        P[y] = {k: v for k, v in P[y].items() if not np.isnan(v) and v > 0}
+    grp_of = {nm: g for j, g, nm in cols}
+    GROWN = {"Grains", "Softs", "Animal products"}; GROUND = {"Energy", "Metals", "Minerals"}
+    years = sorted(P)
+
+    def lchg(y, n, members=None):
+        """mean log change over n years across commodities present at both ends (equal weight)."""
+        if y - n not in P:
+            return np.nan, 0
+        ks = [k for k in P[y] if k in P[y - n] and (members is None or k in members)]
+        if len(ks) < 3:
+            return np.nan, len(ks)
+        return float(np.mean([np.log(P[y][k] / P[y - n][k]) for k in ks])), len(ks)
+
+    # chained equal-weight index from 1850 (log index = cumulative mean 1-year log changes)
+    idx, lv = {}, 0.0
+    for y in years:
+        c, n = lchg(y, 1)
+        if not np.isnan(c):
+            lv += c
+        idx[y] = lv
+    out = []
+    for y in years:
+        i1, _ = lchg(y, 1); i3, n3 = lchg(y, 3)
+        hist = [idx[yy] for yy in years if yy <= y]
+        anom = idx[y] - float(np.median(hist)) if len(hist) >= 10 else np.nan
+        ks3 = [k for k in P[y] if (y - 3) in P and k in P[y - 3]]
+        chg = [np.log(P[y][k] / P[y - 3][k]) for k in ks3]
+        breadth = float(np.mean([c > 0 for c in chg])) if len(chg) >= 10 else np.nan
+        disp = float(np.std(chg)) if len(chg) >= 10 else np.nan
+        e3, _ = lchg(y, 3, {k for k in grp_of if grp_of[k] == "Energy"})
+        m3, _ = lchg(y, 3, {k for k in grp_of if grp_of[k] == "Metals"})
+        gr3, _ = lchg(y, 3, {k for k in grp_of if grp_of[k] == "Grains"})
+        grown, _ = lchg(y, 3, {k for k in grp_of if grp_of[k] in GROWN}); ground, _ = lchg(y, 3, {k for k in grp_of if grp_of[k] in GROUND})
+        out.append([y, i1, i3, anom, breadth, disp, e3, m3, gr3, (np.nan if np.isnan(grown) or np.isnan(ground) else grown - ground), n3])
+    cols_out = ["jacks_real_index_1y", "jacks_real_index_3y", "jacks_anom", "jacks_breadth_3y", "jacks_dispersion_3y",
+                "jacks_energy_3y", "jacks_metals_3y", "jacks_grains_3y", "jacks_grown_vs_ground_3y", "jacks_n_3y"]
+    with open(os.path.join(PH, "jacks_features.csv"), "w", newline="") as f:
+        w = csv.writer(f); w.writerow(["year"] + cols_out)
+        for r in out:
+            w.writerow([r[0]] + ["" if (isinstance(v, float) and np.isnan(v)) else (f"{v:.6g}" if isinstance(v, float) else v) for v in r[1:]])
+    cov = {c: int(sum(1 for r in out if not (isinstance(r[k + 1], float) and np.isnan(r[k + 1])))) for k, c in enumerate(cols_out)}
+    print(f"jacks: {len(out)} years, {len(cols)} commodities; coverage {cov}")
+    return {"years": len(out), "commodities": [(g, nm) for j, g, nm in cols], "coverage": cov, "file": "history/physical/raw/JACKS-COMMODITIES/Real-commodity-prices-1850-2025.xlsx"}
+
+
 def main():
     jst = {(r["iso"], int(r["year"])): r for r in load_jst(apply_overrides=True)}
     co2 = {}
@@ -286,7 +370,7 @@ def main():
         for r in csv.DictReader(open(xp)):
             co2[(r["iso"], int(r["year"]))] = nan(r.get("co2ds_co2"))
     prov = {"built_by": "history/tools/physical_build2.py", "provenance_class": "derived",
-            "diffusion": build_diffusion(jst, co2), "materials": build_materials(jst)}
+            "diffusion": build_diffusion(jst, co2), "materials": build_materials(jst), "jacks": build_jacks()}
     json.dump(prov, open(os.path.join(PH, "physical_build2.provenance.json"), "w"), indent=1)
 
 

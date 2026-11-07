@@ -26,8 +26,9 @@ What stands at revision one — commit `bb2e0fc` plus this note; the `history-v1
   corpus taken apart into templates, 48 cases, gauges and 193 graded reads; the physical layer (CO2 and energy,
   oil since 1861, CHAT technology adoption, USGS minerals, the commodity PPI, US energy from 1635, European energy
   from 1800); the network's topology from the regime columns; the corporate layer (Z.1 from 1945, BEA profits from
-  1929, Shiller from 1871, home prices from 1890). 98 physical and 17 corporate files pulled by the workflow with
-  hashes; four desktop-only sources documented in `HANDOFF.md`.
+  1929, Shiller from 1871, home prices from 1890; Goyal–Welch from 1871 and Jacks's 42 world commodity prices from
+  1850, both supplied by hand). 98 physical and 17 corporate files pulled by the workflow with hashes; the one
+  desktop-only source still outstanding (the SEC data sets) is documented in `HANDOFF.md`.
 - **The four parts of the foundation as artifacts**: the climatology by measured topology era (`climatology/`), the
   analog library with a full 20-feature live query and measured join rules (`analogs/`, `bridge/join_rules.json`),
   the voice ledger (`dalio/reads.csv`, 193 reads graded for falsifiability, unscored), the mechanisms (templates,
@@ -35,8 +36,9 @@ What stands at revision one — commit `bb2e0fc` plus this note; the `history-v1
 - **The measured numbers**: walk-forward crisis-label AUC 0.59 for the analog cone (the leaky 0.66 retired); measured
   targets 0.68–0.76 with weighted learners; the oil price the one physical feature that earns its place (GDP fall
   0.60 → 0.68 on the logit, four times its band; the drawdown's 0.73 → 0.76 on the trees sits at the edge of theirs
-  and rests on the top-decile lift, 40% against 14%); diffusion, materials and topology measured and found not to add
-  as features; the CO2 proxy calibrated against measured energy; the era split and the cadence noise band
+  and rests on the top-decile lift, 40% against 14%); diffusion, materials, the Jacks panel and topology measured
+  and found not to add as features (the global-at-t families cost skill as weights and earn it as ladder rungs: a
+  real commodity bust at T lifts the contraction rate 42% → 62%); the CO2 proxy calibrated against measured energy; the era split and the cadence noise band
   (`analogs/noise_band.md`: refit years shifted 0–3, mean range 0.03 for the logit, 0.025 for the trees, up to 0.07 and
   0.06 on single cells) as the reading rules for every comparison.
 - **What it does not do**: forecast the dials' branches by itself; learn from the handful of eras; see the micro layer
@@ -362,8 +364,9 @@ run-to-run noise with nothing else changed (the trees have no other randomness a
 refit and does not move). Mean range across targets: 0.031 for the logit, 0.025 for the trees, 0.016 for the ensemble;
 single cells reach 0.07 (the logit on the drawdown before 2004) and 0.06 (the trees on the contraction before 2004).
 Read against it: the oil price's GDP-fall gain (+0.08, logit) and the materials family's label move (+0.08, logit)
-clear the band, the oil drawdown gain (+0.03, trees) sits at its edge, and the diffusion, topology and measured-energy
-differences (±0.01 to ±0.06, mostly logit) sit inside it — which is the reading the sections above already gave,
+clear the band, the oil drawdown gain (+0.03, trees) sits at its edge, the Jacks panel's GDP-fall loss (−0.09 logit,
+−0.05 trees) clears it the other way, and the diffusion, topology and measured-energy differences (±0.01 to ±0.06,
+mostly logit) sit inside it — which is the reading the sections above already gave,
 now with the band written down rather than assumed.
 
 ## The corporate layer (`corporate/`, `tools/corporate_pull.py`, `tools/corporate_build.py`)
@@ -501,6 +504,12 @@ stays as one view; the measured targets become the primary ones, and the horizon
   leaves Warde's England and Wales sheet out because GBR is the UK; the splice into the features changed only
   previously empty cells (777 country-years); the proxy calibration by country and era recomputed from the stored
   files; the measured-energy learner run reproduces the proxy run within ±0.01 everywhere.
+- 2026-11-06 (Jacks): the workbook's group headers span merged cells and were carried forward by column; 42 commodities
+  found with their first years as the chartbook lists them (gas, aluminum, chromium, manganese, bauxite, iron ore,
+  potash, platinum, soybeans from 1900; petroleum from 1860; rubber from 1890); the equal-weight index is chained from
+  mean one-year log changes over the commodities present at both ends, so entries and exits do not jump it; spot
+  checks at 1917, 1920, 1932, 1974, 1986, 2008 and 2022 read as the record says; the ladder re-run reproduced every
+  earlier section unchanged (diff limited to the three Jacks ladders).
 - 2026-11-06 (corporate layer): the first workflow run resolved all FRED titles (the "Debt Securities" series answered
   for the debt key, so a second key for "Debt Securities and Loans" was added and the builder prefers it); the
   resolved ids, titles, units and start dates are in `corporate/raw/FRED-Z1/series_used.json`; the SEC endpoints
