@@ -205,7 +205,8 @@ def pull_goyal_welch(manifest, errors):
 
 
 # ------------------------------------------------------------------------------------------------------- SEC Financial Statement Data Sets
-FSDS_TAGS = {"Assets", "Liabilities", "StockholdersEquity", "LongTermDebt", "LongTermDebtNoncurrent", "CashAndCashEquivalentsAtCarryingValue",
+FSDS_TAGS = {"SalesRevenueNet", "SalesRevenueGoodsNet",  # the pre-2018 revenue tags, for continuity across the ASC 606 change
+             "Assets", "Liabilities", "StockholdersEquity", "LongTermDebt", "LongTermDebtNoncurrent", "CashAndCashEquivalentsAtCarryingValue",
              "InventoryNet", "Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "NetIncomeLoss", "InterestExpense",
              "NetCashProvidedByUsedInOperatingActivities", "PaymentsToAcquirePropertyPlantAndEquipment",
              "PaymentsForRepurchaseOfCommonStock", "PaymentsOfDividends", "PaymentsOfDividendsCommonStock", "DepreciationDepletionAndAmortization"}
@@ -254,17 +255,34 @@ def recent_quarters(n=5):
     return out
 
 
-def pull_fsds(manifest, errors, max_quarters=2):
+def all_quarters(since_year=2009):
+    """Every calendar quarter from since_year q1 to the last completed one, newest first."""
+    out = []
+    y0, q0 = recent_quarters(1)[0]
+    y, q = since_year, 1
+    while (y, q) <= (y0, q0):
+        out.append((y, q))
+        q += 1
+        if q == 5:
+            y, q = y + 1, 1
+    return out[::-1]
+
+
+def pull_fsds(manifest, errors, max_quarters=2, since=None):
+    """since: a year (int) from which every quarter is a candidate (the data sets begin 2009q1); None = the recent ones."""
     try:
         links = []
-        try:  # the index page lists the zips; it sits behind bot protection that sometimes answers 403
+        try:  # the index page lists the zips; it sits behind bot protection that answers 403 to cloud addresses
             idx = "https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets"
             page, _ = get(idx, SEC_UA, tries=2)
             links = sorted(set(re.findall(r'href="(/files/dera/data/financial-statement-data-sets/(\d{4}q[1-4])\.zip)"', page.decode("utf-8", "replace"))), reverse=True)
         except Exception as e:  # noqa
             errors.append(f"sec fsds index: {e}; trying the quarterly file names directly")
         if not links:  # the file names are predictable: yyyyqN.zip
-            links = [(f"/files/dera/data/financial-statement-data-sets/{y}q{q}.zip", f"{y}q{q}") for y, q in recent_quarters()]
+            qs = all_quarters(since) if since else recent_quarters()
+            links = [(f"/files/dera/data/financial-statement-data-sets/{y}q{q}.zip", f"{y}q{q}") for y, q in qs]
+        if since:
+            links = [(rel_, q) for rel_, q in links if int(q[:4]) >= since]
         done = set(os.listdir(os.path.join(RAW, "SEC-FSDS"))) if os.path.isdir(os.path.join(RAW, "SEC-FSDS")) else set()
         n = 0
         for rel_, q in links:
@@ -280,7 +298,7 @@ def pull_fsds(manifest, errors, max_quarters=2):
             w.writeheader(); w.writerows(rows)
             save("SEC-FSDS", f"{q}_aggregates.csv", body.getvalue().encode(), url, manifest,
                  note=f"aggregated in the workflow from the {len(data)}-byte zip (sha256 {hashlib.sha256(data).hexdigest()}): {nf} 10-K/10-Q filings, {len(rows)} tag-period rows; the zip is not kept")
-            n += 1; time.sleep(1)
+            n += 1; time.sleep(2)
     except Exception as e:  # noqa
         errors.append(f"sec fsds: {e}")
 
@@ -295,6 +313,7 @@ def aggregate_13f(zip_bytes):
     by_cusip, by_cusip_name = {}, {}
     filer_total, filer_top = {}, {}
     total, putcall_value, n_lines = 0.0, 0.0, 0
+    line_values = []
     with z.open(info) as f:
         rd = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8", errors="replace"), delimiter="\t")
         for r in rd:
@@ -303,6 +322,8 @@ def aggregate_13f(zip_bytes):
             except ValueError:
                 continue
             n_lines += 1
+            if v > 0 and n_lines % 7 == 0:  # a sample of positive line values for the unit check
+                line_values.append(v)
             acc = r.get("ACCESSION_NUMBER"); cusip = (r.get("CUSIP") or "").strip()
             total += v
             if (r.get("PUTCALL") or "").strip():
@@ -316,12 +337,24 @@ def aggregate_13f(zip_bytes):
                 heapq.heappush(h, v)
             elif v > h[0]:
                 heapq.heapreplace(h, v)
+    # VALUE is in dollars for filings made from January 2023 and in thousands before; detect the unit from the median line
+    # (a typical position is millions of dollars, thousands of thousands) and normalize everything to dollars
+    scale = 1.0
+    if line_values:
+        line_values.sort()
+        if line_values[len(line_values) // 2] < 1e5:
+            scale = 1000.0
+    if scale != 1.0:
+        by_cusip = {k: v * scale for k, v in by_cusip.items()}
+        filer_total = {k: v * scale for k, v in filer_total.items()}
+        total *= scale; putcall_value *= scale
     vals = sorted(by_cusip.values(), reverse=True)
     s = sum(vals) or 1.0
     top10 = sum(vals[:10]) / s; top50 = sum(vals[:50]) / s
     hhi = sum((v / s) ** 2 for v in vals)
     conc = sorted(sum(filer_top[a]) / filer_total[a] for a in filer_total if filer_total[a] > 0)
     summary = {"n_filers": len(filer_total), "n_infotable_lines": n_lines, "total_value_reported": f"{total:.6g}",
+               "value_unit_detected": "thousands (scaled x1000 to dollars)" if scale != 1.0 else "dollars",
                "putcall_value_share": f"{putcall_value / total:.4f}" if total else "", "n_issuers_cusip": len(by_cusip),
                "top10_issuer_share": f"{top10:.4f}", "top50_issuer_share": f"{top50:.4f}", "hhi_issuers": f"{hhi:.6f}",
                "median_filer_top10_share": f"{conc[len(conc) // 2]:.4f}" if conc else ""}
@@ -353,7 +386,43 @@ def recent_13f_windows(n=5):
     return out
 
 
-def pull_13f(manifest, errors, max_quarters=2):
+def all_13f_names(since_year=2013):
+    """Every 13F data-set file stem from since_year on: calendar quarters yyyyqN_form13f through 2023 (the sets begin
+    2013q2), then the three-month windows the SEC switched to in 2024; newest first."""
+    import calendar
+    mon = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+    out = []
+    for y in range(max(since_year, 2013), 2024):
+        for q in (1, 2, 3, 4):
+            if (y, q) >= (2013, 2):
+                out.append(f"{y}q{q}_form13f")
+    # windows from March 2024: Mar-May, Jun-Aug, Sep-Nov, Dec-Feb
+    t = time.gmtime()
+    ey, em = 2024, 2  # the first window ends February 2024 (the Dec 2023-Feb 2024 filings)
+    while (ey, em) < (t.tm_year, t.tm_mon):  # a window counts once its end month has ended
+        sm = em - 2; sy = ey
+        if sm <= 0:
+            sm += 12; sy -= 1
+        if sy >= since_year:
+            out.append(f"01{mon[sm - 1]}{sy}-{calendar.monthrange(ey, em)[1]}{mon[em - 1]}{ey}_form13f")
+        em += 3
+        if em > 12:
+            em -= 12; ey += 1
+    return out[::-1]
+
+
+def qkey_13f(name):
+    """Sort key for either naming style: '2019q3_form13f' -> (2019, 9); '01jul2025-30sep2025_form13f' -> (2025, 9)."""
+    m = re.match(r"(\d{4})q([1-4])", name.lower())
+    if m:
+        return (int(m.group(1)), 3 * int(m.group(2)))
+    m = re.search(r"-(\d{2})([a-z]{3})(\d{4})", name.lower())
+    months = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
+    return (int(m.group(3)), months.get(m.group(2), 0)) if m else (0, 0)
+
+
+def pull_13f(manifest, errors, max_quarters=2, since=None):
+    """since: a year (int) from which every data set is a candidate (the sets begin 2013q2); None = the recent ones."""
     try:
         links = []
         try:
@@ -362,14 +431,12 @@ def pull_13f(manifest, errors, max_quarters=2):
             links = re.findall(r'href="(/files/structureddata/data/form-13f-data-sets/([^"]+)\.zip)"', page.decode("utf-8", "replace"))
         except Exception as e:  # noqa
             errors.append(f"sec 13f index: {e}; trying the quarterly file names directly")
-        if not links:  # predictable names since March 2024: three-month windows ending Feb/May/Aug/Nov, e.g.
-            # 01dec2025-28feb2026_form13f.zip, 01mar2026-31may2026_form13f.zip (calendar quarters yyyyqN_form13f.zip before 2024)
-            links = [(f"/files/structureddata/data/form-13f-data-sets/{n}.zip", n) for n in recent_13f_windows()]
-        def qkey(name):  # '01jul2025-30sep2025_form13f' -> sortable (2025, 9)
-            m = re.search(r"-(\d{2})([a-z]{3})(\d{4})", name.lower())
-            months = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
-            return (int(m.group(3)), months.get(m.group(2), 0)) if m else (0, 0)
-        links = sorted(set(links), key=lambda t: qkey(t[1]), reverse=True)
+        if not links:  # predictable names: yyyyqN_form13f.zip through 2023, three-month windows from March 2024
+            names = all_13f_names(since) if since else recent_13f_windows()
+            links = [(f"/files/structureddata/data/form-13f-data-sets/{n}.zip", n) for n in names]
+        if since:
+            links = [(rel_, name) for rel_, name in links if qkey_13f(name)[0] >= since]
+        links = sorted(set(links), key=lambda t: qkey_13f(t[1]), reverse=True)
         done = set(os.listdir(os.path.join(RAW, "SEC-13F"))) if os.path.isdir(os.path.join(RAW, "SEC-13F")) else set()
         n = 0
         for rel_, name in links:
@@ -383,10 +450,10 @@ def pull_13f(manifest, errors, max_quarters=2):
             summary, top = aggregate_13f(data)
             summary["source_zip_sha256"] = hashlib.sha256(data).hexdigest(); summary["source_zip_bytes"] = len(data); summary["period"] = name
             save("SEC-13F", f"{name}_summary.json", json.dumps(summary, indent=1).encode(), url, manifest,
-                 note="aggregated in the workflow; the zip is not kept; VALUE is in dollars from 2023 (thousands before)")
+                 note=f"aggregated from the zip (not kept); VALUE unit detected: {summary['value_unit_detected']}; values in the summary are dollars")
             body = io.StringIO(); w = csv.DictWriter(body, fieldnames=["rank", "cusip", "issuer", "value", "share"]); w.writeheader(); w.writerows(top)
             save("SEC-13F", f"{name}_top20.csv", body.getvalue().encode(), url, manifest)
-            n += 1; time.sleep(1)
+            n += 1; time.sleep(2)
     except Exception as e:  # noqa
         errors.append(f"sec 13f: {e}")
 
@@ -397,7 +464,12 @@ def main():
     ap.add_argument("--only", default="", help="comma list of pulls to run: fred, shiller, goyal, fsds, 13f (default: all). "
                     "sec.gov answers 403 to cloud-provider addresses, so fsds and 13f are meant to be run from a desktop: "
                     "python3 history/tools/corporate_pull.py --only fsds,13f, then commit history/corporate/raw/")
+    ap.add_argument("--quarters", type=int, default=2, help="how many SEC data sets to fetch per run, per set (default 2; the run is resumable: sets already in raw/ are skipped)")
+    ap.add_argument("--since", type=int, default=0, help="backfill: consider every SEC data set from this year on (FSDS begin 2009, 13F 2013)")
+    ap.add_argument("--all", action="store_true", help="backfill everything: --since 2009 --quarters 200")
     a = ap.parse_args()
+    if a.all:
+        a.since, a.quarters = 2009, 200
     only = {x.strip() for x in a.only.split(",") if x.strip()}
     manifest, errors = [], []
     os.makedirs(RAW, exist_ok=True)
@@ -408,9 +480,9 @@ def main():
     if not only or "goyal" in only:
         pull_goyal_welch(manifest, errors)
     if not only or "fsds" in only:
-        pull_fsds(manifest, errors)
+        pull_fsds(manifest, errors, max_quarters=a.quarters, since=a.since or None)
     if not only or "13f" in only:
-        pull_13f(manifest, errors)
+        pull_13f(manifest, errors, max_quarters=a.quarters, since=a.since or None)
     out = {"manifest": manifest, "errors": errors, "pulls_run": sorted(only) if only else "all"}
     prev = os.path.join(RAW, "manifest.json")
     if os.path.exists(prev):

@@ -61,6 +61,13 @@ are most held) beside the CFTC, EPFR, ICI, AAII and margin series the positionin
   datahub.io's scripted mirror of the same workbook, flagged `MIRROR` in the manifest.
 - Goyal–Welch is distributed from Amit Goyal's page as a Drive-hosted workbook that the puller may not be able to
   resolve; when it cannot, the workbook goes under `raw/GOYAL-WELCH/` by hand (`the predictor workbook (PredictorData<year>.xlsx or Data<year>.xlsx)`).
+- SEC 13F `VALUE` changed unit with the filings made from January 2023 (dollars; thousands before). The aggregator
+  detects the unit from the median line value of each data set and scales the older sets to dollars, recording
+  what it found (`value_unit_detected`), so the quarterly table is in dollars throughout. The financial-statement
+  tag set carries both the current revenue tag (`RevenueFromContractWithCustomerExcludingAssessedTax`, from 2018)
+  and the earlier ones (`SalesRevenueNet`, `SalesRevenueGoodsNet`); the filer population grows through the XBRL
+  phase-in (large accelerated filers from 2009, all filers from mid-2011), so ratios within a period are the
+  comparable quantities, levels are not.
 - SEC data: public domain, under the fair-access policy (identify the client in the User-Agent, at most ten
   requests a second). **sec.gov refuses GitHub-hosted runners** (403 to every request from cloud-provider addresses,
   with or without the fair-access User-Agent), so the two SEC pulls run from a desktop:
