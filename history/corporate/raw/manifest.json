@@ -2,12 +2,21 @@
  "manifest": [
   {
    "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2026-31aug2026_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/datastandardsinnovation/data/form-13f-data-sets/01jun2026-31aug2026_form13f.zip",
+   "bytes": 121552,
+   "sha256": "1845ae5c1ca76e447d2496add588aa4cc60c8349cf3dab291e53d05c89c429c4",
+   "retrieved": "2026-11-07T18:07:54Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
+  },
+  {
+   "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01jun2026-31aug2026_form13f_summary.json",
    "url": "https://www.sec.gov/files/datastandardsinnovation/data/form-13f-data-sets/01jun2026-31aug2026_form13f.zip",
-   "bytes": 3205,
-   "sha256": "296ad015012de3ffee6d606edcd857fdab0009036c31215463b39ebaea547ade",
-   "retrieved": "2026-11-07T17:30:05Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2026-06-30; set unit dollars, 345 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34102,
+   "sha256": "ee2750c7f4bbfe72fe551f8c795eeb6dc7457db51a1b7e498d5e4b23ebdbe4f8",
+   "retrieved": "2026-11-07T18:07:54Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2026-06-30; set unit dollars, 345 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -15,16 +24,25 @@
    "url": "https://www.sec.gov/files/datastandardsinnovation/data/form-13f-data-sets/01jun2026-31aug2026_form13f.zip",
    "bytes": 1047,
    "sha256": "5d784e591dd32412d1639b8ac1cb04a063724b5e105f3fe47692bc3844ac5b19",
-   "retrieved": "2026-11-07T17:30:05Z"
+   "retrieved": "2026-11-07T18:07:54Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
+   "bytes": 121462,
+   "sha256": "621325bf854d6b81892207075d8a0cb15e5e3c86eae38bf4c354d96784cd7858",
+   "retrieved": "2026-11-07T18:08:15Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01mar2026-31may2026_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
-   "bytes": 3216,
-   "sha256": "4c53f7e35d7f39decf88f8c2f76a531d356b9eb2c0f592e44b858327a8126e46",
-   "retrieved": "2026-11-07T17:30:25Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2026-03-31; set unit dollars, 361 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34202,
+   "sha256": "63a6c280f873ac785c6c8e6ca8fdf6b78e6dca91cd1664f757b753597f7a4477",
+   "retrieved": "2026-11-07T18:08:15Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2026-03-31; set unit dollars, 361 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -32,33 +50,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2026-31may2026_form13f.zip",
    "bytes": 1017,
    "sha256": "b28d1de23cfdf24d23a7f2f5378bb8601f8f996ec5d37aa7d4b240ee02008121",
-   "retrieved": "2026-11-07T17:30:25Z"
+   "retrieved": "2026-11-07T18:08:15Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
+   "bytes": 121361,
+   "sha256": "a915e0f470187993ed8dc6d8708e184c57b549a546e40d0075b7d163733e7e23",
+   "retrieved": "2026-11-07T18:08:35Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
-   "bytes": 3166,
-   "sha256": "7e58b174c8be1476383ac40a00df2b8e2eef0146045928f0fd73d7801744153f",
-   "retrieved": "2026-11-07T17:30:44Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-12-31; set unit dollars, 391 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34573,
+   "sha256": "34db020c7c79379a48de72e013631998e50fa847a4cfd09c6ae5c6091825b17b",
+   "retrieved": "2026-11-07T18:08:35Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2025-12-31; set unit dollars, 390 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01dec2025-28feb2026_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2025-28feb2026_form13f.zip",
-   "bytes": 1004,
-   "sha256": "9c9354789c1854deabccf13562d4648e256e1d809760e950f2839d87c4f7eaa6",
-   "retrieved": "2026-11-07T17:30:44Z"
+   "bytes": 1003,
+   "sha256": "f8d05bb95a31dcdc46f2a27f5c1ae80b9bc79bed6f20db383abb575b60404e26",
+   "retrieved": "2026-11-07T18:08:35Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
+   "bytes": 121413,
+   "sha256": "38acbaaba4657c0ec9350a5ba5fce77b76660aeb41a9a54f223f294cc905b140",
+   "retrieved": "2026-11-07T18:08:53Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01sep2025-30nov2025_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
-   "bytes": 3194,
-   "sha256": "7f9e8ffa2d3ec2156eb9e459069005fb25aab3867275897804eebed8d3902c0e",
-   "retrieved": "2026-11-07T17:31:02Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-09-30; set unit dollars, 375 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34078,
+   "sha256": "9157e90a77ea1fc67c5f21b685263e12178a13c68b27713530cfde5122679931",
+   "retrieved": "2026-11-07T18:08:53Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2025-09-30; set unit dollars, 375 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -66,16 +102,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2025-30nov2025_form13f.zip",
    "bytes": 1107,
    "sha256": "24618260c4a0e0af4572aa931dd35595a76f1241c5b9d79b7441b013aab22f5f",
-   "retrieved": "2026-11-07T17:31:02Z"
+   "retrieved": "2026-11-07T18:08:53Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2025-31aug2025_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
+   "bytes": 121118,
+   "sha256": "c1b7974a52378278fd4fca4b1a67ce83e5f66688e7ed2473f890ace354d3c2aa",
+   "retrieved": "2026-11-07T18:09:11Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01jun2025-31aug2025_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
-   "bytes": 3194,
-   "sha256": "d05f120c1cc23a253d9b9198bb1c2e097c0dd97e25fe26f6d03dd9753906a3b0",
-   "retrieved": "2026-11-07T17:31:20Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-06-30; set unit dollars, 443 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34035,
+   "sha256": "e74c04512b2a1d66c71a95905851152b68dbb3f92e0d69b72a89313d70329ced",
+   "retrieved": "2026-11-07T18:09:11Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2025-06-30; set unit dollars, 443 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -83,16 +128,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2025-31aug2025_form13f.zip",
    "bytes": 995,
    "sha256": "129e46613c8cf6990547d2d5ed67abba71aff30e9857d2512bdbcff3f8c9b020",
-   "retrieved": "2026-11-07T17:31:20Z"
+   "retrieved": "2026-11-07T18:09:11Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2025-31may2025_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
+   "bytes": 120877,
+   "sha256": "753dc9a6e08287ac98aa6ab9e6cca9224b7767d8f7d4f5fabc3faa666eeae7c6",
+   "retrieved": "2026-11-07T18:09:34Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01mar2025-31may2025_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
-   "bytes": 3196,
-   "sha256": "cb8e574230ed03d34f125f835c36bddb9d854c3125f5cd548069bee0924402cc",
-   "retrieved": "2026-11-07T17:31:39Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2025-03-31; set unit dollars, 462 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34128,
+   "sha256": "b539f56b48c433948e916d9ac594cf2412c8778f6fdc197d6a66a27aaddf4019",
+   "retrieved": "2026-11-07T18:09:34Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2025-03-31; set unit dollars, 462 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -100,16 +154,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2025-31may2025_form13f.zip",
    "bytes": 1124,
    "sha256": "7b80089670bf052941207477c3b1eaafd90ef981cfe28d4fe2f457ea90d79827",
-   "retrieved": "2026-11-07T17:31:39Z"
+   "retrieved": "2026-11-07T18:09:34Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01dec2024-28feb2025_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
+   "bytes": 121138,
+   "sha256": "14367378460b49baa0c15edb1f6b17ec7ff778b844cd8625862bb120021013a8",
+   "retrieved": "2026-11-07T18:09:53Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01dec2024-28feb2025_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
-   "bytes": 3197,
-   "sha256": "f1688f6653a76c383efdaf39ca05b4bfbf2a3c6d8cb13d2365701561005f2a86",
-   "retrieved": "2026-11-07T17:31:57Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-12-31; set unit dollars, 517 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34107,
+   "sha256": "2722f30dd196c79806e4bc3ed5c2980c7197b77c823ad59598723a44821bfcf7",
+   "retrieved": "2026-11-07T18:09:53Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2024-12-31; set unit dollars, 517 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -117,16 +180,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01dec2024-28feb2025_form13f.zip",
    "bytes": 1005,
    "sha256": "6d71aad771760decd83e7a3e33ff783197a143cbff9cf4dd3e5ce4fa63d0d1ac",
-   "retrieved": "2026-11-07T17:31:57Z"
+   "retrieved": "2026-11-07T18:09:53Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01sep2024-30nov2024_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
+   "bytes": 121005,
+   "sha256": "3486f14307eb0cc3a7469ed5fee95b22815fd117aa97967736428773c4d8de03",
+   "retrieved": "2026-11-07T18:10:10Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01sep2024-30nov2024_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
-   "bytes": 3203,
-   "sha256": "8779c24af21810646f127ec5f9d521a3d15981795860e969728474e35ce19feb",
-   "retrieved": "2026-11-07T17:32:18Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-09-30; set unit dollars, 540 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34100,
+   "sha256": "f9ed11bc988aeca60be2863e74451c1ea985dc668096fbb98dc7960e50da5f5b",
+   "retrieved": "2026-11-07T18:10:10Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2024-09-30; set unit dollars, 540 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -134,16 +206,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01sep2024-30nov2024_form13f.zip",
    "bytes": 1038,
    "sha256": "9b0e2fcdf9aa13c481cd7e8b6f6b783ce3a901597508e6cc1b536a0e9e17b2c1",
-   "retrieved": "2026-11-07T17:32:18Z"
+   "retrieved": "2026-11-07T18:10:10Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jun2024-31aug2024_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
+   "bytes": 120751,
+   "sha256": "e2045275df580bd3dcef1f7ed5fe34dc38e7b32643dc183a1f1f6464aa2280da",
+   "retrieved": "2026-11-07T18:10:28Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01jun2024-31aug2024_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
-   "bytes": 3186,
-   "sha256": "42498db2d104c75af49e49dce41e5ef487757685f0e461df5385f42c4968c2db",
-   "retrieved": "2026-11-07T17:32:35Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-06-30; set unit dollars, 561 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34004,
+   "sha256": "522983c593f3d0be447f68ba19e3d116706af5cac3c624e7cfeda0301d89a720",
+   "retrieved": "2026-11-07T18:10:28Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2024-06-30; set unit dollars, 561 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -151,16 +232,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jun2024-31aug2024_form13f.zip",
    "bytes": 1071,
    "sha256": "84caa0dcdec58777bfb0c1deea82bc505f90ef0209e82372489277d56b940786",
-   "retrieved": "2026-11-07T17:32:35Z"
+   "retrieved": "2026-11-07T18:10:28Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01mar2024-31may2024_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
+   "bytes": 120784,
+   "sha256": "87b98ae5e6c2739b82c4d702bdcd557d12af27f4f381d2f70770b4a9cc25f2b3",
+   "retrieved": "2026-11-07T18:10:45Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01mar2024-31may2024_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
-   "bytes": 3206,
-   "sha256": "8f19ae9880eaefda6f8220fe354db798261c3dda770c3cff6016308f918d03e6",
-   "retrieved": "2026-11-07T17:32:53Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2024-03-31; set unit dollars, 605 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34098,
+   "sha256": "f9f0243040320f949f02064f755ff98c313d31ec5f0f0704ce012b767366ec51",
+   "retrieved": "2026-11-07T18:10:45Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2024-03-31; set unit dollars, 605 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -168,16 +258,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01mar2024-31may2024_form13f.zip",
    "bytes": 1041,
    "sha256": "b6c129c69f533c691dd95843f3b746756afba94c3e1ae0dff5bc4280ec800f43",
-   "retrieved": "2026-11-07T17:32:53Z"
+   "retrieved": "2026-11-07T18:10:45Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/01jan2024-29feb2024_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
+   "bytes": 120560,
+   "sha256": "77f31c7a6776cd2961f427fb6653826ed2936bd6b102cc84f3f62db69dea8798",
+   "retrieved": "2026-11-07T18:11:02Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/01jan2024-29feb2024_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
-   "bytes": 3193,
-   "sha256": "1667953510c0683d597997ab3941a6f9f490d9cf1718b6ed9e92b886ad69c314",
-   "retrieved": "2026-11-07T17:33:10Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-12-31; set unit dollars, 640 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34040,
+   "sha256": "05a611bf2400a3ee11bf4364f30b07ebd17a64091ae5ebd484d7f35ff1d871c6",
+   "retrieved": "2026-11-07T18:11:02Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2023-12-31; set unit dollars, 640 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -185,50 +284,77 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/01jan2024-29feb2024_form13f.zip",
    "bytes": 1005,
    "sha256": "b051c689b8b93d6868e644ff16ca74b1d6238342b8a410188aa6a4fafb611729",
-   "retrieved": "2026-11-07T17:33:10Z"
+   "retrieved": "2026-11-07T18:11:02Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
+   "bytes": 120583,
+   "sha256": "3824ada92c90ab6eb67f90c7093c6a786af7561f8b922b083eef0e219085468a",
+   "retrieved": "2026-11-07T18:11:18Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
-   "bytes": 3201,
-   "sha256": "816d839e3798a444ff30168b2a4725646efe103bbd080d9dad8c0b50ecdaddbd",
-   "retrieved": "2026-11-07T17:33:27Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-09-30; set unit dollars, 691 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34548,
+   "sha256": "1fa126418fbb73754be680e14bc80ecd4229525c064d921d88ce75e6cb99cd8a",
+   "retrieved": "2026-11-07T18:11:18Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2023-09-30; set unit dollars, 690 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q4_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q4_form13f.zip",
-   "bytes": 1014,
-   "sha256": "fc70b863fca5cb6c33cf81b2bc8476e3efd7d5cfd015c707a623c13015aed220",
-   "retrieved": "2026-11-07T17:33:27Z"
+   "bytes": 1015,
+   "sha256": "f9ddfcac9c44675e2b93856283ef3f68aeac51c106f4000c385a9e4ea243c4c9",
+   "retrieved": "2026-11-07T18:11:18Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
+   "bytes": 120637,
+   "sha256": "480847555415085cc13450a3b64d83cbb3852e2c4e138d9e640314b1a6185781",
+   "retrieved": "2026-11-07T18:11:34Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
-   "bytes": 3174,
-   "sha256": "fabf7306bd81ed804cd30676e1d1d5319cc81f1dad50ad451933664f475f4b3f",
-   "retrieved": "2026-11-07T17:33:42Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-06-30; set unit dollars, 768 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34427,
+   "sha256": "d18df464a3d7f9d2a0298ec449702ac3180cc0cf2653b8e2f716dc52c84027a3",
+   "retrieved": "2026-11-07T18:11:34Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2023-06-30; set unit dollars, 767 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q3_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q3_form13f.zip",
-   "bytes": 1021,
-   "sha256": "b0cb666ab82b34d37fdb86c564de6ec4da8d46cdffa956800c9faf137f615b3e",
-   "retrieved": "2026-11-07T17:33:42Z"
+   "bytes": 1013,
+   "sha256": "5fd3b64477f6b05fa769ce60cd111e4b050818fada1a65d8ab35432cc54e7792",
+   "retrieved": "2026-11-07T18:11:34Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
+   "bytes": 120774,
+   "sha256": "899170725f29be48ece1cd1b1821bfd2731f46df1927a6474b5a968c20ae7d9a",
+   "retrieved": "2026-11-07T18:12:01Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
-   "bytes": 3192,
-   "sha256": "0f58f621d086c5db4eeacf16b99e3550bbd6e599d79f35b5d3dbea352e719529",
-   "retrieved": "2026-11-07T17:33:57Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2023-03-31; set unit dollars, 851 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34053,
+   "sha256": "a5564e5eb7107e0af3766834d31e1f3003daf2dc3de39dcfa7772f66733bc591",
+   "retrieved": "2026-11-07T18:12:01Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2023-03-31; set unit dollars, 851 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -236,33 +362,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q2_form13f.zip",
    "bytes": 1009,
    "sha256": "e0a0435761dcc7fe7c1fff4057c877cc2e0300dc45bd6ce408a223d19fb91145",
-   "retrieved": "2026-11-07T17:33:57Z"
+   "retrieved": "2026-11-07T18:12:01Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2023q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
+   "bytes": 120587,
+   "sha256": "29d8c79bb8e5933f66846f1afb05786ad36436aad3f9fbb9960b5289077532b4",
+   "retrieved": "2026-11-07T18:12:17Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
-   "bytes": 3195,
-   "sha256": "16e70ed9524f1976c6e031df77fa534e6d3a6c93940f40f24ad6cd9b300146bb",
-   "retrieved": "2026-11-07T17:34:13Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-12-31; set unit dollars, 1205 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34387,
+   "sha256": "899b6d96a097c738c813321858f2ae4232dfe12cc589394bf9018e3b7f853ce9",
+   "retrieved": "2026-11-07T18:12:17Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2022-12-31; set unit dollars, 1204 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2023q1_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2023q1_form13f.zip",
-   "bytes": 1029,
-   "sha256": "4125ebbc75601ff29b48aa63fd3f86a7a63973a16d356988a0415ee69bbd8e14",
-   "retrieved": "2026-11-07T17:34:13Z"
+   "bytes": 1028,
+   "sha256": "316882e5f1a480577110ed77004ca1b36750465eaaa428eb8bb5e8b63c14a396",
+   "retrieved": "2026-11-07T18:12:17Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
+   "bytes": 120424,
+   "sha256": "3dda91f0f19aa0cb6cc4969ce1b3e7b2f6197c93306e282c84af2d408b02afb0",
+   "retrieved": "2026-11-07T18:12:32Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2022q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
-   "bytes": 3223,
-   "sha256": "f0e77d441f5f737ec20c71398b439e6c75435d29f13f84705e45857103b4d116",
-   "retrieved": "2026-11-07T17:34:27Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-09-30; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34014,
+   "sha256": "dd6c95c2940c4be56bd0ad9148d7f0eefbfa18214fe1d4fbb28dc1cc0f2d1eac",
+   "retrieved": "2026-11-07T18:12:32Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2022-09-30; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -270,16 +414,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q4_form13f.zip",
    "bytes": 1057,
    "sha256": "2b034dc55c55c419191d58f4579741afa397eda9963f2743a2967358293094fd",
-   "retrieved": "2026-11-07T17:34:27Z"
+   "retrieved": "2026-11-07T18:12:32Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
+   "bytes": 120353,
+   "sha256": "298a61058f463deec84d3d464485abe971530e849d8969c6932658a4a4dc44fc",
+   "retrieved": "2026-11-07T18:12:47Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2022q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
-   "bytes": 3225,
-   "sha256": "5adeb6d1202c54babb580dc4785fff4c52a8e71e4bc5d140d93046e9fdf08790",
-   "retrieved": "2026-11-07T17:34:43Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33977,
+   "sha256": "8bfd982e4aeae21c060eac25f914e47fc632d82695276207571270f81101f874",
+   "retrieved": "2026-11-07T18:12:47Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2022-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -287,16 +440,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q3_form13f.zip",
    "bytes": 1108,
    "sha256": "5b7dd93eb74c87de49e71960195b47240e201ebde3a287caa9d526f30e64edf0",
-   "retrieved": "2026-11-07T17:34:43Z"
+   "retrieved": "2026-11-07T18:12:47Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
+   "bytes": 120484,
+   "sha256": "9d49d596b77036c832865ca138a2508fd565148648e2184e8b22957cdd86e5f1",
+   "retrieved": "2026-11-07T18:13:04Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2022q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
-   "bytes": 3221,
-   "sha256": "1631deac7f74f418034b02893c9c85cc4a9f95b893561cea03e02929570dc7fa",
-   "retrieved": "2026-11-07T17:34:58Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2022-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33957,
+   "sha256": "769efff5742714473c77fcde1dd776b31fe37aa17294a1faa20a5b086b790bdf",
+   "retrieved": "2026-11-07T18:13:04Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2022-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -304,33 +466,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q2_form13f.zip",
    "bytes": 1072,
    "sha256": "80e7fa1040938d0ba4614f3f88a2e19e99310564573fbd047950b16923544fa0",
-   "retrieved": "2026-11-07T17:34:58Z"
+   "retrieved": "2026-11-07T18:13:04Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2022q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
+   "bytes": 120284,
+   "sha256": "f242973ee4239599fabc8e01b2ed70f1f3caeec7b7cb1b5264c05ead1aecee58",
+   "retrieved": "2026-11-07T18:13:21Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2022q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
-   "bytes": 3233,
-   "sha256": "1f058efa4e532b2f22b7cca3420d29c2afb29e79b2fa0f2778e111e7c5d98d97",
-   "retrieved": "2026-11-07T17:35:13Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-12-31; set unit thousands, 97 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34636,
+   "sha256": "874da2f7aaea24db4ac7a7087019fb7c406b69e4365c48528a13eac9eeefd89b",
+   "retrieved": "2026-11-07T18:13:21Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2021-12-31; set unit thousands, 97 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2022q1_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2022q1_form13f.zip",
-   "bytes": 1025,
-   "sha256": "bb32839471e072866e5bd67212cd3bd700e48312ca3d40a38701b6bb3c3b841c",
-   "retrieved": "2026-11-07T17:35:13Z"
+   "bytes": 1031,
+   "sha256": "f2b0d2237e4933efd71110222bfb886b9a4a95c0e8e758407823db3474b9962a",
+   "retrieved": "2026-11-07T18:13:21Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
+   "bytes": 120226,
+   "sha256": "859cfee51a9c92b11af64f80f1c5b1e018efd89735bef5d6f7231ca289d8fbb7",
+   "retrieved": "2026-11-07T18:13:37Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2021q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
-   "bytes": 3222,
-   "sha256": "129a305a4c31e7c8ba1778a2f62d8ef016a799a21fc6eebad6124c89fc5a46e6",
-   "retrieved": "2026-11-07T17:35:28Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-09-30; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33949,
+   "sha256": "2eb77703990c047b01e7dcaebad72f05e593ab9f784c1391802c2cea91656cf2",
+   "retrieved": "2026-11-07T18:13:37Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2021-09-30; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -338,33 +518,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q4_form13f.zip",
    "bytes": 1055,
    "sha256": "c052ea18e568fdcbb5eefd2b9080ed866bd2102819e76819925aa8b3774c1255",
-   "retrieved": "2026-11-07T17:35:28Z"
+   "retrieved": "2026-11-07T18:13:37Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
+   "bytes": 120234,
+   "sha256": "947b8a8a5989410aaabd0747e26d598f019bf0a9acd30a45e4d6ba17beca46be",
+   "retrieved": "2026-11-07T18:13:52Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2021q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
-   "bytes": 3238,
-   "sha256": "f8c9d69e11c49e45969ad6c3a53f5d36eed7848249ffa9de0a1271d030e7cbef",
-   "retrieved": "2026-11-07T17:35:44Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-06-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34455,
+   "sha256": "685f1d9142bfcbe8f7dd229de98f4db3db724341958f181aab40d7bacdb0a21f",
+   "retrieved": "2026-11-07T18:13:52Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2021-06-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2021q3_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q3_form13f.zip",
-   "bytes": 1028,
-   "sha256": "492325208cd5e04fea16cc0585dcd9756c5ba30596717488392ba56c3306753b",
-   "retrieved": "2026-11-07T17:35:44Z"
+   "bytes": 1022,
+   "sha256": "5775ed3f8ec6881e9e8df80a557eedaa72fe529a490061738274ebee27dfb13a",
+   "retrieved": "2026-11-07T18:13:52Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
+   "bytes": 120295,
+   "sha256": "49ad8006a49a881b6ea7f7ae86141172268fd73b995bec0d4c187d30c514bc07",
+   "retrieved": "2026-11-07T18:14:08Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2021q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
-   "bytes": 3232,
-   "sha256": "3fb5a82ceff43e339ce26827600dd80370291680299df365d46dce7ed84109c5",
-   "retrieved": "2026-11-07T17:35:57Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2021-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34061,
+   "sha256": "0d929a394a4226b5ddddb3c83c8b345bd8bef491215d8fd60e88e06fed64e9fe",
+   "retrieved": "2026-11-07T18:14:08Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2021-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -372,33 +570,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q2_form13f.zip",
    "bytes": 1017,
    "sha256": "33c6e80964cae5a6eb3d44d3f68edc257f017b53bdf7f09d7550ef7d828b13ea",
-   "retrieved": "2026-11-07T17:35:57Z"
+   "retrieved": "2026-11-07T18:14:08Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2021q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
+   "bytes": 120189,
+   "sha256": "9af0e808af1b1b125b335157909e6f10d1ad10ffdc06e9fc4d30a0fdc3a023e8",
+   "retrieved": "2026-11-07T18:14:22Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2021q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
-   "bytes": 3364,
-   "sha256": "dc350062083d05c044e00643f6108590c6011a2556b217cb48675bc2a84bd6ca",
-   "retrieved": "2026-11-07T17:36:11Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-12-31; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34678,
+   "sha256": "95f5338503c194d3484ba4953134cc2957bf3341c9738a2a80be387d4f305d87",
+   "retrieved": "2026-11-07T18:14:22Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2020-12-31; set unit thousands, 79 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2021q1_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2021q1_form13f.zip",
    "bytes": 1101,
-   "sha256": "ba96024585066c94f26a2122c2374163fe8355a2fc3403f8a73c95f3b7b92310",
-   "retrieved": "2026-11-07T17:36:11Z"
+   "sha256": "1316f94ca088734eadfe6096cd11fe4e65e41715e4c8898f05480e4b77308512",
+   "retrieved": "2026-11-07T18:14:22Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
+   "bytes": 120205,
+   "sha256": "504a263c8dafc2c3f68124a1a984837e0abf13e5106643e27cd60bf4d3a4dbac",
+   "retrieved": "2026-11-07T18:14:35Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2020q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
-   "bytes": 3231,
-   "sha256": "572927c643688a59ed1cab806f66c5729c0d8cdc32db53f22c3e261ed1cf6c9e",
-   "retrieved": "2026-11-07T17:36:23Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-09-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34014,
+   "sha256": "f07f2bfb8ab65f25e5eb4c01ec7f35c5a14200cfb00017df174e4afe7b15b0d2",
+   "retrieved": "2026-11-07T18:14:35Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2020-09-30; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -406,16 +622,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q4_form13f.zip",
    "bytes": 1044,
    "sha256": "2628b65d68d4c09f4e35d943feda253ae2c74315959ba2afd40518b0c2c3c0cb",
-   "retrieved": "2026-11-07T17:36:23Z"
+   "retrieved": "2026-11-07T18:14:35Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
+   "bytes": 120102,
+   "sha256": "072588854d2303423d744cabd4e34347a1ae21d7c73f25bd9738164897d78061",
+   "retrieved": "2026-11-07T18:14:47Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2020q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
-   "bytes": 3357,
-   "sha256": "2ad2a7fb8a6a3f93648cfb85056ad4743e2a36a8627559cd12922c2392a2ba88",
-   "retrieved": "2026-11-07T17:36:35Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34145,
+   "sha256": "854570cec6ff01d0aa1b2b7e792d7276f2e925cc78ad589e2c36bc7e87f0ffb8",
+   "retrieved": "2026-11-07T18:14:47Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2020-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -423,16 +648,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q3_form13f.zip",
    "bytes": 1008,
    "sha256": "f61154fe28dace7bc78fb981fd1c54b284a798ae74cde8399b5c1ff7d01d97cc",
-   "retrieved": "2026-11-07T17:36:35Z"
+   "retrieved": "2026-11-07T18:14:47Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
+   "bytes": 119882,
+   "sha256": "1c80121b94936ec9a82d78fc357ac19501d8edc2feebc11465c888bd9ab77cfe",
+   "retrieved": "2026-11-07T18:15:00Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2020q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
-   "bytes": 3230,
-   "sha256": "dab594957af64ae28de04d2a98867a7e8f9763d18e9e9811e2bc9dcb8333f127",
-   "retrieved": "2026-11-07T17:36:48Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2020-03-31; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33941,
+   "sha256": "b061d0d66a549eaf847f3b05428f9bb16d552eec6d5de2ad029112a0c0651e66",
+   "retrieved": "2026-11-07T18:15:00Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2020-03-31; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -440,16 +674,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q2_form13f.zip",
    "bytes": 996,
    "sha256": "c81d71eba8b827b500696ea5b3534d2d4d06c2ace72471adff51d22018710cd6",
-   "retrieved": "2026-11-07T17:36:48Z"
+   "retrieved": "2026-11-07T18:15:00Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2020q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
+   "bytes": 119819,
+   "sha256": "5fa1d3b30a5efcfc32be10cd766a05e67fcabfefaf935f30dc741d38866d90c4",
+   "retrieved": "2026-11-07T18:15:13Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2020q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
-   "bytes": 3239,
-   "sha256": "adb9d8a3637952965a0febeef753671517fa6b99932db173689d222279bfe8e0",
-   "retrieved": "2026-11-07T17:37:00Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-12-31; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33954,
+   "sha256": "74b1c2364f0a372b09248cdf3218be4317f0014d1477ec44982e848d9b995ae3",
+   "retrieved": "2026-11-07T18:15:13Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2019-12-31; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -457,33 +700,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2020q1_form13f.zip",
    "bytes": 1100,
    "sha256": "7c6a1c3da6171f678237dfd6fc52b3cb4c1f36505a4e0c9f31d84a81238157cc",
-   "retrieved": "2026-11-07T17:37:00Z"
+   "retrieved": "2026-11-07T18:15:13Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
+   "bytes": 119896,
+   "sha256": "70579514e2c85b06cee30c79ff5eaf0af3a54711eff260ce4ca428cd6d3fa3c5",
+   "retrieved": "2026-11-07T18:15:25Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
-   "bytes": 3249,
-   "sha256": "42a6aee5e2d0256f20a79e1c4d1f4a3d23de5eedb7334d3b18dc483dc4d257bd",
-   "retrieved": "2026-11-07T17:37:12Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-09-30; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34503,
+   "sha256": "afa270d8591874cc25b868f5372daa66f45cdb3723c1766038fdd5b8af2731d9",
+   "retrieved": "2026-11-07T18:15:25Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2019-09-30; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q4_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q4_form13f.zip",
-   "bytes": 1015,
-   "sha256": "27327fc19f4345a5caf1d476903d43918b77421432ec1f48f0b2ae436ef94b46",
-   "retrieved": "2026-11-07T17:37:12Z"
+   "bytes": 1018,
+   "sha256": "e50df4f319c77ec1c4f8ff826ed2b39ff261cec420441bc011d3e74b971fe040",
+   "retrieved": "2026-11-07T18:15:25Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
+   "bytes": 119918,
+   "sha256": "308cea3ac869df60fc782fd99c01491f872311fac8ecd1eddb058c489be79da0",
+   "retrieved": "2026-11-07T18:15:38Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
-   "bytes": 3221,
-   "sha256": "08278da0e48c83ff1fe216be19cb3e5b948d695480e59f6000528af16ba1e236",
-   "retrieved": "2026-11-07T17:37:24Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33953,
+   "sha256": "1148a7de67882886649cd3d2176160fe7ba56acc9531eed96055ba4582bce80c",
+   "retrieved": "2026-11-07T18:15:38Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2019-06-30; set unit thousands, 74 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -491,50 +752,77 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q3_form13f.zip",
    "bytes": 1009,
    "sha256": "8fd42ed304337780c54d506526cf07808527d975d848fc44d27580dfd0edc1f4",
-   "retrieved": "2026-11-07T17:37:24Z"
+   "retrieved": "2026-11-07T18:15:38Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
+   "bytes": 119987,
+   "sha256": "0656d7f83f051b2b97e0462634a32db33974bd5e7bf8e8791b2491cefb300468",
+   "retrieved": "2026-11-07T18:15:51Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
-   "bytes": 3236,
-   "sha256": "a5604611aa66dfe0e2f5a2abf58fdc3408955fa4256b73b1a7e7451d8f88e784",
-   "retrieved": "2026-11-07T17:37:36Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2019-03-31; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34486,
+   "sha256": "dc8bbf510d8399df99ec883901d71cbd6b6be9302a38627183bc69cb2c5faa87",
+   "retrieved": "2026-11-07T18:15:51Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2019-03-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q2_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q2_form13f.zip",
    "bytes": 1007,
-   "sha256": "221c8eefc91572b379807164586f483b4d98ffe588097675bf5e09ed6243d512",
-   "retrieved": "2026-11-07T17:37:36Z"
+   "sha256": "8d5daf4cec0faa7e6b3a10bea8eb527864e988dc342437708a51306687507abc",
+   "retrieved": "2026-11-07T18:15:51Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2019q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
+   "bytes": 119857,
+   "sha256": "283b37d4d7837017e8e8b65aef8e5eaa8d37bd4bf3ff31e6d414798f74eb1686",
+   "retrieved": "2026-11-07T18:16:03Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
-   "bytes": 3228,
-   "sha256": "72288966241a949fda1ba286de47f9734d0786869f27c01b28c838084f9f46b0",
-   "retrieved": "2026-11-07T17:37:48Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-12-31; set unit thousands, 73 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34411,
+   "sha256": "ce6ef705f57208846bba1b524ef2305abd7fee8cba2e87c36894e1087601ccc4",
+   "retrieved": "2026-11-07T18:16:03Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2018-12-31; set unit thousands, 72 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2019q1_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2019q1_form13f.zip",
    "bytes": 1081,
-   "sha256": "0855a9dd21a33f98e7626372211165d334191b0972a9eb5841defc142eb4a5f4",
-   "retrieved": "2026-11-07T17:37:48Z"
+   "sha256": "8ac37dfa583fe6b1395169c08d20df0fe4a430c24d81ae11399d10384a1660bf",
+   "retrieved": "2026-11-07T18:16:03Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
+   "bytes": 119976,
+   "sha256": "4d15007e90cc68fb94369b5a49a91fb979cf02527db465aadb71a1092db53ca9",
+   "retrieved": "2026-11-07T18:16:15Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2018q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
-   "bytes": 3222,
-   "sha256": "5f1def3e03919811733c5b4ed3027c42f1505f18cfdedec8028cac13ff78462d",
-   "retrieved": "2026-11-07T17:37:59Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34000,
+   "sha256": "6fa82422584eee83d3dfad141259c1fb6205cd8fa6ee10fd54ac0f5cfc512680",
+   "retrieved": "2026-11-07T18:16:15Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2018-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -542,33 +830,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q4_form13f.zip",
    "bytes": 1084,
    "sha256": "125dac81702dc333ce6528b76f34ffb9d6151ba9b8c02f0e14942257a0c6b41c",
-   "retrieved": "2026-11-07T17:37:59Z"
+   "retrieved": "2026-11-07T18:16:15Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
+   "bytes": 119920,
+   "sha256": "8db5737f1d6e22172dcc563f2b119f42e17444aff5d47b1adb924ccc4585544a",
+   "retrieved": "2026-11-07T18:16:27Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2018q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
-   "bytes": 3235,
-   "sha256": "c2d181c8c09bc23e2bc0e013221a4eaa1c1c117f03bc4c53f96c502a1efb70ab",
-   "retrieved": "2026-11-07T17:38:11Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-06-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34570,
+   "sha256": "a79100ecd27348b7684f2d825d02b8074fc59f2303083250af9551d1861910fa",
+   "retrieved": "2026-11-07T18:16:27Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2018-06-30; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2018q3_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q3_form13f.zip",
-   "bytes": 1014,
-   "sha256": "6e6d4c56a2b6761c1ed985d949599d9dec3fbebf2bc0671c8ec573aa708e4ed5",
-   "retrieved": "2026-11-07T17:38:11Z"
+   "bytes": 1015,
+   "sha256": "5d699a096c81b86ad0cbf3f63c897a8452706c4db53e86c944acd0a390396f7b",
+   "retrieved": "2026-11-07T18:16:27Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
+   "bytes": 119810,
+   "sha256": "2f6803e484b53efcb99cdd7700edce0a047b70e13648e24149d643d0442e617b",
+   "retrieved": "2026-11-07T18:16:38Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2018q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
-   "bytes": 3225,
-   "sha256": "d227a9d21a0d8ed6a99e88cb631f599f58573a2ea0e30f77b2dcfde0727be61a",
-   "retrieved": "2026-11-07T17:38:23Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2018-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33946,
+   "sha256": "d75e3c42321487b6ce1920da44a959b0bf85eb3f0070b510daee60b1f6373c79",
+   "retrieved": "2026-11-07T18:16:38Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2018-03-31; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -576,16 +882,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q2_form13f.zip",
    "bytes": 1002,
    "sha256": "8906ac26e8109a566d15b60b75af3862107ca43263f3f6f9521d50b887bbddfd",
-   "retrieved": "2026-11-07T17:38:23Z"
+   "retrieved": "2026-11-07T18:16:38Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2018q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
+   "bytes": 119957,
+   "sha256": "d0ac86fffee040e18de93f4d2e7742ffa0852d67b95071017bd49f456d4e0a45",
+   "retrieved": "2026-11-07T18:16:50Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2018q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
-   "bytes": 3231,
-   "sha256": "7e8d8c5c373e736421914bc7465e6a505fae3ffd0c6a3dc1c8ee8d60dee2a1af",
-   "retrieved": "2026-11-07T17:38:34Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33925,
+   "sha256": "4b893ef5611fcc04281d3a6aea697cde2d64271887afcbbc08c004187e33e005",
+   "retrieved": "2026-11-07T18:16:50Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2017-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -593,16 +908,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2018q1_form13f.zip",
    "bytes": 989,
    "sha256": "6af309818dedf7ebd8607b32090d6c5dbc2b640b9e7f6c9472bd5fbf2b300d03",
-   "retrieved": "2026-11-07T17:38:34Z"
+   "retrieved": "2026-11-07T18:16:50Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
+   "bytes": 120004,
+   "sha256": "cb06535d876fd8c7cf57a1eb688ed0506d18764af980026e50beb604a462990a",
+   "retrieved": "2026-11-07T18:17:01Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2017q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
-   "bytes": 3230,
-   "sha256": "a31dfbc92fb9b810fa9f560e91db9eaf40a9905ef9d249a8f757fb902376d946",
-   "retrieved": "2026-11-07T17:38:45Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-09-30; set unit thousands, 70 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33940,
+   "sha256": "d4b53511a8c024e61767488f8e4611eb9648fd03637117a0cf6d21af73c429dc",
+   "retrieved": "2026-11-07T18:17:01Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2017-09-30; set unit thousands, 70 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -610,16 +934,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q4_form13f.zip",
    "bytes": 1134,
    "sha256": "d732f310d66e12077ae18460dee53ee5436dff318bd3b4b25fe7c001b5e5d838",
-   "retrieved": "2026-11-07T17:38:45Z"
+   "retrieved": "2026-11-07T18:17:01Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
+   "bytes": 119892,
+   "sha256": "54f80c5b34b0b892dccdc96bf0514044d85a0d91a4c98e5e478078c5729fed86",
+   "retrieved": "2026-11-07T18:17:12Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2017q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
-   "bytes": 3232,
-   "sha256": "e53ce9d7ad25cdfa405e4d46574ddf887c886773c85819a40498174c1620da4f",
-   "retrieved": "2026-11-07T17:38:55Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33968,
+   "sha256": "f3c92629a98893cfd73e546936d29c32e502e8dfd7344ea06fb014c95db6f122",
+   "retrieved": "2026-11-07T18:17:12Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2017-06-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -627,16 +960,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q3_form13f.zip",
    "bytes": 1012,
    "sha256": "53f87bfdeda10049d50db2bf12bf6a677f7fa1c24166cf43344524c342c6cbb5",
-   "retrieved": "2026-11-07T17:38:55Z"
+   "retrieved": "2026-11-07T18:17:12Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
+   "bytes": 119674,
+   "sha256": "c0ac21a8a496d8a2b56e4dc8190e3c77e84456a4d8987ed3ade32167f79da7d5",
+   "retrieved": "2026-11-07T18:17:23Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2017q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
-   "bytes": 3214,
-   "sha256": "9f1be138f08f98dc3ebda27ce243935a24e88aee8100ed67bf465b2dffa7850f",
-   "retrieved": "2026-11-07T17:39:06Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2017-03-31; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33971,
+   "sha256": "04456f8819b66abdbd7686c09b9c6afd7a17ef0d4309b5cfc5ecb5cae0553438",
+   "retrieved": "2026-11-07T18:17:23Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2017-03-31; set unit thousands, 75 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -644,16 +986,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q2_form13f.zip",
    "bytes": 1125,
    "sha256": "a7a7aff2338f6e59afa1264245cb7c229fe7f78f6fdc7cb41b7d2f0f231f6e9b",
-   "retrieved": "2026-11-07T17:39:06Z"
+   "retrieved": "2026-11-07T18:17:23Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2017q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
+   "bytes": 119735,
+   "sha256": "65e842be91b4674f6b830c17702ea92678c553d139c9c4a5b57f0bf5348a8a1b",
+   "retrieved": "2026-11-07T18:17:33Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2017q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
-   "bytes": 3252,
-   "sha256": "462ab4e70d82eaf7abfdda90ef7b652ddf811727abd14892cc8fb1f28f0c016b",
-   "retrieved": "2026-11-07T17:39:17Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34001,
+   "sha256": "39da23509d5b97610b52ee1b818ac7023d263f0e6c052524b65bed0e7cdbbb97",
+   "retrieved": "2026-11-07T18:17:33Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2016-12-31; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -661,16 +1012,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2017q1_form13f.zip",
    "bytes": 1000,
    "sha256": "7a427b8ad7036fbaebd62b24c10e2a84fe3f69a08716170f56d9483512401644",
-   "retrieved": "2026-11-07T17:39:17Z"
+   "retrieved": "2026-11-07T18:17:33Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
+   "bytes": 119622,
+   "sha256": "56cbb78e02335e0c200f661dfda14512431842076389149e308c642311faa96d",
+   "retrieved": "2026-11-07T18:17:44Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2016q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
-   "bytes": 3264,
-   "sha256": "f89e070e3a8e58493c216aa6972a23590232ba5246b3f8e4714470c474ec9043",
-   "retrieved": "2026-11-07T17:39:27Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-09-30; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33978,
+   "sha256": "0c28b3ef946e4d2a1692498cd702f291212b23909586dfd4c531c4610a0c4544",
+   "retrieved": "2026-11-07T18:17:44Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2016-09-30; set unit thousands, 80 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -678,33 +1038,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q4_form13f.zip",
    "bytes": 1012,
    "sha256": "12f17868f9527396bfcca4d8c5e1c387edf68afeca3b8c021ea49eb3c6cae424",
-   "retrieved": "2026-11-07T17:39:27Z"
+   "retrieved": "2026-11-07T18:17:44Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
+   "bytes": 119538,
+   "sha256": "ed8c9e0d7f9a7ca16e9192afc902c0b4ba9d2a09c660eaf4a1b5db88e3742551",
+   "retrieved": "2026-11-07T18:17:55Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2016q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
-   "bytes": 3283,
-   "sha256": "a73e25910cc82a6f7ef4b7dce5c206d724ea6e87b85bb72c8da49b52ee7281db",
-   "retrieved": "2026-11-07T17:39:38Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 35111,
+   "sha256": "b32c68bec521e43ecf910da86ca702671bd1d88de2210937120898a973bf1231",
+   "retrieved": "2026-11-07T18:17:55Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2016-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2016q3_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q3_form13f.zip",
-   "bytes": 1006,
-   "sha256": "f7c16a11a4d0ce4e7648c9a4a6846eececb4ae479ea676e59315146e9a438c43",
-   "retrieved": "2026-11-07T17:39:38Z"
+   "bytes": 995,
+   "sha256": "c984b9a99de05c728cfca3fcf49bfe76345ea56540fd1ce21fab4bb0c0bc926a",
+   "retrieved": "2026-11-07T18:17:55Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
+   "bytes": 119354,
+   "sha256": "bc8e47c4e348479b1dda32c358d175f2a41803da2987a3b1dccd096c0b2ebfe6",
+   "retrieved": "2026-11-07T18:18:06Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2016q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
-   "bytes": 3265,
-   "sha256": "9cdff9bb6dcdf4ba3aecab1051cd8621777d680ffb0e152e5248ed825c815e2f",
-   "retrieved": "2026-11-07T17:39:48Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2016-03-31; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34010,
+   "sha256": "7a0381032fcc177d5a6e8f5e168cb96beeb7ec5a51c069d58da0beec4071206f",
+   "retrieved": "2026-11-07T18:18:06Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2016-03-31; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -712,33 +1090,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q2_form13f.zip",
    "bytes": 1020,
    "sha256": "79eb803b29a102711cde4949b04a43578c30a9231eee8b2c3e514716e8b31d18",
-   "retrieved": "2026-11-07T17:39:48Z"
+   "retrieved": "2026-11-07T18:18:06Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2016q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
+   "bytes": 119750,
+   "sha256": "eeebe4afb33390b6ae889bd925883a5b04a1cfad1eca9f8a1124d7dbb8aad5cd",
+   "retrieved": "2026-11-07T18:18:16Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2016q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
-   "bytes": 3260,
-   "sha256": "a773f4b27e3f56b4834151c53d4167d8bd322a040f6de9b55eb07cf8081e5722",
-   "retrieved": "2026-11-07T17:39:58Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-12-31; set unit thousands, 87 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34441,
+   "sha256": "703a3bdfb8849079856b997a3db09a6a2c88a85ba92edae6c9af2142214dbf00",
+   "retrieved": "2026-11-07T18:18:16Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2015-12-31; set unit thousands, 87 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2016q1_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2016q1_form13f.zip",
-   "bytes": 1013,
-   "sha256": "feb77c729bfbd615ee38ca33e4e9f817b61cfc7f54a4e3998e04bf2243d59541",
-   "retrieved": "2026-11-07T17:39:58Z"
+   "bytes": 1012,
+   "sha256": "8753c178815ae36c061f69ce7ce69876467286229f33d47a40ed7784878cc6c5",
+   "retrieved": "2026-11-07T18:18:16Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
+   "bytes": 119649,
+   "sha256": "2575d53c59ab103b67ce21711da64f61c6293eeb8d287e322b0c64e3d963dcc3",
+   "retrieved": "2026-11-07T18:18:27Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2015q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
-   "bytes": 3260,
-   "sha256": "51ec708f08a283ad0e1178a3368c43f03a9420ee5d4f7f9c0a0f10d3fded81be",
-   "retrieved": "2026-11-07T17:40:09Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-09-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34015,
+   "sha256": "1490e50b04c6d89d3f25157b59e5852a1cebd715eabc3cc23a539000eaf724c5",
+   "retrieved": "2026-11-07T18:18:27Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2015-09-30; set unit thousands, 76 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -746,33 +1142,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q4_form13f.zip",
    "bytes": 1010,
    "sha256": "85ef1e568290488b5c853d75ca7110d9a701800322d30cb7e2e191fc4a69d324",
-   "retrieved": "2026-11-07T17:40:09Z"
+   "retrieved": "2026-11-07T18:18:27Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
+   "bytes": 119629,
+   "sha256": "568f333e51607192c7e8dd2b71df556a57298b07adc1f3c782c90cee8e8d3520",
+   "retrieved": "2026-11-07T18:18:38Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2015q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
-   "bytes": 3261,
-   "sha256": "bb64e9db0fb2433ab417d09ed710066a736f65694536bb68e454e4ddc0b5258c",
-   "retrieved": "2026-11-07T17:40:20Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-06-30; set unit thousands, 88 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 36770,
+   "sha256": "c0957281dc46b5025f46e2beb10f3dfeb4d51f6aa8f49cc3a08a80c6eb7ae416",
+   "retrieved": "2026-11-07T18:18:38Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2015-06-30; set unit thousands, 86 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2015q3_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q3_form13f.zip",
-   "bytes": 1010,
-   "sha256": "4932d4f7005ddf00a0c2584b864826a2ddee2d0b3c3ac16f9e30b6f45597fbba",
-   "retrieved": "2026-11-07T17:40:20Z"
+   "bytes": 1005,
+   "sha256": "70c16fc99c501f04ce570b57deb1c6deab88bdcad6f521e49386debfc623c861",
+   "retrieved": "2026-11-07T18:18:38Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
+   "bytes": 119499,
+   "sha256": "441d6fd6a12e89b82da85eaf04f5d81649e1c7a769528a339dc23a0750238960",
+   "retrieved": "2026-11-07T18:18:50Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2015q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
-   "bytes": 3266,
-   "sha256": "80e92a42b9462215aadceb880b6dfb1f3cbe0aeee29f8f2301ee40a71b72dfda",
-   "retrieved": "2026-11-07T17:40:30Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2015-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33919,
+   "sha256": "80d2f7d274de1cfe012e58aef9c2e66784941cb11a35e89e28034be59036dc62",
+   "retrieved": "2026-11-07T18:18:50Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2015-03-31; set unit thousands, 78 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -780,33 +1194,51 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q2_form13f.zip",
    "bytes": 1025,
    "sha256": "a790c455fc3994b254f44ac449c0cbb28c3830cc135e56252c1a5ef3747692e8",
-   "retrieved": "2026-11-07T17:40:30Z"
+   "retrieved": "2026-11-07T18:18:50Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2015q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
+   "bytes": 119524,
+   "sha256": "93da64c1cf58bae238857cf27a4f4f2cae705b4714e4bb1dfb3ecf3b4cbc48bc",
+   "retrieved": "2026-11-07T18:19:00Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2015q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
-   "bytes": 3274,
-   "sha256": "9b3de670f6881f5d23501ca49eca2e02cabbb76f251ead94336fd6ba99ff7ebc",
-   "retrieved": "2026-11-07T17:40:41Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-12-31; set unit thousands, 83 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34938,
+   "sha256": "d70489e2c98550f2a9ea3782ae3d5565dad2351bfcee3e064808684916fcac6b",
+   "retrieved": "2026-11-07T18:19:00Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2014-12-31; set unit thousands, 82 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2015q1_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2015q1_form13f.zip",
-   "bytes": 1153,
-   "sha256": "83aec0f0baf1d698b7499852c6daae677aad4c32b64c4f1b6387bd90ea65a4d9",
-   "retrieved": "2026-11-07T17:40:41Z"
+   "bytes": 1134,
+   "sha256": "548200beace4ad5c184a1a66914073e6f43b8b74f8640db42d27c9b669a40f53",
+   "retrieved": "2026-11-07T18:19:00Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
+   "bytes": 119982,
+   "sha256": "dc544f960f37c141fb2d3b7eb408978affa56c50734e37becf7e0610e874da8b",
+   "retrieved": "2026-11-07T18:19:10Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2014q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
-   "bytes": 3261,
-   "sha256": "647926a795c64071515cfd2ebfc3a069ea8e708eabc36d980716cbe16cd4fcca",
-   "retrieved": "2026-11-07T17:40:50Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-09-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33958,
+   "sha256": "cee31b8873037644dafc98af8cfbd8a168fb4a0e3f3e17ac849901340c33c23c",
+   "retrieved": "2026-11-07T18:19:10Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2014-09-30; set unit thousands, 71 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -814,16 +1246,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q4_form13f.zip",
    "bytes": 1025,
    "sha256": "5b0cb773edab97f5103eefd301b67cc9948b03582ac3c4e6d963adc6bf71becd",
-   "retrieved": "2026-11-07T17:40:50Z"
+   "retrieved": "2026-11-07T18:19:10Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
+   "bytes": 119986,
+   "sha256": "2ad6902b76d5caa4cdd3e0c015b528a1bab4182e3dd84a369db946d6fd2337de",
+   "retrieved": "2026-11-07T18:19:22Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2014q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
-   "bytes": 3256,
-   "sha256": "f4f05634b8c99e497739230f44da6dfe40d114092f90576928414b8239bfddbb",
-   "retrieved": "2026-11-07T17:41:00Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-06-30; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33916,
+   "sha256": "cf30531d45e500b0aba1e375189ecdd1f991d6c8262c8ebb6b3c60f184e9f057",
+   "retrieved": "2026-11-07T18:19:22Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2014-06-30; set unit thousands, 81 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -831,16 +1272,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q3_form13f.zip",
    "bytes": 999,
    "sha256": "64420d632cc1f61657e4b0406825f55305e9e3ebc358eca92ed0b9ae4595b21d",
-   "retrieved": "2026-11-07T17:41:00Z"
+   "retrieved": "2026-11-07T18:19:22Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
+   "bytes": 120006,
+   "sha256": "ce95cd1d9849b0bbab2bf814c2406bbd60da4ea63eb8f5879a3c8f3698f102e7",
+   "retrieved": "2026-11-07T18:19:32Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2014q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
-   "bytes": 3252,
-   "sha256": "2cbd789f80332f13bbffd7857a3fa0c46693c4294a673a172d25f9e105c1b416",
-   "retrieved": "2026-11-07T17:41:10Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2014-03-31; set unit thousands, 79 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33861,
+   "sha256": "c4f9998cbbc9c9317e629738223c22895e37de08f3c7670232dc56dc69247534",
+   "retrieved": "2026-11-07T18:19:32Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2014-03-31; set unit thousands, 79 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -848,16 +1298,25 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q2_form13f.zip",
    "bytes": 1037,
    "sha256": "66152c98539050f2d15d073a7f01ba8df93224fbbb4a59119e0735667c41daf8",
-   "retrieved": "2026-11-07T17:41:10Z"
+   "retrieved": "2026-11-07T18:19:32Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2014q1_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
+   "bytes": 119897,
+   "sha256": "67e64219881577f4886ae95625517f1333398f24799522f6670a6d4ba837114f",
+   "retrieved": "2026-11-07T18:19:42Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2014q1_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
-   "bytes": 3245,
-   "sha256": "e38b13bc7f625e56674d78c3f38eaf9ab03ce0372a37c66b7b1cf9a896f18da5",
-   "retrieved": "2026-11-07T17:41:19Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-12-31; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 33898,
+   "sha256": "6a2cfef30cd2f4aac2b0f079942160b667a1ff4ecf3525a86b7c1c3d5ac4bf52",
+   "retrieved": "2026-11-07T18:19:42Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2013-12-31; set unit thousands, 68 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -865,50 +1324,77 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2014q1_form13f.zip",
    "bytes": 1044,
    "sha256": "34fa4441458acfa11965c9db7aeaa9f055c587edce653e4ee0b45968f425be5f",
-   "retrieved": "2026-11-07T17:41:19Z"
+   "retrieved": "2026-11-07T18:19:42Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q4_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
+   "bytes": 119888,
+   "sha256": "1228906d453603f1ad338816e7663d9b9b8c859e2ff722ac1d8ebc221e3db259",
+   "retrieved": "2026-11-07T18:19:51Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2013q4_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
-   "bytes": 3268,
-   "sha256": "e8044f4a8e5728dcb9b990478e7dcfabe26dfa9769e84f50bb966070ae6912f8",
-   "retrieved": "2026-11-07T17:41:28Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-09-30; set unit thousands, 69 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 35213,
+   "sha256": "ebb53bd44b13cd0b59dafcee8b7f8c5143d9933ce8356aa42727473718d44b0d",
+   "retrieved": "2026-11-07T18:19:51Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2013-09-30; set unit thousands, 67 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2013q4_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q4_form13f.zip",
-   "bytes": 1034,
-   "sha256": "7d4b6adb5631bd334ce5ba02c821607884e03a6fc2920ce88b6f1e329e81ffd7",
-   "retrieved": "2026-11-07T17:41:28Z"
+   "bytes": 1020,
+   "sha256": "e3cb255897ef5cf87f55a296b82e4488b5887ec4c5acf80efe504adfa276ec31",
+   "retrieved": "2026-11-07T18:19:51Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q3_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
+   "bytes": 119671,
+   "sha256": "72e2e64d8bd6986f8228fd5eb2cb6487f716ea4de7831b059fe26786d894b903",
+   "retrieved": "2026-11-07T18:20:01Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2013q3_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
-   "bytes": 3256,
-   "sha256": "57a3086ac6f2c4b37040610c608872a2f3e82601da31ed315af2ccf76fe14252",
-   "retrieved": "2026-11-07T17:41:37Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 34972,
+   "sha256": "dd58fc940d6f7278c6679306e5a1092a227c377f510d2ab4a23d6b52e0f35db5",
+   "retrieved": "2026-11-07T18:20:01Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2013-06-30; set unit thousands, 77 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2013q3_form13f_top20.csv",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q3_form13f.zip",
-   "bytes": 1034,
-   "sha256": "7fb2ef964eb62398a77823266b2fc44ff144e38082706e92f4885ccf980d72ee",
-   "retrieved": "2026-11-07T17:41:37Z"
+   "bytes": 1022,
+   "sha256": "9c9d2f69a54759f47c2a4986c9042a89399f16704a11b3764455915f86358619",
+   "retrieved": "2026-11-07T18:20:01Z"
+  },
+  {
+   "catalog": "SEC-13F",
+   "file": "history/corporate/raw/SEC-13F/2013q2_form13f_managers.csv",
+   "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
+   "bytes": 4087,
+   "sha256": "82462ddd02c27a776f73ca2a239e186d6fc66e20246f3427aee9f6887feaef2d",
+   "retrieved": "2026-11-07T18:20:04Z",
+   "note": "the two thousand largest managers (holdings excluding options, in dollars)"
   },
   {
    "catalog": "SEC-13F",
    "file": "history/corporate/raw/SEC-13F/2013q2_form13f_summary.json",
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
-   "bytes": 3239,
-   "sha256": "ee01414d9f56f228d358011f425d7531e1ca06878be63b3596c896109b8bc7c0",
-   "retrieved": "2026-11-07T17:41:40Z",
-   "note": "aggregated from the zip (not kept) by aggregator v3; report period 2013-03-31; set unit thousands, 1 filers in the other unit rescaled; values in the summary are dollars"
+   "bytes": 13765,
+   "sha256": "bbd0e3695b93c4c54256386ed39f27f0569ad196ff42bad68224b2ac293b5657",
+   "retrieved": "2026-11-07T18:20:04Z",
+   "note": "aggregated from the zip (not kept) by aggregator v4; report period 2013-03-31; set unit thousands, 1 filers in the other unit rescaled; values in the summary are dollars"
   },
   {
    "catalog": "SEC-13F",
@@ -916,7 +1402,7 @@
    "url": "https://www.sec.gov/files/structureddata/data/form-13f-data-sets/2013q2_form13f.zip",
    "bytes": 1038,
    "sha256": "68d4630f4d337acdbbec89e08c51ab5c9ee30b5cb83ffc714096c9001fef6953",
-   "retrieved": "2026-11-07T17:41:40Z"
+   "retrieved": "2026-11-07T18:20:04Z"
   },
   {
    "catalog": "SEC-FSDS",

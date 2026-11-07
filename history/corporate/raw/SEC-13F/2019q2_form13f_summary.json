@@ -1,32 +1,41 @@
 {
- "aggregator_version": 3,
- "n_filers": 5013,
- "n_infotable_lines": 1945690,
- "total_value_reported": "3.79169e+13",
- "total_value_ex_options": "2.85026e+13",
+ "aggregator_version": 4,
+ "n_filers": 5012,
+ "n_infotable_lines": 1940921,
+ "total_value_reported": "2.89488e+13",
+ "total_value_ex_options": "2.76869e+13",
  "value_unit_detected": "thousands (scaled x1000 to dollars)",
  "value_unit_set": "thousands",
  "set_median_implied_price": "0.0533",
- "n_filers_unit_corrected": 77,
- "value_share_unit_corrected": "0.2423",
+ "n_filers_unit_corrected": 76,
+ "value_share_unit_corrected": "0.0076",
  "n_filers_unit_implausible": 1,
  "value_share_unit_implausible": "0.0000",
  "n_lines_beyond_cap": 0,
  "value_lines_beyond_cap": "0",
- "n_filers_beyond_cap": 0,
- "filers_beyond_cap": [],
- "putcall_value_share": "0.2483",
+ "n_filers_beyond_cap": 1,
+ "filers_beyond_cap": [
+  {
+   "cik": "0000932540",
+   "name": "GROUP ONE TRADING, L.P.",
+   "value_scaled": "8.968e+12",
+   "options_scaled": "8.152e+12",
+   "unit_steps": -1,
+   "why": "Group One Trading LP at $816bn of holdings and $8,152bn of options; set aside by the options cap as well"
+  }
+ ],
+ "putcall_value_share": "0.0436",
  "n_issuers_cusip": 19986,
- "top10_issuer_share": "0.1199",
- "top50_issuer_share": "0.3047",
- "hhi_issuers": "0.003182",
+ "top10_issuer_share": "0.1234",
+ "top50_issuer_share": "0.3124",
+ "hhi_issuers": "0.003334",
  "median_filer_top10_share": "0.4768",
  "largest_filers": [
   {
    "cik": "0000102909",
    "name": "VANGUARD GROUP INC",
    "value_ex_options": "2.549e+12",
-   "share_ex_options": "0.0894",
+   "share_ex_options": "0.0921",
    "options_value": "0",
    "top10_share": "0.1481"
   },
@@ -34,7 +43,7 @@
    "cik": "0001364742",
    "name": "BlackRock Inc.",
    "value_ex_options": "2.234e+12",
-   "share_ex_options": "0.0784",
+   "share_ex_options": "0.0807",
    "options_value": "6.011e+09",
    "top10_share": "0.0648"
   },
@@ -42,7 +51,7 @@
    "cik": "0000093751",
    "name": "STATE STREET CORP",
    "value_ex_options": "1.282e+12",
-   "share_ex_options": "0.0450",
+   "share_ex_options": "0.0463",
    "options_value": "0",
    "top10_share": "0.1677"
   },
@@ -50,23 +59,15 @@
    "cik": "0000315066",
    "name": "FMR LLC",
    "value_ex_options": "8.349e+11",
-   "share_ex_options": "0.0293",
+   "share_ex_options": "0.0302",
    "options_value": "0",
    "top10_share": "0.2067"
-  },
-  {
-   "cik": "0000932540",
-   "name": "GROUP ONE TRADING, L.P.",
-   "value_ex_options": "8.157e+11",
-   "share_ex_options": "0.0286",
-   "options_value": "8.152e+12",
-   "top10_share": "0.1690"
   },
   {
    "cik": "0000080255",
    "name": "PRICE T ROWE ASSOCIATES INC /MD/",
    "value_ex_options": "6.802e+11",
-   "share_ex_options": "0.0239",
+   "share_ex_options": "0.0246",
    "options_value": "9.226e+07",
    "top10_share": "0.2110"
   },
@@ -74,7 +75,7 @@
    "cik": "0000070858",
    "name": "BANK OF AMERICA CORP /DE/",
    "value_ex_options": "5.973e+11",
-   "share_ex_options": "0.0210",
+   "share_ex_options": "0.0216",
    "options_value": "4.626e+10",
    "top10_share": "0.0972"
   },
@@ -82,7 +83,7 @@
    "cik": "0000019617",
    "name": "JPMORGAN CHASE & CO",
    "value_ex_options": "4.525e+11",
-   "share_ex_options": "0.0159",
+   "share_ex_options": "0.0163",
    "options_value": "3.703e+10",
    "top10_share": "0.1180"
   },
@@ -90,7 +91,7 @@
    "cik": "0000902219",
    "name": "WELLINGTON MANAGEMENT GROUP LLP",
    "value_ex_options": "4.415e+11",
-   "share_ex_options": "0.0155",
+   "share_ex_options": "0.0159",
    "options_value": "0",
    "top10_share": "0.1316"
   },
@@ -98,9 +99,1630 @@
    "cik": "0001422849",
    "name": "Capital World Investors",
    "value_ex_options": "4.124e+11",
-   "share_ex_options": "0.0145",
+   "share_ex_options": "0.0149",
    "options_value": "0",
    "top10_share": "0.2436"
+  },
+  {
+   "cik": "0000073124",
+   "name": "NORTHERN TRUST CORP",
+   "value_ex_options": "4.049e+11",
+   "share_ex_options": "0.0146",
+   "options_value": "0",
+   "top10_share": "0.1009"
+  }
+ ],
+ "exclusions_applied": [
+  {
+   "cik": "0000932540",
+   "name": "GROUP ONE TRADING, L.P.",
+   "value": "8.157e+11",
+   "reason": "Group One Trading LP at $816bn of holdings and $8,152bn of options; set aside by the options cap as well"
+  }
+ ],
+ "neighbors_checked": [
+  "2019q3_form13f"
+ ],
+ "managers_top200": [
+  {
+   "cik": "0000102909",
+   "name": "VANGUARD GROUP INC",
+   "value": "2.549e+12",
+   "options": "0",
+   "n": 13483,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001364742",
+   "name": "BlackRock Inc.",
+   "value": "2.234e+12",
+   "options": "6.011e+09",
+   "n": 42425,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000093751",
+   "name": "STATE STREET CORP",
+   "value": "1.282e+12",
+   "options": "0",
+   "n": 3743,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000315066",
+   "name": "FMR LLC",
+   "value": "8.349e+11",
+   "options": "0",
+   "n": 9610,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000080255",
+   "name": "PRICE T ROWE ASSOCIATES INC /MD/",
+   "value": "6.802e+11",
+   "options": "9.226e+07",
+   "n": 2522,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000070858",
+   "name": "BANK OF AMERICA CORP /DE/",
+   "value": "5.973e+11",
+   "options": "4.626e+10",
+   "n": 20323,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000019617",
+   "name": "JPMORGAN CHASE & CO",
+   "value": "4.525e+11",
+   "options": "3.703e+10",
+   "n": 19907,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000902219",
+   "name": "WELLINGTON MANAGEMENT GROUP LLP",
+   "value": "4.415e+11",
+   "options": "0",
+   "n": 7616,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001422849",
+   "name": "Capital World Investors",
+   "value": "4.124e+11",
+   "options": "0",
+   "n": 531,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000073124",
+   "name": "NORTHERN TRUST CORP",
+   "value": "4.049e+11",
+   "options": "0",
+   "n": 16017,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001214717",
+   "name": "GEODE CAPITAL MANAGEMENT, LLC",
+   "value": "3.86e+11",
+   "options": "0",
+   "n": 4943,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001390777",
+   "name": "Bank of New York Mellon Corp",
+   "value": "3.573e+11",
+   "options": "1.088e+07",
+   "n": 19218,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000895421",
+   "name": "MORGAN STANLEY",
+   "value": "3.533e+11",
+   "options": "0",
+   "n": 22379,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000072971",
+   "name": "WELLS FARGO & COMPANY/MN",
+   "value": "3.356e+11",
+   "options": "1.943e+08",
+   "n": 18992,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001422848",
+   "name": "Capital Research Global Investors",
+   "value": "3.155e+11",
+   "options": "0",
+   "n": 415,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000914208",
+   "name": "Invesco Ltd.",
+   "value": "2.965e+11",
+   "options": "5.21e+07",
+   "n": 11838,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000886982",
+   "name": "GOLDMAN SACHS GROUP INC",
+   "value": "2.946e+11",
+   "options": "3.644e+10",
+   "n": 8772,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000354204",
+   "name": "DIMENSIONAL FUND ADVISORS LP",
+   "value": "2.511e+11",
+   "options": "0",
+   "n": 3444,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000912938",
+   "name": "MASSACHUSETTS FINANCIAL SERVICES CO /MA/",
+   "value": "2.373e+11",
+   "options": "0",
+   "n": 3139,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001562230",
+   "name": "Capital International Investors",
+   "value": "2.328e+11",
+   "options": "0",
+   "n": 385,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000820027",
+   "name": "AMERIPRISE FINANCIAL INC",
+   "value": "2.174e+11",
+   "options": "1.67e+07",
+   "n": 9068,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001000275",
+   "name": "ROYAL BANK OF CANADA",
+   "value": "2.092e+11",
+   "options": "2.491e+10",
+   "n": 23643,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001610520",
+   "name": "UBS Group AG",
+   "value": "2.01e+11",
+   "options": "4.109e+10",
+   "n": 12070,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001067983",
+   "name": "Berkshire Hathaway Inc",
+   "value": "1.995e+11",
+   "options": "0",
+   "n": 163,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000038777",
+   "name": "FRANKLIN RESOURCES INC",
+   "value": "1.867e+11",
+   "options": "7.076e+06",
+   "n": 4222,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001274173",
+   "name": "JANUS HENDERSON GROUP PLC",
+   "value": "1.804e+11",
+   "options": "0",
+   "n": 1357,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000764068",
+   "name": "Legal & General Group Plc",
+   "value": "1.751e+11",
+   "options": "0",
+   "n": 6499,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000948046",
+   "name": "DEUTSCHE BANK AG\\",
+   "value": "1.679e+11",
+   "options": "1.164e+08",
+   "n": 23411,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000884546",
+   "name": "CHARLES SCHWAB INVESTMENT MANAGEMENT INC",
+   "value": "1.561e+11",
+   "options": "0",
+   "n": 3192,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001109448",
+   "name": "ALLIANCEBERNSTEIN L.P.",
+   "value": "1.534e+11",
+   "options": "2.116e+08",
+   "n": 3130,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000887793",
+   "name": "TIAA CREF INVESTMENT MANAGEMENT LLC",
+   "value": "1.412e+11",
+   "options": "0",
+   "n": 3004,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000763212",
+   "name": "PRIMECAP MANAGEMENT CO/CA/",
+   "value": "1.359e+11",
+   "options": "0",
+   "n": 292,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000861177",
+   "name": "UBS ASSET MANAGEMENT AMERICAS INC",
+   "value": "1.348e+11",
+   "options": "0",
+   "n": 14066,
+   "unit_steps": 1
+  },
+  {
+   "cik": "0000200217",
+   "name": "DODGE & COX",
+   "value": "1.218e+11",
+   "options": "0",
+   "n": 178,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000932859",
+   "name": "Parametric Portfolio Associates LLC",
+   "value": "1.157e+11",
+   "options": "2.774e+06",
+   "n": 3935,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001348883",
+   "name": "Clearbridge Investments, LLC",
+   "value": "1.133e+11",
+   "options": "0",
+   "n": 1074,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001037389",
+   "name": "RENAISSANCE TECHNOLOGIES LLC",
+   "value": "1.1e+11",
+   "options": "0",
+   "n": 3415,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001475365",
+   "name": "Sumitomo Mitsui Trust Holdings, Inc.",
+   "value": "1.081e+11",
+   "options": "0",
+   "n": 980,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000927971",
+   "name": "BANK OF MONTREAL /CAN/",
+   "value": "1.077e+11",
+   "options": "8.849e+09",
+   "n": 14223,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001126328",
+   "name": "PRINCIPAL FINANCIAL GROUP INC",
+   "value": "1.074e+11",
+   "options": "0",
+   "n": 3593,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000053417",
+   "name": "JENNISON ASSOCIATES LLC",
+   "value": "1.006e+11",
+   "options": "7.243e+07",
+   "n": 883,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000713676",
+   "name": "PNC Financial Services Group, Inc.",
+   "value": "9.987e+10",
+   "options": "0",
+   "n": 16149,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000748054",
+   "name": "AMERICAN CENTURY COMPANIES INC",
+   "value": "9.869e+10",
+   "options": "0",
+   "n": 1213,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001167557",
+   "name": "AQR CAPITAL MANAGEMENT LLC",
+   "value": "9.345e+10",
+   "options": "8.061e+08",
+   "n": 2282,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000928047",
+   "name": "MANUFACTURERS LIFE INSURANCE COMPANY, THE",
+   "value": "9.243e+10",
+   "options": "0",
+   "n": 5330,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001535323",
+   "name": "Allianz Asset Management GmbH",
+   "value": "9.228e+10",
+   "options": "8.615e+09",
+   "n": 4278,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001088875",
+   "name": "BAILLIE GIFFORD & CO",
+   "value": "9.142e+10",
+   "options": "0",
+   "n": 712,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001582202",
+   "name": "Swiss National Bank",
+   "value": "9.116e+10",
+   "options": "0",
+   "n": 2507,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000850529",
+   "name": "Fisher Asset Management, LLC",
+   "value": "8.53e+10",
+   "options": "0",
+   "n": 862,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000939222",
+   "name": "TEACHERS ADVISORS, LLC",
+   "value": "8.17e+10",
+   "options": "0",
+   "n": 2979,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001465109",
+   "name": "Neuberger Berman Group LLC",
+   "value": "8.16e+10",
+   "options": "4.022e+06",
+   "n": 2240,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000919079",
+   "name": "CALIFORNIA PUBLIC EMPLOYEES RETIREMENT SYSTEM",
+   "value": "8.115e+10",
+   "options": "0",
+   "n": 3210,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000728889",
+   "name": "OppenheimerFunds, Inc.",
+   "value": "8.041e+10",
+   "options": "0",
+   "n": 3573,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000315032",
+   "name": "STATE FARM MUTUAL AUTOMOBILE INSURANCE CO",
+   "value": "7.843e+10",
+   "options": "0",
+   "n": 175,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000810265",
+   "name": "NEW YORK STATE COMMON RETIREMENT FUND",
+   "value": "7.791e+10",
+   "options": "0",
+   "n": 3166,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000824468",
+   "name": "CREDIT SUISSE AG/",
+   "value": "7.751e+10",
+   "options": "3.21e+10",
+   "n": 16213,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001386060",
+   "name": "Boston Partners",
+   "value": "7.548e+10",
+   "options": "0",
+   "n": 1070,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001423053",
+   "name": "CITADEL ADVISORS LLC",
+   "value": "7.437e+10",
+   "options": "1.267e+11",
+   "n": 7462,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001407543",
+   "name": "ENVESTNET ASSET MANAGEMENT INC",
+   "value": "7.289e+10",
+   "options": "0",
+   "n": 2951,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000312069",
+   "name": "BARCLAYS PLC",
+   "value": "7.128e+10",
+   "options": "7.374e+10",
+   "n": 8838,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001102598",
+   "name": "AMUNDI PIONEER ASSET MANAGEMENT INC",
+   "value": "7.09e+10",
+   "options": "1.866e+08",
+   "n": 7683,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001084208",
+   "name": "RAYMOND JAMES & ASSOCIATES",
+   "value": "6.583e+10",
+   "options": "1.524e+07",
+   "n": 3481,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001056053",
+   "name": "TD ASSET MANAGEMENT INC",
+   "value": "6.551e+10",
+   "options": "0",
+   "n": 1691,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000947263",
+   "name": "TORONTO DOMINION BANK",
+   "value": "6.403e+10",
+   "options": "0",
+   "n": 5305,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000318989",
+   "name": "FIL Ltd",
+   "value": "6.383e+10",
+   "options": "0",
+   "n": 1683,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001050470",
+   "name": "LSV ASSET MANAGEMENT",
+   "value": "6.243e+10",
+   "options": "0",
+   "n": 941,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001086619",
+   "name": "SCHRODER INVESTMENT MANAGEMENT GROUP",
+   "value": "6.157e+10",
+   "options": "0",
+   "n": 2262,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001009207",
+   "name": "D. E. Shaw & Co., Inc.",
+   "value": "6.133e+10",
+   "options": "1.606e+10",
+   "n": 3750,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001207017",
+   "name": "LAZARD ASSET MANAGEMENT LLC",
+   "value": "6.084e+10",
+   "options": "0",
+   "n": 1536,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001137774",
+   "name": "PRUDENTIAL FINANCIAL INC",
+   "value": "6.005e+10",
+   "options": "0",
+   "n": 4064,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001501902",
+   "name": "Charles Schwab Investment Advisory, Inc.",
+   "value": "5.925e+10",
+   "options": "0",
+   "n": 170,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001418333",
+   "name": "MACQUARIE GROUP LTD",
+   "value": "5.863e+10",
+   "options": "0",
+   "n": 3419,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001273087",
+   "name": "MILLENNIUM MANAGEMENT LLC",
+   "value": "5.646e+10",
+   "options": "1.036e+10",
+   "n": 3394,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000313028",
+   "name": "BARROW HANLEY MEWHINNEY & STRAUSS LLC",
+   "value": "5.551e+10",
+   "options": "0",
+   "n": 797,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000813917",
+   "name": "HARRIS ASSOCIATES L P",
+   "value": "5.449e+10",
+   "options": "0",
+   "n": 187,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001434819",
+   "name": "APG Asset Management N.V.",
+   "value": "5.448e+10",
+   "options": "0",
+   "n": 890,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001692234",
+   "name": "Russell Investments Group, Ltd.",
+   "value": "5.41e+10",
+   "options": "0",
+   "n": 13869,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000831001",
+   "name": "CITIGROUP INC",
+   "value": "5.321e+10",
+   "options": "5.054e+10",
+   "n": 12954,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001283718",
+   "name": "CANADA PENSION PLAN INVESTMENT BOARD",
+   "value": "5.187e+10",
+   "options": "0",
+   "n": 1561,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001115418",
+   "name": "RHUMBLINE ADVISERS",
+   "value": "5.164e+10",
+   "options": "0",
+   "n": 2947,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000312348",
+   "name": "LOOMIS SAYLES & CO L P",
+   "value": "5.091e+10",
+   "options": "0",
+   "n": 1064,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001466153",
+   "name": "Artisan Partners Limited Partnership",
+   "value": "5.063e+10",
+   "options": "6.998e+07",
+   "n": 274,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001125816",
+   "name": "FIRST TRUST ADVISORS LP",
+   "value": "5.031e+10",
+   "options": "0",
+   "n": 2418,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001081019",
+   "name": "CALIFORNIA STATE TEACHERS RETIREMENT SYSTEM",
+   "value": "4.884e+10",
+   "options": "0",
+   "n": 2992,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001218210",
+   "name": "NORDEA INVESTMENT MANAGEMENT AB",
+   "value": "4.801e+10",
+   "options": "0",
+   "n": 1389,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001716774",
+   "name": "Standard Life Aberdeen plc",
+   "value": "4.615e+10",
+   "options": "0",
+   "n": 2653,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001291274",
+   "name": "PICTET ASSET MANAGEMENT LTD",
+   "value": "4.459e+10",
+   "options": "7.716e+08",
+   "n": 1298,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001068837",
+   "name": "Voya Investment Management LLC",
+   "value": "4.453e+10",
+   "options": "0",
+   "n": 3798,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001403438",
+   "name": "LPL Financial LLC",
+   "value": "4.396e+10",
+   "options": "5.482e+07",
+   "n": 3165,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001040188",
+   "name": "VICTORY CAPITAL MANAGEMENT INC",
+   "value": "4.395e+10",
+   "options": "0",
+   "n": 2087,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000815917",
+   "name": "JONES FINANCIAL COMPANIES LLLP",
+   "value": "4.365e+10",
+   "options": "0",
+   "n": 430,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001076598",
+   "name": "EATON VANCE MANAGEMENT",
+   "value": "4.358e+10",
+   "options": "0",
+   "n": 1234,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000873630",
+   "name": "HSBC HOLDINGS PLC",
+   "value": "4.357e+10",
+   "options": "1.123e+10",
+   "n": 6816,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001421578",
+   "name": "PUTNAM INVESTMENTS LLC",
+   "value": "4.295e+10",
+   "options": "0",
+   "n": 1742,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001164508",
+   "name": "ARROWSTREET CAPITAL, LIMITED PARTNERSHIP",
+   "value": "4.229e+10",
+   "options": "0",
+   "n": 1704,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000919859",
+   "name": "MACKENZIE FINANCIAL CORP",
+   "value": "4.143e+10",
+   "options": "1.755e+07",
+   "n": 1220,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001052100",
+   "name": "WADDELL & REED FINANCIAL INC",
+   "value": "4.04e+10",
+   "options": "0",
+   "n": 490,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001056288",
+   "name": "FEDERATED INVESTORS INC /PA/",
+   "value": "4.032e+10",
+   "options": "9.238e+07",
+   "n": 3628,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001165408",
+   "name": "ADAGE CAPITAL PARTNERS GP, L.L.C.",
+   "value": "3.999e+10",
+   "options": "0",
+   "n": 686,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001478735",
+   "name": "TWO SIGMA ADVISERS, LP",
+   "value": "3.966e+10",
+   "options": "0",
+   "n": 2275,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000314969",
+   "name": "NEW YORK STATE TEACHERS RETIREMENT SYSTEM",
+   "value": "3.944e+10",
+   "options": "0",
+   "n": 1604,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000898286",
+   "name": "CAISSE DE DEPOT ET PLACEMENT DU QUEBEC",
+   "value": "3.94e+10",
+   "options": "8.689e+06",
+   "n": 737,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001021249",
+   "name": "UNITED SERVICES AUTOMOBILE ASSOCIATION",
+   "value": "3.882e+10",
+   "options": "0",
+   "n": 2256,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001046192",
+   "name": "GREAT WEST LIFE ASSURANCE CO /CAN/",
+   "value": "3.77e+10",
+   "options": "0",
+   "n": 3722,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000938076",
+   "name": "STATE BOARD OF ADMINISTRATION OF FLORIDA RETIREMENT SYSTEM",
+   "value": "3.765e+10",
+   "options": "0",
+   "n": 2329,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001325447",
+   "name": "First Eagle Investment Management, LLC",
+   "value": "3.695e+10",
+   "options": "3.55e+07",
+   "n": 151,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001284812",
+   "name": "COHEN & STEERS INC",
+   "value": "3.605e+10",
+   "options": "0",
+   "n": 419,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000720672",
+   "name": "STIFEL FINANCIAL CORP",
+   "value": "3.538e+10",
+   "options": "0",
+   "n": 7415,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001345929",
+   "name": "BROWN ADVISORY INC",
+   "value": "3.526e+10",
+   "options": "6000",
+   "n": 2844,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000854157",
+   "name": "STATE OF WISCONSIN INVESTMENT BOARD",
+   "value": "3.518e+10",
+   "options": "0",
+   "n": 1537,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000036104",
+   "name": "US BANCORP \\DE\\",
+   "value": "3.465e+10",
+   "options": "0",
+   "n": 7017,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001722329",
+   "name": "Newport Trust Co",
+   "value": "3.335e+10",
+   "options": "0",
+   "n": 45,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001020066",
+   "name": "SANDS CAPITAL MANAGEMENT, LLC",
+   "value": "3.245e+10",
+   "options": "0",
+   "n": 71,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000314984",
+   "name": "Thrivent Financial for Lutherans",
+   "value": "3.177e+10",
+   "options": "0",
+   "n": 3116,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001536105",
+   "name": "Magellan Asset Management Ltd",
+   "value": "3.151e+10",
+   "options": "0",
+   "n": 71,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001694217",
+   "name": "DZ BANK AG Deutsche Zentral Genossenschafts Bank, Frankfurt am Main",
+   "value": "3.061e+10",
+   "options": "1.722e+08",
+   "n": 1453,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001529735",
+   "name": "MetLife Investment Advisors, LLC",
+   "value": "3.026e+10",
+   "options": "0",
+   "n": 5923,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000728100",
+   "name": "LORD, ABBETT & CO. LLC",
+   "value": "3.003e+10",
+   "options": "0",
+   "n": 779,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000350894",
+   "name": "SEI Investments Co",
+   "value": "2.978e+10",
+   "options": "0",
+   "n": 6896,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000944388",
+   "name": "1832 Asset Management L.P.",
+   "value": "2.936e+10",
+   "options": "0",
+   "n": 634,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000898419",
+   "name": "PRUDENTIAL PLC",
+   "value": "2.916e+10",
+   "options": "0",
+   "n": 1065,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000860561",
+   "name": "EDGEWOOD MANAGEMENT LLC",
+   "value": "2.857e+10",
+   "options": "0",
+   "n": 65,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001325091",
+   "name": "Marshall Wace North America L.P.",
+   "value": "2.816e+10",
+   "options": "6.718e+07",
+   "n": 4276,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001540235",
+   "name": "Creative Planning",
+   "value": "2.774e+10",
+   "options": "1.468e+07",
+   "n": 1902,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001179392",
+   "name": "TWO SIGMA INVESTMENTS, LP",
+   "value": "2.77e+10",
+   "options": "3.148e+09",
+   "n": 2065,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001418773",
+   "name": "Robeco Institutional Asset Management B.V.",
+   "value": "2.724e+10",
+   "options": "0",
+   "n": 958,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001462160",
+   "name": "Mitsubishi UFJ Trust & Banking Corp",
+   "value": "2.717e+10",
+   "options": "0",
+   "n": 806,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001483066",
+   "name": "State of New Jersey Common Pension Fund D",
+   "value": "2.672e+10",
+   "options": "0",
+   "n": 906,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001361974",
+   "name": "Beutel, Goodman & Co Ltd.",
+   "value": "2.655e+10",
+   "options": "0",
+   "n": 163,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000945631",
+   "name": "EAGLE CAPITAL MANAGEMENT LLC",
+   "value": "2.639e+10",
+   "options": "0",
+   "n": 59,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000005272",
+   "name": "AMERICAN INTERNATIONAL GROUP INC",
+   "value": "2.63e+10",
+   "options": "0",
+   "n": 3055,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001637460",
+   "name": "Man Group plc",
+   "value": "2.624e+10",
+   "options": "1.21e+08",
+   "n": 3522,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001054074",
+   "name": "BESSEMER GROUP INC",
+   "value": "2.605e+10",
+   "options": "0",
+   "n": 4177,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001608046",
+   "name": "National Pension Service",
+   "value": "2.6e+10",
+   "options": "0",
+   "n": 455,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001298088",
+   "name": "CIBC Private Wealth Group, LLC",
+   "value": "2.592e+10",
+   "options": "0",
+   "n": 1310,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001505817",
+   "name": "Fiera Capital Corp",
+   "value": "2.56e+10",
+   "options": "0",
+   "n": 1171,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000898427",
+   "name": "AXA",
+   "value": "2.559e+10",
+   "options": "0",
+   "n": 2350,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001164833",
+   "name": "HOTCHKIS & WILEY CAPITAL MANAGEMENT LLC",
+   "value": "2.55e+10",
+   "options": "1.029e+07",
+   "n": 472,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000948669",
+   "name": "PARNASSUS INVESTMENTS /CA",
+   "value": "2.536e+10",
+   "options": "0",
+   "n": 87,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001418329",
+   "name": "Investec Asset Management LTD",
+   "value": "2.524e+10",
+   "options": "0",
+   "n": 271,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000003520",
+   "name": "FRED ALGER MANAGEMENT INC",
+   "value": "2.511e+10",
+   "options": "0",
+   "n": 505,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000009631",
+   "name": "BANK OF NOVA SCOTIA",
+   "value": "2.509e+10",
+   "options": "1.448e+08",
+   "n": 1392,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001462020",
+   "name": "Chevy Chase Trust Holdings, Inc.",
+   "value": "2.418e+10",
+   "options": "0",
+   "n": 1083,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001462284",
+   "name": "Raymond James Financial Services Advisors, Inc.",
+   "value": "2.414e+10",
+   "options": "1.951e+06",
+   "n": 2752,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000921669",
+   "name": "ICAHN CARL C",
+   "value": "2.41e+10",
+   "options": "0",
+   "n": 33,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001644956",
+   "name": "WILLIAM BLAIR INVESTMENT MANAGEMENT, LLC",
+   "value": "2.376e+10",
+   "options": "0",
+   "n": 406,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001017918",
+   "name": "BAMCO INC /NY/",
+   "value": "2.359e+10",
+   "options": "0",
+   "n": 357,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000916542",
+   "name": "ACADIAN ASSET MANAGEMENT LLC",
+   "value": "2.322e+10",
+   "options": "0",
+   "n": 1951,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001001085",
+   "name": "BROOKFIELD ASSET MANAGEMENT INC.",
+   "value": "2.319e+10",
+   "options": "5.745e+08",
+   "n": 213,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001364615",
+   "name": "Aperio Group, LLC",
+   "value": "2.317e+10",
+   "options": "0",
+   "n": 3059,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001508097",
+   "name": "Sanders Capital, LLC",
+   "value": "2.304e+10",
+   "options": "0",
+   "n": 42,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001595888",
+   "name": "JANE STREET GROUP, LLC",
+   "value": "2.298e+10",
+   "options": "3.845e+10",
+   "n": 4410,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001305841",
+   "name": "Epoch Investment Partners, Inc.",
+   "value": "2.289e+10",
+   "options": "0",
+   "n": 530,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001141802",
+   "name": "NORTHWESTERN MUTUAL WEALTH MANAGEMENT CO",
+   "value": "2.284e+10",
+   "options": "0",
+   "n": 2601,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001446194",
+   "name": "SUSQUEHANNA INTERNATIONAL GROUP, LLP",
+   "value": "2.262e+10",
+   "options": "2.207e+11",
+   "n": 3533,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000883677",
+   "name": "PANAGORA ASSET MANAGEMENT INC",
+   "value": "2.249e+10",
+   "options": "0",
+   "n": 2522,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001441689",
+   "name": "Korea Investment CORP",
+   "value": "2.222e+10",
+   "options": "1.31e+05",
+   "n": 646,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000314949",
+   "name": "GLENMEDE TRUST CO NA",
+   "value": "2.211e+10",
+   "options": "0",
+   "n": 4805,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000820478",
+   "name": "STRS OHIO",
+   "value": "2.206e+10",
+   "options": "2.25e+05",
+   "n": 2057,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000312272",
+   "name": "COMMONWEALTH EQUITY SERVICES, LLC",
+   "value": "2.166e+10",
+   "options": "0",
+   "n": 2742,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000928196",
+   "name": "HARDING LOEVNER LP",
+   "value": "2.129e+10",
+   "options": "0",
+   "n": 132,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001318757",
+   "name": "MARSHALL WACE, LLP",
+   "value": "2.109e+10",
+   "options": "1.083e+08",
+   "n": 3347,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001633050",
+   "name": "Swedbank",
+   "value": "2.102e+10",
+   "options": "0",
+   "n": 179,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001166559",
+   "name": "Bill & Melinda Gates Foundation Trust",
+   "value": "2.089e+10",
+   "options": "0",
+   "n": 18,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001027817",
+   "name": "ATLANTA CAPITAL MANAGEMENT CO L L C",
+   "value": "2.088e+10",
+   "options": "0",
+   "n": 201,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001421224",
+   "name": "CIBC World Markets Inc.",
+   "value": "2.069e+10",
+   "options": "1.052e+09",
+   "n": 1075,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001593051",
+   "name": "Retirement Systems of Alabama",
+   "value": "2.058e+10",
+   "options": "0",
+   "n": 925,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000869178",
+   "name": "VAN ECK ASSOCIATES CORP",
+   "value": "2.036e+10",
+   "options": "0",
+   "n": 838,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001036325",
+   "name": "DAVIS SELECTED ADVISERS",
+   "value": "2.033e+10",
+   "options": "0",
+   "n": 135,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001587973",
+   "name": "State of Tennessee, Treasury Department",
+   "value": "2.027e+10",
+   "options": "0",
+   "n": 2500,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001393818",
+   "name": "Blackstone Group L.P.",
+   "value": "1.979e+10",
+   "options": "7.776e+08",
+   "n": 69,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001472190",
+   "name": "PGGM Investments",
+   "value": "1.96e+10",
+   "options": "0",
+   "n": 254,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001013536",
+   "name": "AJO, LP",
+   "value": "1.938e+10",
+   "options": "0",
+   "n": 653,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001418204",
+   "name": "FIRST REPUBLIC INVESTMENT MANAGEMENT, INC.",
+   "value": "1.918e+10",
+   "options": "2.2e+04",
+   "n": 1452,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001034524",
+   "name": "POLEN CAPITAL MANAGEMENT LLC",
+   "value": "1.913e+10",
+   "options": "0",
+   "n": 59,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000036270",
+   "name": "M&T Bank Corp",
+   "value": "1.912e+10",
+   "options": "7.26e+05",
+   "n": 7582,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001007280",
+   "name": "PUBLIC EMPLOYEES RETIREMENT SYSTEM OF OHIO",
+   "value": "1.912e+10",
+   "options": "0",
+   "n": 1909,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001426092",
+   "name": "Longview Partners (Guernsey) LTD",
+   "value": "1.899e+10",
+   "options": "0",
+   "n": 25,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000937729",
+   "name": "FAYEZ SAROFIM & CO",
+   "value": "1.895e+10",
+   "options": "0",
+   "n": 580,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000750556",
+   "name": "SUNTRUST BANKS INC",
+   "value": "1.892e+10",
+   "options": "6.577e+07",
+   "n": 2894,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000790502",
+   "name": "EAGLE ASSET MANAGEMENT INC",
+   "value": "1.876e+10",
+   "options": "0",
+   "n": 608,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001699506",
+   "name": "Ackerman Capital Advisors, LLC",
+   "value": "1.874e+10",
+   "options": "0",
+   "n": 160,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001521019",
+   "name": "Nuveen Asset Management, LLC",
+   "value": "1.873e+10",
+   "options": "4.1e+04",
+   "n": 1038,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001068855",
+   "name": "Asset Management One Co., Ltd.",
+   "value": "1.849e+10",
+   "options": "0",
+   "n": 1238,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000900973",
+   "name": "Winslow Capital Management, LLC",
+   "value": "1.846e+10",
+   "options": "0",
+   "n": 168,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001027796",
+   "name": "PZENA INVESTMENT MANAGEMENT LLC",
+   "value": "1.838e+10",
+   "options": "0",
+   "n": 176,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001420473",
+   "name": "Financial Engines Advisors L.L.C.",
+   "value": "1.833e+10",
+   "options": "0",
+   "n": 104,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001605911",
+   "name": "Jackson Square Partners, LLC",
+   "value": "1.827e+10",
+   "options": "0",
+   "n": 85,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001217541",
+   "name": "DIAMOND HILL CAPITAL MANAGEMENT INC",
+   "value": "1.818e+10",
+   "options": "0",
+   "n": 164,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001167483",
+   "name": "TIGER GLOBAL MANAGEMENT LLC",
+   "value": "1.811e+10",
+   "options": "0",
+   "n": 69,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001177206",
+   "name": "LOS ANGELES CAPITAL MANAGEMENT & EQUITY RESEARCH INC",
+   "value": "1.799e+10",
+   "options": "0",
+   "n": 1348,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001163648",
+   "name": "CI INVESTMENTS INC.",
+   "value": "1.783e+10",
+   "options": "1.312e+06",
+   "n": 350,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001535782",
+   "name": "AMP Capital Investors Ltd",
+   "value": "1.769e+10",
+   "options": "0",
+   "n": 1325,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001569205",
+   "name": "Fundsmith LLP",
+   "value": "1.76e+10",
+   "options": "0",
+   "n": 31,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001021223",
+   "name": "KAYNE ANDERSON RUDNICK INVESTMENT MANAGEMENT LLC",
+   "value": "1.752e+10",
+   "options": "0",
+   "n": 507,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001603466",
+   "name": "Point72 Asset Management, L.P.",
+   "value": "1.747e+10",
+   "options": "4.561e+09",
+   "n": 888,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001103804",
+   "name": "Viking Global Investors LP",
+   "value": "1.744e+10",
+   "options": "0",
+   "n": 57,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0000728083",
+   "name": "FIRST MANHATTAN CO",
+   "value": "1.732e+10",
+   "options": "0",
+   "n": 1443,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001061165",
+   "name": "LONE PINE CAPITAL LLC",
+   "value": "1.711e+10",
+   "options": "0",
+   "n": 29,
+   "unit_steps": 0
+  },
+  {
+   "cik": "0001648711",
+   "name": "Baird Financial Group, Inc.",
+   "value": "1.71e+10",
+   "options": "0",
+   "n": 1363,
+   "unit_steps": 0
   }
  ],
  "report_period": "2019-03-31",
