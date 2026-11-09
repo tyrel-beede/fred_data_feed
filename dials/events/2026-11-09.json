@@ -1,0 +1,239 @@
+{
+ "group": "events",
+ "run_at": "2026-11-09T05:18:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "since": "2026-11-05",
+  "note": "from dials/_status_events.json last_as_of; hits dated 2026-11-06 or later; hits dated 2026-11-03..2026-11-05 not in earlier files would be kept once with late:true (none found); older discarded"
+ },
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "search_mode": "extended",
+ "notes": "Fetch refusals: bloomberg.com (robots), cnbc.com, qz.com, fourweekmba.com, cryptobriefing.com, realassets.ipe.com (client errors); syndicated or secondary copies used where available, and those items are marked partial. Anthropic IPO and Austrian property-fund items rest on secondary summaries of Bloomberg reports. IREN capex figures conflict between sources ($15bn remaining vs $25-30bn expected; elsewhere $20bn full-year) and were not reconciled. Reuters/Investing.com and other syndications disagree on Oracle's share reaction to the Microsoft report (flat vs down 3-4%). The 3-year auction (11-09, 13:00 ET) had not been held at run time. Long pages (Luminix, tech-insider) were read only to 100,000 characters.",
+ "discarded": [
+  "Octus Americas Leveraged Finance Weekly (2026-10-23): Applied Digital $3.5bn and Novva $800m HY premarketing paused, AVI-SPL $690m loan pulled, LaserAway loan shelved - older than gate",
+  "MA Financial suspends redemptions on A$2.1bn MA Secured Loan Series from 10-31 (announced about 2026-10-21, Mingtiandi 10-22) - older than gate",
+  "Apollo Debt Solutions BDC limits withdrawals third straight quarter (investingLive 2026-09-23) - older than gate",
+  "Reuters factbox on scrapped/delayed IPOs (2026-10-08/09), Firmus IPO withdrawal (10-09), Solidigm IPO pulled (10-23) - older than gate",
+  "SK hynix LTAs with 14 customers (2026-10-28) - older than gate and not a renegotiation",
+  "Oracle/OpenAI Abilene expansion cancelled (2026-03-07), tech-insider 7 GW delay piece (April 2026 base) - older than gate",
+  "Fitch moves France outlook to negative (referenced 2026-11-02) - older than gate",
+  "ING seeking buyers for $500m data-center loans (CNBC 11-06; fetch refused) - already recorded in the prior calendar list (11-05), no new development seen",
+  "Insurance Journal 11-06 / Spokesman-Review 11-08 '40% of US planned data center capacity in states wanting to pause' - syndication of the Cleanview story already recorded on 11-06",
+  "Luminix 'Data Center Moratorium Wave After the 2026 Midterms' (11-05) and TIKR Vertiv selloff piece (11-05) - within late window but only restate ballot results and selloff already recorded; no new event",
+  "Microsoft Nscale option decline, IREN Horizon slip, Anthropic $1.5tn and WSJ ~$1tn items - already in prior list"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "as_of": "2026-11-06",
+   "name": "Microsoft is winding down 2023 Oracle deal to rent AI cloud capacity (Bloomberg, via Reuters)",
+   "headline": "Microsoft is winding down 2023 Oracle deal to rent AI cloud capacity (Bloomberg, via Reuters)",
+   "source": "Reuters on Investing.com, relaying Bloomberg; read by WebFetch",
+   "url": "https://www.investing.com/news/stock-market-news/microsoft-is-winding-down-oracle-deal-to-rent-ai-cloud-capacity-bloomberg-news-reports-5008946",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "capex deferral / digestion (principal: MSFT; counterparty ORCL)",
+   "late": false,
+   "claim": "Bloomberg, citing people familiar, reported that Microsoft declined to renew a multi-year 2023 arrangement to rent AI computing from Oracle (used for AI-assisted Bing) and has been switching the capacity off in recent months, as part of a broader review of cloud partnerships; the hardware uses an older Nvidia chip generation. Financial terms of the deal were never disclosed. Oracle said demand for OCI AI infrastructure remains strong, including for earlier-generation GPUs.",
+   "sweep_query": "3. capex cut OR deferral OR digestion AI",
+   "note": "A lease non-renewal, not a stated capex-guidance cut. No dollar or MW size given. Reuters said ORCL and MSFT were flat in afternoon trade; other syndications say Oracle fell about 3-4% (conflict not resolved). Bloomberg original not fetched. Distinct from the prior-recorded Nscale option decline (11-05) and neocloud story (11-05).",
+   "other_urls": [
+    "https://www.bloomberg.com/news/articles/2026-11-06/microsoft-is-winding-down-oracle-deal-to-rent-ai-cloud-capacity",
+    "https://startupfortune.com/microsoft-winds-down-oracle-deal-to-rent-ai-cloud-capacity/",
+    "https://au.finance.yahoo.com/news/oracle-falls-4-microsoft-reportedly-181813442.html"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "JPMorgan cuts IREN target to $55 from $65 on capex reduction and delays; remaining FY2027 capex $15bn vs $25-30bn expected",
+   "headline": "JPMorgan cuts IREN target to $55 from $65 on capex reduction and delays; remaining FY2027 capex $15bn vs $25-30bn expected",
+   "source": "Investing.com analyst-ratings article; read by WebFetch",
+   "url": "https://investing.com/news/analyst-ratings/jpmorgan-cuts-iren-stock-price-target-on-capex-reduction-delays-93CH-5011317",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "capex cut (neocloud: IREN; customer MSFT)",
+   "late": false,
+   "claim": "JPMorgan cut its IREN price target to $55 from $65 (Overweight kept) after IREN guided to $15bn of capex for the remainder of fiscal 2027 against a previously expected $25-30bn, attributed to a changing financing environment in which IREN is pulling back early site-development spend, plus a longer timeline for air-cooled Childress capacity. Of the $15bn, $9bn is secured and $6bn unfunded. Horizon 2-4 deliveries for Microsoft slip one month to end-January 2027, possibly February.",
+   "sweep_query": "3. capex cut OR deferral OR digestion AI",
+   "note": "Underlying guidance comes from IREN's Q1 FY2027 results dated 2026-11-05; the prior list recorded the Horizon slip from those results but not the capex reduction, so this is the new element (the analyst note is dated 11-09). The article's own arithmetic is inconsistent (it calls $15bn '$7.5bn lower' than $25-30bn); the 456X Nov 7 brief instead describes full-year guidance falling from $25-30bn to $20bn with $15bn over the next three quarters. Numbers recorded as stated, not reconciled.",
+   "other_urls": [
+    "https://404kresearch.substack.com/p/456x-evening-brief-november-7-2026"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "Reuters: Banks, investors grow wary of AI debt after selloff; some data-center and chip bond deals shelved, Nebius did not proceed with high-yield bond",
+   "headline": "Reuters: Banks, investors grow wary of AI debt after selloff; some data-center and chip bond deals shelved, Nebius did not proceed with high-yield bond",
+   "source": "Reuters, republished by Global Banking & Finance Review; read by WebFetch",
+   "url": "https://www.globalbankingandfinance.com/banks-investors-grow-wary-ai-debt-spooked-market-selloff/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "pulled deal (neocloud / AI-infrastructure debt; NBIS)",
+   "late": false,
+   "claim": "Reuters reports that some planned bond offerings tied to data centers and chips are being shelved and that some lenders are reluctant to finance deals even when backed by Anthropic or Google. Nebius explored a high-yield bond in September but did not go ahead in October, per one source; it instead entered a $3.5bn senior secured loan from Citigroup in October. Spreads on 10-year hyperscaler debt have widened about 50bp year to date versus about 20bp for high-quality non-AI industrials (BofA); Meta and SpaceX bonds trade below par.",
+   "sweep_query": "1. bond deal pulled OR downsized",
+   "note": "The shelved deals are unnamed; the only named abandoned deal (Nebius HY bond) dates to October, outside the gate. No hyperscaler (MSFT/GOOGL/META/AMZN/ORCL) deal is reported pulled. A related FourWeekMBA page ('Some Lenders Said to Balk at AI Debt, Even With Backstops') could not be fetched.",
+   "other_urls": [
+    "https://www.investing.com/news/stock-market-news/banks-investors-grow-wary-of-ai-debt-spooked-by-marketselloff-5011246",
+    "https://fourweekmba.com/ai-some-lenders-said-to-balk-at-ai-debt-even-with-backstops/"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-06",
+   "name": "OpenAI reportedly raises $11bn so far at $1.25tn valuation; round could total about $20bn vs $30bn at $1.4tn sought",
+   "headline": "OpenAI reportedly raises $11bn so far at $1.25tn valuation; round could total about $20bn vs $30bn at $1.4tn sought",
+   "source": "TechCrunch, relaying Bloomberg; read by WebFetch",
+   "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "repriced round (OpenAI)",
+   "late": false,
+   "claim": "Bloomberg, citing people familiar, reported OpenAI has raised $11bn so far in a round valuing it at $1.25tn; the round is expected to close in coming weeks and could total about $20bn. In late September Bloomberg had reported OpenAI was seeking $30bn at $1.4tn, so the figures fall well short of that target.",
+   "sweep_query": "4. funding round repriced AI lab",
+   "note": "Follow-on to the prior-recorded 10-31 item (target cut to ~$20bn at $1.25tn). The new dated development is the $11bn first tranche actually raised at the lower valuation. Investors not named in this copy; OpenAI had not commented.",
+   "other_urls": [
+    "https://techfundingnews.com/openai-closes-11b-first-tranche-at-1-25t-valuation-well-below-its-1-4t-ask/",
+    "https://theaiinsider.tech/2026/11/07/openai-secures-11b-at-1-25t-valuation-as-funding-round-falls-short-of-earlier-target/"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-06",
+   "name": "Anthropic IPO: prospective buyers discuss $1.2-1.3tn valuation, some as low as $1.1tn (Bloomberg, via secondary summaries)",
+   "headline": "Anthropic IPO: prospective buyers discuss $1.2-1.3tn valuation, some as low as $1.1tn (Bloomberg, via secondary summaries)",
+   "source": "RoboForex blog (dated 2026-11-09) and Tech Insider (2026-11-08), both summarizing a Bloomberg report of 2026-11-06; read by WebFetch",
+   "url": "https://roboforex.com/blog/anthropic-ipo/anthropic-ipo-valuation/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "repriced IPO (Anthropic)",
+   "late": false,
+   "claim": "On 6 November Bloomberg reported that potential buyers of the Anthropic IPO were discussing a valuation of $1.2-1.3tn, with some weighing as low as $1.1tn, versus about $1.5tn reported in mid-October and about $2tn in September. No final decision has been made; formal marketing could begin the following week, and investors would reportedly accept a delay if market pressure persists.",
+   "sweep_query": "4. funding round repriced AI lab",
+   "note": "Secondary summaries only; Bloomberg original not read, and the Quartz copy (qz.com) failed to fetch. Continues the prior-recorded sequence ($1.5tn on 11-03; WSJ 'toward $1tn' on 11-05); recorded because it is a new dated range from a different outlet. Raise size not confirmed (up to $100bn per a September Reuters report). No price range filed.",
+   "other_urls": [
+    "https://tech-insider.org/anthropic-presses-ahead-ipo-ft-bloomberg-1-2-1-3-trillion-2026",
+    "https://qz.com/anthropic-ipo-valuation-expectations-fall-ai-selloff-110626"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "Norway reins in data centres: Statnett halts new grid-connection reservations pending licensing scheme (Reuters)",
+   "headline": "Norway reins in data centres: Statnett halts new grid-connection reservations pending licensing scheme (Reuters)",
+   "source": "Reuters, republished by Cyprus Mail; read by WebFetch",
+   "url": "https://cyprus-mail.com/2026/11/09/norway-reins-in-data-centre-industry-amid-ai-boom",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "GW deferral / moratorium (Norway)",
+   "late": false,
+   "claim": "Norway's government announced it will curb data-centre growth, and grid operator Statnett temporarily halted reservations of connections for new data centres until a government licensing scheme is in place. Statnett has received connection applications for 26,000 MW so far this year, more than Norway's current capacity, with data centres 75% of the requests. The planned scheme would restrict land and power access for global cloud companies and crypto firms and make new data centres pay for grid costs.",
+   "sweep_query": "6. gigawatt deferral data center",
+   "note": "No fixed end date for the pause; no named project cancelled. Applies to new reservations, not existing allocations.",
+   "other_urls": [
+    "https://fourweekmba.com/ai-norway-pauses-data-centre-grid-bookings-pipeline-tops-peak/",
+    "https://cryptobriefing.com/norway-halts-new-data-center-power-connections-amid-grid-concerns"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-07",
+   "name": "456X Evening Brief Nov 7: ~11 GW of planned US data centers could face construction pauses; Meta and Microsoft weigh building abroad (undated estimates)",
+   "headline": "456X Evening Brief Nov 7: ~11 GW of planned US data centers could face construction pauses; Meta and Microsoft weigh building abroad (undated estimates)",
+   "source": "456X / 404K Research Substack evening brief; read by WebFetch",
+   "url": "https://404kresearch.substack.com/p/456x-evening-brief-november-7-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "GW deferral (US pipeline; principals META, MSFT mentioned)",
+   "late": false,
+   "claim": "The brief cites unnamed estimates that about 11 GW of planned US data centers could face construction pauses, narrowing to a net domestic reduction of about 3 GW by 2030 if developers relocate; it says facilities targeting 2028-2029 energization face severe slippage or cancellation risk, and that Meta is evaluating construction outside the US and Microsoft is considering international expansion. It also cites a J.P. Morgan figure that about 78% of the high-yield data-center development pipeline is in Texas, with lease covenants allowing only 120-180 days of delivery delay.",
+   "sweep_query": "6. gigawatt deferral data center",
+   "note": "Secondary aggregator; underlying sources unnamed and undated, so the as_of is the brief's date. Estimates of exposure, not announced deferrals. Meta 'look abroad' overlaps the prior-recorded WSJ item of 11-05. The same brief reports no memory LTA renegotiation.",
+   "other_urls": [],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-07",
+   "name": "Austrian property funds limit redemptions as investors seek cash (Bloomberg): Real Invest and Erste Immobilienfonds",
+   "headline": "Austrian property funds limit redemptions as investors seek cash (Bloomberg): Real Invest and Erste Immobilienfonds",
+   "source": "Briefs Finance summary of a Bloomberg report dated 2026-11-07; read by WebFetch (Bloomberg original refused: robots)",
+   "url": "https://briefs.co/news/rate-spike-forces-payout-limits-at-austria-s-two-largest-ret",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "fund gating (real estate, Europe)",
+   "late": false,
+   "claim": "Austria's two largest retail property funds, Bank Austria's Real Invest (about EUR 2.4bn, UniCredit) and Erste Immobilienfonds (about EUR 1.3bn, roughly 45% German assets), limited withdrawals last month and will speed up property sales; Erste's chief risk officer said redemptions remain high with no signs of a decline. DWS Grundbesitz Europe also capped withdrawals last month.",
+   "sweep_query": "2. fund gates redemptions",
+   "note": "The limits were introduced in October 2026 (before the gate); the in-gate element is the 11-07 report and the statement that redemption pressure persists. Cap percentages not given. Read through a summary, not the Bloomberg original. Not private credit.",
+   "other_urls": [
+    "https://www.bloomberg.com/news/articles/2026-11-07/rates-blow-up-triggers-rush-for-cash-at-austrian-property-funds"
+   ],
+   "group": "events"
+  }
+ ],
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026",
+   "result": "1 hit (via variant)",
+   "note": "First phrasing returned the already-recorded Iqony loan (11-03) and stale pages. Variant 'data center bond shelved OR postponed neocloud high-yield ... November 2026' surfaced the Reuters 11-09 AI-debt piece (unnamed shelved data-center/chip bonds; Nebius HY bond not pursued in October). Variants 'postponed bond sale OR pulled leveraged loan ... week of November 6 2026' and 'IPO postponed OR withdrawn OR loan pulled market volatility' returned only October items (Octus weekly 10-23, Reuters IPO factbox 10-08/09, Firmus, Solidigm). No named bond or loan deal pulled or downsized with a date of 11-06 to 11-09; no hyperscaler deal pulled."
+  },
+  {
+   "query": "2. fund gates redemptions private credit November 2026",
+   "result": "1 hit (via variant)",
+   "note": "First phrasing returned explainers and trackers dated September-October. Variant 'non-traded BDC OR REIT limits withdrawals tender offer prorated November 2026' returned undated law-firm pages and SEC tender filings. Variant 'private credit fund suspends redemptions ... November 7 2026' surfaced the Bloomberg 11-07 Austrian property-fund story. No new US private-credit gate or proration dated 11-06 to 11-09."
+  },
+  {
+   "query": "3. AI capex cut OR deferral OR digestion hyperscaler November 2026",
+   "result": "2 hits",
+   "note": "Microsoft-Oracle lease wind-down (11-06) and IREN capex reduction (JPMorgan note 11-09). Variants run: 'IREN cuts capex guidance ... Microsoft Oracle lease not renewed', 'Microsoft winds down Oracle AI cloud deal Bloomberg November 6 2026', 'hyperscaler supplier guidance cut orders pushed out Vertiv OR Arista OR GE Vernova OR Nvidia OR Broadcom'. No supplier (NVDA, MU, GEV, VRT, ANET, AVGO) guidance cut or order deferral found in the gate; the TIKR Vertiv piece (11-05) reports a selloff on fears, with orders more than doubled."
+  },
+  {
+   "query": "4. funding round repriced AI lab OpenAI Anthropic xAI November 2026",
+   "result": "2 hits",
+   "note": "OpenAI $11bn tranche at $1.25tn (11-06) and Anthropic IPO bids at $1.2-1.3tn (Bloomberg 11-06, read via secondaries). Variant 'Anthropic IPO valuation price range delay xAI SpaceX funding November 2026 this week' run. Nothing new on xAI/SpaceX."
+  },
+  {
+   "query": "5. LTA renegotiation memory SK hynix Samsung Micron November 2026",
+   "result": "no hit",
+   "note": "Results describe LTA expansion and lock-in (SK hynix agreements with 14 customers covering over half of 2027-28 capacity, dated 10-28; AMD signing HBM LTAs, 11-03; Meritz channel checks finding no order softening). Variant 'memory contract price cut OR renegotiate DRAM NAND HBM customers push back Kioxia Samsung November 2026' returned one blog (lcdproduct.com, 11-05) saying NAND prices face pressure in 4Q26, with no renegotiation, numbers or named source."
+  },
+  {
+   "query": "6. gigawatt deferral data center cancelled OR delayed OR moratorium November 2026",
+   "result": "2 hits",
+   "note": "Norway/Statnett reservation halt (11-09) and the 456X Nov 7 brief (11 GW pause estimate). Variant 'data center project paused OR scrapped OR withdrawn hyperscaler Meta Microsoft Amazon Oracle November 8 2026' returned stale pages (March-June 2026). Insurance Journal 11-06 / Spokesman 11-08 '40% of planned capacity in states wanting to pause' is a syndication of the Cleanview/Bloomberg story already recorded on 11-06. 24/7 Wall St (11-08) on David Sacks's 11-07 podcast remarks names no project deferral."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026",
+   "result": "no hit",
+   "note": "No coupon auction held since 11-05. Wolf Street (11-07) confirms this week's schedule: 3-year Monday 11-09, 10-year Tuesday 11-10 after CPI, 30-year Thursday 11-12; no result available at run time. Variant '3-year Treasury note auction November 9 2026 results preview refunding' returned schedule and refunding pages only. YieldDocket page was a stale snapshot (data to 11-03)."
+  },
+  {
+   "query": "8. sovereign bond stress gilts OATs JGBs yields November 2026",
+   "result": "no hit",
+   "note": "Variants 'gilt yields OR JGB yields OR French OAT spread selloff November 9 2026' and 'government bond yields Friday November 6 2026 gilts JGB 30-year auction emerging market debt selloff' run. Coverage in the gate shows yields falling or steady: JGB 10-year down over 12bp to 2.66% and 2-year down over 13bp to 1.74% on 11-06 (Saxo); US 10-year 4.86% and 30-year 5.26% at the 11-06 close, up 2bp and 1bp after jobs data (Wolf Street, Capp Notes). Fitch's move of France's outlook to negative is referenced in a note dated 11-02 (out of gate, OAT yields fell that day). No EM stress item found. Saxo also reports the US high-yield spread widened 16bp to 340bp on 11-05 (not a sovereign item, not recorded as a hit)."
+  }
+ ]
+}
