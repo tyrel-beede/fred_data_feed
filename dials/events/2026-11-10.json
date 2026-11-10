@@ -1,0 +1,205 @@
+{
+ "group": "events",
+ "run_at": "2026-11-10T05:16:00-07:00",
+ "run_weekday": "Tue",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "since": "2026-11-08",
+  "note": "from dials/_status_events.json last_as_of; hits dated 2026-11-09 or later; hits dated 2026-11-06..2026-11-08 not in earlier files kept once with late:true; older discarded"
+ },
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "search_mode": "extended",
+ "notes": "Fetch failures: investinglive.com 3-year auction page (server error), babypips.com 11-09 recap and tradersunion.com (client errors), zerohedge.com (redirect loop http/https), futunn.com (JavaScript-only page). bloomberg.com and cnbc.com links not attempted (refused hosts). 3-year auction: four sources (Investing.com, PrimeXBT, louisvelazquez.com, HERE Columbia) agree on high yield 4.627% and a 0.5 bp tail (WI 4.622% per louisvelazquez.com); RTTNews prints 4.637% (treated as a typo) and a Gokhshtein copy of the ZeroHedge piece says '2.5 bp tail, largest since May' (treated as garbled; ZeroHedge original unreadable). Takedown averages come from a single source (louisvelazquez.com). Morgan Stanley 5 GW slip is a sell-side projection, not an announced deferral. CoreWeave yield/CDS item is secondary-market stress, not a pulled deal; included as partial for the scorer to judge. The 10-year auction (11-10) and CoreWeave Q3 (11-10 after close) had not occurred at run time.",
+ "discarded": [
+  "Microsoft pulls out of Nscale Loughton UK site, 50 MW / 23,040 GB300 (Reuters 2026-10-19) - older than gate; resurfaced in 456X Nov 8 brief",
+  "Octus Americas Leveraged Finance Weekly (2026-10-23): Applied Digital $3.5bn and Novva $800m HY premarketing paused, AVI-SPL $690m loan pulled, LaserAway ~$675m shelved, Attindas and Grant Thornton downsized - older than gate (already discarded 11-09)",
+  "Barings private credit fund caps withdrawals (Reuters 2026-04-06, Stanger repost) - older than gate",
+  "Blackstone BCRED limits redemptions (cryptobriefing, undated in results; refused host) - prior-period item, not fetched",
+  "Thinking Machines Lab ~$5bn round at $40bn pre-money led by Accel (AI Daily Insights 11-08, via Business Insider) - not a repricing; article gives no lower prior target",
+  "KuCoin/TechFlow Anthropic IPO 'valuation falls to $1.1tn' (11-07) - restates the Bloomberg 11-06 $1.2-1.3tn / $1.1tn report already recorded on 11-09; new element (Kalshi odds under 60%, roadshow-week doubts) is unsourced",
+  "Simply Wall St / Yahoo 'Microsoft pulling back from key neocloud deals' (11-06) - AI-generated recap of the Oracle non-renewal and Nscale items already recorded",
+  "456X Nov 8 brief: Samsung P5-2 timeline pushout 'industry commentary, unconfirmed' - no source, no date, no number",
+  "Tom's Hardware 'Samsung and SK hynix shorten memory contracts' (2026-02-11) - older than gate; supplier-favorable terms, not a renegotiation",
+  "TokenPost 'Analysts debate how AI memory agreements would handle demand shifts' (11-09) - hypothetical debate; no LTA renegotiation reported",
+  "Business Recorder/Reuters 'French 10-year yield touches six-week low' (11-10, Monday trade) - OAT 10y 4.74%, down 2bp, low 4.69%; rally not stress",
+  "Motley Fool 'Texas paused data center permits before the election' (11-09) - restates midterm results, Hinojosa moratorium pledge and Nov 5 selloff already recorded; no dated new deferral",
+  "IREN renews older H100 contracts at 100% price increase (456X 11-09) - not a hit type",
+  "Morgan Stanley/UBS 'selloff overdone' calls (Star-Advertiser 11-09) - commentary, not an event"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "3-year note auction ($58bn, 11-09): high yield 4.627%, 0.5 bp tail vs WI 4.622%, bid-to-cover 2.53 (lowest since Aug 2025), indirects 55.5% (15-month low), directs record 35.0%, dealers 9.5%",
+   "headline": "3-year note auction ($58bn, 11-09): high yield 4.627%, 0.5 bp tail vs WI 4.622%, bid-to-cover 2.53 (lowest since Aug 2025), indirects 55.5% (15-month low), directs record 35.0%, dealers 9.5%",
+   "source": "Investing.com (11-09 14:34), PrimeXBT (11-09), louisvelazquez.com auction recap (11-09), HERE Columbia (11-10), RTTNews (11-09); all read by WebFetch",
+   "url": "https://www.investing.com/news/economy-news/us-3year-treasury-auction-draws-weak-demand-amid-yield-decline-93CH-5013059",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "auction tail (3-year)",
+   "late": false,
+   "claim": "The Treasury sold $58bn of 3-year notes on 2026-11-09 at a high yield of 4.627%, 0.5 bp above the 4.622% when-issued level (average of prior auctions: 0.1 bp stop-through), with a bid-to-cover of 2.53 (average 2.64; lowest since the August 2025 refunding), indirect takedown 55.5% (average 62.7%; lowest in fifteen months), a record direct takedown of 35.0% (average 25.2%) and dealers 9.5% (average 12.1%); one recap grades it C-. Last month's 3-year stopped at 4.932% with a 2.62 bid-to-cover.",
+   "sweep_query": "7. Treasury auction tail",
+   "note": "Tail of 0.5 bp is below the 2 bp hard-event threshold. Averages and the WI level are from a single recap (louisvelazquez.com). RTTNews prints 4.637% (outlier); a Gokhshtein copy of the ZeroHedge write-up says '2.5 bp tail, largest since May' (treated as garbled; ZeroHedge not readable). Investing.com says dealers were 0.8 sigma below their one-year average. 10-year ($42bn) is 11-10 and 30-year ($25bn) 11-12.",
+   "other_urls": [
+    "https://primexbt.com/news/us-3-year-treasury-auction-draws-weak-demand-as-bid-cover-hits-lowest-since-augu/",
+    "https://www.louisvelazquez.com/u-s-treasury-sells-58-billion-of-3-year-notes-at-a-high-yield-of-4-627/",
+    "https://www.herecolumbia.com/2026/11/10/treasury-58-billion-3-year-auction-weak-demand/",
+    "https://www.rttnews.com/3711991/three-year-note-auction-attracts-below-average-demand.aspx",
+    "https://gokhshtein.com/news/2026-11-09-record-direct-bids-salvage-3y-auction-as-foreign-demand"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "NextDC pauses all data-centre projects without customer contracts after M3 Melbourne suspension (Reuters)",
+   "headline": "NextDC pauses all data-centre projects without customer contracts after M3 Melbourne suspension (Reuters)",
+   "source": "Reuters (Christine Chen, Sydney), republished by The Star (Malaysia) and The Edge Malaysia; read by WebFetch",
+   "url": "https://www.thestar.com.my/tech/tech-news/2026/11/09/nextdc-pauses-uncontracted-projects-after-australian-data-centre-woes",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "GW deferral (Australia: NextDC, uncontracted pipeline)",
+   "late": false,
+   "claim": "On 2026-11-09 NextDC CEO Craig Scroggie told the UBS Australasia conference that the company has paused work on every project without a customer contract ('anything that didn't have a customer contract' is 'no longer a priority'), after power delays and community backlash suspended its flagship M3 Melbourne expansion and forced an earnings-forecast cut last month that removed about A$140m of contracted FY2027 revenue; shares fell 42% on the cut. NextDC had 11 data centres in development or planning per its 2026 annual report; Goodman and Digital Realty last week bought a 9.9% stake for A$715m.",
+   "sweep_query": "6. gigawatt deferral data center",
+   "note": "No MW/GW figure for the paused projects; the company did not say how many are affected. The M3 suspension and guidance cut (October) predate the gate; the in-gate event is the stated pause of all uncontracted projects. The A$140m figure is from a secondary summary (shattered.io, citing ABC News and a company announcement). Scroggie called the situation 'probably reflective of the global environment'.",
+   "other_urls": [
+    "https://theedgemalaysia.com/node/825054",
+    "https://srnnews.com/nextdc-pauses-uncontracted-projects-after-australian-data-centre-woes/",
+    "https://shattered.io/nextdc-pauses-uncontracted-projects-m3-melbourne-a140m-2026/"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "Morgan Stanley: 20% of US data center projects planned for 2028 (~5 GW) expected to slip to 2029 after midterms; hyperscaler capex forecasts unchanged at $1.6tn/$1.8tn",
+   "headline": "Morgan Stanley: 20% of US data center projects planned for 2028 (~5 GW) expected to slip to 2029 after midterms; hyperscaler capex forecasts unchanged at $1.6tn/$1.8tn",
+   "source": "investingLive (Adam Button) summary of the Morgan Stanley note 'Buy the Drop: AI Investment Opportunities Post the US Midterms'; corroborated by KuCoin/ChainThink (11-10) and 456X Evening Brief Nov 9; read by WebFetch",
+   "url": "https://investinglive.com/stocks/morgan-stanley-says-buy-the-ai-dip-sees-3-4-trillion-in-hyperscaler-spending-through-2028/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "GW deferral (US pipeline estimate; sell-side)",
+   "late": false,
+   "claim": "In a note dated 2026-11-09 Morgan Stanley said it expects 20% of US data center projects planned for 2028, representing about 5 GW of capacity (roughly 10% of the global pipeline), to be delayed to 2029 rather than cancelled, mainly in Texas and Ohio where new governors could add construction requirements; US capacity additions would fall 4% in 2028 then rise 38% in 2029, while the bank keeps hyperscaler capex at $1.6tn for 2027 and $1.8tn for 2028 and sees a more than 30% shortage of powered capacity persisting through 2028.",
+   "sweep_query": "6. gigawatt deferral data center",
+   "note": "Partial: a bank projection, not an announced deferral, and read via a secondary summary (note itself not seen; analysts unnamed). Projects already under construction are not expected to be disrupted. The bank flags supplier risk of slower orders and inventory build in 2028. Distinct from the 456X Nov 7 '11 GW could face pauses' estimate recorded 11-09 (different source and figure).",
+   "other_urls": [
+    "https://www.kucoin.com/news/flash/morgan-stanley-ai-stock-sell-off-seems-overdone-delayed-data-centers-may-ease-supply-constraints",
+    "https://404kresearch.substack.com/p/456x-evening-brief-november-9-2026-71d"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-09",
+   "name": "CoreWeave debt yields above 16%, 5-year CDS above 1,240 bp (+~50% in a month) ahead of 11-10 results; IREN co-CEO: capital markets 'more selective in the last few weeks'",
+   "headline": "CoreWeave debt yields above 16%, 5-year CDS above 1,240 bp (+~50% in a month) ahead of 11-10 results; IREN co-CEO: capital markets 'more selective in the last few weeks'",
+   "source": "Briefs Finance (Milena Thomas, 11-09) summarizing CNBC reporting and LSEG estimates; 456X Evening Brief Nov 9; read by WebFetch (CNBC original not attempted: refused host)",
+   "url": "https://www.briefs.co/news/neoclouds-brace-for-tough-credit-and-politics-as-coreweave-n/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "pulled deal (neocloud: CRWV) - precursor only; secondary-market stress, no deal pulled",
+   "late": false,
+   "claim": "As of 2026-11-09 some CoreWeave 2031 bonds yielded above 16% and its five-year CDS traded above 1,240 bp, up about 50% in a month, against $5.5bn cash and $35bn debt at end-June (bonds: $1.3bn 15% due March 2028, $3.2bn 11% due August 2030); CEO Mike Intrator said the company does not anticipate any impact to existing customer commitments, and IREN co-CEO Daniel Roberts said 'capital markets have become more selective in the last few weeks'. Investment-grade tech spreads are cited at about 110 bp in November versus about 80 bp in October.",
+   "sweep_query": "ticker sweep (CRWV/NBIS) and 1. bond deal pulled OR downsized",
+   "note": "Not a hit type strictly: no financing pulled, no guidance cut. Recorded as partial because it is the dated, numbered funding-stress reading on a registered ticker ahead of Q3 results (11-10 after close); Nebius reports Thursday 11-12. The IPO pipeline note (Nscale and SB Energy filed in September with no update; Firmus cancelled last month) is out of gate. Figures are from secondary summaries attributed to unnamed market reports.",
+   "other_urls": [
+    "https://404kresearch.substack.com/p/456x-evening-brief-november-9-2026-71d"
+   ],
+   "group": "events"
+  }
+ ],
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 9 2026",
+   "result": "no hit (CoreWeave stress item recorded under ticker sweep)",
+   "note": "First phrasing returned unrelated pages. Variants 'bond sale postponed OR shelved OR pulled market conditions data center OR AI November 9 2026' and 'leveraged loan OR high-yield bond pulled OR postponed OR withdrawn this week November 9 2026' returned only the already-recorded Reuters AI-debt piece (Yahoo/AOL/SRN copies), Prime Data Centers Nordic bond delay (Bloomberg, July 2026), Advisor Perspectives debt-sale delays (10-21) and the Octus weekly of 10-23 (Applied Digital, Novva, AVI-SPL, LaserAway - all out of gate). The 456X Nov 9 brief states explicitly that no bond or loan deal was pulled, postponed or downsized in its coverage; Meta $25bn (11-03) and Oracle $20bn raises completed. No hyperscaler deal pulled."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026",
+   "result": "no hit",
+   "note": "Results were explainers and trackers (whitesecuritieslaw, angelinvestorsnetwork, crowdfundedwealth October tracker, ESMA guidelines). Variant 'private credit fund limits redemptions OR suspends withdrawals OR prorated tender November 9 2026' returned Barings (Reuters 2026-04-06), Blackstone BCRED (cryptobriefing, refused host, undated), and a tradersunion piece 'redemption pressure eases' (fetch failed). No new gate, suspension or proration dated 11-09/11-10; nothing new on the Austrian property funds."
+  },
+  {
+   "query": "3. AI capex cut OR deferral OR digestion hyperscaler November 9 2026",
+   "result": "no hit",
+   "note": "Results were capex trackers and 2027 estimates (FourWeekMBA: Morgan Stanley pegs Google 2027 capex at $375bn; Luminix, YieldTheory, technology.org 11-09 'capex outruns cash flow' - all restating Q3 guidance). Variant 'Microsoft OR Meta OR Alphabet OR Amazon OR Oracle cuts capex OR slows data center spending November 9 2026' and 'data center lease cancelled OR deferred OR pull back November 10 2026' returned 2025 lease-cancellation pieces and the Simply Wall St 11-06 recap of already-recorded items. The 456X Nov 8 and Nov 9 briefs report no hyperscaler capex cut; Samsung P5-2 pushout is unconfirmed commentary. No principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut found."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026",
+   "result": "no hit",
+   "note": "Results were Wikipedia pages, the already-recorded OpenAI $11bn/$1.25tn items, and Thinking Machines Lab ~$5bn at $40bn pre-money (AI Daily Insights 11-08, via Business Insider) which is not described as a repricing. Variant 'Anthropic IPO OR xAI OR OpenAI valuation lowered OR round cut November 9 2026' returned KuCoin/TechFlow (11-07) and Unite.ai/Quartz restatements of the Bloomberg 11-06 Anthropic range already recorded. Nothing new dated 11-09/11-10 on OpenAI, Anthropic, xAI."
+  },
+  {
+   "query": "5. LTA renegotiation memory HBM DRAM November 2026",
+   "result": "no hit",
+   "note": "Results describe LTA lock-in (SK hynix 14 customers 10-28, Samsung 10 clients 10-29, AMD HBM LTAs 11-03, FourWeekMBA 'Baker sees durable memory LTAs'). Variant 'memory contract price renegotiate OR customers push back DRAM NAND HBM ... November 9 2026' returned Tom's Hardware (Feb 2026, suppliers shortening contracts), TrendForce (July, SK hynix removes price cap) and TokenPost 11-09 analyst debate on how LTAs would handle a demand shift (hypothetical; cites onsemi 2023 and Microchip Nov 2025 precedents). 456X Nov 8/9 briefs report no LTA renegotiation; J.P. Morgan describes LTAs as binding."
+  },
+  {
+   "query": "6. gigawatt deferral data center paused OR cancelled November 9 2026",
+   "result": "2 hits",
+   "note": "NextDC pause of uncontracted projects (Reuters 11-09) and Morgan Stanley ~5 GW 2028-to-2029 slip estimate (11-09, partial). Variants 'Morgan Stanley 5 GW data center projects slip 2028 to 2029' and 'NextDC pauses uncontracted projects Scroggie UBS conference' run to source these. Norway/Statnett copies (cryptobriefing 'until at least August 2027', theenergymag, capacityglobal) restate the 11-09 item already recorded; the 'until August 2027' detail was not verified (refused host). Motley Fool Texas piece (11-09) restates midterm results. 456X Nov 9 also notes a lawsuit against the Louisiana PSC over Meta's $50bn campus power approvals (undated; delay risk, not a deferral)."
+  },
+  {
+   "query": "7. Treasury auction tail November 9 2026 (3-year note results)",
+   "result": "1 hit",
+   "note": "3-year auction: 4.627% high yield, 0.5 bp tail, 2.53 bid-to-cover, 55.5% indirects, record 35.0% directs, 9.5% dealers. Variant 'Treasury 3-year auction November 9 2026 tail when-issued dealers 9.5% directs record' surfaced ZeroHedge ('biggest tail since May', unreadable) and copies. investinglive.com page failed (server error). Yield-level context searches ('JGB yields OR gilt yields OR Treasury 10-year yield Monday November 9 2026') returned only CNBC (refused) and quote pages."
+  },
+  {
+   "query": "8. sovereign bond stress gilts JGB OAT yields November 9 2026",
+   "result": "no hit",
+   "note": "Results were stale (FXStreet Oct 20 gilts, 2025 pieces, quote pages). Variant 'government bond selloff OR yields jump gilts OR JGB OR France OR emerging market debt November 10 2026' returned the Business Recorder/Reuters 11-10 piece reporting French 10-year at 4.74% (down 2 bp, low 4.69%, lowest since late September) on a 5% Brent fall, plus September-October selloff retrospectives (UHERO, TD, Globe and Mail). No stress event dated 11-09/11-10 in gilts, JGBs, OATs or EM."
+  },
+  {
+   "query": "ticker sweep: CoreWeave OR Nebius OR Vertiv OR GE Vernova OR Arista OR Broadcom OR Micron guidance cut OR orders deferred OR financing pulled November 9 2026",
+   "result": "1 hit (partial)",
+   "note": "CoreWeave secondary yields >16% / CDS >1,240 bp (Briefs 11-09 via CNBC; 456X). No guidance cut, order deferral or pulled financing for MSFT, GOOGL, META, AMZN, ORCL, SPCX, NVDA, MU, GEV, VRT, ANET, AVGO, CRWV or NBIS dated 11-09/11-10. GE Vernova results were SEC 8-K filings (10-28). Nvidia fell 5.6% on 11-09 on a CEO-related probe (not a hit type). Market-wrap search ('Stock market today November 9 2026') returned Yahoo/Fool AMD-upgrade pages, Star-Advertiser AP wrap (no bond or capex items), CNBC (refused)."
+  },
+  {"page": "https://www.rttnews.com/3711991/three-year-note-auction-attracts-below-average-demand.aspx", "result": "read"},
+  {"page": "https://investinglive.com/news/u-s-treasury-sells-58-billion-of-3-year-notes-at-a-high-yield-of-4-627/", "result": "failed (server error)"},
+  {"page": "https://www.investing.com/news/economy-news/us-3year-treasury-auction-draws-weak-demand-amid-yield-decline-93CH-5013059", "result": "read"},
+  {"page": "https://primexbt.com/news/us-3-year-treasury-auction-draws-weak-demand-as-bid-cover-hits-lowest-since-augu/", "result": "read"},
+  {"page": "https://www.louisvelazquez.com/u-s-treasury-sells-58-billion-of-3-year-notes-at-a-high-yield-of-4-627/", "result": "read"},
+  {"page": "https://www.herecolumbia.com/2026/11/10/treasury-58-billion-3-year-auction-weak-demand/", "result": "read"},
+  {"page": "https://gokhshtein.com/news/2026-11-09-record-direct-bids-salvage-3y-auction-as-foreign-demand", "result": "read (figures conflict: '2.5 bp tail')"},
+  {"page": "https://www.zerohedge.com/markets/record-directs-save-ugly-3y-auction-slide-foreign-demand-leads-biggest-tail-may", "result": "failed (redirect loop)"},
+  {"page": "https://www.thestar.com.my/tech/tech-news/2026/11/09/nextdc-pauses-uncontracted-projects-after-australian-data-centre-woes", "result": "read"},
+  {"page": "https://theedgemalaysia.com/node/825054", "result": "read"},
+  {"page": "https://shattered.io/nextdc-pauses-uncontracted-projects-m3-melbourne-a140m-2026/", "result": "read"},
+  {"page": "https://404kresearch.substack.com/p/456x-evening-brief-november-8-2026", "result": "read"},
+  {"page": "https://404kresearch.substack.com/p/456x-evening-brief-november-9-2026", "result": "read"},
+  {"page": "https://404kresearch.substack.com/p/456x-evening-brief-november-9-2026-71d", "result": "read"},
+  {"page": "https://www.aidailyinsights.cn/en/2026-11-08/3/", "result": "read"},
+  {"page": "https://www.fool.com/investing/2026/11/09/texas-paused-data-center-permits-before-the-electi/", "result": "read"},
+  {"page": "https://www.kucoin.com/news/flash/anthropic-s-ipo-valuation-drops-to-1-1-trillion-amid-ai-market-volatility", "result": "read"},
+  {"page": "https://www.briefs.co/news/neoclouds-brace-for-tough-credit-and-politics-as-coreweave-n/", "result": "read"},
+  {"page": "https://www.brecorder.com/news/40448175/french-10-year-yield-touches-six-week-low", "result": "read"},
+  {"page": "https://www.babypips.com/news/daily-financial-forex-market-recap-2026-11-09", "result": "failed (client error)"},
+  {"page": "https://www.staradvertiser.com/2026/11/09/breaking-news/wall-street-rallies-after-last-weeks-ai-rout-nvidia-falls/", "result": "read"},
+  {"page": "https://finance.yahoo.com/technology/ai/articles/microsoft-pulls-uk-nscale-data-135037959.html", "result": "read (dated 2026-10-19, discarded)"},
+  {"page": "https://news.futunn.com/en/post/1003987665/morgan-stanley-illustrates-the-impact-of-the-blue-wave-20", "result": "failed (JavaScript-only page)"},
+  {"page": "https://octus.com/resources/articles/americas-leveraged-finance-weekly-market-volatility-ai-infrastructure-debt/", "result": "read (dated 2026-10-23, discarded)"},
+  {"page": "https://investinglive.com/stocks/morgan-stanley-says-buy-the-ai-dip-sees-3-4-trillion-in-hyperscaler-spending-through-2028/", "result": "read"},
+  {"page": "https://www.kucoin.com/news/flash/morgan-stanley-ai-stock-sell-off-seems-overdone-delayed-data-centers-may-ease-supply-constraints", "result": "read"},
+  {"page": "https://www.tomshardware.com/tech-industry/samsung-and-sk-hynix-shorten-memory-contracts-as-pricing-power-shifts-back-to-suppliers", "result": "read (dated 2026-02-11, discarded)"},
+  {"page": "https://www.tokenpost.com/news/business/52692", "result": "read"},
+  {"page": "https://www.rastanger.com/news/reuters-barings-private-credit-fund-limits-withdrawals-after-redemption-requests-surge", "result": "read (dated 2026-04-06, discarded)"},
+  {"page": "https://tradersunion.com/news/financial-news/show/3519422-private-credit-funds-redemption-eases/", "result": "failed (client error)"},
+  {"page": "https://finance.yahoo.com/technology/articles/microsoft-msft-pulling-back-key-031936381.html", "result": "read (dated 2026-11-06, already-recorded items, discarded)"}
+ ]
+}

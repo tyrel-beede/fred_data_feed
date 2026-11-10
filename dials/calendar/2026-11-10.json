@@ -1,0 +1,895 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-10T05:16:00-07:00",
+ "run_weekday": "Tue",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "ORCL (12-14) and MU (12-23) next earnings dates remain aggregator estimates (verified:false); GE Vernova December investor update still not announced. Anthropic expected pricing date (11-19) is secondary and unverified. No priced bond/loan/convertible/ABS deal dated 2026-11-09/11-10 was found for any registered ticker or AI-infrastructure issuer; Alphabet HKD/SGD bond has not launched on any page read. Actual IG and HY issuance totals for the week ending 11-06 and Monday 11-09 IG volume were not obtained (pages say 'fourth-busiest week of 2026' / 'largest November week on record' and YTD IG USD 1.87tn, but print no weekly dollar total). 3-year auction result is from secondary pages (investingLive/Investing.com/PrimeXBT/CappNotes); TreasuryDirect page rendered empty; dealer takedown not printed. Renaissance Stats page failed (permission timeout), YTD IPO stats not refreshed. Hyperscaler USD 296bn YTD total is an unattributed TokenPost aggregate. Anthropic S-1/A read only in part (cover, summary, capitalization); valuation figures are derived, not stated. Alphabet 424B5 surfaced by search failed to fetch and its date is unknown. Several Anthropic secondary pages (qz, technology.org, fourweekmba, cryptobriefing) failed to fetch.",
+ "gate": {
+  "since": "2026-11-08",
+  "note": "last_as_of 2026-11-08, tolerance 2 days; deals/IPO news dated 2026-11-09 or 2026-11-10 are new; 11-09 file items not repeated unless updated"
+ },
+ "notes_dates": "Broadcom: company IR release dated 2026-11-09 sets Q4 FY26 results for Wednesday 2026-12-09 after the close, call 14:00 PT / 17:00 ET (aggregators had 12-10) - now verified. Oracle and Micron: no date-setting release found; aggregator dates carried (12-14, 12-23) verified:false; Micron's prior-year release came 11-19 for 12-17, so an announcement is plausible within days. GE Vernova: no 2026 investor update announced. CoreWeave 11-10 17:00 ET re-read on IR event page. NBIS 11-12 08:00 ET and NVDA 11-17 17:00 ET carried unchanged. Census release schedule readable this run: Oct retail sales 11-17 08:30 ET and Nov retail sales 12-16 08:30 ET both verified. Fed December calendar: FOMC meeting entry 2:00 p.m. 12-09, press conference 2:30 p.m., minutes 12-30. BLS November schedule re-read: CPI 11-10 08:30, PPI 11-13 08:30, import/export prices 11-17. Treasury: 3-year auctioned 11-09 (result recorded as a reading); 10-year today 11-10 13:00 ET USD 42bn; 30-year Thu 11-12 13:00 ET USD 25bn (Veterans Day 11-11). Anthropic: roadshow launched 11-10 with S-1/A No. 2; pricing expected 11-19 per IG (unverified).",
+ "sources": [
+  {
+   "query": "Alphabet Hong Kong dollar Singapore dollar bond priced November 10 2026",
+   "result": "no hit",
+   "note": "only 11-09 'mulls' coverage; 9fin (dated 11-04, modified 11-09) says still under consideration; no launch or pricing found as of 05:30 MT 11-10 - no item recorded"
+  },
+  {
+   "query": "Anthropic IPO launches roadshow price range November 10 2026",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "Treasury 3-year note auction results November 9 2026 high yield bid-to-cover tail",
+   "result": "hit",
+   "note": "secondary pages only"
+  },
+  {
+   "query": "Renaissance Capital IPO news November 9 2026 vVardis Rezera Anthropic",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "investment grade bond issuance Monday November 9 2026 priced deals volume",
+   "result": "no hit",
+   "note": "no Monday IG total printed anywhere read"
+  },
+  {
+   "query": "Anthropic S-1/A November 10 2026 sec.gov 825,000,000 shares $70.00 $78.00",
+   "result": "hit",
+   "note": "EDGAR S-1/A No. 2"
+  },
+  {
+   "query": "Anthropic IPO retracted bank filing 867 million shares TipRanks November 2026",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "Alphabet launches Hong Kong dollar bond books open guidance November 10 2026",
+   "result": "no hit",
+   "note": "no launch"
+  },
+  {
+   "query": "\"November 9, 2026\" OR \"November 10, 2026\" announces pricing senior notes offering Amazon OR Microsoft OR Oracle OR Nvidia OR Broadcom OR CoreWeave OR Nebius OR IREN",
+   "result": "no hit",
+   "note": "Dropbox USD 1.1bn convert and Akamai converts (not AI-infrastructure issuers, not recorded); American Tower notes (not recorded)"
+  },
+  {
+   "query": "Renaissance Capital IPO news November 10 2026 Anthropic sets terms",
+   "result": "no hit",
+   "note": "no Renaissance item on the 11-10 launch yet"
+  },
+  {
+   "query": "high-grade bond sales Monday November 9 2026 issuers priced billion syndicate",
+   "result": "hit",
+   "note": "Fox Corp about USD 8bn IG for Roku deal (investor calls 11-09; not an AI issuer, not recorded); TokenPost hyperscaler aggregate"
+  },
+  {
+   "query": "Oracle \"fiscal 2027 second quarter\" earnings announcement date December 2026",
+   "result": "no company announcement",
+   "note": "aggregators only"
+  },
+  {
+   "query": "Broadcom \"fourth quarter and fiscal year 2026\" financial results conference call December 2026 announce",
+   "result": "hit",
+   "note": "Broadcom IR release 11-09: 12-09"
+  },
+  {
+   "query": "Micron \"fiscal first quarter 2027\" results conference call date December 2026",
+   "result": "no company announcement",
+   "note": ""
+  },
+  {
+   "query": "Fox $8 billion high-grade bond sale priced tranches Roku November 10 2026 Monday IG issuance total",
+   "result": "hit",
+   "note": "Yahoo UK/Bloomberg: YTD IG record USD 1.87tn; no weekly total"
+  },
+  {
+   "query": "US investment-grade bond issuance week ending November 6 2026 total billion weekly high-yield issuance",
+   "result": "no hit",
+   "note": "generic stats pages only"
+  },
+  {
+   "query": "GE Vernova investor update December 2026 announces date webcast",
+   "result": "no 2026 announcement",
+   "note": ""
+  },
+  {
+   "query": "Census Bureau advance monthly retail sales November 2026 release date December 16 2026 economic indicators schedule",
+   "result": "hit",
+   "note": "Census schedule page readable this run"
+  },
+  {
+   "query": "CoreWeave OR Nebius OR IREN OR Applied Digital OR TeraWulf OR Cipher OR Hut 8 OR Crusoe OR Lambda OR Nscale notes offering OR loan OR financing announced November 9/10 2026",
+   "result": "no hit",
+   "note": "commentary on CoreWeave yields above 15-16% and CDS >1,240bp only; no new financing"
+  },
+  {
+   "query": "data center ABS OR CMBS priced November 2026 Vantage OR Aligned",
+   "result": "no hit",
+   "note": "primers and older Vantage GBP tap only"
+  },
+  {
+   "query": "federalreserve.gov FOMC statement December 9 2026 2:00 p.m. press conference calendar",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "treasurydirect auction results 3-year note November 9 2026",
+   "result": "no hit",
+   "note": "TreasuryDirect results page rendered empty; saferate.com had no result yet"
+  },
+  {
+   "query": "Oracle sets the date second quarter fiscal year 2027 earnings announcement (oracle.com/sec.gov/stocktitan/newswires)",
+   "result": "no hit",
+   "note": "only Q1 FY27 and prior-year Q2 FY26 releases"
+  },
+  {
+   "query": "Micron Technology to report fiscal first quarter 2027 results December 2026 (micron.com/sec.gov/stocktitan/globenewswire)",
+   "result": "no hit",
+   "note": "only the 2025-11-19 release for FQ1 FY2026"
+  },
+  {
+   "query": "Alphabet OR Amazon OR Microsoft OR Meta OR Nvidia bond 424B5 OR FWP November 10 2026 prices notes",
+   "result": "no new deal",
+   "note": "Alphabet 424B5 (accession 000119312526442515) surfaced but failed to fetch; no evidence it is in-gate"
+  },
+  {
+   "query": "Anthropic IPO roadshow November 10 pricing expected November 19 listing Nasdaq ANT",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "vVardis VVVV IPO prices OR Rezera RZRA IPO prices November 2026",
+   "result": "no hit",
+   "note": "not priced yet"
+  },
+  {
+   "query": "Zack Eiseman ICYMI November 10 2026 high-grade issuance Monday",
+   "result": "no hit",
+   "note": "no 11-10 edition indexed"
+  },
+  {
+   "query": "CoreWeave third quarter 2026 results November 10 2026 (investors.coreweave.com)",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "BLS CPI October 2026 release November 10 2026 8:30 schedule (bls.gov)",
+   "result": "hit",
+   "note": ""
+  },
+  {
+   "query": "\"November 9\" 2026 investment-grade issuance Monday high-grade bond sales Veterans Day week supply",
+   "result": "partial",
+   "note": "Penn Mutual: largest November week on record, no total"
+  },
+  {
+   "page": "https://www.anthropic.com/news/roadshow-launch",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "result": "read (first 100k chars twice with different prompts, plus offset 100000 slice)",
+   "note": ""
+  },
+  {
+   "page": "https://www.business-standard.com/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.tipranks.com/news/anthropic-set-to-raise-nearly-70b-in-ipo-according-to-retracted-bank-filing",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.ig.com/uk/news-and-trade-ideas/_anthropic-prepares-what-could-be-the-largest-ipo-on-record---wh-261110",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.renaissancecapital.com/IPO-Center/News",
+   "result": "read",
+   "note": "items dated 11/09 only"
+  },
+  {
+   "page": "https://www.renaissancecapital.com/Profile/ANT/Anthropic/IPO",
+   "result": "read",
+   "note": "profile still shows USD 75bn est., no range"
+  },
+  {
+   "page": "https://www.renaissancecapital.com/IPO-Center/News/122654/bitcoin-mining-services-provider-bitari-withdraws-30-million-ipo",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.renaissancecapital.com/IPO-Center/News/122647/switzerland-based-respiratory-biotech-windward-bio-group-sets-terms",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://investinglive.com/news/u-s-treasury-sells-58-billion-of-3-year-notes-at-a-high-yield-of-4-627/",
+   "result": "failed (server error)",
+   "note": ""
+  },
+  {
+   "page": "https://rallies.ai/news/us-3-year-notes-high-yield-4627-0762cd7975edc521",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://primexbt.com/news/us-3-year-treasury-auction-draws-weak-demand-as-bid-cover-hits-lowest-since-augu/",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://cappnotes.substack.com/p/closing-look-monday-november-9-2026",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://theweekendspread.substack.com/p/the-close-monday-november-9-2026",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.9fin.com/insights/alphabet-hong-kong-dollar-bond",
+   "result": "read",
+   "note": "dated 11-04, still 'considering'"
+  },
+  {
+   "page": "https://404kresearch.substack.com/p/456x-evening-brief-november-9-2026-71d",
+   "result": "read",
+   "note": "no new deals"
+  },
+  {
+   "page": "https://404kresearch.substack.com/p/456x-morning-brief-november-10-2026-aad",
+   "result": "read",
+   "note": "relays retracted Anthropic draft figures"
+  },
+  {
+   "page": "https://www.tokenpost.com/news/business/52679",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://uk.finance.yahoo.com/news/fox-looks-sell-8-billion-171553501.html",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.pennmutualam.com/market-insights/blogs/monday-morning-perspectives/2026-11-09-equities-wobble-credit-stays-resilient",
+   "result": "read",
+   "note": "no dollar totals"
+  },
+  {
+   "page": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://investors.coreweave.com/events-and-presentations/event-details/2026/CoreWeave-Third-Quarter-2026-Earnings-Call/default.aspx",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.census.gov/retail/release_schedule.html",
+   "result": "read",
+   "note": "readable this run"
+  },
+  {
+   "page": "https://www.federalreserve.gov/newsevents/2026-december.htm",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://www.bls.gov/schedule/",
+   "result": "read",
+   "note": ""
+  },
+  {
+   "page": "https://saferate.com/treasury/auctions",
+   "result": "read",
+   "note": "11-09 results not yet posted"
+  },
+  {
+   "page": "https://savingsbonds.gov/auctions/announcements-data-results/announcement-results-press-releases/auction-results/",
+   "result": "read (empty, JS-rendered)",
+   "note": ""
+  },
+  {
+   "page": "https://www.stocktitan.net/news/MU/micron-technology-to-report-fiscal-first-quarter-results-on-december-jn8tavvcgm4q.html",
+   "result": "read",
+   "note": "prior-year (2025-11-19) release"
+  },
+  {
+   "page": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "result": "failed (permission request not answered)",
+   "note": "YTD stats not refreshed"
+  },
+  {
+   "page": "https://qz.com/anthropic-ipo-roadshow-launch-64-billion-111026",
+   "result": "failed (client error)",
+   "note": ""
+  },
+  {
+   "page": "https://www.technology.org/2026/11/10/anthropic-ipo-pricing-retracted-867-million-shares-70-80/",
+   "result": "failed (robots disallowed)",
+   "note": ""
+  },
+  {
+   "page": "https://fourweekmba.com/ai-anthropic-files-70-78-ipo-range-968b-at-the-midpoint/",
+   "result": "failed (client error)",
+   "note": ""
+  },
+  {
+   "page": "https://cryptobriefing.com/anthropic-nasdaq-ipo-november-valuation-range/",
+   "result": "failed (client error)",
+   "note": ""
+  },
+  {
+   "page": "https://www.sec.gov/Archives/edgar/data/0001652044/000119312526442515/d125079d424b5.htm",
+   "result": "failed (client error)",
+   "note": "Alphabet 424B5, date unknown"
+  },
+  {
+   "page": "http://creditbubblebulletin.blogspot.com/",
+   "result": "read (stale, Dec 2025)",
+   "note": ""
+  },
+  {
+   "page": "https://news.futunn.com/en/post/1003986609/us-treasury-yields-hovered-near-two-month-lows-as-the",
+   "result": "failed (JS only)",
+   "note": ""
+  }
+ ],
+ "items": [
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-10",
+   "name": "Anthropic (ANT) IPO LAUNCHED - S-1/A No. 2 sets terms: 825,000,000 Class A shares at USD 70.00-78.00 (update vs 11-09 file)",
+   "source": "SEC EDGAR Form S-1/A Amendment No. 2 (filed 2026-11-10); Anthropic roadshow-launch notice (2026-11-10)",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "size": "825,000,000 Class A shares (801,351,354 primary from the company, 23,648,646 from selling stockholders) at USD 70.00-78.00; 30-day option on 123,750,000 additional primary shares. At the USD 74.00 midpoint: about USD 59.3bn gross primary (derived, 801.35m x 74), USD 61.05bn gross base deal (derived). Concurrent private placement of USD 26.0bn of Class N stock at the IPO price to Google LLC, NVIDIA, AMD, Broadcom, Micron, Microsoft and TSMC Partners (illustrative at midpoint: Google and NVIDIA about USD 10bn each, AMD USD 2.5bn, Broadcom/Micron/Microsoft USD 1bn each, TSMC USD 0.5bn). Filing states combined net proceeds of about USD 84.6bn at the midpoint (IPO plus private placement).",
+   "priced": "not priced; roadshow launched 2026-11-10. Expected pricing per IG (secondary, 11-10): Thursday 2026-11-19; TipRanks/Reuters (secondary): pricing the week of 11-16, listing by end-November. No pricing date is stated in the filing.",
+   "note": "Primary (SEC). Nasdaq Global Select, ticker ANT. 22 underwriters led by Goldman Sachs and Morgan Stanley, then J.P. Morgan, Citigroup, Barclays, Wells Fargo, BofA, Deutsche Bank, RBC, UBS and others. Shares outstanding after offering and private placement: 13,086,672,593 all classes (13,210,422,593 with full option), implying about USD 968bn at the midpoint on basic shares (derived; filing states no valuation; fully diluted with options/RSUs about 18.0bn shares, derived). Lock-ups 180 days (up to 365 days for co-founders and certain 0.5%+ holders) on about 15.5bn shares. Board members/affiliates indicated non-binding interest in up to USD 303m. Anthropic.com notice (11-10) confirms 825m shares, USD 70-78 range, Nasdaq/ANT. Prior night (11-09) a bank-circulated draft showed about 867m shares at USD 70-80 (up to USD 69.3bn) and was retracted by the company as inaccurate (Reuters via Business Standard/TipRanks). Only the first 100k characters of the S-1/A cover/summary plus a second 31k slice were read.",
+   "other_urls": [
+    "https://www.anthropic.com/news/roadshow-launch",
+    "https://www.business-standard.com/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html",
+    "https://www.tipranks.com/news/anthropic-set-to-raise-nearly-70b-in-ipo-according-to-retracted-bank-filing",
+    "https://www.ig.com/uk/news-and-trade-ideas/_anthropic-prepares-what-could-be-the-largest-ipo-on-record---wh-261110",
+    "https://404kresearch.substack.com/p/456x-morning-brief-november-10-2026-aad"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-10",
+   "name": "Anthropic (ANT) - bank-circulated preliminary terms (867m shares at USD 70-80, up to USD 69.3bn) retracted as inaccurate on 2026-11-09, superseded by S-1/A No. 2",
+   "source": "Reuters, republished by Business Standard (2026-11-10 09:47 IST); TipRanks (2026-11-10)",
+   "url": "https://www.business-standard.com/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "size": "Retracted draft: about 867m Class A shares (about 843.3m primary, 23.3m secondary) at USD 70-80, up to USD 69.3bn; USD 26bn private placement from Alphabet, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC",
+   "priced": "not priced",
+   "note": "Secondary. Anthropic sent bankers a filing late 11-09 then a second email calling the pricing details inaccurate; the filed S-1/A of 11-10 shows 825m shares at USD 70-78 (see separate item). 456X morning brief 11-10 relays an intended listing window of 2026-11-19 to 11-20 (secondary, from the retracted draft period). Valuation context in the article: USD 1.5tn viewed as too high by some investors; Bloomberg cited USD 1.1-1.3tn discussions.",
+   "other_urls": [
+    "https://www.tipranks.com/news/anthropic-set-to-raise-nearly-70b-in-ipo-according-to-retracted-bank-filing"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-09",
+   "name": "Bitari (BIAI) withdraws USD 30m US IPO",
+   "source": "Renaissance Capital",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News/122654/bitcoin-mining-services-provider-bitari-withdraws-30-million-ipo",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "size": "USD 30m; 4.3m shares at USD 7; sole bookrunner Tiger Brokers",
+   "priced": "withdrawn 2026-11-09",
+   "note": "Bitcoin-mining hosting services (Wheeler, TX); filed August 2026; reason not stated. Not AI-infrastructure in the registered sense but crypto/data-center adjacent.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-09",
+   "name": "Windward Bio Group (WWB) sets terms for USD 175m US IPO; SPAC filings ZA Acquisition I (USD 75m) and Research Alliance V (USD 62m)",
+   "source": "Renaissance Capital IPO news index (items dated 11/09/26)",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News/122647/switzerland-based-respiratory-biotech-windward-bio-group-sets-terms",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "size": "Windward Bio: USD 175m, 10.3m shares at USD 16-18, plus USD 50m concurrent private placement to Sanofi, market cap about USD 1.0bn; Jefferies, TD, Piper Sandler, UBS; expected week of 11-09. SPACs: ZA Acquisition I USD 75m, Research Alliance V (RA Capital) USD 62m",
+   "priced": "not priced",
+   "note": "None AI-related. Renaissance news index carried no item dated 11/10/26 at read time (about 05:30 MT) and nothing on vVardis (VVVV) or Rezera (RZRA) pricing yet; no Renaissance item on the Anthropic launch yet. Renaissance Stats page could not be fetched this run (permission timeout), so YTD stats not refreshed.",
+   "other_urls": [
+    "https://www.renaissancecapital.com/IPO-Center/News",
+    "https://www.renaissancecapital.com/IPO-Center/News/122651/spac-za-acquisition-i-files-for-a-75-million-ipo-targeting-established",
+    "https://www.renaissancecapital.com/IPO-Center/News/122649/ra-capitals-spac-research-alliance-v-files-for-a-62-million-ipo-targeting"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-09",
+   "name": "UST 3-Year Note auction result (USD 58bn, 2026-11-09)",
+   "series": "ust.auction.3y.high_yield",
+   "value": 4.627,
+   "unit": "percent",
+   "period_end": "2026-11-09",
+   "source": "investingLive / Investing.com via PrimeXBT / CappNotes closing note (all secondary; TreasuryDirect results page and saferate.com did not print the result)",
+   "url": "https://primexbt.com/news/us-3-year-treasury-auction-draws-weak-demand-as-bid-cover-hits-lowest-since-augu/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "High yield 4.627%, tail 0.5bp vs when-issued (WI about 4.622%, derived); bid-to-cover 2.53 (lowest since the August 2025 refunding auction); indirects 55.5% (lowest in 15 months); directs 35.0% (described as a record high); dealer take not printed; tendered USD 146.6bn vs USD 58.0bn accepted (rallies.ai); median yield 4.580%. Not read from Treasury itself. Settles 2026-11-16.",
+   "other_urls": [
+    "https://investinglive.com/news/u-s-treasury-sells-58-billion-of-3-year-notes-at-a-high-yield-of-4-627/",
+    "https://rallies.ai/news/us-3-year-notes-high-yield-4627-0762cd7975edc521",
+    "https://cappnotes.substack.com/p/closing-look-monday-november-9-2026",
+    "https://theweekendspread.substack.com/p/the-close-monday-november-9-2026"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-09",
+   "name": "Five hyperscalers (Google, Amazon, Microsoft, Meta, Oracle) 2026 bond issuance to date",
+   "series": "hyperscaler.bond_issuance.ytd",
+   "value": 296,
+   "unit": "USD bn",
+   "period_end": "2026-11-09",
+   "source": "TokenPost (2026-11-09 19:41 ET), source not attributed on page",
+   "url": "https://www.tokenpost.com/news/business/52679",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "About USD 296bn sold by the five by 11-09 vs an earlier USD 250bn full-year forecast; about 36% of estimated 2026 capex of USD 820bn; five offerings totalling about USD 67bn priced in under a week from 10-29. 2027 projections: capex about USD 1.26tn, direct bond issuance about USD 440bn, project-level IG/HY about USD 300bn. Secondary aggregate; no new deal. Separately, Bloomberg via Yahoo UK (11-09): YTD US high-grade volume a record USD 1.87tn; last week the fourth-busiest of 2026; Penn Mutual (11-09): last week the largest November week on record, IG spreads 91bp - no dollar total printed on either.",
+   "other_urls": [
+    "https://uk.finance.yahoo.com/news/fox-looks-sell-8-billion-171553501.html",
+    "https://www.pennmutualam.com/market-insights/blogs/monday-morning-perspectives/2026-11-09-equities-wobble-credit-stays-resilient"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "CoreWeave Q3 2026 results and conference call",
+   "source": "CoreWeave IR events page",
+   "url": "https://investors.coreweave.com/events-and-presentations/event-details/2026/CoreWeave-Third-Quarter-2026-Earnings-Call/default.aspx",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "CRWV",
+   "datetime": "2026-11-10 17:00 ET",
+   "verified": true,
+   "note": "Re-read on CoreWeave IR event page 2026-11-10: November 10, 2026, 5:00 PM ET. Unchanged. Page carries no publication date; as_of is the date read.",
+   "other_urls": [
+    "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Date-of-Third-Quarter-2026-Financial-Results-and-Conference-Call/default.aspx"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Nebius Group Q3 2026 results and conference call",
+   "source": "Nebius investor hub",
+   "url": "https://nebius.com/investor-hub",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "NBIS",
+   "datetime": "2026-11-12 08:00 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read (verified 2026-11-09 on nebius.com investor hub: results before market open, call 08:00 ET).",
+   "other_urls": [
+    "https://www.nasdaq.com/press-release/nebius-group-announces-date-third-quarter-2026-results-and-conference-call-2026-10-30"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-10-28",
+   "name": "NVIDIA Q3 FY2027 results conference call",
+   "source": "NVIDIA press release, reproduced in full on Investing News Network",
+   "url": "https://investingnews.com/nvidia-sets-conference-call-for-third-quarter-financial-results-2678161468/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "NVDA",
+   "datetime": "2026-11-17 17:00 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read. Company press release text read on a newswire republisher 2026-11-09 (2 p.m. PT / 5 p.m. ET); NVIDIA IR not opened.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Oracle FQ2 FY2027 results",
+   "source": "TipRanks (aggregator estimate)",
+   "url": "https://www.tipranks.com/stocks/orcl/earnings",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "ticker_or_release": "ORCL",
+   "datetime": "2026-12-14 (time not stated)",
+   "verified": false,
+   "note": "Unchanged vs 11-09 run; not re-read. Still an aggregator estimate. Search 2026-11-10 (oracle.com/sec.gov/stocktitan/newswires) found no 'Oracle Sets the Date for its Second Quarter Fiscal Year 2027 Earnings Announcement' release; latest date-setting release is for Q1 FY27 (2026-09-10). Last year's Q2 release was 2025-12-10.",
+   "other_urls": [
+    "https://www.marketbeat.com/stocks/NYSE/ORCL/earnings/",
+    "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Sets-the-Date-for-its-First-Quarter-Fiscal-Year-2027-Earnings-Announcement/default.aspx"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Broadcom Q4 and fiscal year 2026 results and conference call",
+   "source": "Broadcom IR press release dated 2026-11-09",
+   "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "AVGO",
+   "datetime": "2026-12-09 after US close; call 14:00 PT (17:00 ET)",
+   "verified": true,
+   "note": "Update vs 11-09 file: company announcement dated 2026-11-09 sets Wednesday 2026-12-09 (aggregators had 12-10). Read on Broadcom IR.",
+   "other_urls": [
+    "https://public.com/stocks/avgo/earnings"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Micron FQ1 FY2027 results",
+   "source": "Wall Street Horizon (aggregator forecast)",
+   "url": "https://www.wallstreethorizon.com/micron-earnings-calendar",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "ticker_or_release": "MU",
+   "datetime": "2026-12-23 after market close",
+   "verified": false,
+   "note": "Unchanged vs 11-09 run; not re-read. Still an aggregator forecast. Search 2026-11-10 (micron.com/sec.gov/stocktitan/globenewswire) found no FQ1 FY2027 date release; the only 'to report fiscal first-quarter results on December' release found is dated 2025-11-19 for 2025-12-17 (prior year), which suggests the 2026 announcement may come around mid/late November. Date falls outside the window ending 2026-12-22.",
+   "other_urls": [
+    "https://www.stocktitan.net/news/MU/micron-technology-to-report-fiscal-first-quarter-results-on-december-jn8tavvcgm4q.html"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-10-21",
+   "name": "Microsoft 2026 annual shareholders meeting (virtual)",
+   "source": "Microsoft DEF 14A on SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/0000789019/000119312526427849/d61756ddef14a.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "MSFT",
+   "datetime": "2026-12-08 08:30 PT (11:30 ET)",
+   "verified": true,
+   "note": "Unchanged vs last run. Proxy dated 2026-10-21; virtual meeting. Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "AWS re:Invent 2026, Las Vegas",
+   "source": "AWS re:Invent FAQ page (Amazon's own site)",
+   "url": "https://aws.amazon.com/events/reinvent/faqs/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "AMZN",
+   "datetime": "2026-11-30 to 2026-12-04",
+   "verified": true,
+   "note": "Page carries no publication date; as_of is the date read. Dates unchanged; now verified on Amazon's own page (was unverified last run). Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "GE Vernova December investor update",
+   "source": "GE Vernova investor-relations news listing",
+   "url": "https://www.gevernova.com/news/taxonomy/term/9606",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "ticker_or_release": "GEV",
+   "datetime": "not announced",
+   "verified": false,
+   "note": "Unchanged vs 11-09 run; not re-read. Search 2026-11-10 surfaced only the 2025 (12-09) and 2024 investor update releases; no 2026 date announced. Prior-year announcement came 2025-11-18.",
+   "other_urls": [
+    "https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000162/gevpressrelease3q26.htm",
+    "https://www.gevernova.com/news/press-releases/ge-vernova-host-investor-update-event-december-9"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-04",
+   "name": "UST 3-Year Note auction, $58bn",
+   "source": "Treasury quarterly refunding statement",
+   "url": "https://home.treasury.gov/news/press-releases/sb0678",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "UST 3-Year Note",
+   "datetime": "2026-11-09 13:00 ET",
+   "verified": true,
+   "note": "Auction held 2026-11-09; result recorded as a reading in this file (high yield 4.627%, tail 0.5bp, bid-to-cover 2.53, secondary sources). Settles 2026-11-16.",
+   "other_urls": [
+    "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "UST 10-Year Note auction, $42bn",
+   "source": "Treasury quarterly refunding statement",
+   "url": "https://home.treasury.gov/news/press-releases/sb0678",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "UST 10-Year Note",
+   "datetime": "2026-11-10 13:00 ET",
+   "verified": true,
+   "note": "Today 13:00 ET. Re-confirmed on saferate.com (aggregator) 2026-11-10: USD 42.0bn new 10-year due 2036-11-15, settles 11-16; refunding statement (primary, 11-04) unchanged and not re-read.",
+   "other_urls": [
+    "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+    "https://saferate.com/treasury/auctions"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "UST 30-Year Bond auction, $25bn",
+   "source": "Treasury quarterly refunding statement",
+   "url": "https://home.treasury.gov/news/press-releases/sb0678",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "UST 30-Year Bond",
+   "datetime": "2026-11-12 13:00 ET",
+   "verified": true,
+   "note": "Re-confirmed on saferate.com (aggregator) 2026-11-10: Thu 11-12 13:00 ET, USD 25.0bn new 30-year due 2056-11-15, settles 11-16; refunding statement unchanged, not re-read.",
+   "other_urls": [
+    "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+    "https://saferate.com/treasury/auctions"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "UST coupon auctions 2026-11-18 to 2026-12-10",
+   "source": "Treasury Tentative Auction Schedule (PDF)",
+   "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "UST coupons/TIPS/FRN",
+   "datetime": "20y 2026-11-18; 10y TIPS reopening 2026-11-19; 2y 2026-11-23; 2y FRN reopening 2026-11-24; 5y 2026-11-24; 7y 2026-11-25; 3y 2026-12-07; 10y reopening 2026-12-08; 30y reopening 2026-12-10",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read. Page carries no publication date; as_of is the date read. All unchanged vs last run. Tentative schedule gives dates only, no times. Planned sizes from refunding statement ($bn): Nov 20y 16, 10y TIPS 19, 2y 69, FRN 28, 5y 70, 7y 44; Dec 3y 58, 10y 39, 30y 22. Next after window: 20y reopening, FRN, 5y TIPS, 2y on 12-22 to 12-28.",
+   "other_urls": [
+    "https://home.treasury.gov/news/press-releases/sb0678"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "CPI October 2026",
+   "source": "BLS Schedule of Selected Releases (November 2026 page)",
+   "url": "https://www.bls.gov/schedule/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "CPI Oct",
+   "datetime": "2026-11-10 08:30 ET",
+   "verified": true,
+   "note": "Re-read on BLS schedule page 2026-11-10: Tue 11-10 08:30 ET CPI and Real Earnings (October). Unchanged. Page carries no publication date; as_of is the date read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "PPI October 2026",
+   "source": "BLS Schedule of Selected Releases (November 2026 page)",
+   "url": "https://www.bls.gov/schedule/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "PPI Oct",
+   "datetime": "2026-11-13 08:30 ET",
+   "verified": true,
+   "note": "Re-read on BLS schedule page 2026-11-10: Fri 11-13 08:30 ET PPI (October). Import/Export prices Tue 11-17 08:30 ET. Unchanged. Page carries no publication date; as_of is the date read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "JOLTS October 2026",
+   "source": "BLS Schedule of Selected Releases 2026",
+   "url": "https://www.bls.gov/schedule/news_release/current_year.asp",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "JOLTS Oct",
+   "datetime": "2026-12-01 10:00 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Employment Situation November 2026",
+   "source": "BLS Schedule of Selected Releases 2026",
+   "url": "https://www.bls.gov/schedule/news_release/current_year.asp",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "Employment Situation Nov",
+   "datetime": "2026-12-04 08:30 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "CPI November 2026",
+   "source": "BLS Schedule of Selected Releases 2026",
+   "url": "https://www.bls.gov/schedule/news_release/current_year.asp",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "CPI Nov",
+   "datetime": "2026-12-10 08:30 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "PPI November 2026",
+   "source": "BLS Schedule of Selected Releases 2026",
+   "url": "https://www.bls.gov/schedule/news_release/current_year.asp",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "PPI Nov",
+   "datetime": "2026-12-15 08:30 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "GDP Q3 2026 second estimate and corporate profits",
+   "source": "BEA release schedule",
+   "url": "https://www.bea.gov/news/schedule",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "GDP Q3 second estimate",
+   "datetime": "2026-11-25 08:30 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Personal Income and Outlays October 2026",
+   "source": "BEA release schedule",
+   "url": "https://www.bea.gov/news/schedule",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "Personal Income/Outlays Oct (PCE)",
+   "datetime": "2026-11-25 08:30 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "Advance retail sales October 2026",
+   "source": "Census Monthly Retail Trade release schedule",
+   "url": "https://www.census.gov/retail/release_schedule.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "Retail sales Oct",
+   "datetime": "2026-11-17 08:30 ET",
+   "verified": true,
+   "note": "Re-confirmed on the Census release schedule 2026-11-10: October data released 2026-11-17 08:30 ET. Unchanged.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "Advance retail sales November 2026",
+   "source": "Census Monthly Retail Trade release schedule",
+   "url": "https://www.census.gov/retail/release_schedule.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "Retail sales Nov",
+   "datetime": "2026-12-16 08:30 ET",
+   "verified": true,
+   "note": "Update vs 11-09 file: Census release-schedule page readable this run; November data release 2026-12-16 08:30 ET confirmed (was carried unverified). January 2027 data: 2027-02-17.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "FOMC meeting (with SEP)",
+   "source": "Federal Reserve FOMC calendar and December 2026 calendar page",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "FOMC Dec",
+   "datetime": "2026-12-08 to 2026-12-09; December calendar lists the meeting at 14:00 ET on 12-09 (statement) and the Chair's press conference 14:30 ET",
+   "verified": true,
+   "note": "Re-read on the Fed's December 2026 calendar page 2026-11-10: FOMC meeting (two-day) entry carries 2:00 p.m.; press conference 2:30 p.m. 12-09; minutes of this meeting 2026-12-30 14:00 ET. SEP not named on the page (the FOMC calendar marks this meeting with projections). Also Z.1 12-10 12:00, G.17 12-16 09:15, SCOOS 12-17 14:00.",
+   "other_urls": [
+    "https://www.federalreserve.gov/newsevents/2026-december.htm"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "FOMC minutes, meeting of 2026-10-27/28",
+   "source": "Federal Reserve November 2026 calendar",
+   "url": "https://www.federalreserve.gov/newsevents/2026-november.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "FOMC minutes Oct",
+   "datetime": "2026-11-18 14:00 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-09",
+   "name": "Beige Book",
+   "source": "Federal Reserve November 2026 calendar",
+   "url": "https://www.federalreserve.gov/newsevents/2026-november.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "ticker_or_release": "Beige Book",
+   "datetime": "2026-11-25 14:00 ET",
+   "verified": true,
+   "note": "Unchanged vs 11-09 run; not re-read.",
+   "other_urls": [],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-10",
+   "name": "Anthropic (ANT) IPO expected pricing",
+   "source": "IG UK (2026-11-10); TipRanks (2026-11-10)",
+   "url": "https://www.ig.com/uk/news-and-trade-ideas/_anthropic-prepares-what-could-be-the-largest-ipo-on-record---wh-261110",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "ticker_or_release": "ANT",
+   "datetime": "2026-11-19 (expected pricing, secondary); listing 11-19/11-20 per 456X relay",
+   "verified": false,
+   "note": "Not a registered ticker; added for the IPO calendar. IG (11-10) says pricing Thursday 11-19; TipRanks/Reuters says pricing the week of 11-16 and listing by end-November; the S-1/A states no date. Unverified.",
+   "other_urls": [
+    "https://www.tipranks.com/news/anthropic-set-to-raise-nearly-70b-in-ipo-according-to-retracted-bank-filing",
+    "https://404kresearch.substack.com/p/456x-morning-brief-november-10-2026-aad"
+   ],
+   "group": "P8_calendar"
+  }
+ ]
+}
