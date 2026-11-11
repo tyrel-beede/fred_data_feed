@@ -1,17 +1,17 @@
 {
- "run_utc": "2026-11-10T20:36:43Z",
+ "run_utc": "2026-11-11T02:46:05Z",
  "ok": [
-  "gdelt:ai_bubble:timelinevol",
   "gdelt:dc_capex:timelinevol",
   "gdelt:term_premium:timelinevol",
-  "gdelt:private_credit:timelinevol",
-  "gdelt:dc_capex:timelinetone"
+  "gdelt:hormuz:timelinevol",
+  "gdelt:dc_capex:timelinetone",
+  "gdelt:term_premium:timelinetone",
+  "gdelt:ai_bubble:timelinetone"
  ],
  "failed": {
-  "gdelt:hormuz:timelinevol": "HTTPError: HTTP Error 429: Too Many Requests",
-  "gdelt:ai_bubble:timelinetone": "HTTPError: HTTP Error 429: Too Many Requests",
-  "gdelt:term_premium:timelinetone": "HTTPError: HTTP Error 429: Too Many Requests",
+  "gdelt:private_credit:timelinevol": "HTTPError: HTTP Error 429: Too Many Requests",
+  "gdelt:ai_bubble:timelinevol": "HTTPError: HTTP Error 429: Too Many Requests",
   "gdelt:private_credit:timelinetone": "HTTPError: HTTP Error 429: Too Many Requests",
-  "gdelt:hormuz:timelinetone": "skipped: GDELT time budget exhausted"
+  "gdelt:hormuz:timelinetone": "HTTPError: HTTP Error 429: Too Many Requests"
  }
 }
