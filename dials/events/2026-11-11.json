@@ -1,0 +1,318 @@
+{
+ "group": "events",
+ "run_at": "2026-11-11T05:10:00-07:00",
+ "run_weekday": "Wed",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "since": "2026-11-09",
+  "note": "hits dated 2026-11-10 or 2026-11-11 are new; items dated 2026-11-07..2026-11-09 not in the 11-09/11-10 files would be kept once with late:true (none qualified); older discarded"
+ },
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "search_mode": "extended",
+ "notes": "10-year auction tail: TheStreet (Neil Sethi, 11-10 15:47 ET) and HERE Rock Hill (11-11) both give 5.020% high yield against 5.010% WI = 1.0 bp tail, biggest since February; helious.io's auction table also shows '+1.0bp' tail and verdict WEAK (the task brief's '0.6 bp stop-through' reading matches TheStreet's SIX-MONTH AVERAGE of a 0.6 bp stop-through, not the 11-10 result; both readings named in the item). Gokhshtein ('widest tail since February', foreign demand 'collapsed') carries no numbers. CoreWeave Q3 (11-10 after close): FY26 capex RAISED to $37-39bn from $35-39bn, not a cut; recorded only as a partial 'digestion language' item for 2027 flat capex, 'choosing to be patient', 2028 capacity not yet marketed and refusal to use the unsecured debt market at current yields. SoftBank's $3.7bn charge on revised power-equipment procurement is a procurement change, not a stated project downsizing (CFO: PORTS-Pike not being downsized); included as partial. Anthropic set its IPO range 11-10 ($70-78, up to $1.404tn fully diluted vs $2tn targeted weeks earlier, $1.5tn discussed early November); on 11-11 Cailian Press/FT-attributed reports say underwriters are weighing pricing ABOVE the range toward $1.5tn+ on strong demand (secondary copies only; FT original not surfaced) - conflict noted in the item. Fetch failures: investing.com CoreWeave transcript rate-limited on first try (read on retry), tradersunion, gurufocus, qz.com, mlq.ai (two pages), benzinga (two pages), archyde all client errors; bloomberg.com and cnbc.com not attempted (refused hosts). No bond or loan deal pulled or downsized dated 11-10/11-11 found; no fund gate; no principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut; no memory LTA renegotiation; no sovereign stress (French 10-year ~4.70% on 11-09/11-10 per tradingeconomics item list, a six-week low). 30-year auction ($25bn) is 11-12 and Nebius Q3 11-12, neither occurred at run time.",
+ "discarded": [
+  "Bond Buyer 'New York City downsizes first big bond deal under Mamdani' ($2.6bn to $2.3bn GO sale) - dated 2026-03-30, older than gate",
+  "Bloomberg Iqony loan pulled (2026-11-03), 475 Fifth Avenue CMBS postponed (2026-10-19), Advisor Perspectives debt-sale delays (2026-10-21), Octus/Reuters IPO factboxes - older than gate (Iqony already recorded 11-05 list)",
+  "456X Morning Brief Nov 5 / letsdatascience 'Microsoft cuts 2026 capex forecast to $170bn on delayed capacity' - dated 2026-11-05, older than the late window; prior lists cover the MSFT items of that week",
+  "investingLive 'How private credit fund redemption gates work, Apollo investors still wait' - dated 2026-09-23, older than gate",
+  "Oaktree Asset-Backed Income Fund N-23C3A (5% repurchase offer, pro rata if oversubscribed) - notice dated 2026-10-05, routine quarterly offer, older than gate; other N-23C3A filings in results undated/routine",
+  "Blackstone BCRED limits redemptions (cryptobriefing, undated, refused host), MA Financial A$2.3bn property funds (IPE, refused host, October) - prior-period items",
+  "Yahoo/BeInCrypto 'Why OpenAI lowered its price tag' - dated 2026-10-23, older than gate",
+  "Investing.com 'Anthropic IPO targets November debut as valuation expectations fall' (11-09 10:52) and Gizmodo/WSJ/CNBC 'Anthropic still plans to go public' (11-09 20:21 ET, '$1-1.25tn more likely') - 11-09 restatements of the Bloomberg 11-06 range already recorded on 11-09; superseded by the 11-10 filed price range (recorded)",
+  "KuCoin 'Anthropic faces investor pushback over $1.5tn' - undated blog restating earlier reports",
+  "Mercor $750m at $20bn (SiliconANGLE 11-10) and Thinking Machines Lab items - up-rounds, not repricings",
+  "Marketscreener/Dow Jones 'French government-bond yields jump, spread widens' (OAT 5.142%, spread 173 bp) - dated 2026-10-22, older than gate; tradingeconomics 'French bond selloff eases' dated 2026-10-06; Robeco 'Could French bond stress change the ECB's course' dated 2026-11-05 with no yield levels",
+  "Tom's Hardware Samsung/SK hynix shorten contracts (2026-02-11), AMD HBM LTAs (11-03), SK hynix F-1/6-K LTA lock-in, FourWeekMBA LTA pages - lock-in, not renegotiation; older than gate",
+  "cryptobriefing Norway grid-reservation pause 'until at least August 2027' - restates the 11-09 Statnett item already recorded (refused host, end date unverified)",
+  "456X Nov 11 brief: TF International '~13 GW (57%) of ~23 GW unbuilt US pipeline in high-risk states' and Morgan Stanley 5 GW slip - analyst exposure estimates; the Morgan Stanley figure already recorded 11-10; TF figure undated and unsourced in the brief",
+  "StreetSignal 11-10: Indianapolis committee 11-2 vote recommending rejection of $113m incentives for DC BLOX $1.8bn campus (11-09; council decides 12-07) - recommendation, no project paused; Gibson County TN rezoning withdrawn 10-26 - older than gate; Minneapolis/Bloomington/Edmond moratorium extensions pending - no dated deferral with MW",
+  "456X Nov 11: J.P. Morgan 'early assembly yield issues deferring Q4 deliveries on new server platforms', PC OEMs trimming Q4 SSD orders - no figures, no dated source",
+  "Dan Ives 'data center slowdown looms' (GuruFocus) - fetch failed; commentary",
+  "OpenAI Q3 adjusted operating loss widens to ~$10.9bn (456X Nov 11, media reports unnamed) - not a hit type"
+ ],
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026",
+   "result": "no hit",
+   "note": "Returned Bloomberg Iqony (11-03, refused host, already recorded), Bond Buyer NYC GO downsizing (dated 2026-03-30, discarded), TheStreet 11-10 market page (used for the auction), stale pages. Variant 'bond sale withdrawn OR postponed OR downsized market conditions November 10 2026' returned 475 Fifth Avenue CMBS postponed (10-19), Advisor Perspectives (10-21), tradersunion junk-bond issuance drop (fetch failed), CNBC IPO postponements (September). 456X Nov 10 evening and Nov 11 morning briefs report no deal pulled, postponed or downsized; Alphabet's $80.8bn 2026 note issuance is completed funding. No hyperscaler deal pulled."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026",
+   "result": "no hit",
+   "note": "Explainers and trackers (ResearchSquare paper on the 2026 semi-liquid private credit run, whitesecuritieslaw, angelinvestorsnetwork, crowdfundedwealth October tracker, investingLive Apollo piece dated 09-23). Variant 'fund suspends withdrawals OR limits redemptions OR prorated tender November 10 2026' returned routine N-23C3A repurchase notices (Oaktree 10-05 5% offer, Palmer Square, Gemcorp, Alternative Strategies), Blackstone BCRED (cryptobriefing, undated), MA Financial property funds (IPE, October). No new gate, suspension or proration dated 11-10/11-11."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026",
+   "result": "2 hits (both partial)",
+   "note": "SoftBank $3.7bn power-equipment procurement charge (11-10) surfaced via the variant 'SoftBank $3.7 billion loss equipment procurement AI data centers Ohio November 10 2026' after StreetSignal flagged it; CoreWeave Q3 digestion language (11-10) via 'CoreWeave third quarter results November 10 2026 capex guidance 2027 digestion shares' (capex RAISED, not a cut). First phrasing returned the 456X Nov 5 Microsoft $170bn capex-forecast item (out of gate) and trackers. Variant 'Microsoft OR Meta OR Alphabet OR Amazon OR Oracle slashes capex OR pauses data center OR digestion November 10 2026' returned SiliconANGLE earnings-season recap, capex trackers, GuruFocus Dan Ives (fetch failed) and the 456X Nov 11 brief (Microsoft-Oracle non-renewal already recorded 11-09; J.P. Morgan server-delivery deferrals and PC OEM SSD order trims without figures). No principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut dated 11-10/11-11."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026",
+   "result": "1 hit (via variant)",
+   "note": "First phrasing returned Wikipedia pages, the already-recorded TechCrunch OpenAI $11bn item, Mercor $750m at $20bn (up-round). Variant 'Anthropic OR OpenAI OR xAI OR neocloud valuation lowered OR round cut OR IPO delayed November 10 2026' returned 11-09 restatements (Investing.com, Gizmodo) and a 10-23 BeInCrypto piece. Variant 'Anthropic IPO roadshow begins price range November 10 2026' surfaced the filed $70-78 range (TechCrunch, Fortune, Invezz, CNN). Variant 'Anthropic underwriters raise IPO price above range $1.5 trillion November 11 2026' surfaced the Cailian/FT-attributed above-range reports (PANews read; Benzinga and mlq.ai failed). Nothing new on OpenAI or xAI dated 11-10/11-11."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026",
+   "result": "no hit",
+   "note": "Results were LTA lock-in pieces (FourWeekMBA Baker/onsemi, Korea Daily sold out to 2029, Joongang, EDAILY August) and unrelated Liberia/LCS pages. Variant 'memory chip long-term agreement renegotiate OR customers push back HBM DRAM Samsung SK hynix Micron November 10 2026' returned Tom's Hardware (Feb 2026), SK hynix F-1/6-K filings, AMD HBM LTAs (11-03), TipRanks Micron bear piece, wccftech. 456X Nov 11 brief: SK hynix has locked in more than half of 2027-28 capacity under LTAs; no renegotiation reported."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026",
+   "result": "no hit",
+   "note": "Results were the already-recorded Norway/Statnett item (Bloomberg, cryptobriefing), Insurance Journal 11-06 syndication, Axios OpenAI power-cut pledge (11-02), FourWeekMBA Michigan developer exit (undated), strisker 'Data Centers: Daily Notes 11-10' (local moratoria: Minneapolis expiry 11-21 with vote 11-12, Bloomington hearing 11-16, Edmond extension; Gibson County TN rezoning withdrawn 10-26; no MW/GW deferral). Variant 'data center project paused OR delayed OR cancelled gigawatt hyperscaler November 11 2026' returned StreetSignal 11-10 (SoftBank charge, Indianapolis incentive-rejection recommendation, Venture Global 5 GW development plan - not a pause), ZeroHedge/zestlab 'half of 2026 projects delayed' retrospectives. 456X Nov 11 cites TF International ~13 GW of ~23 GW unbuilt US pipeline in high-risk states (estimate, undated). No announced GW deferral dated 11-10/11-11."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026",
+   "result": "1 hit",
+   "note": "10-year auction 11-10: 5.020% high yield, 1.0 bp tail vs 5.010% WI, 2.46 bid-to-cover, 61.2% indirects, 29.0% directs, 9.8% dealers (TheStreet, HERE Rock Hill, helious.io; Gokhshtein qualitative). No second variant needed. YieldDocket and fedratecalc pages were schedule/stale snapshots (not fetched). 30-year ($25bn) is 11-12."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026",
+   "result": "no hit",
+   "note": "Results were Robeco (11-05, no levels), Network 20/20 event page (11-04), Globe and Mail retrospective, IMF/CNBC (10-13, refused), ECB 2024 box. Variant 'gilt yields OR JGB yields OR French OAT spread OR emerging market bonds selloff November 10 2026' returned the Dow Jones 10-22 OAT 5.142% / 173 bp spread piece (out of gate), tradingeconomics 10-06 'selloff eases' (its item list shows French 10-year ~4.70% on 11-09/11-10, a six-week low), TokenPost 4.69% low (restates the 11-10 discarded Reuters item), TD Economics and summitward explainers. No stress event dated 11-10/11-11 in gilts, OATs, JGBs or EM."
+  },
+  {
+   "query": "CoreWeave third quarter results November 10 2026 capex guidance 2027 digestion shares",
+   "result": "1 hit (partial)",
+   "note": "8-K press release on sec.gov and Investing.com transcript read; CNBC, Fool and company IR links not attempted/needed."
+  },
+  {
+   "query": "456X evening brief November 10 2026",
+   "result": "no new hit",
+   "note": "Two Nov 10 evening briefs listed (TSMC $1bn downstream push; Anthropic 35% margin / $64.4bn IPO). The Anthropic one was read: no pulled deal, no gate, no capex cut, no LTA renegotiation, no GW deferral, no auction or sovereign item."
+  },
+  {
+   "page": "https://pro.thestreet.com/stock-market-today/2026-11-10#update-wp:29331",
+   "result": "read"
+  },
+  {
+   "page": "https://gokhshtein.com/news/2026-11-10-10-year-auction-tails-widest-since-february-as-foreign",
+   "result": "read (no figures)"
+  },
+  {
+   "page": "https://www.hererockhill.com/2026/11/11/treasury-42-billion-10-year-auction-5-percent/",
+   "result": "read"
+  },
+  {
+   "page": "https://helious.io/auctions",
+   "result": "read (10-year: 5.020%, +1.0bp tail, 2.46 b/c, WEAK; 3-year: 4.627%, +0.5bp, 2.53)"
+  },
+  {
+   "page": "https://www.bondbuyer.com/news/new-york-city-downsizes-first-big-bond-deal-under-mamdani",
+   "result": "read (dated 2026-03-30, discarded)"
+  },
+  {
+   "page": "https://writing.strisker.com/data-centers-daily-notes-november-10-2026/",
+   "result": "read"
+  },
+  {
+   "page": "https://www.robeco.com/en-int/insights/2026/11/could-french-bond-stress-change-the-ecbs-course",
+   "result": "read (dated 11-05, no yield levels)"
+  },
+  {
+   "page": "https://investinglive.com/stocks/how-private-credit-fund-redemption-gates-work-and-why-apollo-investors-still-wait/",
+   "result": "read (dated 2026-09-23, discarded)"
+  },
+  {
+   "page": "https://www.sec.gov/Archives/edgar/data/0001769628/000176962826000461/coreweave3q26earningspress.htm",
+   "result": "read"
+  },
+  {
+   "page": "https://www.investing.com/news/transcripts/earnings-call-transcript-coreweave-tops-q3-2026-forecast-and-shares-rise-57-93CH-5017354",
+   "result": "read on retry (first attempt rate limited; 100,000 of 110,219 characters)"
+  },
+  {
+   "page": "https://www.investing.com/news/stock-market-news/anthropic-ipo-targets-november-debut-as-valuation-expectations-fall-93CH-5012800",
+   "result": "read (11-09 restatement, discarded)"
+  },
+  {
+   "page": "https://gizmodo.com/anthropic-still-plans-to-go-public-as-soon-as-next-week-report-2000837422",
+   "result": "read (11-09, internally inconsistent dates, discarded)"
+  },
+  {
+   "page": "https://finance.yahoo.com/technology/articles/why-openai-lowered-price-tag-082656761.html",
+   "result": "read (dated 2026-10-23, discarded)"
+  },
+  {
+   "page": "https://www.sec.gov/Archives/edgar/data/0002051511/000089418926029207/abf.htm",
+   "result": "read (N-23C3A dated 10-05, routine, discarded)"
+  },
+  {
+   "page": "https://tradersunion.com/news/companies/show/3910018-us-europe-junk-bond-sales-drop/",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+   "result": "read"
+  },
+  {
+   "page": "https://fortune.com/2026/11/10/anthropic-ipo-price-range-ai-stock-sell-off/",
+   "result": "read"
+  },
+  {
+   "page": "https://www.marketscreener.com/news/french-government-bond-yields-jump-spread-widens-as-treasury-yields-fall-update-ce785cded98df227",
+   "result": "read (dated 2026-10-22, discarded)"
+  },
+  {
+   "page": "https://tradingeconomics.com/france/government-bond-yield/news/589851",
+   "result": "read (dated 2026-10-06; side list shows ~4.70% on 11-09/11-10)"
+  },
+  {
+   "page": "https://404kresearch.substack.com/p/456x-morning-brief-november-11-2026-d7c",
+   "result": "read"
+  },
+  {
+   "page": "https://streetsignal.substack.com/p/data-center-alerts-11102026",
+   "result": "read"
+  },
+  {
+   "page": "https://www.gurufocus.com/news/9188715/dan-ives-says-microsoft-amazon-and-meta-win-big-as-data-center-slowdown-looms",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://qz.com/softbank-quarterly-loss-us-data-center-write-down-111026",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://mlq.ai/news/ge-vernova-shares-slide-after-softbank-revises-its-us-data-center-power-equipment-plans/",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://mlq.ai/news/anthropics-bankers-weigh-pricing-its-ipo-above-the-70-to-78-range-lifting-its-valuation-to-15-trillion-or-more-ft-reports/",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://404kresearch.substack.com/p/456x-evening-brief-november-10-2026-3d3",
+   "result": "read"
+  },
+  {
+   "page": "https://michaelmyrick2.substack.com/p/global-ai-infrastructure-watch-november-602",
+   "result": "read"
+  },
+  {
+   "page": "https://www.benzinga.com/markets/earnings/26/11/63106347/softbanks-profit-reversal-highlights-growing-financial-strain-behind-ai-expansion",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://nodiligence.substack.com/p/day-54-softbank-lost-37bn-changing",
+   "result": "read"
+  },
+  {
+   "page": "https://www.benzinga.com/markets/private-markets/26/11/63132120/anthropic-ipo-could-top-1-5-trillion-valuation-as-banks-weigh-higher-pricing-amid-strong-investor-demand-potentially-raising-over-100-billion-report",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://archyde.com/softbank-posts-7-billion-loss-as-ai-data-center-costs-weigh-on-earnings/",
+   "result": "failed (client error)"
+  },
+  {
+   "page": "https://1023jack.com/market/softbank-lost-7-billion-in-one-quarter-the-real-story-is-a-3-7-billion-bill-for/",
+   "result": "read"
+  },
+  {
+   "page": "https://panews.io/articles/01a1c811-7ada-753d-93d6-883d15a06f23",
+   "result": "read"
+  }
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "as_of": "2026-11-10",
+   "name": "10-year note auction ($42bn, 11-10): high yield 5.020%, 1.0 bp tail vs WI 5.010% (biggest tail since February; six-month average a 0.6 bp stop-through), bid-to-cover 2.46 (lowest since May), indirects 61.2% (lowest since Oct 2023, -19.1 pts), directs 29.0% (highest since Sep 2013), dealers 9.8%",
+   "headline": "10-year note auction ($42bn, 11-10): high yield 5.020%, 1.0 bp tail vs WI 5.010% (biggest tail since February; six-month average a 0.6 bp stop-through), bid-to-cover 2.46 (lowest since May), indirects 61.2% (lowest since Oct 2023, -19.1 pts), directs 29.0% (highest since Sep 2013), dealers 9.8%",
+   "source": "TheStreet Pro 'Stock Market Today: November 10, 2026' (Neil Sethi, 11-10 15:47 ET); HERE Rock Hill (11-11 06:51); helious.io auction table; Gokhshtein Media (11-10, qualitative); all read by WebFetch",
+   "url": "https://pro.thestreet.com/stock-market-today/2026-11-10#update-wp:29331",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "auction tail (10-year)",
+   "late": false,
+   "claim": "The Treasury sold $42bn of 10-year notes on 2026-11-10 at a high yield of 5.020%, 1.0 bp above the 5.010% when-issued yield, the biggest tail since February and ending two straight stop-throughs (October: 1.7 bp stop-through; six-month average: 0.6 bp stop-through); the high yield was the lowest since September (October reopening: 5.300%, highest since November 2000). Bid-to-cover fell to 2.46 from 2.77 (lowest since May; six-month average 2.60) on about $103.3bn of bids; indirects took 61.2% versus 80.3% in October, a 19.1-point drop that is the largest auction-to-auction decline since July 2016 and the lowest share since October 2023; directs took 29.0% (highest since September 2013; October 17.1%); dealers 9.8% (most since May; October 2.5%). Median yield 4.961%, 95% allotted at the high. The 10-year yield traded back under 5% (4.988%) after the sale.",
+   "sweep_query": "7. Treasury auction tail",
+   "note": "Tail of 1.0 bp is below the 2 bp hard-event threshold. Two independent numbered sources agree (TheStreet, HERE Rock Hill); helious.io shows '+1.0bp' tail and verdict WEAK. The task brief's helious '0.6 bp stop-through' reading was not what the table showed at fetch time; 0.6 bp is TheStreet's six-month average stop-through. HERE Rock Hill dates the indirect low 'since at least October 2025' vs TheStreet 'since October 2023' (not reconciled). Gokhshtein ('widest tail since February', 'international demand collapsed') prints no figures. 30-year ($25bn) is 11-12.",
+   "other_urls": [
+    "https://www.hererockhill.com/2026/11/11/treasury-42-billion-10-year-auction-5-percent/",
+    "https://helious.io/auctions",
+    "https://gokhshtein.com/news/2026-11-10-10-year-auction-tails-widest-since-february-as-foreign"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-10",
+   "name": "Anthropic files IPO price range $70-78 (825m shares, up to $64.35bn base; implied fully diluted valuation up to $1.404tn vs ~$2tn targeted weeks earlier); 11-11 reports say underwriters weigh pricing above range toward $1.5tn+",
+   "headline": "Anthropic files IPO price range $70-78 (825m shares, up to $64.35bn base; implied fully diluted valuation up to $1.404tn vs ~$2tn targeted weeks earlier); 11-11 reports say underwriters weigh pricing above range toward $1.5tn+",
+   "source": "TechCrunch (11-10 06:01 PST, from the amended SEC filing) and Fortune (11-10 11:21 ET); 456X Evening Brief Nov 10 ($1.26-1.41tn fully diluted); PANews/Cailian Press (11-11 00:45 UTC) on underwriters; all read by WebFetch",
+   "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "repriced IPO (Anthropic) - range set below earlier targets; demand reports point the other way",
+   "late": false,
+   "claim": "In an amended filing on 2026-11-10 Anthropic set a price range of $70-78 for 825m Class A shares (plus a 123.75m-share option), a base raise of $57.75-64.35bn, with estimated net proceeds of $84.6-93.7bn including a $26bn private placement of Class N stock to AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC (Google and Nvidia $10bn each); the top of the range implies a fully diluted valuation of $1.404tn, below the roughly $2tn reportedly targeted a couple of months earlier and the $1.5tn discussed in early November, but above the $1.1-1.3tn some buyers discussed on 11-06; last private valuation $965bn (May); run-rate revenue $81bn at end-October; ticker ANT on Nasdaq, trading expected close to 11-19. On 11-11 Cailian Press (and FT-attributed copies) reported underwriters are weighing a valuation target of $1.5tn or higher on 'exceptionally strong investor demand'.",
+   "sweep_query": "4. funding round repriced AI lab",
+   "note": "The range itself is the dated new fact (filed). Whether it is a 'repricing' depends on the baseline: down vs $2tn/$1.5tn, up vs the 11-06 Bloomberg $1.1-1.3tn chatter already recorded. The 11-11 above-range reports are secondary copies (PANews cites Cailian Press; mlq.ai/Benzinga copies attributing FT failed to fetch) and had not been confirmed by a filing at run time. 456X Nov 10 also notes 'any downsized volume or discounted pricing will necessitate a reset' as a hypothetical. Low-end valuation ~$1.26tn is from 456X's filing-based figure, not TechCrunch.",
+   "other_urls": [
+    "https://fortune.com/2026/11/10/anthropic-ipo-price-range-ai-stock-sell-off/",
+    "https://404kresearch.substack.com/p/456x-evening-brief-november-10-2026-3d3",
+    "https://panews.io/articles/01a1c811-7ada-753d-93d6-883d15a06f23",
+    "https://mlq.ai/news/anthropics-bankers-weigh-pricing-its-ipo-above-the-70-to-78-range-lifting-its-valuation-to-15-trillion-or-more-ft-reports/"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-10",
+   "name": "SoftBank books ¥597.2bn ($3.7bn) loss on revised power-equipment procurement for US AI data centers ($2.85bn non-refundable advances forfeited, $0.88bn settlements) in a ¥1.12tn ($7bn) quarterly net loss; GE Vernova falls as much as 9.8%",
+   "headline": "SoftBank books ¥597.2bn ($3.7bn) loss on revised power-equipment procurement for US AI data centers ($2.85bn non-refundable advances forfeited, $0.88bn settlements) in a ¥1.12tn ($7bn) quarterly net loss; GE Vernova falls as much as 9.8%",
+   "source": "1023 Jack (11-10, from SoftBank's unaudited statements), No Diligence Substack 'Day 54' (11-11), StreetSignal Data Center Alerts (11-10), Global AI Infrastructure Watch (11-10, citing Reuters and FT); all read by WebFetch. CNBC/Bloomberg/qz/mlq originals refused or failed.",
+   "url": "https://1023jack.com/market/softbank-lost-7-billion-in-one-quarter-the-real-story-is-a-3-7-billion-bill-for/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "capex deferral / procurement pullback (data center power equipment; SoftBank SB7, OpenAI tenant; supplier GEV)",
+   "late": false,
+   "claim": "On 2026-11-10 SoftBank Group reported a July-September net loss of ¥1,115.3bn ($7.0bn), including a ¥597.2bn ($3.73bn) loss at subsidiary Silver Bands 7 from revising its procurement plans for power-generation equipment for US AI data centres, citing 'the evolving requirements of its existing and planned projects': about $2.85bn of non-refundable advances for factory capacity and equipment no longer in its plans (roughly 30% of ¥1,500.9bn / $9.48bn cumulative payments to September 30) and about $0.88bn of contract modifications and settlements payable from Q3 onward; conditional rebates of up to $2.1bn over ten years on future purchases were not booked; about $6.6bn of advances remain allocated to equipment for the PORTS-Pike (Ohio) campus and other projects, and the CFO said PORTS-Pike is not being downsized. Financing costs rose to about ¥462bn, more than double a year earlier. GE Vernova shares fell as much as 9.8% on 11-10 before paring to about -4%.",
+   "sweep_query": "3. capex cut OR deferral OR digestion AI",
+   "note": "Partial: a procurement change with a dated charge, not a capex-guidance cut or an announced project deferral; suppliers whose advances were forfeited are unnamed (GE Vernova was one of several reserved suppliers in May). No MW/GW or delivery-date change disclosed. Figures from secondary write-ups of the unaudited statements; Reuters/FT/CNBC/Bloomberg originals not read. Bloomberg headline 'Power turbine stocks dip as SoftBank writedown fuels demand fear' not fetched (refused host). No Diligence also notes Bitdeer moved three AI sites back a quarter (Knoxville on late electrical equipment), undated, unconnected.",
+   "other_urls": [
+    "https://nodiligence.substack.com/p/day-54-softbank-lost-37bn-changing",
+    "https://streetsignal.substack.com/p/data-center-alerts-11102026",
+    "https://michaelmyrick2.substack.com/p/global-ai-infrastructure-watch-november-602",
+    "https://www.cnbc.com/2026/11/10/softbank-2q-earnings-tech-selloff.html",
+    "https://www.bloomberg.com/news/articles/2026-11-10/power-turbine-stocks-dip-as-softbank-writedown-fuels-demand-fear"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-10",
+   "name": "CoreWeave Q3 (11-10 after close): FY26 capex RAISED to $37-39bn (low end up from $35bn), but 2027 capex guided 'in line with 2026' on committed backlog, 2028 capacity not yet marketed ('waiting for that to season'), and 'we will not use the unsecured debt market at current yields'; Q4 interest expense $1.05-1.15bn; shares +5.7% after hours",
+   "headline": "CoreWeave Q3 (11-10 after close): FY26 capex RAISED to $37-39bn (low end up from $35bn), but 2027 capex guided 'in line with 2026' on committed backlog, 2028 capacity not yet marketed ('waiting for that to season'), and 'we will not use the unsecured debt market at current yields'; Q4 interest expense $1.05-1.15bn; shares +5.7% after hours",
+   "source": "CoreWeave 8-K press release on sec.gov (11-10) and Investing.com earnings-call transcript (11-10 18:57); read by WebFetch",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001769628/000176962826000461/coreweave3q26earningspress.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "capex digestion language (neocloud: CRWV) - NOT a capex cut; FY26 capex raised",
+   "late": false,
+   "claim": "CoreWeave reported Q3 2026 revenue of $3,661m (vs $1,365m a year earlier), backlog of about $132.5bn, Q3 purchases of property and equipment of $9,441m (above guidance on pull-forward of Q4 deliveries) and raised the low end of FY2026 capex guidance to $37-39bn from $35-39bn; net interest expense was $846m (vs $310m) with Q4 guided to $1.05-1.15bn and weighted average cost of debt 7.9%. On the call management said 2027 capex would 'remain in line with our 2026 capex investment' if it builds only committed backlog, that it retains 'flexibility in how quickly we execute', is 'choosing to be patient' and has not brought 2028 capacity to market 'because we are waiting for that to season further', and that it 'will not use the unsecured debt market to fund our business at current yields, nor do we need to', with asset-level secured loans trading around par and the next DDTL expected at a 7-7.5% yield; about $9bn of customer prepayments and deposits are expected in the next three months. Shares rose 5.7% after hours to $51.51 after closing at $48.73 (-0.51%).",
+   "sweep_query": "3. capex cut OR deferral OR digestion AI (and ticker sweep CRWV)",
+   "note": "Recorded per the brief's instruction that digestion-type guidance language is a hit even though the FY26 capex number went UP; the scorer should treat the capex raise as a non-hit. No delays, deferrals, customer pushouts or contract renegotiations were reported ('no material risks to our 2027 deliveries'); expiring fleet re-contracting at premiums. Transcript read to 100,000 of 110,219 characters. Follows the 11-09 recorded item on CRWV bonds >16% / CDS >1,240 bp; the call did not cite yields or CDS.",
+   "other_urls": [
+    "https://www.investing.com/news/transcripts/earnings-call-transcript-coreweave-tops-q3-2026-forecast-and-shares-rise-57-93CH-5017354",
+    "https://www.investing.com/news/company-news/coreweave-q3-2026-slides-revenue-surges-168-margins-expand-93CH-5017372"
+   ],
+   "group": "events"
+  }
+ ]
+}

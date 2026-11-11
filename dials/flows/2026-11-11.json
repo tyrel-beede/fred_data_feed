@@ -1,0 +1,321 @@
+{
+ "group": "flows",
+ "run_at": "2026-11-11T05:10:00-07:00",
+ "run_weekday": "Wed",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "note": "P12_fms had no prior status file; latest published survey recorded (October 2026). November 2026 FMS not yet published at run time."
+ },
+ "groups": [
+  "P12_fms"
+ ],
+ "notes": "The November 2026 BofA Global FMS had NOT been published as of the run: eight search variants surfaced no November-2026 write-up; the only 'November' hits were the Nov-2025 survey (macenews 2025-11-18, 'Investors More Bullish in November as 2026 Growth Expectations Improve' — discarded). Expected release ~2026-11-17 (Tuesday). Recorded instead: the October 2026 Global FMS, fielded Oct 2–8 2026, published Tue 2026-10-13. Source disagreements: participants/AUM — Yahoo Finance (Reuters relay), investinglive and Atrani Capital print '161 participants managing $453 billion'; the macenews relay prints '185 panelists managing $512bn' (likely total panel incl. regional vs Global-FMS respondents; both recorded in note). Growth expectations: atrani/macenews/investinglive print 'net 4% expect weaker global growth'; Yahoo additionally prints 'net 47% expect above-trend growth and above-trend inflation' (a different question, recorded separately). Tech overweight: cryptobriefing/investinglive/atrani print 37% (from 30% in Sep); Yahoo prints no number, only 'biggest since August 2020'. Bull & Bear Indicator 8.1 (from 9.6) is printed only by Atrani Capital (substack; Sep value given as 9.5 by trustnet vs 9.6 by Atrani). Hartnett quote found only in the Yahoo/Reuters relay: 'Growth expectations are slowing, and U.S. equity performance is also moderating.' finvaulta and cryptobriefing pages failed to fetch (client_error); cryptobriefing's 37% tech-overweight figure is from the search snippet/title only and is corroborated by investinglive and Atrani.",
+ "sources": [
+  {
+   "query": "BofA fund manager survey November 2026",
+   "result": "no hit",
+   "note": "Only Nov-2025 macenews/TradingView relay; no Nov-2026 survey."
+  },
+  {
+   "query": "Bank of America Global Fund Manager Survey November 2026 cash level",
+   "result": "partial",
+   "note": "Surfaced finvaulta Oct-2026 page (fetch failed) and older items; no Nov-2026."
+  },
+  {
+   "query": "Hartnett FMS November 2026 most crowded trade",
+   "result": "no hit",
+   "note": "Jul/Aug 2026 items only."
+  },
+  {
+   "query": "fund manager survey November 2026 AI bubble tail risk",
+   "result": "partial",
+   "note": "Surfaced cryptobriefing Oct-2026 tech-overweight piece and Sep-2026 trustnet/biggo; no Nov-2026."
+  },
+  {
+   "query": "BofA FMS November 2026 tech overweight",
+   "result": "partial",
+   "note": "Surfaced Yahoo/Reuters relay of Oct-2026 survey (2026-10-13) and cryptobriefing; no Nov-2026."
+  },
+  {
+   "query": "BofA fund manager survey October 2026 cash level most crowded trade tail risk Hartnett",
+   "result": "hit",
+   "note": "Atrani Capital Oct-2026 write-up, macenews Oct-2026 relay."
+  },
+  {
+   "query": "\"fund manager survey\" BofA \"November\" 2026 investinglive",
+   "result": "partial",
+   "note": "investinglive Oct-2026 and Jul-2026 pieces; no Nov-2026."
+  },
+  {
+   "query": "BofA global fund manager survey November 10 2026 Hartnett cash semiconductors bond yields",
+   "result": "partial",
+   "note": "Oct-2026 items only."
+  },
+  {
+   "query": "trustnet fund managers BofA survey October 2026",
+   "result": "hit",
+   "note": "Atrani Oct-2026, Zaccardi X post, finvaulta (unfetchable)."
+  },
+  {
+   "query": "BofA survey fund managers after midterms November 2026 Hartnett \"fund manager survey\" semiconductors cash",
+   "result": "no hit",
+   "note": "Aug-2026 items only."
+  },
+  {
+   "query": "investing.com BofA fund manager survey November 2026",
+   "result": "no hit",
+   "note": "Older investing.com pieces; no Nov-2026."
+  },
+  {
+   "query": "zerohedge Hartnett fund manager survey November 2026",
+   "result": "no hit",
+   "note": "Older ZH posts."
+  },
+  {
+   "page": "https://macenews.com/bofa-global-research-fund-manager-survey-investors-more-bullish-in-november-as-2026-growth-expectations-improve/",
+   "result": "read",
+   "note": "Nov-2025 survey (published 2025-11-18) — discarded as stale."
+  },
+  {
+   "page": "https://finvaulta.com/research/bank-of-america/global-fund-manager-survey-the-sixth-sense-2026-10-13",
+   "result": "failed (client_error)",
+   "note": "Oct-2026 FMS 'The Sixth Sense' summary page."
+  },
+  {
+   "page": "https://www.trustnet.com/news/13484336/fund/sectors",
+   "result": "read",
+   "note": "Sep-2026 survey (2026-09-15); used for prior-month context only."
+  },
+  {
+   "page": "https://finance.biggo.com/news/76890938-d6d1-46ac-afa9-3875500a99d5",
+   "result": "read",
+   "note": "Sep-2026 survey (2026-09-15), fielded Sep 4–10, 190 investors / $512bn; context only."
+  },
+  {
+   "page": "https://atranicapital.substack.com/p/october-2026-bank-of-america-global",
+   "result": "read",
+   "note": "Oct-2026 FMS write-up dated 2026-10-15; fullest numbers set (B&B 8.1, hard landing 6%, bonds UW 37%)."
+  },
+  {
+   "page": "https://cryptobriefing.com/bofa-survey-fund-managers-overweight-tech/",
+   "result": "failed (client_error)",
+   "note": "Title/snippet: 37% of fund managers overweight tech."
+  },
+  {
+   "page": "https://investinglive.com/news/long-global-semiconductors-remains-the-most-crowded-trade-followed-by-short-us-treasuries-according-to-bank-of-america/",
+   "result": "read",
+   "note": "2026-10-13 10:53 GMT; Oct 2–8, 161 participants / $453bn; tech OW 37% from 30%; net 4% expect weaker growth."
+  },
+  {
+   "page": "https://finance.yahoo.com/markets/stocks/articles/bofa-poll-shows-tech-overweight-113249106.html",
+   "result": "read",
+   "note": "Reuters relay 2026-10-13; cash 3.9%, semis 45%, bond-yield tail risk 31%, equity OW 44%, Hartnett quote."
+  },
+  {
+   "page": "https://finance.biggo.com/news/69fb5984-8d7c-45d4-9b0b-5afb8cffe887",
+   "result": "read",
+   "note": "Aug-2026 survey (2026-08-18); context only."
+  },
+  {
+   "page": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "result": "read",
+   "note": "Oct-2026 relay published 2026-10-13; prints 185 panelists / $512bn; full tail-risk and crowded-trade top-3 with pcts."
+  },
+  {
+   "page": "https://investinglive.com/news/long-global-semiconductors-remains-the-most-crowded-trade-on-record-as-bofa-notes-no-one-is-short/",
+   "result": "read",
+   "note": "Jul-2026 survey (2026-07-14); context only."
+  }
+ ],
+ "discarded": [
+  "macenews 'Investors More Bullish in November as 2026 Growth Expectations Improve' — Nov-2025 survey (published 2025-11-18), not Nov-2026",
+  "trustnet / biggo Sep-2026 survey write-ups (2026-09-15) — superseded by Oct-2026 survey; used only as prior-month context in notes",
+  "biggo Aug-2026 and investinglive Jul-2026 survey write-ups — superseded"
+ ],
+ "items": [
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — average cash level (% of AUM)",
+   "series": "fms.cash_level",
+   "value": 3.9,
+   "unit": "pct of AUM",
+   "period_end": "2026-10-08",
+   "source": "Yahoo Finance (Reuters relay) 2026-10-13; macenews 2026-10-13; Atrani Capital 2026-10-15",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-poll-shows-tech-overweight-113249106.html",
+   "other_urls": [
+    "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+    "https://atranicapital.substack.com/p/october-2026-bank-of-america-global"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Survey fielded Oct 2–8 2026, published Tue 2026-10-13. Cash 3.9%, unchanged from Sep (3.9%), up from Aug 'uber-low' 3.5%. Remains in sell-signal territory under BofA cash rule (triggers at or below 4.0%). Participants: 161 managing $453bn (Yahoo/investinglive/Atrani) vs 185 panelists managing $512bn (macenews). Nov-2026 survey not yet published at run time.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — most crowded trade",
+   "series": "fms.most_crowded_trade",
+   "value": null,
+   "unit": "text",
+   "period_end": "2026-10-08",
+   "source": "macenews 2026-10-13; Yahoo Finance (Reuters relay) 2026-10-13; investinglive 2026-10-13",
+   "url": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "other_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/bofa-poll-shows-tech-overweight-113249106.html",
+    "https://investinglive.com/news/long-global-semiconductors-remains-the-most-crowded-trade-followed-by-short-us-treasuries-according-to-bank-of-america/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'Long global semiconductors' 45% (Sep 53%; Jul record 82%); 'Short Treasuries' 27% (Sep 18%); 'Long Magnificent 7' 16% (Sep 7%); long dollar 5% (Yahoo).",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — share naming 'long global semiconductors' most crowded",
+   "series": "fms.most_crowded_trade_pct",
+   "value": 45,
+   "unit": "pct of respondents",
+   "period_end": "2026-10-08",
+   "source": "macenews 2026-10-13; Yahoo Finance (Reuters relay) 2026-10-13; Atrani Capital 2026-10-15",
+   "url": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Down from 53% in Sep and 82% record in Jul 2026.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — top tail risk",
+   "series": "fms.top_tail_risk",
+   "value": null,
+   "unit": "text",
+   "period_end": "2026-10-08",
+   "source": "macenews 2026-10-13; Yahoo Finance (Reuters relay) 2026-10-13",
+   "url": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "other_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/bofa-poll-shows-tech-overweight-113249106.html"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'Disorderly rise in bond yields' 31% (Sep 33%); 'AI bubble' 23% (Sep 28%); '2nd wave of inflation' 20% (Sep 24%); 'hyperscaler credit event' 11% (Yahoo).",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — share naming 'disorderly rise in bond yields' top tail risk",
+   "series": "fms.top_tail_risk_pct",
+   "value": 31,
+   "unit": "pct of respondents",
+   "period_end": "2026-10-08",
+   "source": "macenews 2026-10-13; Yahoo Finance (Reuters relay) 2026-10-13; Atrani Capital 2026-10-15",
+   "url": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Down from 33% in Sep. AI bubble second at 23%.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — net overweight technology",
+   "series": "fms.tech_overweight",
+   "value": 37,
+   "unit": "net pct overweight",
+   "period_end": "2026-10-08",
+   "source": "investinglive 2026-10-13 10:53 GMT; Atrani Capital 2026-10-15; cryptobriefing (title/snippet)",
+   "url": "https://investinglive.com/news/long-global-semiconductors-remains-the-most-crowded-trade-followed-by-short-us-treasuries-according-to-bank-of-america/",
+   "other_urls": [
+    "https://atranicapital.substack.com/p/october-2026-bank-of-america-global",
+    "https://cryptobriefing.com/bofa-survey-fund-managers-overweight-tech/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "investinglive: 'The proportion of respondents overweight the sector increased to 37% from 30% in September.' Yahoo/Reuters: biggest tech overweight since August 2020 (no pct). Zaccardi: most overweight tech since 2020, most underweight consumer since 2008.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — net overweight global equities",
+   "series": "fms.equity_overweight",
+   "value": 44,
+   "unit": "net pct overweight",
+   "period_end": "2026-10-08",
+   "source": "macenews 2026-10-13; Yahoo Finance (Reuters relay) 2026-10-13; Atrani Capital 2026-10-15",
+   "url": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Down from net 49% Sep and net 56% Aug. US equities net 11% OW (Sep 25%, Aug 27%); EM net 34% OW; Japan net 9% OW; Eurozone net 8% UW; UK net 26% UW. Bonds net 37% UW (Sep 48%). Commodities net 21% OW.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — net expecting stronger global growth next 12m",
+   "series": "fms.global_growth_expectations",
+   "value": -4,
+   "unit": "net pct (negative = net expect weaker)",
+   "period_end": "2026-10-08",
+   "source": "macenews 2026-10-13; investinglive 2026-10-13; Atrani Capital 2026-10-15",
+   "url": "https://macenews.com/bofa-global-research-fund-manager-survey-lower-growth-and-lower-inflation-expectations-lead-to-tweaking-of-asset-allocations-in-october/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'a net 4% expected weaker growth over the next 12 months' (Sep: net 8% stronger; Aug: net 14% stronger) — first negative in four months. Net 5% expect lower inflation. Yahoo separately: net 47% expect above-trend growth AND above-trend inflation, most since Feb 2022. Hartnett (Yahoo/Reuters): 'Growth expectations are slowing, and U.S. equity performance is also moderating.'",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — share expecting hard landing",
+   "series": "fms.recession_probability",
+   "value": 6,
+   "unit": "pct of respondents expecting hard landing",
+   "period_end": "2026-10-08",
+   "source": "Yahoo Finance (Reuters relay) 2026-10-13; Atrani Capital 2026-10-15",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-poll-shows-tech-overweight-113249106.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No landing 50% (Sep 55%), soft landing 40%, hard landing 6% (Sep 2%). Not a recession-probability question per se.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Bull & Bear Indicator at Oct 2026 FMS",
+   "series": "fms.sell_signal",
+   "value": 8.1,
+   "unit": "index (sell >8.0)",
+   "period_end": "2026-10-08",
+   "source": "Atrani Capital substack 2026-10-15",
+   "url": "https://atranicapital.substack.com/p/october-2026-bank-of-america-global",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Single-source number: 8.1, down from 9.6 (trustnet gave Sep as 9.5), 'still just above the 8.0 level that triggers a contrarian sell signal'. Cash rule also in sell territory (3.9% ≤ 4.0%). Broadest FMS sentiment measure 6.4 (from 7.0) per Atrani and Yahoo.",
+   "group": "P12_fms"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-13",
+   "name": "BofA Global FMS Oct 2026 — 10y UST yield that would prompt stocks-to-bonds shift",
+   "series": "fms.bond_switch_yield",
+   "value": 5.9,
+   "unit": "pct (BofA summarised threshold)",
+   "period_end": "2026-10-08",
+   "source": "Atrani Capital 2026-10-15; macenews 2026-10-13; Yahoo Finance 2026-10-13",
+   "url": "https://atranicapital.substack.com/p/october-2026-bank-of-america-global",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "37% said 6.0%, 14% (macenews: 19%) said 6.5%, 12% said 5.5%, 8% said ≥7%, 19% said yields already high enough / already shifting. Also: 76% expect no Fed hike at Oct 28 FOMC; 39% see hyperscaler capex as likeliest systemic credit event source; 57% expect no AI capex cut vs 30% expecting one; 45% expect an AI bubble in 2027.",
+   "group": "P12_fms"
+  }
+ ]
+}
