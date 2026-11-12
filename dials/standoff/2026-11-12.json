@@ -1,0 +1,720 @@
+{
+ "group": "standoff",
+ "run_at": "2026-11-12T05:10:00-07:00",
+ "run_weekday": "Thu",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "Null readings: brent.m2.settle (no second-month print found), dated_brent (no dated/physical quote found; Murban search returned only product pages), war_risk.premium_pct_hull (no November quote; latest market quotes are October 6-10% of hull via Marsh/FT), td3c (no 11 Nov print; latest is Baltic 6 Nov WS1,220.63 / $1,303,616/day, outside the gate), ukmto.incidents count is partial (UKMTO's own site not surfaced; one 11 Nov UKMTO tanker incident known only via Reuters/Arab News/Fox paraphrase, no reference number), ofac (Federal Register 'Notice of OFAC Sanctions Action' dated 12 Nov robots_disallowed; contents unknown). Unreachable: straits.live/briefs/2026-11-12 (client_error twice), shipandbunker UKMTO item (robots), aa.com.tr 4119781 (server error), federalregister 2026-23009 (robots), bloomberg oil-market Nov 12 (robots), english.alarabiya.net 12 Nov supertankers (client_error), en.mehrnews.com 249353 (robots), newsnationnow Ambrey/UAE (client_error), benzinga 'never return to pre-war status' (client_error). Source conflicts: WTI 11 Nov settle 86.53 agrees across MT Newswires/MarketScreener, CappNotes and repo; Brent 11 Nov settle 92.76 from CappNotes and the repo file, while MT Newswires printed January Brent 'last seen' 93.23 (intraday, not a settle) and straits.live showed 92.47 at 20:41Z (not a settle); hormuz.now 7-day average 6.6/day vs Windward 9 crossings in 24h to 1800Z 11 Nov (different methods, Windward counts dark crossings); IRGC says two supertankers exploded 12 Nov and 'three tankers hit mines' 10-11 Nov, no maritime authority confirms; Houthi spokesman Saree disputes coalition interception claims.",
+ "gate": {
+  "since": "2026-11-10",
+  "note": "Prior run captured through 2026-11-11 ~05:20 MST. New = items dated 11 Nov after ~12:20 GMT or 12 Nov. One 10 Nov item kept once with late=true (Araghchi 'reopen within two days'). Items already in the 11-11 file were not repeated."
+ },
+ "notes": "Settles for Wed 11 Nov: WTI December settled 86.53 (+0.49, +0.6%) per MT Newswires/MarketScreener headline and CappNotes; Brent settled 92.76 (+1.39%) per CappNotes Closing Look, with Gulf News/Bloomberg identifying the January contract as having gained 1.4% Wednesday; both agree with the repo Yahoo continuous files (BZ=F 92.76, CL=F 86.53). No second-month Brent, Dated Brent or Murban print found. Thursday 12 Nov Asian hours: January Brent 91.22 (-1.54%) at 12:28 Singapore (Gulf News/Bloomberg), after a 93.94 session peak on the IRGC two-supertanker headline then unwinding to just below 92 by 10:55 GMT (Newsquawk) - intraday, not settles. Transit measures: hormuz.now AIS-based 7-day average 6.6 crossings/day (46 in 7 days, 17 tankers, 8% of the 84.8/day pre-war baseline) as of 20:47Z 11 Nov; Windward 9 crossings (6 in/3 out, 3 dark, 1 tanker) in the 24h to 1800Z 11 Nov vs 10 the prior day. Methods differ (AIS-only vs dark-inclusive) and AIS reception is degraded, so counts are lower bounds. Incidents since the gate: Ambrey-reported projectile strike on an outbound merchant vessel 14nm NW of Ras Al Khaimah on Wed 11 Nov (stern hit, engine-room fire, no injuries); a UKMTO tanker incident reported 11 Nov (second in under 24h, no reference number surfaced) which may be the vessel Iran's army says hit a mine early Wednesday; IRGC Navy claim 12 Nov that two supertankers carrying >4m bbl exploded and are burning on the 'southern route' (unverified); Reuters sources confirm Iran attacked navigation systems on Oman's Didamar island (claimed 10 Nov). Political plumbing: Iran keeps denying talks and conditions any negotiation on its seven conditions; Rezaei rules out moving any enriched material abroad while Russia keeps its take-back offer open; WSJ reports Vance weighing direct talks with Rezaei in Doha, which Tehran says it rejected; Rubio told G7 the US is 'largely staying the course' and won't do a 'stupid deal'; Trump says the war ends 'soon' with 'total victory'; Press TV says Iran and Oman agreed on maritime traffic through the strait (details unspecified).",
+ "feeds": "standoff-watch T/M/O panels; macro-dials B1-oil. Readings and headlines only - candidate_tell is a suggestion, nothing is scored.",
+ "repo_cross_check": {
+  "note": "Repository Yahoo continuous files show 2026-11-11 close Brent 92.76 and WTI 86.53; both agree exactly with the settles found (CappNotes Brent 92.76; MT Newswires/CappNotes WTI 86.53).",
+  "BZ_F_2026-11-11": 92.76,
+  "CL_F_2026-11-11": 86.53
+ },
+ "sources": [
+  {
+   "query": "Brent crude settled Wednesday November 11 2026",
+   "result": "hit",
+   "note": "fetched financefeeds (Wed morning intraday only, 92.53 at 06:36 GMT); bloomberg Nov 12 oil link robots_disallowed; tradingeconomics not fetched from this query"
+  },
+  {
+   "query": "dtnpf oil futures November 11 2026 January Brent December WTI settle",
+   "result": "hit",
+   "note": "fetched DTN 11/11 (morning intraday 93.29 Jan Brent / 87.63 Dec WTI at 9:55 EST, no settle); fetched MarketScreener MT Newswires headline (Dec WTI settled 86.53; Jan Brent last seen 93.23 - body paywalled)"
+  },
+  {
+   "query": "cappnotes closing look November 11 2026",
+   "result": "hit",
+   "note": "fetched CappNotes Closing Look Wed Nov 11: Brent settled +1.39% at 92.76, WTI +0.57% at 86.53"
+  },
+  {
+   "query": "Hormuz Iran news November 12 2026",
+   "result": "hit",
+   "note": "fetched Al Jazeera 11 Nov, CBS live, Iran International liveblog; straits.live 2026-11-12 client_error"
+  },
+  {
+   "query": "UKMTO advisory November 11 2026 tanker Hormuz",
+   "result": "partial",
+   "note": "results were older items (Bernama, Mehr, WANA undated); none fetched"
+  },
+  {
+   "query": "straits.live brief Hormuz November 12 2026",
+   "result": "partial",
+   "note": "straits.live 2026-11-12 unreachable (client_error, two attempts); fetched Newsquawk US Opening News 12 Nov instead"
+  },
+  {
+   "query": "oil prices Thursday November 12 2026 Brent Asia trade Iran",
+   "result": "hit",
+   "note": "fetched hdfcsky (91.7 no timestamp), tradingeconomics news 517849 (page mis-dated, news-stream only), Gulf News/Bloomberg (Jan Brent 91.22 at 12:28 SGT)"
+  },
+  {
+   "query": "hormuz.now transits November 11 2026 tankers crossings",
+   "result": "hit",
+   "note": "fetched straits.live 2026-11-11 brief and BOE Report/Reuters 'Hormuz traffic is up'; Bloomberg Bahri/Saudi tanker item (10 Nov) not fetched"
+  },
+  {
+   "query": "Windward Hormuz crossings November 11 2026",
+   "result": "hit",
+   "note": "fetched insights.windward.ai (24h to 1800Z 11 Nov)"
+  },
+  {
+   "query": "Strait of Hormuz tanker attack November 11 2026 UKMTO",
+   "result": "partial",
+   "note": "shipandbunker robots_disallowed; aa.com.tr 4119781 server error; maritime-executive item was 8 Nov (Navig8 Messi) - discarded; gcaptain ADNOC item already recorded"
+  },
+  {
+   "query": "Iran US talks Qatar Vance Rezaei November 12 2026",
+   "result": "hit",
+   "note": "fetched Iran International 'commanders threaten' (12 Nov), Middle East Eye Vance/Rezaei update (12 Nov 06:25 GMT)"
+  },
+  {
+   "query": "OFAC recent actions Iran November 11 2026",
+   "result": "partial",
+   "note": "Federal Register 12 Nov OFAC notice robots_disallowed; State MANPADS fact sheet fetched but dated 4 Nov (discarded); ABA Nov 9 roundup already covered"
+  },
+  {
+   "query": "IAEA Iran Grossi November 2026",
+   "result": "no hit",
+   "note": "no items dated 11-12 Nov; only 6 Nov Prensa Latina and older"
+  },
+  {
+   "query": "war risk premium Hormuz tanker insurance November 2026 percent hull TD3C",
+   "result": "partial",
+   "note": "fetched ces-intelligence (October quotes only, 6-10% Marsh/FT; no November)"
+  },
+  {
+   "query": "Ambrey vessel projectile Ras Al Khaimah November 11 2026",
+   "result": "hit",
+   "note": "fetched devdiscourse/Reuters (12 Nov); newsnationnow client_error"
+  },
+  {
+   "query": "Iran Oman agreement maritime traffic Strait of Hormuz Didamar November 2026",
+   "result": "hit",
+   "note": "fetched Newsquawk Press TV headline (12 Nov 06:40 UTC) and Arab News/Reuters Didamar (11 Nov); benzinga client_error"
+  },
+  {
+   "query": "IRGC two supertankers 4 million barrels explosions Hormuz November 12 2026",
+   "result": "hit",
+   "note": "fetched TASS 12 Nov; Al Arabiya client_error; Mehr robots_disallowed"
+  },
+  {
+   "query": "\"January Brent\" settled $92.76 November 11",
+   "result": "no hit",
+   "note": "no direct January-contract settle wire found; contract month inferred from Gulf News/Bloomberg 'January futures' and MT Newswires 'January Brent'"
+  },
+  {
+   "query": "Lloyd's List Hormuz transits week November 2026 tanker daily",
+   "result": "hit",
+   "note": "fetched hormuz.now/traffic; Lloyd's List paywalled, not fetched"
+  },
+  {
+   "query": "Houthi Saudi Arabia missile attack November 11 2026 East-West pipeline",
+   "result": "hit",
+   "note": "fetched houseofsaud coalition interception item (12 Nov); Al Jazeera 10 Nov item already recorded"
+  },
+  {
+   "query": "Qatar draft memorandum of understanding Iran US 36 hours mediators November 2026",
+   "result": "partial",
+   "note": "Newsquawk MoU headline fetched but dated 3 Nov (discarded); Reuters 36-hour item 3 Nov (discarded)"
+  },
+  {
+   "query": "Baltic TD3C VLCC rate Middle East Gulf China November 11 2026",
+   "result": "partial",
+   "note": "fetched DCN Baltic weekly report 6 Nov (TD3C WS1,220.63); no 11 Nov print"
+  },
+  {
+   "query": "Katz Israel will not wait for permission Iran November 12 2026",
+   "result": "hit",
+   "note": "Newsquawk Katz headline (Israeli post-election domestic framing) not fetched; fetched Newsquawk 'Iranian advisor seven conditions' (12 Nov 10:53 UTC)"
+  },
+  {
+   "query": "Dated Brent Murban physical premium November 11 2026 Platts",
+   "result": "no hit",
+   "note": "only methodology/product pages; no dated quote"
+  },
+  {
+   "query": "Baghaei ISNA November 12 2026 United States state terrorism Iran foreign ministry spokesman",
+   "result": "hit",
+   "note": "fetched Newsquawk Baghaei headline (11 Nov 23:30 UTC) and Fox News live page (11 Nov; Rubio at G7, Bessent)"
+  }
+ ],
+ "discarded": [
+  "Maritime Executive 'Tanker Burns After Strike' - Navig8 Messi, dated 8 Nov (before gate)",
+  "State Dept MANPADS designations fact sheet - dated 4 Nov",
+  "Newsquawk/Al-Araby Al-Jadeed 'Washington approved draft MoU' - 3 Nov; Reuters Qatar 36-hour feedback - 3 Nov",
+  "ces-intelligence war-risk 6-10% quotes - October 2026 (kept only as note in null reading)",
+  "Baltic Exchange TD3C WS1,220.63 - 6 Nov (kept only as note in null reading)",
+  "straits.live 11-11 brief PortWatch '3 transits on 8 Nov' - describes 8 Nov",
+  "Bloomberg 'Saudi tanker firm sends vessels through Hormuz with US coordination' - 10 Nov, not fetched (robots), no verifiable content",
+  "Financefeeds Wed 11 Nov 06:36 GMT intraday 92.53 - superseded by the settle",
+  "Al Jazeera 10 Nov Houthi/Riyadh item - already recorded",
+  "gCaptain ADNOC vessel damaged / UKMTO projectile strike - already recorded (10 Nov)",
+  "Rezaei 'talks a pure lie' / seven conditions (Al Jazeera 11 Nov restatement) - already recorded",
+  "Hegseth impeachment referral killed (Fox 11 Nov) - already recorded as 211-204 vote"
+ ],
+ "items": [
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Brent front-month settle, Wed 11 Nov (January 2027 Brent)",
+   "series": "brent.m1.settle",
+   "value": 92.76,
+   "unit": "USD/bbl",
+   "period_end": "2026-11-11",
+   "source": "CappNotes Closing Look, Wednesday 11 Nov 2026; contract month per Gulf News/Bloomberg 12 Nov ('January futures ... gained 1.4% on Wednesday')",
+   "url": "https://cappnotes.substack.com/p/closing-look-wednesday-november-11",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "CappNotes: 'Brent crude settled up 1.39% at $92.76 a barrel, following Iran's comments about its enriched nuclear material.' CappNotes does not name the contract; Gulf News/Bloomberg and MT Newswires both refer to January Brent. MT Newswires 14:43 EST headline printed January Brent 'last seen' at 93.23 (+1.74) - an intraday print before the ICE settle, not a conflict. Agrees exactly with repo BZ=F 2026-11-11 close 92.76.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Brent second-month settle, Wed 11 Nov",
+   "series": "brent.m2.settle",
+   "value": null,
+   "unit": "USD/bbl",
+   "period_end": "2026-11-11",
+   "source": "none found",
+   "url": "",
+   "fetched_how": "WebSearch only",
+   "status": "quiet",
+   "note": "No second-month (February 2027) Brent settle printed by any fetched source. Not computed.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "WTI front-month settle, Wed 11 Nov (December 2026 WTI)",
+   "series": "wti.m1.settle",
+   "value": 86.53,
+   "unit": "USD/bbl",
+   "period_end": "2026-11-11",
+   "source": "MT Newswires via MarketScreener, 11 Nov 2026 14:43 EST; CappNotes Closing Look 11 Nov",
+   "url": "https://www.marketscreener.com/news/december-wti-crude-oil-contract-closes-up-0-49-or-0-6-settles-at-86-53-per-barrel-january-bren-ce785edbd18af721",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Headline: 'December WTI Crude Oil Contract Closes Up $0.49, or 0.6%; Settles at $86.53 per Barrel.' CappNotes: 'WTI crude settled up 0.57% at $86.53.' Agrees exactly with repo CL=F 2026-11-11 close 86.53.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Dated Brent / physical premium, 11 Nov",
+   "series": "dated_brent",
+   "value": null,
+   "unit": "USD/bbl",
+   "period_end": "2026-11-11",
+   "source": "none found",
+   "url": "",
+   "fetched_how": "WebSearch only",
+   "status": "quiet",
+   "note": "No Dated Brent, Murban or Oman physical assessment printed in any fetched source; Platts/Argus paywalled.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-12",
+   "name": "Brent front-month intraday, Thu 12 Nov Asian hours (NOT a settle)",
+   "series": "brent.m1.intraday",
+   "value": 91.22,
+   "unit": "USD/bbl",
+   "period_end": "2026-11-12",
+   "source": "Gulf News (Bloomberg), 12 Nov 2026 10:03 (price as of 12:28 p.m. Singapore)",
+   "url": "https://gulfnews.com/business/energy/oil-heads-for-two-month-low-as-middle-east-output-rises-1.500744554",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'Brent (January futures) fell 1.54% to $91.22/barrel at 12:28 p.m. Singapore time'; WTI December 85.26 (-1.5%). Newsquawk 12 Nov: Brent Jan'27 hit a session peak of 93.94 after the IRGC two-supertanker headline then unwound to just below 92 by the 10:55 GMT snapshot (-0.8%). HDFC Sky 09:50 IST printed 91.7 (-1.2%) with no timestamp. All intraday; not settles.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Hormuz crossings, 7-day average per day (hormuz.now AIS)",
+   "series": "hormuz.transits_per_day",
+   "value": 6.6,
+   "unit": "crossings/day",
+   "period_end": "2026-11-11",
+   "source": "hormuz.now/traffic, as of 11 Nov 2026 20:47 UTC",
+   "url": "https://hormuz.now/traffic",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'Over the past 7 days' 46 crossings = 6.6/day (prior file: 6.9/day as of 10 Nov). Today 11 Nov (since 00:00Z) 4 crossed (3 in, 1 out); last 24h 5 (4 in, 1 out); yesterday 10 Nov 4 (2 in, 2 out; archive line shows '42 in' which looks like a typo). AIS-visible only; receivers degraded, so a lower bound.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Hormuz tanker transits, trailing 7 days (hormuz.now)",
+   "series": "hormuz.tanker_transits_per_7d",
+   "value": 17,
+   "unit": "tankers/7d",
+   "period_end": "2026-11-11",
+   "source": "hormuz.now/traffic, as of 11 Nov 2026 20:47 UTC",
+   "url": "https://hormuz.now/traffic",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "17 tankers and 29 cargo ships in the 7-day window (prior file: 18 tankers/7d as of 10 Nov).",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Hormuz crossings as percent of pre-war baseline (hormuz.now)",
+   "series": "hormuz.transits_pct_of_baseline",
+   "value": 8,
+   "unit": "% of 84.8/day baseline",
+   "period_end": "2026-11-11",
+   "source": "hormuz.now/traffic, as of 11 Nov 2026 20:47 UTC",
+   "url": "https://hormuz.now/traffic",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Printed '8%' = 7-day average 6.6 vs 84.8 a day before the crisis.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Windward Hormuz crossings, 24h to 1800Z 11 Nov",
+   "series": "hormuz.transits_per_day",
+   "value": 9,
+   "unit": "crossings/24h",
+   "period_end": "2026-11-11",
+   "source": "Windward insights.windward.ai, as of 11 Nov 2026 1800Z",
+   "url": "https://insights.windward.ai/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "9 crossings (6 inbound, 3 outbound), 3 dark; prior day 10 (5 dark). Tankers: 1 outbound (SC Citrine), 0 inbound; 4 cargo + 2 bulk inbound, 2 cargo outbound. Plus 8 multi-day dark-gap reappearances 10-11 Nov not counted in totals. Windward includes dark crossings, so it runs above hormuz.now's AIS-only count.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "straits.live: AIS-visible vessels holding position in Hormuz/Gulf watch box",
+   "series": "hormuz.vessels_holding",
+   "value": 36,
+   "unit": "vessels",
+   "period_end": "2026-11-11",
+   "source": "straits.live Daily Brief 11 Nov 2026, as of 20:30 UTC",
+   "url": "https://straits.live/briefs/2026-11-11",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "Excludes ships within 25 km of a working port; the page says the count is probably low because AIS receivers pick up fewer ships. The brief's only transit figure is PortWatch '3 transits' for 8 Nov (outside gate, discarded). Brent shown 92.47 at 20:41Z (not a settle). 12 Nov brief unreachable (client_error).",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-12",
+   "name": "UKMTO/JMIC advisories since the gate (count, partial)",
+   "series": "ukmto.incidents",
+   "value": 1,
+   "unit": "advisories (11 Nov 12:20Z - 12 Nov ~12:00Z)",
+   "period_end": "2026-11-12",
+   "source": "Reuters via Arab News (11 Nov, updated 21:20), Fox News live 11 Nov, straits.live 11 Nov brief; Ambrey via Reuters/Devdiscourse 12 Nov",
+   "url": "https://www.arabnews.com/middle-east/iran-attacks-shipping-navigation-systems-on-omans-didamar-island-sources-say-3011095",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "One UKMTO tanker incident reported Wed 11 Nov ('second tanker incident in under 24 hours' per straits.live; Reuters: 'unclear whether it was the same vessel' as the tanker Iran's army said hit a mine early Wednesday). No UKMTO reference number, position or time surfaced; UKMTO site not in results; shipandbunker/aa.com.tr write-ups unreachable. Separately Ambrey (not UKMTO) reported a projectile strike 14nm NW Ras Al Khaimah on Wed 11 Nov. IRGC claims 12 Nov of two burning supertankers have no maritime-authority confirmation as of fetch. No JMIC advisory surfaced.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "War-risk premium, % of hull (November quote)",
+   "series": "war_risk.premium_pct_hull",
+   "value": null,
+   "unit": "% of hull value",
+   "period_end": "2026-11-11",
+   "source": "none for November; CES Intelligence analysis citing Marsh/FT (14 Oct) and S&P Global",
+   "url": "https://www.ces-intelligence.com/analysis/strait-of-hormuz-war-risk-insurance-2026-daily-signal",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "No November market quote found. Latest printed: 6-10% of tanker hull value (Marsh's Marcus Baker via FT, 14 Oct); S&P Global 7.5-10% at peak; pre-war ~0.25%. Reuters 11 Nov: charter rates above $1 million a day, crew hiring costs tripled; no premium figure.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Baltic TD3C (MEG-China VLCC), 11 Nov",
+   "series": "td3c",
+   "value": null,
+   "unit": "Worldscale",
+   "period_end": "2026-11-11",
+   "source": "none for 11 Nov; Baltic Exchange weekly report 6 Nov via DCN",
+   "url": "https://www.thedcn.com.au/news/baltic-exchange-weekly-report-6-november-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "No 11 Nov print. Latest published: 6 Nov TD3C WS1,220.63, round-trip TCE $1,303,616/day, 'fallen almost 47 points since last Friday'. Outside the gate; recorded here only as context.",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-12",
+   "name": "OFAC Iran-related actions 11-12 Nov",
+   "series": "ofac.iran_actions",
+   "value": null,
+   "unit": "actions",
+   "period_end": "2026-11-12",
+   "source": "Federal Register 'Notice of OFAC Sanctions Action' 2026-23009, published 12 Nov 2026",
+   "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23009/notice-of-ofac-sanctions-action",
+   "fetched_how": "WebFetch failed (robots_disallowed)",
+   "status": "unreachable",
+   "note": "A Federal Register OFAC notice is dated 12 Nov but could not be read; program and names unknown. No OFAC recent-actions page dated 10-12 Nov surfaced in search. Other OFAC/State items in results were dated 4-9 Nov (already covered or discarded).",
+   "group": "standoff"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "OPEC MOMR: October output change (context for B1-oil)",
+   "series": "opec.output_change_mbd",
+   "value": 2.0,
+   "unit": "mb/d m/m (October)",
+   "period_end": "2026-10-31",
+   "source": "DTN 11 Nov 2026 citing OPEC monthly oil market report published Wednesday; Gulf News/Bloomberg 12 Nov",
+   "url": "https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/11/oil-futures-halt-sell-rebound-two",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "DTN: OPEC output rose by 2 million b/d in October to 'the highest since the beginning of the conflict', led by Saudi Arabia, Kuwait and Iraq. Gulf News: Saudi told OPEC its October output rose 26%; Iraq a new wartime high (no figure).",
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Rezaei: Iran will not remove 'a single particle' of enriched nuclear material from the country",
+   "headline": "Rezaei: Iran will not remove 'a single particle' of enriched nuclear material from the country",
+   "source": "CBS News live (citing IRIB), 11 Nov 2026; Gulf News/Bloomberg 12 Nov (Al Mayadeen interview); CappNotes 11 Nov",
+   "url": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T2",
+   "late": false,
+   "claim": "Mohsen Rezaei, secretary of Iran's Supreme National Security Council, said on 11 Nov (IRIB / Al Mayadeen) that Tehran 'will not remove even a single particle of enriched nuclear material from the country', rebuking a reported element of the proposal Qatari mediators carried to the White House on Monday. Washington lists removal as a key condition for negotiations. DTN and CappNotes tie Wednesday's oil rebound to this statement.",
+   "other_urls": [
+    "https://gulfnews.com/business/energy/oil-heads-for-two-month-low-as-middle-east-output-rises-1.500744554",
+    "https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/11/oil-futures-halt-sell-rebound-two"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Russia: offer to take Iran's enriched uranium remains on the table; Tehran told Moscow no material will leave",
+   "headline": "Russia: offer to take Iran's enriched uranium remains on the table; Tehran told Moscow no material will leave",
+   "source": "Iran International liveblog, 11 Nov 2026 15:24 GMT",
+   "url": "https://www.iranintl.com/en/liveblog/202611077068",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T2",
+   "late": false,
+   "claim": "Russian foreign ministry spokeswoman Maria Zakharova said 11 Nov that Moscow's offer to take custody of Iran's enriched uranium remains open and that Tehran alone decides the stockpile's fate. Rezaei said Iran had told Moscow that no enriched material would leave the country. Separately, Russian official Maxim Maksimov (TASS) called the US pressure campaign 'misguided and counterproductive'.",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Rezaei: if US attacks Pickaxe Mountain, Iran will hit all US bases including in Europe - 'NO SAFE DISTANCE. NO SAFE HAVEN.'",
+   "headline": "Rezaei: if US attacks Pickaxe Mountain, Iran will hit all US bases including in Europe - 'NO SAFE DISTANCE. NO SAFE HAVEN.'",
+   "source": "ABC News live, 11 Nov 2026 1:32 PM EST (Al Mayadeen via IRIB); Iran International 12 Nov 09:30 UTC",
+   "url": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T4",
+   "late": false,
+   "claim": "Rezaei told Al Mayadeen on 11 Nov that if the US attacks the Pickaxe Mountain site Iran would target all US bases, including in European countries, and that any new US attack would not last more than 4-5 days. On X he wrote 'NO SAFE DISTANCE. NO SAFE HAVEN. NO IMMUNITY.' Deputy armed forces chief Heydari said an expanded target list beyond the Middle East was prepared; IRGC adviser Naghdi said forces were authorized to retaliate without geographic limits under Mojtaba Khamenei's orders.",
+   "other_urls": [
+    "https://www.iranintl.com/en/202611111877"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Trump at Arlington: 'We won. It's just a question of when we end it' - wants 'total victory', war to end 'soon'",
+   "headline": "Trump at Arlington: 'We won. It's just a question of when we end it' - wants 'total victory', war to end 'soon'",
+   "source": "ABC News live 11 Nov 2026 1:23 PM EST; Iran International liveblog 17:23 GMT",
+   "url": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T4",
+   "late": false,
+   "claim": "At the Veterans Day ceremony on 11 Nov Trump said 'America did not start a war with Iran', that the US had already won militarily, that Iran would need 25 years to rebuild, that he wants 'a total victory, not a 93 percent victory', and that the conflict 'will be [over] soon' with no timeline. He cited 18 US service members killed.",
+   "other_urls": [
+    "https://www.iranintl.com/en/liveblog/202611077068"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Rubio to G7 (closed door, Axios): US 'largely staying the course', won't 'do a stupid deal'",
+   "headline": "Rubio to G7 (closed door, Axios): US 'largely staying the course', won't 'do a stupid deal'",
+   "source": "Fox News live (citing Axios), 11 Nov 2026 ~07:00 EST",
+   "url": "https://www.foxnews.com/live-news/rubio-iran-war-strikes-economic-crackdown-continues-11-11-26",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T1",
+   "late": false,
+   "claim": "Per three attendees cited by Axios, Rubio told G7 foreign ministers in Paris that the US was 'largely staying the course', would not 'do a stupid deal', and that the third option is to 'continue to do what we do now'. Trump and Rubio reportedly agree Iran wants a deal but is demanding unrealistic terms; Rubio, Ratcliffe, Kushner and Bessent favor continued economic pressure. G7 ministers pledged to maintain pressure if diplomacy fails.",
+   "other_urls": [
+    "https://www.iranintl.com/en/202611111877"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "WSJ: Vance weighing direct talks with Rezaei, possibly in Doha; Iran says it rejected the request",
+   "headline": "WSJ: Vance weighing direct talks with Rezaei, possibly in Doha; Iran says it rejected the request",
+   "source": "Middle East Eye live, 12 Nov 2026 06:25 GMT (WSJ); Iran International 12 Nov 09:30 UTC; Newsquawk 12 Nov 10:35 UTC",
+   "url": "https://www.middleeasteye.net/live-blog/live-blog-update/vance-reportedly-considers-direct-talks-irans-top-security-chief-rezaei",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T1",
+   "late": false,
+   "claim": "The Wall Street Journal, citing several US and Middle Eastern officials, reported that VP JD Vance is considering face-to-face talks with Mohsen Rezaei, with Doha a possible venue; no timing given. Rezaei denied it and Mehdi Mohammadi, adviser to speaker Ghalibaf, said Tehran had rejected the request. Newsquawk notes crude eased on the WSJ headline on 12 Nov. (Update vs 11-11 file: Kalin/Tasnim Qatar-talks item.)",
+   "other_urls": [
+    "https://www.iranintl.com/en/202611111877",
+    "https://newsquawk.com/headlines/newsquawk-daily-us-opening-news---12th-november-2026"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Ghalibaf: Iran may end 'no war, no peace' through deterrence without talks; US has not answered the seven conditions and asked Putin to mediate",
+   "headline": "Ghalibaf: Iran may end 'no war, no peace' through deterrence without talks; US has not answered the seven conditions and asked Putin to mediate",
+   "source": "Iran International liveblog, 11 Nov 2026 16:33 GMT; straits.live 11 Nov (Saba)",
+   "url": "https://www.iranintl.com/en/liveblog/202611077068",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T1",
+   "late": false,
+   "claim": "Parliament speaker Mohammad Bagher Ghalibaf said 11 Nov that Iran may end the state of neither war nor peace through military deterrence, potentially without negotiations; that Washington had not answered Iran's seven conditions for reopening Hormuz; and that US officials had asked Putin to mediate. On 12 Nov an unnamed Iranian advisor (Al Jazeera breaking, via Newsquawk 10:53 UTC) said there will be no negotiations if the seven conditions are not met.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/iranian-advisor-says-if-the-seven-conditions-are-not-met-there-will-be-no-negotiations",
+    "https://straits.live/briefs/2026-11-11"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-10",
+   "name": "Araghchi (IRNA): Hormuz could reopen within two days if demands are met; conflict 'will not be resolved through military means'",
+   "headline": "Araghchi (IRNA): Hormuz could reopen within two days if demands are met; conflict 'will not be resolved through military means'",
+   "source": "Al Jazeera, 11 Nov 2026 (statement Tuesday 10 Nov to IRNA)",
+   "url": "https://www.aljazeera.com/news/2026/11/11/iran-denies-talks-with-us-says-hormuz-will-stay-shut-until-demands-are-met",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T1",
+   "late": true,
+   "claim": "Foreign Minister Abbas Araghchi told IRNA on Tuesday 10 Nov that the Strait of Hormuz could reopen within two days if Iran's demands are met, and that 'the conflict with Iran will not be resolved through military means, nor by intensifying sanctions.' Iran has not published the full list of seven conditions; Rezaei and Araghchi say it includes lifting sanctions, ending the US naval blockade and ending fighting on all fronts including Lebanon.",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Pezeshkian at COP31: negotiations possible but Iran won't yield to pressure; Pakistan's Sharif urges restraint",
+   "headline": "Pezeshkian at COP31: negotiations possible but Iran won't yield to pressure; Pakistan's Sharif urges restraint",
+   "source": "Iran International, 12 Nov 2026 09:30 UTC (events of 11 Nov); liveblog 11 Nov 14:46-16:09 GMT",
+   "url": "https://www.iranintl.com/en/202611111877",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T1",
+   "late": false,
+   "claim": "President Masoud Pezeshkian, at the COP31 summit in Antalya on 11 Nov, said negotiations were possible but Iran would not yield to pressure; he invoked the late Ali Khamenei's opposition to nuclear weapons and held talks with Iraq's president and Norway's PM. Pakistani PM Shehbaz Sharif called for restraint and said negotiations were the only path to lasting peace.",
+   "other_urls": [
+    "https://www.iranintl.com/en/liveblog/202611077068"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "Press TV: Iran and Oman reach agreement on maritime traffic through the Strait",
+   "headline": "Press TV: Iran and Oman reach agreement on maritime traffic through the Strait",
+   "source": "Newsquawk, 12 Nov 2026 06:40 UTC, citing Press TV",
+   "url": "https://www.newsquawk.com/headlines/irans-press-tv-states-that-iran-and-oman-have-reached-an-agreement-on-maritime-traffic-through-the-strait-while-iran-says-7-conditions-must-be-met-for-talks-and-hormuz-reopening-according-to-press-tv",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "M4",
+   "late": false,
+   "claim": "Iran's state Press TV reported on 12 Nov that Iran and Oman have reached an agreement on maritime traffic through the Strait of Hormuz, while restating that seven conditions must be met for talks and a reopening. No terms were given and there is no Omani confirmation in the fetched sources. Comes a day after Reuters sources said Iran attacked navigation systems on Oman's Didamar island.",
+   "other_urls": [
+    "https://newsquawk.com/headlines/newsquawk-daily-us-opening-news---12th-november-2026"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Reuters sources: Iran attacked ship navigation systems on Oman's Didamar island in the Strait",
+   "headline": "Reuters sources: Iran attacked ship navigation systems on Oman's Didamar island in the Strait",
+   "source": "Arab News (Reuters), 11 Nov 2026 06:24 GMT+3, updated 21:20",
+   "url": "https://www.arabnews.com/middle-east/iran-attacks-shipping-navigation-systems-on-omans-didamar-island-sources-say-3011095",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "M4",
+   "late": false,
+   "claim": "Three sources told Reuters that Iran attacked ship navigation systems on the Omani island of Didamar; Iranian state media said the IRGC destroyed 'enemy navigation systems' there (claimed Tuesday 10 Nov). Reuters verified smoke in video and Copernicus thermal activity but no damage assessment. Two shipping sources and a maritime security source said the impact on commercial shipping would likely be limited. CENTCOM and Oman's media ministry did not respond.",
+   "other_urls": [
+    "https://www.iranintl.com/en/202611111877"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Ambrey: outbound merchant vessel struck by unknown projectile 14nm NW of Ras Al Khaimah, engine-room fire, no injuries",
+   "headline": "Ambrey: outbound merchant vessel struck by unknown projectile 14nm NW of Ras Al Khaimah, engine-room fire, no injuries",
+   "source": "Devdiscourse (Reuters), 12 Nov 2026 15:15 IST; Newsquawk 12 Nov",
+   "url": "https://www.devdiscourse.com/article/international/4005732-merchant-vessel-struck-by-unknown-projectile-off-uaes-ras-al-khaimah-ambrey-says",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "M2",
+   "late": false,
+   "claim": "Maritime security firm Ambrey said a merchant vessel heading out of the Strait of Hormuz was struck on the stern by an unknown projectile 14 nautical miles northwest of Ras Al-Khaimah, UAE, on Wednesday 11 Nov, causing an engine-room fire; no injuries or pollution reported. Vessel type and name not given; no UKMTO advisory mentioned in the fetched text.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/ambrey-says-a-merchant-vessel-was-struck-by-an-unknown-projectile-14-nm-off-uaes-ras-al-khaimah-on-wednesday"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Iran's army says a tanker hit a mine early Wednesday after entering a prohibited area; UKMTO reports a tanker incident, unclear if same vessel",
+   "headline": "Iran's army says a tanker hit a mine early Wednesday after entering a prohibited area; UKMTO reports a tanker incident, unclear if same vessel",
+   "source": "Arab News (Reuters) 11 Nov 2026; Fox News live 11 Nov (AP); straits.live 11 Nov",
+   "url": "https://www.arabnews.com/middle-east/iran-attacks-shipping-navigation-systems-on-omans-didamar-island-sources-say-3011095",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "M2",
+   "late": false,
+   "claim": "Iran's army said on Wednesday 11 Nov that an oil tanker struck a mine and caught fire after entering a prohibited area; UKMTO separately reported a tanker incident in the Strait the same day (straits.live: the second tanker incident in under 24 hours), and Reuters said it was unclear whether it was the same vessel. The IRGC's running claim is now three tankers hit by mines on 'unauthorised routes' on 10-11 Nov; no maritime authority has confirmed the mine attribution. (Update vs 11-11 file: IRGC 'third mine-struck tanker' claim.)",
+   "other_urls": [
+    "https://www.foxnews.com/live-news/rubio-iran-war-strikes-economic-crackdown-continues-11-11-26",
+    "https://straits.live/briefs/2026-11-11"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "IRGC Navy: two supertankers carrying >4 million barrels exploded and are burning on the 'southern route'",
+   "headline": "IRGC Navy: two supertankers carrying >4 million barrels exploded and are burning on the 'southern route'",
+   "source": "TASS, 12 Nov 2026 (dateline Tehran); Newsquawk 12 Nov",
+   "url": "https://tass.com/world/2216937",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "M2",
+   "late": false,
+   "claim": "The IRGC Navy public relations office said on 12 Nov that two supertankers carrying more than four million barrels of oil in total 'stopped after a very strong explosion' and caught fire while sailing the unauthorized southern route of the Strait despite warnings from its 'Hormuz Strait traffic control center'; it did not say what caused the explosions and warned any vessel that turns off navigation systems and cooperates with US forces would face the same fate. No vessel names; no UKMTO/Ambrey confirmation in fetched sources. Brent spiked to a 93.94 session high on the headline then unwound (Newsquawk).",
+   "other_urls": [
+    "https://newsquawk.com/headlines/newsquawk-daily-us-opening-news---12th-november-2026",
+    "https://english.alarabiya.net/News/middle-east/2026/11/12/iran-says-two-oil-tankers-carrying-over-four-million-barrels-ablaze-in-hormuz-strait"
+   ],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "Saudi-led coalition: 3 Houthi cruise missiles toward Riyadh and 2 drones intercepted 11-12 Nov; Houthis claim KKIA hit",
+   "headline": "Saudi-led coalition: 3 Houthi cruise missiles toward Riyadh and 2 drones intercepted 11-12 Nov; Houthis claim KKIA hit",
+   "source": "House of Saud (citing Asharq Al-Awsat, Anadolu, Xinhua, Reuters), 12 Nov 2026 09:44 UTC",
+   "url": "https://houseofsaud.com/coalition-intercepts-cruise-missiles-drones-riyadh-makkah-nov12/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T4",
+   "late": false,
+   "claim": "Coalition spokesman Maj. Gen. Turki al-Maliki said in two statements (evening 11 Nov and early 12 Nov) that three Houthi cruise missiles launched toward the Riyadh region were intercepted and destroyed, and two drones were shot down over Makkah and the southern border. Saudi Civil Defence said debris from two intercepted ballistic missiles fell in the Makkah region. Houthi spokesman Yahya Saree claimed the cruise missiles hit King Khalid International Airport. DTN separately notes Houthi missiles at East-West pipeline pumping stations on Tuesday (already recorded).",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Bessent moves to a military base after Iranian threats reach 'more than an advanced stage'; Miller and Rubio also relocated",
+   "headline": "Bessent moves to a military base after Iranian threats reach 'more than an advanced stage'; Miller and Rubio also relocated",
+   "source": "Fox News live, 11 Nov 2026 (senior administration official)",
+   "url": "https://www.foxnews.com/live-news/rubio-iran-war-strikes-economic-crackdown-continues-11-11-26",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T4",
+   "late": false,
+   "claim": "A senior administration official said Iranian threats against Treasury Secretary Scott Bessent, described as the architect of 'Operation Economic Outcast', had reached 'more than an advanced stage', so he and his family moved to a military base; a Treasury spokesperson said he 'will not be deterred'. The update adds that Stephen Miller and Rubio have also moved to military or protected housing in recent weeks.",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Baghaei (ISNA): US 'falsely portrays itself as a victim of Iranian terrorism', accuses Washington of war crimes and state terrorism",
+   "headline": "Baghaei (ISNA): US 'falsely portrays itself as a victim of Iranian terrorism', accuses Washington of war crimes and state terrorism",
+   "source": "Newsquawk, 11 Nov 2026 23:30 UTC, citing ISNA",
+   "url": "https://www.newsquawk.com/headlines/irans-foreign-ministry-spokesman-baghaei-says-the-us-falsely-portrays-itself-as-a-victim-of-iranian-terrorism-while-he-accuses-the-us-of-war-crimes-and-state-terrorism-according-to-isna",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "T4",
+   "late": false,
+   "claim": "Iranian foreign ministry spokesman Esmail Baghaei said via ISNA late 11 Nov that the US falsely portrays itself as a victim of Iranian terrorism, and accused Washington of war crimes and state terrorism. Rhetorical, no policy content.",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Allianz Trade: physical war damage across Gulf states 'just above $200bn', mostly in Hormuz-locked economies",
+   "headline": "Allianz Trade: physical war damage across Gulf states 'just above $200bn', mostly in Hormuz-locked economies",
+   "source": "CBS News live, 11 Nov 2026",
+   "url": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "O",
+   "late": false,
+   "claim": "Insurer Allianz Trade reported on 11 Nov that physical damage across the Gulf region from the Iran war is assessed 'just above $200bn, mostly concentrated in Hormuz-locked economies', with total economic costs possibly reaching about four times that by 2030.",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Reuters: 'Hormuz traffic is up. So are the attacks' - 37 vessels hit in October, charter rates above $1m/day, 130 IMO-confirmed incidents since 28 Feb",
+   "headline": "Reuters: 'Hormuz traffic is up. So are the attacks' - 37 vessels hit in October, charter rates above $1m/day, 130 IMO-confirmed incidents since 28 Feb",
+   "source": "BOE Report (Reuters), 11 Nov 2026 16:04 UTC",
+   "url": "https://boereport.com/2026/11/11/hormuz-traffic-is-up-so-are-the-attacks",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "M3",
+   "late": false,
+   "claim": "Reuters reported 11 Nov that 37 vessels were hit in October (Washington Institute), the worst month of the war; IMO has confirmed 130 incidents and at least 25 seafarers killed since 28 Feb; 11 supertankers damaged by 23 Oct. S&P Global counted 31 LNG tankers leaving the strait in October vs 23 in September, with UAE LNG traffic back to prewar levels and Qatar at just over 30%. Charter rates are above $1 million a day, crew hiring costs tripled; no war-risk premium figure printed.",
+   "other_urls": [],
+   "group": "standoff"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "OPEC MOMR: October output +2 mb/d to highest since the conflict began; Saudi +26%",
+   "headline": "OPEC MOMR: October output +2 mb/d to highest since the conflict began; Saudi +26%",
+   "source": "DTN, 11 Nov 2026 9:11 AM CST; Gulf News/Bloomberg 12 Nov",
+   "url": "https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/11/oil-futures-halt-sell-rebound-two",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_tell": "O",
+   "late": false,
+   "claim": "OPEC's monthly report published Wednesday 11 Nov showed output rose 2 million b/d in October to the highest since the conflict began, led by Saudi Arabia, Kuwait and Iraq; Saudi Arabia told OPEC its output rose 26% in October and Iraq hit a wartime high. DTN: Iranian strikes on commercial vessels 'seemed to have done little to disrupt crude supply'; Saudi crude routed via the East-West pipeline to the Red Sea.",
+   "other_urls": [
+    "https://gulfnews.com/business/energy/oil-heads-for-two-month-low-as-middle-east-output-rises-1.500744554"
+   ],
+   "group": "standoff"
+  }
+ ]
+}

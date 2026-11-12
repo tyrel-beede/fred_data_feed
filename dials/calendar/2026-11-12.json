@@ -1,0 +1,313 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-12T05:10:00-07:00",
+ "run_weekday": "Thu",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "Alphabet HKD/SGD deal: launch sizes (HKD 16bn / SGD 2.28bn) and final yield guidance captured from Newsquawk/Reuters relays, but no page printed per-tranche final sizes or confirmed reoffer coupons; Alphabet FWP/424B5 for the Asian deal not surfaced on sec.gov yet. Nebius Q3 2026 release: Business Wire relay (financialcontent.com) returned a server error and nebius.com newsroom snapshot did not yet list the item; occurrence recorded from a secondary summary (runtimewire) only, headline figures unverified. Unreachable pages: gurufocus.com Alphabet article (client error), fourweekmba.com Alphabet HK/SG article (client error), proactiveinvestors.com SoftBank article (client error, stale item anyway), qz.com Anthropic oversubscribed article (client error), financialcontent.com Nebius Q3 release (server error). Wednesday 11-11 IG issuance total: no page printed a figure; SIFMA full close recorded via financecalendar.com relay (not SIFMA page itself). ORCL FQ2 and MU FQ1 dates remain aggregator-only (unverified).",
+ "gate": {
+  "since": "2026-11-10",
+  "note": "Prior run captured through 2026-11-11 ~05:20 MST. New = items dated 11-11 after that or 11-12. Equinix EUR 2.5bn green bond (announced 11-10) and SoftBank USD/EUR bond (Sep 2026) fall before the gate and are discarded."
+ },
+ "notes": "Alphabet debut HKD/SGD deal launched in Asian hours 11-12 at HKD 16bn (3-part) + SGD 2.28bn (4-part), roughly USD 3.75bn eq. vs ~USD 3bn target; guidance tightened ~25bp on every tranche from IPT; books >USD 7bn combined incl. JLM interest. CoreWeave: Bloomberg 11-11 evening reports a >=USD 4bn investment-grade loan (Morgan Stanley/MUFG) that may launch next week, talk 7-7.5% yield. Anthropic: Bloomberg 11-11 says book multiple times oversubscribed; FT says bankers weigh pricing above USD 78 (>= USD 1.5tn); pricing still 11-18, trading 11-19. Renaissance YTD count unchanged at 121 (as of 11/11). Bond market closed 11-11 (SIFMA full close), so no US IG issuance that day. Nebius Q3 appears to have been released 11-12 before the open (Business Wire title surfaced) but primary text not retrievable at run time.",
+ "sources": [
+  {
+   "query": "Alphabet Hong Kong dollar Singapore dollar bonds priced November 12 2026",
+   "result": "hit",
+   "note": "gurufocus (unreachable), asiaone, herecharleston (Bloomberg relay), lapaasvoice, SEC FWP (older US deal)"
+  },
+  {
+   "query": "Google Alphabet SGD HKD bond launched guidance tightened book orders November 2026",
+   "result": "hit",
+   "note": "Newsquawk launch headline HKD 16bn / SGD 2.28bn; yahoo/Bloomberg 'Kicks Off Asia Bond Sale'; SRN/Reuters IPT term sheet"
+  },
+  {
+   "query": "renaissancecapital.com IPO news November 11 2026 November 12 2026",
+   "result": "hit",
+   "note": "News page and Stats page fetched"
+  },
+  {
+   "query": "Anthropic IPO pricing demand valuation November 12 2026",
+   "result": "hit",
+   "note": "enterpriseam 11-12 roundup fetched"
+  },
+  {
+   "query": "Nebius third quarter 2026 results press release November 12 2026",
+   "result": "partial",
+   "note": "SEC 6-K links were Q2 docs; no Q3 6-K surfaced"
+  },
+  {
+   "query": "investment grade bond issuance Veterans Day November 11 2026 bond market closed week supply",
+   "result": "partial",
+   "note": "only holiday-closure pages; no IG volume figure"
+  },
+  {
+   "query": "Alphabet prices HK$16 billion S$2.28 billion bonds tranches 4.35% 2.50% final pricing",
+   "result": "partial",
+   "note": "fourweekmba (unreachable), investing.com/Reuters IPT, boursorama FR relays"
+  },
+  {
+   "query": "\"Alphabet\" Hong Kong dollar bond \"HK$16 billion\" OR \"HK$16bn\" priced tranche sizes 2-year 5-year 10-year",
+   "result": "no hit",
+   "note": "no per-tranche final sizes"
+  },
+  {
+   "query": "CoreWeave bond 14% November 2026 notes offering priced",
+   "result": "hit",
+   "note": "fourweekmba CoreWeave $4B IG loan article"
+  },
+  {
+   "query": "AI data center bond deal priced November 11 2026 OR November 12 2026 Meta OpenAI xAI Oracle SoftBank Vantage ABS CMBS",
+   "result": "partial",
+   "note": "hervecuviliez 11-11 newsletter (no issuance), nodiligence Day 55 (11-12) fetched"
+  },
+  {
+   "query": "CoreWeave $4 billion investment-grade loan delayed draw term loan November 2026",
+   "result": "hit",
+   "note": "investing.com Bloomberg relay 11-11 18:13"
+  },
+  {
+   "query": "nebius.com newsroom \"Nebius reports third quarter 2026 financial results\"",
+   "result": "partial",
+   "note": "financialcontent Business Wire relay titled Q3 results dated 2026-11-12 surfaced but fetch failed (server error); nebius.com newsroom snapshot had no 11-12 item"
+  },
+  {
+   "query": "Oracle second quarter fiscal 2027 earnings date announcement December 2026",
+   "result": "no hit",
+   "note": "aggregators only; marketbeat page stale (Dec 8 2025 estimated)"
+  },
+  {
+   "query": "Micron fiscal first quarter 2027 financial results conference call date December 2026",
+   "result": "no hit",
+   "note": "Wall Street Horizon lists 12/23/2026 UNCONFIRMED"
+  },
+  {
+   "query": "SIFMA Veterans Day November 11 2026 bond market full close recommendation",
+   "result": "hit",
+   "note": "financecalendar.com relay of SIFMA full-close recommendation"
+  },
+  {
+   "query": "high-grade bond issuance Thursday November 12 2026 deals launched investment grade calendar",
+   "result": "no hit",
+   "note": "no daily IG tally page"
+  },
+  {
+   "query": "Meta OR Amazon OR Microsoft OR Oracle OR xAI OR OpenAI OR SoftBank bond sale November 12 2026",
+   "result": "no hit",
+   "note": "only pre-gate items (SoftBank Sep, Oracle 11-02, Meta Oct)"
+  },
+  {
+   "query": "Nebius Q3 2026 results revenue capex guidance November 12",
+   "result": "partial",
+   "note": "runtimewire summary (paywalled body) says Q3 revenue $981M +571% YoY, capex guidance raised"
+  },
+  {
+   "query": "Anthropic IPO above range pricing bankers November 11 2026 Bloomberg oversubscribed",
+   "result": "hit",
+   "note": "Bloomberg 11-11 oversubscribed; syzgroup 11-11 note; qz unreachable"
+  },
+  {
+   "query": "data center ABS OR CMBS priced November 2026 Vantage OR Aligned OR Stack OR CyrusOne OR Hyperion",
+   "result": "partial",
+   "note": "contrarianunicus 11-05: ~$500M data-center loan auction incl. Stargate NM slice, bids due 11-19 (pre-gate, discarded)"
+  },
+  {
+   "query": "stocktitan NBIS \"third quarter 2026\" Nebius reports results $981 million revenue",
+   "result": "no hit",
+   "note": "SEC links all Q2/Q1 docs"
+  },
+  {
+   "query": "Vertiv Q4 2026 earnings date announcement OR Arista fourth quarter 2026 results date OR GE Vernova investor update December 2026",
+   "result": "no hit",
+   "note": "aggregators only; no company announcement"
+  },
+  {
+   "query": "Alphabet Hong Kong Singapore bonds priced \"HK$\" \"S$\" final yield 4.35% 5.20% 3.80% sizes tranche Thursday",
+   "result": "partial",
+   "note": "thestandard.com.hk early-orders article; still 'final deal sizes and pricing not immediately available'"
+  }
+ ],
+ "discarded": [
+  "Equinix EUR 2.5bn green bonds announced 11-10 (pre-gate; not a registered ticker)",
+  "SoftBank USD 10bn + EUR 1bn notes priced 2026-09-24 (pre-gate)",
+  "Oracle USD 10bn bonds 11-02 and ~USD 10bn equity (pre-gate, already recorded)",
+  "~USD 500M data-center loan auction incl. Stargate NM slice, Vantage, CyrusOne debt, bids due 11-19 (reported 11-05, pre-gate)",
+  "Renaissance 11-10 items (American Barrick Gold $6bn filing; Anthropic terms) — prior run window",
+  "marketbeat ORCL earnings page (stale: shows Dec 8 2025)",
+  "UST 30-year auction 11-12 13:00 ET: schedule unchanged, result not yet printed at run time"
+ ],
+ "items": [
+  {
+   "kind": "deal",
+   "as_of": "2026-11-12",
+   "name": "Update vs 11-11 file: Alphabet debut HKD/SGD bonds launched 11-12 Asian hours",
+   "issuer": "Alphabet Inc. (GOOGL)",
+   "size": "HKD 16bn (3-part) + SGD 2.28bn (4-part), ~USD 3.75bn eq. vs ~USD 3bn targeted; company had weighed minimum sizes HKD 8bn / SGD 1.5bn",
+   "tranches": "HKD: 2028 (2y), 2031 (5y), 2036 (10y); SGD: 2028 (2y), 2031 (5y), 2036 (10y), 2056 (30y). Settlement 2026-11-19. Expected ratings Aa2/AA+",
+   "spread_vs_ipt": "Yield guidance (not spread): HKD 2028 4.60%->4.35%, 2031 5.00%->4.70%, 2036 5.50%->5.20%; SGD 2028 2.75%->2.50%, 2031 3.25%->3.00%, 2036 3.65%->3.40%, 2056 4.00%->3.80% (final guidance ~25-30bp inside IPT on every tranche; reoffer coupons not printed)",
+   "book": ">USD 7bn combined incl. JLM interest: HKD >HKD 32.5bn (~USD 4.1bn, incl. HKD 13.23bn from JLMs); SGD >SGD 4bn (~USD 3.1bn, incl. SGD 965m from JLMs). Earlier print ~USD 5bn (HKD >24bn, SGD >2.5bn)",
+   "source": "Newsquawk launch headline 11-12 11:16 UTC; Bloomberg relay (HERE Charleston 11-12 06:01 ET); Reuters relays (SRN News, AsiaOne, The Standard HK); Lapaas Voice",
+   "url": "https://www.newsquawk.com/headlines/alphabet-googl-launches-hkd-16bln-three-part-hong-kong-dollar-bond-offering-launches-sgd-228bln-four-part-singapore-dollar-bond-offering",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "JGCs HSBC, JPMorgan; HKD arrangers BOCHK, ICBC, StanChart; SGD arrangers DBS, OCBC, UOB. Use of proceeds GCP incl. debt repayment. Per-tranche final sizes and confirmed coupons not printed by any reachable page; SEC FWP for this deal not yet surfaced. Context per Bloomberg: follows EUR 6bn sale last week, USD 25bn USD deal, AUD 5.5bn in August.",
+   "other_urls": [
+    "https://www.herecharleston.com/2026/11/12/alphabet-hong-kong-singapore-dollar-bonds-7-billion-orders/",
+    "https://srnnews.com/alphabet-sets-initial-price-guidance-for-hong-kong-singapore-bond-sales-term-sheet-shows/",
+    "https://www.asiaone.com/money/alphabets-debut-hong-kong-singapore-bond-sales-draw-about-64b-early-orders",
+    "https://lapaasvoice.com/alphabets-debut-hong-kong-and-singapore-bond-sales-draw-over-7-billion-in-orders",
+    "https://www.thestandard.com.hk/finance/article/348286/Alphabets-debut-Hong-Kong-Singapore-bond-sales-draw-about-US5-billion-in-early-orders",
+    "https://finance.yahoo.com/technology/ai/articles/alphabet-kicks-off-asia-bond-011249415.html"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "deal",
+   "as_of": "2026-11-11",
+   "name": "CoreWeave plans >=USD 4bn investment-grade loan (Bloomberg)",
+   "issuer": "CoreWeave (CRWV)",
+   "size": ">= USD 4bn",
+   "tranches": "Investment-grade loan facility secured by compute hardware and customer commitments, syndicated in phases; mirrors USD 8.5bn DDTL 4.0 (March 2026, A3, SOFR+225 floating / ~5.9% fixed)",
+   "spread_vs_ipt": "Early talk 7.0-7.5% yield (CFO on 11-10 call: next DDTL should yield 7-7.5% based on current SOFR); not launched",
+   "book": "not announced",
+   "source": "Bloomberg 11-11 22:42 UTC via Investing.com (published 11-11 18:13 ET) and FourWeekMBA",
+   "url": "https://www.investing.com/news/stock-market-news/coreweave-plans-4-billion-highgrade-loan-bloomberg-reports-5020048",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Leads Morgan Stanley and MUFG; could launch as early as week of 11-16; terms subject to change; no SEC filing as of 11-11 23:00 UTC. Context: CRWV 9.625% 2032 notes traded 82.50 = 14.21% yield on 11-11 (TRACE via FourWeekMBA). FY26 revenue outlook raised to USD 13-13.3bn.",
+   "other_urls": [
+    "https://fourweekmba.com/ai-coreweave-plans-4b-investment-grade-loan-bonds-yield-14/",
+    "https://nodiligence.substack.com/p/day-55-the-ai-build-leans-on-customers"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "US IG issuance Wednesday 11-11 (Veterans Day, SIFMA full close)",
+   "series": "ig.issuance.daily_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "period_end": "2026-11-11",
+   "source": "financecalendar.com relay of SIFMA holiday recommendation",
+   "url": "https://www.financecalendar.com/event/bond-market-veterans-day-2026/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "Page: SIFMA 'recommends a full close for Veterans Day' (all day, full closure) for 11-11-2026. No page printed an IG volume figure for the day; nil issuance implied by the closure but not printed by a market-wrap source. Also no 11-12 IG calendar page found.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-11",
+   "name": "Renaissance Capital US IPOs priced YTD",
+   "series": "ipo.us.ytd.count",
+   "value": 121,
+   "unit": "count",
+   "period_end": "2026-11-11",
+   "source": "Renaissance Capital 2026 IPO Market Stats",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged from prior run (121). Page as of 11/11/2026: 121 priced (-36.0% y/y), proceeds USD 148.6bn (+314.1% y/y), 215 filed (-8.5% y/y); market cap >= USD 50m.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-11",
+   "name": "Renaissance Capital news 11-11 / 11-12",
+   "size": "n/a",
+   "priced": "none",
+   "source": "Renaissance Capital IPO News",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "11-11: 'Which AI companies could go public after Anthropic?' (related ANT, MAIR, FPS, INIO, NSCL, DODC, SBE); 'IPO Weekly Weigh-in: This new AI stock has a debt problem' (tagged CRWV, teaser only). No pricings, terms set, filings or withdrawals dated 11-11; no items dated 11-12 at run time.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-11",
+   "name": "Update vs 11-11 file: Anthropic (ANT) IPO multiple times oversubscribed; bankers weigh pricing above range",
+   "size": "825m shares at USD 70-78 (~USD 61bn at midpoint; up to ~USD 64.4bn; banks' option 123.75m more shares); plus USD 26bn non-voting Class N placement (Google, Nvidia ~USD 10bn each; AMD 2.5bn; Broadcom, Micron, Microsoft 1bn each; TSMC 0.5bn)",
+   "priced": "not yet; pricing expected Wed 2026-11-18, Nasdaq trading on/around Thu 2026-11-19",
+   "source": "Bloomberg 11-11 (oversubscribed) and FT (above-range) via EnterpriseAM 11-12 and Syz Group 11-11",
+   "url": "https://enterpriseam.com/ai/2026/11/12/anthropics-ipo-draws-heavy-demand-and-could-still-fetch-a-usd-1-5-tn-valuation/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Bloomberg: book 'several times oversubscribed'. FT: bankers 'expect to price above USD 78', implying >= USD 1.5tn. Syz: book covered at filed range on Tue 11-10; earlier draft (867m sh at USD 70-80) withdrawn Mon 11-09; ~20% of deal aimed at retail vs usual 5-10%; a broker offering a VC holder's shares at 4% above eventual IPO price. No formal range amendment filed. Nasdaq ticker ANT.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "Nebius Q3 2026 results — OCCURRED (secondary confirmation only)",
+   "ticker_or_release": "NBIS",
+   "datetime": "2026-11-12 before open; call 08:00 ET",
+   "verified": false,
+   "source": "Business Wire relay title via financialcontent.com (fetch failed, server error); runtimewire summary 11-12 06:12 CT",
+   "url": "https://www.financialcontent.com/article/bizwire-2026-11-12-nebius-reports-third-quarter-2026-financial-results",
+   "fetched_how": "WebFetch (search-surfaced link) — primary unreachable",
+   "status": "unreachable",
+   "note": "Search surfaced 'Nebius reports third quarter 2026 financial results' (Business Wire, 2026-11-12) but page returned a server error; nebius.com newsroom snapshot still showed 10-30 date announcement as newest item; no Q3 6-K on sec.gov surfaced. Secondary summary (runtimewire, paywalled body) claims Q3 revenue USD 981M, +571% y/y, 2026 capex guidance raised — unverified; note USD 981.3M equals Nebius's H1 2026 revenue per its Q2 6-K, so treat the figure with caution.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "NVDA Q3 FY27 results (re-surfaced, aggregator)",
+   "ticker_or_release": "NVDA",
+   "datetime": "2026-11-17 after close (call 17:00 ET per prior verified record)",
+   "verified": false,
+   "source": "No Diligence Day 55 newsletter (11-12) lists 17 November NVIDIA third-quarter results; no new nvidianews/8-K page surfaced this run",
+   "url": "https://nodiligence.substack.com/p/day-55-the-ai-build-leans-on-customers",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged vs prior verified record (11-17 17:00 ET). Recorded only as a re-surfacing; prior verification stands.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "Anthropic IPO pricing / first trade (unchanged)",
+   "ticker_or_release": "ANT IPO",
+   "datetime": "pricing 2026-11-18 (evening, after close); first trade 2026-11-19",
+   "verified": false,
+   "source": "Syz Group 11-11; EnterpriseAM 11-12; No Diligence 11-12 (all press relays)",
+   "url": "https://blog.syzgroup.com/fast-food-for-thought/anthropic-ipo-priced-on-tuesday-repriced-by-wednesday",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Dates unchanged vs prior run; no SEC/Nasdaq page states them.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "MU FQ1 2027 results (aggregator, still unconfirmed)",
+   "ticker_or_release": "MU",
+   "datetime": "2026-12-23 after close (projected)",
+   "verified": false,
+   "source": "Wall Street Horizon: 'UNCONFIRMED for Wednesday 12/23/2026 After Market'",
+   "url": "https://www.wallstreethorizon.com/micron-earnings-calendar",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No Micron IR announcement surfaced; date unchanged vs prior run (unverified).",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "ORCL FQ2 2027 results (no company announcement found)",
+   "ticker_or_release": "ORCL",
+   "datetime": "2026-12-14 (prior aggregator date; not re-confirmed)",
+   "verified": false,
+   "source": "Search for Oracle IR announcement returned only aggregators; marketbeat page stale (Dec 8 2025 'estimated')",
+   "url": "https://www.marketbeat.com/stocks/NYSE/ORCL/earnings/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "Oracle has not announced the FQ2 date on any page surfaced; keep prior 12-14 aggregator date, unverified.",
+   "group": "P8_calendar"
+  }
+ ]
+}

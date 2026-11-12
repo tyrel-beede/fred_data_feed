@@ -1,0 +1,155 @@
+{
+ "group": "events",
+ "run_at": "2026-11-12T05:10:00-07:00",
+ "run_weekday": "Thu",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "",
+ "gate": {
+  "since": "2026-11-10",
+  "note": "hits dated 2026-11-11 (after ~05:20 MST) or 2026-11-12 are new; items dated 2026-11-09..11-10 not in prior files kept once with late:true; older discarded"
+ },
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "search_mode": "extended",
+ "notes": "Four in-gate hits (one late, one analyst-estimate partial). No HARD events by the definitions (no pulled hyperscaler deal, no principal capex cut, no auction tail >= 2bp; 30-year auction prints 13:00 ET today and is not recorded). Nebius Q3 FY26 release was NOT yet surfaced by search at ~05:15 MST (investor hub still showed only the date announcement; SEC search returned only the Q2 6-K dated 2026-08-12) - re-check after 08:00 ET call. Alphabet launched debut HKD/SGD bonds 11-11/11-12 (Bloomberg via Yahoo): not pulled or downsized, guidance HKD 2y ~4.6%/5y ~5%/10y ~5.5%, SGD 2y ~2.75%/5y ~3.25%/10y ~3.65%/30y ~4%; article notes Alphabet paid materially higher costs on its EUR6bn euro deal earlier this month than in May - context only, not a hit. CoreWeave sought $4bn+ new debt after the 11-11 close (per 11-12 daily digest, secondhand) - not a pulled/downsized deal, not recorded as hit. Gilts 11-11: 10y ~5.23%, 30y 5.65%, 10y DOWN ~21bp on the month (leprivatebanker 11-11) - steadying, not stress. Several fetch failures: hervecuviliez substack (client_error), fourweekmba Adelaide (client_error), Bloomberg VC-fears and Alphabet originals (robots_disallowed; read via Spokesman/Yahoo syndication), Axios 11-11 (client_error), cryptobriefing (client_error).",
+ "discarded": [
+  "Reuters/TradingView - UK 30-year gilt yields hit 28-year high in global selloff - 2026-10-07 - outside gate (search surfaced it for 11-11 but byline date is Oct 7)",
+  "Octus Americas LevFin Weekly - Prime Data Centers $600m Nordic notes pulled - 2026-07-10 - outside gate",
+  "Tom's Hardware - Samsung/SK hynix shorten memory contracts, post-settlement pricing - 2026-02-11 - outside gate",
+  "Robeco - Could French bond stress change the ECB's course (137% debt/GDP by 2030) - 2026-11-05 - outside gate, no spread numbers",
+  "Bloomberg - Iqony loan pulled - 2026-11-03 - already in prior files",
+  "Bond Buyer - NYC downsizes first big bond deal - March 2026 - already in prior files",
+  "letsdatascience/404k - Microsoft capex forecast cut to $170bn - 2026-11-05 - already in prior files",
+  "Tom's Hardware - SoftBank $3.7bn loss / 13 GW turbine orders cancelled - prior week - already in prior files (SoftBank JPY597.2bn)",
+  "gokhshtein/cryptobriefing - 10-year auction tails widest since Feb - 2026-11-10 - already in prior files",
+  "TechCrunch - OpenAI raises $11bn at $1.25T - 2026-11-06 - outside gate (the 11-11 Bloomberg item below carries the 'cut funding goal by a third' and lower-multiples claims)",
+  "Axios - OpenAI pledges data center power cuts - 2026-11-02 - outside gate",
+  "cryptobriefing - Norway pauses new data-center grid reservations until Aug 2027 - undated/older - outside gate"
+ ],
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026",
+   "result": "no hit",
+   "note": "Search returned Iqony (11-03, prior), NYC GO (March, prior), 475 Fifth (10-19, prior). Variant with 'November 11/12, 2026' surfaced Alphabet HKD/SGD debut (Bloomberg via Yahoo, fetched, not pulled/downsized) and a Japan 5-year JGB sale with firmer demand (Bloomberg, not fetched). Octus 'Nordic data center deal pulled' fetched: dated 2026-07-10, discarded. Daily digest 11-12 fetched: CoreWeave seeking $4bn+ new debt, not a pull."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026",
+   "result": "no hit",
+   "note": "Only evergreen explainers and older tracker pages (Apollo/Ares BDC caps, H1 2026 crisis, October tracker). No new gate dated 11-11/11-12 surfaced on either pass."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026",
+   "result": "no hit",
+   "note": "Returned Microsoft $170bn cut (11-05, prior) and generic capex trackers. Hyperscaler variant for 11-11 returned only tracker pages. Nebius Q3 not yet out when searched."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026",
+   "result": "hit",
+   "note": "Bloomberg 11-11 (Torrence/Mascarenhas) read via Spokesman syndication: OpenAI lowered target valuation $1.4T->$1.25T and cut funding goal by a third; VCs report lower multiples over past two weeks. Bloomberg original robots_disallowed; cryptobriefing copy failed."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026",
+   "result": "no hit",
+   "note": "Returned SK hynix F-1 filings, April TrendForce LTA story, Korea Herald on expanding binding deals, Tom's Hardware Feb-11 (fetched, discarded). No renegotiation dated in gate."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026",
+   "result": "hit",
+   "note": "Quantum DC paused 1,200 MW Tungkillo (Adelaide) project - ABC News 11-12 fetched, Bloomberg via Energy Connects 11-12 fetched. Bernstein 586 GW->199 GW estimate (BigGo 11-12 fetched) recorded as partial. strisker data-center daily notes 11-11 fetched: only local moratoriums (Boise 6-month, Butler County OH zoning that could stop $5bn AWS campus) - not GW deferrals by developers, not recorded."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026",
+   "result": "no hit",
+   "note": "Returned 10-year (11-10, prior) and 3-year (11-09, prior) coverage and schedule pages. 30-year auction is 13:00 ET today - not printed, not recorded. Secondhand anecdote in 11-12 digest ('fewer than 10 of 200+ investors in a Singapore room wanted 10-year Treasuries at 5%') noted only."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026",
+   "result": "hit",
+   "note": "Newsquawk 11-11 05:05 UTC (= 11-10 22:05 MST, before gate, kept once as late) relaying FT: widening divide between France/Belgium and Germany - fetched, no spread numbers on page. Gilt variant: Reuters 28-year-high story is 10-07 (discarded); leprivatebanker 11-11 shows gilts steadying (10y ~5.23%, 30y 5.65%), not stress. JGB variant returned only older record-high stories. Robeco 11-05 discarded."
+  }
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "Quantum DC pauses 1,200 MW Tungkillo AI data centre near Adelaide; will not file development application this year - third Australian project halted in weeks",
+   "headline": "Quantum DC pauses 1,200 MW Tungkillo AI data centre near Adelaide; will not file development application this year - third Australian project halted in weeks",
+   "source": "ABC News (Isabella Carbone), 2026-11-12 08:14 AEDT; Bloomberg via Energy Connects, 2026-11-12; read via WebFetch",
+   "url": "https://www.abc.net.au/news/2026-11-12/quantum-dc-pauses-tungkillo-ai-data-centre/107376052",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "GW deferral",
+   "late": false,
+   "claim": "Quantum DC (CEO Alby Tomassi) paused its proposed 1,200 MW AI data centre plus associated energy infrastructure at Tungkillo, ~41 km east of Adelaide, and will not seek development approval this year, saying 'we misread the strength of feeling about this proposal' after 350+ residents contacted the company with 432 consolidated questions on water, energy, farmland and bushfire. Bloomberg (via Energy Connects, 11-12) calls it at least the third Australian data-centre development delayed in recent weeks, after NEXTDC's Melbourne project and Stockland's abandoned Sydney plans. Project cost not disclosed; company has not ruled out proceeding later after an independent expert panel reviews the studies.",
+   "other_urls": [
+    "https://www.energyconnects.com/news/utilities/2026/november/another-data-center-halts-in-australia-as-public-backlash-rises/",
+    "https://www.bloomberg.com/news/articles/2026-11-12/another-data-center-halts-in-australia-as-public-backlash-rises",
+    "https://www.tokenpost.com/news/technology/55326"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "Bernstein: of 586 GW planned North American data-center capacity only ~199 GW (34%) will be built; 387 GW removed for stage/tenant-credit/developer/state risk; Texas 2027 unstarted 11 GW -> 0.3 GW expected",
+   "headline": "Bernstein: of 586 GW planned North American data-center capacity only ~199 GW (34%) will be built; 387 GW removed for stage/tenant-credit/developer/state risk; Texas 2027 unstarted 11 GW -> 0.3 GW expected",
+   "source": "BigGo Finance summarising Bernstein research note, 2026-11-12 10:55 UTC; read via WebFetch (analyst estimate, not a company deferral)",
+   "url": "https://finance.biggo.com/news/4696f2c9-d0d2-49e5-a39a-54eda169d5ef",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "GW deferral (analyst estimate)",
+   "late": false,
+   "claim": "Bernstein estimates that of 586 GW of planned North American data-center capacity only about 199 GW (~34%) will actually be built; the ~387 GW haircut breaks down into development stage (198 GW), tenant credit (113 GW), developer strength (48 GW) and state political risk (28 GW). Only 87 GW has broken ground (86% of that expected to complete); of the ~497 GW still at announcement stage only about a quarter is expected to materialise. In Texas, of 18 GW scheduled for 2028 but not under construction Bernstein expects 5 GW, and of 11 GW scheduled for 2027 but not started only 0.3 GW. Bernstein frames this as projects that were never feasible rather than cancellations; the 11-12 daily digest adds that neoclouds are only 4% of the credible pipeline.",
+   "other_urls": [
+    "https://no1sdailydigest.substack.com/p/daily-digest-2026-11-12"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-11",
+   "name": "Bloomberg: OpenAI cut target valuation to $1.25T from $1.4T and trimmed funding goal by a third after investor pushback; VCs applying lower revenue multiples over past two weeks, advising startups to take lower valuations",
+   "headline": "Bloomberg: OpenAI cut target valuation to $1.25T from $1.4T and trimmed funding goal by a third after investor pushback; VCs applying lower revenue multiples over past two weeks, advising startups to take lower valuations",
+   "source": "Bloomberg (Rebecca Torrence, Natasha Mascarenhas), 2026-11-11, updated 15:42; read via Spokesman-Review syndication by WebFetch (Bloomberg original robots_disallowed)",
+   "url": "https://www.spokesman.com/stories/2026/nov/11/openai-anthropic-valuations-fuel-vc-fears-of-start/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "repriced round (AI lab)",
+   "late": false,
+   "claim": "Bloomberg reports that OpenAI, which in late September sought at least $30bn at a $1.4T valuation (prior mark $852bn), lowered its target to $1.25T and cut its funding goal by about a third after some investors found the terms too lofty and market conditions weakened (sources; OpenAI declined comment). Tomasz Tunguz (Theory Ventures) says investors have applied more conservative revenue multiples in AI funding talks over the past two weeks; Howard Morgan (B Capital) says he is telling many startups 'that's too high given your current revenues'. Anthropic's IPO is pitched at a lower-than-expected $1.4T fully diluted (bankers weighing $1.5T+; some had expected ~$2T); Jai Das (Sapphire) warns a bad debut means 'some companies are going to go out of business'. No closed down-round is named; the underlying $11bn-at-$1.25T report dates to 11-06.",
+   "other_urls": [
+    "https://www.bloomberg.com/news/articles/2026-11-11/openai-anthropic-valuations-fuel-vc-fears-of-startup-correction",
+    "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-10",
+   "name": "FT (via Newsquawk): widening divide in eurozone sovereign bond markets between highly indebted France/Belgium and safer borrowers like Germany - no spread levels given",
+   "headline": "FT (via Newsquawk): widening divide in eurozone sovereign bond markets between highly indebted France/Belgium and safer borrowers like Germany - no spread levels given",
+   "source": "Newsquawk headline relaying FT, 2026-11-11 05:05 UTC (= 2026-11-10 22:05 MST, before gate cutoff); read via WebFetch",
+   "url": "https://www.newsquawk.com/headlines/a-widening-divide-has-opened-in-eurozone-sovereign-bond-markets-between-highly-indebted-countries-like-france-and-belgium-and-safer-borrowers-like-germany-according-to-ft",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "sovereign stress (OATs/Belgium)",
+   "late": true,
+   "claim": "Newsquawk relays an FT report that a widening divide has opened in eurozone sovereign bond markets, separating highly indebted countries such as France and Belgium from safer borrowers such as Germany; Newsquawk's own note attributes it to France's deficit/debt path and Belgium's debt stock and says the ECB backstop limits tail outcomes. The page carries no OAT-Bund or Belgium-Bund spread levels or bp changes; the FT original was not fetched. Robeco (11-05, outside gate) separately said French spreads 'have risen again recently' on budget negotiations and election polls, with debt possibly reaching 137% of GDP by 2030.",
+   "other_urls": [
+    "https://www.robeco.com/en-int/insights/2026/11/could-french-bond-stress-change-the-ecbs-course"
+   ],
+   "group": "events"
+  }
+ ]
+}
