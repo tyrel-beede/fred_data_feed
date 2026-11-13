@@ -1,0 +1,207 @@
+{
+ "group": "events",
+ "run_at": "2026-11-13T05:11:00-07:00",
+ "run_weekday": "Fri",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Fetch failures: investinglive 30-year wrap (server error; three other numbered sources used), convergedigest Nebius (client_error), investing.com Nebius transcript (rate limited; SEC 6-K shareholder letter and TechCrunch used instead), qz.com and gurufocus CoreWeave loan pages (client_error; BigGo used), tech-insider.org and fourweekmba Nvidia/Microsoft pages (client_error), Bloomberg gilt newsletter/live blog not attempted (refused host; tradingeconomics used). 456X memory weekly paywalled after three bullets.",
+ "gate": {
+  "since": "2026-11-11",
+  "note": "prior run captured through 2026-11-12 ~05:20 MST; hits dated 2026-11-12 (after that) or 2026-11-13 are new; an 11-11 item not already recorded may be kept once with late:true; older discarded"
+ },
+ "notes": "Four in-gate hits, none HARD by the dashboard definitions. (1) 30-year bond auction 11-12 ($25bn): high yield 5.441% vs 5.437% WI = 0.4 bp tail (below the 2 bp hard threshold), bid-to-cover 2.36 (Oct 2.54, six-auction avg 2.44), indirects 68.1% (Oct 72.3%), directs 20.5%, dealers 11.4% (Oct 6.8%) - 'softest demand in five months'; all three refunding auctions this week were weaker than October. (2) Nebius Q3 FY26 (11-12): 2026 capex RAISED to ~$27bn from $20-25bn and 2027 capex guided $40-45bn (>1 GW new capacity) - NOT a capex cut - but 2026 revenue cut to the low end of $3.0-3.4bn (~$200m) and the $7-9bn December ARR target pushed ~two months to >$7bn in February because third-party colocation deliveries 'shifted into the first half of 2027' (New Jersey DataOne site retired temporary generation early; remaining tranches 2Q27); just over half of the Microsoft capacity (contract up to $19.4bn) now delivered by year-end, rest Q2 2027; shares -16% to -18% on the day. Recorded as a partial deferral/digestion hit, mirroring the CoreWeave 11-10 treatment. (3) The Information (11-12, via AI Weekly and TokenPost): Nvidia interim CEO Colette Kress pushed back on Huang-era deals including the proposed $250bn OpenAI credit backstop (8 GW of capacity); not cancelled - Nvidia split it in August and guaranteed ~$100bn (incl. $105bn Ohio guarantee per AI Weekly tally); partial, not a pulled deal. (4) Gilts 11-13 (tradingeconomics): UK 2-year above 5% (highest since Oct 2023), 10-year above 5.3% (highest since late October) on strong Q3 GDP and >80% priced December BoE hike; Bloomberg headline 'Gilts head for worst week since September' (not fetched). Rate-driven, not credit stress - partial. CoreWeave's $4bn+ IG loan (Morgan Stanley/MUFG, prelim 7-7.5%, collateral chips + Meta contracts) is planned, 'could launch as early as next week' - not pulled/downsized, not recorded. No fund gate, no AI-lab round repriced (Anthropic range and OpenAI $1.25T already recorded), no memory LTA renegotiation (SK hynix 14-customer LTAs >50% of 2027-28 capacity; TrendForce PC OEM de-spec unnamed), no new GW deferral by a developer (Quantum DC already recorded; 11-12 strisker notes only local moratoria: Reno, Potsdam NY, Rapid City SD, San Joaquin CA, Beaufort SC, Rogersville TN). US 10-year closed ~5.10-5.13% on 11-12, highest in three weeks (context). OAT: no in-gate item (euinsider 'near 5%' piece is 10-05; ideal-investisseur shows OAT-Bund 142.4 bp as of 11-10, not fetched).",
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "search_mode": "extended",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026",
+   "result": "no hit",
+   "note": "Returned Iqony (11-03, prior), NYC GO (March, prior), cappnotes 11-02, CFR buyback piece. Dated variant ('bond sale pulled OR postponed OR downsized ... November 12/13, 2026') returned Bloomberg 10-21 debt-sale delays, Bond Buyer 'Two postponed refunding deals priced Thursday' (fetched: dated 10-30, NTTA/NJ TTFA, discarded), CNBC 11-11 markets page, older selloff retrospectives. Specific check: CoreWeave $4bn+ IG loan (BigGo 11-11 23:55 UTC fetched; qz/gurufocus failed) is PLANNED - Morgan Stanley/MUFG leads, prelim 7-7.5% yield, collateral chips and Meta contracts, 'could launch as early as next week', terms may change - not pulled, downsized or repriced; not recorded. No hyperscaler/neocloud deal pulled or downsized dated 11-12/11-13."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026",
+   "result": "no hit",
+   "note": "Both passes returned only evergreen explainers, the ResearchSquare paper on the 2026 semi-liquid run, investingLive Apollo (09-23), crowdfundedwealth October tracker, databento glossary pages and a crypto exchange outage. No gate, suspension or proration dated 11-12/11-13."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026",
+   "result": "hit (partial)",
+   "note": "First pass: Microsoft $170bn (11-05, prior), capex trackers, PineBridge/Cembalest commentary. Dated hyperscaler/neocloud variant surfaced TechCrunch Nebius 11-12 (fetched), AI Weekly Microsoft neocloud pullback (fetched: dated 11-05, discarded), Mission Critical News 11-12 (fetched: no capex items), Herve Cuviliez 11-12/11-13 (fetched). Nebius Q3: SEC 6-K ex99-1 press release and ex99-2 shareholder letter fetched (letter read to 100,000 of 107,692 chars) - capex RAISED (2026 ~$27bn vs $20-25bn; 2027 $40-45bn), revenue guide to low end on third-party colocation delays into 1H27; recorded as partial deferral/digestion item. Investing.com transcript rate-limited; convergedigest failed; CNBC not attempted (refused host). The Information/AI Weekly 11-12 Nvidia-Kress pushback on $250bn OpenAI backstop fetched (AI Weekly, TokenPost) - recorded as partial under pulled/downsized deal."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026",
+   "result": "no hit",
+   "note": "First pass: Wikipedia pages, TechCrunch OpenAI 11-06 (before gate), Thinking Machines $5bn at $40bn (up-round). Dated variant ('AI startup valuation cut OR down round OR repriced ... November 12/13, 2026') returned KuCoin/BigGo/shattered.io restatements of the Anthropic $70-78 range (recorded 11-10), Spokesman 11-11 (recorded 11-12), Herve Cuviliez 11-12/11-13 (fetched: Anthropic range restated; nothing new). No new repricing dated 11-12/11-13."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026",
+   "result": "no hit",
+   "note": "Returned 456X Semi-AI Memory Weekly 11-13 (fetched, paywalled after three bullets: SK hynix LTAs with 14 customers >50% of 2027-28 capacity; Morgan Stanley trims legacy-memory estimates; TrendForce PC OEMs downsizing procurement/BOM - no names/figures; no renegotiation), FourWeekMBA LTA pieces, EDAILY August, unrelated Liberia/sports pages. Dated variant returned SK hynix F-1/424B4 filings, CSIS, Applied Materials earnings, Korea JoongAng 'Samsung, SK hynix monitor Nvidia leadership uncertainty' (not fetched; monitoring, not renegotiation). No Samsung/SK hynix/Micron/Kioxia LTA renegotiation dated in gate."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026",
+   "result": "no hit",
+   "note": "Returned Tom's Hardware SoftBank 13 GW (11-10, prior), Insurance Journal 11-12 Texas grid demand-response (policy, not deferral), strisker Daily Notes 11-12 (fetched: only jurisdiction moratoria - Reno NV, Potsdam NY 12-month, Rapid City SD proposed 6-month, San Joaquin CA extension vote 11-17, Beaufort SC 2-year advanced 7-3, Rogersville TN restrictions; Fermi Project Matador 600 MW has $200m prepayment but no lease yet), aidatacenterinsights Ledger 11-12 (not fetched), zerohedge/consulting 'half of 2026 delayed' retrospectives. Dated variant returned Quantum DC 1.2 GW Adelaide (recorded 11-12) and tracker/map pages. No new developer GW deferral dated 11-12/11-13."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026",
+   "result": "hit",
+   "note": "30-year auction 11-12: helious.io auction page (fetched: 5.441%, +0.4bp tail, 2.36 b/c vs 2.44 avg, 68.1/20.5/11.4, verdict IN LINE), gokhshtein 11-12 18:27 UTC (fetched: WI 5.437%, 0.4 bp, 'largest since June'), TradingView/Seeking Alpha (fetched: prior 5.618%, b/c 2.54, indirects 72.3%, directs 20.9%), bloomingbit (fetched, same figures), HERE Rock Hill 11-13 06:24 ET (fetched: dealers 11.4% vs 6.8% Oct, six-auction avg 2.44, ~$59bn bids, 'softest demand in five months'). investinglive wrap failed (server error). TheStreet 11-12 page not fetched (figures already quadruple-sourced)."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026",
+   "result": "hit (partial)",
+   "note": "First pass: Robeco 11-05, Globe and Mail retrospective, Goldman 2027 supply, IMF/CNBC 10-13 - nothing in gate. Dated gilt/OAT/JGB variant: euinsider France near-5% (fetched: dated 10-05, discarded), investing.com Fitch/France (fetched: 11-02, no figures), ideal-investisseur OAT-Bund 142.4 bp as of 11-10 (not fetched, before gate). Gilt/JGB variant: Bloomberg 'UK gilts get pulled into US bond selloff' (11-11) and 'Gilts head for worst week since September' (11-13 live blog) - refused host, not fetched; tradingeconomics UK yield news fetched (11-11 steady ~5.2%, 11-12 toward 5.3% from two-month lows, 11-13 10y >5.3% and 2y >5% highest since Oct 2023 on GDP and BoE hike bets) - recorded as partial, rate-driven. riotimesonline 11-13 fetched: US 10y 5.134% close 11-12; Japan 5-year JGB auction 2.186% vs 2.379% prior (firmer, no stress). No JGB or OAT stress dated 11-12/11-13."
+  },
+  {
+   "query": "30-year bond auction November 12 2026 high yield when-issued tail bid-to-cover",
+   "result": "hit",
+   "note": "Specific check; see query 7."
+  },
+  {
+   "query": "Nebius third quarter 2026 results November 12 2026 capex guidance",
+   "result": "hit (partial)",
+   "note": "SEC 6-K exhibits fetched; TechCrunch 11-12 fetched; CNBC headline 'Nebius falls 16% as company expects increased 2026 capex spend, issues weak outlook' not fetched (refused host)."
+  },
+  {
+   "query": "CoreWeave $4 billion loan investment grade November 12 2026",
+   "result": "no hit",
+   "note": "Loan is planned, not launched/pulled/repriced (BigGo 11-11 fetched; Bloomberg 11-11 original refused; qz, gurufocus failed)."
+  },
+  {
+   "query": "Nvidia Kress pushes back OpenAI $250 billion credit backstop Fortune November 12 2026",
+   "result": "hit (partial)",
+   "note": "AI Weekly 11-12 20:08 UTC (fetched; source The Information) and TokenPost 11-12 19:19 EST (fetched). gurufocus and fourweekmba copies failed. Backstop not cancelled: split in August, ~$100bn guaranteed."
+  }
+ ],
+ "discarded": [
+  "Bond Buyer - Two postponed refunding deals priced Thursday (NTTA $645m, NJ TTFA $1.7bn) - 2026-10-30 - before gate",
+  "Bloomberg - Iqony loan pulled - 2026-11-03 - already recorded",
+  "Bond Buyer - NYC downsizes first big bond deal - 2026-03-30 - before gate / already recorded",
+  "Bloomberg - Junk-bond sales drop sharply / debt-sale delays - 2026-10-21 - before gate",
+  "AI Weekly/Bloomberg - Microsoft pulls back from neocloud bets (Nscale Loughton ~$3bn walked away, Texas option declined, $5bn capex cut) - 2026-11-05 - before gate; MSFT $170bn cut already recorded",
+  "456X/letsdatascience - Microsoft $170bn capex forecast - 2026-11-05 - already recorded",
+  "Tom's Hardware - SoftBank $3.7bn / 13 GW turbine orders - 2026-11-10 - already recorded",
+  "Insurance Journal - Texas grid boss wants data centers to cut power before blackouts - 2026-11-12 - demand-response policy, not a GW deferral",
+  "Mission Critical News 11-12 - Ottawa KS moratorium (hyperscale project already 'canned'), Cleveland Union Trust foreclosure - undated/no MW - not a dated GW deferral",
+  "FourWeekMBA/Bloomberg/Energy Connects - Quantum DC 1.2 GW Adelaide pause - 2026-11-12 - already recorded in 11-12 file",
+  "Spokesman/Bloomberg - OpenAI $1.25T / VC fears - 2026-11-11 - already recorded",
+  "KuCoin/BigGo/shattered.io - Anthropic IPO 'scaled back' $64.4bn at $70-78 - restatements of 11-10 filed range already recorded",
+  "TechCrunch - OpenAI $11bn at $1.25T - 2026-11-06 - before gate",
+  "Thinking Machines Lab $5bn at $40bn (Accel) - up-round, not a repricing",
+  "cryptobriefing/TheStreet/thevaultreport - 10-year auction 1.0 bp tail - 2026-11-10 - already recorded",
+  "euinsider - France borrowing costs near 5%, OAT-Bund ~150 bp - 2026-10-05 - before gate",
+  "investing.com - French yields steady as Fitch spares downgrade - 2026-11-02 - before gate, body had no French figures",
+  "Robeco - French bond stress / ECB - 2026-11-05 - before gate, already discarded",
+  "Bloomberg - UK gilts get pulled into US bond selloff (newsletter) - 2026-11-11 - refused host, before gate cutoff; superseded by 11-12/11-13 tradingeconomics items in the gilt hit",
+  "Fund-gate results (ResearchSquare paper, investingLive Apollo 09-23, whitesecuritieslaw, angelinvestorsnetwork, crowdfundedwealth October tracker, databento glossary pages) - undated/older - no new gate",
+  "SK hynix F-1/424B4 filings, EDAILY August, FourWeekMBA LTA pages - lock-in filings, not renegotiation, before gate",
+  "Herve Cuviliez 11-12: Sam Altman 'double-counting of demand' around neoclouds (Financial News 11-11) - no figures, commentary; Pentagon OSC $150m loans - not pulled",
+  "Herve Cuviliez 11-13: Nebius -18%, CoreWeave -7.5% on 11-12 - price moves only (Nebius captured in its own item)"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "30-year bond auction ($25bn, 11-12): high yield 5.441%, 0.4 bp tail vs WI 5.437% (largest 30-year tail since June), bid-to-cover 2.36 (Oct 2.54; six-auction avg 2.44), indirects 68.1% (Oct 72.3%), directs 20.5%, dealers 11.4% (Oct 6.8%) - 'softest demand in five months'; all three refunding auctions weaker than October",
+   "headline": "30-year bond auction ($25bn, 11-12): high yield 5.441%, 0.4 bp tail vs WI 5.437% (largest 30-year tail since June), bid-to-cover 2.36 (Oct 2.54; six-auction avg 2.44), indirects 68.1% (Oct 72.3%), directs 20.5%, dealers 11.4% (Oct 6.8%) - 'softest demand in five months'; all three refunding auctions weaker than October",
+   "source": "helious.io auction results page (11-12 18:05 UTC); Gokhshtein Media (11-12 18:27 UTC); Seeking Alpha via TradingView (11-12); bloomingbit (11-12); HERE Rock Hill (11-13 06:24 ET); all read by WebFetch",
+   "url": "https://helious.io/news/auc-912810UY2-2026-11-12/30-year-bond-auction-in-line",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "candidate_dial": "auction tail (30-year)",
+   "late": false,
+   "claim": "The Treasury sold $25bn of 30-year bonds (5.375% coupon, due Nov 2056) on 2026-11-12 at a high yield of 5.441%, 0.4 bp above the 5.437% when-issued yield - a small tail that Gokhshtein calls the largest for the maturity since June, and the second tail of the week after the 10-year's 1.0 bp on 11-10. Bid-to-cover fell to 2.36 from 2.54 at the October reopening (six-auction average 2.44) on about $59bn of bids; indirects took 68.1% versus 72.3% in October (average 70.5%), directs 20.5% (Oct 20.9%), and primary dealers were left with 11.4% versus 6.8% in October (average 9.5%). The high yield was below October's 5.618% because of the intervening price rally, not stronger demand; HERE Rock Hill calls it the softest demand in five months and says all three refunding auctions (3-year 2.53 b/c, 10-year 5.020%/2.46 b/c, 30-year 2.36) showed investors reluctant to add long-term debt. helious.io's own verdict is 'IN LINE'. The 30-year closed near 5.43% and the 10-year near 5.10-5.13%, its highest in three weeks.",
+   "note": "Tail of 0.4 bp is below the 2 bp hard-event threshold. Five sources agree on 5.441% / 2.36 / 68.1% / 20.5%; WI 5.437% from Gokhshtein, Seeking Alpha and bloomingbit; dealer 11.4% and Oct 6.8% from helious.io and HERE Rock Hill. investinglive wrap ('tails as demand disappoints for second straight day') could not be fetched (server error).",
+   "sweep_query": "7. Treasury auction tail",
+   "other_urls": [
+    "https://gokhshtein.com/news/2026-11-12-30-year-treasury-auction-yields-5441-weakest-demand-since",
+    "https://www.tradingview.com/news/seekingalpha:1a42d9377094b:0-u-s-s-25b-30-year-treasury-bond-auction-tails-on-softer-demand/",
+    "https://en.bloomingbit.io/feed/news/124314",
+    "https://www.hererockhill.com/2026/11/13/treasury-25-billion-30-year-auction-tails-5-441/",
+    "https://investinglive.com/news/us-30-year-bond-auction-tails-as-demand-disappoints-for-second-straight-day/",
+    "https://helious.io/auctions"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "Nebius Q3 FY26 (11-12): 2026 capex RAISED to ~$27bn (from $20-25bn) and 2027 capex $40-45bn, but 2026 revenue cut to low end of $3.0-3.4bn and $7-9bn December ARR target pushed ~2 months to >$7bn in February as third-party colocation deliveries 'shifted into the first half of 2027' (New Jersey DataOne remaining tranches 2Q27; only ~half of Microsoft capacity by year-end); shares -16% to -18%",
+   "headline": "Nebius Q3 FY26 (11-12): 2026 capex RAISED to ~$27bn (from $20-25bn) and 2027 capex $40-45bn, but 2026 revenue cut to low end of $3.0-3.4bn and $7-9bn December ARR target pushed ~2 months to >$7bn in February as third-party colocation deliveries 'shifted into the first half of 2027' (New Jersey DataOne remaining tranches 2Q27; only ~half of Microsoft capacity by year-end); shares -16% to -18%",
+   "source": "Nebius Group 6-K exhibits on sec.gov (press release ex99-1 and shareholder letter ex99-2, 2026-11-12); TechCrunch (11-12); Herve Cuviliez Market News 11-13 (share move); CNBC headline (not fetched); all read by WebFetch except CNBC",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126008/tm2629571d1_ex99-2.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "capex cut/deferral/digestion (neocloud: NBIS) - revenue/capacity DEFERRAL into 1H27; capex RAISED, not cut",
+   "late": false,
+   "claim": "Nebius reported Q3 2026 revenue of $980.8m (+571% y/y), adjusted EBITDA $465.8m, Q3 capex $7.30bn ($15.43bn nine months), cash $7.4bn and non-current debt $14.0bn, and raised 2026 capex to approximately $27bn, 'above our $20-25 billion range', with 2027 capex guided at $40-45bn for more than 1 GW of new capacity (prepayments and asset-backed financing of investment-grade contracts such as Microsoft and Meta expected to cover 75-85%; committed customer prepayments ~$10bn in 2026 rising to $17-20bn in 2027). But 2026 revenue is now guided to the low end of the $3.0-3.4bn range (TechCrunch: a ~$200m cut to ~$3bn) with part of this year's revenue moving into early 2027, and the December ARR target of $7-9bn becomes '>$7bn for February', about a two-month shift, because 'where we rely on third parties, there have been delays' and 'delivery dates at a number of colocation sites shifted into the first half of 2027'; at the New Jersey DataOne site the operator retired temporary generation in late Q3 ahead of permanent power, resetting the remaining tranches to 2Q27, and just over half of the Microsoft capacity (contract up to $19.4bn) is now planned by year-end with the rest in Q2 2027. CEO Volozh: 'Building at this scale is hard, and delays are part of our industry right now... We are not immune'; the letter says 'shifts in colocation timelines do not reflect structural change' and that contracts remain in place. 2027 revenue guided $12-13bn with pre-tax breakeven targeted Q4 2027; contracted power >4 GW (target 5 GW by year-end). Shares fell 16-18% on 11-12 (CNBC -16%; TechCrunch -17%; Cuviliez -18%).",
+   "note": "Partial by the same rule as CoreWeave 11-10: capex number went UP (not a cut), so the hit is the dated capacity/revenue deferral and the 'delays' language, plus the Microsoft-delivery slip that follows Bloomberg's 11-05 report of Microsoft tightening neocloud oversight (prior). No 'digestion' word used. Shareholder letter read to 100,000 of 107,692 characters; investing.com transcript rate-limited; convergedigest failed.",
+   "sweep_query": "3. capex cut OR deferral OR digestion AI (specific check: Nebius Q3)",
+   "other_urls": [
+    "https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126008/tm2629571d1_ex99-1.htm",
+    "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
+    "https://www.cnbc.com/2026/11/12/nebius-q3-earnings-report-2026.html",
+    "https://www.investing.com/news/transcripts/earnings-call-transcript-nebius-sinks-premarket-after-q3-2026-eps-miss-93CH-5022210",
+    "https://convergedigest.com/nebius-q3-2026-earnings-ai-cloud-capex-2027/",
+    "https://hervecuviliez.substack.com/p/market-news-friday-13-november-2026"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-12",
+   "name": "The Information: Nvidia interim CEO Colette Kress has pushed back on Huang-era deals including the proposed $250bn credit backstop for OpenAI (8 GW of Nvidia-chip capacity); backstop not cancelled - split in August with ~$100bn guaranteed (incl. $105bn Ohio campus guarantee); ~$286bn of named Nvidia commitments under scrutiny",
+   "headline": "The Information: Nvidia interim CEO Colette Kress has pushed back on Huang-era deals including the proposed $250bn credit backstop for OpenAI (8 GW of Nvidia-chip capacity); backstop not cancelled - split in August with ~$100bn guaranteed (incl. $105bn Ohio campus guarantee); ~$286bn of named Nvidia commitments under scrutiny",
+   "source": "AI Weekly (Alexis Dufresne) summarising The Information, 2026-11-12 20:08 UTC; TokenPost (John Kim), 2026-11-12 19:19 EST; both read by WebFetch. The Information original not fetched; gurufocus and FourWeekMBA copies failed.",
+   "url": "https://aiweekly.co/alerts/nvidia-interim-ceo-kress-pushed-back-on-openai-backstop",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "pulled/downsized deal (potential: Nvidia vendor-finance backstop for OpenAI) - pushback reported, nothing pulled",
+   "late": false,
+   "claim": "The Information reported on 2026-11-12 (sources) that Colette Kress, elevated to interim CEO after Jensen Huang's resignation, 'has sometimes pushed back on deals that Huang championed' and 'may take a more conservative approach', the cited example being a proposed $250bn credit backstop on OpenAI's behalf that would have let OpenAI fill eight gigawatts of data-center space with Nvidia's newest chips. Neither write-up says the backstop was cancelled: Nvidia split the proposal into two parts in August and guaranteed about $100bn for the first part (AI Weekly's tally lists a $105bn guarantee tied to OpenAI's Ohio campus, $36bn of neocloud cloud purchases, $20bn of data-center leases and up to $125bn behind a Wall Street credit programme, ~$286bn in all, citing FinanceFeeds); TokenPost adds that 'some cloud deals were cancelled as data center projects faced delays' without naming them. Cuviliez (11-13, citing Fortune) frames it as neocloud and GPU-backed debt models likely losing an implicit Nvidia backstop. Huang's resignation date is not given in either page; Huang reportedly agreed to testify to Congress before Thanksgiving and a DOJ antitrust probe is ongoing.",
+   "note": "Partial: a reported change of stance on vendor financing, not a pulled or downsized deal. Figures are secondhand (The Information via aggregators; FinanceFeeds tally). Relevant to the capex-credit fuse because Nvidia guarantees sit behind OpenAI/neocloud financing; the next quarterly disclosure is the check.",
+   "sweep_query": "1. bond deal pulled OR downsized / 3. capex cut OR deferral (surfaced via Cuviliez 11-13 and dated variant)",
+   "other_urls": [
+    "https://www.tokenpost.com/news/business/56093",
+    "https://www.gurufocus.com/news/9196067/nvidia-cfo-opposes-250b-openai-credit-backstop-as-interim-ceo-nvda-stock-reacts",
+    "https://fourweekmba.com/ai-nvidias-interim-ceo-pushed-back-on-a-250b-openai-backstop/",
+    "https://hervecuviliez.substack.com/p/market-news-friday-13-november-2026"
+   ],
+   "group": "events"
+  },
+  {
+   "kind": "hit",
+   "as_of": "2026-11-13",
+   "name": "Gilts 11-13: UK 2-year yield above 5% (highest since Oct 2023), 10-year above 5.3% (highest since late October, from ~5.2% on 11-11 and two-month lows on 11-10) on strong Q3 GDP and >80% priced December BoE hike; Bloomberg: 'Gilts head for worst week since September' - rate-driven, not credit stress",
+   "headline": "Gilts 11-13: UK 2-year yield above 5% (highest since Oct 2023), 10-year above 5.3% (highest since late October, from ~5.2% on 11-11 and two-month lows on 11-10) on strong Q3 GDP and >80% priced December BoE hike; Bloomberg: 'Gilts head for worst week since September' - rate-driven, not credit stress",
+   "source": "Trading Economics UK government bond yield news items dated 2026-11-11, 11-12 and 11-13 (read by WebFetch); Bloomberg live blog headline 11-13 and newsletter 11-11 (not fetched, refused host)",
+   "url": "https://tradingeconomics.com/united-kingdom/government-bond-yield/news/583217&gsessionid=tmufpzcp6-0bobrgty60f8-gvv7j0aaer_u7wxerike2ih3wux0n9a",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "candidate_dial": "sovereign stress (gilts) - yield rise on growth/BoE hike repricing, no credit-spread evidence",
+   "late": false,
+   "claim": "Trading Economics reports the UK 10-year gilt yield above 5.3% on 2026-11-13, its highest since late October, and the 2-year above 5%, its highest since October 2023, after the 10-year had steadied around 5.2% on 11-11 following the prior session's selloff and risen toward 5.3% on 11-12 from more-than-two-month lows. Drivers given are stronger-than-expected UK GDP (Q3 +0.7% q/q, +1.9% y/y; September +0.2%), markets pricing over an 80% chance of a December Bank of England hike (from 50% at the start of the week) and three more by mid-2027 after the November hike, Deputy Governor Lombardelli's warning of possible consecutive hikes, and strong US inflation data lifting Treasury yields. Bloomberg's 11-13 live blog is headlined 'Gilts head for worst week since September' and its 11-11 newsletter 'UK gilts get pulled into US bond selloff' (neither fetched). No 30-year gilt level or gilt-Bund spread is reported on the fetched page; the prior run recorded 30y at 5.65% on 11-11 (leprivatebanker).",
+   "note": "Partial: a monetary-policy repricing of front-end and 10-year yields, not a debt-sustainability or spread event; recorded so the scorer has the dated levels. US 10-year closed 5.134% on 11-12 (riotimesonline). Japan 5-year JGB auction 2.186% vs 2.379% prior (firmer). No OAT item in gate (OAT-Bund 142.4 bp as of 11-10 per ideal-investisseur, not fetched).",
+   "sweep_query": "8. sovereign bond stress",
+   "other_urls": [
+    "https://www.bloomberg.com/news/live-blog/2026-11-13/ftse-100-live-updates-pound-gilts-what-s-moving-uk-markets-right-now-markets-today",
+    "https://www.bloomberg.com/news/newsletters/2026-11-11/uk-gilts-get-pulled-into-us-bond-selloff",
+    "https://www.riotimesonline.com/global-economy-briefing-november-13-2026/",
+    "https://www.ideal-investisseur.fr/en/markets/oat-bund-spread.html"
+   ],
+   "group": "events"
+  }
+ ]
+}

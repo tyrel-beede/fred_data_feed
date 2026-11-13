@@ -1,0 +1,512 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-13T05:11:00-07:00",
+ "run_weekday": "Fri",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "US IG issuance total for Thu 11-12: no reachable page printed a figure (value null). Alphabet HKD/SGD deal: final per-tranche sizes and reoffer yields captured from Reuters via MarketScreener, but no SEC FWP/424B5 for the Asian-currency deal surfaced (only the EUR 6bn FWP of 11-02), so coupons remain unconfirmed vs reoffer yields. CoreWeave >=USD 4bn IG loan: no launch confirmed as of 11-13 05:00 MST (BigGo 11-11 still 'could launch next week'); gurufocus 'secures $4bn' headline unreachable (client error) and contradicts other relays, treated as headline-only. ORCL FQ2 and MU FQ1 dates remain aggregator-only (unverified; Oracle SEC 8-K surfaced was Investor Day 10-28, not a date announcement). Unreachable this run: qz.com Alphabet article (client error), gurufocus CoreWeave (client error), goodman-macro 11-13 (client error), investinglive 30y auction (server error), bea.gov/news/schedule/full (provenance block; alternate index.php path worked), nasdaq.com Vertiv conference release (rate limit).",
+ "gate": {
+  "since": "2026-11-11",
+  "note": "Prior run captured through 2026-11-12 ~05:20 MST. New = items dated 11-12 after that or 11-13; tolerance_days = 2 (items dated 11-11 kept once with late:true only if not already in the 11-12 file)."
+ },
+ "notes": "Alphabet priced its debut HKD/SGD bonds 11-12: HKD 16bn (2y HKD 7.5bn @4.35%, 5y HKD 7bn @4.70%, 10y HKD 1.5bn @5.20%) + SGD 2.28bn (2y S$370m @2.50%, 5y S$900m @3.00%, 10y S$330m @3.40%, 30y S$680m @3.80%), ~USD 3.8bn total vs USD 3bn target, all seven tranches 25-30bp inside IPT, books >USD 7bn (HKD >32.5bn, SGD >4bn), settle 11-19 (Reuters via MarketScreener, updated 11-12 07:24 ET). No SEC FWP for the Asian deal surfaced. CoreWeave >=USD 4bn IG loan not launched as of this run. No other new AI-infrastructure bond deal dated 11-12/13 surfaced; Thu 11-12 US IG volume not printed anywhere reachable. UST 30y (USD 25bn, 11-12): high yield 5.441% vs 5.437% WI = 0.4bp tail; BTC 2.36 (vs 2.54 Oct, 2.44 6m avg); indirects 68.1%, directs 20.5%, dealers 11.4% (TheStreet 11-12). Renaissance 11-12: Windward Bio (WWB) priced USD 175m at USD 17 midpoint (+USD 50m Sanofi placement; trades 11-13); vVardis (VVVV) cut shares 13% ahead of USD 188m IPO; SPAC Harbour Island I (HRIAU) cut units 20% to USD 80m; YTD count moved 121->122, proceeds USD 148.8bn, 216 filings (as of 11/13). Anthropic: Bloomberg 11-12 says book ~6x covered; Anthropic's own IPO site (per Yahoo Finance 11-12) states pricing Wed 11-18 and Nasdaq trading Thu 11-19 under ANT; range still USD 70-78, no amendment filed. Nebius Q3 confirmed from SEC 6-K (filed 11-12): revenue USD 980.8m (+571% y/y), adj. EBITDA USD 465.8m, net loss from cont. ops USD 37.5m, Q3 capex USD 7.30bn, cash USD 7.43bn, debt USD 14.2bn; shareholder letter: 2026 revenue guided to low end of USD 3.0-3.4bn, 2026 capex raised to ~USD 27bn from USD 20-25bn, ARR >USD 7bn now expected for Feb 2027 (vs USD 7-9bn by Dec), 5 GW contracted power by year-end. NVDA 11-17 17:00 EST RE-VERIFIED on investor.nvidia.com event page this run. AVGO 12-09 17:00 EST re-verified on investors.broadcom.com; MSFT annual meeting 12-08 08:30 PT virtual verified on microsoft.com/investor; re:Invent 11-30..12-04 Las Vegas confirmed from aws.amazon.com APN blog. Treasury Q4 tentative schedule PDF, BLS Nov/Dec schedules, Fed Nov/Dec calendars, BEA full schedule (page modified 11-12) and Census retail release schedule all re-read from official pages; dates unchanged vs prior verified records. Arista December conference slate (12-01 UBS, 12-07 Wells Fargo, 12-10 Barclays) surfaced via MarketChameleon relay of the 10-07 company release (pre-gate announcement, recorded unverified as a six-week-window event).",
+ "sources": [
+  {
+   "query": "Alphabet Hong Kong dollar Singapore dollar bonds priced final tranche sizes coupons November 12 2026",
+   "result": "hit",
+   "note": "MarketScreener/Reuters (updated 11-12 07:24 ET) fetched with full per-tranche sizes and reoffer yields; qz.com client error; thenextweb, tradingpedia, Bloomberg relays surfaced"
+  },
+  {
+   "query": "CoreWeave investment-grade loan launched Morgan Stanley MUFG November 13 2026",
+   "result": "partial",
+   "note": "BigGo Finance 11-11 fetched (not launched, 'could launch next week'); gurufocus 'secures' headline unreachable (client error); no launch confirmation dated 11-12/13"
+  },
+  {
+   "query": "renaissancecapital IPO news November 12 2026",
+   "result": "hit",
+   "note": "News page (3 items dated 11-12) and Stats page (as of 11/13: 122 IPOs, USD 148.8bn, 216 filings) fetched"
+  },
+  {
+   "query": "investor.nvidia.com NVIDIA sets conference call third quarter fiscal 2027 financial results November 17 2026",
+   "result": "hit",
+   "note": "investor.nvidia.com event page fetched: Nov 17 2026 5:00 PM EST"
+  },
+  {
+   "query": "Nebius reports third quarter 2026 financial results revenue capex guidance November 12 2026",
+   "result": "hit",
+   "note": "SEC 6-K ex99-1 (press release) and ex99-2 (shareholder letter) fetched; Yahoo Finance 11-12 relay fetched"
+  },
+  {
+   "query": "30-year bond auction results November 12 2026 high yield tail when-issued bid-to-cover",
+   "result": "hit",
+   "note": "TheStreet 11-12 market page fetched; investinglive server error; helious/gokhshtein/bloomingbit surfaced"
+  },
+  {
+   "query": "Anthropic IPO price range raised valuation pricing November 13 2026",
+   "result": "partial",
+   "note": "only 11-10/11-11 range-setting items surfaced; no range amendment"
+  },
+  {
+   "query": "investment-grade bond issuance Thursday November 12 2026 high-grade supply priced deals billion week total",
+   "result": "no hit",
+   "note": "krugmaninsights 11-08 (YTD USD 1.88tn record, paywalled); goodman-macro 11-13 client error; no daily IG figure for 11-12"
+  },
+  {
+   "query": "Oracle announces date second quarter fiscal 2027 earnings release December 2026 investor.oracle.com",
+   "result": "no hit",
+   "note": "SEC 8-K surfaced was Oracle Investor Day 2026 release (10-28); aggregators only for FQ2 date"
+  },
+  {
+   "query": "bond sale priced November 12 2026 data center OR AI OR hyperscaler OR Meta OR Amazon OR Microsoft OR OpenAI OR xAI OR Vantage OR Crusoe OR Lambda notes offering",
+   "result": "no hit",
+   "note": "only pre-gate deals (Oracle/Microsoft/Meta early Nov, FourWeekMBA roundups)"
+  },
+  {
+   "query": "Anthropic IPO roadshow news November 12 2026 order book pricing Wednesday Nasdaq ANT",
+   "result": "hit",
+   "note": "aiera.blog 11-13 (Bloomberg 11-12 ~6x oversubscribed) and Yahoo Finance 11-12 (company states 11-18 pricing / 11-19 trading) fetched"
+  },
+  {
+   "query": "Windward Bio prices IPO $17 November 12 2026 renaissancecapital",
+   "result": "hit",
+   "note": "Investing.com 11-12 18:30 release fetched (rate-limited first try, second fetch ok); SEC FWP surfaced"
+  },
+  {
+   "query": "Treasury \"Tentative Auction Schedule\" PDF home.treasury.gov November December 2026",
+   "result": "hit",
+   "note": "TentativeAuctionScheduleQ42026.pdf fetched"
+  },
+  {
+   "query": "bls.gov schedule news release 2026 \"Producer Price Index\" \"November 13, 2026\" OR \"December 10, 2026\" CPI Employment Situation",
+   "result": "hit",
+   "note": "bls.gov 11_sched_list and 12_sched_list fetched"
+  },
+  {
+   "query": "federalreserve.gov newsevents 2026 November calendar FOMC minutes Beige Book December meeting",
+   "result": "hit",
+   "note": "federalreserve.gov 2026-november and 2026-december calendars fetched"
+  },
+  {
+   "query": "bea.gov release schedule \"Gross Domestic Product\" third quarter 2026 second estimate November 25 2026 personal income outlays",
+   "result": "hit",
+   "note": "bea.gov/news/schedule/full blocked (provenance); bea.gov/index.php/news/schedule/full fetched (modified 11/12/26)"
+  },
+  {
+   "query": "census.gov advance monthly retail trade release schedule 2026 November 17 December 16",
+   "result": "hit",
+   "note": "census.gov/retail/release_schedule.html fetched"
+  },
+  {
+   "query": "Broadcom announces fourth quarter fiscal year 2026 financial results conference call December 9 2026",
+   "result": "hit",
+   "note": "investors.broadcom.com event page fetched: Dec 9 2026 5:00 PM EST"
+  },
+  {
+   "query": "Microsoft 2026 annual shareholders meeting December 8 2026 proxy statement sec.gov DEF 14A",
+   "result": "hit",
+   "note": "microsoft.com/en-us/investor/annual-meeting fetched; DEF 14A surfaced"
+  },
+  {
+   "query": "Alphabet FWP sec.gov Hong Kong dollar notes Singapore dollar notes free writing prospectus November 2026",
+   "result": "partial",
+   "note": "only the EUR 6bn FWP (trade 11-02) surfaced and was fetched; no HKD/SGD FWP"
+  },
+  {
+   "query": "AWS re:Invent 2026 Las Vegas November 30 December 4 dates",
+   "result": "hit",
+   "note": "aws.amazon.com APN blog (published 10-27, modified 11-09) fetched; govevents relay fetched"
+  },
+  {
+   "query": "sec.gov Alphabet 424B5 \"Hong Kong dollar\" OR \"HK$\" notes due 2028 2031 2036 prospectus supplement November 2026",
+   "result": "no hit",
+   "note": "only older USD 424B5s; Manila Times/Reuters 11-13 relay (early orders, no finals) fetched"
+  },
+  {
+   "query": "Vertiv OR \"Arista Networks\" OR \"GE Vernova\" OR Meta OR SpaceX investor day OR analyst day OR conference presentation announced November 12 2026 December 2026",
+   "result": "partial",
+   "note": "MarketChameleon 10-07 Arista December slate fetched; Vertiv 10-23 conference release (nasdaq.com) rate-limited; nothing newly announced 11-12/13"
+  },
+  {
+   "query": "\"high-grade\" OR \"investment-grade\" bond issuance Thursday November 12 2026 \"billion\" priced issuers Friday November 13 weekly supply tally",
+   "result": "no hit",
+   "note": "Zack Eiseman ICYMI 11-12 fetched (no IG tally; CoreWeave/Alphabet/Blackstone India DC items only)"
+  },
+  {
+   "query": "Micron announces date fiscal first quarter 2027 results December 2026 investors.micron.com",
+   "result": "no hit",
+   "note": "only FY26 8-Ks and aggregators; no FQ1 FY27 date announcement"
+  },
+  {
+   "query": "Nebius 6-K November 12 2026 sec.gov third quarter 2026 \"Form 6-K\" 000110465926126008",
+   "result": "hit",
+   "note": "6-K cover (results, 11-12) and second 6-K (nbis-20261112x6k: operating/financial review + financial statements, no financing) fetched"
+  }
+ ],
+ "discarded": [
+  "Alphabet EUR 6bn FWP (trade date 2026-11-02) - pre-gate, already recorded in earlier runs",
+  "Oracle Investor Day 2026 8-K (2026-10-28) - pre-gate, not an earnings-date announcement",
+  "Vertiv 'to participate in upcoming investor conference' release (2026-10-23) - pre-gate; page rate-limited",
+  "Blackstone ~INR 1tn Andhra Pradesh data-centre investment (Bloomberg via Eiseman 11-12) - expected announcement, not a financing deal",
+  "Naver ~KRW 2tn compute contracts (WSJ 11-12) - commercial contract, not issuance",
+  "Krugman Insights IG record USD 1.88tn YTD (2026-11-08) - pre-gate, paywalled",
+  "Microsoft/Oracle/Meta early-November bond deals resurfaced by FourWeekMBA - pre-gate, already recorded",
+  "Renaissance Anthropic terms item (11-10) - already recorded"
+ ],
+ "items": [
+  {
+   "kind": "deal",
+   "as_of": "2026-11-12",
+   "name": "Update vs 11-12 file: Alphabet debut HKD/SGD bonds PRICED - final tranche sizes and reoffer yields",
+   "issuer": "Alphabet Inc. (GOOGL)",
+   "size": "HKD 16bn (~USD 2.0bn) + SGD 2.28bn (~USD 1.8bn) = ~USD 3.8bn vs ~USD 3bn target",
+   "tranches": "HKD: 2y HKD 7.5bn @ 4.35%; 5y HKD 7.0bn @ 4.70%; 10y HKD 1.5bn @ 5.20%. SGD: 2y S$370m @ 2.50%; 5y S$900m @ 3.00%; 10y S$330m @ 3.40%; 30y S$680m @ 3.80%. Reoffer yields (coupons not printed). Settlement 2026-11-19. Expected Aa2/AA+. Senior unsecured, GCP incl. debt repayment",
+   "spread_vs_ipt": "Yield vs IPT: HKD 2y 4.60->4.35 (-25bp), 5y 5.00->4.70 (-30bp), 10y 5.50->5.20 (-30bp); SGD 2y 2.75->2.50 (-25bp), 5y 3.25->3.00 (-25bp), 10y 3.65->3.40 (-25bp), 30y 4.00->3.80 (-20bp)",
+   "book": ">USD 7bn combined: HKD orders >HKD 32.5bn (~2.0x); SGD orders >S$4bn (~1.75x)",
+   "source": "Reuters via MarketScreener (published 11-11 21:53 ET, updated 11-12 07:24 ET; term sheets seen Thursday)",
+   "url": "https://www.marketscreener.com/news/alphabet-sets-initial-price-guidance-for-hong-kong-singapore-bond-sales-term-sheet-shows-ce785edbd081fe27",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "JGCs HSBC, JPMorgan; HKD arrangers BOCHK, ICBC, StanChart; SGD arrangers DBS, OCBC, UOB. FX used: 7.8441 HKD, 1.2848 SGD per USD. No SEC FWP/424B5 for this deal surfaced (search returned only the EUR 6bn FWP of 11-02), consistent with a Reg S / local-market format. Context: EUR 6bn (11-02), USD 25bn (Aug), AUD 5.5bn (Aug).",
+   "other_urls": [
+    "https://thenextweb.com/news/alphabet-3-8b-hong-kong-singapore-bonds",
+    "https://www.hereoklahomacity.com/2026/11/12/alphabet-hong-kong-singapore-dollar-bonds-7-billion-orders/",
+    "https://www.manilatimes.net/2026/11/13/business/foreign-business/alphabet-hk-sg-bond-sales-draw-5b-in-orders/2468352"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "deal",
+   "as_of": "2026-11-12",
+   "name": "Update vs 11-12 file: CoreWeave >=USD 4bn IG loan - still not launched",
+   "issuer": "CoreWeave (CRWV)",
+   "size": ">= USD 4bn (planned)",
+   "tranches": "Investment-grade syndicated loan, distributed to bank group in stages; collateral compute chips and long-term customer contracts incl. Meta; market expects structure to mirror USD 8.5bn March DDTL (SOFR+225 floating / ~5.9% fixed)",
+   "spread_vs_ipt": "Preliminary yield talk ~7.0-7.5% (CFO, 11-10 call); no launch terms",
+   "book": "not launched",
+   "source": "BigGo Finance 11-11 (Bloomberg-sourced); Zack Eiseman ICYMI 11-12 (Bloomberg relay)",
+   "url": "https://finance.biggo.com/news/a827cfea-faa2-4ade-969b-34a09e3bc8a0",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "No page dated 11-12/13 confirms a launch; 'could launch as early as next week' (week of 11-16); terms may change. A gurufocus headline 'CoreWeave secures $4bn investment-grade loan' surfaced but the page was unreachable (client error) and no other outlet corroborates 'secures' - treated as headline-only. CRWV shares -9.7% premarket 11-12 after +25% on 11-11 (TheStreet).",
+   "other_urls": [
+    "https://zackeiseman.substack.com/p/icymi-on-november-12th-2026",
+    "https://www.gurufocus.com/news/9193937/coreweave-crwv-secures-4-billion-investmentgrade-loan-to-support-growth"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-12",
+   "name": "US IG issuance Thursday 11-12 (no figure printed)",
+   "series": "ig.issuance.daily_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "period_end": "2026-11-12",
+   "source": "No reachable market wrap printed a daily IG total; TheStreet 11-12 page had no IG tally; goodman-macro 11-13 unreachable",
+   "url": "https://pro.thestreet.com/stock-market-today/2026-11-12",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Only Alphabet's non-USD deal (~USD 3.8bn eq., not US IG) priced among tracked issuers. Krugman Insights (11-08, pre-gate) has YTD US IG at a record USD 1.88tn.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-12",
+   "name": "UST 30-Year Bond auction result (USD 25bn, 2026-11-12 13:00 ET)",
+   "series": "ust.30y.auction_tail_bp",
+   "value": 0.4,
+   "unit": "bp (high yield minus WI)",
+   "period_end": "2026-11-12",
+   "source": "TheStreet Pro market page 11-12",
+   "url": "https://pro.thestreet.com/stock-market-today/2026-11-12",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "High yield 5.441% vs WI 5.437% at 1pm deadline = 0.4bp tail (second straight tail after 10y 1.0bp on 11-10). Bid-to-cover 2.36 vs 2.54 Oct and 2.44 six-month avg. Indirects 68.1% (vs 72.3% Oct), directs 20.5%, dealers 11.4% (vs 6.8% Oct). Headlines elsewhere: 'weakest demand since June' (gokhshtein), 'tails on softer demand' (SA/TradingView); helious.io again labels it 'in line'. Tail < 2bp flag threshold.",
+   "other_urls": [
+    "https://www.tradingview.com/news/seekingalpha:1a42d9377094b:0-u-s-s-25b-30-year-treasury-bond-auction-tails-on-softer-demand/",
+    "https://gokhshtein.com/news/2026-11-12-30-year-treasury-auction-yields-5441-weakest-demand-since",
+    "https://helious.io/news/auc-912810UY2-2026-11-12/30-year-bond-auction-in-line"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-12",
+   "name": "Windward Bio Group (WWB) prices USD 175m IPO at USD 17 (midpoint)",
+   "size": "10,294,117 shares at USD 17.00 = ~USD 175m (range USD 16-18); +USD 50m concurrent private placement to Sanofi (1,532,691 shares + pre-funded warrants for 1,408,485) = USD 225m combined; option 1,544,117 shares",
+   "priced": "2026-11-12 evening; trades Nasdaq Global Select 2026-11-13; closes 2026-11-16",
+   "source": "Renaissance Capital IPO News 11-12; Investing.com company release 11-12 18:30",
+   "url": "https://www.investing.com/news/stock-market-news/windward-bio-prices-ipo-at-17-per-share-on-nasdaq-432SI-5023682",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Swiss biotech; JBRs Jefferies, TD Cowen, Piper Sandler, UBS. Not AI-related; recorded as the day's only pricing.",
+   "other_urls": [
+    "https://www.renaissancecapital.com/IPO-Center/News",
+    "https://www.sec.gov/Archives/edgar/data/0002145089/000119312526458885/d190875dfwp.htm"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-12",
+   "name": "Renaissance Capital news 11-12: vVardis (VVVV) and SPAC Harbour Island I (HRIAU) downsize ahead of IPOs; no items 11-13",
+   "size": "vVardis: now 8.3m shares (-13%) for ~USD 188m (NYSE); Harbour Island Acquisition I: units cut 20%, now USD 80m (Nasdaq)",
+   "priced": "none (terms changes)",
+   "source": "Renaissance Capital IPO News",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Three items dated 11-12 (WWB pricing recorded separately). No filings or withdrawals dated 11-12; no items dated 11-13 at run time.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-13",
+   "name": "Renaissance Capital US IPOs priced YTD",
+   "series": "ipo.us.ytd.count",
+   "value": 122,
+   "unit": "count",
+   "period_end": "2026-11-13",
+   "source": "Renaissance Capital 2026 IPO Market Stats",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Up from 121 (WWB). Page as of 11/13/2026: 122 priced (-36.1% y/y), proceeds USD 148.8bn (+314.3% y/y), 216 filed (-8.5% y/y); market cap >= USD 50m.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-12",
+   "name": "Update vs 11-12 file: Anthropic (ANT) book ~6x covered (Bloomberg 11-12); company states pricing 11-18 / trading 11-19",
+   "size": "825m shares at USD 70-78 (unchanged; implies ~USD 1.3-1.45tn; up to ~USD 64.4bn); no range amendment filed",
+   "priced": "not yet; pricing Wed 2026-11-18, Nasdaq trading Thu 2026-11-19 (ipo.anthropic.com per Yahoo Finance 11-12)",
+   "source": "Bloomberg 11-12 via AIERA blog 11-13; Yahoo Finance 11-12 09:19 PT citing Anthropic's IPO site and amended S-1",
+   "url": "https://aiera.blog/anthropic-ipo-oversubscribed/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Bloomberg (11-12): orders ~6x shares on offer (vs 'multiple times' on 11-11); Bloomberg/FT: bankers weigh >USD 1.5tn, which would require a revised range before pricing. Yahoo: 9M revenue USD 33.2bn; Q3 operating loss USD 536m (USD 5bn short-term compute charge + USD 2bn non-cash donation-matching); USD 895.4bn aggregate committed spend, USD 69.8bn due in 12 months. Dates now attributed to the company's own announcement (via press), still not read from an SEC/Nasdaq page.",
+   "other_urls": [
+    "https://finance.yahoo.com/technology/article/anthropic-ipo-claude-maker-to-begin-trading-on-thursday-nov-19-173550865.html"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "Anthropic IPO pricing / first trade (company-stated via press)",
+   "ticker_or_release": "ANT IPO",
+   "datetime": "pricing 2026-11-18 (after close); first trade 2026-11-19 Nasdaq",
+   "verified": false,
+   "source": "Yahoo Finance 11-12 citing Anthropic announcement on ipo.anthropic.com; not read from an SEC/Nasdaq page",
+   "url": "https://finance.yahoo.com/technology/article/anthropic-ipo-claude-maker-to-begin-trading-on-thursday-nov-19-173550865.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Dates unchanged vs prior runs; provenance upgraded from banker-sourced reporting to company statement relayed by press.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-12",
+   "name": "Nebius Q3 2026 results - OCCURRED, verified from SEC 6-K (update vs 11-12 file)",
+   "ticker_or_release": "NBIS",
+   "datetime": "2026-11-12 before open (press release dated 11-12; call 08:00 ET per prior verified record)",
+   "verified": true,
+   "source": "SEC Form 6-K filed 2026-11-12, Ex. 99.1 press release and Ex. 99.2 shareholder letter",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126008/tm2629571d1_ex99-1.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Q3 revenue USD 980.8m (+571% y/y vs USD 146.1m; prior run's USD 981m figure confirmed - not the H1 total); adj. EBITDA USD 465.8m; net loss cont. ops USD 37.5m; adj. net income USD 90.9m; Q3 capex USD 7,300.4m (+664%), 9M capex USD 15,430.7m; cash USD 7,425.6m; debt USD 187.5m current + USD 14,003.3m non-current; Q3 convert proceeds USD 5.75bn, LT debt proceeds USD 773.3m. Shareholder letter guidance: 2026 revenue at LOW END of USD 3.0-3.4bn (capacity slipped to 2027); adj. EBITDA margin ~40% unchanged; ARR >USD 7bn now for Feb 2027 (was USD 7-9bn by Dec 2026); 2026 capex RAISED to ~USD 27bn from USD 20-25bn; 5 GW contracted power by year-end (>4 GW now); USD 10bn committed customer prepayments in 2026; USD 3.5bn Citi senior secured facility signed Oct; USD 775m ABS facility (Jul, SOFR+250); ~USD 1.0bn ATM proceeds in Q3. Second 6-K same day furnishes OFR and financial statements (no new financing).",
+   "other_urls": [
+    "https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126008/tm2629571d1_ex99-2.htm",
+    "https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126238/nbis-20261112x6k.htm",
+    "https://finance.yahoo.com/technology/articles/nebius-group-reports-571-revenue-132515840.html"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "NVIDIA Q3 FY2027 financial results conference call (RE-VERIFIED, inside ten days)",
+   "ticker_or_release": "NVDA",
+   "datetime": "2026-11-17 17:00 EST",
+   "verified": true,
+   "source": "investor.nvidia.com event page 'NVIDIA 3rd Quarter FY27 Financial Results'",
+   "url": "https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-3rd-Quarter-FY27-Financial-Results/default.aspx",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "IR page read this run: November 17, 2026, 5:00 PM EST, webcast via events.q4inc.com. Unchanged vs prior verified record. GlobeNewswire 'NVIDIA Sets Conference Call for Third-Quarter Financial Results' relays also surfaced (morningstar, stocktitan).",
+   "other_urls": [
+    "https://www.morningstar.com/news/globe-newswire/9853745/nvidia-sets-conference-call-for-third-quarter-financial-results"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Broadcom Q4 / FY2026 results conference call (re-verified)",
+   "ticker_or_release": "AVGO",
+   "datetime": "2026-12-09 17:00 EST",
+   "verified": true,
+   "source": "investors.broadcom.com event page 'Q4 2026 Broadcom Earnings Conference Call'",
+   "url": "https://investors.broadcom.com/events/event-details/q4-2026-broadcom-earnings-conference-call",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Dec 9 2026 5:00 PM EST (22:00 UTC), webcast edge.media-server.com. Unchanged.",
+   "other_urls": [
+    "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Microsoft 2026 Annual Shareholders Meeting (verified)",
+   "ticker_or_release": "MSFT",
+   "datetime": "2026-12-08 08:30 PT, virtual",
+   "verified": true,
+   "source": "microsoft.com investor annual-meeting page; DEF 14A on sec.gov",
+   "url": "https://www.microsoft.com/en-us/investor/annual-meeting",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Page: 'will be held virtually', Dec 8 2026 8:30 a.m. PT. DEF 14A 'Notice of Annual Shareholders Meeting and Proxy Statement 2026 December 8, 2026' surfaced on sec.gov.",
+   "other_urls": [
+    "https://www.sec.gov/Archives/edgar/data/0000789019/000119312526427849/d61756ddef14a.htm"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "AWS re:Invent 2026 (confirmed from aws.amazon.com blog)",
+   "ticker_or_release": "AMZN",
+   "datetime": "2026-11-30 to 2026-12-04, Las Vegas",
+   "verified": true,
+   "source": "AWS Partner Network blog 'Know before you go' (published 10-27, modified 11-09)",
+   "url": "https://aws.amazon.com/blogs/apn/know-before-you-go-an-aws-partners-guide-to-reinvent-2026/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Company-domain page; virtual options include live keynotes and Innovation Talks. Not an earnings event.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Oracle FQ2 FY2027 results (still no company announcement)",
+   "ticker_or_release": "ORCL",
+   "datetime": "2026-12-14 (aggregator estimate; carried from prior unverified record 2026-11-12)",
+   "verified": false,
+   "source": "Search for Oracle IR/8-K date announcement returned only Investor Day 8-K (10-28) and aggregators",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001341439/000119312526435853/d75538dex991.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "note": "8-K Ex.99.1 fetched is 'Oracle Investor Day 2026: Accelerating Value Creation' (10-28; FY30 revenue target >= USD 225bn; FY27 guidance reaffirmed) - no earnings date. Date remains aggregator-only.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Micron FQ1 FY2027 results (still aggregator-only)",
+   "ticker_or_release": "MU",
+   "datetime": "2026-12-23 after close (projected; carried from prior unverified record 2026-11-12)",
+   "verified": false,
+   "source": "No Micron IR/8-K date announcement surfaced; aggregators only",
+   "url": "https://www.wallstreethorizon.com/micron-earnings-calendar",
+   "fetched_how": "WebSearch only",
+   "status": "partial",
+   "note": "Search returned only FY26 results 8-Ks and aggregator pages; date unchanged, unverified.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Arista Networks December investor-conference slate (company release 10-07 via relay)",
+   "ticker_or_release": "ANET",
+   "datetime": "2026-12-01 12:15-12:45 ET UBS Global AI and Tech Conference (CFO); 2026-12-07 Wells Fargo TMT Summit (CFO, time TBD); 2026-12-10 13:30-14:00 ET Barclays Global Technology Conference (President/COO)",
+   "verified": false,
+   "source": "MarketChameleon summary (10-07) of Arista's financial-calendar release; investors.arista.com not fetched",
+   "url": "https://marketchameleon.com/articles/b/2026/10/7/anet-november-3-2026-q3-earnings-call-december-investor-events",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Pre-gate announcement recorded because the events fall inside six weeks and were not in the 11-11/11-12 files; webcasts on investors.arista.com. No newly announced events dated 11-12/13 for GEV, VRT, META, GOOGL or SPCX surfaced.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "UST coupon auctions 2026-11-18 to 2026-12-29 (re-read from Treasury Q4 2026 tentative schedule PDF)",
+   "ticker_or_release": "UST auctions",
+   "datetime": "20y 11-18 (settle 11-30); 10y TIPS reopening 11-19 (11-30); 2y 11-23 (11-30); 5y 11-24 (11-30); 2y FRN reopening 11-24 (11-27); 7y 11-25 (11-30); 3y 12-07 (12-15); 10y reopening 12-08 (12-15); 30y reopening 12-10 (12-15); 20y reopening 12-22 (12-28); 2y FRN reopening 12-23 (12-28); 5y TIPS reopening 12-23 (12-31); 2y 12-28 (12-31); 5y 12-28 (12-31); 7y 12-29 (12-31)",
+   "verified": true,
+   "source": "home.treasury.gov TentativeAuctionScheduleQ42026.pdf",
+   "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ42026.pdf",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged vs 11-11 verified record. 20y and 10y TIPS announced 11-12. PDF gives dates only (no times, sizes).",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "BLS releases 11-13 to 12-17 (re-read from bls.gov Nov/Dec schedules)",
+   "ticker_or_release": "BLS",
+   "datetime": "PPI Oct Fri 11-13 08:30 ET; Import/Export Prices Oct Tue 11-17 08:30; State Employment Oct Fri 11-20 10:00; JOLTS Oct Tue 12-01 10:00; Employment Situation Nov Fri 12-04 08:30; Productivity & Costs Q3 revised Tue 12-08 08:30; CPI Nov + Real Earnings Thu 12-10 08:30; PPI Nov Tue 12-15 08:30; Import/Export Prices Nov Thu 12-17 08:30",
+   "verified": true,
+   "source": "bls.gov/schedule/2026/11_sched_list.htm and 12_sched_list.htm",
+   "url": "https://www.bls.gov/schedule/2026/12_sched_list.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged vs prior verified record. Thanksgiving 11-26 holiday listed.",
+   "other_urls": [
+    "https://www.bls.gov/schedule/2026/11_sched_list.htm"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Federal Reserve: FOMC minutes 11-18, Beige Book 11-25, FOMC 12-08/09, minutes 12-30 (re-read)",
+   "ticker_or_release": "FOMC / Fed",
+   "datetime": "FOMC minutes (Oct 27-28) Wed 11-18 14:00 ET; G.17 IP Tue 11-17 09:15; Beige Book Wed 11-25 14:00; H.8 Fri 11-27 16:15 (Thanksgiving shift); FOMC meeting Tue-Wed 12-08/09, conclusion 12-09 14:00, press conference 14:30; G.17 12-16 09:15; FOMC minutes (Dec) Wed 12-30 14:00",
+   "verified": true,
+   "source": "federalreserve.gov/newsevents/2026-november.htm and 2026-december.htm",
+   "url": "https://www.federalreserve.gov/newsevents/2026-december.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged vs prior verified record. Speakers inside the window: Bowman 11-13 10:50; Jefferson 11-13 19:00; Barr 11-16 (Milan, AI & financial stability), 11-18, 11-19; Chairman Warsh 11-16 12:00 opening remarks SF Fed Productivity and Jobs Task Force; Waller 11-17 09:10, 11-20; Cook 11-20 12:15 (Santiago). December page does not list SEP separately (SEP accompanies the 12-09 statement by convention; not stated on page).",
+   "other_urls": [
+    "https://www.federalreserve.gov/newsevents/2026-november.htm"
+   ],
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "BEA: GDP Q3 second estimate + PCE Oct 11-25; trade 12-08; GDP third estimate + PCE Nov 12-23 (re-read)",
+   "ticker_or_release": "BEA",
+   "datetime": "GDP Q3 second estimate & corporate profits Wed 11-25 08:30 ET; Personal Income and Outlays Oct Wed 11-25 08:30; International trade Oct Tue 12-08 08:30; International Transactions Q3 Fri 12-18 08:30; GDP Q3 third estimate Wed 12-23 08:30; Personal Income and Outlays Nov Wed 12-23 08:30",
+   "verified": true,
+   "source": "bea.gov full release schedule (page modified 11/12/26)",
+   "url": "https://www.bea.gov/index.php/news/schedule/full",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged vs prior verified record. Also 11-17 10:00 'Experimental Super Intelligence Economic Statistics, 2024' article. bea.gov/news/schedule/full path was provenance-blocked; index.php path worked.",
+   "group": "P8_calendar"
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-13",
+   "name": "Census Advance Monthly Retail Trade: Oct data 11-17, Nov data 12-16 (re-read)",
+   "ticker_or_release": "Census retail sales",
+   "datetime": "Tue 2026-11-17 08:30 ET (Oct); Wed 2026-12-16 08:30 ET (Nov); Fri 2027-01-15 08:30 (Dec)",
+   "verified": true,
+   "source": "census.gov/retail/release_schedule.html",
+   "url": "https://census.gov/retail/release_schedule.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Unchanged vs prior verified record.",
+   "group": "P8_calendar"
+  }
+ ]
+}

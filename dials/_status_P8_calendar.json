@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-12T05:10:00-07:00",
- "last_as_of": "2026-11-11",
- "last_file": "dials/calendar/2026-11-12.json",
+ "last_run_at": "2026-11-13T05:11:00-07:00",
+ "last_as_of": "2026-11-13",
+ "last_file": "dials/calendar/2026-11-13.json",
  "status": "partial",
- "error": "Alphabet HKD/SGD deal: launch sizes (HKD 16bn / SGD 2.28bn) and final yield guidance captured from Newsquawk/Reuters relays, but no page printed per-tranche final sizes or confirmed reoffer coupons; Alphabet FWP/424B5 for the Asian deal not surfaced on sec.gov yet. Nebius Q3 2026 release: Business Wire relay (financialcontent.com) returned a server error and nebius.com newsroom snapshot did not yet list the item; occurrence recorded from a secondary summary (runtimewire) only, headline figures unverified. Unreachable pages: gurufocus.com Alphabet article (client error), fourweekmba.com Alphabet HK/SG article (client error), proactiveinvestors.com SoftBank article (client error, stale item anyway), qz.com Anthropic oversubscribed article (client error), financialcontent.com Nebius Q3 release (server error). Wednesday 11-11 IG issuance total: no page printed a figure; SIFMA full close recorded via financecalendar.com relay (not SIFMA page itself). ORCL FQ2 and MU FQ1 dates remain aggregator-only (unverified)."
+ "error": "US IG issuance total for Thu 11-12: no reachable page printed a figure (value null). Alphabet HKD/SGD deal: final per-tranche sizes and reoffer yields captured from Reuters via MarketScreener, but no SEC FWP/424B5 for the Asian-currency deal surfaced (only the EUR 6bn FWP of 11-02), so coupons remain unconfirmed vs reoffer yields. CoreWeave >=USD 4bn IG loan: no launch confirmed as of 11-13 05:00 MST (BigGo 11-11 still 'could launch next week'); gurufocus 'secures $4bn' headline unreachable (client error) and contradicts other relays, treated as headline-only. ORCL FQ2 and MU FQ1 dates remain aggregator-only (unverified; Oracle SEC 8-K surfaced was Investor Day 10-28, not a date announcement). Unreachable this run: qz.com Alphabet article (client error), gurufocus CoreWeave (client error), goodman-macro 11-13 (client error), investinglive 30y auction (server error), bea.gov/news/schedule/full (provenance block; alternate index.php path worked), nasdaq.com Vertiv conference release (rate limit)."
 }

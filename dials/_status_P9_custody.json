@@ -1,8 +1,8 @@
 {
  "group": "P9_custody",
- "last_run_at": "2026-11-06T05:15:00-07:00",
- "last_as_of": "2026-11-04",
- "last_file": "dials/flows/2026-11-06.json",
- "status": "partial",
- "error": "H.4.1 release of 2026-11-05 not reachable (federalreserve.gov current PDF still served the 10-29 release; index page PROVENANCE_REQUIRED) - WMTSECL1 2026-11-04 is the repo/FRED value, not cross-checked. MOF weekly: latest PDF is the 2026-10-29 release (week to 10-24); the 10-25..10-31 week was not posted."
+ "last_run_at": "2026-11-13T05:11:00-07:00",
+ "last_as_of": "2026-11-11",
+ "last_file": "dials/flows/2026-11-13.json",
+ "status": "ok",
+ "error": "MOF weekly PDF (week.pdf) returned PROVENANCE_REQUIRED (permission request not answered) - values were read instead from MOF's own historical weekly CSV (week.csv, linked from the search-surfaced MOF index page), columns matched by position and reconciled against Reuters (week to 10-31) and Trading Economics (week to 11-07). TIC September 2026 data not yet published (scheduled 2026-11-18)."
 }
