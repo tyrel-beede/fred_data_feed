@@ -1,0 +1,165 @@
+{
+ "built_from": "2026-11-14T0611-dials",
+ "graded": [
+  {
+   "basis": "equal-weight periphery basket (IWM +2.6%, XHB +7.5%, NEO -15.2%) = 98.32 vs top-8 EW 97.29 from Oct 16 to Nov 13: +1.0 pt vs a 3-pt line",
+   "grade": "cost",
+   "graded_on": "2026-11-14",
+   "hindsight": "two legs paid, the neocloud leg was the wrong instrument for a periphery-rebound thesis",
+   "id": "PG-20261018-PERIPHERY-REBOUND"
+  },
+  {
+   "basis": "GLD -7.0% from Oct 16 (382.01 -> 355.45); 30y tail 0.4 bp; custody down 3 of 4, not 4",
+   "grade": "cost",
+   "graded_on": "2026-11-14",
+   "hindsight": "the insurance was cheap because the tail did not arrive; the C weight fell to 1",
+   "id": "PG-20261018-TAIL"
+  },
+  {
+   "basis": "10y highest close 5.10 (Nov 12) vs 5.20; 30y Nov 12 tail 0.4 bp vs 2",
+   "grade": "cost",
+   "graded_on": "2026-11-14",
+   "hindsight": "direction right (10y +26 bp on the week), magnitude short - the usual shape of a binary that cost",
+   "id": "PG-20261030-SHELTER"
+  },
+  {
+   "basis": "WTI front-month settled 86.04 on Nov 10 (and 86.53 Nov 11, 88.56 Nov 13), below the $90-120 band",
+   "grade": "paid",
+   "graded_on": "2026-11-14",
+   "hindsight": "asymmetry real: a 27% Brent move without a deal; paid on the downside leg",
+   "id": "PG-20261030-UNOWNED-OIL"
+  },
+  {
+   "basis": "four-week carry limit; Dec hike odds 78 -> 88.8% (plus 11.2% for 50 bp); never near the 60% kill line",
+   "grade": "cost",
+   "graded_on": "2026-11-14",
+   "hindsight": "the dashboard's fork (hike with claims > +10%) was the wrong framing of the same event; retired at the limit",
+   "id": "PG-20261018-DEC-HIKE"
+  },
+  {
+   "basis": "four-week carry limit; E6 3m -19.5 (price-computed) vs -15 line; IG 89 (< 100); no B element fired",
+   "grade": "paid",
+   "graded_on": "2026-11-14",
+   "hindsight": "paid on the supplier leg, not the credit leg its 'void if no B element' clause was written for - partial vindication, scored paid because the criterion was met",
+   "id": "PG-20261018-UNMOVED"
+  }
+ ],
+ "open": [
+  {
+   "criterion": "NVDA close on Nov 19 >= +/-10% from 216.00 (10/26)",
+   "id": "PG-20261027-NVDA-LAST-NODE",
+   "resolves": "2026-11-19",
+   "status_1114": "162.85 = -24.6%; grades at the Nov 19 close"
+  },
+  {
+   "criterion": "top-8 dispersion sigma >= 12 with SPX within 5% of its high -> paid; sigma < 7 or SPX > 5% down -> cost",
+   "id": "PG-20261030-UNHEDGED-NAMES",
+   "resolves": "2026-11-20",
+   "status_1114": "sigma 10.97, SPY -3.2% from high"
+  },
+  {
+   "criterion": "paid if on Nov 20 >= 63.7% above the 200d AND the A/D line > its Oct 29 level; cost if either fails",
+   "id": "PG-20261030-BREADTH-TREND",
+   "resolves": "2026-11-20",
+   "status_1114": "breadth file not read this run; grades next column"
+  },
+  {
+   "criterion": "AVGO close on Dec 1 >= +/-8% from 329.17 (10/26)",
+   "id": "PG-20261027-AVGO-SPV",
+   "resolves": "2026-12-01",
+   "status_1114": "347.01 = +5.4%"
+  },
+  {
+   "criterion": "CRWV 5y CDS <= 900 bp on any day by Dec 9 -> paid; else cost",
+   "id": "PG-20261027-CRWV-80",
+   "resolves": "2026-12-09",
+   "status_1114": "CDS > 1,240 bp (Nov 9); against"
+  },
+  {
+   "criterion": "HY OAS >= 400 on any day by Dec 9 -> paid; else cost",
+   "id": "PG-20261027-SINGLE-B",
+   "resolves": "2026-12-09",
+   "status_1114": "HY 320, single-B 339 (stress), CCC 1,314; against"
+  },
+  {
+   "criterion": "equal-weight (LRCX, AMAT, 000660.KS, 005930.KS) beats top-8 equal-weight by > 5 pts from Oct 30 -> paid; void if a B element fires first",
+   "id": "PG-20261030-JUNE-TOP",
+   "resolves": "2026-12-09",
+   "status_1114": "91.69 vs 101.04 since Oct 30 = -9.4 pts; against"
+  },
+  {
+   "criterion": "MU/SMH ratio down > 10% from 1.693 (10/30) -> paid; else cost",
+   "id": "PG-20261030-LAST-SUPPLIER",
+   "resolves": "2026-12-18",
+   "status_1114": "1.599 = -5.6%"
+  },
+  {
+   "claim": "the market prices a Nvidia miss as unthinkable; the dashboard has it at one in four",
+   "criterion": "paid if F-20261117-NVDA-GUIDE or F-20261117-NVDA-BACKSTOP fires; cost if neither fires and NVDA closes higher on Nov 18",
+   "id": "PG-20261114-NVDA-GUIDE",
+   "kill": "guide inside the range with AR growing slower than revenue",
+   "market_vs_dashboard": "implied move to be read from the Nov 16 chain vs dashboard 0.25 / 0.20",
+   "payoff": "a strong B element and a periphery reprice if right; a CoreWeave-shaped +1.5 reaction if wrong",
+   "resolves": "2026-11-18",
+   "status_1114": "new"
+  },
+  {
+   "claim": "the long end is priced for nothing (C weight 1) and three auctions just said otherwise",
+   "criterion": "paid if the 20y (Nov 18) or the 30y reopening (Dec 10) tails >= 2 bp; cost if both stop through",
+   "id": "PG-20261114-LONG-END",
+   "kill": "20y stop-through with indirects > 65%",
+   "market_vs_dashboard": "C weight 1 vs 20y tail fork 0.30",
+   "payoff": "many times the weight on a disorderly long end; the premium if the 20y clears clean (dashboard 0.70)",
+   "resolves": "2026-12-10",
+   "status_1114": "new"
+  },
+  {
+   "claim": "if the bears are right, the price that has not moved is investment grade",
+   "criterion": "paid if IG OAS >= 100 on any day by Dec 9; cost otherwise",
+   "id": "PG-20261114-IG-UNMOVED",
+   "kill": "IG < 85 with SpaceX tranches priced inside 7.75-8.75%",
+   "market_vs_dashboard": "IG 89 vs IG100 fork 0.30 / IG115 0.08; B weight 19",
+   "payoff": "the unmoved instrument pays most on transmission and costs least if books stay full",
+   "resolves": "2026-12-09",
+   "status_1114": "new"
+  },
+  {
+   "claim": "if the bulls are right, the asymmetry is in the suppliers that have already lost the rent (mirror of IG-UNMOVED)",
+   "criterion": "paid if the E6 one-month spread >= +3 on Dec 17 with no B element; cost if <= -3; void if a B element fires",
+   "id": "PG-20261114-SUPPLIER-RENT",
+   "kill": "a memory contract price cut or any B element",
+   "market_vs_dashboard": "SUP basket 96.3, E6 1m -3.3 / 3m -19.5; state TRANSITION (bust unconfirmed) vs stage 6 of 7",
+   "payoff": "mean reversion of a priced stage if the state does not confirm; costs on a Micron guide or LTA cut",
+   "resolves": "2026-12-17",
+   "status_1114": "new"
+  },
+  {
+   "claim": "a half-point hike is an 11% tail and the real-yield regime line is 14 bp away",
+   "criterion": "paid if DFII10 > 3.0 on any day by Dec 9; cost otherwise",
+   "id": "PG-20261114-REAL3",
+   "kill": "Nov core CPI <= 0.2 on Dec 10",
+   "market_vs_dashboard": "DFII10 2.86; dashboard REAL3 0.20 (from 0.09); FedWatch 50 bp 11.2%",
+   "payoff": "pays in B and C at once (x4 both) and in the rate-sensitive rally; costs if the hike is 25 and the curve relaxes",
+   "resolves": "2026-12-09",
+   "status_1114": "new"
+  },
+  {
+   "claim": "oil fell 27% without a deal and the back of the curve has not moved",
+   "criterion": "paid if Brent front-month settles outside $85-105 on any day by Dec 9; cost otherwise",
+   "id": "PG-20261114-BACK-END",
+   "kill": "a confirmed energy-infrastructure strike (resolves E instead)",
+   "market_vs_dashboard": "Brent 95.84, M1-M12 +15.57; standoff H2 R+5/R-15/F35/E45; signing by Dec 9 0.15; Kalshi normal-traffic 50% point ~late 2027",
+   "payoff": "pays on either resolution (settlement collapses the back end, a strike gaps the front); costs on a drifting status quo",
+   "resolves": "2026-12-09",
+   "status_1114": "new"
+  }
+ ],
+ "retired": [],
+ "run_id": "2026-11-14T0611-column",
+ "tally": {
+  "cost": 8,
+  "paid": 2,
+  "void": 0
+ },
+ "tally_note": "two paid on 27% / 19-pt moves; eight cost mostly on +/-8-10% binaries resolving at a third of the distance; four-week carry limit applied to the two Oct 18 seeds"
+}

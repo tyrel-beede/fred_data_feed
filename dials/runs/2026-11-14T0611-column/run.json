@@ -1,0 +1,33 @@
+{
+ "built_from": "2026-11-14T0611-dials",
+ "built_from_status": "partial",
+ "error": "",
+ "freshness": "fresh: dials run_at 2026-11-14T06:11 > last column built_from 2026-10-30T1640; no fork passed between run_at and today; dials status partial (not failed)",
+ "headline": "The Chain Cracked One Tier Down. The Dial Did Not Move.",
+ "inputs_commit": "11a4d2d3ba85495989c711038003fe5af2c7723f",
+ "kind": "column",
+ "mode": "weekly",
+ "pigs_added": 6,
+ "pigs_graded": 6,
+ "pigs_retired": 0,
+ "post_mode": "pr (dials/config.json column.post_mode)",
+ "post_url": null,
+ "repo_commit": "11a4d2d3ba85495989c711038003fe5af2c7723f",
+ "run_at": "2026-11-14T06:11:34-07:00",
+ "run_id": "2026-11-14T0611-column",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 3,
+  "task": "dials-weekly"
+ },
+ "status": "ok",
+ "tally": {
+  "cost": 8,
+  "paid": 2,
+  "void": 0
+ },
+ "test_note": "test_materialize.py's migration-seed assertion (dials Brier 0.121, n=12) fails by construction since the stage-2 run resolved six dials forks (n=18); state/ is reproducible byte-for-byte with no Brier mismatches.",
+ "words": 4809
+}
