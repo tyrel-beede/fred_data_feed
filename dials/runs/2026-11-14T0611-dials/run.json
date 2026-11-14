@@ -1,0 +1,40 @@
+{
+ "error": "all stage inputs read; carried or unmeasured this run: P12_fms Oct 2-8 (Nov survey ~Nov 17); P6_margin Sep 30 (Oct posts ~Nov 20); consensus/N4 ratings as of Oct 22-Nov 6 (seven tickers' pages October-dated); P4_cftc as of Nov 3 (Nov 10 report delayed to Nov 16 by Veterans Day; the repository's tff_*.json files end 2023-11-21 and were not used); D2 term premium: ACM 0.64 (Oct 22, prior run) vs Kim-Wright THREEFYTP10 1.07 (Oct 9, convextrade) - series conflict, unmeasured this run; B3 ISM, B5 forward P/E and 493 earnings (FactSet) not read; C6 BDC redemption requests only via the Nov 4 AltsWire tender round-up; C7 rental rates not refreshed (Bernstein/MS $2.00/GPU-hr re-contracting debate recorded); N2 tone not computed; N1 GDELT files have gap days (59-68 complete days of 90); P3 ETF creations and P7 retail metrics not gathered (no sub-skill group)",
+ "inputs_commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+ "kind": "dials",
+ "mode": "full",
+ "repo_commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+ "run_at": "2026-11-14T06:11:34-07:00",
+ "run_id": "2026-11-14T0611-dials",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 2,
+  "task": "dials-weekly"
+ },
+ "skill_version": "macro-dials SKILL.md, repository-state version (dials/runs/<RUN_ID>/), synced skill folder 2026-11-14",
+ "standoff_stage": {
+  "carried": "this run's export used, labeled partial (FEED §4)",
+  "run_id": "2026-11-14T0611-standoff",
+  "status": "partial"
+ },
+ "state_prev": {
+  "H2": [
+   78.5,
+   18.7,
+   2.4
+  ],
+  "H3": [
+   66.3,
+   30.7,
+   2.6
+  ],
+  "label": "TRANSITION",
+  "run_id": "2026-11-02T1935-dials-lite",
+  "s2": 0.46,
+  "s3": 0.52
+ },
+ "status": "partial",
+ "test_note": "dials/tools/test_materialize.py: state/ rebuilt byte-for-byte and no logged-vs-recomputed Brier mismatch (the FEED §8 invariants pass); its hard-coded migration assertion 'dials Brier 0.121, n=12' fails by construction once any new dials fork resolves (now n=18, mean 0.1178). The scheduled run does not edit tools; the assertion needs to be changed to check the twelve migrated resolutions only. Reported to the user."
+}

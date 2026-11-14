@@ -1,0 +1,59 @@
+{
+ "H2": [
+  79.9,
+  18.9,
+  1.0
+ ],
+ "H2_IQR_B": [
+  12.2,
+  28.8
+ ],
+ "H2_full": "A 80 (70-87) [52-93] / B 19 (12-29) [6-47] / C 1 (1-1) [1-2]",
+ "H3": [
+  67.4,
+  31.3,
+  1.1
+ ],
+ "H3_IQR_B": [
+  21.2,
+  43.8
+ ],
+ "H3_full": "A 67 (55-77) [36-87] / B 31 (21-44) [12-63] / C 1 (1-2) [1-2]",
+ "P_B_conf": 0.071,
+ "P_B_conf_bounds": {
+  "comonotone": 0.08,
+  "elements": 4,
+  "independence": 0.05
+ },
+ "P_C_conf": 0.0,
+ "P_C_conf_bounds": {
+  "comonotone": 0.0,
+  "elements": 1,
+  "independence": 0.0,
+  "note": "only the Dec 10 30y reopening is a registered C element inside the horizon; term premium >1 and a positive stock-bond correlation month are not registered as forks, so P(C conf) is understated"
+ },
+ "cone_validity": "H2 usable, H3 indicative, beyond: scenarios only",
+ "drift_B": 0.0,
+ "end_of_horizon": "A 95 (74-99) / B 3 (1-22) / C 0 (0-1)",
+ "gap_note": "state-weight B 19 vs P(B confirmed by Dec 9) 0.07: the B elements inside the horizon are NVDA guide (0.25), IG 115 (0.08), a pulled hyperscaler deal (0.07), GPU rental -20% (0.04); ORCL (0.09) and Micron sit after Dec 9. Two of four is 0.07; the state weight carries the capex-bust world beyond its confirmation date.",
+ "leverage": {
+  "C2 MSFT deferrals (q 0.6)": "H2 B median 13.7 off -> 23.9 on",
+  "C8 IREN (q 0.75)": "14.8 -> 20.7",
+  "oil hazard x1.5 A (q 0.75)": "23.8 off -> 17.6 on"
+ },
+ "martingale": "mean end-horizon B 19.0 vs start 19.0, drift +0.0 (coherent)",
+ "nonevent_lrs": {
+  "10Y": 0.83,
+  "30Y": 0.76,
+  "CPI": 0.81,
+  "CRWV": 0.66,
+  "OBDC": 0.39,
+  "REFUND": 0.68
+ },
+ "odds_arithmetic": "prior H2 B 18.8 -> odds 0.232; x2^0.6-equivalent (C2 at q 0.6 as a distribution), x1.5 (C3), x1.5 (SoftBank), x1.5^0.75 (IREN), x1.5 (single-B) ; non-events x0.81 x0.66 x0.39 on B; A x1.5^0.75 (oil) scales B down; C: x1.5 (D6) then x0.68 x0.83 x0.76 -> median B 18.9, C 1.0. The five B events are offset almost exactly by the three B non-events (OBDC's 0.39 dominates: a 0.60 fork that did not fire) and the realized oil hazard.",
+ "s2": 0.47,
+ "s3": 0.53,
+ "source": "cone.py (skill version) on spec.json, N=40000, seed 7",
+ "state": "TRANSITION",
+ "state_note": "TRANSITION held (s2 0.47, s3 0.53; Nov 2: 0.46 / 0.52); no flip; flips this month: 0 (Nov 2's flip from A was the last)."
+}

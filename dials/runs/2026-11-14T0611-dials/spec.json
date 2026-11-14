@@ -1,0 +1,57 @@
+{
+ "run_at": "2026-11-14T06:11:34-07:00 (2026-11-14T0611-dials)", "seed": 7,
+ "sigma": {"weak": 0.15, "default": 0.25, "moderate": 0.35, "strong": 0.50},
+ "rho": 0.5,
+ "prior": {"H2": [78.8, 18.8, 2.4], "H3": [66.5, 30.9, 2.6]},
+ "prior_note": "layer-1 medians of 2026-11-02T1935-dials-lite (H2 78.5/18.7/2.4, H3 66.3/30.7/2.6), renormalized; new window Nov 3 - Nov 14",
+ "applied": [
+  {"name": "C2 -1 MSFT capacity deferrals (Nscale UK cancelled, Texas option declined, WV 1.35 GW LOI dropped, Oracle rental wound down; Bloomberg/Reuters/FT Nov 5-6) x2 B", "lr": 2.0, "tier": "moderate", "target": "B", "q": 0.6, "judgment": true},
+  {"name": "C3 -1 AI debt deals shelved (Reuters Nov 9; Nebius HY not proceeded -> $3.5B secured loan) x1.5 B", "lr": 1.5, "tier": "default", "target": "B", "q": 1.0},
+  {"name": "C8 -1 SoftBank SB7 $3.7B loss revising power-equipment procurement, $2.85B non-refundable advances forfeited (Nov 10) x1.5 B", "lr": 1.5, "tier": "default", "target": "B", "q": 1.0},
+  {"name": "C8 -1 IREN remaining FY27 capex $15B vs $25-30B expected, 'changing financing environment' (Nov 5/9) x1.5 B", "lr": 1.5, "tier": "default", "target": "B", "q": 0.75, "judgment": true},
+  {"name": "C1 single-B OAS stress-band transition confirmed (329 watch Oct 14 -> 339 stress Nov 11-12, 82nd pct of 3y file; pending since Nov 2) x1.5 B", "lr": 1.5, "tier": "default", "target": "B", "q": 1.0},
+  {"name": "D6 -1 3y auction indirects 55.5% (<60, 15-month low) with JGB 10y +7 bp to 2.86 (Nov 13) x1.5 C", "lr": 1.5, "tier": "default", "target": "C", "q": 1.0},
+  {"name": "Hazard realized: oil -20%/month (Brent spot 126.55 Oct 14 -> 92.14 Nov 11, -27%; OPEC+ +2 mb/d, IEA Q4 surplus; strait still closed) x1.5 A", "lr": 1.5, "tier": "default", "target": "A", "q": 0.75, "judgment": true}
+ ],
+ "nonevents": [
+  {"name": "F-20261110-CPI Oct core 0.30 (<0.4)", "p": 0.30, "lr": 1.5, "tier": "default", "target": "B", "w_at": 0.187},
+  {"name": "F-20261110-CRWV no renegotiation/deferral/cancellation disclosed", "p": 0.30, "lr": 2.0, "tier": "moderate", "target": "B", "w_at": 0.187},
+  {"name": "F-20261104-OBDC non-accruals at FV 0.8% = Q2 0.8% (not above)", "p": 0.60, "lr": 1.5, "tier": "default", "target": "B", "w_at": 0.187},
+  {"name": "F-20261104-REFUND coupons unchanged, 'at least' dropped", "p": 0.25, "lr": 2.0, "tier": "moderate", "target": "C", "w_at": 0.024},
+  {"name": "F-20261110-10Y tail 1.0 bp (<2)", "p": 0.15, "lr": 2.0, "tier": "moderate", "target": "C", "w_at": 0.024},
+  {"name": "F-20261112-30Y tail 0.4 bp (<2)", "p": 0.20, "lr": 2.0, "tier": "moderate", "target": "C", "w_at": 0.024}
+ ],
+ "forks": [
+  {"id": "F-20261117-NVDA-GUIDE", "p_fire": 0.25, "lr": 4, "tier": "strong", "target": "B", "element": "B", "cluster": "nvidia"},
+  {"id": "F-20261117-NVDA-AR", "p_fire": 0.60, "lr": 1.2, "tier": "weak", "target": "B", "element": null, "cluster": "nvidia"},
+  {"id": "F-20261117-NVDA-BACKSTOP", "p_fire": 0.20, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "nvidia"},
+  {"id": "F-20261118-20Y", "p_fire": 0.30, "lr": 2, "tier": "moderate", "target": "C", "element": null, "cluster": "long-end"},
+  {"id": "F-20261208-10YR", "p_fire": 0.25, "lr": 2, "tier": "moderate", "target": "C", "element": null, "cluster": "long-end"},
+  {"id": "F-20261210-30YR", "p_fire": 0.25, "lr": 2, "tier": "moderate", "target": "C", "element": "C", "cluster": "long-end"},
+  {"id": "F-20261120-ANTHROPIC", "p_fire": 0.35, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "lab-funding"},
+  {"id": "F-20261130-CRWV-LOAN", "p_fire": 0.20, "lr": 4, "tier": "strong", "target": "B", "element": null, "cluster": "neocloud-credit"},
+  {"id": "F-20261209-IG100", "p_fire": 0.30, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "credit"},
+  {"id": "F-20261209-IG115", "p_fire": 0.08, "lr": 2, "tier": "moderate", "target": "B", "element": "B", "cluster": "credit"},
+  {"id": "F-20261209-REAL3", "p_fire": 0.20, "lr": 4, "tier": "strong", "target": "B", "element": null, "cluster": "rates"},
+  {"id": "F-20261209-FOMC", "p_fire": 0.08, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "rates"},
+  {"id": "F-20261209-HORMUZ", "p_fire": 0.15, "lr": 2, "tier": "moderate", "target": "A", "element": null, "cluster": "oil"},
+  {"id": "F-20261209-OILE", "p_fire": 0.35, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "oil"},
+  {"id": "F-20261210-CPI", "p_fire": 0.25, "lr": 1.5, "tier": "default", "target": "B", "element": null, "cluster": "rates"}
+ ],
+ "hazards": [
+  {"name": "neocloud / AI-credit event (default, failed refi, gated fund)", "p_window": 0.07, "lr": 4, "tier": "strong", "target": "B", "element": null, "cluster": "neocloud-credit"},
+  {"name": "frontier-lab round down-priced further (OpenAI final close < $15B or Anthropic priced below range)", "p_window": 0.15, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "lab-funding"},
+  {"name": "hyperscaler deal pulled or booked < 2x", "p_window": 0.07, "lr": 4, "tier": "strong", "target": "B", "element": "B", "cluster": "credit"},
+  {"name": "GPU rental -20% q/q", "p_window": 0.04, "lr": 4, "tier": "strong", "target": "B", "element": "B", "cluster": null},
+  {"name": "Nvidia governance shock (DOJ action, revenue restatement, backstop withdrawn outside the print)", "p_window": 0.12, "lr": 2, "tier": "moderate", "target": "B", "element": null, "cluster": "nvidia"},
+  {"name": "hyperscaler SPV / lease-accounting story", "p_window": 0.12, "lr": 1.5, "tier": "default", "target": "B", "element": null, "cluster": null},
+  {"name": "sovereign stress (gilts, JGBs, OATs) spilling into the long end", "p_window": 0.15, "lr": 1.5, "tier": "default", "target": "C", "element": null, "cluster": "long-end"},
+  {"name": "basis-trade unwind (P4 extreme + repo stress + tailed auction)", "p_window": 0.04, "lr": 2, "tier": "moderate", "target": "C", "element": null, "cluster": "long-end"},
+  {"name": "Fed-independence shock", "p_window": 0.04, "lr": 2, "tier": "moderate", "target": "C", "element": null, "cluster": null},
+  {"name": "oil +20% in a month (Hormuz E)", "p_window": 0.08, "lr": 1.5, "tier": "default", "target": "B", "element": null, "cluster": "oil"},
+  {"name": "oil -20% in a month (settlement or surplus)", "p_window": 0.06, "lr": 1.5, "tier": "default", "target": "A", "element": null, "cluster": "oil"}
+ ],
+ "confirm_k": 2,
+ "ledger": {"B_confirmed": 0.17, "C_confirmed": 0.13},
+ "state": {"t2": 20, "t3": 30, "lo": 0.25, "hi": 0.75, "prev": "TRANSITION"}
+}

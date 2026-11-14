@@ -1,0 +1,55 @@
+cone.py — 2026-11-14T06:11:34-07:00 (2026-11-14T0611-dials)  (N=40000, rho=0.5)
+
+Layer 1 — weights under LR-tier noise: median (IQR) [5–95]
+H2                            A  80 (70–87) [52–93]  B  19 (12–29) [6–47]  C   1 (1–1) [1–2]  
+H3                            A  67 (55–77) [36–87]  B  31 (21–44) [12–63]  C   1 (1–2) [1–2]  
+  leverage of 'C2 -1 MSFT capacity deferrals (Nscale UK cancelled, Texas option declined, WV 1.35 GW LOI dropped, Oracle rental wound down; Bloomberg/Reuters/FT Nov 5-6) x2 B' on H2 B median: 13.7 (off) → 23.9 (on)
+  leverage of 'C8 -1 IREN remaining FY27 capex $15B vs $25-30B expected, 'changing financing environment' (Nov 5/9) x1.5 B' on H2 B median: 14.8 (off) → 20.7 (on)
+  leverage of 'Hazard realized: oil -20%/month (Brent spot 126.55 Oct 14 -> 92.14 Nov 11, -27%; OPEC+ +2 mb/d, IEA Q4 surplus; strait still closed) x1.5 A' on H2 B median: 23.8 (off) → 17.6 (on)
+  non-event 'F-20261110-CPI Oct core 0.30 (<0.4)': computed LR on B odds = 0.81
+  non-event 'F-20261110-CRWV no renegotiation/deferral/cancellation disclosed': computed LR on B odds = 0.66
+  non-event 'F-20261104-OBDC non-accruals at FV 0.8% = Q2 0.8% (not above)': computed LR on B odds = 0.39
+  non-event 'F-20261104-REFUND coupons unchanged, 'at least' dropped': computed LR on C odds = 0.68
+  non-event 'F-20261110-10Y tail 1.0 bp (<2)': computed LR on C odds = 0.83
+  non-event 'F-20261112-30Y tail 0.4 bp (<2)': computed LR on C odds = 0.76
+
+State (numeric): P(B_H2 >= 20) = 0.47  P(B_H3 >= 30) = 0.53  → TRANSITION  (A below 0.25 on both; B-LEANING at 0.75 on H2; else TRANSITION)
+
+Layer 2 — forward simulation of the fork table and hazards from the H2 median (coherent updates)
+end of horizon                A  95 (74–99) [5–100]  B   3 (1–22) [0–95]  C   0 (0–1) [0–9]  
+martingale check: mean end-horizon B 19.0 vs start 19.0 → drift +0.0 pts (coherent)
+P(B confirmed by horizon) = 0.07  [independence 0.05 · comonotone 0.08; 4 elements]  ledger 0.17  state-weight B 19
+P(C confirmed by horizon) = 0.00  [independence 0.00 · comonotone 0.00; 1 elements]  ledger 0.13
+  given branch A (80% of paths): end median A 97 / B 1 / C 0
+  given branch B (19% of paths): end median A 29 / B 70 / C 0
+  given branch C (1% of paths): end median A 92 / B 2 / C 2
+
+Per-item conditional probabilities and non-firing LRs (for the next run's non-event updates):
+  F-20261117-NVDA-GUIDE                          p 0.25  LR 4.00→B  p|B 0.64  p|rest 0.16  non-fire 0.43
+  F-20261117-NVDA-AR                             p 0.60  LR 1.20→B  p|B 0.69  p|rest 0.58  non-fire 0.73
+  F-20261117-NVDA-BACKSTOP                       p 0.20  LR 2.00→B  p|B 0.34  p|rest 0.17  non-fire 0.80
+  F-20261118-20Y                                 p 0.30  LR 2.00→C  p|C 0.59  p|rest 0.30  non-fire 0.58
+  F-20261208-10YR                                p 0.25  LR 2.00→C  p|C 0.49  p|rest 0.25  non-fire 0.67
+  F-20261210-30YR                                p 0.25  LR 2.00→C  p|C 0.49  p|rest 0.25  non-fire 0.67
+  F-20261120-ANTHROPIC                           p 0.35  LR 2.00→B  p|B 0.59  p|rest 0.29  non-fire 0.58
+  F-20261130-CRWV-LOAN                           p 0.20  LR 4.00→B  p|B 0.51  p|rest 0.13  non-fire 0.56
+  F-20261209-IG100                               p 0.30  LR 2.00→B  p|B 0.50  p|rest 0.25  non-fire 0.66
+  F-20261209-IG115                               p 0.08  LR 2.00→B  p|B 0.13  p|rest 0.07  non-fire 0.93
+  F-20261209-REAL3                               p 0.20  LR 4.00→B  p|B 0.51  p|rest 0.13  non-fire 0.56
+  F-20261209-FOMC                                p 0.08  LR 2.00→B  p|B 0.13  p|rest 0.07  non-fire 0.93
+  F-20261209-HORMUZ                              p 0.15  LR 2.00→A  p|A 0.17  p|rest 0.08  non-fire 0.91
+  F-20261209-OILE                                p 0.35  LR 2.00→B  p|B 0.59  p|rest 0.29  non-fire 0.58
+  F-20261210-CPI                                 p 0.25  LR 1.50→B  p|B 0.34  p|rest 0.23  non-fire 0.85
+  neocloud / AI-credit event (default, failed re p 0.07  LR 4.00→B  p|B 0.18  p|rest 0.04  non-fire 0.86
+  frontier-lab round down-priced further (OpenAI p 0.15  LR 2.00→B  p|B 0.25  p|rest 0.13  non-fire 0.86
+  hyperscaler deal pulled or booked < 2x         p 0.07  LR 4.00→B  p|B 0.18  p|rest 0.04  non-fire 0.86
+  GPU rental -20% q/q                            p 0.04  LR 4.00→B  p|B 0.10  p|rest 0.03  non-fire 0.92
+  Nvidia governance shock (DOJ action, revenue r p 0.12  LR 2.00→B  p|B 0.20  p|rest 0.10  non-fire 0.89
+  hyperscaler SPV / lease-accounting story       p 0.12  LR 1.50→B  p|B 0.16  p|rest 0.11  non-fire 0.94
+  sovereign stress (gilts, JGBs, OATs) spilling  p 0.15  LR 1.50→C  p|C 0.22  p|rest 0.15  non-fire 0.91
+  basis-trade unwind (P4 extreme + repo stress + p 0.04  LR 2.00→C  p|C 0.08  p|rest 0.04  non-fire 0.96
+  Fed-independence shock                         p 0.04  LR 2.00→C  p|C 0.08  p|rest 0.04  non-fire 0.96
+  oil +20% in a month (Hormuz E)                 p 0.08  LR 1.50→B  p|B 0.11  p|rest 0.07  non-fire 0.96
+  oil -20% in a month (settlement or surplus)    p 0.06  LR 1.50→A  p|A 0.06  p|rest 0.04  non-fire 0.98
+
+Log line: {"H2": [79.9, 18.9, 1.0], "H2_IQR_B": [12.2, 28.8], "H3": [67.4, 31.3, 1.1], "H3_IQR_B": [21.2, 43.8], "P_B_conf": 0.071, "P_C_conf": 0.0, "drift_B": 0.0, "state": "TRANSITION", "s2": 0.47, "s3": 0.53}

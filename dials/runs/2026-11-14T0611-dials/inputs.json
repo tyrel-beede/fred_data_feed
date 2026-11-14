@@ -1,0 +1,234 @@
+{
+ "fetch_rule": "unattended: every page reached via a WebSearch result link; 2 searches, 3 pages for this stage (stage 1's 12 pages are in its own inputs.json)",
+ "files": [
+  {
+   "as_of": "2026-11-04",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/_status_P1_ici.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (partial: Bull&Bear null)",
+   "path": "dials/_status_P2_epfr.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-11-03",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (Nov 10 report delayed to Nov 16)",
+   "path": "dials/_status_P4_cftc.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (partial)",
+   "path": "dials/_status_P5_sentiment.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-09-30",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh for a monthly series (Oct not posted)",
+   "path": "dials/_status_P6_margin.json",
+   "tolerance_days": 35
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (partial: IG daily volume null)",
+   "path": "dials/_status_P8_calendar.json",
+   "tolerance_days": 2
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/_status_P9_custody.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-11-04",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (partial: H.8 PDF served stale vintage; FRED TOTCI used)",
+   "path": "dials/_status_P11_h8.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-10-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "carried (Oct 2-8 survey; Nov due ~Nov 17)",
+   "path": "dials/_status_P12_fms.json",
+   "tolerance_days": 35
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh for principals/NVDA/MU; carried Oct 22-30 for SPCX GEV VRT ANET AVGO CRWV NBIS",
+   "path": "dials/_status_consensus.json",
+   "tolerance_days": 8
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/_status_events.json",
+   "tolerance_days": 2
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (partial)",
+   "path": "dials/_status_standoff.json",
+   "tolerance_days": 2
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/_status_voices.json",
+   "tolerance_days": 4
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/state/latest.json"
+  },
+  {
+   "as_of": "2026-11-02",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh (state.prev)",
+   "path": "dials/runs/2026-11-02T1935-dials-lite/cone.json"
+  },
+  {
+   "as_of": "2026-11-02",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-02T1935-dials-lite/spec.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/state/ledger.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/state/register.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/rulings.md"
+  },
+  {
+   "as_of": "2026-11-06b",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/config.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh (stage 1, partial)",
+   "path": "dials/runs/2026-11-14T0611-standoff/export.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-standoff/report.md"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-03..14.json (8 files)"
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/flows/2026-11-05..14.json (7 files)"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/calendar/2026-11-10..14.json (5 files)"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/voices/2026-11-12.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh/carried per ticker",
+   "path": "dials/consensus/2026-11-09.json"
+  },
+  {
+   "as_of": "2026-11-14T02:41Z",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (all FRED, treasury, nyfed ok; cftc files end 2023-11-21 - stale, not used)",
+   "path": "data/_status_main.json"
+  },
+  {
+   "as_of": "2026-11-12/13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/*.csv (34 series read)"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/prices/*.csv (38 tickers)"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gap days flagged)",
+   "path": "data/gdelt/*_timelinevol.json (5 queries)"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (tails from the calendar gather's when-issued sources)",
+   "path": "data/treasury/auctions_results.csv"
+  }
+ ],
+ "gate_rule": "fresh when last_as_of within the group's tolerance of run_at; carried with its as-of date when older; missing beyond twice the tolerance (none missing this run)",
+ "inputs_commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+ "pages": [
+  {
+   "as_of": "2026-11-04",
+   "gate": "fetched",
+   "note": "OBDC Q3: non-accruals 2.9% cost / 0.8% FV vs 2.8% / 0.8% Q2; NAV 14.32",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001655888/000165588826000070/exhibit991pressrelease-ann.htm"
+  },
+  {
+   "as_of": "2026-10-09",
+   "gate": "fetched (stale, series conflict)",
+   "note": "10y term premium 1.07 (Oct 9), 0.90 (Sep 9); page labels ACM but sources FRED THREEFYTP10",
+   "url": "https://convextrade.com/metrics/threefytp10/today"
+  },
+  {
+   "as_of": "2026-05-15",
+   "gate": "fetched (too old)",
+   "note": "ACMTP10 0.83 May 15, 2026",
+   "url": "https://eco3min.fr/en/acmtp10-vs-dgs10-vs-expected-short-rates-full-decomposition/"
+  }
+ ],
+ "repo_commit": "c1ca75e832d0627d71eb4ae643a78d0aa6745cce",
+ "run_id": "2026-11-14T0611-dials"
+}
