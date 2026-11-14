@@ -777,8 +777,24 @@
    "last_seen_run": "2026-10-30T1253-standoff",
    "note": "",
    "p": 0.1,
+   "resolution": {
+    "brier": 0.01,
+    "brier_recomputed": 0.01,
+    "criterion": "US or Israeli strikes on Iranian territory before Nov 3",
+    "event_time": "2026-11-03",
+    "evidence": "No strike on Iranian territory reported Oct 30-Nov 3 in any source read; the Nov 6 Qeshm strikes were reported as the resumption after the midterm pause (Al Jazeera, dials/standoff/2026-11-09.json). The Oct 31-Nov 5 window has no gather file; resolution rests on the absence of any report and on the Nov 6 framing.",
+    "id": "S-20261103-STRIKE",
+    "kind": "standoff",
+    "log_score": -0.105361,
+    "observed_time": "2026-11-14T06:11:34-07:00",
+    "outcome": 0,
+    "p": 0.1,
+    "resolved_at": "2026-11-14",
+    "resolved_in_run": "2026-11-14T0611-standoff",
+    "source_node": "dials/standoff/2026-11-09.json"
+   },
    "resolves": "2026-11-03",
-   "status": "open"
+   "status": "resolved"
   },
   {
    "criterion": "Saudi-acknowledged damage to the East-West line or Yanbu export facilities Oct 20-Nov 9",
@@ -789,7 +805,38 @@
    "last_seen_run": "2026-10-30T1253-standoff",
    "note": "",
    "p": 0.3,
+   "resolution": {
+    "brier": 0.49,
+    "brier_recomputed": 0.49,
+    "criterion": "Saudi-acknowledged damage to the East-West line or Yanbu export facilities Oct 20-Nov 9",
+    "event_time": "2026-11-09",
+    "evidence": "SPA (via Al Jazeera, Nov 9): the East-West pipeline was targeted in the Medina region, a 'limited fire' resulted, operations unaffected. A Saudi-acknowledged fire on the line is damage under the criterion as written; scored YES and flagged marginal (no export impact).",
+    "flag": "marginal",
+    "id": "S-20261109-YANBU",
+    "kind": "standoff",
+    "log_score": -1.203973,
+    "observed_time": "2026-11-14T06:11:34-07:00",
+    "outcome": 1,
+    "p": 0.3,
+    "resolved_at": "2026-11-14",
+    "resolved_in_run": "2026-11-14T0611-standoff",
+    "source_node": "dials/standoff/2026-11-10.json"
+   },
    "resolves": "2026-11-09",
+   "status": "resolved"
+  },
+  {
+   "criterion": "within 7 days of the Nov 19 Shenzhen trilateral, a US-Iran meeting with a named venue and date is announced by the US or Iran (not a mediator)",
+   "depth": 1,
+   "first_registered_run": "2026-11-14T0611-standoff",
+   "history": [],
+   "id": "S-20261126-VENUE",
+   "kind": "standoff",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 12,
+   "note": "new: Ghalibaf says the US asked Putin to arrange direct talks; Trump 'does intend to talk about Iran' with Xi and Putin. T3 +1 x2 if it resolves YES.",
+   "p": 0.15,
+   "resolves": "2026-11-26",
    "status": "open"
   },
   {
@@ -801,94 +848,187 @@
    "last_seen_run": "2026-10-30T1253-standoff",
    "note": "from 0.40; press/crowd adjustment within +/-10",
    "p": 0.45,
+   "resolution": {
+    "brier": 0.3025,
+    "brier_recomputed": 0.3025,
+    "criterion": "US or Israeli strikes on Iranian territory Nov 4-30",
+    "event_time": "2026-11-06",
+    "evidence": "US strikes on Qeshm Island Nov 6 ('minor strikes' - Trump), a further strike reported Nov 9, Sirik telecom tower Nov 12 (IRNA; CENTCOM intercepted two drones). Criterion met Nov 6; resolved early.",
+    "id": "S-20261130-STRIKE",
+    "kind": "standoff",
+    "log_score": -0.798508,
+    "observed_time": "2026-11-14T06:11:34-07:00",
+    "outcome": 1,
+    "p": 0.45,
+    "resolved_at": "2026-11-14",
+    "resolved_in_run": "2026-11-14T0611-standoff",
+    "source_node": "dials/standoff/2026-11-09.json; 2026-11-13.json"
+   },
+   "resolves": "2026-11-30",
+   "status": "resolved"
+  },
+  {
+   "criterion": "a further US or Israeli strike on Iranian territory Nov 15-30, reported by CENTCOM/IDF or confirmed by two wires",
+   "depth": 1,
+   "first_registered_run": "2026-11-14T0611-standoff",
+   "history": [],
+   "id": "S-20261130-STRIKE2",
+   "kind": "standoff",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 16,
+   "note": "new: after three 'minor' strikes Nov 6-12 and Reuters' 'may hold off absent provocations' (Nov 14); Israel lobbying; IRGC 'unlimited response' posture makes a provocation likely.",
+   "p": 0.35,
    "resolves": "2026-11-30",
    "status": "open"
   },
   {
    "criterion": "a new Israeli government sworn in by Dec 4",
+   "depth": 1,
    "first_registered_run": "2026-10-30T1253-standoff",
-   "history": [],
+   "history": [
+    {
+     "p": 0.3,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
    "id": "S-20261204-ISRAELGOV",
    "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "new 10/30",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 20,
+   "note": "held at 0.30; no coalition reporting read this run (Katz: he, Netanyahu and Zamir aligned - Netanyahu in office Nov 12).",
    "p": 0.3,
    "resolves": "2026-12-04",
    "status": "open"
   },
   {
    "criterion": "Brent front-month settles >= 120 on any day by Dec 9",
+   "depth": 2,
    "first_registered_run": "2026-10-30T1253-standoff",
-   "history": [],
+   "history": [
+    {
+     "p": 0.35,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
    "id": "S-20261209-BRENT120",
    "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "from 0.25; first-pass 0.20 void",
-   "p": 0.35,
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 25,
+   "note": "from 0.35: Brent 95.84, needs +25% in 17 sessions; the IEA surplus and OPEC+ output cap the F path; essentially the E-strike path only.",
+   "p": 0.1,
    "resolves": "2026-12-09",
    "status": "open"
   },
   {
    "criterion": "Brent front-month settles <= 90 on any day by Dec 9",
+   "depth": 2,
    "first_registered_run": "2026-10-30T1253-standoff",
-   "history": [],
+   "history": [
+    {
+     "p": 0.15,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
    "id": "S-20261209-BRENT90",
    "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "from 0.20; first-pass 0.35 void",
-   "p": 0.15,
-   "resolves": "2026-12-09",
-   "status": "open"
-  },
-  {
-   "criterion": "E criteria met by Dec 9",
-   "first_registered_run": "2026-10-30T1253-standoff",
-   "history": [],
-   "id": "S-20261209-E",
-   "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "from 0.35",
-   "p": 0.4,
-   "resolves": "2026-12-09",
-   "status": "open"
-  },
-  {
-   "criterion": "a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
-   "first_registered_run": "2026-10-30T1253-standoff",
-   "history": [],
-   "id": "S-20261209-M3",
-   "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "",
-   "p": 0.15,
-   "resolves": "2026-12-09",
-   "status": "open"
-  },
-  {
-   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
-   "first_registered_run": "2026-10-30T1253-standoff",
-   "history": [],
-   "id": "S-20261209-SIGN",
-   "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "held",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 25,
+   "note": "from 0.15: settle low 91.49 and intraday 89.15 on Nov 10; surplus narrative live; the Nov 12 +3.3% on attack headlines shows the floor's bounce.",
    "p": 0.3,
    "resolves": "2026-12-09",
    "status": "open"
   },
   {
-   "criterion": "any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "criterion": "E criteria met by Dec 9 (a strike on energy infrastructure in either direction confirmed by the owning state, a Gulf state engaging Iran directly, or an Iranian nuclear test)",
+   "depth": 2,
    "first_registered_run": "2026-10-30T1253-standoff",
+   "history": [
+    {
+     "p": 0.4,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
+   "id": "S-20261209-E",
+   "kind": "standoff",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 25,
+   "note": "from 0.40: E weight 46 -> 46 exact, but 17 of the 40 days have passed without the criterion; the Nov 9 pipeline 'limited fire' and the Nov 12 Houthi claims did not meet it (Saudi acknowledged no damage to exports).",
+   "p": 0.35,
+   "resolves": "2026-12-09",
+   "status": "open"
+  },
+  {
+   "criterion": "the FOMC raises the funds rate by >= 25 bp on Dec 9",
+   "depth": 2,
+   "first_registered_run": "2026-11-14T0611-standoff",
    "history": [],
+   "id": "S-20261209-FEDHIKE",
+   "kind": "standoff",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 25,
+   "note": "new (F3 transmission fork): FedWatch 88.8% + 11.2% for 50 bp (Nov 10); registered so the floor's Fed-mode is scored.",
+   "p": 0.9,
+   "resolves": "2026-12-09",
+   "status": "open"
+  },
+  {
+   "criterion": "a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
+   "depth": 2,
+   "first_registered_run": "2026-10-30T1253-standoff",
+   "history": [
+    {
+     "p": 0.15,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
+   "id": "S-20261209-M3",
+   "kind": "standoff",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 25,
+   "note": "from 0.15: 6-10% carried since Oct; attacks spreading into UAE waters; no deal path inside the window.",
+   "p": 0.05,
+   "resolves": "2026-12-09",
+   "status": "open"
+  },
+  {
+   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
+   "depth": 2,
+   "first_registered_run": "2026-10-30T1253-standoff",
+   "history": [
+    {
+     "p": 0.3,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
+   "id": "S-20261209-SIGN",
+   "kind": "standoff",
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 25,
+   "note": "from 0.30: T5 -1 (Vance pulled), Trump 'don't need a deal', Iran 'no talks before seven conditions'; the only dated venue is a US-China-Russia trilateral. Within the R+ + R- H2 weight of 20.",
+   "p": 0.15,
+   "resolves": "2026-12-09",
+   "status": "open"
+  },
+  {
+   "criterion": "any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "depth": 3,
+   "first_registered_run": "2026-10-30T1253-standoff",
+   "history": [
+    {
+     "p": 0.1,
+     "run": "2026-10-30T1253-standoff"
+    }
+   ],
    "id": "S-20261231-FUSE",
    "kind": "standoff",
-   "last_seen_run": "2026-10-30T1253-standoff",
-   "note": "from 0.20",
-   "p": 0.1,
+   "last_seen_run": "2026-11-14T0611-standoff",
+   "lead_days": 47,
+   "note": "from 0.10: the structure is a secured chip lease with a $7B prepayment and an $8.3B senior secured loan - collateral by construction; indicated 7.75-8.75% is not IG.",
+   "p": 0.05,
    "resolves": "2026-12-31",
    "status": "open"
   }
  ],
  "n_open": 34,
- "n_resolved": 12
+ "n_resolved": 15
 }

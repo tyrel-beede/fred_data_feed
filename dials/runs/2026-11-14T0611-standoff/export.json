@@ -1,0 +1,77 @@
+{
+ "H2": {
+  "E": 45,
+  "F": 35,
+  "R+": 5,
+  "R-": 15
+ },
+ "H2_exact": {
+  "E": 45.9,
+  "F": 34.43,
+  "R+": 6.56,
+  "R-": 13.11
+ },
+ "H3": {
+  "E": 50,
+  "F": 30,
+  "R+": 5,
+  "R-": 15
+ },
+ "brent": {
+  "front_contract": "Jan-27",
+  "front_date": "2026-11-13",
+  "front_month": 95.84,
+  "low_settle_since": {
+   "date": "2026-11-10",
+   "value": 91.49
+  },
+  "m1_m12_date": "2026-11-12",
+  "m1_m12_spread": 15.57,
+  "m1_m2_note": "Feb-27 settle not printed; prompt spread described 'under $2.50' Nov 5 (MUFG) vs >$5 mid-Oct",
+  "m1_m2_spread": null,
+  "next_month": null,
+  "recent_high": 117.6,
+  "recent_high_date": "2026-10-30",
+  "recent_high_note": "Dec-26 expiry settle; Jan-27 high 116.72 on 2026-10-23"
+ },
+ "floor_zone": "85-100",
+ "floor_zone_prev": "100-120",
+ "fuse": "strained",
+ "fuse_note": "SpaceX $40B Apollo GPU lease + $7B prepayment + $8.3B senior secured loan; pieces being sold pre-syndication (Nov 5); indicated 7.75-8.75%, not priced; close expected by year-end",
+ "hazards_per_month": {
+  "choreographed_strike_then_ceasefire": 8,
+  "disorderly_treasury_move": 20,
+  "energy_infra_strike_either_direction": 12,
+  "fed_50bp_dec": 11,
+  "fuse_pricing_fails_or_sweetened_by_1231": 30,
+  "gulf_state_engages_iran": 6,
+  "iran_npt_withdrawal_announced": 8,
+  "iran_nuclear_test": 2,
+  "red_sea_or_pipeline_shutdown": 15
+ },
+ "hormuz_fork_p_signing_by": {
+  "2026-12-09": 0.15
+ },
+ "line": "standoff 2026-11-14T0611-standoff | R+ 5 / R- 15 / F 35 / E 45 (H2) | floor 85-100 (from 100-120) | Hormuz fork 0.15 by Dec 9 | supply | fuse strained | status partial",
+ "run_at": "2026-11-14T06:11:34-07:00",
+ "run_id": "2026-11-14T0611-standoff",
+ "shock_type": "supply",
+ "status": "partial",
+ "transmission": {
+  "core_ge_0p4_twice": false,
+  "cpi_oct_core_mm": 0.3,
+  "cpi_oct_headline_mm": 0.35,
+  "dec_50bp_p": 0.112,
+  "dec_hike_p": 0.888,
+  "dfii10": 2.86,
+  "dgs10": 5.1,
+  "dgs2": 4.86,
+  "t5yie": 2.3
+ },
+ "unmeasured": "brent.m2 settle / O2 M1-M2 spread (no page printed the Feb-27 settle any day Nov 6-13); M3 war-risk % of hull (no November quote, Oct 6-10% carried); M8 Hormuz crude mb/d (latest 13.1 as of 2026-09-29, carried; IEA Gulf exports ex-Oman 18.4 mb/d Oct includes bypass); O4 OVX, O5 TD3C after Nov 6, O6 rial, O7 CDS not read; F6 FMS is the Oct 2-8 survey (Nov FMS not yet released); gather coverage begins 2026-11-06 so Oct 31-Nov 5 headlines are not in the files",
+ "wti": {
+  "front_contract": "Dec-26",
+  "front_date": "2026-11-13",
+  "front_month": 88.56
+ }
+}

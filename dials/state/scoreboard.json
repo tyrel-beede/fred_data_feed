@@ -8,7 +8,11 @@
    "n_last20": 12
   },
   "standoff": {
-   "n": 0
+   "brier_last20": 0.2675,
+   "brier_mean": 0.2675,
+   "log_score_mean": -0.702614,
+   "n": 3,
+   "n_last20": 3
   }
  },
  "brier_logged_vs_recomputed_mismatches": []

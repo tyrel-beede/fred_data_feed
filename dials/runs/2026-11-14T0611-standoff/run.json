@@ -1,0 +1,34 @@
+{
+ "error": "gather group standoff status partial on every file Nov 9-14; unmeasured this run: brent.m2 settle / O2 M1-M2 spread (no page printed the Feb-27 settle any day Nov 6-13); M3 war-risk % of hull (no November quote, Oct 6-10% carried); M8 Hormuz crude mb/d (latest 13.1 as of 2026-09-29, carried; IEA Gulf exports ex-Oman 18.4 mb/d Oct includes bypass); O4 OVX, O5 TD3C after Nov 6, O6 rial, O7 CDS not read; F6 FMS is the Oct 2-8 survey (Nov FMS not yet released); gather coverage begins 2026-11-06 so Oct 31-Nov 5 headlines are not in the files",
+ "grade_the_gap": null,
+ "inputs_commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+ "kind": "standoff",
+ "mode": "full",
+ "repo_commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+ "run_at": "2026-11-14T06:11:34-07:00",
+ "run_id": "2026-11-14T0611-standoff",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 1,
+  "task": "dials-weekly"
+ },
+ "skill_version": "standoff-watch SKILL.md, repository-state version (dials/runs/<RUN_ID>/), synced skill folder 2026-11-14",
+ "state_prev": {
+  "H2": {
+   "E": 45,
+   "F": 25,
+   "R+": 10,
+   "R-": 20
+  },
+  "H2_exact": {
+   "E": 46.667,
+   "F": 23.333,
+   "R+": 10.0,
+   "R-": 20.0
+  },
+  "run_id": "2026-10-30T1253-standoff"
+ },
+ "status": "partial"
+}

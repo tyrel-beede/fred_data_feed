@@ -1,50 +1,106 @@
 {
+ "P11_h8": {
+  "error": "Primary (repo FRED TOTCI) is current through week ending 2026-11-04 (13 Nov release). Web cross-check partial: The Nov 13 2026 H.8 release (week ending Nov 4) could not be read: federalreserve.gov/releases/h8/current/h8.pdf served the Nov 6 release (weeks to Oct 28), and the HTML default.htm fetch was blocked with PROVENANCE_REQUIRED (permission not answered). Fed calendar confirms an H.8 release scheduled 13 Nov 4:15 p.m. and the H.8 index page shows Last Update 13 Nov. Week-ending-Nov-4 values are null; Oct 28 and Oct 21 levels recorded from the Nov 6 vintage as the latest web-readable observation.",
+  "group": "P11_h8",
+  "last_as_of": "2026-11-04",
+  "last_file": "dials/flows/2026-11-14.json",
+  "last_run_at": "2026-11-14T05:11:00-07:00",
+  "status": "partial"
+ },
+ "P12_fms": {
+  "error": "",
+  "group": "P12_fms",
+  "last_as_of": "2026-10-13",
+  "last_file": "dials/flows/2026-11-11.json",
+  "last_run_at": "2026-11-11T05:10:00-07:00",
+  "status": "ok"
+ },
  "P1_ici": {
   "error": "",
   "group": "P1_ici",
-  "last_as_of": "2026-10-28",
-  "last_file": "dials/flows/2026-11-05.json",
-  "last_run_at": "2026-11-05T05:26:09-07:00",
+  "last_as_of": "2026-11-04",
+  "last_file": "dials/flows/2026-11-12.json",
+  "last_run_at": "2026-11-12T05:10:00-07:00",
   "status": "ok"
  },
- "P5_sentiment": {
-  "error": "CBOE total/equity put/call printed only through 2026-11-03 (thetrading.tools lags a session; 11-04 and 11-05 not available); VIX9D from the repo price file only, VIX6M/VIX1Y not available.",
-  "group": "P5_sentiment",
-  "last_as_of": "2026-11-05",
-  "last_file": "dials/flows/2026-11-06.json",
-  "last_run_at": "2026-11-06T05:15:00-07:00",
+ "P2_epfr": {
+  "error": "Bull & Bear indicator level for the 13 Nov Flow Show not printed in any reachable relay (null; last printed level 7.4 from 15 Oct). EPFR ETF and active-fund splits not printed (null). Lipper tech-sector split not printed (null). Bloomberg (refused host) and gurufocus (client_error) and finvaulta series page (client_error) could not be fetched.",
+  "group": "P2_epfr",
+  "last_as_of": "2026-11-11",
+  "last_file": "dials/flows/2026-11-14.json",
+  "last_run_at": "2026-11-14T05:11:00-07:00",
   "status": "partial"
  },
+ "P4_cftc": {
+  "error": "The 2026-11-10 TFF report was not released on Fri 13 Nov: CFTC release schedule shows Mon 2026-11-16 (delayed release due to a federal holiday - Veterans Day Wed 11 Nov). All three web sources (futuresbench, thetrading.tools, cftc.gov financial_lf.htm) show positions as of 2026-11-03 only, identical to the repo's latest date, so there is no newer web observation; the 2026-11-03 figures are recorded as a cross-check. cftc.gov page truncated at 100k chars so 10y note / VIX not read; no gold/crude on the pages used. Fed-related: none. PROVENANCE block: none for this group.",
+  "group": "P4_cftc",
+  "last_as_of": "2026-11-03",
+  "last_file": "dials/flows/2026-11-14.json",
+  "last_run_at": "2026-11-14T05:11:00-07:00",
+  "status": "partial"
+ },
+ "P5_sentiment": {
+  "error": "CBOE total/equity put/call not printed for the 2026-11-12 session (thetrading.tools lags a session). VIX9D, VIX6M and VIX1Y not printed on the thetrading.tools term-structure page (VIX9D taken from the repo price file only). SKEW web page prints the latest close only, no history.",
+  "group": "P5_sentiment",
+  "last_as_of": "2026-11-12",
+  "last_file": "dials/flows/2026-11-13.json",
+  "last_run_at": "2026-11-13T05:11:00-07:00",
+  "status": "partial"
+ },
+ "P6_margin": {
+  "error": "",
+  "group": "P6_margin",
+  "last_as_of": "2026-09-30",
+  "last_file": "dials/flows/2026-11-09.json",
+  "last_run_at": "2026-11-09T05:18:00-07:00",
+  "status": "ok"
+ },
  "P8_calendar": {
-  "error": "ORCL (12-14), AVGO (12-09 or 12-10 - aggregators disagree) and MU (12-23) next earnings dates remain aggregator estimates (verified:false); none falls inside ten days. Meta USD 15bn FWP on sec.gov unreachable (client_error) - Meta USD and EUR final terms are press-sourced, two EUR tranches still missing. New deals (Apple, ING loan sale, SpaceX financing sell-down, Meta option exercise) are press-only (primary:false). Bill auction results from a secondary site (repo auction files have no rows after 2026-10-22 / no bills); no tails computed (no when-issued source). TreasuryDirect pages robots_disallowed; Renaissance week-ahead / weekly recap for 11-06 not yet posted.",
+  "error": "IG supply readings (ig.issuance.daily_usd_bn for Fri 11-13 and the weekly total) are null: no search-surfaced page printed a figure (Yahoo relay client_error, cambonds search returned stale editions, Bloomberg refused). Semafor 11-13 CoreWeave piece robots_disallowed (relayed via 404kresearch 11-13). treasurydirect.gov auction page robots_disallowed; the 20y/10y TIPS dates were verified from the home.treasury.gov tentative schedule PDF instead. No Oracle FQ2 / Micron FQ1 company announcement found (verified:false, aggregator dates carried). Schedule-page verifications carry as_of = date read (2026-11-14) because the agency pages print no publication date. No company IR/SEC item identifies the one incremental IPO pricing that moved the Renaissance count 122->123.",
   "group": "P8_calendar",
-  "last_as_of": "2026-11-05",
-  "last_file": "dials/calendar/2026-11-06.json",
-  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "last_as_of": "2026-11-14",
+  "last_file": "dials/calendar/2026-11-14.json",
+  "last_run_at": "2026-11-14T05:11:00-07:00",
   "status": "partial"
  },
  "P9_custody": {
-  "error": "H.4.1 release of 2026-11-05 not reachable (federalreserve.gov current PDF still served the 10-29 release; index page PROVENANCE_REQUIRED) - WMTSECL1 2026-11-04 is the repo/FRED value, not cross-checked. MOF weekly: latest PDF is the 2026-10-29 release (week to 10-24); the 10-25..10-31 week was not posted.",
+  "error": "MOF weekly PDF (week.pdf) returned PROVENANCE_REQUIRED (permission request not answered) - values were read instead from MOF's own historical weekly CSV (week.csv, linked from the search-surfaced MOF index page), columns matched by position and reconciled against Reuters (week to 10-31) and Trading Economics (week to 11-07). TIC September 2026 data not yet published (scheduled 2026-11-18).",
   "group": "P9_custody",
-  "last_as_of": "2026-11-04",
-  "last_file": "dials/flows/2026-11-06.json",
-  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "last_as_of": "2026-11-11",
+  "last_file": "dials/flows/2026-11-13.json",
+  "last_run_at": "2026-11-13T05:11:00-07:00",
+  "status": "ok"
+ },
+ "consensus": {
+  "error": "Pages read for all 14 tickers, but the stockanalysis copies fetched for SPCX, GEV, VRT, ANET, AVGO, CRWV, NBIS carry forecast dates of 2026-10-22..10-30 (October ratings, stale price/PT); see each item's as_of. No post-Q3-earnings 2027 capex consensus compile found; the one recorded is dated 2026-08-05.",
+  "group": "consensus",
+  "last_as_of": "2026-11-06",
+  "last_file": "dials/consensus/2026-11-09.json",
+  "last_run_at": "2026-11-09T05:01:33-07:00",
   "status": "partial"
  },
  "events": {
-  "error": "",
+  "error": "Two late (11-12) EM items rest on a Bloomberg relay (zackeiseman substack) plus headline-only/AFP confirmation: Bloomberg and businessmirror (robots) refused, journalarta and asiaone (wrong article) failed, so Vietnam's size (up to $1bn) and Indonesia's 10y (7.66%, +4bp) are relay-sourced; FX record low confirmed via Malay Mail/AFP. DCD (Prometheus) and cryptobriefing (Cerebras) fetches failed with client_error but neither was needed (Prometheus out of gate; Cerebras confirmed via tokenpost). No in-gate hit for fund gating, repriced AI round, memory LTA renegotiation, GW deferral, auction tail (none 13 Nov; 30y 11-12 tail already recorded), CoreWeave loan (seeking, not pulled), or Fed/repo/SOFR/swap-line stress on 13 Nov.",
   "group": "events",
-  "last_as_of": "2026-11-05",
-  "last_file": "dials/events/2026-11-06.json",
-  "last_run_at": "2026-11-06T05:15:00-07:00",
+  "last_as_of": "2026-11-13",
+  "last_file": "dials/events/2026-11-14.json",
+  "last_run_at": "2026-11-14T05:11:00-07:00",
   "status": "ok"
  },
- "voices": {
-  "error": "Michael Burry unreachable: config url https://cassandraunchained.substack.com could not be opened and the post index of the search-surfaced https://michaeljburry.substack.com ('Cassandra Unchained, by Michael Burry') was not readable for the gate window. WebFetch of every roster url taken verbatim from config.json returned PROVENANCE_REQUIRED (unattended permission prompt, not retried); voices were read through search-surfaced links instead, so these owned index pages were NOT read and an in-gate post there cannot be ruled out: Dalio Substack, Tooze index, lynalden.com home, Oaktree insights, GMO research library, Sequoia article index. Quiet on search only (low confidence): Grantham, Cahn, Baker. David Kostin retired from Goldman in 2025 (Ben Snider is Chief US Equity Strategist) - roster entry is stale. Hartnett: the in-gate Flow Show was read via write-ups that carry no EPFR flow table or Bull & Bear reading. N5: WSJ Heard on the Street and FT Alphaville surfaced nothing dated; the 'term premium OR Treasury auction' query returned no argument piece.",
-  "group": "voices",
-  "last_as_of": "2026-11-05",
-  "last_file": "dials/voices/2026-11-05.json",
-  "last_run_at": "2026-11-05T05:03:33-07:00",
+ "standoff": {
+  "error": "brent.m2.settle (Feb-27) null: no page printed it and the cappnotes 13 Nov Closing Look (client_error earlier in session) was not retried per brief. war_risk.premium_pct_hull null: no dated November quote. td3c null: no 12-13 Nov Baltic print surfaced. No UKMTO/JMIC advisory dated 13-14 Nov found; the five tanker-mine claims of 13-14 Nov are Iranian-sourced and unconfirmed. hormuz.now 13 Nov daily count not yet printed (latest full day 12 Nov). UANI shipping update 13 Nov client_error; NPR robots_disallowed. Dated Brent is IEA's approximate 'around $93', not a Platts/Argus daily.",
+  "group": "standoff",
+  "last_as_of": "2026-11-14",
+  "last_file": "dials/standoff/2026-11-14.json",
+  "last_run_at": "2026-11-14T05:11:00-07:00",
   "status": "partial"
+ },
+ "voices": {
+  "error": "",
+  "group": "voices",
+  "last_as_of": "2026-11-12",
+  "last_file": "dials/voices/2026-11-12.json",
+  "last_run_at": "2026-11-12T05:09:36-07:00",
+  "status": "ok"
  }
 }

@@ -1,0 +1,149 @@
+{
+ "hazards_per_month": {
+  "choreographed_strike_then_ceasefire": 8,
+  "disorderly_treasury_move": 20,
+  "energy_infra_strike_either_direction": 12,
+  "fed_50bp_dec": 11,
+  "fuse_pricing_fails_or_sweetened_by_1231": 30,
+  "gulf_state_engages_iran": 6,
+  "iran_npt_withdrawal_announced": 8,
+  "iran_nuclear_test": 2,
+  "red_sea_or_pipeline_shutdown": 15
+ },
+ "ledger_note": "3 resolved this run (Brier 0.01, 0.49, 0.3025; mean 0.2675, n=3 standoff); 7 re-priced; 3 new. Rolling Brier is read from dials/state/scoreboard.json after materialization.",
+ "registered": [
+  {
+   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-SIGN",
+   "lead_days": 25,
+   "note": "from 0.30: T5 -1 (Vance pulled), Trump 'don't need a deal', Iran 'no talks before seven conditions'; the only dated venue is a US-China-Russia trilateral. Within the R+ + R- H2 weight of 20.",
+   "p": 0.15,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "E criteria met by Dec 9 (a strike on energy infrastructure in either direction confirmed by the owning state, a Gulf state engaging Iran directly, or an Iranian nuclear test)",
+   "depth": 2,
+   "id": "S-20261209-E",
+   "lead_days": 25,
+   "note": "from 0.40: E weight 46 -> 46 exact, but 17 of the 40 days have passed without the criterion; the Nov 9 pipeline 'limited fire' and the Nov 12 Houthi claims did not meet it (Saudi acknowledged no damage to exports).",
+   "p": 0.35,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles >= 120 on any day by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-BRENT120",
+   "lead_days": 25,
+   "note": "from 0.35: Brent 95.84, needs +25% in 17 sessions; the IEA surplus and OPEC+ output cap the F path; essentially the E-strike path only.",
+   "p": 0.1,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles <= 90 on any day by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-BRENT90",
+   "lead_days": 25,
+   "note": "from 0.15: settle low 91.49 and intraday 89.15 on Nov 10; surplus narrative live; the Nov 12 +3.3% on attack headlines shows the floor's bounce.",
+   "p": 0.3,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-M3",
+   "lead_days": 25,
+   "note": "from 0.15: 6-10% carried since Oct; attacks spreading into UAE waters; no deal path inside the window.",
+   "p": 0.05,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a new Israeli government sworn in by Dec 4",
+   "depth": 1,
+   "id": "S-20261204-ISRAELGOV",
+   "lead_days": 20,
+   "note": "held at 0.30; no coalition reporting read this run (Katz: he, Netanyahu and Zamir aligned - Netanyahu in office Nov 12).",
+   "p": 0.3,
+   "resolves": "2026-12-04"
+  },
+  {
+   "criterion": "any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "depth": 3,
+   "id": "S-20261231-FUSE",
+   "lead_days": 47,
+   "note": "from 0.10: the structure is a secured chip lease with a $7B prepayment and an $8.3B senior secured loan - collateral by construction; indicated 7.75-8.75% is not IG.",
+   "p": 0.05,
+   "resolves": "2026-12-31"
+  },
+  {
+   "criterion": "within 7 days of the Nov 19 Shenzhen trilateral, a US-Iran meeting with a named venue and date is announced by the US or Iran (not a mediator)",
+   "depth": 1,
+   "id": "S-20261126-VENUE",
+   "lead_days": 12,
+   "note": "new: Ghalibaf says the US asked Putin to arrange direct talks; Trump 'does intend to talk about Iran' with Xi and Putin. T3 +1 x2 if it resolves YES.",
+   "p": 0.15,
+   "resolves": "2026-11-26"
+  },
+  {
+   "criterion": "a further US or Israeli strike on Iranian territory Nov 15-30, reported by CENTCOM/IDF or confirmed by two wires",
+   "depth": 1,
+   "id": "S-20261130-STRIKE2",
+   "lead_days": 16,
+   "note": "new: after three 'minor' strikes Nov 6-12 and Reuters' 'may hold off absent provocations' (Nov 14); Israel lobbying; IRGC 'unlimited response' posture makes a provocation likely.",
+   "p": 0.35,
+   "resolves": "2026-11-30"
+  },
+  {
+   "criterion": "the FOMC raises the funds rate by >= 25 bp on Dec 9",
+   "depth": 2,
+   "id": "S-20261209-FEDHIKE",
+   "lead_days": 25,
+   "note": "new (F3 transmission fork): FedWatch 88.8% + 11.2% for 50 bp (Nov 10); registered so the floor's Fed-mode is scored.",
+   "p": 0.9,
+   "resolves": "2026-12-09"
+  }
+ ],
+ "resolved": [
+  {
+   "brier": 0.01,
+   "criterion": "US or Israeli strikes on Iranian territory before Nov 3",
+   "event_time": "2026-11-03",
+   "evidence": "No strike on Iranian territory reported Oct 30-Nov 3 in any source read; the Nov 6 Qeshm strikes were reported as the resumption after the midterm pause (Al Jazeera, dials/standoff/2026-11-09.json). The Oct 31-Nov 5 window has no gather file; resolution rests on the absence of any report and on the Nov 6 framing.",
+   "id": "S-20261103-STRIKE",
+   "log_score": 0.105361,
+   "observed_time": "2026-11-14T06:11:34-07:00",
+   "outcome": 0,
+   "p": 0.1,
+   "resolved_at": "2026-11-14",
+   "source_node": "dials/standoff/2026-11-09.json"
+  },
+  {
+   "brier": 0.49,
+   "criterion": "Saudi-acknowledged damage to the East-West line or Yanbu export facilities Oct 20-Nov 9",
+   "event_time": "2026-11-09",
+   "evidence": "SPA (via Al Jazeera, Nov 9): the East-West pipeline was targeted in the Medina region, a 'limited fire' resulted, operations unaffected. A Saudi-acknowledged fire on the line is damage under the criterion as written; scored YES and flagged marginal (no export impact).",
+   "flag": "marginal",
+   "id": "S-20261109-YANBU",
+   "log_score": 1.203973,
+   "observed_time": "2026-11-14T06:11:34-07:00",
+   "outcome": 1,
+   "p": 0.3,
+   "resolved_at": "2026-11-14",
+   "source_node": "dials/standoff/2026-11-10.json"
+  },
+  {
+   "brier": 0.3025,
+   "criterion": "US or Israeli strikes on Iranian territory Nov 4-30",
+   "event_time": "2026-11-06",
+   "evidence": "US strikes on Qeshm Island Nov 6 ('minor strikes' - Trump), a further strike reported Nov 9, Sirik telecom tower Nov 12 (IRNA; CENTCOM intercepted two drones). Criterion met Nov 6; resolved early.",
+   "id": "S-20261130-STRIKE",
+   "log_score": 0.798508,
+   "observed_time": "2026-11-14T06:11:34-07:00",
+   "outcome": 1,
+   "p": 0.45,
+   "resolved_at": "2026-11-14",
+   "source_node": "dials/standoff/2026-11-09.json; 2026-11-13.json"
+  }
+ ],
+ "run_id": "2026-11-14T0611-standoff"
+}

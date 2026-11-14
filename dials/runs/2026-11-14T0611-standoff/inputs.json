@@ -1,0 +1,262 @@
+{
+ "fetch_rule": "every page reached through a WebSearch result link (unattended session); 6 searches, 12 pages, 2 unreachable",
+ "files": [
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/state/latest.json"
+  },
+  {
+   "as_of": "2026-10-30",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/runs/2026-10-30T1253-standoff/cone.json"
+  },
+  {
+   "as_of": "2026-10-30",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/runs/2026-10-30T1253-standoff/export.json"
+  },
+  {
+   "as_of": "2026-10-30",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/runs/2026-10-30T1253-standoff/forecasts.json"
+  },
+  {
+   "as_of": "2026-10-30",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/runs/2026-10-30T1253-standoff/report.md"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/state/ledger.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/state/register.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/rulings.md"
+  },
+  {
+   "as_of": "2026-11-06b",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/config.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (status partial)",
+   "path": "dials/_status_standoff.json"
+  },
+  {
+   "as_of": "2026-11-09",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-09.json"
+  },
+  {
+   "as_of": "2026-11-10",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-10.json"
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-11.json"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-12.json"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-13.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-14.json"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-14.json"
+  },
+  {
+   "as_of": "2026-10-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "carried (Oct 2-8 FMS; Nov survey not yet out)",
+   "path": "dials/_status_P12_fms.json"
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (FRED lags two sessions)",
+   "path": "data/fred/DCOILBRENTEU.csv"
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/DCOILWTICO.csv"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/T5YIE.csv"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/T5YIFR.csv"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/DGS2.csv"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/DGS10.csv"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/DGS30.csv"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/DFII10.csv"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/BAMLC0A0CM.csv"
+  },
+  {
+   "as_of": "2026-11-12",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A0HYM2.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh (Oct CPI released Nov 10)",
+   "path": "data/fred/CPIAUCSL.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+   "gate": "fresh",
+   "path": "data/fred/CPILFESL.csv"
+  }
+ ],
+ "gate_note": "standoff group tolerance 2 days; dials/_status_standoff.json last_as_of 2026-11-14 -> fresh, status partial (null M3, M8, Brent M2, TD3C each day).",
+ "pages": [
+  {
+   "as_of": "2026-10-31",
+   "gate": "fetched",
+   "note": "F5: junior tranche indicated as high as 8.75%, package 7.75-8.75%; Pimco $4B of A2; close expected by year-end",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-reportedly-faces-higher-borrowing-173003427.html"
+  },
+  {
+   "as_of": "2026-11-05",
+   "gate": "fetched",
+   "note": "F5: Goldman/Apollo selling pieces pre-syndication, $8.3B senior secured loan, $7B lease prepayment, market cooled since commitment",
+   "url": "https://www.billionaires.africa/2026/11/05/elon-musks-spacex-lenders-sell-pieces-of-40-billion-chip-deal/"
+  },
+  {
+   "as_of": null,
+   "gate": "unreachable",
+   "note": "client_error; scores 0",
+   "url": "https://tech-insider.org/musk-spacex-40-billion-gpu-debt-nvidia-2026/"
+  },
+  {
+   "as_of": "2026-11-13",
+   "gate": "fetched",
+   "note": "O2: Brent M1-M12 +15.57 (Nov 12); WTI Dec/Jan +1.05; Brent M1-M2 not stated",
+   "url": "https://commodity-board.com/oil-rally-steepens-backwardation-as-diesel-tightness-lifts-cracks"
+  },
+  {
+   "as_of": "2026-10-06",
+   "gate": "fetched (reference only, outside gate)",
+   "note": "Oct 5 Brent Dec/Jan/Feb 100.36/97.51/95.17",
+   "url": "https://commodity-board.com/backwardation-steepens-as-crude-slides-on-relief-in-supply-risk"
+  },
+  {
+   "as_of": "2026-11-14",
+   "gate": "fetched",
+   "note": "F7: Kalshi PortWatch>60 ladder Dec 1 1% / Jan 1 4% / Mar 1 10% / Jun 1 33% / Dec 1 2027 53%; Polymarket normal by Nov 30 1%",
+   "url": "https://straits.live/when-will-the-strait-of-hormuz-reopen"
+  },
+  {
+   "as_of": "2026-11-10",
+   "gate": "fetched",
+   "note": "F3: FedWatch Dec 25bp 88.8%, 50bp 11.2%, hold no longer priced; Waller for a December hike",
+   "url": "https://www.investing.com/news/economy-news/fed-rate-hike-odds-in-december-at-88-after-hot-cpi-cme-fedwatch-5017585"
+  },
+  {
+   "as_of": null,
+   "gate": "unreachable",
+   "note": "client_error; F4 Nov 13 level taken from events gather press instead",
+   "url": "https://cnbc.com/2026/11/13/treasury-yields-fed-rates.html"
+  },
+  {
+   "as_of": "2026-11-11",
+   "gate": "fetched",
+   "note": "M5: Orlen terminates a QatarEnergy LNG contract citing ongoing force majeure (Nov 10); FM in force, no lift date",
+   "url": "https://www.tradingview.com/news/cnbctv:78ed6707d094b:0/"
+  },
+  {
+   "as_of": "2026-08-31",
+   "gate": "fetched (reference only)",
+   "note": "M5: Shell estimate full repairs to Q1 2027",
+   "url": "https://www.maritimegateway.com/qatarenergy-extends-lng-halt-to-italy-as-ras-laffan-repairs-drag-on/"
+  },
+  {
+   "as_of": "2026-10-14",
+   "gate": "fetched (carried value)",
+   "note": "M3: 6-10% of hull (Marsh), path 2% post-June MoU -> 7.5-10% late July -> 3-8% late Aug -> 6-10% Oct",
+   "url": "https://www.insurancebusinessmag.com/us/news/marine/hormuz-sinking-hands-marine-war-underwriters-another-total-loss-as-attacks-surge-593549.aspx"
+  },
+  {
+   "as_of": "2026-10-24",
+   "gate": "fetched (carried value)",
+   "note": "M3: 6-10% band, covers re-rated every 24h; no November quote exists in any read source",
+   "url": "https://www.ces-intelligence.com/analysis/strait-of-hormuz-war-risk-insurance-2026-daily-signal"
+  }
+ ],
+ "repo_commit": "7660177a615da72af439a2973b4f3c039dcfcbf0",
+ "run_id": "2026-11-14T0611-standoff"
+}
