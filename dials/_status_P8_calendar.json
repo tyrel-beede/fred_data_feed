@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-13T05:11:00-07:00",
- "last_as_of": "2026-11-13",
- "last_file": "dials/calendar/2026-11-13.json",
+ "last_run_at": "2026-11-14T05:11:00-07:00",
+ "last_as_of": "2026-11-14",
+ "last_file": "dials/calendar/2026-11-14.json",
  "status": "partial",
- "error": "US IG issuance total for Thu 11-12: no reachable page printed a figure (value null). Alphabet HKD/SGD deal: final per-tranche sizes and reoffer yields captured from Reuters via MarketScreener, but no SEC FWP/424B5 for the Asian-currency deal surfaced (only the EUR 6bn FWP of 11-02), so coupons remain unconfirmed vs reoffer yields. CoreWeave >=USD 4bn IG loan: no launch confirmed as of 11-13 05:00 MST (BigGo 11-11 still 'could launch next week'); gurufocus 'secures $4bn' headline unreachable (client error) and contradicts other relays, treated as headline-only. ORCL FQ2 and MU FQ1 dates remain aggregator-only (unverified; Oracle SEC 8-K surfaced was Investor Day 10-28, not a date announcement). Unreachable this run: qz.com Alphabet article (client error), gurufocus CoreWeave (client error), goodman-macro 11-13 (client error), investinglive 30y auction (server error), bea.gov/news/schedule/full (provenance block; alternate index.php path worked), nasdaq.com Vertiv conference release (rate limit)."
+ "error": "IG supply readings (ig.issuance.daily_usd_bn for Fri 11-13 and the weekly total) are null: no search-surfaced page printed a figure (Yahoo relay client_error, cambonds search returned stale editions, Bloomberg refused). Semafor 11-13 CoreWeave piece robots_disallowed (relayed via 404kresearch 11-13). treasurydirect.gov auction page robots_disallowed; the 20y/10y TIPS dates were verified from the home.treasury.gov tentative schedule PDF instead. No Oracle FQ2 / Micron FQ1 company announcement found (verified:false, aggregator dates carried). Schedule-page verifications carry as_of = date read (2026-11-14) because the agency pages print no publication date. No company IR/SEC item identifies the one incremental IPO pricing that moved the Renaissance count 122->123."
 }

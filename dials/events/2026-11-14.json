@@ -1,0 +1,259 @@
+{
+ "group": "events",
+ "run_at": "2026-11-14T05:11:00-07:00",
+ "run_weekday": "Sat",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Two late (11-12) EM items rest on a Bloomberg relay (zackeiseman substack) plus headline-only/AFP confirmation: Bloomberg and businessmirror (robots) refused, journalarta and asiaone (wrong article) failed, so Vietnam's size (up to $1bn) and Indonesia's 10y (7.66%, +4bp) are relay-sourced; FX record low confirmed via Malay Mail/AFP. DCD (Prometheus) and cryptobriefing (Cerebras) fetches failed with client_error but neither was needed (Prometheus out of gate; Cerebras confirmed via tokenpost). No in-gate hit for fund gating, repriced AI round, memory LTA renegotiation, GW deferral, auction tail (none 13 Nov; 30y 11-12 tail already recorded), CoreWeave loan (seeking, not pulled), or Fed/repo/SOFR/swap-line stress on 13 Nov.",
+ "gate": {
+  "since": "2026-11-13T05:20-07:00",
+  "note": "New = 13 Nov (after 05:20 MST) or 14 Nov; 11-12 Nov kept once with late:true (tolerance 2d); older discarded."
+ },
+ "notes": "Friday 13 Nov was a sovereign-stress day, not a deal-pulled day. UST: 2y 4.85% (+32bp w/w, biggest weekly rise since late 2024), 10y 5.12% (+26bp w/w, steepest since Apr 2025); Thu 12 Nov close had been 2y 4.86% (+13bp), 10y 5.10% (+12bp), 30y 5.43% (+8bp); Dec 25bp Fed hike fully priced, Jan hike largely priced, Waller/Logan floated 50bp. Gilts update: 2y hit 5.005% (highest since Oct 2023; last 4.969%), 10y 5.478%, 30y 5.809% per DJ/LSEG 13 Nov; Dec BoE hike 82% (from 50% at start of week), three more hikes priced by mid-2027; no Treasury/Reeves reaction found. JGBs 13 Nov: 10y 2.86% (+7bp), 30y 4.01% (+8.6bp), 40y 4.16% (+8.3bp), BoJ Dec hike widely expected after Oct PPI +7.1% y/y. Late (11-12): Vietnam put its planned dollar bond (Bloomberg: up to $1bn) on hold, FinMin Ngo Van Tuan telling parliament borrowing costs 'too high' amid fuel-shock inflation; Bank Indonesia intervened in spot/offshore/domestic forwards and bought government bonds after rupiah record low 18,241-18,253/USD, 10y IDR yield +4bp to 7.66%. Late AI-delivery item: Cerebras (CBRS, Q3 call 12 Nov) said first 250MW of its 750MW/3-tranche OpenAI inference deal is behind schedule because data-center contracts are taking longer; 456X relay says full initial OpenAI deployment moved from early 2027 to mid-2027 with Morgan Stanley estimating $600m-$900m net RPO reduction. Not hits: Meta completed ~$25bn (US$15bn incl. 30y 7.5% coupon + EUR9bn to 2065, S&P AA- neg) 5-12 Nov; CoreWeave is seeking (not pulled) a $4bn loan collateralized by Meta contracts/equipment via MS and MUFG, indicative blended ~7.5% vs ~16% unsecured yields; Nvidia $530bn commitments / OpenAI guarantee cut $250bn->$105bn recirculated on 13 Nov but dates to the 26 Aug 10-Q; WDC -5.41% 13 Nov on aggregator 'digestion' commentary (no principal statement); SK hynix LTAs with 14 customers cover >50% of capacity through 2027-28 (no renegotiation). Applied Materials reported no customer delivery deferrals.",
+ "sources": [
+  {
+   "query": "bond deal pulled OR downsized November 13 2026",
+   "result": "no hit",
+   "note": "Fetched 456X Evening Brief 13 Nov (Meta $25bn completed; CoreWeave seeking $4bn; Cerebras slip), bondbuyer NYC downsized (30 Mar 2026, discarded), tokenpost 56578 (UST weekly jump, used for sovereign item)."
+  },
+  {
+   "query": "bond deal pulled OR postponed OR downsized November 14 2026",
+   "result": "partial",
+   "note": "Fetched zackeiseman ICYMI 12 Nov relay -> Vietnam dollar bond on hold (late hit), Indonesia BI intervention (late hit); yahoo 475 Fifth Ave postponed (20 Oct, discarded); Bloomberg links not attempted (refused host)."
+  },
+  {
+   "query": "fund gates redemptions November 13 2026",
+   "result": "no hit",
+   "note": "Only evergreen explainers / Oct 2026 tracker pages; nothing dated 13-14 Nov. Not fetched."
+  },
+  {
+   "query": "private credit fund limits redemptions prorated withdrawals BDC interval fund November 2026",
+   "result": "no hit",
+   "note": "FSB May report, iCapital, Oct 2026 crowdfundedwealth tracker; nothing in gate. Not fetched."
+  },
+  {
+   "query": "capex cut OR deferral OR digestion AI November 13 2026",
+   "result": "no hit",
+   "note": "Microsoft $170bn (11-05, dedupe), Tesla $5bn capex cut (older, not AI principal), undated commentary. Not fetched."
+  },
+  {
+   "query": "hyperscaler \"digestion\" AI capex guidance cut OR trimmed OR deferred November 14 2026",
+   "result": "no hit",
+   "note": "Fetched tradingkey WDC 13 Nov: aggregator says hyperscalers 'entering a period of digestion and selective order moderation' - not a principal statement, not recorded."
+  },
+  {
+   "query": "funding round repriced AI lab November 13 2026",
+   "result": "no hit",
+   "note": "Only 2025 lists, Wikipedia, Crunchbase weekly. zackeiseman relay cites Bloomberg 11 Nov on OpenAI 'downsized fundraising' with no figures (Anthropic IPO range already recorded). Not fetched."
+  },
+  {
+   "query": "LTA renegotiation memory November 13 2026",
+   "result": "no hit",
+   "note": "Fetched 456X Semi-AI Memory Weekly 13 Nov (paywalled preview): SK hynix LTAs with 14 customers >50% capacity 2027-28; no renegotiation. Kioxia memorymarket item undated."
+  },
+  {
+   "query": "gigawatt deferral data center November 13 2026",
+   "result": "no hit",
+   "note": "DCD Prometheus Hyperscale Casper fetch failed (client_error); follow-up search dates it 28 Oct (discarded). Fetched strisker weekly briefing 9-12 Nov: only local moratoria, no GW deferral. SoftBank 13GW = dedupe."
+  },
+  {
+   "query": "Prometheus Hyperscale Casper Wyoming gigawatt data center pulls out",
+   "result": "no hit",
+   "note": "oilcity.news/wyofile date it 28-29 Oct 2026 -> out of gate, discarded."
+  },
+  {
+   "query": "Treasury auction tail November 13 2026",
+   "result": "no hit",
+   "note": "All results are the 11-12 30y 5.441% / 0.4bp tail (dedupe). No auction 13 Nov. goodman-macro 12 Nov close fetched for context (b/c 2.36 vs 2.54, indirects ~68% vs 72%)."
+  },
+  {
+   "query": "sovereign bond stress November 13 2026",
+   "result": "hit",
+   "note": "Fetched azat.tv (14 Nov 00:15 UTC+4, data through 13 Nov: 2y 4.85%, 10y 5.12%), tradingeconomics Japan (13 Nov JGB levels). Bloomberg 13 Nov 'Bond investors expect more pain' not fetched (refused host)."
+  },
+  {
+   "query": "gilt yields Friday close 10-year 2-year Bank of England Reeves November 13 2026",
+   "result": "hit",
+   "note": "Fetched marketscreener/Dow Jones 13 Nov 05:18 EST (2y 5.005%, 10y 5.478%); goodman-macro 20261113 fetched (no gilts)."
+  },
+  {
+   "query": "CoreWeave $4 billion loan Meta contract Morgan Stanley MUFG November 13 2026",
+   "result": "no hit",
+   "note": "Fetched tokenpost 56758 (13 Nov 09:24 EST): CoreWeave 'is seeking' $4bn secured by equipment + Meta contracts, MS/MUFG facilitating; not launched/repriced/pulled -> not recorded. zackeiseman relay (11 Nov): 'possibly launching next week'."
+  },
+  {
+   "query": "repo rate SOFR spike Fed standing repo facility swap lines November 13 2026",
+   "result": "no hit",
+   "note": "Only explainers, Fed note (Aug), Au79 7 Nov; no 13 Nov stress headline. Not fetched."
+  },
+  {
+   "query": "Nvidia 10-Q OpenAI guarantee $105 billion reduced from $250 billion commitments $530 billion",
+   "result": "no hit",
+   "note": "Fetched fourweekmba (10 Oct): figures come from 10-Q for quarter ended 26 Jul filed 26 Aug 2026; SB Energy/OpenAI guarantees capped at $105bn entered Aug 2026. Old -> discarded; 456X 13 Nov recirculation not a new event."
+  },
+  {
+   "query": "Cerebras OpenAI capacity deployment delayed mid-2027 Morgan Stanley RPO November 2026",
+   "result": "hit",
+   "note": "Fetched tokenpost 56041 (12 Nov 18:33 EST) confirming first 250MW tranche behind schedule; cryptobriefing fetch failed (client_error)."
+  },
+  {
+   "query": "Vietnam pauses international bond sale borrowing costs too high finance minister Ngo Van Tuan November 2026",
+   "result": "partial",
+   "note": "businessmirror fetch failed (robots_disallowed); biztoc gave headline + 12 Nov 04:19 UTC date only; Bloomberg refused host."
+  },
+  {
+   "query": "Vietnam dollar bond sale on hold fuel shock inflation Reuters OR \"Bloomberg\" November 12 2026",
+   "result": "partial",
+   "note": "Same Bloomberg/biztoc results; no additional body text obtained."
+  },
+  {
+   "query": "Bank Indonesia intervenes rupiah record low 18,241 bond buying November 2026",
+   "result": "hit",
+   "note": "Fetched malaymail/AFP 12 Nov (18,253 intraday, BI intervened); journalarta fetch failed (client_error); asiaone link resolved to an April 2026 article (ignored)."
+  }
+ ],
+ "discarded": [
+  "NYC downsizes first big bond deal under Mamdani ($2.6bn -> $2.3bn) - 2026-03-30 - out of gate",
+  "475 Fifth Avenue $175m CMBS sale postponed - 2026-10-20 - out of gate",
+  "Prometheus Hyperscale pulls out of GW-scale Casper, Wyoming campus ($500m) - 2026-10-28 - out of gate",
+  "Nvidia $530bn commitments/guarantees; OpenAI/SB Energy guarantee capped at $105bn vs $250bn - 10-Q filed 2026-08-26 - old filing recirculated 13 Nov, not a new event",
+  "Nebius FY revenue guide narrowed to $3.0-3.2bn - 2026-11-12 - dedupe (Nebius 11-12 already recorded)",
+  "Meta ~$25bn debt completed (US$15bn + EUR9bn) - 2026-11-05..12 - not a pulled/downsized deal; belongs to issuance group",
+  "CoreWeave seeking $4bn secured loan ~7.5% - 2026-11-13 - launched/sought, not pulled/downsized/repriced",
+  "WDC -5.41% on 'hyperscaler digestion' commentary - 2026-11-13 - aggregator commentary, no principal statement",
+  "Jefferies: would short OATs vs Bunds below 140bp, spread 147bp - 2026-11-12 - analyst view, not a stress event",
+  "Norway oil & gas 2026 investment cut (SSB) - 2026-11-12 - not AI capex",
+  "Bloomberg 11 Nov: OpenAI 'downsized fundraising' fears - 2026-11-11 - no figures, no primary page reachable, Anthropic IPO range already recorded"
+ ],
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "search_mode": "extended, dated variants (November 13/14 2026)",
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-13",
+   "name": "UST 2y 4.85% (+32bp w/w) / 10y 5.12% (+26bp w/w) Fri 13 Nov - biggest weekly rise since Apr 2025",
+   "headline": "U.S. Treasury Yields Log Biggest Weekly Jump Since April 2025 / Global bond investors brace for continued volatility",
+   "claim": "By Friday 13 Nov the 2y Treasury yield reached 4.85% (up 32bp on the week, largest weekly gain since late 2024; Tue+Thu combined jump largest since Mar 2023) and the 10y hit 5.12% (up 26bp, steepest weekly climb since the Apr 2025 tariff shock) after Oct CPI +0.4% m/m; a 25bp Dec Fed hike is fully priced, a Jan hike largely priced, and Waller/Logan floated 50bp; swaps price >50bp of average hikes across eight major economies over the next year vs 33bp on 6 Nov.",
+   "source": "TokenPost (13 Nov 06:22 EST) / azat.tv (14 Nov 00:15 UTC+4, data through 13 Nov)",
+   "url": "https://www.tokenpost.com/news/investing/56578",
+   "other_urls": [
+    "https://azat.tv/en/global-bond-market-rout-treasury-yields/",
+    "https://goodman-macro.com/en/articles/20261113-main"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "sweep_query": "8. sovereign bond stress (+ 1. bond deal pulled OR downsized surfaced tokenpost)",
+   "candidate_dial": "sovereign stress (UST)",
+   "note": "Thu 12 Nov close per goodman-macro: 2y 4.86% (+13bp), 5y 4.95%, 10y 5.10% (+12bp), 30y 5.43% (+8bp); 2s10s 24bp. Tokenpost published Friday morning saying 'on track' for the weekly move; azat.tv (post-close) states 4.85%/5.12% 'by Friday'. No official settle source fetched; treat 5.12%/4.85% as press levels. Analyst targets cited: 10y 5.5% (Tracy Chen), buy at 5.3% (Boubouras); GS 2027 10y 4.6%."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-13",
+   "name": "Update vs 11-13 file: gilts Fri 13 Nov - 2y 5.005% (highest since Oct 2023), 10y 5.478%, Dec BoE hike 82%",
+   "headline": "U.K. Gilt Yields Accelerate on Rate-Hike Expectations (Dow Jones)",
+   "claim": "Short-dated gilt yields rose to their highest in more than three years on Friday: the 2y jumped to 5.005% (highest since Oct 2023, last 4.969%) and the 10y traded 5.478%, after Sept GDP +0.2% m/m beat an expected -0.1%; markets price an 82% chance of a Dec BoE hike (from 50% at the start of the week) and fully price three more hikes by mid-2027 beyond November's.",
+   "source": "MarketScreener / Dow Jones Newswires, 13 Nov 2026 05:18 EST",
+   "url": "https://www.marketscreener.com/news/u-k-gilt-yields-accelerate-on-rate-hike-expectations-ce785ed9dc8df620",
+   "other_urls": [],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "sweep_query": "8. sovereign bond stress (targeted gilts Friday check)",
+   "candidate_dial": "sovereign stress (gilts)",
+   "note": "Page header showed 10y 5.478% +0.045 and 30y 5.809%; page table changes (+0.836/+1.024) are inconsistent and likely stale - use article-text levels. Reaction: BoE deputy governor Lombardelli said another hike needed; NIESR's Aikman said one more 25bp unlikely sufficient. No Treasury/Reeves reaction found. Friday official close not obtained (DMO/TE not fetched)."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-13",
+   "name": "JGB 13 Nov: 10y 2.86% (+7bp), 30y 4.01% (+8.6bp), 40y 4.16% (+8.3bp) as BoJ Dec hike priced",
+   "headline": "Japan 10 Year Government Bond Yield - 2.86% on 13 Nov, +0.07pp on the day",
+   "claim": "JGB yields rose across the curve on Friday 13 Nov - 10y 2.8616% (+7bp), 30y 4.01% (+8.6bp), 40y 4.16% (+8.3bp) - with markets widely expecting a December BoJ hike after Oct PPI +7.1% y/y and the Summary of Opinions showing broad support for further increases (board member Asada urged caution on timing).",
+   "source": "Trading Economics (Japan government bond yield page, 13 Nov 2026)",
+   "url": "https://tradingeconomics.com/japan/government-bond-yield",
+   "other_urls": [
+    "https://azat.tv/en/global-bond-market-rout-treasury-yields/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "sweep_query": "8. sovereign bond stress",
+   "candidate_dial": "sovereign stress (JGB)",
+   "note": "10y is down 14bp on the month and +116bp y/y; 30y -4bp m/m - so Friday was a sharp up-day inside a month that had retraced. No JGB auction 13 Nov. azat.tv: Japan/Australia yields 'climbing back toward multiyear highs', no levels."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-12",
+   "name": "Cerebras: first 250MW OpenAI tranche behind schedule; full initial deployment early-2027 -> mid-2027, MS est. $600-900m net RPO reduction",
+   "headline": "Cerebras Falls Behind on Preparing First OpenAI Capacity Tranche as Data Center Deals Lag",
+   "claim": "On its Q3 call (12 Nov) Cerebras said preparation of the first 250MW of the 750MW three-tranche OpenAI inference agreement (schedule: 250MW by end-2026, end-2027, end-2028) is behind schedule because data-center contracts are taking longer than planned; the 456X 13 Nov brief says full operational deployment of the initial OpenAI capacity moved from early 2027 to mid-2027 and Morgan Stanley estimates net RPO reductions of $600m-$900m.",
+   "source": "TokenPost (12 Nov 2026 18:33 EST) / 456X Evening Brief (13 Nov 2026)",
+   "url": "https://www.tokenpost.com/news/business/56041",
+   "other_urls": [
+    "https://404kresearch.substack.com/p/456x-evening-brief-november-13-2026",
+    "https://www.fool.com/earnings/call-transcripts/2026/11/13/cerebras-cbrs-q3-2026-earnings-call-transcript/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": true,
+   "sweep_query": "1. bond deal pulled OR downsized (surfaced via 456X 13 Nov brief) + targeted Cerebras search",
+   "candidate_dial": "capex cut/deferral/digestion (neocloud: CBRS) - delivery slip, not a capex cut",
+   "note": "Not a financing or capex cut: Cerebras raised FY revenue guide to $960m, Q3 revenue $231m (+70%), first profit, new Oracle/Microsoft contracts, shares +15-18% after hours. Backlog >$25bn; OpenAI extended a $1bn working-capital loan in Jan 2026. Relevant as a data-center-readiness deferral on the OpenAI buildout. Mid-2027 date and MS RPO estimate are from the 456X relay only (tokenpost gives no revised date). cryptobriefing fetch failed (client_error)."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-12",
+   "name": "Vietnam puts planned dollar bond (up to $1bn) on hold - FinMin: borrowing costs 'too high'",
+   "headline": "Vietnam Dollar Bond Sale on Hold as Fuel Cost Fans Inflation (Bloomberg, 12 Nov)",
+   "claim": "Vietnam paused its planned international dollar bond sale, which Bloomberg had reported could reach up to $1bn, with Finance Minister Ngo Van Tuan telling parliament that borrowing costs were 'too high' as fuel-supply disruptions lift inflation.",
+   "source": "Bloomberg via Zack Eiseman ICYMI relay (12 Nov 2026) + biztoc headline (12 Nov 04:19 UTC)",
+   "url": "https://zackeiseman.substack.com/p/icymi-on-november-12th-2026",
+   "other_urls": [
+    "https://biztoc.com/x/4453d92642a1f0e2",
+    "https://businessmirror.com.ph/2026/11/12/vietnam-dollar-bond-sale-on-hold-as-fuel-cost-fans-inflation/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "late": true,
+   "sweep_query": "1. bond deal pulled OR postponed OR downsized November 14 2026 (+ targeted Vietnam searches)",
+   "candidate_dial": "pulled/downsized deal (sovereign, EM) / sovereign stress (EM)",
+   "note": "Sovereign, not hyperscaler. Would have been Vietnam's first dollar bond in more than a decade (considered since Sep 2026). Primary Bloomberg and businessmirror pages unreachable (refused host / robots_disallowed); size and quote come from the relay. Contrast: NZ Apr-2037 auction 12 Nov bid 7.46x, strongest since Feb 2013."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-12",
+   "name": "Rupiah record low 18,241-18,253/USD; Bank Indonesia intervenes in spot/forwards and buys bonds; 10y +4bp to 7.66%",
+   "headline": "Indonesia's central bank intervenes after rupiah hits record low (AFP/Bloomberg, 12 Nov)",
+   "claim": "The rupiah weakened as much as 0.5% to a record 18,241 per dollar (AFP: as much as 18,253 in afternoon trade) on Fed-hike expectations and domestic political turmoil (vice president resignation), prompting Bank Indonesia to intervene in spot, offshore and domestic forwards and buy government bonds in the secondary market; the 10y IDR yield rose 4bp to 7.66%.",
+   "source": "Malay Mail / AFP (12 Nov 2026 17:22 MYT) + Bloomberg via Zack Eiseman ICYMI relay (12 Nov 2026)",
+   "url": "https://www.malaymail.com/news/money/2026/11/12/asias-worst-performing-currency-just-got-worse-rupiah-slides-past-18000-to-the-us-dollar/242986",
+   "other_urls": [
+    "https://zackeiseman.substack.com/p/icymi-on-november-12th-2026",
+    "https://journalarta.com/en/2026/11/12/rupiah-record-low-bank-indonesia-intervenes/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "partial",
+   "late": true,
+   "sweep_query": "1. bond deal pulled OR postponed OR downsized November 14 2026 (relay) + targeted Indonesia search",
+   "candidate_dial": "sovereign stress (EM: Indonesia)",
+   "note": "FX level/intervention confirmed by AFP wire; bond-buying detail and 10y 7.66% (+4bp) come from the Bloomberg relay only. journalarta fetch failed (client_error); asiaone link resolved to an April 2026 article (17,090 at that time) and was ignored. Rupiah is Asia's worst-performing currency in 2026."
+  }
+ ]
+}

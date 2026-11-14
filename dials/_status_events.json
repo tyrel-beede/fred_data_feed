@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-13T05:11:00-07:00",
+ "last_run_at": "2026-11-14T05:11:00-07:00",
  "last_as_of": "2026-11-13",
- "last_file": "dials/events/2026-11-13.json",
+ "last_file": "dials/events/2026-11-14.json",
  "status": "ok",
- "error": "Fetch failures: investinglive 30-year wrap (server error; three other numbered sources used), convergedigest Nebius (client_error), investing.com Nebius transcript (rate limited; SEC 6-K shareholder letter and TechCrunch used instead), qz.com and gurufocus CoreWeave loan pages (client_error; BigGo used), tech-insider.org and fourweekmba Nvidia/Microsoft pages (client_error), Bloomberg gilt newsletter/live blog not attempted (refused host; tradingeconomics used). 456X memory weekly paywalled after three bullets."
+ "error": "Two late (11-12) EM items rest on a Bloomberg relay (zackeiseman substack) plus headline-only/AFP confirmation: Bloomberg and businessmirror (robots) refused, journalarta and asiaone (wrong article) failed, so Vietnam's size (up to $1bn) and Indonesia's 10y (7.66%, +4bp) are relay-sourced; FX record low confirmed via Malay Mail/AFP. DCD (Prometheus) and cryptobriefing (Cerebras) fetches failed with client_error but neither was needed (Prometheus out of gate; Cerebras confirmed via tokenpost). No in-gate hit for fund gating, repriced AI round, memory LTA renegotiation, GW deferral, auction tail (none 13 Nov; 30y 11-12 tail already recorded), CoreWeave loan (seeking, not pulled), or Fed/repo/SOFR/swap-line stress on 13 Nov."
 }

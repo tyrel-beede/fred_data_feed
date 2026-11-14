@@ -1,0 +1,8 @@
+{
+ "group": "P11_h8",
+ "last_run_at": "2026-11-14T05:11:00-07:00",
+ "last_as_of": "2026-11-04",
+ "last_file": "dials/flows/2026-11-14.json",
+ "status": "partial",
+ "error": "Primary (repo FRED TOTCI) is current through week ending 2026-11-04 (13 Nov release). Web cross-check partial: The Nov 13 2026 H.8 release (week ending Nov 4) could not be read: federalreserve.gov/releases/h8/current/h8.pdf served the Nov 6 release (weeks to Oct 28), and the HTML default.htm fetch was blocked with PROVENANCE_REQUIRED (permission not answered). Fed calendar confirms an H.8 release scheduled 13 Nov 4:15 p.m. and the H.8 index page shows Last Update 13 Nov. Week-ending-Nov-4 values are null; Oct 28 and Oct 21 levels recorded from the Nov 6 vintage as the latest web-readable observation."
+}

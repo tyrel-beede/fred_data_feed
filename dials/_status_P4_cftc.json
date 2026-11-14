@@ -1,0 +1,8 @@
+{
+ "group": "P4_cftc",
+ "last_run_at": "2026-11-14T05:11:00-07:00",
+ "last_as_of": "2026-11-03",
+ "last_file": "dials/flows/2026-11-14.json",
+ "status": "partial",
+ "error": "The 2026-11-10 TFF report was not released on Fri 13 Nov: CFTC release schedule shows Mon 2026-11-16 (delayed release due to a federal holiday - Veterans Day Wed 11 Nov). All three web sources (futuresbench, thetrading.tools, cftc.gov financial_lf.htm) show positions as of 2026-11-03 only, identical to the repo's latest date, so there is no newer web observation; the 2026-11-03 figures are recorded as a cross-check. cftc.gov page truncated at 100k chars so 10y note / VIX not read; no gold/crude on the pages used. Fed-related: none. PROVENANCE block: none for this group."
+}
