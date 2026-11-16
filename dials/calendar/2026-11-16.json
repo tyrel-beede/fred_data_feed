@@ -1,0 +1,442 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-16T05:11:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "CoreWeave >=$4bn IG loan: no search-surfaced page dated 14-16 Nov confirms a launch (Semafor 11-13 robots_disallowed; FourWeekMBA 11-14/11-16 pages client_error) - status recorded as 'not launched as of Mon 16 Nov pre-open' from 11-11/11-12 relays, not from a dated 16 Nov source. Weekly IG supply (USD 42bn) and next-week forecast (USD 35bn) come from a Merger Monday/Bloomberg relay citing Cincinnati Asset Management and unnamed syndicate desks, not a dealer page. No Oracle FQ2 / Micron FQ1 company announcement exists yet (verified:false; aggregator ORCL date moved 12-14 -> 12-09). Alphabet HKD/SGD: no update dated 14-16 Nov surfaced. bea.gov /news/schedule/full raised PROVENANCE_REQUIRED (not search-surfaced); the search-surfaced /index.php/news/schedule/full URL fetched ok. FOMC minutes 11-18 and BLS dates are carried from the 11-14 run (agency-read then), not re-read this session.",
+ "gate": {
+  "since": "2026-11-14T05:11:00-07:00",
+  "note": "New = 14 Nov after 05:11 MST, 15 Nov, 16 Nov (pre-open). Tolerance 2 days: 12/13 Nov items not in dedupe_calendar.txt kept once with late:true. Run 2026-11-16 05:11 MST."
+ },
+ "notes": "ISSUANCE: No registered-issuer bond or equity deal priced or launched 14-16 Nov (weekend; Monday pre-open). CoreWeave >=USD 4bn IG-rated secured syndicated loan (Morgan Stanley/MUFG; collateral = Nvidia GPUs + IG customer contract, replicating the USD 8.5bn Meta-backed March structure; CFO-indicated 7-7.5% yield vs ~15% unsecured) still NOT launched in any page dated 14-16 Nov - Bloomberg 11-11 'could launch as early as next week' (= w/c 16 Nov) remains the latest timing. No Monday-morning (16 Nov) IG launch by MSFT/GOOGL/META/AMZN/ORCL/NVDA/MU/GEV/VRT/ANET/AVGO/CRWV/NBIS surfaced. IG supply: week ending Fri 13 Nov ~USD 42bn vs ~40bn expected (Cincinnati Asset Management, via Merger Monday 11-15; Veterans Day half-week); YTD ~USD 1.915trn, on pace to pass USD 2trn early Dec; syndicate desks forecast ~USD 35bn for w/c 16 Nov ('last full chance before Thanksgiving'). Bloomberg (Barbuscia, via Business Standard 11-15): IG spreads averaged 86bp Fri 13 Nov (-5bp w/w), IG yields ~6% (near highest since GFC; 4.8% at start of year); IG issuance +28% YTD through Thu, BofA sees ~USD 2.1trn 2026 and ~USD 1.9trn 2027; Broadcom USD 63bn Anthropic chip-financing package with ~USD 21bn of high-grade bonds planned for 2027 (originally reported 27 Oct - pre-gate, discarded). Alphabet HKD/SGD debut bonds: nothing new dated 14-16 Nov; settlement 11-19 carried. Nscale (WSJ ~11-13 via stockanalysis): says it needs additional financing ahead of planned NYSE IPO to fund a significant increase in short-term spending; the further USD 1bn Nvidia commitment was 'expected mid-November' (Sept 25 release) - no page confirming funding on 16 Nov readable (FourWeekMBA client_error). IPO: Renaissance stats page as of 11/15: 123 IPOs (-35.9% y/y) / USD 149.0bn (+314.7%) / 216 filings (-8.9%) - unchanged vs 11/14; no Renaissance news items dated 14-16 Nov (latest five all 11/13). Anthropic (ANT): Bloomberg Sun 15 Nov - orders 'close to seven times' the 825m shares (up from ~6x Thu 12 Nov), 'much hotter than SpaceX at the same stage'; book closes Tue 17 Nov, pricing Wed 18 Nov, Nasdaq debut Thu 19 Nov; range still USD 70-78 (no raise reported), USD 61.05bn base + USD 26bn Class N private placement (Nvidia, Microsoft, Google, TSMC, Broadcom, AMD, Micron; no six-month lockup for those buyers) = up to USD 90.4bn. EVENT DATES: NVDA Q3 FY27 re-verified from investor.nvidia.com press release (28 Oct): call Tue 17 Nov 2pm PT / 5pm ET (verified). AVGO Q4/FY26 re-verified from investors.broadcom.com release (9 Nov): Wed 9 Dec after close, call 2pm PT / 5pm ET (verified). ORCL FQ2 FY27: aggregator (earningscountdown, refreshed 11-15) now 'expected' Wed 9 Dec, time TBD - no Oracle announcement (verified:false; prior aggregator 12-14). MU FQ1 FY27: Wall Street Horizon 'UNCONFIRMED' Wed 23 Dec AMC (verified:false). Treasury tentative schedule PDF (re-read): 20y bond Wed 11-18; 10y TIPS R Thu 11-19; 2y note Mon 11-23; 2y FRN R + 5y Tue 11-24; 7y Wed 11-25 (all settle 11-30 except FRN 11-27); 3y 12-07, 10y R 12-08, 30y R 12-10 (settle 12-15); 20y R 12-22; 2y FRN R + 5y TIPS 12-23; 2y/5y 12-28; 7y 12-29 (verified). federalreserve.gov December page: FOMC two-day meeting Dec 8-9, statement 2:00pm, press conference 2:30pm Wed 9 Dec; minutes Wed 30 Dec 2:00pm (verified). FOMC minutes Wed 18 Nov 14:00 ET carried verified from 11-14 run. census.gov: Advance Retail Sales Oct data Tue 17 Nov 8:30am; Nov data Wed 16 Dec (verified). bea.gov: GDP Q3 second estimate + Oct PCE Wed 25 Nov 8:30; trade Oct 12-08; GDP Q3 third estimate + Nov PCE Wed 23 Dec (verified). BLS Employment Situation 12-04 / CPI 12-10 / PPI 12-15 carried verified from 11-14 run (bls.gov read then). ORCL annual meeting Wed 11-18 09:00 CT already recorded (DEF 14A). CRWV/NBIS/GEV/VRT/ANET/MSFT/GOOGL/META/AMZN: no new earnings-date announcements surfaced.",
+ "sources": [
+  {
+   "query": "CoreWeave investment-grade loan Morgan Stanley MUFG launch November 16 2026",
+   "result": "partial",
+   "note": "Fetched TradingView/GuruFocus relay (undated, Bloomberg 11-11 content) and BigGo Finance 11-11 (ok). No page dated 14-16 Nov reports a launch."
+  },
+  {
+   "query": "CoreWeave loan launches investors commitments due secured Nvidia chips 7% Bloomberg this week",
+   "result": "partial",
+   "note": "Semafor 11-13 robots_disallowed; other results are 11-11/11-12 relays."
+  },
+  {
+   "query": "\"CoreWeave\" loan \"launched\" OR \"kicked off\" OR \"began marketing\" syndicated investment-grade November 16",
+   "result": "no hit",
+   "note": "Only the April 2026 USD 3.1bn GPU-backed loan (Bloomberg, refused host) and opinion pieces."
+  },
+  {
+   "query": "Anthropic IPO range raised pricing Wednesday book covered November 16 2026",
+   "result": "partial",
+   "note": "Results all 11-10/11-13 (range-setting coverage); no range raise reported."
+  },
+  {
+   "query": "Anthropic IPO oversubscribed raises price range Goldman Morgan Stanley Nov 15 OR Nov 16 2026",
+   "result": "hit",
+   "note": "Fetched stockanalysis 11-13 (6x, range unchanged, pricing 11-18) - already recorded content."
+  },
+  {
+   "query": "Anthropic IPO news Sunday November 15 2026 roadshow final pricing demand Dimon Amodei",
+   "result": "hit",
+   "note": "Fetched TNW 11-16 (Bloomberg Sun 11-15: ~7x orders, book closes Tue) ok; Yahoo 'what we know' 11-13 ok (private placement detail, no 14-16 update); CNBC 11-15 not fetched (refused host)."
+  },
+  {
+   "query": "renaissancecapital.com US IPO stats \"as of\" November 2026 priced proceeds filings",
+   "result": "hit",
+   "note": "Fetched Stats page (ok): as of 11/15/2026, 123 / $149.0bn / 216; news list shows nothing dated 11-14 to 11-16."
+  },
+  {
+   "query": "investment-grade bond issuance week ahead November 16 2026 syndicate forecast billion supply",
+   "result": "hit",
+   "note": "Fetched HERE Florence relay of Merger Monday 11-15 (ok): week ending 11-13 ~$42bn, YTD ~$1.915trn, w/c 11-16 forecast ~$35bn."
+  },
+  {
+   "query": "investment-grade bond deals Monday November 16 2026 issuers launch high-grade primary market today",
+   "result": "partial",
+   "note": "Fetched Business Standard/Bloomberg 11-15 (ok: spreads 86bp, yields 6%, BofA $2.1trn/$1.9trn). Serrari Group page is August 2026 (stale, discarded). No Monday launch list; Bloomberg 11-13 JPMorgan 2027 piece refused host."
+  },
+  {
+   "query": "xAI OR OpenAI OR Crusoe OR Lambda OR \"Applied Digital\" OR Vantage OR Nscale OR Cerebras debt financing bond notes priced November 14 OR 15 OR 16 2026",
+   "result": "partial",
+   "note": "FourWeekMBA Nscale-note piece client_error; stockanalysis Nscale page (ok) gives WSJ ~11-13 'needs additional financing ahead of IPO'. No priced deal."
+  },
+  {
+   "query": "Nvidia $1 billion Nscale note due November 16 convertible CEO search",
+   "result": "partial",
+   "note": "FourWeekMBA 11-14 daily and Nscale-note pages both client_error; no readable confirmation of the mid-November $1bn Nvidia tranche."
+  },
+  {
+   "query": "Broadcom $63 billion funding package Anthropic chips banks $21 billion high-grade bonds Bloomberg",
+   "result": "hit",
+   "note": "All results trace to Bloomberg 2026-10-27 - pre-gate, discarded; used only as context for the Business Standard 11-15 mention."
+  },
+  {
+   "query": "Alphabet Hong Kong dollar Singapore dollar bonds settlement November 19 2026 listing HKEX update",
+   "result": "no hit",
+   "note": "Only 11-11/11-12 pricing coverage (USD 3.8bn raised); nothing dated 14-16 Nov; settlement 11-19 carried from 11-14 file."
+  },
+  {
+   "query": "Oracle announces second quarter fiscal 2027 results date December 2026",
+   "result": "partial",
+   "note": "No Oracle IR/8-K announcement. Fetched earningscountdown (refreshed 11-15): 'expected' Wed 12-09, time TBD."
+  },
+  {
+   "query": "Micron first quarter fiscal 2027 financial results conference call December 2026",
+   "result": "partial",
+   "note": "No Micron announcement (only FY26 8-Ks). Fetched Wall Street Horizon: UNCONFIRMED Wed 12-23 AMC."
+  },
+  {
+   "query": "Broadcom fourth quarter fiscal year 2026 financial results conference call December 2026 announcement",
+   "result": "hit",
+   "note": "Fetched investors.broadcom.com release dated 2026-11-09 (ok): Wed Dec 9 2026 after close, call 2pm PT / 5pm ET."
+  },
+  {
+   "query": "investor.nvidia.com NVIDIA 3rd Quarter FY27 Financial Results November 17 2026 event",
+   "result": "hit",
+   "note": "Fetched investor.nvidia.com press release dated 2026-10-28 (ok): Tue Nov 17 2pm PT / 5pm ET."
+  },
+  {
+   "query": "home.treasury.gov Tentative-Auction-Schedule.pdf (surfaced by IG supply search)",
+   "result": "hit",
+   "note": "PDF fetched ok; all auctions 11-16 to 12-31 read."
+  },
+  {
+   "query": "federalreserve.gov FOMC meeting calendar December 8-9 2026 statement press conference",
+   "result": "hit",
+   "note": "Fetched federalreserve.gov/newsevents/2026-december.htm (ok): FOMC Dec 8-9 2:00pm, press conference Dec 9 2:30pm, minutes Dec 30. Page footer 'Last Update June 24 2025'. November page not re-read (FOMC minutes 11-18 carried)."
+  },
+  {
+   "query": "census.gov advance monthly retail trade release schedule November 17 2026 October 2026 sales",
+   "result": "hit",
+   "note": "Fetched census.gov/retail/release_schedule.html (ok): Oct data 11-17, Nov data 12-16, 8:30am."
+  },
+  {
+   "query": "bea.gov release schedule GDP third quarter 2026 second estimate November 2026 personal income outlays",
+   "result": "hit",
+   "note": "www.bea.gov/news/schedule/full raised PROVENANCE_REQUIRED (not the exact surfaced URL); www.bea.gov/index.php/news/schedule/full fetched ok."
+  }
+ ],
+ "discarded": [
+  "Broadcom USD 63bn Anthropic chip-financing package / ~USD 21bn high-grade bonds planned 2027 (Bloomberg 2026-10-27, resurfaced by Business Standard 11-15) - pre-gate, older than tolerance",
+  "CoreWeave Bloomberg 11-11 'could launch next week' and BigGo 11-11 structure details - already recorded 11-11/11-13/11-14; used only as context",
+  "Anthropic ~6x book (Bloomberg 11-12, stockanalysis 11-13) and range/placement details (Yahoo 11-13) - in 11-14 dedupe list",
+  "Alphabet HKD/SGD debut bonds USD 3.8bn (qz/TNW 11-12) - already recorded; no 14-16 Nov update",
+  "Serrari Group 'biggest issuer rush since January' (19 issuers, ~USD 80bn week) - August 2026 page, stale",
+  "Renaissance 11-13 news items (Week Ahead, Weekly Recap, CloudDepots, Compute AI Acquisition SPAC) - in 11-14 dedupe list",
+  "Nscale Telegraph 'IPO may slip to 2027' (~11-09/10) and CNBC S-1 update (11-12) - pre-gate / refused host",
+  "ORCL 2026 Annual Meeting Wed 11-18 09:00 CT - already recorded from DEF 14A",
+  "Micron FY2026 Q2/Q3 earnings 8-Ks (sec.gov) - prior-year filings, not FQ1 FY27 announcement",
+  "NVIDIA Q3 FY2026 results release (Nov 2025) resurfaced by search - prior year"
+ ],
+ "items": [
+  {
+   "kind": "deal",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "Update vs 11-14 file: CoreWeave >=USD 4bn IG-rated secured loan - NOT launched in any page dated 14-16 Nov (Mon 16 Nov pre-open)",
+   "source": "GuruFocus via TradingView News (Bloomberg 11-11 relay, undated); BigGo Finance 2026-11-11 23:55 UTC",
+   "url": "https://www.tradingview.com/news/gurufocus:fe54d10d0094b:0-coreweave-s-4-billion-loan-plan-comes-with-a-catch/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "group": "P8_calendar",
+   "issuer": "CoreWeave, Inc. (CRWV)",
+   "size": "at least USD 4,000,000,000 (planned)",
+   "tranches": null,
+   "spread_vs_ipt": null,
+   "book": null,
+   "note": "Three searches (16 Nov) found no report of a launch, commitments deadline or price talk dated 14-16 Nov; latest timing remains Bloomberg 11-11 'could launch as early as next week' (= w/c 16 Nov), 'plan not finalized, terms may change'. Structure per relays: Morgan Stanley + MUFG arranging, distributed to a bank group in stages; collateral Nvidia GPUs + related IG-customer contract (replicates USD 8.5bn Meta-backed March facility); CFO told analysts 7-7.5% yield vs ~15% on unsecured HY bonds; company still junk-rated (loan to be IG-rated). Semafor 11-13 robots_disallowed; FourWeekMBA 11-14/11-16 client_error. Not a pulled/downsized deal - simply not yet launched. Check again next run; a launch this week would be the registered-ticker deal to watch."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-13",
+   "late": false,
+   "name": "US IG supply week ending Fri 13 Nov (Veterans Day half-week) - Cincinnati Asset Management via Merger Monday",
+   "series": "ig.issuance.weekly_usd_bn",
+   "value": 42,
+   "unit": "USD bn",
+   "period_end": "2026-11-13",
+   "source": "Merger Monday (2026-11-15 05:57 ET) republished by HERE Florence, citing Cincinnati Asset Management",
+   "url": "https://www.hereflorence.com/2026/11/15/bond-desks-eye-35-billion-before-thanksgiving-slowdown/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "note": "'About $42 billion' vs 'roughly $40 billion expected'; bond market closed Wed 11-11. Fills the null left in the 11-14 file. Named last-week issuers: UniCredit USD 3.5bn; Asian-currency sales from Berkshire Hathaway, IBM, Alphabet (HKD/SGD). YTD ~USD 1.915trn, on pace to pass USD 2trn in early December (same source). Relay of a newsletter, not a dealer page - treat as press figure."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-15",
+   "late": false,
+   "name": "US IG supply forecast w/c 16 Nov - syndicate desks ~USD 35bn ('last full chance before Thanksgiving')",
+   "series": "ig.issuance.forecast_next_week_usd_bn",
+   "value": 35,
+   "unit": "USD bn",
+   "period_end": "2026-11-20",
+   "source": "Merger Monday (2026-11-15 05:57 ET) republished by HERE Florence, citing unnamed syndicate desks",
+   "url": "https://www.hereflorence.com/2026/11/15/bond-desks-eye-35-billion-before-thanksgiving-slowdown/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "note": "Single point estimate, no range printed. No registered-ticker issuer named for the week; only a USD 1bn Pizza Hut whole-business securitization (structured, not IG corporate) cited. Companion page herecolumbia.com carries the same text."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-13",
+   "late": false,
+   "name": "US IG corporate spread average Fri 13 Nov 86bp (-5bp w/w); IG yield ~6% near highest since GFC (Bloomberg via Business Standard 11-15)",
+   "series": "ig.oas.avg_bp",
+   "value": 86,
+   "unit": "bp",
+   "period_end": "2026-11-13",
+   "source": "Bloomberg (Davide Barbuscia) republished by Business Standard, 2026-11-15 08:22 IST",
+   "url": "https://business-standard.com/amp/world-news/us-corporate-bonds-attract-investors-as-stock-market-turbulence-grows-126111500065_1.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "note": "'Spreads averaged 86 basis points on Friday, a bit wider than the year's mean', narrowed 5bp in the week; IG yields averaged 6% Friday (started year ~4.8%). IG issuance +28% YTD through Thu 11-12 at a full-year record; BofA: ~USD 2.1trn 2026, could decline to ~USD 1.9trn in 2027. IG index +1.2% total return since end-Sept vs S&P 500 -1.1%. Also mentions Broadcom USD 63bn Anthropic chip package with ~USD 21bn high-grade bonds planned next year (pre-gate 10-27, discarded). Series name not registered - informational."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-15",
+   "late": false,
+   "name": "Renaissance US IPO YTD pricings (>= $50m mcap) - unchanged at 123",
+   "series": "ipo.us.ytd_count",
+   "value": 123,
+   "unit": "count",
+   "period_end": "2026-11-15",
+   "source": "Renaissance Capital US IPO Market Stats page, 'as of 11/15/2026'",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "note": "-35.9% y/y. Unchanged vs 11/14 (123) - no pricing Fri 13 Nov PM / weekend. Anthropic (ANT) pricing 11-18 would be the next increment."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-15",
+   "late": false,
+   "name": "Renaissance US IPO YTD proceeds - unchanged at USD 149.0bn",
+   "series": "ipo.us.ytd_proceeds_usd_bn",
+   "value": 149.0,
+   "unit": "USD bn",
+   "period_end": "2026-11-15",
+   "source": "Renaissance Capital US IPO Market Stats page, 'as of 11/15/2026'",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "note": "+314.7% y/y (SpaceX-driven). Unchanged vs 11/14."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-15",
+   "late": false,
+   "name": "Renaissance US IPO YTD filings - unchanged at 216",
+   "series": "ipo.us.ytd_filings",
+   "value": 216,
+   "unit": "count",
+   "period_end": "2026-11-15",
+   "source": "Renaissance Capital US IPO Market Stats page, 'as of 11/15/2026'",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "note": "-8.9% y/y. Unchanged vs 11/14. Stats page news list: five headlines, all dated 11/13/26 (Week Ahead, Weekly Recap, CloudDepots $17m, SPAC Compute AI Acquisition $75m, largest-IPO aftermarket piece); nothing dated 11-14 to 11-16."
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-15",
+   "late": false,
+   "name": "Update vs 11-14 file: Anthropic (ANT) orders 'close to seven times' shares on offer (Bloomberg Sun 15 Nov); book closes Tue 17 Nov, pricing Wed 18 Nov, Nasdaq Thu 19 Nov; range unchanged $70-78",
+   "source": "Bloomberg 2026-11-15 and Reuters, relayed by The Next Web (Cristian Dina) 2026-11-16 11:57 GMT",
+   "url": "https://thenextweb.com/news/anthropic-ipo-orders-seven-times-spacex-pricing-week",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "size": "USD 61,050m base (825,000,000 Class A at $70-78; up to USD 64.4bn at top) + USD 26bn Class N private placement = up to USD 90.4bn",
+   "priced": false,
+   "note": "Bloomberg source: demand 'much hotter than it was for SpaceX at the same stage'; Reuters path ~2x after day 1 (11-10), ~6x by Thu 11-12, ~7x Sun 11-15. Goldman Sachs / Morgan Stanley lead; order book due to close Tuesday, final price Wednesday. No range raise reported in any page dated 14-16 Nov (above-range talk from 11-10/11 already recorded). Yahoo 11-13 detail (not previously recorded): Class N placement buyers Nvidia, Microsoft, Google, TSMC, Broadcom, AMD, Micron pay the IPO price and are NOT subject to the standard six-month lockup. Existing backers to be favoured in allocation; some buyers to get fewer shares than requested (Bloomberg 11-12)."
+  },
+  {
+   "kind": "ipo",
+   "as_of": "2026-11-13",
+   "late": true,
+   "name": "Nscale says it needs additional financing ahead of planned NYSE IPO (WSJ ~13 Nov); mid-Nov USD 1bn Nvidia tranche unconfirmed",
+   "source": "WSJ headline/summary relayed on stockanalysis.com Nscale private-company page (last updated 2026-11-15)",
+   "url": "https://stockanalysis.com/private/nscale/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "size": null,
+   "priced": false,
+   "note": "WSJ: 'Nvidia-Backed Nscale Says It Needs Additional Financing Ahead of Planned IPO ... must tap markets to fund a significant increase in its short-term spending forecasts' (dated '2 days ago' vs 11-15 stamp => ~11-13; kept once late:true, not in dedupe list). Six-month loss USD 1.02bn (ppc.land). Nscale 25 Sept release: 'a further $1 billion NVIDIA commitment expected in mid-November 2026'; FourWeekMBA 11-16 headline 'Nvidia's $1B Nscale Note Due Nov 16 as the CEO Search Runs' could not be fetched (client_error) - funding of that note on 16 Nov is NOT confirmed. Earlier Telegraph report (~11-09) of IPO slipping to 2027 pre-gate. Not a registered ticker; AI-infra issuer of interest - watch for S-1 amendment / financing announcement."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "NVDA Q3 FY2027 results - re-verified from investor.nvidia.com press release (inside ten days; T-1)",
+   "source": "investor.nvidia.com press release 'NVIDIA Sets Conference Call for Third-Quarter Financial Results', dated Oct. 28, 2026",
+   "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "NVDA",
+   "datetime": "2026-11-17T17:00:00-05:00",
+   "verified": true,
+   "note": "Release prints call 'Tuesday, November 17, at 2 p.m. PT (5 p.m. ET)'; results for quarter ended October 25, 2026 to be released ~1:20 p.m. PT (after close). Unchanged vs 11-13/11-14 verifications. as_of = date read (release itself dated 2026-10-28). Tomorrow - the week's hard event alongside Anthropic pricing 11-18."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "AVGO Q4 / FY2026 results - re-verified from investors.broadcom.com release (9 Nov): Wed 9 Dec after close, call 2pm PT / 5pm ET",
+   "source": "investors.broadcom.com news release 'Broadcom Inc. to Announce Fourth Quarter and Fiscal Year 2026 Financial Results on Wednesday, December 9, 2026' (PALO ALTO, Nov. 9, 2026 /PRNewswire/)",
+   "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "AVGO",
+   "datetime": "2026-12-09T17:00:00-05:00",
+   "verified": true,
+   "note": "Release dated 2026-11-09: results 'after the close of the U.S. trading session' Wednesday December 9, 2026; conference call '2:00 PM (PT); 5:00 PM (ET)'. Same date as the FOMC decision (Dec 9 14:00 ET) - a dense day. Re-verified (previously verified 11-13); as_of = date read."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-15",
+   "late": false,
+   "name": "ORCL FQ2 FY2027 results - aggregator now 'expected' Wed 9 Dec (was 12-14), still no Oracle announcement",
+   "source": "earningscountdown.com ORCL page ('Data refreshed Nov 15, 2026, 10:44 PM UTC')",
+   "url": "https://earningscountdown.com/stock/orcl/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "ORCL",
+   "datetime": "2026-12-09",
+   "verified": false,
+   "note": "Aggregator: 'expected to report Q2 FY2027 earnings on Wednesday, December 9, 2026, at a time still to be confirmed' (TBD; 13:00 UTC is a site estimate). Prior aggregator carried 12-14; FQ2 FY26 was reported Wed 10 Dec 2025 after close, so ~Dec 9-10 is plausible. No Oracle IR release / 8-K found via search for 'second quarter fiscal 2027 results'. Oracle typically announces ~2-3 weeks ahead - expect an announcement w/c 16 or 23 Nov. Date >10 days out; verified:false acceptable but flag."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "MU FQ1 FY2027 results - Wall Street Horizon 'UNCONFIRMED' Wed 23 Dec after market; no Micron announcement",
+   "source": "wallstreethorizon.com Micron earnings calendar (no page date printed)",
+   "url": "https://www.wallstreethorizon.com/micron-earnings-calendar",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "MU",
+   "datetime": "2026-12-23T16:30:00-05:00",
+   "verified": false,
+   "note": "Page: 'MU's next earnings date is UNCONFIRMED for Wednesday 12/23/2026 After Market' - forecast from historical trends. Search surfaced only FY2026 Q2/Q3 8-K exhibits on sec.gov, no FQ1 FY27 'sets conference call' release. FQ1 FY26 was 17 Dec 2025; Micron usually announces ~3 weeks ahead. as_of = date read."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "UST auctions w/c 16 Nov and w/c 23 Nov - 20y bond Wed 11-18, 10y TIPS R Thu 11-19, 2y Mon 11-23, 2y FRN R + 5y Tue 11-24, 7y Wed 11-25 (re-read from Treasury tentative schedule PDF)",
+   "source": "home.treasury.gov Tentative Auction Schedule of U.S. Treasury Securities (PDF)",
+   "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "UST 20Y BOND / 10Y TIPS R / 2Y / 2Y FRN R / 5Y / 7Y",
+   "datetime": "2026-11-18T13:00:00-05:00",
+   "verified": true,
+   "note": "PDF rows: 20-Year BOND ann Thu Nov 12, auction Wed Nov 18, settle Mon Nov 30; 10-Year TIPS R ann Nov 12, auction Thu Nov 19, settle Nov 30; 2-Year FRN R ann Thu Nov 19, auction Tue Nov 24, settle Fri Nov 27; 2-Year NOTE ann Nov 19, auction Mon Nov 23, settle Nov 30; 5-Year NOTE ann Nov 19, auction Tue Nov 24, settle Nov 30; 7-Year NOTE ann Nov 19, auction Wed Nov 25, settle Nov 30 (Thanksgiving-shortened week: 2y/5y/7y compressed Mon-Wed). Sizes announced Thu 11-19. Auction time not printed in PDF (standard 13:00 ET; FRN 11:30 ET). Dates unchanged vs 11-14 read."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "UST December coupon auctions - 3y Mon 12-07, 10y R Tue 12-08, 30y R Thu 12-10, 20y R Tue 12-22, 2y FRN R + 5y TIPS Wed 12-23, 2y/5y Mon 12-28, 7y Tue 12-29 (Treasury tentative schedule PDF)",
+   "source": "home.treasury.gov Tentative Auction Schedule of U.S. Treasury Securities (PDF)",
+   "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "UST 3Y / 10Y R / 30Y R / 20Y R / 5Y TIPS / 2Y FRN R / 2Y / 5Y / 7Y",
+   "datetime": "2026-12-07T13:00:00-05:00",
+   "verified": true,
+   "note": "PDF rows: 3-Year ann Thu Dec 03, auction Mon Dec 07, settle Tue Dec 15; 10-Year R ann Dec 03, auction Tue Dec 08, settle Dec 15; 30-Year R ann Dec 03, auction Thu Dec 10, settle Dec 15; 20-Year R ann Thu Dec 17, auction Tue Dec 22, settle Mon Dec 28; 2-Year FRN R ann Dec 17, auction Wed Dec 23, settle Dec 28; 5-Year TIPS auction Dec 23; 2-Year and 5-Year ann Thu Dec 24, auction Mon Dec 28, settle Thu Dec 31; 7-Year ann Dec 24, auction Tue Dec 29, settle Dec 31. 10y reopening 12-08 lands the day before FOMC decision / AVGO results; 30y R 12-10 same morning-afternoon as CPI (08:30)."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "Federal Reserve: FOMC two-day meeting Dec 8-9, statement Wed 9 Dec 2:00pm ET, press conference 2:30pm; minutes Wed 30 Dec 2:00pm - verified from federalreserve.gov December calendar",
+   "source": "federalreserve.gov/newsevents/2026-december.htm",
+   "url": "https://www.federalreserve.gov/newsevents/2026-december.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "FOMC (Dec 8-9 meeting)",
+   "datetime": "2026-12-09T14:00:00-05:00",
+   "verified": true,
+   "note": "Page: 'FOMC Meeting - Two-day meeting, December 8 - 9' 2:00 p.m.; 'FOMC Press Conference' Dec 9 2:30 p.m.; 'FOMC Minutes - Meeting of December 8-9' Dec 30 2:00 p.m. December is an SEP meeting by convention but the page does not list the SEP or a Beige Book. Also: Z.1 Dec 10 12:00, G.17 IP Dec 16 09:15, H.8 Dec 4/11/18/24 16:15, SCOOS Dec 17. Page footer 'Last Update: June 24, 2025'. Dec hike fully priced per 11-13 press (events group). as_of = date read."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-14",
+   "late": false,
+   "name": "FOMC minutes (Oct 27-28 meeting) Wed 18 Nov 14:00 ET - carried from 11-14 run (verified then from federalreserve.gov November calendar; not re-read this session)",
+   "source": "federalreserve.gov November 2026 calendar, read 2026-11-14 (carried)",
+   "url": "https://www.federalreserve.gov/newsevents/2026-december.htm",
+   "fetched_how": "WebSearch snippet only",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "FOMC minutes",
+   "datetime": "2026-11-18T14:00:00-05:00",
+   "verified": true,
+   "note": "Verification carried from the 11-14 run, which read the November page on federalreserve.gov (also Beige Book 11-25 14:00, Warsh remarks Mon 11-16 12:00). Only the December page was fetched this session (URL given); verified:true retained because the prior read was the agency page. Same day as UST 20y auction 13:00, ORCL annual meeting 09:00 CT and Anthropic IPO pricing (evening)."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "Census Advance Monthly Retail Trade: Oct 2026 data Tue 17 Nov 08:30 ET; Nov data Wed 16 Dec; Dec data Fri 15 Jan 2027 - verified from census.gov release schedule",
+   "source": "census.gov/retail/release_schedule.html",
+   "url": "https://census.gov/retail/release_schedule.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "Retail Sales (Oct 2026, advance)",
+   "datetime": "2026-11-17T08:30:00-05:00",
+   "verified": true,
+   "note": "Column header 'Release Date at 8:30 am'; rows: September 2026 -> October 15, 2026; October 2026 -> November 17, 2026; November 2026 -> December 16, 2026; December 2026 -> January 15, 2027. Oct retail sales lands tomorrow morning, same day as NVDA results after close. as_of = date read."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "BEA: GDP Q3 second estimate + corporate profits and Personal Income & Outlays (Oct PCE) Wed 25 Nov 08:30; trade Oct Tue 12-08; GDP Q3 third estimate + Nov PCE Wed 12-23 - verified from bea.gov schedule",
+   "source": "bea.gov full release schedule",
+   "url": "https://www.bea.gov/index.php/news/schedule/full",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "GDP Q3 2026 (second estimate) + PCE Oct",
+   "datetime": "2026-11-25T08:30:00-05:00",
+   "verified": true,
+   "note": "Schedule rows: Nov 25 8:30 'GDP (Second Estimate) and Corporate Profits, 3rd Quarter 2026' and 'Personal Income and Outlays, October 2026'; Dec 8 8:30 'U.S. International Trade in Goods and Services, October 2026'; Dec 18 8:30 'International Transactions, 3Q 2026'; Dec 23 8:30 'GDP (Third Estimate), Industries, Corporate Profits ... 3rd Quarter 2026' and 'Personal Income and Outlays, November 2026'. Also Nov 17 10:00 'Experimental Super Intelligence Economic Statistics, 2024' (new experimental release). The bare /news/schedule/full URL raised PROVENANCE_REQUIRED; the search-surfaced /index.php/ variant fetched ok. Dates unchanged vs 11-13 read. as_of = date read."
+  },
+  {
+   "kind": "event_date",
+   "as_of": "2026-11-14",
+   "late": false,
+   "name": "BLS: Employment Situation (Nov) Fri 12-04 08:30; CPI (Nov) Thu 12-10 08:30; PPI (Nov) Tue 12-15 08:30 - carried from 11-14 run (verified then from bls.gov schedule; not re-read)",
+   "source": "bls.gov release schedule, read 2026-11-14 (carried)",
+   "url": null,
+   "fetched_how": "WebSearch snippet only",
+   "status": "ok",
+   "group": "P8_calendar",
+   "ticker_or_release": "CPI (Nov 2026)",
+   "datetime": "2026-12-10T08:30:00-05:00",
+   "verified": true,
+   "note": "Verification carried from the 11-14 run (bls.gov Nov/Dec schedules read then: Employment Situation 12-04, CPI 12-10, PPI 12-15). Not re-fetched this session (no bls.gov search issued; url null because the bls.gov page was not read today). verified:true retained on the strength of the 11-14 agency read. CPI 12-10 is the morning after the FOMC decision and same day as the 30y reopening."
+  }
+ ]
+}

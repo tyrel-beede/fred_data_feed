@@ -1,0 +1,129 @@
+{
+ "group": "flows",
+ "groups": [
+  "P6_margin"
+ ],
+ "run_at": "2026-11-16T05:11:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "since": "2026-11-14T05:11:00-07:00",
+  "note": "FINRA margin statistics are monthly; the Oct-26 row is new since the previous run (page ended at Sep-26 then). Prior-month Sep-26 rows included for context only, as in the previous run."
+ },
+ "notes": "FINRA Margin Statistics page (read 2026-11-16) now shows Oct-26: debit balances in customers' securities margin accounts 1,448,360 USD mn (down 31,694 / -2.1% from Sep-26 record 1,480,054); free credit balances in cash accounts 210,290 (from 215,328); free credit balances in margin accounts 212,890 (from 218,581). All three fell month-on-month: first decline in margin debt after the Jul-26 1,417,225 -> Aug-26 1,453,832 -> Sep-26 1,480,054 climb. Free credit total 423,180 vs 433,909 in Sep-26. Page carries no explicit release date; FINRA says updates publish in the third week of the month following the reference month, consistent with a mid-November release.",
+ "sources": [
+  {
+   "query": "FINRA margin statistics debit balances in customers' securities margin accounts 2026 (standard)",
+   "result": "partial",
+   "note": "No finra.org link returned; only aggregators (kucoin, advisorperspectives Jul-26, ftportfolios Oct-15). Not fetched."
+  },
+  {
+   "query": "finra.org \"Margin Statistics\" \"Debit Balances in Customers' Securities Margin Accounts\" October 2026 (extended)",
+   "result": "hit",
+   "note": "Returned https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics; WebFetch succeeded, table read: Oct-26 1,448,360 / 210,290 / 212,890; Sep-26 1,480,054 / 215,328 / 218,581; Aug-26 1,453,832 / 207,641 / 217,499; Jul-26 1,417,225 / 205,132 / 217,305."
+  }
+ ],
+ "discarded": [],
+ "items": [
+  {
+   "kind": "reading",
+   "as_of": "2026-10-31",
+   "name": "FINRA margin debt - debit balances in customers' securities margin accounts, Oct-26",
+   "series": "finra.margin_debit",
+   "value": 1448360,
+   "unit": "USD mn",
+   "period_end": "2026-10-31",
+   "source": "FINRA Margin Statistics",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P6_margin",
+   "late": false,
+   "note": "New month on page. Prior month Sep-26 1,480,054 (record); change -31,694 (-2.1%). Aug-26 1,453,832, Jul-26 1,417,225. Page read 2026-11-16; FINRA publishes third week of following month."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-31",
+   "name": "FINRA free credit balances in customers' cash accounts, Oct-26",
+   "series": "finra.free_credit_cash",
+   "value": 210290,
+   "unit": "USD mn",
+   "period_end": "2026-10-31",
+   "source": "FINRA Margin Statistics",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P6_margin",
+   "late": false,
+   "note": "New month on page. Prior month Sep-26 215,328; change -5,038. Aug-26 207,641."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-10-31",
+   "name": "FINRA free credit balances in customers' securities margin accounts, Oct-26",
+   "series": "finra.free_credit_margin",
+   "value": 212890,
+   "unit": "USD mn",
+   "period_end": "2026-10-31",
+   "source": "FINRA Margin Statistics",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P6_margin",
+   "late": false,
+   "note": "New month on page. Prior month Sep-26 218,581; change -5,691. Aug-26 217,499."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-09-30",
+   "name": "FINRA margin debt - debit balances in customers' securities margin accounts, Sep-26",
+   "series": "finra.margin_debit",
+   "value": 1480054,
+   "unit": "USD mn",
+   "period_end": "2026-09-30",
+   "source": "FINRA Margin Statistics",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P6_margin",
+   "late": false,
+   "note": "Prior month, for context. Already recorded in previous run."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-09-30",
+   "name": "FINRA free credit balances in customers' cash accounts, Sep-26",
+   "series": "finra.free_credit_cash",
+   "value": 215328,
+   "unit": "USD mn",
+   "period_end": "2026-09-30",
+   "source": "FINRA Margin Statistics",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P6_margin",
+   "late": false,
+   "note": "Prior month, for context. Already recorded in previous run."
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-09-30",
+   "name": "FINRA free credit balances in customers' securities margin accounts, Sep-26",
+   "series": "finra.free_credit_margin",
+   "value": 218581,
+   "unit": "USD mn",
+   "period_end": "2026-09-30",
+   "source": "FINRA Margin Statistics",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "group": "P6_margin",
+   "late": false,
+   "note": "Prior month, for context. Already recorded in previous run."
+  }
+ ]
+}

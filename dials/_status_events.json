@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-14T05:11:00-07:00",
- "last_as_of": "2026-11-13",
- "last_file": "dials/events/2026-11-14.json",
+ "last_run_at": "2026-11-16T05:11:00-07:00",
+ "last_as_of": "2026-11-16",
+ "last_file": "dials/events/2026-11-16.json",
  "status": "ok",
- "error": "Two late (11-12) EM items rest on a Bloomberg relay (zackeiseman substack) plus headline-only/AFP confirmation: Bloomberg and businessmirror (robots) refused, journalarta and asiaone (wrong article) failed, so Vietnam's size (up to $1bn) and Indonesia's 10y (7.66%, +4bp) are relay-sourced; FX record low confirmed via Malay Mail/AFP. DCD (Prometheus) and cryptobriefing (Cerebras) fetches failed with client_error but neither was needed (Prometheus out of gate; Cerebras confirmed via tokenpost). No in-gate hit for fund gating, repriced AI round, memory LTA renegotiation, GW deferral, auction tail (none 13 Nov; 30y 11-12 tail already recorded), CoreWeave loan (seeking, not pulled), or Fed/repo/SOFR/swap-line stress on 13 Nov."
+ "error": "No US Treasury auction results in gate (none held Fri 13 Nov; Mon 16 Nov 3m/6m bills settle 11:30 ET, after run time). Benzinga, DCD, The Edge Singapore, FourWeekMBA, BusinessWorld pages returned client_error; substitutes fetched (dealroom, huggingnews, context.ph). Bloomberg primary for the Malaysia loan and SMBC Nikko JGB pieces not fetchable (refused host)."
 }

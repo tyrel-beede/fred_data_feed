@@ -1,0 +1,252 @@
+{
+ "group": "events",
+ "run_at": "2026-11-16T05:11:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "No US Treasury auction results in gate (none held Fri 13 Nov; Mon 16 Nov 3m/6m bills settle 11:30 ET, after run time). Benzinga, DCD, The Edge Singapore, FourWeekMBA, BusinessWorld pages returned client_error; substitutes fetched (dealroom, huggingnews, context.ph). Bloomberg primary for the Malaysia loan and SMBC Nikko JGB pieces not fetchable (refused host).",
+ "gate": {
+  "since": "2026-11-14T05:11:00-07:00",
+  "note": "NEW = 14 Nov after 05:11 MST, 15 Nov, 16 Nov Asia/Europe session. 12-13 Nov items not in dedupe_events.txt kept once with late:true (Nscale S-1/A 11-12). Friday 13 Nov yield levels re-reported in weekend wraps (Au79, Rio Times) are dedupe of the 11-13 UST/gilt/JGB hits and were discarded; only Monday 16 Nov session levels are recorded as new."
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "notes": "Quiet weekend for hard events: no pulled or downsized hyperscaler deal, no principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut or 'digestion' statement, no new fund gating, no memory LTA renegotiation, no US auction. What is new is Monday 16 Nov sovereign levels holding near the Friday highs rather than extending: UST 10y ~5.13-5.15% (TE: 5.13% -1bp, 'hovered around 5.15%', one-month high), 2y 4.85%, 30y 5.46%, Dec 25bp hike priced 92% with 50bp floated; gilts 10y 5.35% (highest since 23 Oct), 2y 5.00% (three-year high), 30y 5.78%, Dec BoE hike ~80% with two more by Jun-27, UK Oct CPI Wed; JGB 10y 2.89% (+3bp, near three-week high) with 30y 4.04%, 40y 4.18% despite Q3 GDP -0.1% annualised (exp +0.1%), USD/JPY 159.82 and FinMin Katayama warning on 'one-sided, rapid moves' (no intervention reported). EM stress continues: rupiah closed 18,195 Fri (-9% YTD, worst since 2022), BI intervening in spot/NDF/secondary bonds, BI decision Wed 18 Nov, Goldman flags $5.6bn passive outflow if Indonesia drops out of MSCI; Philippine BTr partially awarded Mon 16 Nov T-bills (P42.3bn of P45bn, 364-day capped at P7.5bn; 91d 6.567% +7.4bp, 364d 6.932% +7.7bp). Credit: a $488m Malaysia data-center loan (Epoch Digital/Actis) syndication delayed 16 Nov as arrangers seek more lenders - Bloomberg calls it a 'rare deal pause' (not pulled); Westpac A$2.5bn senior priced 9-10bp wider than CBA/ANZ mid-year (~75-77bp/swap) and NAB Tier 2 at 158bp, >=30bp wider than Feb/Aug comps (16 Nov); Bloomberg 15 Nov: US IG spread 86bp Fri (-5bp w/w), IG yields ~6% highest since GFC, 'tech companies slowing their bond sales', banks plan ~$21bn high-grade in 2027 for the $63bn Broadcom/Anthropic chip package. Late: Nscale S-1/A filed 12 Nov says it 'must obtain additional financing to meet forecast obligations in 2027' (vs Sept 'funded 12 months'), ~$1.7bn 9m loss on $307m revenue, ~$5.5bn debt, $44.6bn Anthropic contract - neocloud funding stress, not a repricing. Holtec $900m IPO withdrawal and Crusoe 1.8GW Wyoming pause both resurfaced in search but date to Sep/Jun 2026 (discarded).",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized (November 15 2026 OR November 16 2026)",
+   "result": "partial",
+   "note": "No pulled/downsized deal. Surfaced fixedincomenews.com.au 16 Nov (Westpac/NAB priced wider - fetched) and Rio Times 16 Nov briefing (Friday levels, dedupe). Second variant 'postponed OR pulled OR shelved market conditions Nov 13/14' surfaced Business Standard/Bloomberg 15 Nov IG piece (fetched): no deals pulled, tech slowing bond sales."
+  },
+  {
+   "query": "2. fund gates redemptions (November 2026 suspended withdrawals)",
+   "result": "no hit",
+   "note": "Only evergreen/BDC explainer pages and old gate episodes (Blue Owl Jul-26 letter, wealthmanagement Mar-26 $4.6bn, BCGE 16 Nov commentary on March-26 gates with no named fund). Second variant 'Blackstone OR Starwood OR Blue Owl OR Apollo limits redemptions Nov 2026' - same old pages. No new gate dated 14-16 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI (MSFT GOOGL META AMZN ORCL, Nov 15/16 2026)",
+   "result": "no hit",
+   "note": "Aggregator/analyst pieces only (qz Q3 misses, Dan Ives 'slowdown looms', KuCoin 'AI demand strong', BlackRock warning). No principal statement dated in gate. Second variant with 'digestion OR slow OR pause executive said' - same."
+  },
+  {
+   "query": "4. funding round repriced AI lab (Nov 14-16 2026)",
+   "result": "no hit",
+   "note": "TechCrunch OpenAI $1.25T (11-06, dedupe), Thinking Machines $40bn (up-round, dedupe), Wikipedia pages. Second variant 'neocloud OR AI lab down round' surfaced Substack weekly wrap 15 Nov (fetched): Nscale financing warning (S-1/A 11-12, recorded late), Anthropic range $1.26-1.41tn fully diluted (IPO group, already recorded), no repriced round."
+  },
+  {
+   "query": "5. LTA renegotiation memory (Samsung SK hynix Micron hyperscaler Nov 2026)",
+   "result": "no hit",
+   "note": "TrendForce Apr-26, The Investor 12 Aug 2026 (fetched - describes LTAs lengthening, no renegotiation), SK hynix F-1/424B4 (dedupe). Nothing dated in gate."
+  },
+  {
+   "query": "6. gigawatt deferral data center (Nov 14/15/16 2026)",
+   "result": "partial",
+   "note": "Fool 14 Nov Huang '1 GW delay = $10bn/quarter' is a hypothetical (fetched, discarded). Quantum DC 1.2GW (dedupe). Crusoe 1.8GW Cheyenne pause resurfaced - June 2026 (discarded). Second variant via DCD surfaced Bloomberg 16 Nov 'Asian data center loan syndication delayed' - recorded via huggingnews relay (DCD/Edge/FourWeekMBA client_error). X digests not fetchable."
+  },
+  {
+   "query": "7. Treasury auction tail (bill auction results Nov 16 2026)",
+   "result": "no hit",
+   "note": "No US auction in gate: none Fri 13 Nov, Mon 16 Nov 3m/6m bills close 11:30 ET after run time. 30-year 0.4bp tail (11-12) in dedupe. Second variant surfaced Philippine BTr partial T-bill award 16 Nov (bworldonline client_error; context.ph fetched) - recorded as EM sovereign hit."
+  },
+  {
+   "query": "8. sovereign bond stress (JGB gilt Treasury Monday 16 Nov Asia session)",
+   "result": "hit",
+   "note": "Saxo Asia Quick Take 16 Nov (fetched), tradingeconomics US/UK/Japan pages (fetched, 16 Nov levels), Au79 14 Nov wrap (fetched - Friday levels, dedupe), FMT/Bloomberg rupiah 16 Nov (fetched). CaixaBank 16 Nov daily: summary only, no numbers (French spread 'widened' on polls, no level). OAT variant: no dated 16 Nov OAT level surfaced (ideal-investisseur 142.4bp as of 10 Nov - out of gate). Bloomberg SMBC Nikko 'investors return to JGBs' 16 Nov - refused host, not fetched."
+  }
+ ],
+ "discarded": [
+  "Au79 Macro 14 Nov wrap: UST 2y 4.88%/10y 5.15%/30y 5.47% Fri 13 Nov, gilt 30y 5.82%, JGB 30y 4.01% - 2026-11-13 - dedupe (UST/gilt/JGB 11-13 hits already recorded; levels differ by 2-3bp by source)",
+  "Au79 Macro: ICE BofA HY OAS 330bp (+50bp from late Sep), IG 94bp, BBB 116bp - as of 2026-11-11 - outside gate tolerance",
+  "Rio Times Global Economy Briefing 16 Nov: 10y 5.14% +29bp over five sessions - 2026-11-13 close - dedupe of 11-13 UST hit; China Oct data/Japan GDP not events-group",
+  "Holtec Nuclear $900m IPO withdrawn (50m sh at $15-18, ~$10bn valuation, AI data-centre sentiment) - 2026-09-17/21 - outside gate, resurfaced in 15 Nov wrap",
+  "Crusoe pauses 1.8GW Project Jade Cheyenne WY 'at request of customer' (Google) - 2026-06-09 - outside gate",
+  "Motley Fool 14 Nov: Huang '1 GW delay costs $10bn a quarter' - hypothetical cost framing from a month earlier, no dated deferral",
+  "Blue Owl OCIC 18.8%/OTIC 38.1% redemption requests, 5% gate; Apollo/BlackRock/Blackstone/Cliffwater second-quarter gates - 2026-07 - outside gate",
+  "WealthManagement/Bloomberg: private credit funds trap $4.6bn (Ares, Cliffwater, Morgan Stanley, Apollo, BlackRock) - 2026-03-26 - outside gate",
+  "XLF/BCGE 16 Nov 'AI-driven repricing tests evergreen fund liquidity' - commentary on March-26 gates, no named fund, no new gate - not an event",
+  "The Investor (Korea Herald) 'AI rewrites the rules of memory chip sales' - 2026-08-12 - outside gate; describes LTAs lengthening, no renegotiation",
+  "TrendForce: Samsung/SK hynix 3-5 year LTAs reset - 2026-04-09 - outside gate",
+  "Substack 15 Nov wrap: Anthropic fully diluted range $1.26-1.41tn vs $1.5tn talk; CoreWeave ~7-7.5% chip-backed loan; Norway grid reservation pause; BNEF $1tn DC debt (11-09) - IPO/issuance group or dedupe (CoreWeave 11-13, Norway, OpenAI) - not events hits",
+  "qz/Dan Ives/KuCoin/BlackRock AI-capex 'slowdown' commentary - analyst/aggregator, no principal statement in gate",
+  "ideal-investisseur OAT-Bund 142.4bp - as of 2026-11-10 - outside gate",
+  "Iceland RIKV T-bill auction result (GlobeNewswire 16 Nov) - routine, no stress claim"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "UST Mon 16 Nov (intraday, Asia/Europe session): 10y ~5.13-5.15% holding near one-month high, 2y 4.85%, 30y 5.46%; Dec 25bp hike 92% priced",
+   "headline": "US 10-Year Yield Holds Near One-Month High (tradingeconomics, 16 Nov)",
+   "claim": "The 10-year yield hovered around 5.15% on Monday (TE quote 5.13%, -1bp), close to one-month highs, with the 2y at 4.85% and 30y at 5.46%, as markets price a 92% chance of a 25bp Fed hike in December after hot October inflation and hawkish Fed comments, with some policymakers floating 50bp; focus on Warsh remarks and the October FOMC minutes Wednesday. Friday 13 Nov TE close was 5.15-5.16% after a ~30bp weekly rise.",
+   "candidate_dial": "B-sovereign (UST)",
+   "late": false,
+   "source": "tradingeconomics US 10Y page and 16 Nov news note; Saxo Asia Market Quick Take 16 Nov",
+   "url": "https://tradingeconomics.com/united-states/government-bond-yield",
+   "other_urls": [
+    "https://www.home.saxo/en-hk/content/articles/macro/asia-market-quick-take-16-november-2026-16112026"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "8. sovereign bond stress",
+   "note": "Intraday Monday levels, NOT a close. TE Friday 13 Nov print (5.15-5.16%) is 3-4bp above the 5.12% press level recorded 11-13; source difference, not a new move. Saxo: 2y rose as much as 37bp last week; RBC sees back-to-back Dec/Jan hikes; Man Group's Rowe sees 10y 5.5% early 2027. No stress signal beyond level - market is consolidating, not extending."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "Gilts Mon 16 Nov (intraday): 10y 5.35% highest since 23 Oct, 2y 5.00% three-year high, 30y 5.78%; Dec BoE hike ~80%, two more by Jun-27",
+   "headline": "UK Gilt Yields Surge as Rate Hike Expectations Mount (tradingeconomics, 16 Nov)",
+   "claim": "UK 10-year yields rose above 5.35% on Monday, the highest since 23 October, and two-year yields passed 5% to a three-year high as investors priced further BoE hikes after this month's first hike since 2023; markets see ~80% odds of a December hike with two more expected by June 2027, ahead of Wednesday's October CPI (consensus 3.6%, one-year high).",
+   "candidate_dial": "B-sovereign (gilts)",
+   "late": false,
+   "source": "tradingeconomics UK 10Y page and 16 Nov news note; Saxo Asia Quick Take 16 Nov (CPI expectation)",
+   "url": "https://tradingeconomics.com/united-kingdom/government-bond-yield",
+   "other_urls": [
+    "https://www.home.saxo/en-hk/content/articles/macro/asia-market-quick-take-16-november-2026-16112026"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "8. sovereign bond stress",
+   "note": "TE prints 10y 5.35% (+1bp), 2y 5.00% (+1.7bp), 30y 5.78% (-0.4bp). The 11-13 file recorded gilt 10y 5.478% from another source - TE's series is ~13bp lower; treat the two as different quote sources, not a 13bp Monday rally. Au79 (14 Nov) had 30y 5.82% Friday, consistent with TE's 5.78% Monday. Rate-driven, not credit stress."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "JGB Mon 16 Nov (intraday): 10y 2.89% (+3bp, near three-week high), 30y 4.04%, 40y 4.18% despite Q3 GDP -0.1% annualised; USD/JPY 159.82, Katayama warns on 'one-sided, rapid moves'",
+   "headline": "Japan 10Y Yield Steady Despite Weak GDP Data (tradingeconomics) / Asia Market Quick Take 16 Nov (Saxo)",
+   "claim": "The JGB 10y held near 2.87-2.89% on Monday, close to three-week highs, even as Q3 GDP unexpectedly contracted 0.1% annualised (exp +0.1%, Q2 +1.7%); 30y 4.04% and 40y 4.18% (both +3bp); markets still expect further BoJ tightening (policy rate 1.25%, Summary of Opinions broadly supportive of hikes, December hike expected) and JGBs tracked the US selloff. USD/JPY ~159.82 near 160 with FinMin Katayama warning against one-sided rapid moves; no intervention reported.",
+   "candidate_dial": "B-sovereign (JGB/JPY)",
+   "late": false,
+   "source": "tradingeconomics Japan 10Y page and 16 Nov note; Saxo Asia Market Quick Take 16 Nov",
+   "url": "https://tradingeconomics.com/japan/government-bond-yield",
+   "other_urls": [
+    "https://www.home.saxo/en-hk/content/articles/macro/asia-market-quick-take-16-november-2026-16112026"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "8. sovereign bond stress",
+   "note": "Intraday, not a close. Extends the 11-13 JGB hit (10y 2.86%, 30y 4.01% record, 40y 4.16%) by ~3bp across the curve. Bloomberg 16 Nov 'Investors return to JGBs as rate outlook shifts, SMBC Nikko says' surfaced but refused host - not fetched; headline suggests dip-buying, not stress. Mizuho +6.5% on guidance raise (Saxo)."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "Bloomberg 16 Nov: Indonesia faces uphill battle to stem rupiah slide - Fri close 18,195/USD, -9% YTD (worst since 2022), BI intervening in spot/NDF/secondary bonds, BI decision Wed 18 Nov, $5.6bn MSCI-exit outflow risk",
+   "headline": "Indonesia faces uphill battle to stem rupiah's slide (Bloomberg via Free Malaysia Today, 16 Nov 08:48 MYT)",
+   "claim": "The rupiah closed Friday at 18,195 per dollar, down about 9% year-to-date and heading for its worst year since 2022; Bank Indonesia is intervening in the spot market, offshore and onshore NDFs and buying government bonds in the secondary market; BI meets Wednesday 18 Nov with a slim majority expecting no change (Macro Hive: even a 25bp hike 'would probably not be enough'); foreigners have sold $5.6bn of Indonesian stocks this year and Goldman estimates a further $5.6bn passive outflow if Indonesia is removed from MSCI indices; BNP sees 18,500 by end-2027, MUFG 18,350 this quarter.",
+   "candidate_dial": "B-sovereign (EM FX / Indonesia)",
+   "late": false,
+   "source": "Bloomberg via Free Malaysia Today, 2026-11-16",
+   "url": "https://www.freemalaysiatoday.com/category/business/2026/11/16/indonesia-faces-uphill-battle-to-stem-rupiah-s-slide",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "8. sovereign bond stress (EM variant)",
+   "note": "Follow-on to the 11-12 record-low 18,241-18,253 / BI intervention hit; Friday close 18,195 is a modest recovery from the record low. No bond yield level or intervention amount in the article. Vietnam dollar bond: no new development surfaced since the 11-12 'on hold' item."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "Philippines BTr partially awards Mon 16 Nov T-bills: P42.3bn of P45bn, 364-day capped at P7.5bn; 91d 6.567% (+7.4bp), 182d 6.748% (+2.9bp), 364d 6.932% (+7.7bp); tenders P67.5bn vs P85.1bn prior week",
+   "headline": "T-bill yields climb as rate hike prospects persist (Context.ph) / BTr partially awards T-bills as yields rise further (BusinessWorld)",
+   "claim": "The Bureau of the Treasury raised P42.3bn against a P45bn programme on 16 Nov, fully awarding the 91- and 182-day bills but partially awarding the 364-day bill (capped at P7.5bn) as average yields rose to 6.567%, 6.748% and 6.932% respectively on persistent consumer price pressures and expectations of further BSP tightening; total tenders fell to P67.5bn from P85.1bn a week earlier.",
+   "candidate_dial": "A-auction / B-sovereign (EM)",
+   "late": false,
+   "source": "Context.ph 2026-11-16 (BusinessWorld 16 Nov page client_error)",
+   "url": "https://context.ph/2026/11/16/t-bill-yields-climb-as-rate-hike-prospects-persist/",
+   "other_urls": [
+    "https://bworldonline.com/banking-finance/2026/11/16/794280/btr-partially-awards-t-bills-as-yields-rise-further/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "7. Treasury auction tail (surfaced Philippine auction)",
+   "note": "Partial award = issuer rejecting high bids, not a failed auction (still 1.5x covered). bp changes are computed from the printed averages. Same day BusinessWorld reports PSEi at a six-year low on economic worries. Not US Treasury - recorded because the sweep surfaced it as the only in-gate auction with a stress claim."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "Bloomberg 16 Nov: $488m Malaysia data-center loan (Epoch Digital / Actis) syndication delayed as arranging banks seek more lenders - 'rare deal pause'",
+   "headline": "Asian Data Center Loan Syndication Is Delayed in Rare Deal Pause (Bloomberg) / $488M Loan for Malaysian Data Center Project Delayed During Syndication",
+   "claim": "Syndication of a $488m loan backing an Actis-backed Epoch Digital data-center project in Malaysia has been delayed while being marketed to other lenders: the arranging banks want more participants, original bank-meeting and site-visit dates were missed (executives unavailable) and new dates are being scheduled; Bloomberg describes it as a rare pause in Asian data-center financing.",
+   "candidate_dial": "D-credit (data-center project finance)",
+   "late": false,
+   "source": "Bloomberg via huggingnews relay (16 Nov 04:41 EST); The Edge Singapore and FourWeekMBA relays client_error; Bloomberg refused host",
+   "url": "https://huggingnews.com/business/488m-loan-for-malaysian-data-center-project-delayed-during-syndication-4be4d2ed",
+   "other_urls": [
+    "https://www.bloomberg.com/news/articles/2026-11-16/asian-data-center-loan-syndication-is-delayed-in-rare-deal-pause",
+    "https://www.theedgesingapore.com/news/tech/malaysian-data-centre-loan-syndication-delayed-rare-deal-pause",
+    "https://fourweekmba.com/ai-bytedance-linked-488m-malaysia-data-center-loan-is-delayed/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "6. gigawatt deferral data center (DCD variant) / 1. bond deal pulled OR downsized",
+   "note": "Delayed, not pulled or downsized; no lenders named; FourWeekMBA headline links the project to ByteDance (not confirmed in the relay read). Small ($488m) and non-hyperscaler - a tell on bank appetite for DC project debt in Asia, not a hard event."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "name": "Australian bank credit widens 16 Nov: Westpac A$2.5bn senior priced 9-10bp wider than CBA/ANZ mid-year 66-67bp/swap; NAB A$3.25bn incl. Tier 2 at 158bp, >=30bp wider than Feb/Aug comps",
+   "headline": "Credit Spreads Widen (16 November 2026) - Fixed Income News Australia",
+   "claim": "Westpac raised A$2.5bn of senior unsecured paper 9-10bp wider than the 66-67bp over swap CBA (July) and ANZ (August) paid, placing 44% of the FRNs with Asian investors; NAB raised A$3.25bn across three tranches with its Tier 2 subordinated notes at 158bp over swap, at least 30bp wider than comparable 10NC5 deals from CBA (February) and Westpac (August), amid the RBA hike and choppy global markets; Franklin Templeton's Sonal Desai expects two to three more US hikes.",
+   "candidate_dial": "D-credit (bank spreads, not a pulled deal)",
+   "late": false,
+   "source": "Fixed Income News Australia, published 2026-11-16 10:33 AEDT",
+   "url": "https://www.fixedincomenews.com.au/credit-spreads-widen-16-november-2026/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "1. bond deal pulled OR downsized",
+   "note": "Deals completed, not pulled; recorded as a dated spread-widening observation. Implied Westpac senior ~75-77bp/swap is arithmetic, not printed. ASIC updated private-credit standards 'last week' (undated)."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-15",
+   "name": "Bloomberg 15 Nov: US IG spread 86bp Fri (-5bp w/w), IG yields ~6% highest since GFC; 'tech companies slowing their bond sales'; banks plan ~$21bn high-grade in 2027 for $63bn Broadcom/Anthropic chip package; Ruffer doubled duration",
+   "headline": "US corporate bonds attract investors as stock market turbulence grows (Bloomberg / Davide Barbuscia, via Business Standard 15 Nov)",
+   "claim": "IG spreads averaged 86bp on Friday 13 Nov, slightly wider than the year's mean but tight by two-decade standards and 5bp tighter on the week, while IG yields averaged ~6%, near the highest since the financial crisis (from ~4.8% at the start of the year); high-grade issuance is up 28% YTD and on track for a record (BofA ~$2.1trn 2026, ~$1.9trn 2027) but tech companies are slowing their bond sales; banks plan up to ~$21bn of high-grade bonds next year within a $63bn Broadcom funding package for Anthropic chips (L&G's Woodside: chip financing into 2027 'can weigh on credit a bit'); Ruffer doubled portfolio duration since July as a hedge against an AI-buildout slowdown.",
+   "candidate_dial": "D-credit (IG spreads / supply)",
+   "late": false,
+   "source": "Bloomberg via Business Standard, 2026-11-15 08:22 IST",
+   "url": "https://www.business-standard.com/amp/world-news/us-corporate-bonds-attract-investors-as-stock-market-turbulence-grows-126111500065_1.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "1. bond deal pulled OR downsized (postponed/market conditions variant)",
+   "note": "No pulled or postponed deals reported; benign credit read (spreads tightening, demand strong). The $63bn Broadcom/Anthropic package and ~$21bn bank bonds are forward 2027 supply, relevant to issuance group. Weekend wrap carrying in-gate (Fri close) spread fact."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-12",
+   "name": "Nscale S-1/A (filed 12 Nov): 'must obtain additional financing to meet forecast obligations in 2027' (Sept filing said funded 12 months); ~$1.7bn 9m net loss on $307m revenue, ~$5.5bn debt end-Sep, $44.6bn Anthropic contract, ~$35bn IPO target",
+   "headline": "Nscale warns it needs more cash ahead of $35bn IPO (FT via Dealroom 13 Nov) / Nscale plc Form S-1/A filed 2026-11-12",
+   "claim": "In Amendment No.1 to its S-1 filed 12 Nov, Nvidia-backed neocloud Nscale said it must obtain additional financing to meet forecast obligations in 2027 after ordering Vera Rubin GPUs for its up-to-$44.6bn Anthropic services agreements (dated 25 Aug 2026) at the Monarch campus, reversing September's statement that it was funded for at least 12 months; estimated nine-month net loss ~$1.7bn on $307m revenue, debt ~$5.5bn at end-September, with >$5.7bn project financings, a $900m revolver and ~$4.9bn GPU financings disclosed; IPO price range still blank.",
+   "candidate_dial": "D-credit (neocloud funding stress; not a repricing)",
+   "late": true,
+   "source": "SEC S-1/A Nscale plc 2026-11-12 (first 100k chars read; 2027 language per FT via Dealroom 13 Nov); Axios 13 Nov and Benzinga surfaced (Benzinga client_error)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0002110365/000119312526458722/ck0002110365-20261112.htm",
+   "other_urls": [
+    "https://dealroom.co/news/other-1a5n62o-nscale-warns-it-needs-more-cash-ahead-of-35bn-ipo/",
+    "https://axios.com/2026/11/13/nscale-ipo-debt-nvidia-jensen-huang"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "sweep_query": "4. funding round repriced AI lab (neocloud variant)",
+   "note": "Dated 12 Nov, not in dedupe_events.txt (the 11-05 Nscale item there is Microsoft walking away from Loughton) - kept once with late:true. Not a repricing or pulled deal: a going-concern-style funding warning from a neocloud with a $44.6bn anchor contract, one week before the Anthropic IPO. The 2027 sentence was not located in the first 100k chars of the 1.4m-char filing; it is carried from FT/Dealroom. Six-month revenue in filing $140.6m (vs $10.4m prior year)."
+  }
+ ]
+}

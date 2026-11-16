@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-14T05:11:00-07:00",
- "last_as_of": "2026-11-14",
- "last_file": "dials/calendar/2026-11-14.json",
+ "last_run_at": "2026-11-16T05:11:00-07:00",
+ "last_as_of": "2026-11-16",
+ "last_file": "dials/calendar/2026-11-16.json",
  "status": "partial",
- "error": "IG supply readings (ig.issuance.daily_usd_bn for Fri 11-13 and the weekly total) are null: no search-surfaced page printed a figure (Yahoo relay client_error, cambonds search returned stale editions, Bloomberg refused). Semafor 11-13 CoreWeave piece robots_disallowed (relayed via 404kresearch 11-13). treasurydirect.gov auction page robots_disallowed; the 20y/10y TIPS dates were verified from the home.treasury.gov tentative schedule PDF instead. No Oracle FQ2 / Micron FQ1 company announcement found (verified:false, aggregator dates carried). Schedule-page verifications carry as_of = date read (2026-11-14) because the agency pages print no publication date. No company IR/SEC item identifies the one incremental IPO pricing that moved the Renaissance count 122->123."
+ "error": "CoreWeave >=$4bn IG loan: no search-surfaced page dated 14-16 Nov confirms a launch (Semafor 11-13 robots_disallowed; FourWeekMBA 11-14/11-16 pages client_error) - status recorded as 'not launched as of Mon 16 Nov pre-open' from 11-11/11-12 relays, not from a dated 16 Nov source. Weekly IG supply (USD 42bn) and next-week forecast (USD 35bn) come from a Merger Monday/Bloomberg relay citing Cincinnati Asset Management and unnamed syndicate desks, not a dealer page. No Oracle FQ2 / Micron FQ1 company announcement exists yet (verified:false; aggregator ORCL date moved 12-14 -> 12-09). Alphabet HKD/SGD: no update dated 14-16 Nov surfaced. bea.gov /news/schedule/full raised PROVENANCE_REQUIRED (not search-surfaced); the search-surfaced /index.php/news/schedule/full URL fetched ok. FOMC minutes 11-18 and BLS dates are carried from the 11-14 run (agency-read then), not re-read this session."
 }

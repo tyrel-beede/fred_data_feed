@@ -1,8 +1,8 @@
 {
  "group": "standoff",
- "last_run_at": "2026-11-14T05:11:00-07:00",
- "last_as_of": "2026-11-14",
- "last_file": "dials/standoff/2026-11-14.json",
+ "last_run_at": "2026-11-16T05:11:00-07:00",
+ "last_as_of": "2026-11-16",
+ "last_file": "dials/standoff/2026-11-16.json",
  "status": "partial",
- "error": "brent.m2.settle (Feb-27) null: no page printed it and the cappnotes 13 Nov Closing Look (client_error earlier in session) was not retried per brief. war_risk.premium_pct_hull null: no dated November quote. td3c null: no 12-13 Nov Baltic print surfaced. No UKMTO/JMIC advisory dated 13-14 Nov found; the five tanker-mine claims of 13-14 Nov are Iranian-sourced and unconfirmed. hormuz.now 13 Nov daily count not yet printed (latest full day 12 Nov). UANI shipping update 13 Nov client_error; NPR robots_disallowed. Dated Brent is IEA's approximate 'around $93', not a Platts/Argus daily."
+ "error": "brent.m2.settle (Feb-27) for Fri 13 Nov still null: cappnotes 13 Nov Closing Look fetched OK but prints only front-month settles (95.84 / 88.56) with no contract month; ICE expiry page carries no prices; the only strip found (baratelliinstitute) is dated 15 Oct. dated_brent.premium null: no Platts/Argus-relay quote dated 13-16 Nov. war_risk.premium_pct_hull null: no dated Nov quote (straits.live shows a 7 Oct 32x estimate only). td3c null: no 13-16 Nov Baltic print surfaced; Lloyd's List tanker-rates page client_error. straits.live 15 Nov brief, seatrade-maritime, intellinews, no1sdailydigest, energynow, Lloyd's List: client_error; Haaretz and Federal Register: robots_disallowed. hormuz.now 15 Nov count is partial (5 'so far' at 21:11Z); latest full day is 14 Nov."
 }
