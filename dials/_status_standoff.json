@@ -1,8 +1,8 @@
 {
  "group": "standoff",
- "last_run_at": "2026-11-16T05:11:00-07:00",
- "last_as_of": "2026-11-16",
- "last_file": "dials/standoff/2026-11-16.json",
+ "last_run_at": "2026-11-17T05:11:00-07:00",
+ "last_as_of": "2026-11-17",
+ "last_file": "dials/standoff/2026-11-17.json",
  "status": "partial",
- "error": "brent.m2.settle (Feb-27) for Fri 13 Nov still null: cappnotes 13 Nov Closing Look fetched OK but prints only front-month settles (95.84 / 88.56) with no contract month; ICE expiry page carries no prices; the only strip found (baratelliinstitute) is dated 15 Oct. dated_brent.premium null: no Platts/Argus-relay quote dated 13-16 Nov. war_risk.premium_pct_hull null: no dated Nov quote (straits.live shows a 7 Oct 32x estimate only). td3c null: no 13-16 Nov Baltic print surfaced; Lloyd's List tanker-rates page client_error. straits.live 15 Nov brief, seatrade-maritime, intellinews, no1sdailydigest, energynow, Lloyd's List: client_error; Haaretz and Federal Register: robots_disallowed. hormuz.now 15 Nov count is partial (5 'so far' at 21:11Z); latest full day is 14 Nov."
+ "error": "brent.m2.settle (Feb-27) for Mon 16 Nov null: cappnotes, Weekend Spread, DTN, discoveryalert print front-month only (DTN names Jan-27); commodity-board 17 Nov page gives conflicting settles (Brent Jan-27 91.83, WTI Dec-26 85.06) and no Feb-27 - recorded as disputed, not used; baratelliinstitute strip still dated 15 Oct. dated_brent.premium null: no Platts/Argus relay dated 16-17 Nov. war_risk null for a dated 16-17 Nov quote (only the Lloyd's List/Insurance Business 9 Nov 7-9% hull range relayed by hormuz.now; houseofsaud 17 Nov says no numerical figures disclosed for the latest period). td3c null: no Baltic print surfaced; Maritime Executive says VLCC day rates 'fallen sharply' with no number. ofac.iran_actions not read this run: ABA Banking Journal OFAC roundup (16 Nov) redirect-looped; ofac.treasury.gov/recent-actions not surfaced by this session's searches. EU FAC 16 Nov outcome on Aspides/escorts not found (EEAS search returned May 2026 pages only; WANA relay gives sanctions line). CNBC 17 Nov, seatrade-maritime, logisticsmiddleeast, samaa.tv: client_error; Bloomberg: robots_disallowed."
 }

@@ -1,0 +1,220 @@
+{
+ "group": "events",
+ "run_at": "2026-11-17T05:11:00-07:00",
+ "run_weekday": "Tue",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "No US coupon auction in gate (Mon 16 Nov 13w/26w bills 'in line', no tail figure published for bills; 6-week bill 17 Nov 11:30 ET after run time; 20y Wed 18 Nov). Broadcom/Anthropic 700 MW push and Micron USD 32bn commitments are single-source (456X Semi-AI brief 16 Nov; mlq.ai primary client_error). CNBC (stock wrap, Oracle filing), Japan Times (SMBC Nikko JGB), Caleb & Brown (MSCI/Strategy), Sammyfans (Apple-Samsung LTA), vtmarkets, FourWeekMBA: client_error; Bloomberg Malaysia-loan primary: robots_disallowed; ABA Banking Journal OFAC roundup: redirect loop.",
+ "gate": {
+  "since": "2026-11-16T05:11:00-07:00",
+  "note": "New = 16 Nov after ~12:11Z and 17 Nov to ~12:11Z. Tolerance 2 days: 15-16 Nov items that were not in the 11-16 file are kept once with late:true. Oil settles recorded are Monday 16 Nov; Tuesday 17 Nov Asia/Europe prices recorded as intraday, NOT settles. Run 2026-11-17 05:11 MST (Tue)."
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "notes": "Hard-event check: NO pulled or downsized hyperscaler deal, NO principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut or 'digestion' statement, NO new fund gating, NO memory LTA renegotiation, NO US auction tail (bills in line) in the 16-17 Nov window. What is new: (1) Monday 16 Nov AI-complex drawdown - S&P 500 -1.92% to 7,416.59, Nasdaq Composite -2.49% to 24,509.76 (now >10% below its 6 Oct record - a correction), Nasdaq-100 -2.67%, SOX -5.3%, NVDA -4.1% to 156.10 (lowest close since Jun 2025; longest weekly losing streak since Oct 2012), MU -7.62% to 719.02, TSMC -6.3%, Sandisk -8.6%, CRWV -5.4%/NBIS -5.5% premarket, VIX 22.91 (+18.7%); drivers: Huang's exit and FT report he may return, Bernstein cut NVDA to Market Perform, UBS CY28 EPS -9%, the BIS interim final rule (16 Nov) requiring licences for advanced AI chips to Malaysia/Thailand/Indonesia/Singapore/Brazil incl. remote access by China-linked customers, and Anthropic-IPO supply (Swissquote: buyers may sell other tech). (2) Rates: UST 10y closed 5.12% (-3bp; Tradeweb 5.115% vs 5.152% Fri), 2y 4.83% (-5bp), 30y 5.46% (-1bp), 2s10s ~29bp; Dec 25bp hike fully priced, 50bp ~8%; Bund 10y ~3.38% seventh straight rise; JGB 10y 2.885% (highest since 22 Oct), 30y 4.04%, 40y 4.18%; Nikkei -2.42% to 59,662 below 60,000; Tue 17 Nov Asia: KOSPI -2.59% to 4,968 (Samsung -3.3%, SK Hynix -2.0%), Nikkei 58,925 (-1.24%) at 02:05Z, Taiwan stocks reported down ~6% (note.com, unverified); USD/JPY ~159.4, no intervention. (3) Capex/financing: Amazon/AWS sells 75% of 13 powered shells (~647 MW) to Blackstone's BXDC for ~USD 5bn at a 7.0% cap rate with a 12/32-year triple-net leaseback (SEC 8-K 16 Nov) - a principal recycling data-center assets; Broadcom/Anthropic 700 MW TPU deployment reportedly pushed 2027->2028 on construction and power permitting and Broadcom 2026-30 custom-ASIC revenue forecast cut 11% (456X 16 Nov, single source) - a GW-deferral candidate; Morgan Stanley's 5 GW US capacity slip 2028->2029 is dated 8-10 Nov (pre-gate, discarded); BlackRock's Boivin (Bloomberg 16 Nov) warns an AI-buildout slowdown would have a material real-economy impact, no number (discourse, discarded to voices). (4) Credit: Malaysia USD 488m DC loan delay (Bloomberg 16 Nov) already recorded 11-16; Westpac/NAB widening already recorded; no new US IG deal found Monday. (5) Memory: SK Hynix reportedly >50% of 2027-28 capacity under LTAs, Micron USD 32bn cumulative customer commitments, Korea Oct DRAM exports USD 17.96bn (+529% y/y) - tightening, not renegotiation; Apple-Samsung DRAM LTA report (Sammyfans 17 Nov) unreadable. Sovereign stress: no new EM auction failure in gate (Philippines 16 Nov partial award already recorded); rupiah BI decision Wed 18 Nov pending.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized (November 16 2026 OR November 17 2026)",
+   "result": "no hit",
+   "note": "Results were Rio Times briefing (yields), Caleb & Brown rollup (client_error), CNBC futures (refused), CFR buyback piece (undated). No pulled or downsized deal in gate. Malaysia USD 488m loan delay (Bloomberg 16 Nov, robots_disallowed) already recorded 11-16."
+  },
+  {
+   "query": "2. fund gates redemptions suspended withdrawals (November 2026)",
+   "result": "no hit",
+   "note": "Only undated BDC/REIT gate explainers and Bitcoin ETF outflow pieces (not gates). No new gating dated 16-17 Nov."
+  },
+  {
+   "query": "3. AI capex cut OR deferral OR digestion hyperscaler (November 16 2026)",
+   "result": "partial",
+   "note": "No principal cut. Fetched startupfortune 16 Nov 11:24Z (BlackRock Boivin warning - discourse, discarded) and 456X Semi-AI brief 16 Nov (Broadcom/Anthropic 700 MW push, Amazon/Blackstone) - the latter recorded as hits. Morgan Stanley 5 GW slip (tokenpost 10 Nov) pre-gate."
+  },
+  {
+   "query": "4. AI lab funding round repriced OR down round (November 2026)",
+   "result": "no hit",
+   "note": "Only trackers and Wikipedia; 456X relays SpaceX-Anysphere USD 60bn acquisition (not a repricing) and AMD-World Labs (size undisclosed). No repriced round dated 16-17 Nov."
+  },
+  {
+   "query": "5. memory LTA renegotiation Samsung SK hynix Micron hyperscaler (November 2026)",
+   "result": "no hit",
+   "note": "Sammyfans 17 Nov Apple-Samsung DRAM LTA report client_error; 456X relays SK Hynix >50% of 2027-28 capacity under LTAs and Micron USD 32bn commitments (tightening, not renegotiation; not items). TrendForce LTA piece is April."
+  },
+  {
+   "query": "6. gigawatt data center deferral OR delayed OR paused (November 16 2026)",
+   "result": "partial",
+   "note": "Bloomberg Malaysia loan (16 Nov) already recorded; tokenpost Morgan Stanley 5 GW 2028->2029 dated 10 Nov (pre-gate); FERC deadline delay request (capacityglobal, undated). The Broadcom/Anthropic 700 MW push comes via query 3's 456X page."
+  },
+  {
+   "query": "7. Treasury auction tail (bills November 16 2026, 20-year)",
+   "result": "no hit",
+   "note": "Fetched helious.io index/26-week page and saferate: Mon 16 Nov 13w 4.155% 2.76x (dealers 34.8 / indirect 56.9 / direct 8.3), 26w 4.310% 2.83x (30.6 / 58.1 / 11.2), both 'in line', no tail figure for bills; 6-week 17 Nov after run time; 20y Wed 18 Nov USD 16bn. No tail."
+  },
+  {
+   "query": "8. sovereign bond stress JGB gilt Treasury yields (November 17 2026 selloff)",
+   "result": "hit",
+   "note": "Fetched cappnotes 16 Nov (UST closes), note.com overnight 17 Nov (JGB/Nikkei/Bund), Rio Times 16 Nov, Au79 16 Nov (gilt 30y 5.80 - low reliability), financefeeds 17 Nov (KOSPI). Japan Times SMBC Nikko piece client_error."
+  },
+  {
+   "query": "stocks Monday November 16 2026 Nasdaq correction semiconductors sell off why Nvidia chairman Micron",
+   "result": "hit",
+   "note": "Fetched Reuters via Yahoo premarket 16 Nov, financefeeds MU 17 Nov (Reuters/Kiplinger closes), cappnotes/Weekend Spread closes. vtmarkets client_error; CNBC refused."
+  },
+  {
+   "query": "Amazon sells 75% stake 13 data centers Blackstone $5 billion 647 MW",
+   "result": "hit",
+   "note": "Fetched BXDC 8-K Ex.99.1 (16 Nov) and TIKR via Yahoo 17 Nov."
+  },
+  {
+   "query": "Broadcom Anthropic 700 MW TPU deployment pushed 2027 to 2028 power permitting",
+   "result": "partial",
+   "note": "Only 456X 16 Nov carries the claim; mlq.ai client_error; Insider Monkey page is 13 Sep (1 GW 2026 / 5 GW 2027 / 10 GW 2028 management plan - context). Single-source."
+  }
+ ],
+ "discarded": [
+  "Oracle USD 10bn equity + 10bn notes 8-K (filed 4 Nov) - pre-gate, recorded 11-05/11-06",
+  "Morgan Stanley: ~5 GW US data-center IT capacity slips 2028->2029 (tokenpost 10 Nov, 'Nov 8 outlook') - 2026-11-10 - older than tolerance; postponement not cancellation",
+  "BlackRock Boivin: AI slowdown would hit US growth (Bloomberg 16 Nov via startupfortune) - strategist discourse with no number; voices lane, not an event",
+  "Bloomberg 16 Nov Malaysia USD 488m DC loan syndication delay - already recorded 11-16 (restated by startupfortune)",
+  "Nscale S-1/A financing-need language (12 Nov) - already recorded 11-16 late",
+  "Westpac/NAB A$ spread widening (16 Nov) - already recorded 11-16",
+  "Philippines BTr partial T-bill award (16 Nov) and rupiah/BI (16 Nov) - already recorded 11-16",
+  "UST/gilt/JGB Mon 16 Nov Asia-session intraday levels - already recorded 11-16; only the US close and Tue 17 Nov Asia session are new here",
+  "Bitcoin ETF outflows USD 2.1-2.35bn / BTC four-month low ~64,400 - crypto flows, not an events-group category",
+  "Jones Act waiver extension (13 Nov) and IEA/Goldman surplus calls - standoff file (oil)",
+  "CoreWeave prior-gen GPU rental rates +25% / +10% (456X) - positive pricing datapoint, not an event category",
+  "IREN 2 GW Sweetwater fully contracted at USD 22m/MW (456X) - positive, not an event",
+  "SpaceX acquires Anysphere for USD 60bn; AMD acquires World Labs (456X 16 Nov) - M&A, not a repricing",
+  "TensorWave-OpenAI 457 MW six-year AMD capacity deal (456X 16 Nov) - new capacity contract, not a deferral",
+  "SK Hynix >50% of 2027-28 capacity under LTAs; Micron USD 32bn commitments; Korea Oct DRAM exports +529% y/y (456X) - tightening, not renegotiation; context in notes",
+  "Commerce rule on Chinese firms leasing US AI chips via third-country DCs (note.com) - same BIS rule as the Micron hit, merged",
+  "Au79 SOFR/IORB/TGA/reserves table (16 Nov) - plumbing readings, not events; fed funds range stated 3.50-3.75 conflicts with Rio's 3.75-4.00 (low-reliability page)",
+  "Caleb & Brown 'MSCI to drop Strategy from its indexes' - page client_error, unverified; only MSCI item found is Upexi micro-cap deletion (Au79)",
+  "Warsh San Francisco speech Mon 16 Nov - no text surfaced"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "Mon 16 Nov AI-complex drawdown: S&P 500 -1.92% (7,416.59), Nasdaq -2.49% (24,509.76, >10% below 6 Oct record = correction), SOX -5.3%, NVDA -4.1% to 156.10 (lowest since Jun 2025), MU -7.62%, VIX 22.91 (+18.7%) - Huang exit/return report, Bernstein cut, BIS export rule, Anthropic supply",
+   "headline": "Stocks tumble on Wall Street as Nvidia leads another sell-off in technology companies / Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO",
+   "claim": "cappnotes: S&P 500 7,416.59 (-1.92%), Nasdaq Composite 24,509.76 (-2.49%), Nasdaq-100 27,197.15 (-2.67%), Dow 51,608.17 (-1.41%), Russell 2000 -1.70%, VIX 22.91 (+18.70%); note.com: Philadelphia Semiconductor Index -5.3% to 9,610.65, Nasdaq more than 10% below its 6 Oct high; Reuters/Kiplinger via financefeeds: Nvidia -4.1% to 156.10 (lowest close since June 2025) after its longest weekly losing streak since Oct 2012 following Huang's exit, FT reporting Huang is considering a return, Bernstein cutting to Market Perform; Micron -7.62% to 719.02, TSMC -6.34%, Sandisk -8.58%, semis ETF -5.11%; Swissquote's Ozkardeskaya: 'a successful debut won't necessarily lift every AI stock' - Anthropic buyers may sell other tech to fund it.",
+   "candidate_dial": "C-equity (AI complex drawdown / correction)",
+   "source": "cappnotes Closing Look 16 Nov; note.com overnight 17 Nov; financefeeds 17 Nov (Reuters/Kiplinger); Reuters via Yahoo premarket 16 Nov; 456X 16 Nov",
+   "url": "https://cappnotes.substack.com/p/closing-look-monday-november-16-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Nvidia reports Tue 17 Nov after close (consensus 109.1bn / 2.47; options 8-10%); Anthropic prices Wed 18 Nov. The orchestrator's equity-lens read; recorded here because the 'digestion' and 'AI bubble' sweep phrases are what the wraps use. Dec 25bp hike fully priced, 50bp ~8% (CME via Reuters).",
+   "other_urls": [
+    "https://financefeeds.com/micron-mu-stock-719-tuesday-nvidia-results-tonight-bull-798-bear-656/",
+    "https://note.com/nobuyuki000/n/n6770c8f30d0a?hl=en",
+    "https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-futures-slide-104351968.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "BIS interim final rule (16 Nov): licences required to export/re-export advanced AI chips to Indonesia, Malaysia, Singapore, Thailand and Brazil, and for remote access via data centres there serving China-linked customers; US-headquartered firms exempt with reporting - Micron -7.62%, SK Hynix/Samsung down Tue",
+   "headline": "Micron (MU) Stock: $719 Tuesday, Nvidia Reports Tonight (BIS rule section) / 456X: Commerce interim final rule",
+   "claim": "A Commerce/BIS interim final rule dated 16 Nov requires licences to export or re-export advanced AI chips to Indonesia, Malaysia, Singapore, Thailand and Brazil and covers remote access through data centres in those countries serving Chinese-linked customers, with an exemption for US-headquartered companies meeting reporting rules; Micron fell 7.62% to 719.02 (biggest drop since 5 Nov) and on Tue 17 Nov KOSPI -2.59% to 4,968 with Samsung -3.3% and SK Hynix -1.96%.",
+   "candidate_dial": "C-capex (export controls on third-country AI data centres)",
+   "source": "financefeeds 17 Nov 07:00 GMT; 456X Semi-AI brief 16 Nov; note.com 17 Nov; Tokenpost (KOSPI) via financefeeds",
+   "url": "https://financefeeds.com/micron-mu-stock-719-tuesday-nvidia-results-tonight-bull-798-bear-656/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Policy event bearing on the Southeast-Asian neocloud/colocation buildout (Malaysia DC loan already stalled 16 Nov). The Federal Register text was not fetched; details are press relays.",
+   "other_urls": [
+    "https://456xresearch.substack.com/p/456x-semi-ai-evening-brief-november"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "UST close Mon 16 Nov: 10y 5.12% (-3bp; Tradeweb 5.115 vs 5.152 Fri), 2y 4.83% (-5bp), 30y 5.46% (-1bp), 2s10s ~29bp - first down day after a 29bp five-session rise; Dec 25bp hike fully priced, 50bp ~8%; Bund 10y ~3.38% seventh straight rise",
+   "headline": "Closing Look - Monday, November 16, 2026 / Overnight Global Market Report: Morning of November 17, 2026",
+   "claim": "cappnotes (Treasury data): 10-year 5.12% (-3bp), 2-year 4.83% (-5bp), 30-year 5.46% (-1bp), 2s10s about 29bp; note.com: 10y 5.115% (Tradeweb) vs 5.152% Friday, German 10y ~3.38% for a seventh straight rise, DXY 103.44; Reuters: 2y fell more than 2bp after its largest weekly rise in over two years, markets 'fully pricing' a December hike with CME FedWatch ~8% on 50bp; Rio Times: 10y up 29bp over five sessions to 16 Nov.",
+   "candidate_dial": "B-sovereign (UST)",
+   "source": "cappnotes Closing Look 16 Nov; note.com 17 Nov 08:00 JST; Reuters via Yahoo 16 Nov; Rio Times 16 Nov",
+   "url": "https://cappnotes.substack.com/p/closing-look-monday-november-16-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "A relief bid on a risk-off day - the sovereign stress read is 'held, not extended'. FOMC minutes Wed 18 Nov; 20y auction Wed 18 Nov USD 16bn is the next tail test.",
+   "other_urls": [
+    "https://note.com/nobuyuki000/n/n6770c8f30d0a?hl=en",
+    "https://www.riotimesonline.com/global-economy-briefing-november-16-2026/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "JGB 10y 2.885% Mon 16 Nov (highest since 22 Oct), 30y 4.04%, 40y 4.18%; Nikkei -2.42% to 59,662 (below 60,000); Tue 17 Nov Asia: KOSPI -2.59% to 4,968, Nikkei 58,925 (-1.24%) at 02:05Z; USD/JPY ~159.4, no intervention; gilt 30y 5.80% (Au79, low reliability)",
+   "headline": "Overnight Global Market Report: Morning of November 17, 2026 / JGB yields climb as buyers hold back on long-dated debt",
+   "claim": "note.com: Japan 10-year JGB 2.885%, highest since 22 Oct; Nikkei 225 closed 59,662.02 (-2.42%, -1,480), TOPIX -1.02%; USD/JPY about 159.4 vs 159.72 Friday, no intervention mentioned; Au79: Japan 30y 4.04% (+3bp), 10y 2.89%, UK 30y gilt 'rose to 5.80% today', US 30y 5.43%; Rio Times live board 17 Nov 02:05: Nikkei 58,925 (-1.24%); financefeeds/Tokenpost: KOSPI -2.59% to 4,968.45 Tue with Samsung -3.3%, SK Hynix -1.96%; Japan Q3 GDP 0.0% q/q, -0.1% annualised.",
+   "candidate_dial": "B-sovereign (JGB/JPY, gilts)",
+   "source": "note.com 17 Nov; Au79 Macro 16 Nov (promotional newsletter - low reliability); Rio Times 16-17 Nov; financefeeds 17 Nov",
+   "url": "https://note.com/nobuyuki000/n/n6770c8f30d0a?hl=en",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Japan Times 'Investors return to JGBs as rate outlook shifts (SMBC Nikko)' 17 Nov surfaced but client_error - a counter-signal headline unread. Taiwan stocks 'down about 6%' per note.com is unverified and undated within the piece.",
+   "other_urls": [
+    "https://martyau79.substack.com/p/16nov2026-au79-holdings-and-thesis",
+    "https://www.riotimesonline.com/global-economy-briefing-november-16-2026/",
+    "https://www.japantimes.co.jp/business/2026/11/17/markets/investors-return-to-jgbs/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "Amazon/AWS sells 75% of two JVs holding 13 powered-shell data centers (~647 MW) to Blackstone's BXDC for ~USD 5bn at a 7.0% initial cap rate; 12/32-year triple-net leaseback; AWS keeps 25%; ~USD 2.5bn non-recourse JV debt - a principal recycling data-center assets off balance sheet",
+   "headline": "Blackstone Digital Infrastructure Trust 8-K Ex.99.1 / Amazon Sold $5 Billion of Data Centers at a '7% Cap Rate'",
+   "claim": "BXDC 'today announced that it has signed a definitive agreement' (16 Nov) for a 75% majority interest in two JVs with AWS valued at about USD 5bn with an 'initial capitalization rate of 7.0%'; the JVs own 13 newly built powered shells across two AWS campuses, AWS leases back 100% triple-net for 12 years initial / 32 fully extended and keeps 25%; close expected Q4 2026. TIKR: northern Indiana and Mississippi, 2.75%/yr escalators guaranteed by Amazon.com, BXDC contributes ~USD 1.9bn and the JVs borrow ~USD 2.5bn non-recourse; Chanos: 'at a 7% cap rate... all materially lower than where they trade today'. 456X: ~647 MW.",
+   "candidate_dial": "C-capex (principal asset recycling / sale-leaseback funding)",
+   "source": "BXDC Form 8-K Ex.99.1 16 Nov (sec.gov); TIKR via Yahoo 17 Nov 06:33Z; 456X 16 Nov",
+   "url": "https://www.sec.gov/Archives/edgar/data/0002100161/000119312526461954/d115778dex991.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Neither a pulled deal nor a capex cut: a registered principal monetising shells at a 7% cap (vs DLR ~4.4% implied) to fund the buildout - the orchestrator decides whether off-balance-sheet funding by a principal is a capex-cycle event. Also recorded as a calendar deal. TIKR dates the agreement 11 Nov vs the release's 16 Nov (SEC date used).",
+   "other_urls": [
+    "https://finance.yahoo.com/real-estate/articles/amazon-sold-5-billion-data-063333133.html",
+    "https://456xresearch.substack.com/p/456x-semi-ai-evening-brief-november"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "456X (single source): Broadcom/Anthropic 700 MW TPU deployment pushed from 2027 to 2028 on construction and power permitting; Broadcom 2026-2030 custom-ASIC revenue forecast cut 11% (research)",
+   "headline": "456X Semi-AI Evening Brief - November 16, 2026",
+   "claim": "The 456X evening brief dated 16 Nov reports that a 700 MW Anthropic TPU deployment through Broadcom has been pushed from 2027 to 2028 because of construction and power permitting, and that Broadcom's 2026-2030 custom ASIC revenue forecast was cut 11% (research source not named in the summary read).",
+   "candidate_dial": "C-capex (GW deferral - supplier/lab)",
+   "source": "456X Semi-AI Evening Brief 16 Nov (Eastern time)",
+   "url": "https://456xresearch.substack.com/p/456x-semi-ai-evening-brief-november",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Single-source and the underlying research/report is not identified; mlq.ai's Google/Anthropic buildout piece (client_error) was the only other candidate carrier. Against the 2 Sep management plan (1 GW 2026 / 5 GW 2027 / 10 GW 2028) a 700 MW slip is ~14% of the 2027 tranche. Treat as a lead to verify, not a confirmed deferral.",
+   "other_urls": [
+    "https://www.insidermonkey.com/blog/broadcoms-anthropic-ramp-puts-googles-tpu-business-in-a-different-light-1836961/"
+   ]
+  }
+ ]
+}
