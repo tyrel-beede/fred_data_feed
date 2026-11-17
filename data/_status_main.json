@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-17T04:46:38Z",
+ "run_utc": "2026-11-17T21:41:07Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -61,7 +61,6 @@
   "cftc:tu",
   "cftc:fv",
   "cftc:ty",
-  "cftc:tn",
   "cftc:us",
   "cftc:wn",
   "cftc:vx",
@@ -154,5 +153,10 @@
   "breadth",
   "eia"
  ],
- "failed": {}
+ "failed": {
+  "cftc:tn": "RemoteDisconnected: Remote end closed connection without response"
+ },
+ "prices_stale": [
+  "^SKEW:2026-11-16"
+ ]
 }
