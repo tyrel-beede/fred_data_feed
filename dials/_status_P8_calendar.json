@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-17T05:11:00-07:00",
- "last_as_of": "2026-11-17",
- "last_file": "dials/calendar/2026-11-17.json",
+ "last_run_at": "2026-11-18T05:11:00-07:00",
+ "last_as_of": "2026-11-18",
+ "last_file": "dials/calendar/2026-11-18.json",
  "status": "partial",
- "error": "No dealer IG daily tally for Mon 16 Nov surfaced (cappnotes repeats last week's USD 42bn and the ~35bn week forecast only); no registered-issuer bond deal priced 16 Nov found in search - recorded as quiet, not as zero. CoreWeave >=USD 4bn IG loan: still no search-surfaced page dated 16-17 Nov confirming a launch (BigGo 'launches' page SERVER_ERROR; FourWeekMBA client_error); Yahoo/GuruFocus 12 Nov 'could launch as early as next week' remains the latest. ORCL FQ2 and MU FQ1 dates still carried verified:false (no company announcement; no new aggregator read this run). Treasury tentative schedule PDF surfaced but not re-read; auction dates carried verified from the 11-16 read, sizes from helious/newsquawk (aggregator). FOMC minutes 18 Nov, Retail Sales 17 Nov, BEA and BLS dates carried verified from 11-14/11-16 agency reads. Anthropic range status comes from a Jin10 wire relay (TechFlow), not the S-1/A itself."
+ "error": "No Tuesday 17 Nov IG dealer tally surfaced (cappnotes Closing Look Tue 17 Nov and theweekendspread The Close Tue 17 Nov both carry no issuance section; generic IG-deal search returned only FRED/SIFMA/investmentgrade.com statistics pages) - recorded quiet, not zero. No registered-issuer bond/equity deal priced 17 Nov found (Meta 424B5s surfaced have accession numbers below BXDC's 16 Nov filing = pre-gate, not fetched). CoreWeave >=USD 4bn IG loan: BigGo 'Launches' page SERVER_ERROR again; every other surfaced page is the 12 Nov 'plans' story - launch still unconfirmed. CNBC 'likely to price above range' page client_error (refused host) - WSJ relay via Yahoo used instead. ORCL FQ2 and MU FQ1 dates remain aggregator-only (verified:false); aggregators now disagree on ORCL (marketbeat 'Estimated' Tue 8 Dec vs earningscountdown 'expected' Wed 9 Dec). NVDA 8-K: sec.gov q3fy27pr.htm exhibit fetched but the page text does not show the 8-K cover/exhibit number."
 }

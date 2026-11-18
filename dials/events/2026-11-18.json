@@ -1,0 +1,257 @@
+{
+ "group": "events",
+ "run_at": "2026-11-18T05:11:00-07:00",
+ "run_weekday": "Wed",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "No US coupon auction in gate (6-week bill 17 Nov 'in line', no tail figure published for bills; 20y USD 16bn Wed 18 Nov 13:00 ET after run time). Nvidia call language is press-relayed (Kiplinger live blog, SiliconANGLE, Newsquawk) - no transcript read; CNBC call pieces refused. Client_error: AppleInsider (Apple-Samsung LTA), Converge Digest (NVDA call), Share Talk overnight, investinglive Asia wrap; Globe and Mail (Reuters bond-storm column): robots_disallowed; Bloomberg Japan 20y and UST Global primaries not fetched (refused host).",
+ "gate": {
+  "since": "2026-11-17T05:11:00-07:00",
+  "note": "New = 17 Nov after ~12:11Z and 18 Nov to ~12:11Z. Tolerance 2 days: 16-17 Nov items that were not in the 11-16/11-17 files are kept once with late:true. Oil settles recorded are Tuesday 17 Nov; Wednesday 18 Nov Asia/Europe prices recorded as intraday, NOT settles. Run 2026-11-18 05:11 MST (Wed)."
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "notes": "Hard-event check: NO pulled or downsized hyperscaler/registered-ticker deal (the only pulled deal found is Citigroup's USD 400m UST Global term loan, a private IT-services borrower, reported 16 Nov - kept late), NO principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut (the 'Microsoft cuts 2026 capex to USD 170bn' page surfaced by query 3 is the 28 Oct FQ1 call - pre-gate, discarded), NO 'digestion'/deferral/pushout language from Nvidia or its named customers, NO new fund gating, NO memory LTA renegotiation, NO US auction tail (6-week bill in line; bills carry no tail figure). What is new: (1) Nvidia Q3 FY27 (qtr to 25 Oct, released Tue 17 Nov ~21:20Z): revenue USD 115.8bn (+103% y/y, +20% q/q) vs ~109.1bn consensus, Data Center 107.6bn (+110%), non-GAAP GM 74.9%, Q4 guide USD 130bn +/-3% (14-week quarter, no China DC compute assumed) vs 125.1bn LSEG, GM 71-72%; FY28 growth framework raised to 75% from 70%; supply/purchase commitments USD 390bn (from 279bn), cloud-service and DC-lease commitments USD 102bn (from 74bn), neocloud commitments USD 32bn through 2032 that take effect only if the neocloud 'secures the funding' and hits construction/development milestones; Kress: 'demand continues to exceed supply', 'our demand is accelerating, our supply is growing'; chairman Jones: board 'does not intend' to return Huang; after-hours +3.5-4.9% by 23:00Z, faded to -0.5% by the Asia morning (Reuters 04:01Z); CRWV +9%, NBIS +7% after hours; Eiseman relays that future Nvidia financing support will prioritise strong customers and projects with land, power and buildings - a tightening of the neocloud backstop, not a cut. (2) Tue 17 Nov US close (pre-NVDA): S&P 500 7,340.53 (-1.03%, five-month low), Nasdaq 24,328.38 (-0.74%, fourth straight loss), NDX 27,001.79 (-0.72%), Dow 50,759.42 (-1.64%), RUT -1.50%, VIX 25.46 (+11.13%, fourth straight gain), all 11 sectors down, 75 up/426 down, software led (CRM -9.45%, INTU -7.17%, NOW -6.51%), UNH -5.42% on Medicare Advantage audit expansion, JPM -2% on CFO transition; NVDA -0.44% in the regular session. SemiAnalysis (17 Nov 15:00Z via TIKR/Yahoo) cut its 2028 global AI-accelerator capex forecast 28% to USD 758bn from 1.054tn, 2027 -19% to 627bn, 2026 unchanged ~392bn, Nvidia compute revenue -22% 2027 / -39% 2028, Broadcom custom-ASIC -11% 2026-30 (mostly HBM-price-driven), citing slower net-new recurring revenue growth at frontier labs and tighter debt/equity financing for projects without hyperscaler backing - a third-party forecast, not a principal cut; it also identifies the source of yesterday's single-source Broadcom -11% line. (3) Rates: UST close Tue 2y 4.80% (-3bp), 10y 5.10% (-2bp; Rio text 5.12), 30y 5.46% (unch); Wed Asia 10y 5.08-5.09%; DXY 103.55-103.61, highest since 2 Apr 2025; Musalem (Tue) says several hikes may be needed; 6-week bill 17 Nov USD 100bn 4.055% 2.82x (dealers 29.7 / indirect 65.7 / direct 4.7) 'in line'. Japan: Wed 18 Nov 20y JGB auction JPY 525.8bn drew bid-to-cover 3.64 vs 5.84 prior (12m avg 3.92) with the tail widening to 0.29 yen from 0.07 (widest in a year), average yield 3.756% vs 3.723%; 20y yield rose to 3.785% while 10y eased to 2.865% on foreign short covering; Ueda repeats rates will rise further; MOF panel warns Takaichi's strategy depends on market confidence; USD/JPY 159.27-159.41 flat; Bund 10y 3.37%; UK Oct CPI 3.6% (core 2.8%), swaps ~90bp more BoE tightening by end-2027. Asia Wed: KOSPI opened +2.97% (5,115.92; Samsung +4.94%, SK Hynix +6.15%), Nikkei +1.04% at the open (59,474), SoftBank +7%, Kioxia +6.8%, but by 06:10Z the Nikkei was +0.5% around 59,000, KOSPI had briefly erased its gains, Hang Seng -1.0/-2.2%, MSCI AxJ -0.1% (fifth down day); gold broke below USD 3,800 (-1.6 to -2%) for the first time since Sep 2025; silver -3.5%. (4) EM: Bank Indonesia surprise 25bp hike to 6.00% (22 of 38 expected hold; fourth hike since May, 125bp cumulative), deposit 5.25/lending 6.75, after the rupiah hit a record low 18,285 Tue; rupiah +0.2% after; BI cutting NDF hedging premiums and adding cross-currency repo; MSCI standalone-reclassification warning restated. (5) Memory: Maeil (17 Nov 08:18Z via TechFlow; Newsquawk 18 Nov) - Samsung and Apple 'poised to sign' a 4-5 year DRAM LTA from H1 2027 with a minimum-supply floor and pricing set to market - tightening with no renegotiation clause; TrendForce HBM4 USD 3-5.5/Gb 2027 and conventional DRAM +5-10% Q1 / +3-8% Q2 2027 (Eiseman). Credit: Citigroup-led USD 400m five-year UST Global refinancing loan (S+425-450, OID 98) pulled before pricing after commitments due 28 Oct fell short (Briefs 16 Nov relaying Bloomberg) - a non-hyperscaler pulled deal, late. Bridge Data Centres' potential USD 6.6bn loan gets chip-access compliance language (upsized, not pulled). Funding rounds: Isomorphic USD 5bn Series C, Corma, Noeri, Genesis AI - all up-rounds, no repricing. Fund gates: nothing dated in gate; the 'Gate Check' page is sector-ETF filters, not redemption gates. Anthropic prices Wed night (IPO group); FOMC minutes and 20y auction Wed after run time.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized (November 17 2026)",
+   "result": "partial",
+   "note": "Only in-tolerance pulled deal is Citigroup's USD 400m UST Global loan (Briefs 16 Nov relaying Bloomberg; not in 11-16/11-17 files) - kept late:true. Bloomberg 'Shipping firm pulls bond sale' is Oct 2025. No hyperscaler/registered-ticker pull. Bridge Data Centres USD 6.6bn loan (Eiseman 18 Nov) is being upsized with compliance language, not pulled."
+  },
+  {
+   "query": "2. fund gates redemptions (November 17 2026)",
+   "result": "no hit",
+   "note": "Results were undated BDC/REIT gate explainers, a 15 Nov 'Gate Check' Substack that is sector-ETF technical filters (fetched, not redemption gates), and Bitcoin ETF outflow items (USD 240m 17 Nov - flows, not a gate). No new gating dated 17-18 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI (November 17 2026)",
+   "result": "partial",
+   "note": "Top result 'Microsoft cuts 2026 capex forecast to USD 170bn' fetched: dated 28 Oct 2026 (FQ1 call, 3P capacity delays) - pre-gate, discarded. SemiAnalysis 28% cut to 2028 accelerator capex (TIKR via Yahoo 17 Nov 15:00Z) recorded as a hit. BofA FMS 'tech overweight 37->12%' belongs to the FMS/flows group. No principal cut or digestion language; Nvidia says demand exceeds supply."
+  },
+  {
+   "query": "4. funding round repriced AI lab (November 17 2026)",
+   "result": "no hit",
+   "note": "Isomorphic Labs USD 5bn Series C (17 Nov, up from USD 2.1bn Series B), Corma USD 125m at USD 1bn, Noeri USD 110m, Genesis AI USD 500m at 3.5bn post (Cuviliez 18 Nov) - all up-rounds/new rounds, no repricing or down round."
+  },
+  {
+   "query": "5. LTA renegotiation memory (November 17 2026)",
+   "result": "partial",
+   "note": "Maeil-sourced Samsung-Apple 4-5 year DRAM LTA 'poised to sign' (TechFlow 17 Nov 08:18Z fetched; AppleInsider/Sammyfans client_error; Newsquawk 18 Nov restates) - recorded late:true as tightening, not renegotiation. Kioxia 2026 LTA note undated."
+  },
+  {
+   "query": "6. gigawatt deferral data center (November 17 2026)",
+   "result": "no hit",
+   "note": "Fool 14 Nov 'Huang: 1 GW delay costs USD 10bn a quarter' is a pre-gate quote; Giga Energy 60 MW USD 1bn lease (17 Nov) is new capacity; PJM 12-month interconnect proposal (Bloomberg 17 Nov, refused) is an acceleration. No GW deferral dated 17-18 Nov; Broadcom/Anthropic 700 MW slip already recorded 11-17 (SemiAnalysis now identified as its source)."
+  },
+  {
+   "query": "7. Treasury auction tail (6-week bill November 17 2026, 20-year)",
+   "result": "no hit",
+   "note": "Fetched helious.io 6-week bill page: USD 100bn, 4.055% high (IR 4.131%), 2.82x (avg 2.73), indirect 65.7 / direct 4.7 / dealers 29.7, 'in line'; bills carry no when-issued tail figure. 20y USD 16bn Wed 18 Nov 13:00 ET after run time. No tail."
+  },
+  {
+   "query": "8. sovereign bond stress (JGB 20-year auction, gilts, Treasuries November 18 2026)",
+   "result": "hit",
+   "note": "Fetched Newsquawk European open 18 Nov 06:41Z, Finimize 18 Nov 06:40Z (20y JGB tail 0.29), Eiseman ICYMI 18 Nov, Rio Times 18 Nov, cappnotes 17 Nov (UST closes), Reuters via Yahoo 04:01Z. Bloomberg '20-year demand weaker than 12-month average' refused; Globe and Mail bond-storm column robots_disallowed; ECB FSR pdf not fetched."
+  },
+  {
+   "query": "Nvidia third quarter fiscal 2027 results November 17 2026 revenue guidance data center after hours",
+   "result": "hit",
+   "note": "Fetched SEC 8-K Ex.99.1 (q3fy27pr.htm), Proactive via Yahoo 21:41Z, Kiplinger live blog (call timestamps to 22:51Z), SiliconANGLE 17 Nov, ZeroHedge, Newsquawk/Eiseman 18 Nov. CNBC and Converge Digest refused/client_error."
+  },
+  {
+   "query": "cappnotes Closing Look Tuesday November 17 2026",
+   "result": "hit",
+   "note": "Fetched: full index/sector/breadth/yield table."
+  },
+  {
+   "query": "Bank Indonesia decision November 18 2026 rupiah rate",
+   "result": "hit",
+   "note": "Fetched Investing.com/Reuters via Yahoo SG 18 Nov 08:29Z; Eiseman adds the 22/38 hold consensus."
+  },
+  {
+   "query": "Nikkei KOSPI JGB yield Wednesday November 18 2026 Asia stocks Nvidia reaction",
+   "result": "hit",
+   "note": "Fetched TradingKey (opens), Newsquawk (06:10Z snapshot), Reuters via Yahoo 04:01Z; investinglive and Share Talk client_error. Levels recorded as intraday."
+  }
+ ],
+ "discarded": [
+  "Microsoft CY2026 capex 'approximately USD 170bn' on 3P capacity delays (letsdatascience) - FQ1 call 28 Oct 2026 - pre-gate, recorded in late-Oct runs; not a new cut",
+  "BofA Global FMS Nov: net tech overweight 37%->12%, net 38% say companies over-investing in AI, 52% expect a hyperscaler cut (Cuviliez/cryptobriefing 17-18 Nov) - FMS belongs to the positioning group",
+  "Isomorphic Labs USD 5bn Series C; Corma USD 125m; Noeri USD 110m; Genesis AI USD 500m; LanceDB USD 57.5m - up-rounds, not repricings",
+  "Anthropic IPO: 825m shares at USD 70-78, guided top of range or above, prices Wed 18 Nov night (Reuters/Bloomberg) - IPO/calendar group",
+  "Bitcoin ETF net outflow USD 239.9m 17 Nov (IBIT-led) - crypto flows, not a gate",
+  "'The Gate Check' (acthreesixty 15 Nov) - sector-ETF technical filters, not redemption gates",
+  "Giga Energy 10-year USD 1bn lease on 60 MW Project Marl, Hunt County TX (17 Nov) - new capacity contract, not a deferral",
+  "Fool 14 Nov: Huang quote that a 1 GW delay costs USD 10bn a quarter - pre-gate commentary",
+  "PJM proposal to cut DC interconnection to 12 months (Bloomberg 17 Nov, refused) - policy acceleration, not an event category",
+  "Bridge Data Centres potential upsized USD 6.6bn loan with chip-access compliance language; La Caisse stake at USD 5bn valuation (Eiseman 18 Nov, secondhand) - upsized, not pulled; lead only",
+  "Nvidia USD 150bn buyback addition, USD 20bn equity-investment commitments, ASE/SPIL packaging funding - corporate actions, folded into the NVDA item note",
+  "Hang Seng -1.0 to -2.2% / JD.com Q3 miss / JPMorgan CFO transition (-2%) - not events-group categories",
+  "UK Oct CPI 3.6%, German ZEW 35.6, Japan Oct trade -JPY 476.5bn, PBOC fix 6.7118 - macro prints, folded into notes only",
+  "TrendForce HBM4 USD 3-5.5/Gb 2027 and conventional DRAM +5-10% Q1 2027 (Eiseman) - pricing forecast, context in the LTA item",
+  "Citigroup 'shipping firm pulls bond sale' (Bloomberg) - Oct 2025",
+  "Mon 16 Nov US close, BIS rule, Amazon/Blackstone, Broadcom/Anthropic 700 MW - already recorded 11-17",
+  "Rupiah record-low run and MSCI warning (Bloomberg 16 Nov) - already recorded 11-16; only the Wed 18 Nov BI hike is new here"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-17",
+   "late": false,
+   "name": "Nvidia Q3 FY27 (Tue 17 Nov after close): revenue USD 115.8bn (+103% y/y) vs ~109.1bn est, Data Center 107.6bn, Q4 guide USD 130bn +/-3% (14 weeks, no China DC compute) vs 125.1bn, GM 71-72%; FY28 growth raised to 75% from 70%; supply commitments USD 390bn, cloud/lease USD 102bn, neocloud commitments USD 32bn conditional on customer funding; 'demand continues to exceed supply' - no digestion/deferral language; board will not return Huang; after-hours +4-5% faded to -0.5% by Asia morning",
+   "headline": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027 / Nvidia beats third-quarter estimates as revenue more than doubles / Business as usual for Nvidia as it beats expectations in first earnings call after Huang's resignation",
+   "claim": "SEC 8-K Ex.99.1: Q3 (to 25 Oct) revenue USD 115.8bn, +103% y/y and +20% q/q; Data Center 107.6bn (+110%); non-GAAP EPS 2.68; Q4 outlook 'USD 130.0bn, plus or minus 3%' with 'NVIDIA is not assuming any Data Center compute revenue from China in its outlook', GAAP/non-GAAP GM 71.0-72.0%; USD 2.4bn Hopper shipped to China in Q3. Kiplinger live blog (22:20-22:51Z): Kress - 'Commitments to neoclouds total USD 32 billion as of the end of the quarter', effective only if the neocloud 'secures the funding they need' and meets construction/development milestones; 'demand continues to exceed supply'; 'our demand is accelerating, our supply is growing'; FY28 growth framework raised to 75% from 70% ('we feel confident in the demand in front of us, as well as the supply'); Morgan Stanley's Moore questioned the 75%. SiliconANGLE: frontier labs ~15% of DC revenue this year; chairman Harvey Jones - board 'does not intend' to bring Huang back; supply/purchase commitments USD 390bn (from 279bn), cloud-service and DC-lease commitments USD 102bn (from 74bn). After hours: +2.8% at end of prepared remarks, +3.5% ~22:50Z, 'more than 4%' by 23:00Z, 'almost 5%' (Newsquawk 06:10Z); Reuters 04:01Z: 'slid 0.5% in after-hours trading, after earlier rising as much as 3.8%'; CRWV +9%, NBIS +7%. Eiseman: future financing support to prioritise strong customers and projects with land, power and buildings; 10-Q to follow 'in the coming weeks'.",
+   "candidate_dial": "C-capex (principal demand/guidance - no cut, no digestion)",
+   "source": "SEC 8-K Ex.99.1 17 Nov; Kiplinger live blog 17 Nov (UTC timestamps); SiliconANGLE 17 Nov; Proactive via Yahoo 21:41Z; Newsquawk 18 Nov 06:41Z; Reuters via Yahoo 18 Nov 04:01Z; Eiseman ICYMI 18 Nov",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The sweep's hard-event test (digestion/deferral/pushout from Nvidia or its customers) is NOT met: the words do not appear in the release or in any call relay read, and guidance was raised. Two things the orchestrator may weigh: neocloud commitments are explicitly contingent on the neocloud raising funding, and the after-hours gain was gone by the Asia morning. No transcript was read (CNBC/Converge refused); the Q4 guide is a 14-week quarter.",
+   "other_urls": [
+    "https://www.kiplinger.com/news/live/nvidia-earnings-live-updates-and-commentary-november-2026",
+    "https://siliconangle.com/2026/11/17/business-as-usual-for-nvidia-as-it-beats-expectations-in-its-first-earnings-call-after-jensen-huangs-resignation/",
+    "https://uk.finance.yahoo.com/news/nvidia-beats-third-quarter-estimates-214100513.html",
+    "https://finance.yahoo.com/markets/stocks/articles/asia-stocks-set-snap-losing-014340794.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-17",
+   "late": false,
+   "name": "Tue 17 Nov US close (pre-NVDA): S&P 500 7,340.53 (-1.03%, five-month low), Nasdaq 24,328.38 (-0.74%, fourth straight loss), Dow 50,759.42 (-1.64%), RUT -1.50%, VIX 25.46 (+11.13%, fourth straight gain); all 11 sectors down, 75 up/426 down; software led (CRM -9.45%, INTU -7.17%, NOW -6.51%), UNH -5.42%; NVDA -0.44%",
+   "headline": "Closing Look - Tuesday, November 17, 2026 / US Stocks Fall 1.0% as Fear Gauge Jumps",
+   "claim": "cappnotes: S&P 500 7,340.53 (-1.03%, -76.06, five-month low), Nasdaq Composite 24,328.38 (-0.74%), Nasdaq-100 27,001.79 (-0.72%), Dow 50,759.42 (-1.64%, -848.75, 1.5-month low), Russell 2000 2,701.87 (-1.50%), VIX 25.46 (+11.13%); all 11 sectors lower, financials -1.91% weakest, tech -0.91%, energy -0.52%; breadth 75 up / 426 down; RSP -1.45%, MidCap 400 -1.31%, IJR -1.37%; software: Salesforce -9.45%, Intuit -7.17%, ServiceNow -6.51%; UnitedHealth -5.42% on a proposed Medicare Advantage audit expansion; NVDA -0.44% in the regular session. Newsquawk: JPMorgan -2% on a CFO transition. Reuters: DXY hit its highest since 2 Apr 2025 on Tuesday.",
+   "candidate_dial": "C-equity (broadening drawdown - software, financials, breadth)",
+   "source": "cappnotes Closing Look 17 Nov; Rio Times 18 Nov; Newsquawk 18 Nov; Reuters via Yahoo 18 Nov",
+   "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-17",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The selloff rotated from semis (Mon) to software and financials (Tue) with the VIX above 25 for the first time in this leg; Wed futures +0.3-0.5% at 04:00Z on the NVDA print. SOX not given by cappnotes.",
+   "other_urls": [
+    "https://www.riotimesonline.com/global-economy-briefing-november-18-2026/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-17",
+   "late": false,
+   "name": "UST close Tue 17 Nov: 2y 4.80% (-3bp), 10y 5.10% (-2bp), 30y 5.46% (unch); 6-week bill USD 100bn 4.055% 2.82x 'in line' (no tail for bills); DXY 103.55-103.61 highest since Apr 2025; Musalem: several hikes may be needed; Wed Asia 10y 5.08-5.09%",
+   "headline": "Closing Look - Tuesday, November 17, 2026 / 6-Week Bill Auction, Nov 17, 2026: 4.055% High, In Line",
+   "claim": "cappnotes (Treasury data): 2-year 4.80% (-3bp), 10-year 5.10% (-2bp), 30-year 5.46% (unchanged), DXY 103.55; Rio Times text: 10y 5.12% (-2bp), Live Board 5.103 at 01:23Z; helious.io: 6-week bill USD 100bn, high rate 4.055% (investment rate 4.131%), bid-to-cover 2.82 vs 2.73 average, indirect 65.7% / direct 4.7% / dealers 29.7%, verdict 'in line', no when-issued tail published; Reuters 04:01Z: 10y 5.08% (-2.1bp) in Asia, dollar index 103.60 after Tuesday's highest since 2 Apr 2025, St. Louis Fed's Musalem said the Fed may need several hikes; Newsquawk 06:10Z: 10y 5.09%, T-note futures +1.5 ticks 'capped ahead of US supply'.",
+   "candidate_dial": "B-sovereign (UST)",
+   "source": "cappnotes 17 Nov; helious.io 6-week bill page 17 Nov; Rio Times 18 Nov; Reuters via Yahoo 18 Nov 04:01Z; Newsquawk 18 Nov 06:41Z",
+   "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-17",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Second straight relief day in Treasuries on a risk-off tape; no coupon auction in gate so no tail test. 20y USD 16bn and FOMC minutes Wed 18 Nov after run time.",
+   "other_urls": [
+    "https://helious.io/news/auc-912797VJ3-2026-11-17/6-week-bill-auction-in-line",
+    "https://www.riotimesonline.com/global-economy-briefing-november-18-2026/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "JGB 20y auction Wed 18 Nov weak: JPY 525.8bn, bid-to-cover 3.64 vs 5.84 prior (12m avg 3.92), tail 0.29 yen vs 0.07 (widest in a year), avg yield 3.756%; 20y yield 3.785%, 10y eased to 2.865% on foreign short covering; Ueda: rates will rise further; Nikkei +0.5% ~59,000 after +1.04% open, KOSPI +2.97% open faded, Hang Seng -1.0 to -2.2%; USD/JPY 159.3-159.4; Bund 3.37%; gold below USD 3,800 (intraday)",
+   "headline": "Japan's 20-Year Bond Auction Flopped, And Yields Noticed / Newsquawk Daily European Opening News - 18th November 2026",
+   "claim": "Newsquawk (06:10Z): 20yr JGB auction sold JPY 525.8bn with bid-to-cover 3.64x (prev 5.84x) and average yield 3.756% (prev 3.7230%), 'weaker than previous'; Finimize (06:40Z): tail widened to 0.29 yen from 0.07 in October, 20y yield rose to 3.785% while 10y fell to 2.865% on short covering by foreign investors; MUFG AM's Koguchi: 'there were not enough buyers this time'; Eiseman: b/c below the 3.92 annual average, tail widest in a year; Ueda: inflation seen anchored at 2%, policy rate 'will rise further', financial conditions accommodative; MOF panel warns Takaichi's strategy depends on market confidence and opposes borrowing for defence. Equities: KOSPI opened +2.97% at 5,115.92 (Samsung +4.94%, SK Hynix +6.15%), Nikkei +1.04% open at 59,474, SoftBank +7.01%, Kioxia +6.8% (TradingKey); by 06:10Z Nikkei +0.5% around 59,000, KOSPI briefly erased gains, Hang Seng -1.0% (Rio Live Board -2.16%), ASX -0.7%, MSCI AxJ -0.1% fifth day down; USD/JPY 159.27 unch (Reuters 159.41); DXY 103.63; German 10y 3.37%; spot gold -1.6% below USD 3,800 first time since Sep 2025, silver -3.5%, LME copper -1.8%; WTI -1.6% / Brent -0.7% on a surprise private inventory build (intraday).",
+   "candidate_dial": "B-sovereign (JGB auction tail / long end)",
+   "source": "Newsquawk 18 Nov 06:41Z; Finimize 18 Nov 06:40Z; Eiseman ICYMI 18 Nov; TradingKey 18 Nov; Rio Times 18 Nov; Reuters via Yahoo 18 Nov",
+   "url": "https://finimize.com/content/japans-20-year-bond-auction-flopped-and-yields-noticed",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "A Japanese tail, not a US one - the hard-event definition (UST tail >= 2bp) is not met, but a 0.29-yen 20y tail with b/c down from 5.84 is the weakest JGB auction result in the current leg. The Nvidia-led Asia bounce faded within the session; all Wed levels are intraday. Bloomberg's '20-year demand weaker than 12-month average' not fetched (refused host).",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/newsquawk-daily-european-opening-news---18th-november-2026",
+    "https://zackeiseman.substack.com/p/icymi-on-wednesday-18-november",
+    "https://www.tradingkey.com/analysis/stocks/more/262309976-japan-korea-stocks-skhy-kospi-nikkei-samsung-skhynix-softbank-kioxia-nvda-tradingkey"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "Bank Indonesia surprise 25bp hike to 6.00% Wed 18 Nov (22 of 38 expected hold; fourth hike since May, +125bp cumulative) after rupiah record low 18,285/USD Tue; rupiah +0.2% after; BI cuts NDF hedging premiums, adds cross-currency repo; MSCI standalone warning restated",
+   "headline": "Indonesia unexpectedly hikes rates to 6% as rupiah hits record low",
+   "claim": "Investing.com/Reuters (18 Nov 08:29Z): BI raised the seven-day reverse repo 25bp to 6%, highest since Jan 2025, deposit facility 5.25%, lending 6.75%, the fourth hike since May for 125bp of cumulative tightening; the rupiah touched a record low 18,285 per dollar on Tuesday, down ~8.7% YTD, worst in emerging Asia, and strengthened 0.2% after the decision; BI has intervened heavily in offshore NDFs and domestic spot/forwards and is offering hedging incentives; MSCI has warned Indonesia could be moved to standalone status; Eiseman: 22 of 38 economists expected a hold; BI will cut domestic NDF hedging premiums and add cross-currency repo against specified dollar securities; Jakarta Composite +0.4%.",
+   "candidate_dial": "B-sovereign (EM FX defence / rate hike)",
+   "source": "Investing.com (Reuters) via Yahoo SG 18 Nov 08:29Z; Eiseman ICYMI 18 Nov",
+   "url": "https://sg.finance.yahoo.com/news/indonesia-unexpectedly-hikes-rates-6-082937293.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Resolves the 'BI decision Wed 18 Nov pending' flag from 11-16/11-17: a defensive hike into a record-low currency, with the VP resignation and MSCI risk as background. Bond-yield reaction not in the sources read.",
+   "other_urls": [
+    "https://zackeiseman.substack.com/p/icymi-on-wednesday-18-november"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-17",
+   "late": false,
+   "name": "SemiAnalysis cuts 2028 global AI-accelerator capex forecast 28% to USD 758bn from 1.054tn (2027 -19% to 627bn, 2026 ~392bn unchanged); Nvidia compute revenue -22% 2027 / -39% 2028; Broadcom custom-ASIC -11% 2026-30 (mostly HBM pricing) - citing slower net-new recurring revenue growth at frontier labs and tighter financing for projects without hyperscaler backing (third-party forecast, published hours before NVDA)",
+   "headline": "SemiAnalysis 'Downgrading' Accelerator Capex Forecast by 28%, Hours Before Nvidia Reports",
+   "claim": "TIKR via Yahoo (17 Nov 15:00Z): SemiAnalysis cut its 2028 AI accelerator capex forecast 28% to USD 758bn from USD 1.054tn, 2027 by 19% to USD 627bn, left 2026 roughly unchanged at ~USD 392bn, cut Nvidia compute revenue 22% for 2027 and 39% for 2028, and trimmed Broadcom custom-chip revenue 11% across 2026-2030 mostly on lower pricing tied to falling HBM costs; stated reasons are slower growth in net-new recurring revenue at frontier labs in Q3 and tightened debt and equity financing, especially for projects without hyperscaler backing; TBPN's Coogan: 'they're still above consensus'; Bloomberg Intelligence's Sabani wanted the 70% FY28 target reaffirmed (it was raised to 75%). Cuviliez: later years cut by up to ~40%.",
+   "candidate_dial": "C-capex (sell-side/independent forecast cut - not a principal)",
+   "source": "TIKR via Yahoo Finance 17 Nov 15:00Z; Cuviliez Market News 18 Nov; BigGo/KuCoin relays",
+   "url": "https://finance.yahoo.com/technology/ai/articles/semianalysis-downgrading-accelerator-capex-forecast-150048697.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Not a principal capex cut and not a company statement; recorded because it is the named source of yesterday's single-source 'Broadcom -11%' line and because its stated driver (financing tightening for non-hyperscaler projects) is the same mechanism as Nvidia's funding-contingent neocloud commitments. Underlying SemiAnalysis report not read (paywalled).",
+   "other_urls": [
+    "https://hervecuviliez.substack.com/p/market-news-wednesday-18-november"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-16",
+   "late": true,
+   "name": "Citigroup-led banks pull USD 400m five-year UST Global refinancing term loan (S+425-450, OID 98; commitments were due 28 Oct) after demand fell short - a pulled leveraged loan, non-hyperscaler (Briefs 16 Nov relaying Bloomberg)",
+   "headline": "Citigroup Pulls $400M UST Global Loan After Weak Demand",
+   "claim": "Briefs (16 Nov): a Citigroup-led bank group withdrew a USD 400m five-year term loan for UST Global meant to refinance debt maturing in 2028, offered at 425-450bp over the benchmark at 98 cents, after a 15 Oct lender call and 28 Oct commitment deadline; 'with demand falling short, the banks pulled the deal before it priced'; sourced to people familiar, Citi declined to comment; the page links a Bloomberg report of the same headline.",
+   "candidate_dial": "C-credit (pulled deal - leveraged loan, private IT services)",
+   "source": "Briefs Finance 16 Nov (relaying Bloomberg)",
+   "url": "https://briefs.co/news/citigroup-led-group-pulls-400-million-ust-global-loan-after",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Not a hyperscaler or registered-ticker issuer, so it fails the hard-event definition, but it is the first outright pulled US deal in the sweep this month and sits beside the Malaysia DC-loan syndication delay (11-16). Bloomberg primary not fetched (refused host). Kept late:true - dated 16 Nov, absent from the 11-16 and 11-17 files."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-17",
+   "late": true,
+   "name": "Maeil: Samsung and Apple 'poised to sign' a 4-5 year DRAM LTA effective H1 2027 with a minimum-supply floor and pricing set to future market conditions; Apple reportedly already has an SK hynix LTA on supplier-favourable terms - tightening, no renegotiation clause",
+   "headline": "Samsung Electronics and Apple Close to Signing Long-Term DRAM Supply Agreement / Samsung secures rare long-term memory order from Apple",
+   "claim": "TechFlow (17 Nov 08:18Z, relaying Maeil Business): the two companies are in the final stages of negotiating a four-to-five-year long-term DRAM supply agreement taking effect in H1 2027 that sets a minimum supply threshold with final pricing based on future market conditions; Apple is described as the only major tech firm without a Samsung DRAM LTA and as having already signed one with SK hynix on terms more favourable to the supplier; Newsquawk (18 Nov) restates the 4-5 year / H1 2027 deal as expected. Eiseman: TrendForce sees HBM4 at USD 3-5.5/Gb in 2027 and conventional DRAM +5-10% Q1 / +3-8% Q2 2027.",
+   "candidate_dial": "C-capex (memory LTA - tightening, not renegotiation)",
+   "source": "TechFlow 17 Nov 08:18Z (Maeil); Newsquawk 18 Nov; Eiseman 18 Nov (TrendForce)",
+   "url": "https://www.techflowpost.com/en-US/newsletter/145128",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Sweep phrase 5 looks for LTA renegotiation (buyers walking back); this is the opposite direction - a buyer locking supply with price floating to market. Dated 08:18Z 17 Nov (pre-gate); 11-17 file only noted the Sammyfans page as unreadable, so kept once late:true. AppleInsider/Sammyfans client_error.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/newsquawk-daily-european-opening-news---18th-november-2026",
+    "https://www.sammyfans.com/2026/11/17/ai-boom-forced-apple-into-rare-memory-chip-lta-with-samsung-report/"
+   ]
+  }
+ ]
+}

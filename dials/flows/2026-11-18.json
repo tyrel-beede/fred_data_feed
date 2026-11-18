@@ -1,0 +1,421 @@
+{
+ "group": "flows",
+ "run_at": "2026-11-18T05:11:00-07:00",
+ "run_weekday": "Wed",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "since": "2026-11-17T05:11:00-07:00",
+  "note": "New = 17 Nov after ~12:11Z and 18 Nov to ~12:11Z. Tolerance 2 days: 16-17 Nov items that were not in the 11-16/11-17 files are kept once with late:true. Oil settles recorded are Tuesday 17 Nov; Wednesday 18 Nov Asia/Europe prices recorded as intraday, NOT settles. Run 2026-11-18 05:11 MST (Wed). P12_fms: November 2026 Global FMS published Tue 2026-11-17 (earliest relay Reuters 11:33Z, ~38 min before the gate; Fortune/macenews/kucoin relays after 12:11Z). Not in the 11-16 flows file (no P12_fms group there) nor any 11-17 file (none exists), so recorded here as new (late:false)."
+ },
+ "search_mode": "WebSearch extended -> WebFetch of returned links",
+ "queries_run": 9,
+ "groups": [
+  "P12_fms"
+ ],
+ "notes": "The November 2026 BofA Global FMS WAS published Tue 2026-11-17 (fielded Nov 6-12); found on the first query and corroborated across Fortune, Reuters (Yahoo relay), macenews (TradingView relay), vltcapital substack (French), polandinsight, biggo, longbridge x3, kucoin, univest. Headline: tech net overweight collapsed to 12% from 37%, the largest one-month cut since June 2006; 'AI bubble' (34%, from 23%) retook #1 tail risk with 'AI hyperscaler credit event' #2 at 31% (from 11%) while 'disorderly rise in bond yields' fell from 31% to 13% (fourth); 52% now expect a hyperscaler capex cut within six months (from 30%) and a record net 38% say companies are overinvesting, only 16% want more capex (lowest since May 2020); cash fell to 3.6% (from 3.9%, lowest since Aug, cash rule still on sell); equities net 41% OW (from 44%); bonds net 23% UW (from 36/37%), least UW since Nov 2025; growth expectations net 14% weaker (from 4%), inflation expectations net 32% lower (from 5%); soft landing (50%) overtook no-landing (42%), hard landing 3% (from 6%); semis still most crowded at 39% (from 45%) with 'short China stocks' 14% new at #2; Bull & Bear 7.4 (from 8.1) now below the 8.0 sell line (vltcapital only). Hartnett framing (Fortune/biggo): 'end of boom & AI euphoria' / 'the AI boom and euphoria are over', 'pause AI capex' vibe, but not enough fear/capitulation to buy; tactically risk-off. Source disagreements: participants 169/$461bn (Reuters, biggo, hedgefundtips, longbridge) vs 193/$526bn (macenews, Innes substack) - same split as October; bonds prior-month UW 36% (vltcapital) vs 37% (macenews/polandinsight); Oct switch-yield summarised 5.9% vs Nov average 5.8% (vltcapital only, no bucket distribution); B&B 7.4 and switch yield are single-source (vltcapital). Fed hike/cut expectations question not printed in any relay. No Atrani Capital or investinglive Nov-2026 write-up had surfaced at run time; cryptobriefing, mlq failed to fetch (client_error); thedarksideoftheboom paywalled; hedgefundtips charts are images; CNBC refused host.",
+ "sources": [
+  {
+   "query": "BofA fund manager survey November 2026 Hartnett",
+   "result": "hit",
+   "note": "Fortune 2026-11-17, qz, cryptobriefing, univest, phemex, longbridge, stockpil, vltcapital, thedarksideoftheboom - all Nov-2026 survey."
+  },
+  {
+   "query": "Bank of America global fund manager survey November 17 2026 cash level most crowded trade",
+   "result": "partial",
+   "note": "kucoin Nov-2026 flash; rest Oct-2026/Nov-2025 (macenews Nov-2025 TradingView relay surfaced again - stale)."
+  },
+  {
+   "query": "FMS November 2026 tail risk AI bubble bond yields",
+   "result": "no hit",
+   "note": "ECB FSR, Sep/Oct-2026 items only."
+  },
+  {
+   "query": "investinglive fund manager survey November 2026 Bank of America tech overweight",
+   "result": "hit",
+   "note": "cryptobriefing x2, kucoin x2, polandinsight, biggo, mlq, coinotag, startupfortune, CNBC (refused host) - no investinglive Nov-2026 page surfaced."
+  },
+  {
+   "query": "macenews BofA Global Research Fund Manager Survey November 2026",
+   "result": "hit",
+   "note": "macenews Nov-2026 relay via TradingView ('Fading Inflation Jitters Prompt Shift out of Cash into Fixed Income'); newsquawk headline; fourweekmba; macenews Nov-2025 page (stale)."
+  },
+  {
+   "query": "Atrani Capital November 2026 Bank of America global fund manager survey",
+   "result": "partial",
+   "note": "No Atrani Nov-2026 post yet (Oct post only); surfaced hedgefundtips Nov-2026 summary (image-only), longbridge/Jin10 inflation flash, thedarksideoftheboom."
+  },
+  {
+   "query": "Reuters BofA survey November 2026 fund managers tech most crowded trade tail risk Hartnett yahoo finance",
+   "result": "hit",
+   "note": "Yahoo relay of Reuters 'Investors slashed tech exposure allocations by most since 2006' 2026-11-17 03:33 PST."
+  },
+  {
+   "query": "macenews.com BofA Global Research Fund Manager Survey November 2026 193 panelists $526bn tech overweight",
+   "result": "hit",
+   "note": "Same macenews/TradingView relay; no additional source."
+  },
+  {
+   "query": "investinglive.com Bank of America fund manager survey most crowded trade long semiconductors 39% November 2026",
+   "result": "partial",
+   "note": "longbridge/HKEJ 'Shorting Chinese Stocks Becomes Second Most Popular Trade' 2026-11-18; investinglive hits were Oct-2026 only."
+  },
+  {
+   "page": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+   "result": "read",
+   "note": "2026-11-17 11:07 ET. Cash 3.6%, 3% recession, 52% capex cut, 16% want more capex, hyperscaler bonds 38% / private credit 30%, S&P 2027 7,926, Hartnett 'pause AI capex' / 'end of boom & AI euphoria'."
+  },
+  {
+   "page": "https://longbridge.com/en/news/305808423",
+   "result": "read",
+   "note": "Zhitong flash 2026-11-17 10:54: cash 3.6% lowest since Aug; 3% predict recession."
+  },
+  {
+   "page": "https://univest.in/blogs/bofa-fund-manager-survey-november-2026-tech-overweight-12-percent-biggest-drop-since-2006-ai-capex",
+   "result": "read",
+   "note": "Nov 6-12, 169/$461bn, tech 12% from 37%, 52% capex cut, net 38% overinvesting. Indian-market framing; partly derived from Fortune."
+  },
+  {
+   "page": "https://thedarksideoftheboom.substack.com/p/bofas-hartnett-fund-managers-have",
+   "result": "paywalled",
+   "note": "Stephen Innes 2026-11-18; header only: Nov 6-12, 193 participants / $526bn."
+  },
+  {
+   "page": "https://www.hedgefundtips.com/november-2026-bank-of-america-global-fund-manager-survey-results-summary/",
+   "result": "read (image-only)",
+   "note": "2026-11-17 15:42Z; 169/$461bn in text; all charts are screenshots - not readable."
+  },
+  {
+   "page": "https://finance.yahoo.com/markets/stocks/articles/investors-slashed-tech-exposure-last-112905803.html",
+   "result": "read",
+   "note": "Reuters relay 2026-11-17 03:33 PST: 169/$461bn; tech net 12% from 37%, most since June 2006; AI bubble top tail risk, hyperscaler credit event #2; 3% recession; record 38% overinvesting; 52% capex cut; 2027 picks (intl equities 36%, yen 42%)."
+  },
+  {
+   "page": "https://longbridge.com/en/news/305811050",
+   "result": "read",
+   "note": "CoinLive/Jin10 flash 2026-11-17 11:01Z: net 32% expect global CPI to decline over 12m."
+  },
+  {
+   "page": "https://finance.biggo.com/news/069cc836-bd97-47d5-8d34-59ddc3c44d3c",
+   "result": "read",
+   "note": "2026-11-18 01:55Z; Nov 6-12; 169/$461bn global, 94/$241bn European; cash 3.6%; tech 12% from 37%; net 38% overinvesting; 52% capex cut; European FMS detail; Hartnett 'the AI boom and euphoria are over'."
+  },
+  {
+   "page": "https://mlq.ai/news/fund-managers-cut-tech-holdings-at-the-fastest-pace-since-2006-as-ai-capex-worries-spread-bofa-survey-shows/",
+   "result": "failed (client_error)",
+   "note": "Title only."
+  },
+  {
+   "page": "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+   "result": "read",
+   "note": "vltcapital/marketbrief substack (French) 2026-11-17 - fullest numbers set: crowded 39%, tail risks 34/31/14/13, equities 41%, bonds UW 23% from 36%, cash 3.6%, tech 12%, growth net -14%, inflation net -32%, hard landing 3%, soft 50% / no-landing 42%, B&B 7.4, cash rule sell, switch yield 5.8%, capex cut 52% from 30%, sector moves, 2027 targets."
+  },
+  {
+   "page": "https://cryptobriefing.com/bofa-fund-managers-cut-tech-allocation/",
+   "result": "failed (client_error)",
+   "note": "Title only."
+  },
+  {
+   "page": "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/",
+   "result": "read",
+   "note": "2026-11-18: crowded 39% (Oct 45%); AI bubble 34% (from 23%), credit event 31%, bond yields 13% (from 31%); equities 41% from 44%; bonds UW 23% from 37%; cash 3.6% from 3.9%; inflation net 32%; 169/$461bn Reuters vs 193/$526bn Mace."
+  },
+  {
+   "page": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "result": "read",
+   "note": "macenews Nov-2026 relay via TradingView: 193/$526bn, Nov 6-12; cash 3.6%, net 9% UW cash; crowded top-3 39/14/12; tail risks 34/31/14/13; equities 41%, bonds UW 23%, US 13% OW, EM 28%, Japan neutral, UK 21% UW, commodities 15%; growth net 14% weaker; inflation net 32% lower; 2027 targets 10y 4.9%, EURUSD 1.12, SPX 7,926, gold 4,341."
+  },
+  {
+   "page": "https://longbridge.com/en/news/305904293",
+   "result": "read",
+   "note": "HKEJ 2026-11-18 02:48: short China 14% second most crowded, first time in top list in 6+ months; semis 39%; AI bubble 34%, hyperscaler credit 31%; 52% capex cut from 30%."
+  },
+  {
+   "page": "https://www.kucoin.com/news/flash/bank-of-america-survey-shows-fund-managers-cut-tech-exposure-at-fastest-pace-since-2006",
+   "result": "read",
+   "note": "2026-11-17 16:24: cash 3.6%, 3% recession 2027, tech 12% from 37%, semis 39%, 52% capex cut, 38% overinvesting, 169-193 / $461-526bn."
+  }
+ ],
+ "discarded": [
+  "macenews 'Investors More Bullish in November as 2026 Growth Expectations Improve' (TradingView relay) - Nov-2025 survey (published 2025-11-18), stale",
+  "Atrani Capital October-2026 post, investinglive Oct-2026 'long global semiconductors remains most crowded', trustnet/biggo Sep-2026, gurufocus/investing.com/seekingalpha older crowded-trade pieces - prior months, already recorded or superseded",
+  "CNBC 2026-11-17 'Investors lower tech stock exposure in biggest exit since 2006' - refused host, not fetched",
+  "ECB Financial Stability Review Nov 2026, Bloomberg AI-bubble graphic - not FMS"
+ ],
+ "items": [
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - average cash level (% of AUM)",
+   "series": "fms.cash_level",
+   "value": 3.6,
+   "unit": "pct of AUM",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; Fortune 2026-11-17; Yahoo (Reuters relay) 2026-11-17; vltcapital substack 2026-11-17",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://longbridge.com/en/news/305808423",
+    "https://finance.biggo.com/news/069cc836-bd97-47d5-8d34-59ddc3c44d3c"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Survey fielded Nov 6-12 2026, published Tue 2026-11-17 (Reuters relay 11:33Z; Fortune 16:07Z; macenews 'released Tuesday'). Participants: 169 managing $461bn (Reuters/Yahoo, biggo, hedgefundtips, longbridge) vs 193 panelists managing $526bn (macenews, thedarksideoftheboom) - same total-panel vs Global-FMS split as October. Cash 3.6% from 3.9% in Oct and Sep (Aug low 3.5%); lowest since August. Cash allocation net 9% underweight (Oct: equal weight) per macenews. BofA cash rule remains on sell signal (<=4.0%) per vltcapital. Corroborated by Fortune ('uber-low 3.6%'), longbridge/Zhitong, biggo, kucoin, polandinsight.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - most crowded trade",
+   "series": "fms.most_crowded_trade",
+   "value": null,
+   "unit": "text",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; longbridge/HKEJ 2026-11-18; polandinsight 2026-11-18; vltcapital 2026-11-17",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://longbridge.com/en/news/305904293",
+    "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/",
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'Long global semiconductors' 39% (Oct 45%; Jul record 82%); 'Short China stocks' 14% (new to top-3, first time in at least six months per HKEJ/longbridge); 'Long Magnificent 7' 12% (Oct 16%). 'Short Treasuries' (Oct 27%) dropped out of the top-3.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - share naming 'long global semiconductors' most crowded",
+   "series": "fms.most_crowded_trade_pct",
+   "value": 39,
+   "unit": "pct of respondents",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; vltcapital 2026-11-17; polandinsight 2026-11-18; kucoin 2026-11-17",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/",
+    "https://www.kucoin.com/news/flash/bank-of-america-survey-shows-fund-managers-cut-tech-exposure-at-fastest-pace-since-2006"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Down from 45% in Oct, 53% Sep, 82% record Jul 2026. All sources agree on 39%.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - top tail risk",
+   "series": "fms.top_tail_risk",
+   "value": null,
+   "unit": "text",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; vltcapital 2026-11-17; polandinsight 2026-11-18; Yahoo (Reuters relay) 2026-11-17",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/",
+    "https://finance.yahoo.com/markets/stocks/articles/investors-slashed-tech-exposure-last-112905803.html"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'AI bubble' 34% (Oct 23%) back to #1; 'AI hyperscaler credit event' 31% (Oct 11%) #2; '2nd wave of inflation' 14% (Oct 20%); 'Disorderly rise in bond yields' 13% (Oct 31%, was #1) fell to fourth. Reuters/Yahoo: inflation and bond-yield concerns 'receded'.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - share naming 'AI bubble' top tail risk",
+   "series": "fms.top_tail_risk_pct",
+   "value": 34,
+   "unit": "pct of respondents",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; vltcapital 2026-11-17; polandinsight 2026-11-18; longbridge/HKEJ 2026-11-18",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/",
+    "https://longbridge.com/en/news/305904293"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Up from 23% in Oct (then #2). Hyperscaler credit event second at 31% (from 11%). Sources agree.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - net overweight technology",
+   "series": "fms.tech_overweight",
+   "value": 12,
+   "unit": "net pct overweight",
+   "period_end": "2026-11-12",
+   "source": "Yahoo (Reuters relay) 2026-11-17; Fortune 2026-11-17; vltcapital 2026-11-17; polandinsight 2026-11-18; biggo 2026-11-18",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/investors-slashed-tech-exposure-last-112905803.html",
+   "other_urls": [
+    "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/",
+    "https://finance.biggo.com/news/069cc836-bd97-47d5-8d34-59ddc3c44d3c"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Net 12% OW from 37% in Oct: 25pt drop, largest one-month fall since June 2006 (Reuters: 'by the most in a month since June 2006'). vltcapital: ~0.5 sd below long-term average. Fortune/BofA: best tech entry points historically came when investors cut tech to underweight; November's cut left it overweight. Sector rotation (vltcapital): health care OW 34% from 23% (largest position); discretionary UW 20% from 34%; staples UW 18% from 32%; energy UW 12% from 4%; industrials 19% OW, banks 12% OW; net 71% favour high-quality earnings.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - net overweight global equities",
+   "series": "fms.equity_overweight",
+   "value": 41,
+   "unit": "net pct overweight",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; vltcapital 2026-11-17; polandinsight 2026-11-18",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://polandinsight.com/fund-managers-tech-exposure-ai-spending-bofa-73399/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Net 41% OW from 44% Oct and 49% Sep. US equities net 13% OW (Oct 11%); EM net 28% OW (Oct 34%); Japan neutral (Oct 9% OW); Eurozone net 5% UW (Oct 8% UW); UK net 21% UW; commodities net 15% OW (Oct 21%); real estate net 23% UW. Bonds net 23% UW (Oct 37% per macenews/polandinsight, 36% per vltcapital), least underweight since Nov 2025.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - net expecting stronger global growth next 12m",
+   "series": "fms.global_growth_expectations",
+   "value": -14,
+   "unit": "net pct (negative = net expect weaker)",
+   "period_end": "2026-11-12",
+   "source": "macenews (TradingView relay) 2026-11-17; vltcapital 2026-11-17; longbridge/Jin10 2026-11-17",
+   "url": "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/",
+   "other_urls": [
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://longbridge.com/en/news/305811050"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "macenews: 'a net 14% of investors looked for weaker economic growth in the coming 12 months' (Oct net 4% weaker; Sep net 8% stronger); vltcapital: most pessimistic since April. Inflation: net 32% expect lower global inflation in 12m (Oct net 5%; Sep net 4%) - macenews, longbridge/Jin10, vltcapital, polandinsight. vltcapital: 41% expect boom (from 47%), 47% describe outlook as stagflationary.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - share expecting hard landing / recession",
+   "series": "fms.recession_probability",
+   "value": 3,
+   "unit": "pct of respondents expecting hard landing",
+   "period_end": "2026-11-12",
+   "source": "vltcapital 2026-11-17; Fortune 2026-11-17; Yahoo (Reuters relay) 2026-11-17; longbridge/Zhitong 2026-11-17",
+   "url": "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+   "other_urls": [
+    "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+    "https://finance.yahoo.com/markets/stocks/articles/investors-slashed-tech-exposure-last-112905803.html",
+    "https://longbridge.com/en/news/305808423"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard landing 3% (Oct 6%); soft landing 50% overtook no-landing 42% (Oct 50%) for the first time since June (vltcapital). Fortune/Reuters/longbridge phrase it as 'only 3% predict a recession' (kucoin: '3% see a 2027 recession').",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Bull & Bear Indicator at Nov 2026 FMS",
+   "series": "fms.sell_signal",
+   "value": 7.4,
+   "unit": "index (sell >8.0)",
+   "period_end": "2026-11-12",
+   "source": "vltcapital substack 2026-11-17 (B&B value); Fortune 2026-11-17 (Hartnett wording); biggo 2026-11-18",
+   "url": "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+   "other_urls": [
+    "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+    "https://finance.biggo.com/news/069cc836-bd97-47d5-8d34-59ddc3c44d3c"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Single-source number (vltcapital substack, French): 7.4 'neutral', down from 8.1 in Oct - below the 8.0 sell threshold (buy threshold 2.0). Cash rule still on sell (3.6% <= 4.0%). Broadest FMS sentiment indicator 6.3 from 6.4. Hartnett team (Fortune paraphrase): 'end of boom & AI euphoria' but not enough investor 'fear' / capitulation to buy; tactically risk-off; 'pause AI capex' vibe. biggo: Hartnett wrote 'the AI boom and euphoria are over', recommends defensive allocation.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - 10y UST yield that would prompt stocks-to-bonds shift",
+   "series": "fms.bond_switch_yield",
+   "value": 5.8,
+   "unit": "pct (BofA summarised threshold, average)",
+   "period_end": "2026-11-12",
+   "source": "vltcapital substack 2026-11-17; macenews (TradingView relay) 2026-11-17",
+   "url": "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+   "other_urls": [
+    "https://www.tradingview.com/news/macenews:a6b54b6f7094b:0-bofa-global-research-fund-manager-survey-fading-inflation-jitters-prompt-shift-out-of-cash-into-fixed-income/"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Single source (vltcapital): average 5.8% (Oct summarised 5.9%); 16% say current levels already suffice (Oct 19%). No distribution by bucket printed this month. Year-end-2027 targets (macenews, vltcapital): 10y UST 4.9% (from 5.1%), EURUSD 1.12, S&P 500 7,926 (from 7,562), gold $4,341. Fed hike/cut expectations question: not printed in any relay found.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - share expecting an AI hyperscaler capex cut within 6 months",
+   "series": "fms.ai_capex_cut_expectation",
+   "value": 52,
+   "unit": "pct of respondents",
+   "period_end": "2026-11-12",
+   "source": "Fortune 2026-11-17; Yahoo (Reuters relay) 2026-11-17; vltcapital 2026-11-17; longbridge/HKEJ 2026-11-18; kucoin 2026-11-17",
+   "url": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+   "other_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/investors-slashed-tech-exposure-last-112905803.html",
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://longbridge.com/en/news/305904293",
+    "https://www.kucoin.com/news/flash/bank-of-america-survey-shows-fund-managers-cut-tech-exposure-at-fastest-pace-since-2006"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "52% expect at least one AI hyperscaler to announce a capex cut within six months, up from 30% in Oct (Oct: 57% expected no cut). Record net 38% say companies are overinvesting (survey record); only 16% want companies to increase capex, lowest since May 2020. BofA (Reuters relay): the 'big message' is a 'pause or slowdown in AI capital expenditure'. Fortune context: consensus (FactSet) still sees hyperscaler capex +58% next year to ~$1.4tn.",
+   "group": "P12_fms",
+   "late": false
+  },
+  {
+   "kind": "reading",
+   "as_of": "2026-11-17",
+   "name": "BofA Global FMS Nov 2026 - likeliest source of a systemic credit event",
+   "series": "fms.credit_event_source",
+   "value": 38,
+   "unit": "pct naming AI hyperscaler bonds",
+   "period_end": "2026-11-12",
+   "source": "Fortune 2026-11-17; vltcapital 2026-11-17; Yahoo (Reuters relay) 2026-11-17; biggo 2026-11-18",
+   "url": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/",
+   "other_urls": [
+    "https://vltcapital.substack.com/p/enquete-bofa-de-novembre-2026-fin",
+    "https://finance.yahoo.com/markets/stocks/articles/investors-slashed-tech-exposure-last-112905803.html",
+    "https://finance.biggo.com/news/069cc836-bd97-47d5-8d34-59ddc3c44d3c"
+   ],
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "'AI hyperscaler bonds' 38% (Oct 39% named hyperscaler capex) ahead of private credit 30%. Separately 'AI hyperscaler credit event' is the #2 tail risk at 31% (Oct 11%). 2027 best asset class: international equities 36%, US stocks 24%, gold 17%; best index Nasdaq and MSCI EM 21% each, Euro Stoxx 19%; best currency yen 42%, dollar 16%.",
+   "group": "P12_fms",
+   "late": false
+  }
+ ]
+}

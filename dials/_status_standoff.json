@@ -1,8 +1,8 @@
 {
  "group": "standoff",
- "last_run_at": "2026-11-17T05:11:00-07:00",
- "last_as_of": "2026-11-17",
- "last_file": "dials/standoff/2026-11-17.json",
+ "last_run_at": "2026-11-18T05:11:00-07:00",
+ "last_as_of": "2026-11-18",
+ "last_file": "dials/standoff/2026-11-18.json",
  "status": "partial",
- "error": "brent.m2.settle (Feb-27) for Mon 16 Nov null: cappnotes, Weekend Spread, DTN, discoveryalert print front-month only (DTN names Jan-27); commodity-board 17 Nov page gives conflicting settles (Brent Jan-27 91.83, WTI Dec-26 85.06) and no Feb-27 - recorded as disputed, not used; baratelliinstitute strip still dated 15 Oct. dated_brent.premium null: no Platts/Argus relay dated 16-17 Nov. war_risk null for a dated 16-17 Nov quote (only the Lloyd's List/Insurance Business 9 Nov 7-9% hull range relayed by hormuz.now; houseofsaud 17 Nov says no numerical figures disclosed for the latest period). td3c null: no Baltic print surfaced; Maritime Executive says VLCC day rates 'fallen sharply' with no number. ofac.iran_actions not read this run: ABA Banking Journal OFAC roundup (16 Nov) redirect-looped; ofac.treasury.gov/recent-actions not surfaced by this session's searches. EU FAC 16 Nov outcome on Aspides/escorts not found (EEAS search returned May 2026 pages only; WANA relay gives sanctions line). CNBC 17 Nov, seatrade-maritime, logisticsmiddleeast, samaa.tv: client_error; Bloomberg: robots_disallowed."
+ "error": "brent.m2.settle (Feb-27) for Tue 17 Nov null: cappnotes, Weekend Spread, DTN, MarketScreener print front month only; Bloomberg/Rigzone gives only an approximate prompt spread (~2.80 backwardation), not a Feb-27 settle. dated_brent.premium null: no Platts/Argus relay dated 17-18 Nov (only 'OSPs cut', no figure). hormuz.holding_vessels unreachable: straits.live briefs 2026-11-17 and 2026-11-18 both client_error. war_risk null: no dated 17-18 Nov quote (search returned June 2026 and undated explainers). td3c null: no Baltic print surfaced. ofac.iran_actions null: no 17-18 Nov OFAC Iran action surfaced by search; not read. EU Defence FAC 17 Nov Aspides/escort outcome not found (EEAS page surfaced is 12 May 2026). ADNOC L&S vessel unnamed in all sources; whether it is distinct from TARA GAS unconfirmed - confirmed_advisories recorded as 2 on that reading. Unreachable: CNN (robots), NPR (robots), Al Arabiya, Doha News, straits.live (client_error); Khaleej 18 Nov live page served an unrelated article."
 }
