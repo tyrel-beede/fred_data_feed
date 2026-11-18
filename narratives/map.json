@@ -1,0 +1,944 @@
+{
+ "_about": "The narrative map: the claims the discourse is making about the world, each as a hypothesis with a sign, the words that identify it in a gathered item (matched deterministically, case-insensitive, substring), the measurable predictions it implies (a registered fork, a history-layer outcome, a field condition), the observation that would falsify it, and the incentive tags a reader may discount by. Entries are added when the sweeps show a claim held by two independent holders or one holder plus a data anomaly; they are never removed, only retired with the date. Statements paraphrase the holders; the verbatim positions stay in the ledger beside them.",
+ "version": "2026-11-18",
+ "gdelt_series": {
+  "ai_bubble": "\"AI bubble\"",
+  "dc_capex": "\"data center\" capex",
+  "term_premium": "\"term premium\" OR \"Treasury auction\"",
+  "hormuz": "Hormuz",
+  "private_credit": "private credit"
+ },
+ "dial_map": {
+  "C-capex": [
+   "ai-capex-bust",
+   "nvidia-supercycle",
+   "credible-pipeline"
+  ],
+  "C-credit": [
+   "private-credit-stress",
+   "ai-capex-bust"
+  ],
+  "C-equity": [
+   "dotcom-echo",
+   "flight-to-quality"
+  ],
+  "B-sovereign": [
+   "debt-crunch"
+  ],
+  "B-oil": [
+   "oil-floor-hormuz"
+  ],
+  "C1": [
+   "private-credit-stress",
+   "ai-capex-bust"
+  ],
+  "C2": [
+   "ai-capex-bust"
+  ],
+  "C3": [
+   "ai-capex-bust",
+   "circular-financing"
+  ],
+  "C4": [
+   "nvidia-governance"
+  ],
+  "C6": [
+   "private-credit-stress"
+  ],
+  "C7": [
+   "ai-capex-bust"
+  ],
+  "C8": [
+   "ai-capex-bust",
+   "credible-pipeline"
+  ],
+  "D1": [
+   "debt-crunch"
+  ],
+  "D2": [
+   "debt-crunch"
+  ],
+  "D4": [
+   "debt-crunch"
+  ],
+  "D6": [
+   "debt-crunch"
+  ],
+  "B1": [
+   "fed-policy-error"
+  ],
+  "B1-oil": [
+   "oil-floor-hormuz"
+  ],
+  "B2": [
+   "fed-policy-error"
+  ],
+  "B4": [
+   "debt-crunch"
+  ]
+ },
+ "narratives": [
+  {
+   "id": "ai-capex-bust",
+   "title": "The AI buildout is a debt-financed capex bubble that breaks when the money runs out",
+   "sign": "bear",
+   "lane": "capital",
+   "branch": "B",
+   "statement": "As held: capex has run past cash flow and is increasingly debt-funded; the chain below the principals (neoclouds, labs, suppliers) defects first — deferrals, cancellations, shelved deals, rental prices — and the bust arrives through credit transmission rather than through anyone's guidance.",
+   "keywords_strong": [
+    "capex cut",
+    "capex slows",
+    "deferral",
+    "digestion",
+    "money runs out",
+    "debt markets are closing",
+    "overdetermined",
+    "bubble collapses",
+    "bubble may finally have popped",
+    "bubble popped",
+    "crash scenario",
+    "capex bust",
+    "will not happen as planned",
+    "capex growth peaked"
+   ],
+   "keywords_weak": [
+    "ai bubble",
+    "bubble",
+    "neocloud",
+    "coreweave",
+    "rental",
+    "gpu-hour",
+    "forfeit",
+    "cancel",
+    "debt-funded",
+    "debt-financed",
+    "capex",
+    "data center bond",
+    "data-center bond"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261209-B-CONF",
+     "text": "B confirmed by Dec 9 (two of five B elements)"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20270120-B-H3",
+     "text": "B confirmed by Jan 20, 2027"
+    },
+    {
+     "kind": "history",
+     "ref": "req_3y",
+     "text": "real equity total return over the next three years for states like the present one (analog quartiles)"
+    },
+    {
+     "kind": "history_rate",
+     "ref": "dd30_3y",
+     "text": "share of country-years followed by a 30% real equity drawdown within three years, in the current era's climatology"
+    },
+    {
+     "kind": "field",
+     "ref": "CCC",
+     "condition": "zone in stress,acute",
+     "text": "CCC spreads in a stress or acute zone"
+    },
+    {
+     "kind": "field",
+     "ref": "IG",
+     "condition": "level >= 100",
+     "text": "IG OAS through 100 (transmission)"
+    },
+    {
+     "kind": "field",
+     "ref": "E7_1m",
+     "condition": "level <= -5",
+     "text": "neoclouds underperforming hyperscalers over the month"
+    },
+    {
+     "kind": "field",
+     "ref": "HY",
+     "condition": "zone in stress,acute",
+     "text": "high-yield spreads in a stress or acute zone"
+    }
+   ],
+   "falsifier": "The 2027 capex guides of the principals hold or rise through the Q4 prints with IG below 100, no hyperscaler deal pulled and GPU rental prices flat — the chain keeps paying one more year.",
+   "incentive_tags": [
+    "short-sellers and bears talking their book",
+    "newsletter writers rewarded for alarm",
+    "sell-side bears rewarded for being early once"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "ai_bubble"
+  },
+  {
+   "id": "dotcom-echo",
+   "title": "This is 2000 again: a productive bubble whose bust spares the economy and crushes the suppliers",
+   "sign": "bear",
+   "lane": "capital",
+   "branch": "B",
+   "statement": "As held: buy-the-dip, supply bottlenecks turning into gluts and the belief that the Fed does not matter echo the dot-com peak; the resolution is dual — the cap-weighted index falls while the equal-weighted index and value rise, suppliers are crushed and the users of cheap capacity thrive.",
+   "keywords_strong": [
+    "2000 peak",
+    "dot-com",
+    "dotcom",
+    "1990s it bubble",
+    "echo the dot-com",
+    "cisco",
+    "shortages turn into gluts",
+    "2000 in"
+   ],
+   "keywords_weak": [
+    "1999",
+    "nasdaq",
+    "productive bubble",
+    "railways",
+    "dark fiber",
+    "equal-weight",
+    "493"
+   ],
+   "predictions": [
+    {
+     "kind": "history",
+     "ref": "req_3y",
+     "text": "real equity total return over the next three years for states like the present one"
+    },
+    {
+     "kind": "field",
+     "ref": "E1_1m",
+     "condition": "level >= 2",
+     "text": "equal-weight beating cap-weight over the month (the dual resolution)"
+    },
+    {
+     "kind": "field",
+     "ref": "E5_1m",
+     "condition": "level <= -3",
+     "text": "semis underperforming the Nasdaq-100 (suppliers first)"
+    },
+    {
+     "kind": "field",
+     "ref": "SPX",
+     "condition": "zone in stress,acute",
+     "text": "the index still near its highs (a bust has not begun)"
+    }
+   ],
+   "falsifier": "The cap-weighted index makes a new high with the equal-weight index lagging and supplier margins intact a year on — the 2000 analogy had the wrong decade.",
+   "incentive_tags": [
+    "strategists rewarded for a memorable analogy",
+    "survivors of 2000 generalizing from one cycle"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "ai_bubble"
+  },
+  {
+   "id": "circular-financing",
+   "title": "AI's financing is circular — suppliers fund their customers — so the chain's interdependence hides its risk",
+   "sign": "bear",
+   "lane": "capital",
+   "branch": "B",
+   "statement": "As held: chipmakers and clouds take equity stakes in, extend backstops to and guarantee the obligations of the labs and neoclouds that buy from them, so one demand shortfall at the top becomes a balance-sheet event at every tier; receivables outgrow revenue and the lenders carry equity risk at debt returns.",
+   "keywords_strong": [
+    "circular",
+    "backstop",
+    "protection racket",
+    "funding their own customers",
+    "equity stakes",
+    "vendor financing",
+    "lenders to ai firms",
+    "risk better suited to stockholders"
+   ],
+   "keywords_weak": [
+    "guarantee",
+    "interdependent",
+    "private placement",
+    "receivable",
+    "spv",
+    "lease",
+    "take-or-pay",
+    "prepay"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261117-NVDA-AR",
+     "text": "Nvidia receivables growing faster than revenue a third quarter"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261117-NVDA-BACKSTOP",
+     "text": "the $250bn OpenAI backstop withdrawn or shrunk"
+    },
+    {
+     "kind": "hazard",
+     "ref": "hyperscaler SPV / lease-accounting story",
+     "text": "an SPV or lease-accounting story at a hyperscaler"
+    },
+    {
+     "kind": "field",
+     "ref": "E6_1m",
+     "condition": "level <= -3",
+     "text": "suppliers underperforming principals (the market pricing the dependence)"
+    }
+   ],
+   "falsifier": "A year of supplier revenue converting to cash at normal ratios, receivable days flat, and no vendor-financed customer defaulting on a vendor.",
+   "incentive_tags": [
+    "short-sellers",
+    "columnists rewarded for a clean mechanism"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "ai_bubble"
+  },
+  {
+   "id": "credible-pipeline",
+   "title": "Only a third of the announced data-center pipeline is credible, and power, permits and voters cap the rest",
+   "sign": "bear",
+   "lane": "capital",
+   "branch": "B",
+   "statement": "As held: 586 GW is announced and 199 GW is credible; 2027 is locked in by construction already under way but 2028 is not, and the binding constraint has moved from compute to memory to power to politics — the midterms made opposition to data centers bipartisan and the fight moved to governors and town halls.",
+   "keywords_strong": [
+    "credible",
+    "586 gw",
+    "199 gw",
+    "pipeline",
+    "pause pledge",
+    "moratori",
+    "permit freeze",
+    "binding constraint",
+    "opposition to data center",
+    "oppos",
+    "town hall",
+    "voters",
+    "regulatory uncertainty",
+    "2028 is less secure"
+   ],
+   "keywords_weak": [
+    "gigawatt",
+    " gw",
+    "power",
+    "utility",
+    "midterm",
+    "governor",
+    "construction"
+   ],
+   "predictions": [
+    {
+     "kind": "stage",
+     "ref": "S3",
+     "text": "supply under contract and under construction against the announced pipeline (the stage read)"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261210-ORCL",
+     "text": "a principal's capex cut, deferral or restraint language"
+    },
+    {
+     "kind": "hazard",
+     "ref": "GPU rental -20% q/q",
+     "text": "rental prices falling as less capacity than announced arrives"
+    }
+   ],
+   "falsifier": "2028 capacity starts tracking the announced pipeline — under-construction GW rising toward the announced total through 2027 with permits and power contracts signed.",
+   "incentive_tags": [
+    "sell-side research rewarded for a proprietary count",
+    "political commentators generalizing one election"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "dc_capex"
+  },
+  {
+   "id": "flight-to-quality",
+   "title": "The selloff is a rotation inside a continuing cycle: a correction's last stage, semis oversold, the buildout mid-way",
+   "sign": "bull",
+   "lane": "strategist",
+   "branch": "A",
+   "statement": "As held: the clearing events (midterms, AI equity supply, liquidity) are passing; the correction that began in June is in its final stage and sets up a year-end rally; semis are oversold; the buildout is roughly mid-way and the hyperscalers' books are full — buy the dip.",
+   "keywords_strong": [
+    "final stage",
+    "last stage",
+    "oversold",
+    "buy the dip",
+    "flight to quality",
+    "clearing event",
+    "year-end rally",
+    "mid-way",
+    "midway",
+    "pessimism is overdone",
+    "not a collapse",
+    "add risk"
+   ],
+   "keywords_weak": [
+    "constructive",
+    "bottoming",
+    "7,100",
+    "8,000",
+    "reasonable",
+    "top picks"
+   ],
+   "predictions": [
+    {
+     "kind": "fork_nonfire",
+     "ref": "F-20261209-B-CONF",
+     "text": "B not confirmed by Dec 9"
+    },
+    {
+     "kind": "history",
+     "ref": "req_1y",
+     "text": "real equity total return over the next year for states like the present one"
+    },
+    {
+     "kind": "field",
+     "ref": "SPX",
+     "condition": "zone in stress,acute",
+     "text": "the index within reach of its highs"
+    },
+    {
+     "kind": "field",
+     "ref": "IG",
+     "condition": "level < 100",
+     "text": "IG spreads below the transmission line"
+    },
+    {
+     "kind": "field",
+     "ref": "ICSA_4wk",
+     "condition": "zone in benign,watch",
+     "text": "claims benign (no labour transmission)"
+    }
+   ],
+   "falsifier": "The index fails to make a new high within two quarters while credit transmits (IG through 100 and a hyperscaler deal pulled) — the correction was the first stage, not the last.",
+   "incentive_tags": [
+    "sell-side strategists whose house is long",
+    "sell-side analysts with buy ratings on the names",
+    "fund managers marketing a dip-buying product"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "ai_bubble"
+  },
+  {
+   "id": "nvidia-supercycle",
+   "title": "Demand exceeds supply through FY28 and consensus is too low: the supplier supercycle holds",
+   "sign": "bull",
+   "lane": "capital",
+   "branch": "A",
+   "statement": "As held: Nvidia's supply commitments and third-party benchmarks support 70% growth in 2027 and revenue 72% above consensus in FY28; the memory makers are sold out through 2028; 'demand continues to exceed supply'.",
+   "keywords_strong": [
+    "$300 ",
+    "72% above consensus",
+    "demand continues to exceed supply",
+    "supply commitments",
+    "70% revenue growth",
+    "gb300",
+    "sold out",
+    "supercycle",
+    "no-growth 2028"
+   ],
+   "keywords_weak": [
+    "nvidia",
+    "hbm",
+    "micron",
+    "hynix",
+    "lta",
+    "long-term agreement",
+    "broadcom"
+   ],
+   "predictions": [
+    {
+     "kind": "fork_nonfire",
+     "ref": "F-20261117-NVDA-GUIDE",
+     "text": "Nvidia guides at or above consensus (the fork does not fire)"
+    },
+    {
+     "kind": "fork_nonfire",
+     "ref": "F-202612xx-MU",
+     "text": "Micron guides at or above consensus with no renegotiation language"
+    },
+    {
+     "kind": "field",
+     "ref": "E6_1m",
+     "condition": "level >= 0",
+     "text": "suppliers keeping pace with principals"
+    }
+   ],
+   "falsifier": "A guide below consensus, receivables and inventory outgrowing revenue for a third quarter, or a memory contract renegotiated — the supplier is the last node, so this is the slow falsifier.",
+   "incentive_tags": [
+    "sell-side with buy ratings and price targets",
+    "the company's own forward statements (G1/G2 bias)"
+   ],
+   "added": "2026-11-18"
+  },
+  {
+   "id": "debt-crunch",
+   "title": "Deficits at full employment, thinning auction demand and a rising term premium: the long end is the fault line",
+   "sign": "bear-bonds",
+   "lane": "debt",
+   "branch": "C",
+   "statement": "As held: divided government adds spending, the debt-limit and funding fights of 2027 push short yields up and raise doubts about Treasuries as collateral; auctions tail with the indirect bid thinning; record tech bond supply competes for the same liability-matching money; foreign official accounts are selling.",
+   "keywords_strong": [
+    "term premium",
+    "debt limit",
+    "debt-limit",
+    "funding expiry",
+    "safe collateral",
+    "auction",
+    "indirect",
+    "tail",
+    "bond supply",
+    "soaring global yields",
+    "widening deficits",
+    "runs out of options",
+    "auction tail",
+    "term-premium"
+   ],
+   "keywords_weak": [
+    "treasury",
+    "yields",
+    "fiscal",
+    "spending and taxes",
+    "30-year",
+    "long end",
+    "custody",
+    "jgb",
+    "gilt",
+    "bond market",
+    "deficit"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261209-C-CONF",
+     "text": "C confirmed by Dec 9"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261210-30YR",
+     "text": "30y reopening tails 2 bp or more"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261208-10YR",
+     "text": "10y reopening tails 2 bp or more"
+    },
+    {
+     "kind": "history",
+     "ref": "dltrate_1y",
+     "text": "change in the long rate over the next year for states like the present one"
+    },
+    {
+     "kind": "field",
+     "ref": "DGS30",
+     "condition": "zone in stress,acute",
+     "text": "the 30-year yield in a stress or acute zone"
+    },
+    {
+     "kind": "field",
+     "ref": "DFII10",
+     "condition": "zone in stress,acute",
+     "text": "the real 10-year in a stress or acute zone"
+    }
+   ],
+   "falsifier": "Two refunding cycles with no tail above 2 bp, the term premium below 1 and the 30-year back inside its watch band while deficits stay above 6% — the buyers are still there.",
+   "incentive_tags": [
+    "bond bears and gold holders",
+    "debt-cycle authors whose framework needs the crunch",
+    "newsletter writers rewarded for alarm"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "term_premium"
+  },
+  {
+   "id": "fed-policy-error",
+   "title": "The Fed hikes into a slowing, lagging-data economy — the 2018 path, with 25 versus 50 the live question",
+   "sign": "bear",
+   "lane": "business",
+   "branch": "B",
+   "statement": "As held: with headline inflation re-accelerating on oil and fiscal, the Fed is hiking into a boom that ignores the funds rate, so the squeeze lands on housing, autos and the periphery; the survey data it steers by are deteriorating.",
+   "keywords_strong": [
+    "hike",
+    "25bp",
+    "50bp",
+    "275bp",
+    "policy error",
+    "the fed doesn't matter",
+    "fed lacks clean data",
+    "response rates are collapsing",
+    "hiking into"
+   ],
+   "keywords_weak": [
+    "fomc",
+    "fed ",
+    "tightening",
+    "cpi",
+    "inflation",
+    "claims"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261209-FOMC",
+     "text": "a December hike with claims more than 10% above the low"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261210-CPI",
+     "text": "November core CPI at 0.4 or more"
+    },
+    {
+     "kind": "history",
+     "ref": "dunemp_3y",
+     "text": "the change in unemployment over the next three years for states like the present one"
+    },
+    {
+     "kind": "field",
+     "ref": "ICSA_4wk",
+     "condition": "zone in stress,acute",
+     "text": "claims rising into a stress zone (the error showing up)"
+    },
+    {
+     "kind": "field",
+     "ref": "DFII10",
+     "condition": "zone in acute",
+     "text": "real yields acute (the hurdle binding)"
+    }
+   ],
+   "falsifier": "Claims stay within 10% of their low through two more hikes and core inflation falls back under 0.3 a month — the hikes were absorbed.",
+   "incentive_tags": [
+    "rates strategists whose book is long duration",
+    "commentators rewarded for calling the Fed wrong"
+   ],
+   "added": "2026-11-18"
+  },
+  {
+   "id": "consumer-resilient",
+   "title": "Households keep spending across income groups while saying they are miserable; the economy is not the AI complex",
+   "sign": "bull",
+   "lane": "business",
+   "branch": "A",
+   "statement": "As held: weekly retail sales are strong, supported by job growth for lower-income households and by asset prices and fixed-income cash flows above them, while confidence falls across the distribution; earnings pace implies nominal growth near 10%.",
+   "keywords_strong": [
+    "retail sales",
+    "same-store",
+    "what consumers are saying",
+    "spending data remain strong",
+    "strong macro data",
+    "10% nominal gdp",
+    "not disastrous"
+   ],
+   "keywords_weak": [
+    "consumer",
+    "spending",
+    "payroll",
+    "unemployment is low",
+    "jobs"
+   ],
+   "predictions": [
+    {
+     "kind": "history",
+     "ref": "rgdp_pc_1y",
+     "text": "real GDP per head over the next year for states like the present one"
+    },
+    {
+     "kind": "field",
+     "ref": "ICSA_4wk",
+     "condition": "zone in benign,watch",
+     "text": "claims benign"
+    },
+    {
+     "kind": "field",
+     "ref": "E8_1m",
+     "condition": "level >= 0",
+     "text": "homebuilders keeping pace with the index"
+    }
+   ],
+   "falsifier": "Claims up 20% from the low and real retail sales down two quarters running.",
+   "incentive_tags": [
+    "asset managers whose products are long the cycle",
+    "chief economists of firms that lend to the consumer"
+   ],
+   "added": "2026-11-18"
+  },
+  {
+   "id": "price-discovery-broken",
+   "title": "Prices are not reflecting fundamentals: unprofitable companies outperform and AI productivity is absent from the 493",
+   "sign": "bear",
+   "lane": "strategist",
+   "branch": "B",
+   "statement": "As held: revenue per worker and margins rise for the Mag 7 and are flat for the S&P 493; there are no signs of AI boosting productivity; unprofitable companies keep outperforming profitable ones; the benefits are concentrated in the companies selling AI.",
+   "keywords_strong": [
+    "price discovery",
+    "unprofitable companies",
+    "no signs of ai boosting productivity",
+    "not delivering the productivity",
+    "s&p 493",
+    "concentrated in the companies selling ai",
+    "net detriment"
+   ],
+   "keywords_weak": [
+    "productivity",
+    "margins",
+    "493",
+    "mag 7",
+    "fundamentals"
+   ],
+   "predictions": [
+    {
+     "kind": "field",
+     "ref": "E1_1m",
+     "condition": "level <= 0",
+     "text": "equal-weight lagging cap-weight (the 493 not catching up)"
+    },
+    {
+     "kind": "field",
+     "ref": "E2_1m",
+     "condition": "level >= 0",
+     "text": "the top eight outrunning the equal-weight index"
+    },
+    {
+     "kind": "stage",
+     "ref": "S1",
+     "text": "supplier margins at prior-cycle peaks"
+    }
+   ],
+   "falsifier": "Two quarters of 493 earnings acceleration with margins rising outside the AI complex, or measured productivity turning up in the national accounts.",
+   "incentive_tags": [
+    "AI skeptics with a position to defend",
+    "economists rewarded for contrarian productivity calls"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "ai_bubble"
+  },
+  {
+   "id": "private-credit-stress",
+   "title": "Stress is surfacing in private credit and leveraged loans: BDC marks, non-accruals, pulled deals, force majeure",
+   "sign": "bear",
+   "lane": "credit",
+   "branch": "B",
+   "statement": "As held: BDC loan marks are dispersing, the share of leveraged loans above par is collapsing, AI-related force-majeure clauses are appearing in sponsored loans ahead of a maturity wall, and CCC stress is reaching single-B through three channels.",
+   "keywords_strong": [
+    "bdc",
+    "leveraged loan",
+    "private credit",
+    "non-accrual",
+    "force majeure",
+    "redemption",
+    "redemption gates",
+    "maturity wall",
+    "single-b",
+    "ccc",
+    "gated"
+   ],
+   "keywords_weak": [
+    "loan",
+    "spreads",
+    "default",
+    "refinanc",
+    "lender"
+   ],
+   "predictions": [
+    {
+     "kind": "field",
+     "ref": "CCC",
+     "condition": "zone in stress,acute",
+     "text": "CCC in a stress or acute zone"
+    },
+    {
+     "kind": "field",
+     "ref": "singleB",
+     "condition": "zone in stress,acute",
+     "text": "single-B spreads in a stress or acute zone (the loan market's own rung)"
+    },
+    {
+     "kind": "field",
+     "ref": "HY",
+     "condition": "zone in stress,acute",
+     "text": "high yield in a stress or acute zone"
+    },
+    {
+     "kind": "field",
+     "ref": "IG",
+     "condition": "level >= 100",
+     "text": "transmission to IG"
+    },
+    {
+     "kind": "hazard",
+     "ref": "neocloud / AI-credit event (default, failed refi, gated fund)",
+     "text": "a neocloud or AI-credit event"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261130-CRWV-LOAN",
+     "text": "CoreWeave's secured loan pulled, repriced or downsized"
+    }
+   ],
+   "falsifier": "Non-accruals flat for two quarters, the above-par share recovering and the loan market absorbing the maturity wall at unchanged spreads.",
+   "incentive_tags": [
+    "newsletter writers rewarded for alarm",
+    "credit funds marketing distressed products"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "private_credit"
+  },
+  {
+   "id": "nvidia-governance",
+   "title": "Key-person and governance risk at Nvidia: the chief is gone, the backstop and the China channel are in question",
+   "sign": "bear",
+   "lane": "capital",
+   "branch": "B",
+   "statement": "As held: the chief executive's departure removes the enforcer of Nvidia's commercial system and its chief salesman; an interim chief cannot replace sixty direct reports; the DOJ probe and the China-sales question outlast him, and the $250bn backstop proposal is in question.",
+   "keywords_strong": [
+    "huang",
+    "kress",
+    "key-person",
+    "megaspeed",
+    "doj",
+    "honey trap",
+    "ringmaster",
+    "enforcer",
+    "governance"
+   ],
+   "keywords_weak": [
+    "affair",
+    "resign",
+    "interim",
+    "nvidia"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261117-NVDA-BACKSTOP",
+     "text": "the backstop withdrawn or shrunk"
+    },
+    {
+     "kind": "hazard",
+     "ref": "Nvidia governance shock (DOJ action, revenue restatement, backstop withdrawn outside the print)",
+     "text": "a governance shock outside the print"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261117-NVDA-GUIDE",
+     "text": "a guide below consensus under the interim chief"
+    }
+   ],
+   "falsifier": "Two clean quarters under the new chief with the backstop intact and no DOJ action.",
+   "incentive_tags": [
+    "short-sellers",
+    "political commentators on the China question"
+   ],
+   "added": "2026-11-18"
+  },
+  {
+   "id": "oil-floor-hormuz",
+   "title": "The Hormuz standoff sets an oil floor that feeds headline inflation and the Fed's path; a signing breaks it",
+   "sign": "neutral",
+   "lane": "business",
+   "branch": "standoff",
+   "statement": "As held by the standoff watch and the roster: with the strait constrained, Brent carries a physical premium that passes into headline CPI and keeps the Fed in hike-into-floor mode; a written agreement would take 20% off oil and move the business cycle toward A, while escalation would do the reverse.",
+   "keywords_strong": [
+    "hormuz",
+    "strait",
+    "oil floor",
+    "opec",
+    "tanker",
+    "ceasefire",
+    "iran"
+   ],
+   "keywords_weak": [
+    "oil",
+    "brent",
+    "crude",
+    "energy",
+    "wti",
+    "barrel"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261209-HORMUZ",
+     "text": "a written US-Iran agreement by Dec 9"
+    },
+    {
+     "kind": "fork",
+     "ref": "F-20261209-OILE",
+     "text": "the standoff's E criteria or Brent at 120 by Dec 9"
+    },
+    {
+     "kind": "field",
+     "ref": "WTI",
+     "condition": "zone in stress,acute",
+     "text": "oil in a stress or acute zone (the floor holding)"
+    }
+   ],
+   "falsifier": "Brent below 80 for a month with the strait still constrained — the floor was supply elsewhere, not Hormuz.",
+   "incentive_tags": [
+    "energy strategists",
+    "governments on both sides"
+   ],
+   "added": "2026-11-18",
+   "gdelt": "hormuz"
+  },
+  {
+   "id": "spacex-compute-bet",
+   "title": "SpaceX is the fastest data-center builder ever — or its revenue math is not remotely close",
+   "sign": "contested",
+   "lane": "capital",
+   "branch": "B",
+   "statement": "As held on one side: SpaceX reaches 10-13 GW in 2027, the fastest buildout in history; on the other: its revenue goal implies a 1-2x revenue-to-investment ratio against an industry at 0.3x, the chip debt is a $500bn question and the funding is a fuse.",
+   "keywords_strong": [
+    "spacex",
+    "10gw",
+    "13gw",
+    "chip debt",
+    "not even remotely close",
+    "revenue-to-investment"
+   ],
+   "keywords_weak": [
+    "musk",
+    "starlink",
+    "$40bn"
+   ],
+   "predictions": [
+    {
+     "kind": "fork",
+     "ref": "F-20261231-SPCX-FUSE",
+     "text": "the $40bn GPU financing: no tranche priced, pulled, downsized or sweetened by Dec 31"
+    }
+   ],
+   "falsifier": "For the bull side: the financing fails or the GW target slips a year; for the bear side: the tranches price at or inside talk and the 2027 capacity is delivered.",
+   "incentive_tags": [
+    "the company's own statements",
+    "short-sellers",
+    "semiconductor analysts with access to the supply chain"
+   ],
+   "added": "2026-11-18"
+  },
+  {
+   "id": "china-hidden-fx",
+   "title": "China holds hidden foreign-exchange assets that underpin a weak renminbi and its export outperformance",
+   "sign": "n/a",
+   "lane": "debt",
+   "branch": "none",
+   "statement": "As held: FX settlement purchases of $500-600bn a year against a flat PBOC balance sheet, missing reinvested interest and entrusted loans to the policy banks add up to a trillion-dollar gap; the pattern looks like backdoor intervention around a crawling peg.",
+   "keywords_strong": [
+    "hidden foreign",
+    "hidden reserves",
+    "fx settlement",
+    "pboc",
+    "crawling peg",
+    "renminbi",
+    "rmb"
+   ],
+   "keywords_weak": [
+    "china",
+    "reserves",
+    "export"
+   ],
+   "predictions": [],
+   "falsifier": "A PBOC disclosure reconciling the gap, or the renminbi floating outside the band without intervention.",
+   "incentive_tags": [
+    "policy analysts",
+    "trade-policy advocates"
+   ],
+   "added": "2026-11-18",
+   "note": "Tracked for bandwidth; no measurable prediction in the dials yet (no renminbi or reserves field)."
+  }
+ ],
+ "_matching": "A keyword must start at a word boundary and may be the stem of a longer word ('refinanc' finds 'refinancing'); matching is case-insensitive on name, title, position, sign_basis and the number claims of each voices item. A match needs one strong word or two weak ones. Holders are matched items whose sign agrees with the narrative's; opposed items are matched items of the opposite sign that hit a strong word."
+}

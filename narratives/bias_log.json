@@ -1,0 +1,678 @@
+{
+ "built": "2026-11-18T20:32:15Z",
+ "items": [
+  {
+   "kind": "event line",
+   "what": "IG at 100 bp carries x2 B",
+   "value": "100 bp",
+   "source": "dials/rulings.md ruling l; macro-dials SKILL.md",
+   "measured_alternative": "the percentile-band zone of the same field (ruling l): IG 89.0 on 2026-11-12: watch (62.1th pct of window, 92.8th of 1y)",
+   "why_judgment": "anchored on precedents a six-year window does not contain"
+  },
+  {
+   "kind": "event line",
+   "what": "IG at 115 bp carries B element",
+   "value": "115 bp",
+   "source": "dials/rulings.md ruling l; macro-dials SKILL.md",
+   "measured_alternative": "the percentile-band zone of the same field (ruling l): IG 89.0 on 2026-11-12: watch (62.1th pct of window, 92.8th of 1y)",
+   "why_judgment": "anchored on precedents a six-year window does not contain"
+  },
+  {
+   "kind": "event line",
+   "what": "DFII10 at 3.0 carries x4 B and C",
+   "value": "3.0",
+   "source": "dials/rulings.md ruling l; macro-dials SKILL.md",
+   "measured_alternative": "the percentile-band zone of the same field (ruling l): DFII10 2.86 on 2026-11-12: acute (99.3th pct of window, 95.6th of 1y)",
+   "why_judgment": "anchored on precedents a six-year window does not contain"
+  },
+  {
+   "kind": "event line",
+   "what": "DFII10 at 2.5 carries x2 A",
+   "value": "2.5",
+   "source": "dials/rulings.md ruling l; macro-dials SKILL.md",
+   "measured_alternative": "the percentile-band zone of the same field (ruling l): DFII10 2.86 on 2026-11-12: acute (99.3th pct of window, 95.6th of 1y)",
+   "why_judgment": "anchored on precedents a six-year window does not contain"
+  },
+  {
+   "kind": "event line",
+   "what": "ICSA_4wk at +20% from the low carries x4 B",
+   "value": "+20% from the low",
+   "source": "dials/rulings.md ruling l; macro-dials SKILL.md",
+   "measured_alternative": "the percentile-band zone of the same field (ruling l): field not in the run",
+   "why_judgment": "anchored on precedents a six-year window does not contain"
+  },
+  {
+   "kind": "event line",
+   "what": "TP at 1.0 carries C element",
+   "value": "1.0",
+   "source": "dials/rulings.md ruling l; macro-dials SKILL.md",
+   "measured_alternative": "the percentile-band zone of the same field (ruling l): field not in the run",
+   "why_judgment": "anchored on precedents a six-year window does not contain"
+  },
+  {
+   "kind": "likelihood-ratio tier",
+   "what": "strong tier x4.0 (log-normal sigma 0.5)",
+   "value": 4.0,
+   "source": "macro-dials SKILL.md, Likelihood-ratio tiers",
+   "measured_alternative": "none yet: the skill's own queued item (tier calibration on the periphery-first episode table, Beta-binomial posterior per tier); the history layer's ladder rungs are the nearest measured conditional rates",
+   "why_judgment": "capex cut by a principal; pulled hyperscaler deal; 30y tail >= 3 bp with dealers > 15%; claims +20%; neocloud default; GPU rental -20%; real 10y through 3.0"
+  },
+  {
+   "kind": "likelihood-ratio tier",
+   "what": "moderate tier x2.0 (log-normal sigma 0.35)",
+   "value": 2.0,
+   "source": "macro-dials SKILL.md, Likelihood-ratio tiers",
+   "measured_alternative": "none yet: the skill's own queued item (tier calibration on the periphery-first episode table, Beta-binomial posterior per tier); the history layer's ladder rungs are the nearest measured conditional rates",
+   "why_judgment": "IG through 100; coupon increase; Nvidia AR > revenue a third quarter; lab round downsized; core CPI >= 0.4 twice; broad convergence"
+  },
+  {
+   "kind": "likelihood-ratio tier",
+   "what": "default tier x1.5 (log-normal sigma 0.25)",
+   "value": 1.5,
+   "source": "macro-dials SKILL.md, Likelihood-ratio tiers",
+   "measured_alternative": "none yet: the skill's own queued item (tier calibration on the periphery-first episode table, Beta-binomial posterior per tier); the history layer's ladder rungs are the nearest measured conditional rates",
+   "why_judgment": "any other scored event; a zone transition; convergence"
+  },
+  {
+   "kind": "likelihood-ratio tier",
+   "what": "weak tier x1.2 (log-normal sigma 0.15)",
+   "value": 1.2,
+   "source": "macro-dials SKILL.md, Likelihood-ratio tiers",
+   "measured_alternative": "none yet: the skill's own queued item (tier calibration on the periphery-first episode table, Beta-binomial posterior per tier); the history layer's ladder rungs are the nearest measured conditional rates",
+   "why_judgment": "an index at a new high; a single week's flow print"
+  },
+  {
+   "kind": "calibration record",
+   "what": "21 resolved forks; mean Brier 0.139",
+   "value": 0.139,
+   "source": "dials/state/ledger.json, dials/state/scoreboard.json",
+   "measured_alternative": "<0.2: 0/2 (0.0); 0.2-0.4: 1/6 (0.17); 0.4-0.6: 2/3 (0.67); 0.6-0.8: 3/4 (0.75); >=0.8: 5/6 (0.83)",
+   "why_judgment": "not a judgment: the measured record every fork probability above is read against"
+  },
+  {
+   "kind": "narrative-layer setting",
+   "what": "entry rule 2 distinct holders; pig cut-offs at support share <= 0.34 (crowded, unsupported) and >= 0.66 (unpriced, supported)",
+   "value": "2; 0.34/0.66",
+   "source": "narratives/tools/narratives.py",
+   "measured_alternative": "none: round-number cut-offs chosen at the layer's first build so that the asymmetry table is a counted rule rather than a reading",
+   "why_judgment": "the layer's own three settings; changed prospectively only"
+  },
+  {
+   "kind": "state thresholds",
+   "what": "numeric state label: B >= 20 at H2 / >= 30 at H3; A below 0.25 on both shares, B-LEANING at s2 >= 0.75",
+   "value": "20/30; 0.25/0.75",
+   "source": "dials/rulings.md ruling j",
+   "measured_alternative": "none: a two-point calibration to the Oct 30 and Nov 2, 2026 hand reads; to be revisited after resolved weeks",
+   "why_judgment": "set so the first two reads came out where they had been called by hand"
+  },
+  {
+   "kind": "branch set",
+   "what": "three branches (A grow out of it, B capex bust, C debt crunch) with hand-written confirmation criteria",
+   "value": "A/B/C",
+   "source": "macro-dials SKILL.md, Branches and their signatures",
+   "measured_alternative": "the narrative ledger: the branches as narratives beside the discourse's own, with the same evidence tally (narratives/ledger.md)",
+   "why_judgment": "the hypothesis set is the author's; rulings 'principle' (2026-11-03) already says never to assume only the named branches exist"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261027-B-H2: B confirmed by Dec 9 (10/27 line, scored alongside)",
+   "value": 0.35,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261027-B-H3: B confirmed by Jan 20, 2027 (10/27 line)",
+   "value": 0.5,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.4-0.6 bucket: 2 of 3 resolved forks fired (0.67)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2027-01-20",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261027-C-H2: C confirmed by Dec 9 (10/27 line)",
+   "value": 0.05,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261104-OBDC: Q3 non-accruals at FV above Q2's",
+   "value": 0.6,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.6-0.8 bucket: 3 of 4 resolved forks fired (0.75)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "date unverified",
+   "resolves": "2026-11-04",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261104-REFUND: coupon sizes increased or a bills shift",
+   "value": 0.25,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2026-11-04",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261110-10Y: 10y auction tail >= 2 bp",
+   "value": 0.15,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "cluster long-end; not a C element (acceptance edit)",
+   "resolves": "2026-11-10",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261110-CPI: Oct core CPI m/m >= 0.4",
+   "value": 0.3,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2026-11-10T08:30-05:00",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261110-CRWV: Q3 discloses a customer-contract renegotiation, deferral or cancellation",
+   "value": 0.3,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "complement P(backlog up q/q, no renegotiation)=0.65 (10/27) open; reaction ratio v2: Nov 13 straddle the session before; indicative E|move| 16.4%, line -24.7%",
+   "resolves": "2026-11-10T17:00-05:00",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261112-30Y: 30y auction tail >= 2 bp",
+   "value": 0.2,
+   "source": "2026-11-02T1935-dials-lite",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "cluster long-end",
+   "resolves": "2026-11-12",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261117-NVDA-AR: AR growth > revenue growth again (third quarter)",
+   "value": 0.6,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.6-0.8 bucket: 3 of 4 resolved forks fired (0.75)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "held; third quarter would be the x2 vendor-financing tier",
+   "resolves": "2026-11-17",
+   "cluster": "nvidia"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261117-NVDA-BACKSTOP: Nvidia withdraws, cancels or materially shrinks the proposed $250bn OpenAI credit backstop or another vendor-financing c",
+   "value": 0.2,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new: The Information (Nov 12) - Kress 'has pushed back' on Huang-era deals",
+   "resolves": "2026-11-17",
+   "cluster": "nvidia"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261117-NVDA-GUIDE: Q4 FY27 revenue guide below the ~$110B implied consensus (Nov 17 after the close)",
+   "value": 0.25,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "held at 0.25: interim CEO Kress, Huang out; MS 70% growth 2027; implied move from the repo chain to be written the session before (Nov 16)",
+   "resolves": "2026-11-17",
+   "cluster": "nvidia"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261118-20Y: 20y auction tail >= 2 bp vs when-issued",
+   "value": 0.3,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.20 after 1.0 / 0.4 bp tails and indirects below average three times",
+   "resolves": "2026-11-18",
+   "cluster": "long-end"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261120-ANTHROPIC: IPO delayed past Nov 30, downsized below the ~$75bn reported raise, or priced below the top of the initial range ($78)",
+   "value": 0.35,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.42: range $70-78 set, book ~6x, bankers weigh > $78; company says pricing Nov 18",
+   "resolves": "2026-11-30",
+   "cluster": "lab-funding"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261130-CRWV-LOAN: CoreWeave's >= $4bn IG-rated secured loan is pulled, not launched, or prices with a blended rate above 9% or a downsized",
+   "value": 0.2,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new: Bloomberg Nov 11 / Semafor Nov 13 - ~7.5% target vs 16% unsecured, GPUs and Meta contracts as collateral",
+   "resolves": "2026-11-30",
+   "cluster": "neocloud-credit"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261208-10YR: 10y reopening tail >= 2 bp",
+   "value": 0.25,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new (schedule PDF verified)",
+   "resolves": "2026-12-08",
+   "cluster": "long-end"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-B-CONF: B confirmed by Dec 9 (two of the five B elements)",
+   "value": 0.071,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "layer 2 P(B confirmed) 0.071 (was 0.17); independence 0.05 / comonotone 0.08",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-C-CONF: C confirmed by Dec 9",
+   "value": 0.02,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "layer 2 prints 0.00 with one registered C element; hand-set 0.02 (floor) and flagged: the C elements that are fields (term premium >1 rising, correlation month) are not forks",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-FOMC: Dec 9 hike with claims 4-wk > +10% from the 189k low (LR-carrying form); market P(hike) 0.89",
+   "value": 0.08,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.15: claims +3.3%",
+   "resolves": "2026-12-09",
+   "cluster": "rates"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-HORMUZ: a written US-Iran agreement announced by both governments by Dec 9",
+   "value": 0.15,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.38: standoff stage S-20261209-SIGN 0.15 (T5 -1, 'don't need a deal')",
+   "resolves": "2026-12-09",
+   "cluster": "oil"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-IG100: IG OAS >= 100 bp on any day by Dec 9",
+   "value": 0.3,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.45: IG 89 on Nov 12, 17 sessions left",
+   "resolves": "2026-12-09",
+   "cluster": "credit"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-IG115: IG OAS >= 115 bp on any day by Dec 9 (B element)",
+   "value": 0.08,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.14",
+   "resolves": "2026-12-09",
+   "cluster": "credit"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-OILE: standoff E criteria met or Brent front-month >= 120 by Dec 9",
+   "value": 0.35,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.33: standoff S-20261209-E 0.35 / BRENT120 0.10",
+   "resolves": "2026-12-09",
+   "cluster": "oil"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261209-REAL3: DFII10 > 3.0 on any day by Dec 9 (x4 toward B and C)",
+   "value": 0.2,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.09: 2.86 with the 10y +26 bp on the week and a Dec hike priced",
+   "resolves": "2026-12-09",
+   "cluster": "rates"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261210-30YR: 30y reopening tail >= 2 bp (a C element with the next tail)",
+   "value": 0.25,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new (schedule PDF verified); one day past the H2 date, included",
+   "resolves": "2026-12-10",
+   "cluster": "long-end"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261210-CPI: Nov core CPI m/m >= 0.4 (Dec 10 08:30 ET; a second >= 0.4 would be the B1 x2 event)",
+   "value": 0.25,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new (BLS schedule verified)",
+   "resolves": "2026-12-10",
+   "cluster": "rates"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261210-ORCL: FQ2 capex cut, deferral or verified restraint language (date after Dec 11 by the IV term structure; Dec 14 aggregator, u",
+   "value": 0.09,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "held; outside H2 layer 2",
+   "resolves": "2026-12-14",
+   "cluster": "principal-language"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20261231-SPCX-FUSE: SpaceX's $40bn GPU financing: no tranche priced by Dec 31, or a tranche pulled, downsized or sweetened beyond the Oct 26",
+   "value": 0.3,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new from the standoff F5 read: pieces being sold pre-syndication, indicated 7.75-8.75%, market 'cooled'",
+   "resolves": "2026-12-31",
+   "cluster": "credit"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-202612xx-MU: Micron FQ1 guide below consensus or LTA-renegotiation language (~Dec 16-17, unverified)",
+   "value": 0.15,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "held; outside H2",
+   "resolves": "2026-12-17",
+   "cluster": "memory"
+  },
+  {
+   "kind": "fork probability",
+   "what": "F-20270120-B-H3: B confirmed by Jan 20, 2027 (cone H3 median)",
+   "value": 0.313,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "re-set from layer 1 H3 median 31.3",
+   "resolves": "2027-01-20",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261103-STRIKE: US or Israeli strikes on Iranian territory before Nov 3",
+   "value": 0.1,
+   "source": "2026-10-30T1253-standoff",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2026-11-03",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261109-YANBU: Saudi-acknowledged damage to the East-West line or Yanbu export facilities Oct 20-Nov 9",
+   "value": 0.3,
+   "source": "2026-10-30T1253-standoff",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "",
+   "resolves": "2026-11-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261126-VENUE: within 7 days of the Nov 19 Shenzhen trilateral, a US-Iran meeting with a named venue and date is announced by the US or",
+   "value": 0.15,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new: Ghalibaf says the US asked Putin to arrange direct talks; Trump 'does intend to talk about Iran' with Xi and Putin. T3 +1 x2 if it resolves YES.",
+   "resolves": "2026-11-26",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261130-STRIKE: US or Israeli strikes on Iranian territory Nov 4-30",
+   "value": 0.45,
+   "source": "2026-10-30T1253-standoff",
+   "measured_alternative": "the orchestrator's record in the 0.4-0.6 bucket: 2 of 3 resolved forks fired (0.67)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.40; press/crowd adjustment within +/-10",
+   "resolves": "2026-11-30",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261130-STRIKE2: a further US or Israeli strike on Iranian territory Nov 15-30, reported by CENTCOM/IDF or confirmed by two wires",
+   "value": 0.35,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new: after three 'minor' strikes Nov 6-12 and Reuters' 'may hold off absent provocations' (Nov 14); Israel lobbying; IRGC 'unlimited response' posture makes a provocation likely.",
+   "resolves": "2026-11-30",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261204-ISRAELGOV: a new Israeli government sworn in by Dec 4",
+   "value": 0.3,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "held at 0.30; no coalition reporting read this run (Katz: he, Netanyahu and Zamir aligned - Netanyahu in office Nov 12).",
+   "resolves": "2026-12-04",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261209-BRENT120: Brent front-month settles >= 120 on any day by Dec 9",
+   "value": 0.1,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.35: Brent 95.84, needs +25% in 17 sessions; the IEA surplus and OPEC+ output cap the F path; essentially the E-strike path only.",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261209-BRENT90: Brent front-month settles <= 90 on any day by Dec 9",
+   "value": 0.3,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.15: settle low 91.49 and intraday 89.15 on Nov 10; surplus narrative live; the Nov 12 +3.3% on attack headlines shows the floor's bounce.",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261209-E: E criteria met by Dec 9 (a strike on energy infrastructure in either direction confirmed by the owning state, a Gulf sta",
+   "value": 0.35,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the 0.2-0.4 bucket: 1 of 6 resolved forks fired (0.17)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.40: E weight 46 -> 46 exact, but 17 of the 40 days have passed without the criterion; the Nov 9 pipeline 'limited fire' and the Nov 12 Houthi claims did not meet it (Saudi acknowledged no damag",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261209-FEDHIKE: the FOMC raises the funds rate by >= 25 bp on Dec 9",
+   "value": 0.9,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the >=0.8 bucket: 5 of 6 resolved forks fired (0.83)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "new (F3 transmission fork): FedWatch 88.8% + 11.2% for 50 bp (Nov 10); registered so the floor's Fed-mode is scored.",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261209-M3: a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
+   "value": 0.05,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.15: 6-10% carried since Oct; attacks spreading into UAE waters; no deal path inside the window.",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261209-SIGN: a written US-Iran agreement announced by both governments by Dec 9",
+   "value": 0.15,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.30: T5 -1 (Vance pulled), Trump 'don't need a deal', Iran 'no talks before seven conditions'; the only dated venue is a US-China-Russia trilateral. Within the R+ + R- H2 weight of 20.",
+   "resolves": "2026-12-09",
+   "cluster": null
+  },
+  {
+   "kind": "fork probability",
+   "what": "S-20261231-FUSE: any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "value": 0.05,
+   "source": "2026-11-14T0611-standoff",
+   "measured_alternative": "the orchestrator's record in the <0.2 bucket: 0 of 2 resolved forks fired (0.0)",
+   "why_judgment": "the orchestrator's p, adjustable +/-10 on discourse",
+   "note": "from 0.10: the structure is a secured chip lease with a $7B prepayment and an $8.3B senior secured loan - collateral by construction; indicated 7.75-8.75% is not IG.",
+   "resolves": "2026-12-31",
+   "cluster": null
+  },
+  {
+   "kind": "hazard odds",
+   "what": "Fed-independence shock",
+   "value": 0.04,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "GPU rental -20% q/q",
+   "value": 0.04,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "Nvidia governance shock (DOJ action, revenue restatement, backstop withdrawn outside the print)",
+   "value": 0.12,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "basis-trade unwind (P4 extreme + repo stress + tailed auction)",
+   "value": 0.04,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "frontier-lab round down-priced further (OpenAI final close < $15B or Anthropic priced below range)",
+   "value": 0.15,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "hyperscaler SPV / lease-accounting story",
+   "value": 0.12,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "hyperscaler deal pulled or booked < 2x",
+   "value": 0.07,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "neocloud / AI-credit event (default, failed refi, gated fund)",
+   "value": 0.07,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "oil +20% in a month (Hormuz E)",
+   "value": 0.08,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "oil -20% in a month (settlement or surplus)",
+   "value": 0.06,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  },
+  {
+   "kind": "hazard odds",
+   "what": "sovereign stress (gilts, JGBs, OATs) spilling into the long end",
+   "value": 0.15,
+   "source": "2026-11-14T0611-dials",
+   "measured_alternative": "none yet (per-month odds revisited each run)",
+   "why_judgment": "rough per-month odds"
+  }
+ ]
+}

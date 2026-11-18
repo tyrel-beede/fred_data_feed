@@ -32,5 +32,7 @@ SEC quality-control pass (2026-11-07, the one whose `QC.md` first read 34 of 34 
 that note), or from a clone `git tag -a history-v1 <commit> -m "history layer, revision one" && git push origin
 history-v1`. Later work is compared against the tag.
 
-Open question for the repository owner: the repository's visibility against the "internal use only" terms on some
-of the live feed's licensed sources — a judgment the tooling should not make.
+Repository visibility (decided 2026-11-18 by the owner): no change for now. The repository stays as it is and the
+licensed live-feed files stay in plain text; the project is not for profit and is not advertised as a data source, so
+the owner judges the exposure low for the time being. The handling of the "internal use only" sources (encryption with
+a dedicated key, or a split) stays on the History Layer Action Ledger as an item to circle back on.
