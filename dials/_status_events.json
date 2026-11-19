@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-18T05:11:00-07:00",
- "last_as_of": "2026-11-18",
- "last_file": "dials/events/2026-11-18.json",
+ "last_run_at": "2026-11-19T05:11:00-07:00",
+ "last_as_of": "2026-11-19",
+ "last_file": "dials/events/2026-11-19.json",
  "status": "ok",
- "error": "No US coupon auction in gate (6-week bill 17 Nov 'in line', no tail figure published for bills; 20y USD 16bn Wed 18 Nov 13:00 ET after run time). Nvidia call language is press-relayed (Kiplinger live blog, SiliconANGLE, Newsquawk) - no transcript read; CNBC call pieces refused. Client_error: AppleInsider (Apple-Samsung LTA), Converge Digest (NVDA call), Share Talk overnight, investinglive Asia wrap; Globe and Mail (Reuters bond-storm column): robots_disallowed; Bloomberg Japan 20y and UST Global primaries not fetched (refused host)."
+ "error": "Client_error: investinglive Apollo-gates explainer, cryptobriefing Moonshot page (KuCoin relay used instead). bankingjournal.aba.com FOMC-minutes page: https->http redirect loop, not fetched (optionspilot/investinglive relays used). Bloomberg Moody's-Nvidia and Iqony pages, CNBC, The Information primaries not fetched (refused/paywalled hosts). No gilt-specific dated result surfaced for 18-19 Nov; JGB Thursday yield levels not printed by any page read (Newsquawk/Saxo give no JGB numbers). 20y auction WI/tail taken from investinglive (tail 0.0bp) - helious.io and bloomingbit do not print a WI."
 }

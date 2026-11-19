@@ -1,0 +1,254 @@
+{
+ "group": "events",
+ "run_at": "2026-11-19T05:11:00-07:00",
+ "run_weekday": "Thu",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Client_error: investinglive Apollo-gates explainer, cryptobriefing Moonshot page (KuCoin relay used instead). bankingjournal.aba.com FOMC-minutes page: https->http redirect loop, not fetched (optionspilot/investinglive relays used). Bloomberg Moody's-Nvidia and Iqony pages, CNBC, The Information primaries not fetched (refused/paywalled hosts). No gilt-specific dated result surfaced for 18-19 Nov; JGB Thursday yield levels not printed by any page read (Newsquawk/Saxo give no JGB numbers). 20y auction WI/tail taken from investinglive (tail 0.0bp) - helious.io and bloomingbit do not print a WI.",
+ "gate": {
+  "since": "2026-11-18T05:11:00-07:00",
+  "note": "New = 18 Nov after ~12:11Z and 19 Nov to ~12:11Z. Tolerance 2 days: 17-18 Nov items not in the 11-17/11-18 files are kept once with late:true. US closes recorded are Wednesday 18 Nov; Thursday 19 Nov Asia levels are closes where the source says close (TAIEX) and otherwise intraday. Run 2026-11-19 05:11 MST (Thu)."
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "notes": "HARD-EVENT CHECK: NO pulled or downsized hyperscaler/registered-ticker deal (the only pulled deals in gate are Moonshot AI's USD 150m Blackwell rental via an Indonesian data centre, scrapped after the Commerce remote-access rule - a private Chinese lab, regulatory cause - and an Apollo USD 2bn sports-finance loan to Manchester City's owner, headline only; the Anthropic Japan IPO tranche came in at 36.1m shares vs 38.5-50m planned but the overall IPO was upsized to USD 107.3bn and priced above range - not a downsized deal in the sweep's sense), NO principal (MSFT/GOOGL/META/AMZN/ORCL) capex cut (query 3 again surfaced only the 28 Oct / 5 Nov Microsoft USD 170bn items - pre-gate), NO US auction tail >= 2bp (20y USD 16bn Wed 18 Nov: high 5.459% = WI 5.459%, tail 0.0bp vs 0.5bp average, b/c 2.63 = average, indirect 60.2% below 63.7% avg, direct 26.7%, dealers 13.1% - 'on the screws', grade C/'in line'), NO new fund gating (the private-credit proration tracker's latest data are Sept-Oct offers, updated 7 Nov), NO memory LTA renegotiation, NO GW deferral. What is new in gate: (1) Wed 18 Nov US close: S&P 500 7,323.63 (-0.23%, fifth straight loss), Nasdaq 24,429.89 (+0.42%), NDX 27,116.26 (+0.42%), Dow 50,198.17 (-1.11%), RUT +0.46%, VIX 24.56 (-3.53%); breadth 236 up/265 down; energy -3.27%, health care -2.20% (HUM -12.98%, UNH -10.21%, ELV -7.63% on the CMS Medicare Advantage audit rule), financials -1.14%, discretionary +1.79%; PANW +9.90%, AKAM +8.34%, CVI -11.18% on a USD 1.25bn secured notes offering; NVDA -2.89% to USD 150.96, fifth straight loss, post-earnings gains fully erased, CRWV -4.1%; UST 2y 4.80% (unch), 10y 5.07% (-3bp), 30y 5.41% (-5bp) - curve flattening preserved by the on-the-screws 20y; DXY 103.80 (+0.29%) then 103.92 Thursday Asia, a 19-month high; euro 1.0960 intraday 19-month low; WTI 83.26 (-3.20%), Brent 91.95 (-1.28%) on a 3.4m bbl EIA build; gold futures 3,728.80 (-3.50%), lowest since Oct 2025. (2) FOMC minutes (27-28 Oct, released 18 Nov 19:00Z): 'almost all participants' judged further hikes 'would likely be appropriate'; 'a couple' said more than 25bp 'could warrant consideration at the next meeting'; some favoured hiking in October (Cook and Hammack dissented for +25bp); a majority noted financial conditions had tightened since September; many called the AI buildout a 'material source of inflation risk'; most said 'AI-related debt had grown rapidly' through 'complex and opaque financing structures', a few that AI exposures were 'increasingly concentrated among a small number of firms', and staff warned 'off-balance-sheet leasing commitments and circular financing arrangements among AI-related firms could amplify losses'. Waller (Wed) called for a 50bp December hike ('shock people'), citing ~3.5% annualised 3m core; Kalshi 91% / CME ~90% for +25bp in December, ~62bp priced over three meetings. (3) Update vs 11-18 on the Nvidia neocloud backstop: commitments fell to USD 32bn from USD 36bn the prior quarter (-4bn q/q, Barchart via Yahoo); Kress on the call: the guarantee 'doesn't exist anymore' if a build stalls, it 'starts' only once the customer has secured financing and installed product, 'the availability of land, power, shell is such a critical part', and Nvidia is 'taking a very strong look in terms of the types of companies that we would want to help'; TechCrunch: the OpenAI PORTS-Pike (Ohio) backstop was reduced to USD 105bn from USD 250bn; Moody's (Wed) lowered Nvidia's outlook to stable from positive - Huang's exit 'credit negative', strategy/financial-policy and governance uncertainty, Aa1 upgrade unlikely 12-18 months; Trump: Blackwell sales to China could be permitted in 2-3 years. (4) Thu 19 Nov Asia: TAIEX -4.40% (-1,768 pts, seventh-largest point drop on record) to 38,426.89, below the 240-day average, TSMC -3.45% to NT$2,100, electronics -4.7%, OTC -7.22%, foreign net selling NT$24.31bn, FSC tightening short-sale restrictions from Friday; President Capital cites tighter AI 'circular financing' conditions and fear that Nvidia will squeeze suppliers' margins; MSCI AxJ -1.7% to a seven-month low, on track for ~-6% on the week (steepest since early March); Nikkei 59,024-59,264 (+0.4%) and KOSPI ~5,055-5,067 flat-to-down in choppy trade; Hang Seng -1.9% (Tencent miss, higher AI spend); Australia Oct employment -43.5k, unemployment 4.9%; AUD 0.6686 10-month low; USD/JPY 159.35-159.48; Ueda again flags further hikes; Japan machinery orders disappointed; Nasdaq futures +1.3%, S&P +0.36% ahead of the Anthropic debut. (5) Anthropic IPO (calendar group, context): priced USD 83 above the 70-78 range, 956.4m primary + 23.6m founder shares, USD 107.3bn including private placement, ~USD 1.5tn fully diluted, gray market +20-26%, retail allocation <20%; the Japan tranche raised ~USD 3bn on 36.1m shares vs 38.5-50m planned (low end of the 3-3.5bn target), attributed by Aizawa's Mitsui to domestic institutions' reduced capacity after Kioxia and SoftBank losses (>40% this quarter). (6) Pulled deals: Moonshot AI scrapped a USD 150m deal to rent Nvidia Blackwell (Ultra B300) access through an Indonesian data centre after this week's US remote-access rule (The Information via KuCoin/Newsquawk 19 Nov; the Commerce interim final rule of 17 Nov, effective on 19 Nov publication, adds licence requirements for advanced chips to Indonesia, Malaysia, Singapore, Thailand and Brazil); Moonshot reportedly re-contracted with another SE Asian cloud. Apollo reportedly abandoned a USD 2bn loan to Manchester City's owner after a Premier League ruling (Newsquawk headline only). (7) Sovereign/flows context from Eiseman 19 Nov: 10y OAT-Bund 147bp Wed close; euro speculative shorts highest in 6+ years; TIC: foreign UST holdings fell in September by the most in six months (China, France), Korea bought a record amount - belongs to flows group. Memory: Google reportedly seeking to buy HBM directly for MediaTek-built chips (procurement, not an LTA renegotiation). Neocloud: CoreWeave co-founder Venturo bought USD 30m face of CRWV 2031 unsecured bonds; Blue Owl preparing USD 513m CMBS on an Amazon-leased NoVa data centre - both financing continues, not pulled.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized (November 2026)",
+   "result": "partial",
+   "note": "Search results were pre-gate (Iqony loan pulled, Bloomberg 3 Nov, refused host; NYC USD 2.6bn->2.3bn GO downsize fetched - dated March 2026). In-gate pulled deals came from the Asia/overnight sweeps: Moonshot AI USD 150m Blackwell rental scrapped (KuCoin relay of The Information 19 Nov, fetched; cryptobriefing client_error) - recorded as a hit, non-hyperscaler, regulatory cause; Apollo-Man City USD 2bn loan abandoned (Newsquawk 19 Nov headline only) - discarded as sports finance with no fetched detail. Anthropic Japan tranche below planned share count (Briefs 18 Nov fetched) recorded as context with the IPO item. No hyperscaler/registered-ticker pull."
+  },
+  {
+   "query": "2. fund gates redemptions (November 2026)",
+   "result": "no hit",
+   "note": "crowdfundedwealth private-credit redemption tracker fetched: published 5 Oct, updated 7 Nov; latest prorations are Aug-Sep offers (OTIC 12.8%, OCIC 29.8%, ADS 33.9%, ASIF 38.2%, HLEND 43.7%, BCRED 49.9%), nothing dated 17-19 Nov. investinglive Apollo-gates explainer client_error; other results are undated BDC/REIT explainers and a March 2026 Fortune piece. No new gating in gate."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI (November 2026)",
+   "result": "no hit",
+   "note": "Results: Microsoft USD 170bn / '-5bn' items (28 Oct call, 456X 5 Nov) - pre-gate, recorded in earlier runs; SemiAnalysis 28% cut (BigGo/Longbridge) - recorded 11-18; Founder's Wire 1 Nov 'Big Tech stops raising capex' - pre-gate. Newsquawk 19 Nov: Soitec raised FY27 capex. No principal cut or digestion language in gate; Nvidia's call carried the opposite ('demand exceeds supply')."
+  },
+  {
+   "query": "4. funding round repriced AI lab (November 2026)",
+   "result": "no hit",
+   "note": "Results are Wikipedia company pages, Isomorphic USD 5bn Series C (17 Nov, recorded 11-18 as an up-round), MegaRobo ~USD 200m Oman round - no repricing or down round dated 18-19 Nov. Anthropic's IPO priced above range (not a repricing)."
+  },
+  {
+   "query": "5. LTA renegotiation memory (November 2026)",
+   "result": "no hit",
+   "note": "Results undated or pre-gate (Baker 'durable memory LTAs', Samsung/SK hynix sold out to 2029, Kioxia 2026 LTA concluded, Edaily Aug 2026 five-year contracts, Morgan Stanley legacy-memory downgrades). Eiseman 19 Nov: Google reportedly seeking direct HBM purchases for MediaTek-built chips - procurement route change, no renegotiation of an existing LTA; discarded as context. Samsung-Apple LTA already recorded 11-18."
+  },
+  {
+   "query": "6. gigawatt deferral data center (November 2026)",
+   "result": "no hit",
+   "note": "Results: Fool 14 Nov Huang 1 GW quote (pre-gate, discarded 11-18), Tokenpost 'DC starts fell 28% in Q3 then rebounded in October' (undated/quarterly data), PJM 12-month study proposal (policy), SemiAnalysis 'stop saying half of 2026 capacity is canceled' (undated rebuttal), Alberta 600m rule and Fink moratorium-recession warning (Eiseman 19 Nov, policy). No GW deferral dated 18-19 Nov. Nvidia's guarantee-only-after-build language (hit 4) is the nearest item: a financing condition, not a deferral."
+  },
+  {
+   "query": "7. Treasury auction tail (20-year November 18 2026)",
+   "result": "hit",
+   "note": "Fetched helious.io 20y page (18:04Z; 5.459% high, b/c 2.63 = avg, indirect 60.2/direct 26.7/dealers 13.1, 'in line', no WI printed), investinglive (WI 5.459%, tail 0.0bp vs 0.5bp avg, grade C), bloomingbit (prior high 5.469%), gokhshtein ('cleared at WI with no tail'), Saxo 19 Nov ('stopped on the screws'). Rio Times prints prior b/c 2.73. Tail 0.0bp - hard-event threshold not met."
+  },
+  {
+   "query": "8. sovereign bond stress (JGB, gilts, Treasuries, EM 18-19 Nov 2026)",
+   "result": "partial",
+   "note": "Search results were undated explainers (tradingeconomics, SSGA, fxstreet 2025). In-gate stress came from the overnight relays: Eiseman 19 Nov (OAT-Bund 147bp, euro 18-month low, record euro shorts, TIC foreign UST holdings down most in six months), Reuters via Yahoo 19 Nov (DXY 103.92 19-month high, AUD 10-month low, MSCI AxJ seven-month low), Rio Times 19 Nov (USD/BRL 5.88 +1.8%, Ibovespa -1.3%). No JGB yield levels printed in any page read (Newsquawk/Saxo give Ueda's hawkish comments and the 20y JGB b/c already recorded 11-18); no gilt-specific result for 18-19 Nov. Recorded within the Taiwan/Asia hit and in notes rather than as a separate sovereign item."
+  },
+  {
+   "query": "cappnotes Closing Look Wednesday November 18 2026",
+   "result": "hit",
+   "note": "Fetched: full index/sector/breadth/yield/commodity table plus FOMC-minutes and Waller lines, 20y auction not mentioned."
+  },
+  {
+   "query": "FOMC minutes November 18 2026 participants hike language reaction",
+   "result": "hit",
+   "note": "Fetched optionspilot (18 Nov 19:15Z, quotes minutes incl. AI-debt and 'circular financing' staff warning) and investinglive (18 Nov 19:03Z, 'almost all', 'a couple' >25bp, Cook/Hammack dissents, 62bp priced over three meetings). ABA Banking Journal redirect loop (https->http) not fetched; federalreserve.gov primary not searched/fetched (refused host)."
+  },
+  {
+   "query": "Nikkei KOSPI JGB yield Thursday November 19 2026 Asia stocks Anthropic IPO",
+   "result": "hit",
+   "note": "Fetched Reuters via Yahoo (19 Nov 06:39Z), Newsquawk equity opening news (07:02Z), Rio Times (04:19Z), Saxo Asia Quick Take 19 Nov, Eiseman ICYMI 19 Nov. TAIEX detail from Focus Taiwan/CNA (19 Nov 08:54Z) and Yahoo TSMC/Commerce-rule page (17 Nov). AP/BNN 'world shares mixed' pages not fetched (Reuters relay sufficient)."
+  },
+  {
+   "query": "neocloud OR data center financing pulled OR delayed OR down round November 18 2026",
+   "result": "hit",
+   "note": "Fetched Barchart via Yahoo 18 Nov 15:13Z (USD 32bn from 36bn), TechCrunch 18 Nov 13:00Z (Kress quotes, PORTS-Pike 250bn->105bn), investinglive Moody's 18 Nov 22:36Z, heygotrade NVDA close. Bloomberg 'Asian DC loan syndication delayed' is 16 Nov (recorded 11-16); Bloomberg Moody's primary refused host; Longbridge Seaport/MS note not fetched."
+  }
+ ],
+ "discarded": [
+  "Apollo reportedly abandons USD 2bn loan to Manchester City's owner after a Premier League financial-regulation ruling (Newsquawk 19 Nov, headline only) - sports finance, regulatory cause, not fetched",
+  "Anthropic IPO pricing: USD 83 (above 70-78), USD 107.3bn incl. private placement, ~1.5tn fully diluted, Nasdaq 'ANT' debut Thu 19 Nov, gray market +20-26%, retail <20% - IPO/calendar group; only the below-plan Japan tranche is noted in the events item",
+  "Microsoft 'cuts AI capex USD 5bn / 2026 capex USD 170bn' (456X 5 Nov, letsdatascience, biztoc) - 28 Oct FQ1 call, pre-gate, recorded in late-Oct runs",
+  "Iqony loan pulled in Europe's junk market (Bloomberg 3 Nov) - pre-gate, refused host",
+  "New York City downsizes GO deal USD 2.6bn -> 2.3bn (Bond Buyer) - March 2026",
+  "Private credit redemption tracker: OTIC 12.8%, OCIC 29.8%, ADS 33.9%, ASIF 38.2%, HLEND 43.7%, BCRED 49.9% prorations (Aug-Sep offers; page updated 7 Nov) - pre-gate data, no new gate",
+  "Fortune 'USD 265bn private credit meltdown' - March 2026",
+  "SemiAnalysis 28% accelerator-capex cut relays (BigGo, Longbridge) - recorded 11-18",
+  "Isomorphic USD 5bn Series C relays; MegaRobo ~USD 200m Oman round - up-rounds, not repricings",
+  "Google reportedly seeking to buy HBM directly for MediaTek-built AI chips (Eiseman 19 Nov) - procurement change, no LTA renegotiation terms",
+  "Samsung Foundry may halt production for some Chinese designers; TSMC/Samsung suspended certain chip shipments to Chinese customers (FT via Newsquawk 19 Nov, headline only) - export-control compliance, folded into the Moonshot item note",
+  "Commerce interim final rule on foundries/packagers (17 Nov, effective 19 Nov publication; licences for advanced chips to Indonesia, Malaysia, Singapore, Thailand, Brazil); TSM -4.26% 17 Nov - pre-gate rule, context for the Moonshot and Taiwan items",
+  "CoreWeave co-founder Venturo buys USD 30m face of CRWV 2031 unsecured bonds; McBee says compute beats repaying high-yield debt (Eiseman 19 Nov) - insider purchase, not a financing event",
+  "Blue Owl preparing USD 513m CMBS on an Amazon-leased Northern Virginia data centre (Eiseman 19 Nov) - new issuance, not pulled",
+  "Palo Alto Networks to buy Applied Compute for USD 4.5bn all-stock; Coherent USD 2bn buyback; CVR Energy USD 1.25bn secured notes (CVI -11.18%) - corporate actions, not event categories",
+  "TIC September: foreign UST holdings fell most in six months (China, France), Korea record buying (Eiseman 19 Nov) - flows/custody group",
+  "Challenger rejects revised A$6.5bn Daiichi Life offer; Japan Tobacco JPY 1.4tn Russia charge; Anther Capital cut USD 3.9bn equity holdings - not event categories",
+  "Alberta 600m data-centre rule; Senate permit-bill grid-upgrade exemption; Texas rate-freeze plan; Fink moratorium/recession warning (Eiseman 19 Nov) - policy, no deferral",
+  "Tencent Q3 miss on higher AI spend (Hang Seng -1.9%), Australia Oct jobs -43.5k / 4.9%, Japan machinery orders miss, Korea-China FTA talks - macro/corporate prints, folded into the Asia item",
+  "Trump: Blackwell sales to China could be permitted in 2-3 years (Newsquawk 19 Nov) - policy comment, folded into the Nvidia update note",
+  "LNG tankers exiting Hormuz dropped over the past week (Eiseman 19 Nov) - standoff group",
+  "Bloomberg 'Asian data center loan syndication delayed' (16 Nov) - already recorded 11-16",
+  "Nvidia Q3 print, SemiAnalysis cut, UST Global pulled loan, Samsung-Apple LTA, JGB 20y tail 0.29 yen, Bank Indonesia hike - already recorded 11-18; only the neocloud-backstop clarification and Moody's outlook are new here"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "UST 20y auction Wed 18 Nov USD 16bn: high 5.459% = WI 5.459%, tail 0.0bp (avg 0.5bp), bid-to-cover 2.63 (= 2.63 avg; prior 2.73), indirect 60.2% (avg 63.7%), direct 26.7% (avg 24.3%), dealers 13.1% (avg 12.0%) - 'on the screws', in line, grade C; prior high 5.469%",
+   "headline": "20-Year Bond Auction, Nov 18, 2026: 5.459% High, In Line / The US Treasury auctions $16B of 20 year bonds at a high yield of 5.459% / 20-Year Treasury Auction Prices On The Screws, Shows Stable Long-End Demand",
+   "claim": "helious.io (18:04Z): USD 16bn 20-year bond, high yield 5.459%, bid-to-cover 2.63 vs 2.63 average, indirect 60.2% (avg 63.7%), direct 26.7% (avg 24.3%), dealers 13.1% (avg 12.0%), verdict 'in line', no WI printed; investinglive (18:04Z): WI 5.459%, tail 0.0bp vs 0.5bp average, 'the better pricing and mixed demand add up to an average auction', grade C; bloomingbit: prior auction high 5.469%; gokhshtein: 'cleared at the when-issued yield with no tail'; Saxo (19 Nov): 'stopped on the screws', preserving the curve-flattening move; Rio Times: prior bid-to-cover 2.73.",
+   "candidate_dial": "B-sovereign (UST auction - no tail)",
+   "source": "helious.io 18 Nov 18:04Z; investinglive 18 Nov 18:04Z; bloomingbit 18 Nov 20:31Z; gokhshtein 18 Nov; Saxo Asia Quick Take 19 Nov; Rio Times 19 Nov",
+   "url": "https://helious.io/news/auc-912810UZ9-2026-11-18/20-year-bond-auction-in-line",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard-event test (US tail >= 2bp) NOT met: tail 0.0bp. Indirect take-down below average and dealers slightly above are the only soft signs; the 30y closed -5bp after the auction and the FOMC minutes. First coupon auction in the sweep since the 11-17 bill; 10y/30y reopenings not in gate.",
+   "other_urls": [
+    "https://investinglive.com/news/the-us-treasury-auctions-16b-of-20-year-bonds-at-a-high-year-at-5-495/",
+    "https://en.bloomingbit.io/feed/news/124744",
+    "https://gokhshtein.com/news/2026-11-18-20-year-treasury-auction-prices-on-the-screws-shows-stable",
+    "https://home.saxo/en-sg/content/articles/macro/asia-market-quick-take--19-november-2026-19112026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "Wed 18 Nov US close: S&P 500 7,323.63 (-0.23%, fifth straight loss), Nasdaq 24,429.89 (+0.42%), Dow 50,198.17 (-1.11%), RUT +0.46%, VIX 24.56 (-3.53%); breadth 236/265; energy -3.27%, health care -2.20% (UNH -10.21%, HUM -12.98%), financials -1.14%; NVDA -2.89% to 150.96 (fifth straight loss, post-earnings gain erased), CRWV -4.1%; UST 2y 4.80% unch, 10y 5.07% (-3bp), 30y 5.41% (-5bp); DXY 103.80 then 103.92 (19-month high); gold -3.5% to 3,728.80 (lowest since Oct 2025); WTI 83.26 (-3.2%); Waller calls for 50bp in December, Kalshi 91% for +25bp",
+   "headline": "Closing Look - Wednesday, November 18, 2026 / Dow Falls 1.1% and Gold Drops 2.9% as Fed Looms",
+   "claim": "cappnotes: S&P 500 7,323.63 (-0.23%, -16.90), Nasdaq Composite 24,429.89 (+0.42%), Nasdaq-100 27,116.26 (+0.42%), Dow 50,198.17 (-1.11%, -561.25), Russell 2000 2,714.31 (+0.46%), VIX 24.56 (-3.53%); decliners 265 vs advancers 236; discretionary +1.79%, tech +0.34%, financials -1.14%, health care -2.20%, energy -3.27%; HUM -12.98%, UNH -10.21%, ELV -7.63% on the proposed CMS Medicare Advantage audit rule; PANW +9.90% (beat, Applied Compute deal), AKAM +8.34%, CVI -11.18% on a USD 1.25bn senior secured notes offering; NVDA -2.89%, fifth straight loss, after the chair said Huang will not return; 2y 4.80% (unch), 10y 5.07% (-3bp), 30y 5.41% (-5bp); DXY 103.80 (+0.29%); WTI 83.26 (-3.20%), Brent 91.95 (-1.28%); gold futures 3,728.80 (-3.50%); Waller said the Fed may need to 'shock people' with a half-point hike in December; Kalshi 91% for +25bp. heygotrade: NVDA closed USD 150.96 (-4.50), CRWV -4.13%. Saxo: S&P fifth straight down session, 2y 4.808 / 10y 5.072 / 30y 5.413, gold lowest since Oct 2025, Nvidia down ~24% this month, Waller cites ~3.5% annualised 3m core. Rio Times: EIA crude +3.4m bbl to 417.8m. Reuters (19 Nov 06:39Z): DXY 103.92 19-month high, EUR 1.0964 near lowest since Apr 2025, CME ~90% for +25bp in December.",
+   "candidate_dial": "C-equity (fifth straight S&P loss; defensives and energy sold while NDX bounced; NVDA post-print reversal)",
+   "source": "cappnotes Closing Look 18 Nov; heygotrade 19 Nov; Saxo Asia Quick Take 19 Nov; Rio Times 19 Nov 04:19Z; Reuters via Yahoo 19 Nov 06:39Z",
+   "url": "https://cappnotes.substack.com/p/closing-look-wednesday-november-18",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Nvidia's after-hours gain (+4-5% Tue night) became a -2.89% close within one session and dragged neoclouds; the Dow loss is health-insurer specific (CMS rule). Treasuries bull-flattened through the minutes and the 20y despite Waller's 50bp call; dollar at a 19-month high with gold -3.5% is the stress tell. SOX not printed by cappnotes.",
+   "other_urls": [
+    "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-november-19-2026/",
+    "https://home.saxo/en-sg/content/articles/macro/asia-market-quick-take--19-november-2026-19112026",
+    "https://www.riotimesonline.com/global-economy-briefing-november-19-2026/",
+    "https://finance.yahoo.com/markets/stocks/articles/stocks-rise-anthropic-ipo-pricing-015339932.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "FOMC minutes (27-28 Oct, released Wed 18 Nov): 'almost all' see further hikes 'likely appropriate'; 'a couple' say more than 25bp 'could warrant consideration' in December; some favoured hiking in October (Cook, Hammack dissented for +25bp); majority: financial conditions tightened since September; many: AI buildout a 'material source of inflation risk'; most: 'AI-related debt had grown rapidly' via 'complex and opaque financing structures'; staff: 'off-balance-sheet leasing commitments and circular financing arrangements among AI-related firms could amplify losses'",
+   "headline": "Fed Minutes: 'Almost All' Officials Saw More Hikes Ahead, a Couple Floated More Than 25 bp for December, and AI Debt Got Its Own Warning / FOMC Minutes: A couple of participants noted a hike of more than 25 bps could warrant consideration in December",
+   "claim": "optionspilot (18 Nov 19:15Z): the minutes say 'further action to raise the target range for the federal funds rate ... would likely be appropriate'; 'a couple of participants' said an increase above 25bp 'could warrant consideration at the next meeting'; most participants said 'AI-related debt had grown rapidly' and pointed to 'complex and opaque financing structures'; a few said 'AI-related exposures were becoming increasingly concentrated among a small number of firms'; staff warned that 'off-balance-sheet leasing commitments and circular financing arrangements among AI-related firms could amplify losses'; markets fully price +25bp on 8-9 Dec with low odds of 50bp. investinglive (19:03Z): 'almost all participants' judged further hikes likely appropriate under baseline outlooks; some favoured 25bp in October (only Cook and Hammack dissented); a few who wanted to hike said a hold was acceptable if markets understood more tightening was likely; a majority noted financial conditions had tightened since September; many called the AI buildout a 'material source of inflation risk'; ~62bp of hikes priced over the next three meetings, ~27bp for December. cappnotes: Waller - Fed may need to 'shock people' with a half-point hike in December.",
+   "candidate_dial": "B-Fed/sovereign (hiking bias) and C-credit (official 'circular financing' / off-balance-sheet AI leverage warning)",
+   "source": "optionspilot 18 Nov 19:15Z; investinglive 18 Nov 19:03Z; cappnotes 18 Nov; Saxo 19 Nov; Rio Times 19 Nov",
+   "url": "https://optionspilot.app/blog/fomc-minutes-october-2026-almost-all-see-further-rate-hikes-couple-floated-more-than-25-bp-ai-debt-warning-spy-straddle-vix-options-nov-18-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Recorded as an event because the staff financial-stability language names the exact mechanism the sweep tracks (circular financing, off-balance-sheet leases, concentration) in an official document. Quotes are from two relays, not the federalreserve.gov text (refused host; ABA Banking Journal redirect loop). No post-release yield reaction isolated: 10y -3bp / 30y -5bp on the day.",
+   "other_urls": [
+    "https://investinglive.com/central-banks/fomc-minutes-a-couple-of-participants-noted-a-hike-of-more-than-25-bps-could-warrant-consideration-in-december/",
+    "https://cappnotes.substack.com/p/closing-look-wednesday-november-18"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "Update vs 11-18: Nvidia neocloud backstop clarified and shrinking - commitments USD 32bn vs 36bn prior quarter (-4bn q/q); Kress: the guarantee 'doesn't exist anymore' if a build stalls and 'starts' only after the customer secures financing and installs product, 'land, power, shell' critical, Nvidia 'taking a very strong look' at which companies to help; OpenAI PORTS-Pike backstop cut to USD 105bn from 250bn; Moody's lowers Nvidia outlook to stable from positive (Huang exit 'credit negative'); NVDA -2.89%, CRWV -3.5 to -4.1%, IREN -2.4%, NBIS gain cut to ~1%",
+   "headline": "Nvidia Shrinks Neocloud Backing to $32 Billion as CoreWeave and Nebius Rallies Fade Fast / Nvidia clarifies when it will - and won't - keep financing neoclouds / Moody's cuts Nvidia outlook to stable, saying Huang's exit clouds strategy and policy",
+   "claim": "Barchart via Yahoo (18 Nov 15:13Z): Nvidia's financing commitments to neoclouds fell to USD 32bn from USD 36bn the prior quarter; they activate only after a provider secures its own financing and brings capacity online, and delayed projects forfeit support; Kress framed future support as 'disciplined and selective'; CRWV -3.5%, IREN -2.4%, NBIS cut a ~4% gain to ~1%. TechCrunch (18 Nov 13:00Z): Kress - 'what we are indicating in our statement there is that is when our guarantee starts'; if a project stalls the guarantee 'doesn't exist anymore'; 'the availability of land, power, shell is such a critical part of the whole structure'; Nvidia is 'taking a very strong look in terms of the types of companies that we would want to help in terms of the financing'; guaranteeing a loan does not mean Nvidia provides the financing; the OpenAI PORTS-Pike (Ohio) backstop was reduced to USD 105bn from USD 250bn; Kress called it a clarification of existing terms not previously disclosed, not a policy change. investinglive (22:36Z): Moody's lowered Nvidia's outlook to stable from positive, 'the resignation of chief executive Jensen Huang is credit negative', citing uncertainty over strategy and financial policies, possible effects on AI partnerships and governance/operational weaknesses including export controls; no near-term upgrade. Newsquawk 19 Nov: Nvidia 'wiped out its post-earnings gains'; Trump says Blackwell sales to China could be permitted in 2-3 years.",
+   "candidate_dial": "C-credit (neocloud backstop tightening - conditional guarantees, smaller commitment) / C-capex",
+   "source": "Barchart via Yahoo 18 Nov 15:13Z; TechCrunch 18 Nov 13:00Z; investinglive 18 Nov 22:36Z; heygotrade 19 Nov; Newsquawk 19 Nov 07:02Z",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-shrinks-neocloud-backing-32-151346332.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Extends the 11-18 item: yesterday's file had the USD 32bn figure and the funding-contingent language; new today are the prior-quarter comparison (36bn, so the commitment shrank), the 'doesn't exist anymore' wording, the PORTS-Pike 250bn->105bn reduction and the Moody's outlook cut. Not a capex cut and not a pulled deal, but it is the principal narrowing its credit support for the weakest buyers - the same mechanism SemiAnalysis cited. The Seaport/Morgan Stanley CoreWeave note (Longbridge) and Bloomberg Moody's primary were not fetched.",
+   "other_urls": [
+    "https://techcrunch.com/2026/11/18/nvidia-clarifies-when-it-will-and-wont-keep-financing-neoclouds/",
+    "https://investinglive.com/stocks/moody-s-cuts-nvidia-outlook-to-stable-saying-huang-s-exit-clouds-strategy-and-policy/",
+    "https://www.newsquawk.com/headlines/newsquawk-daily-european-equity-opening-news---19th-november-2026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "Thu 19 Nov Asia: TAIEX -4.40% (-1,768 pts, seventh-largest point drop on record) to 38,426.89, below its 240-day average; TSMC -3.45%; electronics -4.7%, OTC -7.22%; foreign net selling NT$24.31bn; FSC tightens short-selling from Friday; MSCI AxJ -1.7% to a seven-month low (~-6% w/w, steepest since early March); Hang Seng -1.9%; Nikkei/KOSPI flat in choppy trade; DXY 103.92 19-month high, EUR 1.0960 19-month low, AUD 0.6686 10-month low; USD/BRL 5.88 (+1.8%); Australia jobs -43.5k / 4.9%",
+   "headline": "Taiwan stocks plunge 1,768 points, 7th-largest closing drop / Asian stocks fail to get a lift from Anthropic's IPO pricing / Taiwan sell-off sends Asian stocks to 7-month low",
+   "claim": "Focus Taiwan/CNA (19 Nov 08:54Z): TAIEX closed down 1,768.02 points (4.40%) at 38,426.89, below 40,000 and the 240-day average (~39,368), intraday low 38,259.70; TSMC -NT$75 (3.45%) to NT$2,100; electronics -4.7%, semis -4.29%, OTC -7.22%; foreign institutions net sold NT$24.31bn; President Capital's Li Fang-kuo cites uncertainty over supply-chain profit dynamics, tighter AI 'circular financing' conditions and the US midterms, and fear that Nvidia will adopt stricter cost controls after the executive changes, squeezing Taiwan suppliers' margins. Newsquawk (07:02Z): Taiwan's FSC announced stabilisation measures including tighter short-selling restrictions effective Friday; Nikkei edged higher after swinging, KOSPI flip-flopped around 5,000, Hang Seng lower on Tencent's miss and higher AI spend; Ueda continued to flag further hikes. Reuters via Yahoo (06:39Z): Taipei -4.4%, MSCI AxJ -1.7% to a seven-month low and set for a nearly 6% weekly drop, steepest since early March; DXY +0.1% at 103.92, a 19-month high; EUR 1.0964 near its lowest since Apr 2025; AUD 0.6686 10-month low; USD/JPY 159.48; Nasdaq futures +1.3%. Rio Times 01:24Z board: Nikkei 59,264 (+0.41%), Hang Seng 22,852 (-1.90%), KOSPI 5,055 (-0.24%), USD/BRL 5.8818 (+1.77%), Ibovespa -1.34%. Saxo: Nikkei 59,024, KOSPI 5,067, Hang Seng 23,295, USD/JPY 159.35.",
+   "candidate_dial": "C-equity (AI supply-chain stress - Taiwan) / B-sovereign (EM FX: dollar 19-month high, AUD/BRL)",
+   "source": "Focus Taiwan 19 Nov 08:54Z; Newsquawk 19 Nov 07:02Z; Reuters via Yahoo 19 Nov 06:39Z; Rio Times 19 Nov 04:19Z; Saxo 19 Nov",
+   "url": "https://focustaiwan.tw/business/202611190016",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Not one of the eight sweep categories by name, but the largest single-session AI-chain equity drop in the current leg with a regulator short-sale curb - recorded as sovereign/EM-and-equity stress. Thursday levels for Nikkei/KOSPI/HSI are intraday and differ by source; TAIEX is a close. No JGB or gilt yield levels were printed by any page read.",
+   "other_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/stocks-rise-anthropic-ipo-pricing-015339932.html",
+    "https://www.newsquawk.com/headlines/newsquawk-daily-european-equity-opening-news---19th-november-2026",
+    "https://www.riotimesonline.com/global-economy-briefing-november-19-2026/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "Moonshot AI scraps USD 150m deal to rent Nvidia Blackwell (Ultra B300) access through an Indonesian data centre after this week's US remote-access rule; reportedly re-contracts with another SE Asian cloud (The Information via KuCoin/Newsquawk) - pulled compute deal, private Chinese lab, regulatory cause",
+   "headline": "China's Moonshot AI has reportedly scrapped its USD 150mln deal to rent access to NVIDIA's Blackwell Ultra B300 chips through an Indonesian data centre / Moonshot AI Cancels $150 Million Nvidia Chip Rental Deal Amid U.S. Export Restrictions",
+   "claim": "KuCoin (19 Nov 02:55Z, relaying ChainCatcher/The Information, two sources): Moonshot AI cancelled a USD 150m contract to lease Nvidia Blackwell computing power through a data centre in Indonesia after new US regulations 'restricting Chinese companies' remote access to advanced chips' announced this week; it has a replacement Blackwell Ultra B300 contract with a different Southeast Asian cloud provider. Newsquawk (19 Nov): same report, headline only. Context (Yahoo 17 Nov): the Commerce interim final rule adds licence requirements for advanced chips sent to Indonesia, Malaysia, Singapore, Thailand and Brazil and tightens foundry/packager checks, effective on its 19 Nov publication; Newsquawk 19 Nov headlines say TSMC and Samsung suspended certain shipments to Chinese customers (FT) and Samsung Foundry may halt production for some Chinese designers (unverified).",
+   "candidate_dial": "C-capex (pulled compute-rental deal - export-control driven, non-hyperscaler)",
+   "source": "KuCoin flash 19 Nov 02:55Z (The Information via ChainCatcher); Newsquawk 19 Nov; Yahoo/Commerce rule 17 Nov",
+   "url": "https://www.kucoin.com/news/flash/moonshot-ai-cancels-150m-nvidia-chip-rental-deal-amid-u-s-export-restrictions",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Fails the hard-event definition (not a hyperscaler or registered ticker; cause is regulation, not demand or financing) and the lab reportedly replaced the capacity elsewhere. Recorded because it is the only outright cancelled deal dated in gate and because it pairs with the Taiwan sell-off and the 11-16 Malaysia DC-loan syndication delay as SE-Asia compute-channel friction. The Information primary and cryptobriefing (client_error) not read.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/chinas-moonshot-ai-has-reportedly-scrapped-its-usd-150mln-deal-to-rent-access-to-nvidias-nvda-blackwell-ultra-b300-chips-through-an-indonesian-data-center-the-information-reports-citing-sources",
+    "https://finance.yahoo.com/markets/stocks/articles/tsmc-stocks-fall-4-26-190103464.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "Anthropic IPO Japan tranche below plan: 36.1m Class A shares vs 38.5-50m planned, ~USD 3bn at the low end of the 3-3.5bn target, attributed to Japanese institutions' reduced capacity after Kioxia/SoftBank losses (>40% this quarter) - while the overall IPO priced at USD 83 above the 70-78 range for a record USD 107.3bn (calendar-group context)",
+   "headline": "Anthropic pulls in roughly $3 billion from Japan in IPO slice / Anthropic IPO Raises $3 Billion in Japan, Reaching Lower End of Fundraising Range",
+   "claim": "Briefs (18 Nov, relaying Bloomberg): the Japan tranche sold 36.1m Class A shares at USD 83, below the planned 38.5-50m, raising about USD 3bn at the low end of the expected 3-3.5bn, ~3.7% of the deal; Aizawa Securities' Ikuo Mitsui said pressure on Kioxia and SoftBank Group positions (both down over 40% this quarter) may have 'reduced investors' capacity' to buy; overall Anthropic issued 956.4m shares plus 23.6m founder shares for USD 107.3bn including a private placement. Newsquawk (19 Nov): regulatory filing confirms 36.1m shares at USD 83, below the planned 38.5-50m and the USD 3-3.5bn target. Reuters via Yahoo: priced at USD 83 above range, raised USD 81bn in the IPO proper, ~USD 1.5tn fully diluted, first trade Thursday. Eiseman: gray market +20-26%, retail allocation expected below 20%, institutional demand several times the offer.",
+   "candidate_dial": "C-equity (issuance absorption - a downsized regional tranche inside an upsized record IPO)",
+   "source": "Briefs 18 Nov (Bloomberg); Newsquawk 19 Nov; Reuters via Yahoo 19 Nov; Eiseman ICYMI 19 Nov",
+   "url": "https://www.briefs.co/news/anthropic-pulls-in-roughly-3-billion-from-japan-in-ipo-slice/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The IPO itself belongs to the calendar group; this item records only the one piece that reads as an events category - a tranche sized below plan with a stated capacity reason (Japanese tech losses). It does NOT meet the hard-event definition: the deal as a whole was upsized and priced above range. First-day trading outcome after run time.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/newsquawk-daily-european-equity-opening-news---19th-november-2026",
+    "https://zackeiseman.substack.com/p/icymi-on-november-19th-2026"
+   ]
+  }
+ ]
+}

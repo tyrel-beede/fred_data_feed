@@ -1,8 +1,8 @@
 {
  "group": "standoff",
- "last_run_at": "2026-11-18T05:11:00-07:00",
- "last_as_of": "2026-11-18",
- "last_file": "dials/standoff/2026-11-18.json",
+ "last_run_at": "2026-11-19T05:11:00-07:00",
+ "last_as_of": "2026-11-19",
+ "last_file": "dials/standoff/2026-11-19.json",
  "status": "partial",
- "error": "brent.m2.settle (Feb-27) for Tue 17 Nov null: cappnotes, Weekend Spread, DTN, MarketScreener print front month only; Bloomberg/Rigzone gives only an approximate prompt spread (~2.80 backwardation), not a Feb-27 settle. dated_brent.premium null: no Platts/Argus relay dated 17-18 Nov (only 'OSPs cut', no figure). hormuz.holding_vessels unreachable: straits.live briefs 2026-11-17 and 2026-11-18 both client_error. war_risk null: no dated 17-18 Nov quote (search returned June 2026 and undated explainers). td3c null: no Baltic print surfaced. ofac.iran_actions null: no 17-18 Nov OFAC Iran action surfaced by search; not read. EU Defence FAC 17 Nov Aspides/escort outcome not found (EEAS page surfaced is 12 May 2026). ADNOC L&S vessel unnamed in all sources; whether it is distinct from TARA GAS unconfirmed - confirmed_advisories recorded as 2 on that reading. Unreachable: CNN (robots), NPR (robots), Al Arabiya, Doha News, straits.live (client_error); Khaleej 18 Nov live page served an unrelated article."
+ "error": "brent.m2.settle (Feb-27) for Wed 18 Nov null: cappnotes, DTN, Rigzone/Bloomberg, financefeeds print front month only and no prompt-spread figure this run (only Brent-WTI 8.93). dated_brent.premium null: no Platts/Argus relay dated 18-19 Nov. war_risk null and td3c null: no dated 18-19 Nov quote (search returned Oct 2026 and undated explainers). Fetch failures: Khaleej Times live 19 Nov client_error; newsdrum.in summit article client_error; time.com summit piece server error; Al Jazeera 19 Nov Iran liveblog and APEC liveblog returned header/summary only (no timed entries). hormuz.now/oil was fetched before its URL was search-surfaced (provenance block on first try; re-fetched after a surfacing search - data recorded from the second fetch). Known refused hosts not attempted: CNN, NPR, Al Arabiya, Doha News, Bloomberg, CNBC. straits.live 18 Nov brief WAS reachable this run (holding_vessels 43)."
 }
