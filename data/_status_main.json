@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-18T21:20:55Z",
+ "run_utc": "2026-11-19T03:50:59Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -63,7 +63,6 @@
   "cftc:ty",
   "cftc:tn",
   "cftc:us",
-  "cftc:wn",
   "cftc:vx",
   "cftc_disagg:gc",
   "cftc_disagg:cl",
@@ -154,8 +153,7 @@
   "breadth",
   "eia"
  ],
- "failed": {},
- "prices_stale": [
-  "^SKEW:2026-11-17"
- ]
+ "failed": {
+  "cftc:wn": "IncompleteRead: IncompleteRead(116214 bytes read)"
+ }
 }
