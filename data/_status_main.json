@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-20T03:42:56Z",
+ "run_utc": "2026-11-20T21:00:13Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -157,15 +157,6 @@
   "options:ORCL": "HTTPError: HTTP Error 403: Forbidden"
  },
  "prices_stale": [
-  "META:2026-11-18",
-  "GEV:2026-11-18",
-  "VRT:2026-11-18",
-  "ANET:2026-11-18",
-  "CRWV:2026-11-18",
-  "NBIS:2026-11-18",
-  "SPCX:2026-11-18",
-  "XLC:2026-11-18",
-  "XLRE:2026-11-18",
-  "MTUM:2026-11-18"
+  "^SKEW:2026-11-19"
  ]
 }
