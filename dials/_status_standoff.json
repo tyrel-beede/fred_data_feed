@@ -1,8 +1,8 @@
 {
  "group": "standoff",
- "last_run_at": "2026-11-19T05:11:00-07:00",
- "last_as_of": "2026-11-19",
- "last_file": "dials/standoff/2026-11-19.json",
+ "last_run_at": "2026-11-20T05:11:00-07:00",
+ "last_as_of": "2026-11-20",
+ "last_file": "dials/standoff/2026-11-20.json",
  "status": "partial",
- "error": "brent.m2.settle (Feb-27) for Wed 18 Nov null: cappnotes, DTN, Rigzone/Bloomberg, financefeeds print front month only and no prompt-spread figure this run (only Brent-WTI 8.93). dated_brent.premium null: no Platts/Argus relay dated 18-19 Nov. war_risk null and td3c null: no dated 18-19 Nov quote (search returned Oct 2026 and undated explainers). Fetch failures: Khaleej Times live 19 Nov client_error; newsdrum.in summit article client_error; time.com summit piece server error; Al Jazeera 19 Nov Iran liveblog and APEC liveblog returned header/summary only (no timed entries). hormuz.now/oil was fetched before its URL was search-surfaced (provenance block on first try; re-fetched after a surfacing search - data recorded from the second fetch). Known refused hosts not attempted: CNN, NPR, Al Arabiya, Doha News, Bloomberg, CNBC. straits.live 18 Nov brief WAS reachable this run (holding_vessels 43)."
+ "error": "dated_brent.premium null: no Platts/Argus relay dated 19-20 Nov (hormuz.now/oil still carries IEA 'around $93' from 13 Nov). war_risk.premium_pct_hull null: only dated figure surfaced is acting Navy Secretary Hung Cao's unverified '$64m per crossing' from 17 Nov (pre-gate, Al Jazeera/Yahoo 18 Nov) and S&P's July 7.5-10% - no 19-20 Nov hull quote. td3c null: no Baltic print in DTN, Rigzone/Bloomberg, financefeeds, hormuz.now or straits.live. Fetch failures: newsy-today 'tanker Phoenix hit near Oman' client_error (vessel name for UKMTO 212 therefore unconfirmed); Haaretz 19 Nov Netanyahu 4-7 day campaign robots_disallowed (Times of Israel relay used); thehill.com war-powers vote client_error (Middle East Monitor/Anadolu used). ABC liveblog surfaced for 'Bahrain reports Iranian attack' but the retrieved page was last updated 15 Nov - no 19-20 Nov Bahrain attack confirmed; Iran International liveblog for 20 Nov not surfaced by search. Times of Israel 19 Nov liveblog read to 100k chars only (Baghaei 'fraudulent' entry headline captured, body not). Known refused hosts not attempted: CNN, NPR, Al Arabiya, Doha News, Bloomberg direct, CNBC. No rule slips this run: every fetch followed a surfacing search."
 }

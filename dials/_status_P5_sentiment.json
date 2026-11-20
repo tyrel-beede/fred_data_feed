@@ -1,8 +1,8 @@
 {
  "group": "P5_sentiment",
- "last_run_at": "2026-11-13T05:11:00-07:00",
- "last_as_of": "2026-11-12",
- "last_file": "dials/flows/2026-11-13.json",
+ "last_run_at": "2026-11-20T05:11:00-07:00",
+ "last_as_of": "2026-11-19",
+ "last_file": "dials/flows/2026-11-20.json",
  "status": "partial",
- "error": "CBOE total/equity put/call not printed for the 2026-11-12 session (thetrading.tools lags a session). VIX9D, VIX6M and VIX1Y not printed on the thetrading.tools term-structure page (VIX9D taken from the repo price file only). SKEW web page prints the latest close only, no history."
+ "error": "CBOE total/equity put/call not printed for the 2026-11-18 and 2026-11-19 sessions (thetrading.tools stops at 11-17; Cboe daily market statistics page returned PROVENANCE_REQUIRED after a redirect, not retried). VIX9D/VIX6M/VIX1Y not printed on the thetrading.tools term-structure page (VIX9D from repo price file only). SKEW web page prints the latest close only (11-13..11-18 from repo). Nov VIX future expired 11-18, no Nov settlement printed. Repo FRED VIXCLS/VXVCLS run through 11-18 only."
 }

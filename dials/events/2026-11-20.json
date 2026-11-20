@@ -1,0 +1,220 @@
+{
+ "group": "events",
+ "run_at": "2026-11-20T05:11:00-07:00",
+ "run_weekday": "Fri",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Proxy_rejected: tomshardware SoftBank-turbine URL (exceeds max fetchable length; item is 12 Nov, pre-gate anyway). Server_error: 247wallst Asia-close page, ajupress KOSPI/TAIEX page. Client_error: fxstreet 20 Nov rates note. Digitimes 'Taiwan AI suppliers report steady orders' page: IP blocked (access denied), not read. Bloomberg Google-prepaid-bond primary, The Information briefing, CNBC Anthropic day-two pages not fetched (refused hosts) - FourWeekMBA and Longbridge/Zhitong relays used. Thursday 10y close differs by source: cappnotes 5.04% (-3bp) vs Saxo 5.00% (-13bp) - both recorded. No gilt or OAT level dated 19-20 Nov surfaced (tradingeconomics/ideal-investisseur pages undated or 17 Nov). Friday TAIEX is a close (Focus Taiwan); Nikkei/KOSPI/JGB are intraday (investinglive 04:39Z, Saxo).",
+ "gate": {
+  "since": "2026-11-19T05:11:00-07:00",
+  "note": "New = 19 Nov after ~12:11Z and 20 Nov to ~12:11Z. Tolerance 2 days: 18-19 Nov items not in the 11-18/11-19 files are kept once with late:true. US closes recorded are Thursday 19 Nov; Friday 20 Nov Asia levels are closes where the source says close (TAIEX) and otherwise intraday. Run 2026-11-20 05:11 MST (Fri)."
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized",
+  "fund gates redemptions",
+  "capex cut OR deferral OR digestion AI",
+  "funding round repriced AI lab",
+  "LTA renegotiation memory",
+  "gigawatt deferral data center",
+  "Treasury auction tail",
+  "sovereign bond stress"
+ ],
+ "notes": "HARD-EVENT CHECK: ONE registered-ticker deal POSTPONED but not pulled or downsized - two Alphabet-funded prepaid energy bond deals totalling USD 3bn (Southeast Energy Authority / Salt River Project, Goldman Sachs lead, prelim docs posted 16 Nov) were postponed Thu 19 Nov on 'lackluster investor demand amid market volatility' (Bloomberg via FourWeekMBA and Longbridge/Zhitong); Goldman source says the deals are 'still proceeding', Allspring expects relaunch 'soon after the holidays'; Columbia Threadneedle: 'the spreads some investors ultimately want do not align with the levels the issuer is willing to offer'. This is the first hyperscaler-linked (GOOGL) financing in the sweep to be delayed for demand reasons - it fails the strict 'pulled or downsized' test (no size cut, no withdrawal) but is the closest reading yet and is recorded as a hit for C-credit/C-capex. NO principal capex cut (query 3 surfaced only the 28 Oct Microsoft USD 170bn item, the BofA FMS '52% expect a hyperscaler cut' survey and the SemiAnalysis 28% cut - all pre-gate or already recorded). NO US auction tail >= 2bp: the USD 19bn 10y TIPS reopening Thu 19 Nov stopped at 2.903% real (highest since 2002) vs WI 2.90%, tail 0.3bp vs 1.9bp prior and 1.9bp six-auction average, b/c 2.43 (avg 2.39, prior 2.24), indirect 68.6% (avg 63.8%), direct 25.4%, dealers 6.0% (avg 11.3%) - 'clean', 'near on-the-screws', in line. NO new fund gating (query 2 returned explainers, the SS&C GlobeOp forward-redemption indicator release of 20 Nov not fetched, and the crowdfundedwealth tracker already recorded 11-19). NO memory LTA renegotiation (results pre-gate: SK hynix 14 LTAs sold out to 2029, AMD HBM LTAs 3 Nov, Apple-Samsung 17 Nov already recorded). NO GW deferral dated in gate (the SoftBank USD 3.7bn write-off cancelling 13 GW of reserved gas-turbine orders is 12 Nov, pre-gate, discarded; the Ohio-Illinois consumer-watchdog request to delay the PJM capacity auction is policy). What is new in gate: (1) Thu 19 Nov US close - sixth straight S&P loss, longest streak since 2024: S&P 500 7,175.83 (-2.02%), Nasdaq 23,879.20 (-2.25%, lowest close since 14 Apr, after +2% early), NDX 26,517.05 (-2.21%), Dow 49,097.06 (-2.19%, -1,101 pts, one of 30 higher), RUT 2,655.11 (-2.18%), VIX 28.44 (+15.8%, 29.13 intraday, highest since March per CNBC via stocktitan); breadth 37 up / 464 down, all 11 sectors lower (discretionary -2.79%, comm services -2.67%, tech -1.90%, energy -0.65%); GOOGL -3.46%, AMZN -3.87%, NVDA -3.30% (erasing +4.7% early; Daiwa target 185 from 245; shareholder class action vs Huang), MSFT -1.97%, AVGO -2.09%, MU -2.10% (after +7.8% early), CRWV -6.10% (after +10.5% early, -16% in November), NBIS -9.39%, AMD -7.72% on a Hunterbrook short report (China exposure); UST 2y 4.76% (-4bp), 10y 5.04% (-3bp), 30y 5.40% (-1bp) per cappnotes (Saxo: 4.73/5.00/5.38, -12/-13/-9bp); HY OAS 347bp (+4), IG 93bp (+1); DXY 103.88 near 19-month high, USD/MXN +1.45%, USD/BRL 5.934 (+1.15%), USD/JPY 159.6; WTI 83.21 (lowest since 26 Aug), gold 3,628.30 (-3.04%, -8% w/w), silver -4.75%, copper -1.34% (eight-month low, -9.5%); Philly Fed 6.3 from 20.9 (new orders -0.4, prices paid 58.2), claims 203k, LEI -0.3%; Kalshi 89.3% for +25bp 9 Dec, 6.3% for +50bp; CME 96.4%. (2) Anthropic 'ANT' debut: opened 11:48 ET at USD 111.50 (+34%), high 114.99, low 92.72, closed 97.17 (+17.07% vs 83), ~USD 1.76-1.8tn fully diluted at the close vs ~2tn at the open; USD 81.3bn raised, largest IPO on record, plus USD 26bn of conditional purchases by Google, Nvidia, Broadcom, Microsoft and others at the IPO price; after hours -4.70% to 92.60 (below the day low), reportedly on Apple AI-agent plans (Bloomberg, refused host); 180-day lock-ups, settlement Fri 20 Nov; El-Erian: the Nasdaq dip during the surge was 'about making room for it'. (3) Fri 20 Nov Asia - 'Red Friday': TAIEX -6.23% (-2,393.60 pts, fifth-largest intraday loss) to a 36,033.29 close, worst week since 1991 (Thu -4.40% + Fri -6.23%), turnover NT$877bn, FSC short-sale curb (no shorting below prior close for stocks down >=3.5%) in force from today; KOSPI -5.1 to -5.2% (KOSDAQ -4.9%), Samsung and SK hynix each >-6%; Nikkei -4.7 to -5.1% (~-2,820 pts to ~56,620, TOPIX -3.5%), SoftBank, Advantest, Kioxia lead declines, Tokyo closed Monday; Hang Seng -1.9 to -2.1%, Shanghai -1.6%; JGB 10y -4bp to ~2.80%; Japan Oct core CPI 2.2% vs 2.3% forecast (miss on all three measures), December BoJ hike to 1.50% still base case; USD/JPY 159.2 (intervention talk near 160), EUR ~1.0980-1.0990 19-month low, AUD 0.6660 (-1.4% w/w, below 2026 low), USD/CNH ~6.70 one-month low; PBOC LPR unchanged 18th month; SocGen: 'peak growth phase' may have passed; UBP: 'collapse in confidence in the AI investment thesis'; Nasdaq-100 futures -0.7%, S&P -0.3% at 04:39Z, ANT -6 to -8% pre-market per CNBC/World Today headlines (not fetched). (4) US House committee: ~880,000 Nvidia and AMD AI-chip shipments to Chinese firms approved over six months (policy, folded into Asia note). Sovereign: no gilt/OAT level dated in gate (OAT-Bund 156.3bp per ideal-investisseur is 17 Nov); UST curve bull-steepened/flattened modestly into the equity rout with the TIPS reopening clean; JGB 10y down with USTs.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized (November 19 2026)",
+   "result": "hit",
+   "note": "FourWeekMBA (19 Nov, relaying Bloomberg) fetched: two Alphabet-funded prepaid energy deals totalling USD 3bn postponed on lacklustre demand; Longbridge/Zhitong (19 Nov 23:46Z) fetched: Goldman source 'still proceeding', Columbia Threadneedle and Allspring quotes, prior 4 Nov deal priced 138bp/111bp over AAA. Bloomberg primary and The Information briefing refused hosts. Other results pre-gate (NYC GO downsize March 2026) or off-topic."
+  },
+  {
+   "query": "2. fund gates redemptions (November 2026)",
+   "result": "no hit",
+   "note": "Results: investinglive Apollo-gates explainer (undated, client_error 11-19), whitesecuritieslaw / angelinvestorsnetwork BDC-gate explainers (undated), SS&C GlobeOp Forward Redemption Indicator (20 Nov 07:00 ET release, hedge-fund redemption indicator, not fetched - not a gating event), crowdfundedwealth tracker (recorded 11-19, Aug-Sep prorations). No new gate or suspension dated 19-20 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI (November 19 2026)",
+   "result": "no hit",
+   "note": "Results: Microsoft USD 170bn (28 Oct, pre-gate), BofA FMS '52% of fund managers expect a hyperscaler to cut spending' (cryptobriefing/pomegra relays of the 17 Nov FMS - survey, flows group), SemiAnalysis 28% cut (recorded 11-18), Tesla capex reversal (Oct), Herve Cuviliez Market News 18 Nov (not fetched). No principal cut or digestion language in gate."
+  },
+  {
+   "query": "4. funding round repriced AI lab (November 2026)",
+   "result": "no hit",
+   "note": "Results are Wikipedia company pages (Cursor, AI21, Cognition), aggregator trackers (Work Insiders Nov 2026: 371 rounds USD 38.2bn; Wealth Engine), aiweekly 5 Nov. No down round or repricing dated 19-20 Nov. Anthropic traded +17% on debut then -4.7% after hours - public-market repricing, recorded with the debut item."
+  },
+  {
+   "query": "5. LTA renegotiation memory (November 2026)",
+   "result": "no hit",
+   "note": "Results pre-gate/undated: TrendForce DRAM bulletin 4 Nov, SK hynix 14 LTA customers sold out to 2029 (28 Oct), AMD HBM LTAs (3 Nov), Apple-Samsung LTA (17 Nov, recorded 11-18), Tokenpost analysts debate how LTAs handle demand shifts (undated), WK 2027 memory outlook (undated). No renegotiation of an existing LTA in gate. MU -2.10% Thursday after +7.8% early; Samsung/SK hynix >-6% Friday - price action only."
+  },
+  {
+   "query": "6. gigawatt deferral data center (November 2026)",
+   "result": "no hit",
+   "note": "Results: SoftBank USD 3.7bn write-off cancelling 13 GW of reserved gas-turbine orders (tomshardware URL proxy_rejected; Yahoo/tikr/247wallst relays dated 12 Nov - pre-gate, discarded), Fool 14 Nov Huang 1 GW quote (pre-gate), Bloomberg Asian DC loan delay (16 Nov, recorded 11-16), zerohedge/techradar 'half of 2026 DCs cancelled or delayed' (recorded earlier), bizpacreview 19 Nov consumer watchdogs want PJM auction delayed (policy, not a deferral). No GW deferral dated 19-20 Nov."
+  },
+  {
+   "query": "7. Treasury auction tail (10-year TIPS reopening November 19 2026)",
+   "result": "hit",
+   "note": "Fetched helious.io (18:03Z: 2.903%, tail 0.3bp, b/c 2.43 vs 2.39, indirect 68.6/direct 25.4/dealer 6.0, 'in line') and Newsquawk (WI 2.90%, prior tail 1.9bp, six-auction avg tail 1.9bp, prior b/c 2.24, 'near-on-the-screws', 'clean'). tipswatch 19 Nov ('highest in 24 years') and mlq.ai ('highest since 2002') surfaced, not fetched. Tail 0.3bp - threshold not met."
+  },
+  {
+   "query": "8. sovereign bond stress (gilts, JGB, OAT 20 Nov 2026)",
+   "result": "partial",
+   "note": "Search results undated (ECB FSR Nov 2026 pdf, SSGA, tradingeconomics) or 17 Nov (ideal-investisseur OAT-Bund 156.3bp). In-gate levels came from investinglive Asia-Pacific wrap 20 Nov 04:39Z (JGB 10y -4bp to ~2.80%, USD/JPY 159.2, AUD 0.6660, CNH 6.70) and Saxo 20 Nov (EUR 19-month low ~1.0990, DXY +0.5% w/w multi-month high, USD/JPY intervention concerns near 160). fxstreet 20 Nov rates note client_error. No gilt or OAT level for 19-20 Nov; recorded within the Asia and US-close items."
+  },
+  {
+   "query": "cappnotes Closing Look Thursday November 19 2026",
+   "result": "hit",
+   "note": "Fetched cappnotes Thursday (full index/sector/breadth/yield/FX/commodity/credit-spread table, Anthropic debut, NVDA/AMD/CRWV/MU moves, Kalshi/CME odds, Philly Fed); stocktitan 19 Nov live page (ETF closes, ANT open/high/low/close, USD 26bn anchor purchases, VIX ~29 highest since March); Saxo 20 Nov (yields 4.73/5.00/5.38, weekly commodity moves). theweekendspread / investrade / note.com alternatives not fetched."
+  },
+  {
+   "query": "Asia stocks Friday November 20 2026 Nikkei KOSPI TAIEX JGB yield dollar",
+   "result": "hit",
+   "note": "Fetched Saxo Market Quick Take 20 Nov, Al Jazeera 20 Nov (02:54 / updated 08:19; Nikkei -5.1%, KOSPI -5.2%, TAIEX -6.2%, SocGen/UBP quotes), investinglive Asia-Pacific wrap 20 Nov 04:39Z (Nikkei ~56,620, Samsung/SK hynix >-6%, JGB 10y 2.80%, Japan CPI miss, 880k chip-shipment approvals), Focus Taiwan 20 Nov 13:38 Taipei (TAIEX close 36,033.29, -2,393.60 / -6.23%, turnover NT$877.35bn). 247wallst and ajupress server_error; digitimes access denied; NordFX/mlq.ai not fetched."
+  },
+  {
+   "query": "Anthropic ANT shares second day premarket November 20 2026",
+   "result": "hit",
+   "note": "Fetched financefeeds 20 Nov 07:00Z (after-hours -4.70% to 92.60, lock-ups 180 days, valuations 1.27-1.8tn by basis, no ratings until mid-December, El-Erian quote). CNBC 'Anthropic falls 8% premarket' and 'tech wreck drags Anthropic into the red', Bloomberg 'drop post-market on Apple AI agent plans', seekingalpha - surfaced, not fetched (refused/paywalled)."
+  },
+  {
+   "query": "Oracle OR Meta OR Microsoft OR Amazon OR CoreWeave OR Nebius data center financing OR bond OR capex news November 19 2026",
+   "result": "no hit",
+   "note": "Results pre-gate: TheStreet 9 Nov 'banks hesitate to fund neoclouds' fetched (Nebius shelved HY bond in Oct, USD 3.5bn Citi bridge, CRWV 2032 notes >16% 6 Nov, Oracle USD 10bn bonds 7-8.65% - all recorded in earlier runs), 456X 13 Nov Meta USD 25bn debt, 247wallst 11 Nov CoreWeave beat, Nebius 6-K filings, Dubitsky Oracle note (undated). No registered-ticker financing or capex item dated 19-20 Nov beyond the Alphabet prepaid-bond postponement (query 1)."
+  },
+  {
+   "query": "SoftBank cancels gas turbine orders 13 gigawatts $3.7 billion loss November 2026",
+   "result": "no hit",
+   "note": "Confirmation search: all relays (Yahoo, tikr, thenextweb, 247wallst, cryptobriefing, newscord, insideai) are dated 12 Nov 2026 (SoftBank Q2 results; CFO 'there is no such default' after Musk's claim) - pre-gate by 7 days, discarded. Not fetched."
+  }
+ ],
+ "discarded": [
+  "SoftBank books USD 3.7bn write-off cancelling surplus US AI-data-centre gas-turbine orders worth 13 GW of reserved capacity, swings to ~USD 7bn quarterly loss; CFO denies Musk's default claim (relays dated 12 Nov) - pre-gate (>2 days), not recorded; tomshardware URL proxy_rejected",
+  "BofA Global FMS: 52% of fund managers expect an AI hyperscaler to cut spending (cryptobriefing/pomegra relays of the 17 Nov survey) - flows/positioning group, pre-gate",
+  "Microsoft 2026 capex USD 170bn 'cut' (letsdatascience) - 28 Oct FQ1 call, recorded late Oct",
+  "SemiAnalysis 28% accelerator-capex downgrade (Yahoo/BigGo/Phemex relays) - recorded 11-18",
+  "Tesla reverses 2026 capex surge (Benzinga, Oct) - pre-gate",
+  "TheStreet 9 Nov 'banks hesitate to fund neoclouds': Nebius shelved HY bond (Oct), USD 3.5bn Citi bridge, CRWV 2032 notes >16% (6 Nov), Oracle USD 10bn bonds 7-8.65% - all pre-gate, recorded earlier",
+  "456X 13 Nov Meta ~USD 25bn debt offering; 247wallst 11 Nov CoreWeave +16% beat-and-raise - pre-gate, recorded",
+  "New York City downsizes first big GO deal (Bond Buyer) - March 2026",
+  "SS&C GlobeOp Forward Redemption Indicator (20 Nov 07:00 ET) - hedge-fund redemption indicator release, not a gating event, not fetched",
+  "investinglive Apollo-gates explainer, whitesecuritieslaw / angelinvestorsnetwork BDC and real-estate-debt gate explainers - undated, no new gate",
+  "crowdfundedwealth private-credit redemption tracker (Oct 2026 edition) - recorded 11-19",
+  "SK hynix 14 LTA customers / sold out to 2029 (28 Oct), AMD HBM LTAs (3 Nov), Apple-Samsung LTA (17 Nov, recorded 11-18), TrendForce DRAM bulletin 4 Nov, Tokenpost 'analysts debate how LTAs handle demand shifts' (undated) - no renegotiation, pre-gate",
+  "Fool 14 Nov Huang 1 GW delay = USD 10bn/quarter quote - pre-gate, discarded 11-18",
+  "Bloomberg 16 Nov Asian data-centre loan syndication delayed - recorded 11-16",
+  "zerohedge / techradar / tech-insider 'half of 2026 US data centres cancelled or delayed' - recorded earlier, undated republication",
+  "Consumer watchdogs (Ohio, Illinois) ask PJM to delay capacity auction over data-centre costs (bizpacreview 19 Nov) - policy request, not a deferral",
+  "US House committee: ~880,000 Nvidia/AMD AI-chip shipments to Chinese firms approved over six months (investinglive 20 Nov) - policy, folded into the Asia item note",
+  "AMD -7.72% Thu on Hunterbrook short report on China exposure (AMD denies) - not a registered ticker, folded into the US-close item",
+  "Daiwa cuts NVDA target to 185 from 245; CNBC: Huang shareholder class action pending (cappnotes 19 Nov) - analyst/legal, folded into the US-close item",
+  "Strategy (MSTR) -4.64% on Monness downgrade; Walmart -1.04% despite beat; Evonik -16.2% after BASF ends talks; Novartis -3.2%; Intuit sells Mailchimp USD 3.68bn; Alibaba beat/miss - corporate actions, not event categories",
+  "Japan Oct core CPI 2.2% vs 2.3% (miss), PBOC LPR unchanged 18th month, Philly Fed 6.3 from 20.9, claims 203k, LEI -0.3% - macro prints, folded into the close/Asia items",
+  "OAT-Bund spread 156.3bp (ideal-investisseur) - as of 17 Nov, pre-gate; ECB Financial Stability Review Nov 2026 pdf (18 Nov speech) - not fetched, policy document",
+  "Anthropic IPO size/valuation (USD 81.3bn, ~1.76-1.8tn) - IPO/calendar group; only the debut price path and after-hours break are recorded here as an Update",
+  "Trump-Xi and Trump-Putin meetings produced no concrete breakthroughs (Saxo 20 Nov) - geopolitics, not an event category"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "Two Alphabet-funded prepaid energy bond deals totalling USD 3bn (Southeast Energy Authority / Salt River Project, Goldman Sachs lead, prelim docs 16 Nov) postponed Thu 19 Nov on 'lackluster investor demand amid market volatility'; Goldman source: 'still proceeding'; Columbia Threadneedle: investors' wanted spreads 'do not align with the levels the issuer is willing to offer'; Allspring expects relaunch after the holidays; prior USD 1.65bn deal priced 4 Nov at ~138bp (2039) and 111bp (2040) over AAA; GOOGL -3.46% - delayed, not pulled or downsized",
+   "headline": "Google-Linked $3 Billion Prepaid Bond Sales Postponed on Market Volatility / Alphabet-Linked Municipal Bond Demand Cools; $3 Billion Prepaid Energy Deal Pricing Postponed",
+   "claim": "FourWeekMBA (19 Nov, relaying Bloomberg): two prepaid energy deals totalling USD 3bn, issued through the Southeast Energy Authority with Alphabet as funding recipient and Arizona's Salt River Project as utility, Goldman Sachs managing both, preliminary documents posted 16 Nov, were delayed on 'lackluster investor demand amid market volatility'; municipal bonds underperformed and cheapened against Treasuries this week; no new date, revised size or yield levels; Alphabet's 2026 prepaid energy bonds via the California Community Choice Financing Authority total ~USD 5.85bn (1.2bn priced 4 Jun on >10bn of orders; 1.65bn priced 4 Nov, oversubscribed from >80 accounts; 3bn delayed) - the delayed piece is ~51% of the year's total; Sage Advisory warned in June that spreads on Alphabet-backed prepaids 'could widen by 25 to 50 basis points'. Longbridge/Zhitong (19 Nov 23:46Z): sluggish demand amid volatility; a source says the transactions are 'still proceeding'; Goldman and Google declined to comment; Columbia Threadneedle's Shannon Rinehart: 'the spreads some investors ultimately want do not align with the levels the issuer is willing to offer'; Allspring's Andy Hobbs: large prepaid transactions are more sensitive to volatility, expects relaunch 'soon after the holidays' with relatively strong demand; in the 4 Nov deal the 2039 tranche's initial guidance was 5.15% (~138bp over AAA) and the 2040 tranche priced at 111bp; GOOGL -3.46%, GOOG -2.93%.",
+   "candidate_dial": "C-credit (hyperscaler-linked financing postponed on demand - first GOOGL-linked deal delay in the sweep) / C-capex",
+   "source": "FourWeekMBA 19 Nov (Bloomberg relay); Longbridge/Zhitong 19 Nov 23:46Z; Bloomberg 19 Nov (headline, refused host); The Information briefing (not fetched)",
+   "url": "https://fourweekmba.com/ai-google-linked-3b-energy-bond-sales-delayed-on-weak-demand/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard-event test (pulled or downsized hyperscaler/registered-ticker deal) NOT strictly met: the deals are postponed with no stated size cut and the underwriter says they are proceeding. Recorded as the nearest reading to date because the cause is demand/spread, not regulation, the obligor is a registered ticker (GOOGL) and it lands the same day as the sixth straight S&P loss and a 2% rout. Structure is a tax-exempt prepaid energy bond where Alphabet's credit backs the utility's prepayment - muni-market channel, not corporate IG. Watch for relaunch size/spread.",
+   "other_urls": [
+    "https://longbridge.com/en/news/306188067",
+    "https://www.bloomberg.com/news/articles/2026-11-19/google-tied-prepaid-bond-deals-delayed-due-to-lackluster-demand",
+    "https://longbridge.com/en/news/306169229"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "UST 10y TIPS reopening Thu 19 Nov USD 19bn: high real yield 2.903% (highest since 2002) vs WI 2.90%, tail 0.3bp (prior 1.9bp, six-auction avg 1.9bp), bid-to-cover 2.43 (avg 2.39, prior 2.24), indirect 68.6% (avg 63.8%, prior 59.1%), direct 25.4% (avg 24.9%), dealers 6.0% (avg 11.3%, prior 12.2%) - 'clean', 'near-on-the-screws', in line",
+   "headline": "10-Year TIPS Auction, Nov 19, 2026: 2.903% High, In Line / US sells USD 19bln of 10-year TIPS; Tail 0.3bps / 10-year TIPS auction gets real yield of 2.903%, highest in 24 years",
+   "claim": "helious.io (19 Nov 18:03Z): USD 19bn 10-year TIPS (91282CRE3), high real yield 2.903%, tail 0.3bp, bid-to-cover 2.43 vs 2.39 average, indirect 68.6% (avg 63.8%), direct 25.4% (avg 24.9%), dealer 6.0% (avg 11.3%), verdict 'in line', no WI printed. Newsquawk (19 Nov): WI 2.90%, tail 0.3bp vs 1.9bp previous and 1.9bp six-auction average, high yield 2.903% vs 2.653% prior and 2.156% average, b/c 2.43x vs 2.24x prior, indirect 68.56% vs 59.12% prior, direct 25.41% vs 28.70%, dealers 6.03% vs 12.18% - 'near-on-the-screws stop', 'clean 10-year TIPS reopening'. tipswatch / mlq.ai headlines: highest 10y real yield in 24 years / since 2002 (not fetched).",
+   "candidate_dial": "B-sovereign (UST auction - no material tail; strong indirects at a 24-year-high real yield)",
+   "source": "helious.io 19 Nov 18:03Z; Newsquawk 19 Nov; tipswatch 19 Nov (headline); mlq.ai (headline)",
+   "url": "https://helious.io/news/auc-91282CRE3-2026-11-19/10-year-tips-auction-in-line",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard-event test (US tail >= 2bp) NOT met: tail 0.3bp, well inside the 1.9bp average, with indirects at 68.6% and dealers left with only 6.0%. Real-yield level (2.90%) is the stress reading, not the auction mechanics. Nominal 10y closed 5.00-5.04% depending on source. Next coupon auctions: 2y/5y/7y the week of 24 Nov.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/us-sells-usd-19bln-of-10-year-tips-tail-03bps",
+    "https://tipswatch.com/2026/11/19/10-year-tips-auction-gets-real-yield-of-2-903-highest-in-24-years/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "Thu 19 Nov US close: S&P 500 7,175.83 (-2.02%, sixth straight loss, longest since 2024), Nasdaq 23,879.20 (-2.25%, lowest close since 14 Apr, after +2% early), NDX 26,517.05 (-2.21%), Dow 49,097.06 (-2.19%, -1,101 pts, 1 of 30 up), RUT 2,655.11 (-2.18%), VIX 28.44 (+15.8%, 29.13 intraday, highest since March); breadth 37/464, all 11 sectors down (discretionary -2.79%, comm services -2.67%, tech -1.90%); GOOGL -3.46%, AMZN -3.87%, NVDA -3.30% (from +4.7%; Daiwa target 185 from 245), MSFT -1.97%, AVGO -2.09%, MU -2.10% (from +7.8%), CRWV -6.10% (from +10.5%), NBIS -9.39%, AMD -7.72% (Hunterbrook short); UST 2y 4.76% (-4bp), 10y 5.04% (-3bp), 30y 5.40% (-1bp) [Saxo: 4.73/5.00/5.38]; HY OAS 347bp (+4), IG 93bp (+1); DXY 103.88; USD/BRL 5.934 (+1.15%), USD/MXN +1.45%; WTI 83.21 (lowest since 26 Aug); gold 3,628.30 (-3.04%), silver -4.75%, copper -1.34% (8-month low); Philly Fed 6.3 from 20.9; Kalshi 89.3% +25bp / 6.3% +50bp for 9 Dec",
+   "headline": "Closing Look - Thursday, November 19, 2026 / Stock Market Today, November 19, 2026: Stocks Close Lower on the Day Anthropic Begins Trading / Market Quick Take - Asian stocks tumble after Wall Street's sixth straight decline",
+   "claim": "cappnotes: S&P 500 7,175.83 (-2.02%, -147.80), sixth straight loss, longest losing streak since 2024; Nasdaq Composite 23,879.20 (-2.25%, -550.69) after rising as much as 2% early; Nasdaq-100 26,517.05 (-2.21%, -599.21); Dow 49,097.06 (-2.19%, -1,101.11), one of 30 higher; Russell 2000 2,655.11 (-2.18%); S&P 600 1,635.57 (-2.35%); RSP -1.76%; VIX 28.44 (+15.80%), 29.13 intraday; advancers 37 / decliners 464; energy -0.65%, utilities -1.24%, staples -1.45%, financials -1.49%, real estate -1.70%, tech -1.90%, industrials -2.00%, health care -2.05%, materials -2.06%, comm services -2.67%, discretionary -2.79%; NBIS -9.39%, AMD -7.72% after a Hunterbrook short report on China exposure, MU -2.10% after rallying 7.8%, CRWV -6.10% after a 10.5% morning gain, MSTR -4.64% (Monness downgrade), WMT -1.04% despite a beat; PANW +6.42%, WDC +2.98%, PDD +11.04%; GOOGL -3.46% and AMZN -3.87% despite being major Anthropic investors; NVDA -3.30% after erasing a 4.7% gain, Daiwa cut target to 185 from 245, shareholder class action pending against Huang; 2y 4.76% (-4bp), 10y 5.04% (-3bp), 30y 5.40% (-1bp), 2s10s 28bp; Kalshi 89.3% for +25bp on 9 Dec, 6.3% for +50bp, 3.4% hold; CME FedWatch 96.4% for +25bp; Philly Fed 6.3 from 20.9 (six-month low), KC Fed 18 from 11, claims 203k (+1k), LEI -0.3% to 99.3; DXY 103.88 (+0.1%) near a 19-month high, USD/MXN 19.1182 (+1.45%), USD/BRL 5.934 (+1.15%), USD/JPY 159.615; WTI 83.21 (-0.06%, lowest since 26 Aug), Brent 91.98; gold 3,628.30 (-3.04%), silver 42.86 (-4.75%), copper 5.5835 (-1.34%); ICE BofA HY OAS 3.47% from 3.43%, IG 0.93% from 0.92%; Waller 08:25 ET and Cook 12:15 ET speak Friday. stocktitan: SPY -1.96%, QQQ -2.19% (was +2.06% at 10:04 ET), DIA -2.18%; VIX neared 29 after Anthropic opened, highest since March (CNBC). Saxo 20 Nov: 2y 4.73% (-12bp), 10y 5.00% (-13bp), 30y 5.38% (-9bp); Philly Fed new orders -0.4, prices paid 58.2 from 43.2; continuing claims 1.763m (+70k); gold -8% w/w, copper -9.5% to an eight-month low, BCOM -4.4% w/w (fifth weekly decline); money markets price at least two more 25bp hikes by mid-2027.",
+   "candidate_dial": "C-equity (sixth straight S&P loss, -2% intraday reversal on the Anthropic debut, VIX 28.4, all sectors down; neoclouds -6 to -9%) / C-credit (HY +4bp)",
+   "source": "cappnotes Closing Look 19 Nov; stocktitan 19 Nov live page; Saxo Market Quick Take 20 Nov; financefeeds 20 Nov 07:00Z",
+   "url": "https://cappnotes.substack.com/p/closing-look-thursday-november-19",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Intraday reversal pattern: Nasdaq +2% at the Anthropic open to -2.25% at the close, with the AI-complex names that rallied hardest early (MU +7.8%, CRWV +10.5%, NVDA +4.7%) all closing lower. Treasuries rallied into the rout (2y -4 to -12bp depending on source - cappnotes vs Saxo disagree; cappnotes' table is the primary record). Credit spreads moved only modestly (HY +4bp). Dollar near 19-month high with gold -3% and copper at an eight-month low is the same stress tell as 11-18. SOX not printed.",
+   "other_urls": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026",
+    "https://www.home.saxo/content/articles/macro/market-quick-take---asian-stocks-tumble-after-wall-streets-sixth-straight-decline---20-november-2026-20112026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "Update vs 11-19: Anthropic 'ANT' Nasdaq debut Thu 19 Nov - first trade 11:48 ET at USD 111.50 (+34% vs 83 IPO), high 114.99, low 92.72, close 97.17 (+17.07%), ~USD 1.76-1.8tn fully diluted at the close vs ~2tn at the open; USD 81.3bn raised (largest IPO on record) plus USD 26bn conditional purchases by Google, Nvidia, Broadcom, Microsoft and others at the IPO price; after hours -4.70% to 92.60 (below the day low), reportedly on Apple AI-agent plans; pre-market Fri -6 to -8% per CNBC/World Today headlines; settlement Fri 20 Nov, 180-day lock-ups, no sell-side ratings until mid-December",
+   "headline": "Anthropic (ANT) Stock $97.17: Day Two After a 17% Debut / Stocks Close Lower on the Day Anthropic Begins Trading / Anthropic shares fall 8% in premarket amid AI selloff as Nvidia, AMD shares drop",
+   "claim": "stocktitan (19 Nov): IPO price USD 83 (range 70-78 set 17 Nov); opened 11:48 ET at 111.50, ~34% above; intraday high 114.99, low 92.72; close 97.17, ~17% above the IPO price; -1.50% after hours at 18:03 ET; 980m shares, ~USD 81.34bn; ~USD 2tn fully diluted at the opening price (CNBC); separate purchases of USD 26.0bn by Google, Nvidia, Broadcom, Microsoft and others at the IPO price, subject to conditions; settlement Fri 20 Nov; CNBC said investors appeared to take profits. cappnotes: ANT opened 111.50, closed 97.17 (+17.07%), raised USD 81.3bn, ended with ~USD 1.8tn fully diluted; AI shares reversed early gains into a broad afternoon sell-off. financefeeds (20 Nov 07:00Z): fell 4.70% to 92.60 after hours (Benzinga), below Thursday's 92.72 low; CNN 1.76tn / CNBC ~1.8tn / Yahoo 1.27tn fully diluted on different bases; most pre-IPO holders locked up 180 days, longer for co-founders and largest holders, some employee shares saleable earlier; 30-day over-allotment option; research begins after the 25-day quiet period (mid-December); El-Erian: the Nasdaq dip during Anthropic's surge was 'about making room for it'. Headlines (not fetched): Bloomberg 20 Nov 'Anthropic shares drop post-market on Apple's AI agent plans'; CNBC 20 Nov 'Anthropic shares fall 8% in premarket amid AI selloff'; World Today Journal 'drop 6% premarket as tech rout intensifies'. Saxo: gains faded after a stronger opening.",
+   "candidate_dial": "C-equity (record IPO absorbed - +17% day one - but the market sold the rest of the AI complex to fund it and the stock broke its day-one low after hours)",
+   "source": "stocktitan 19 Nov; cappnotes 19 Nov; financefeeds 20 Nov 07:00Z; Saxo 20 Nov; CNBC / Bloomberg 20 Nov (headlines only, refused hosts)",
+   "url": "https://financefeeds.com/anthropic-ant-stock-97-17-friday-day-two-after-17-percent-debut-bull-111-bear-83/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Extends the 11-19 Japan-tranche item: pricing and tranche detail were recorded yesterday; new today is the trading outcome. The deal cleared (not pulled, not downsized) - what reads as an event is the liquidity-drain pattern: Nasdaq swung from +2% to -2.25% around the first print, and Asia sold AI chains 5-6% the next morning. Day-two trading is after run time; the -6/-8% pre-market figures are headlines not verified by fetch.",
+   "other_urls": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026",
+    "https://cappnotes.substack.com/p/closing-look-thursday-november-19"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Fri 20 Nov Asia 'Red Friday': TAIEX -6.23% (-2,393.60 pts, fifth-largest intraday loss) to a 36,033.29 close, worst week since 1991 after Thu -4.40%, turnover NT$877bn, FSC short-sale curb in force; KOSPI -5.1 to -5.2% (KOSDAQ -4.9%), Samsung and SK hynix each >-6%; Nikkei -4.7 to -5.1% (~-2,820 pts to ~56,620), TOPIX -3.5%, SoftBank/Advantest/Kioxia lead; Hang Seng -1.9 to -2.1%, Shanghai -1.6%; JGB 10y -4bp to ~2.80%; Japan Oct core CPI 2.2% vs 2.3% (miss), BoJ December hike to 1.50% still base case; USD/JPY 159.2 (intervention watch near 160), EUR ~1.098-1.099 19-month low, AUD 0.6660 (-1.4% w/w, below 2026 low), USD/CNH ~6.70 one-month low; NDX futures -0.7%; SocGen: 'peak growth phase' may have passed; UBP: 'collapse in confidence in the AI investment thesis'",
+   "headline": "Taiwan shares close down 6.23% / Asia's stock markets dive as Anthropic debut fails to allay AI bubble fears / investingLive Asia-Pacific market news: Red Friday as Asia's AI trade unravels / Taiwan Stock Market Falls 6.2% to Cap Its Worst Week Since 1991 as KOSPI Closes Down 5.2% and Nikkei 225 Drops 5.1%",
+   "claim": "Focus Taiwan (20 Nov 13:38 Taipei): TAIEX closed down 2,393.60 points (6.23%) at 36,033.29, turnover NT$877.35bn (~US$26.6bn). Taiwan News: fifth-largest intraday loss. 247wallst (headline, server_error): worst week since 1991; KOSPI closed -5.2%, Nikkei -5.1%. Al Jazeera (20 Nov 02:54Z, updated 08:19Z): Nikkei -5.1%, KOSPI -5.2%, TAIEX -6.2%, Hang Seng -1.9%; SocGen's Rajat Agarwal: concerns AI-led growth is slowing and the 'peak growth phase' may have passed; UBP's Carlos Casanova: a 'collapse in confidence in the AI investment thesis', Anthropic's IPO 'did little to ease broader concerns'; Purdue's Koharki: valuations will eventually 'rerate' downward if AI business-model assumptions prove weaker. investinglive (20 Nov 04:39Z): Nikkei -4.7% (~-2,820 pts) to near 56,620, TOPIX -3.5%; KOSPI -5.1%, KOSDAQ -4.9%; Samsung Electronics and SK hynix each >-6%; SoftBank, Advantest, Kioxia led Nikkei declines; Hang Seng -2.1%, Shanghai -1.6%; JGB 10y -4bp to ~2.80%; USD/JPY ~159.20, AUD ~0.6660, NZD 0.5490, EUR ~1.0980; Japan Oct core CPI 2.2% y/y vs 2.3% forecast, ex-fresh-food-and-energy 2.2% from 2.4%, miss on all three measures; 'a December hike to 1.50% remains the base case', some analysts see 2.5% by mid-2027 vs ~1.75-2% priced; PBOC LPRs unchanged 3.0%/3.5% for an 18th month; US House committee: ~880,000 Nvidia/AMD AI-chip shipments to Chinese firms approved over six months; NDX futures -0.7%, S&P -0.3%; Tokyo closed Monday. Saxo (20 Nov): Nikkei down nearly 5%, KOSPI -5.2% afternoon; Bloomberg Dollar Index +0.5% w/w at a fresh multi-month high; EUR 19-month low near 1.0990; AUD -1.4% w/w after breaking its 2026 low; USD/CNH ~6.70 (-0.4%, one-month low) vs fixings ~6.71 all month; USD/JPY 159.1 with intervention concerns near 160; SoftBank plunged. cappnotes (Thu context): FSC barred shorting below the prior close from 20 Nov for stocks down 3.5% or more; Thu closes Nikkei 59,444.21, KOSPI 5,137.89 (+1.39%), Hang Seng 22,841.62.",
+   "candidate_dial": "C-equity (AI supply-chain capitulation - Taiwan worst week since 1991, Korea/Japan -5%) / B-sovereign (EM-Asia FX: AUD below 2026 low, CNH one-month low, yen intervention watch; JGBs rallying with USTs, not stressed)",
+   "source": "Focus Taiwan 20 Nov 13:38 Taipei; Al Jazeera 20 Nov 02:54Z; investinglive Asia-Pacific wrap 20 Nov 04:39Z; Saxo Market Quick Take 20 Nov; 247wallst / Taiwan News 20 Nov (headlines)",
+   "url": "https://focustaiwan.tw/business/202611200007",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "TAIEX is a close; Nikkei/KOSPI/HSI/JGB are intraday from the 04:39Z wrap and may differ from closes (247wallst/ajupress close pages errored; digitimes blocked). Two-day TAIEX drop ~-10.4% (40,195 -> 36,033) with the short-sale curb in force - the regulator action and the worst-week-since-1991 tag are the hard readings. Sovereign side is a rally not stress: JGB 10y -4bp, UST 10y -3 to -13bp; FX is where stress shows (AUD, BRL, MXN, CNH, EUR lows; USD/JPY 159-160). No gilt/OAT level dated in gate.",
+   "other_urls": [
+    "https://www.aljazeera.com/economy/2026/11/20/asias-stock-markets-dive-as-anthropic-debut-fails-to-allay-ai-bubble-fears",
+    "https://investinglive.com/news/investinglive-asia-pacific-market-news-red-friday-as-asia-s-ai-trade-unravels",
+    "https://www.home.saxo/content/articles/macro/market-quick-take---asian-stocks-tumble-after-wall-streets-sixth-straight-decline---20-november-2026-20112026",
+    "https://247wallst.com/investing/2026/11/20/taiwan-stock-market-falls-6-2-to-cap-its-worst-week-since-1991-as-kospi-closes-down-5-2-and-nikkei-225-drops-5-1-in-ai-chip-selloff/",
+    "https://www.taiwannews.com.tw/news/6478949"
+   ]
+  }
+ ]
+}
