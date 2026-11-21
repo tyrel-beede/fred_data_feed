@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-20T05:11:00-07:00",
+ "last_run_at": "2026-11-21T05:11:00-07:00",
  "last_as_of": "2026-11-20",
- "last_file": "dials/events/2026-11-20.json",
+ "last_file": "dials/events/2026-11-21.json",
  "status": "ok",
- "error": "Proxy_rejected: tomshardware SoftBank-turbine URL (exceeds max fetchable length; item is 12 Nov, pre-gate anyway). Server_error: 247wallst Asia-close page, ajupress KOSPI/TAIEX page. Client_error: fxstreet 20 Nov rates note. Digitimes 'Taiwan AI suppliers report steady orders' page: IP blocked (access denied), not read. Bloomberg Google-prepaid-bond primary, The Information briefing, CNBC Anthropic day-two pages not fetched (refused hosts) - FourWeekMBA and Longbridge/Zhitong relays used. Thursday 10y close differs by source: cappnotes 5.04% (-3bp) vs Saxo 5.00% (-13bp) - both recorded. No gilt or OAT level dated 19-20 Nov surfaced (tradingeconomics/ideal-investisseur pages undated or 17 Nov). Friday TAIEX is a close (Focus Taiwan); Nikkei/KOSPI/JGB are intraday (investinglive 04:39Z, Saxo)."
+ "error": "Client_error (not read): datacenterdynamics Prometheus Hyperscale page (item is 28 Oct, pre-gate anyway), cryptobriefing / techflowpost / aistockwire Alibaba 20 GW relays (huggingnews relay read instead), lubbocklights Ledger 21 Nov, trib.com (tollbit redirect, not followed). Refused hosts not fetched: Bloomberg 'UBS's Lovell sees AI capex at risk of 5-10% cut' video (20 Nov, headline only), CNBC 'Anthropic falls nearly 9%', CNN 'Nasdaq wipes out gains for the year'. No gilt or OAT level dated 20 Nov surfaced (Yahoo Europe-close page carries index moves only; Yahoo SG global-yields page gives Bund/JGB/AU/UST but no gilt/OAT). cappnotes Friday table carries no MSFT/GOOGL/META/AMZN/ORCL/GEV/VRT/ANET lines - META -5.9% and AMZN -3.9% come from Reuters via Yahoo; Alphabet 'flat' per stockanalysis is intraday. HY OAS printed by cappnotes is the 19 Nov FRED value (352bp); the 20 Nov value is not yet published."
 }

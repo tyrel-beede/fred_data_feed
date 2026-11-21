@@ -1,0 +1,517 @@
+{
+ "group": "standoff",
+ "run_at": "2026-11-21T05:11:00-07:00",
+ "run_weekday": "Sat",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "brent.m2.settle null: no Feb-27 settle printed by cappnotes, Rigzone/Bloomberg, financefeeds or the DTN 20 Nov piece (DTN surfaced only its 8:42am CST intraday note, no afternoon settle article surfaced); Rigzone/Bloomberg says the Brent prompt spread 'has weakened' with no figure; oilprice.com/futures/brent surfaced but shows stale untimed quotes (Jan 110.32) and was discarded. dated_brent.premium null: no Platts/Argus relay dated 20-21 Nov (hormuz.now/oil still IEA $93 from 13 Nov). war_risk.premium_pct_hull and td3c null: the only surfaced freight/insurance pages are undated explainers or a 29 Jun procurementinstitute piece. Fetch failures: energynow 20 Nov settle piece client_error (financefeeds/Rigzone used); straits.live 21 Nov brief client_error (20 Nov brief used); wam.ae settle piece returned metadata only; Times of Israel 20 Nov liveblog index page returned only non-Iran items, so individual liveblog entries were fetched instead. UKMTO 214-26 vessel name not given by any fetched page; UKMTO 213-26 not surfaced at all (gap between 212 and 214 unexplained); 'Phoenix' name for 212 still unconfirmed. IRGC MQ-9/MQ-1 shootdown claims 21 Nov have no US comment yet. Known refused hosts not attempted: CNN, NPR, Al Arabiya, Doha News, Bloomberg direct, CNBC (Al Arabiya and CBS links surfaced were not fetched). No rule slips: every fetch followed a surfacing search this session.",
+ "gate": {
+  "since": "2026-11-20T05:11:00-07:00",
+  "note": "New = 20 Nov after ~12:11Z and 21 Nov to ~12:11Z. Tolerance 2 days: 19 Nov items not in the 11-20 file (Witkoff/Kushner-Qatar Berlin meeting, reported 20 Nov) kept once with late:true. Oil settles recorded are Friday 20 Nov. WTI Dec-26 expired Fri 20 Nov (settled 83.98); wti.m1.settle is now January 2027 (83.41) as flagged in the 11-20 file. Run 2026-11-21 05:11 MST (Sat)."
+ },
+ "feeds": [
+  "standoff-watch T/M/O panels",
+  "macro-dials B1-oil, Hormuz fork"
+ ],
+ "notes": "A fifth Khasab-sequence hull hit, a Trump 'real deal, not a fake deal' press conference, an Araghchi two-day-plan interview, a no-progress Witkoff/Kushner-Qatar meeting, a CBS 'attack in coming days' report, four Iran oil-sector OFAC designations and - early Sat 21 Nov - IRGC claims of an MQ-9 and an MQ-1 downed over Hormuz/Qeshm. Oil: Fri 20 Nov Brent Jan-27 settled 92.57 (+0.59, +0.64%), week -3.41% (from 95.84 on 13 Nov), third straight weekly loss, ~-20% in November; WTI Dec-26 expired at 83.98 (+0.77, +0.93%; week -5.17%), WTI Jan-27 (new M1) 83.41 (+0.97, +1.2%); Brent Jan - WTI Jan 9.16 (vs 9.54 Thu). Brent Feb-27 settle not printed anywhere fetched (Bloomberg: prompt spread 'weakened', no figure) - M2 null. Morning (9:30 EST) Brent was 91.15 (-0.83) before the UKMTO 214 tanker fire (~15:00Z) and the Qeshm 'missile' report lifted it to a positive close; straits.live 20:41Z 92.75. Bloomberg: Rasmussen 'Without fresh escalation, the market remains biased lower'; Ruecker 'geopolitics appears to be taking a back seat'; Hansen crude may struggle to fall further 'until we get solid evidence of a solution'; IEA ~2 mb/d Q4 surplus; US retail gasoline $3.69. UOB via cappnotes: Iranian attacks on Hormuz tankers 'roughly one incident per day in November'; DTN: UKMTO logged 19 tanker attacks in the Gulf/Gulf of Oman in November through Thursday; Middle East crude exports >80% of pre-war in October and climbing. Trump at the podium: oil 'almost down to $80', expected $300, fuel-price impact 'far less than I thought', would 'absolutely' do the war again. Maritime: UKMTO Warning 214-26 - unnamed outbound tanker hit on the port bow by an unknown projectile ~15:00Z 20 Nov, 8 nm N of Khasab, fire onboard, no casualties, under investigation; IRGC says the tanker hit a mine near Khasab (conflicting cause) - 1 new confirmed advisory, 0 mine claims confirmed as mines; Orbital Risk (Kelly) 15 attacks/piracy incidents worldwide in 7 days (+50% w/w), 7 strikes on 6 vessels in the Gulf/Hormuz/Gulf of Oman; UKMTO 7-day transits 115 out / 148 in (down from 139/169), ~65% below pre-war; JMIC threat 'SEVERE'. hormuz.now 20 Nov 21:50Z: 48 crossings/7d = 6.9/day (8%), up from 5.7; 19 Nov finished at 6 (5 in/1 out), 20 Nov 9 so far (6/3), last crossing DONA BELLA inbound 13:08Z; tankers 13/7d (1.9/day, ~4%), 371 tankers/39 VLCC visible (down from 390/43); straits.live 20 Nov 21:00Z: 48 holding (44 on 19 Nov); PortWatch still 2 on 15 Nov. Qeshm: Tasnim 'missile' hit 20 Nov ~18:19 Israel time, then Tasnim official: explosion was disposal of unexploded munitions - no strike confirmed. Sat 21 Nov: IRGC claims an MQ-9 downed over Hormuz by a 'new air defence system' (58th) and later an MQ-1 over Qeshm (19th); no US comment (Al Jazeera 09:30Z). Plumbing: Trump White House press conference 20 Nov (~17:57Z): 'They want to make a deal, but they don't want to make a deal that's acceptable to me', 'We want to make a real deal, not a fake deal... They've been bullshitting people for 51 years', 'Iran will never have a nuclear weapon, ever', 'rumor' Iran is 'building a dirty bomb... We will not allow that'; Vance: stopping an Iranian bomb 'absolutely what we need to be doing', declines to say if he would have authorised the February strikes; Bessent (Arab News headline): US will keep squeezing Iran's economy. Axios via ToI 21:09: Witkoff and Kushner met Qatari PM Al Thani and envoy al-Thawadi in Berlin Thu 19 Nov - 'no major progress'; low-level Iranian delegation in Doha earlier that week; AP: Gulf diplomat says the partial-deal idea is Hormuz shipping constraints lifted for limited sanctions relief then broader nuclear talks; mediators 'put little stock in public statements'. Araghchi (Iran newspaper, 20 Nov, Press TV 23:05Z / IRIB / Reuters 21 Nov): seven conditions must be met to reopen Hormuz (end the war, lift sanctions and the naval blockade on southern ports among them); two-day plan still on the table - US commitments day one, Iran reopens day two - willing to shorten 'from two days to one day or two hours'; needs an explicit US declaration of readiness and confidence-building measures; 400 kg of 60% HEU stays in Iran, 'fair solution' possible within a comprehensive package, mediators' proposals 'worth examining'; 'no war, no peace' undesirable but no deal that would 'hand victory to the other side'; messages via Qatar and Pakistan. CBS via ToI 15:05: Israel and US weighing an attack on Iran 'in the near future', IDF on heightened alert; Liberman (new FADC chair, Channel 12, ToI 21:44): 'no urgency', no intelligence justifying a strike now, a strike now would be 'completely motivated by politics and not security concerns'. OFAC 20 Nov: 'Iran Designations' - 4 individuals (Bavand, Taj IRAN-EO13902; Servati, Arabnejad SDGT/IFSR, Sepehr Energy / Mahan Air links), 'Operation Economic Outcast Targets Corrupt Regime Insiders Exploiting Iran's Oil Sector' - first IRAN-tagged action since 4 Nov. Congress: Khanna/Ansari funding condition restated (11 Dec deadline). Gulf front: Saudi-led coalition 'targeted operation' on Hodeidah port 20 Nov (Malki: weapons/missile smuggling), ops in Sanaa/Saada/Taiz; Houthi Saree: Jeddah and all Saudi Red Sea ports are 'targets', ships told to 'immediately evacuate', airlines to avoid Saudi airspace, Shuqaiq power station threatened; Saudi intercepts of drones/missiles Fri. Net: Strait closed, no deal, one new confirmed hull hit, no confirmed US or Israeli strike in gate (Qeshm blast re-attributed by Tasnim to munitions disposal), unconfirmed IRGC drone-downing claims on Sat morning, both sides publicly describing a deal they want but on their own terms while the market closes up 0.6% and down 3.4% on the week.",
+ "sources": [
+  {
+   "query": "cappnotes closing look Friday November 20 2026 Brent WTI settled",
+   "result": "hit",
+   "note": "Fetched cappnotes Closing Look 20 Nov (22:53Z): WTI +0.93% 83.98, Brent +0.64% 92.57, energy -0.62%, UOB 'roughly one incident per day', Houthi Jeddah threat; no contract months, no weekly %. Also surfaced energynow (client_error), financefeeds Saturday, wam.ae (metadata only), hdfcsky/5paisa 'Brent 90.33' (stale/undated, not fetched), arbiterz 91.59 (not fetched, conflicts with four sources)."
+  },
+  {
+   "query": "DTN oil settles Friday November 20 2026 Brent January February WTI January expiration weekly loss",
+   "result": "partial",
+   "note": "Fetched DTN 20 Nov 8:42am CST 'Oil Prices Eye Third Weekly Drop' - intraday only (Brent Jan 91.15 -0.83, WTI Dec 82.63 -0.58 at 9:30 EST), UKMTO 19 tanker attacks in November through Thursday, Mideast exports >80% pre-war; no settle, no Feb Brent. No DTN afternoon settle article surfaced. rte.ie/fxempire/cornerstone not fetched."
+  },
+  {
+   "query": "hormuz.now traffic crossings November 20 2026 Strait of Hormuz tankers",
+   "result": "hit",
+   "note": "Fetched hormuz.now/traffic (20 Nov 21:50Z) and hormuz.now/oil (21:34Z); straits.live 20 Nov brief surfaced here and fetched. UANI 'Iran Shipping Update 20 Nov', tankermap, data-tracking.net not fetched."
+  },
+  {
+   "query": "straits.live brief 2026-11-20 Strait of Hormuz closed vessels holding",
+   "result": "hit",
+   "note": "Same 20 Nov brief (published 21:00:52Z, Day 265, 48 holding at 21:00Z, UKMTO tanker fire, Qeshm missile, Qatar/Oman terms exchange, Houthi ports)."
+  },
+  {
+   "query": "UKMTO tanker fire projectile strike outbound Strait of Hormuz November 20 2026 vessel name gCaptain Baird Maritime",
+   "result": "hit",
+   "note": "Fetched gCaptain 20 Nov 09:43 PST (UKMTO Warning 214-26, 8 nm N Khasab ~1500Z, port bow, fire, no casualties; Kelly 15 incidents/7d; UKMTO transits 115/148), Reuters via Yahoo 20 Nov 17:04Z (IRGC mine claim vs UKMTO projectile), MEE liveblog 17:09 GMT. straits.live 21 Nov brief surfaced but client_error. marinelink/nst/mtv not fetched. No vessel name anywhere."
+  },
+  {
+   "query": "Brent February 2027 futures settle November 20 2026 ICE Brent Feb contract price",
+   "result": "no hit",
+   "note": "Fetched oilprice.com/futures/brent - untimed stale quotes (Jan 110.32 / Feb 106.23), discarded. ICE/TradingView/Investing pages not fetched (dynamic). No Feb-27 settle found."
+  },
+  {
+   "query": "Rigzone oil prices November 20 2026 Brent settled Bloomberg weekly drop Iran strikes held off",
+   "result": "hit",
+   "note": "Fetched Rigzone/Bloomberg 20 Nov 4:25pm EST 'Oil Posts Third Weekly Loss Amid Surplus' (Brent Jan 92.57 +0.6%, WTI Jan 83.41 +1.2%, WTI Dec 83.98 +0.9%, week -3.4%, prompt spread 'weakened' no figure, Rasmussen/Ruecker/Hansen quotes, IEA 2 mb/d surplus)."
+  },
+  {
+   "query": "missile struck Qeshm Island Iran November 20 2026 Arab News",
+   "result": "partial",
+   "note": "Fetched Arab News 'US warplanes struck Iran missile site on Qeshm' - dated 17 Nov (pre-gate, already recorded). Fetched ToI liveblog entry 20 Nov 6:19pm (Tasnim missile report) and Arab News Japan 21 Nov 03:50Z (UKMTO 214-26 + Qeshm, Bessent headline). Other Qeshm results are older strikes."
+  },
+  {
+   "query": "Washington Tehran exchanging terms Qatari Omani mediators November 20 2026 Araghchi Witkoff Hormuz talks",
+   "result": "hit",
+   "note": "Fetched Ariana News/Reuters 21 Nov 08:29 (+04:30) Araghchi 'agreement that would ensure there was no further war', HEU red line, Qatar 17 Nov meeting, Oman 17 Nov visit. Al Arabiya (refused host) not fetched; openthemagazine/houseofsaud 'total control' undated, not fetched; wltreport/100percentfedup partisan relays not fetched."
+  },
+  {
+   "query": "Times of Israel liveblog November 20 2026 Iran",
+   "result": "hit",
+   "note": "Fetched ToI entries: 'Trump: Iran wants to make a deal, but what it's offering is unacceptable' (7:43pm), 'Israel, US weighing attack on Iran in coming days - report' (3:05pm, CBS). Liveblog index page fetched but returned only non-Iran items (6.7k chars). 'Iran says UN inspectors not allowed... until war ends' entry undated in results, not fetched."
+  },
+  {
+   "query": "OFAC recent actions November 20 2026 Iran sanctions designations Treasury",
+   "result": "hit",
+   "note": "Fetched ofac.treasury.gov/recent-actions index - 20 Nov entry 'Iran Designations; Issuance of Cuba FAQs'; no 21 Nov entry. Dated page fetched via follow-up search."
+  },
+  {
+   "query": "Houthis order ships leave Saudi Red Sea ports Hodeidah strike Jeddah warning November 20 2026",
+   "result": "hit",
+   "note": "Fetched Al Jazeera 20 Nov 14:48 'Saudi coalition and Houthis exchange threats to bomb key ports' (Hodeidah 'targeted operation', Saree Jeddah/all Red Sea ports, evacuate ships, airspace, Shuqaiq). gridnorth/thenational/baird/MEE not fetched."
+  },
+  {
+   "query": "Trump press conference Iran \"real deal\" \"fake deal\" November 20 2026 Bessent squeeze Iran economy strikes decision",
+   "result": "hit",
+   "note": "Fetched AP via news4jax 20 Nov 4:54pm (quotes, Gulf diplomat partial-deal outline, Yacoubian/Singh/Vaez) and ABC liveblog (five 20 Nov entries 12:57-2:31pm EST: 'almost down to $80', Vance, Bush 'read my lips', Houthi/Saudi). CBS live page (refused host family) and justthenews/i24/newsy not fetched."
+  },
+  {
+   "query": "Iran International November 20 2026 Araghchi confidence-building measures mediators guarantees IRGC Hormuz",
+   "result": "hit",
+   "note": "Fetched Al Jazeera 21 Nov 09:30Z 'IRGC downs US drone over Hormuz as efforts to end war remain stalled' (MQ-9 and MQ-1 claims, Araghchi seven conditions, Treasury four 'oil trustees', Khanna/Ansari), Press TV 20 Nov 23:05Z (two-day plan, Qatar and Pakistan mediators), newsquawk 21:36Z headline (two days to 'one day or two hours'). No Iran International page surfaced. TRT/anewz not fetched."
+  },
+  {
+   "query": "IAEA Grossi Iran inspectors November 20 2026 enriched uranium dilute stockpile",
+   "result": "no hit",
+   "note": "Results are 13 Nov Board items (Al Jazeera, The National, IranWire, Kayhan) or undated; no IAEA item dated 20-21 Nov. Not fetched."
+  },
+  {
+   "query": "ofac.treasury.gov recent-actions 20261120 \"Iran Designations\" Cuba frequently asked questions November 20 2026",
+   "result": "hit",
+   "note": "Fetched ofac.treasury.gov/recent-actions/20261120 (4 individuals, programs, press release title). govdelivery bulletin not fetched."
+  },
+  {
+   "query": "Liberman \"no security justification\" striking Iran now Netanyahu politically motivated November 20 2026",
+   "result": "hit",
+   "note": "Fetched ToI entries 20 Nov: Liberman (9:44pm), 'No progress reported after Trump envoys meet with Qatari mediators' (9:09pm, Axios, Berlin Thu), 'Explosion on Qeshm Island said linked to disposal of unexploded munitions' (7:15pm, Reuters/Tasnim), Trump 'dirty bomb' rumor (8:37pm). Netanyahu unity-coalition entry not fetched (domestic)."
+  },
+  {
+   "query": "Hormuz war risk premium hull tanker insurance VLCC TD3C freight rates November 20 2026",
+   "result": "no hit",
+   "note": "Fetched procurementinstitute 'Hormuz VLCC War-Risk Costs' - dated 29 Jun 2026, no % hull, no TD3C value. Other results undated explainers (alupetra 6-10%, nautilus, straits.live explainer) or houseofsaud 18 Nov restatement. No dated 20-21 Nov hull % or TD3C print."
+  }
+ ],
+ "discarded": [
+  "Arab News 'US warplanes struck Iran missile site on Qeshm Island' - 17 Nov - pre-gate, already recorded 11-18; Rigzone/Bloomberg 20 Nov 'US warplanes struck Qeshm this week' refers to the same strike",
+  "oilprice.com/futures/brent Jan 110.32 / Feb 106.23 - untimed, inconsistent with four settle sources - stale page, discarded",
+  "hdfcsky/5paisa 'Brent falls 5% to 90.33, WTI 81.59' and arbiterz 'Brent 91.59' - 20 Nov headlines conflicting with cappnotes/Bloomberg/financefeeds 92.57; not fetched, discarded",
+  "procurementinstitute 'Hormuz VLCC War-Risk Costs' - 29 Jun 2026 - stale",
+  "Araghchi Oman visit and Qatar-Iran meeting 17 Nov (Ariana/Reuters background) - already recorded 11-18",
+  "IRGC Sheikh Isa radar drone claim, Bahrain/Kuwait interceptions 15-18 Nov (AP, Reuters background) - already recorded",
+  "Trump Axios 'not rushing' (Rigzone 20 Nov restatement), US energy chief 'record' flows - already recorded 11-20",
+  "Khanna/Ansari funding condition (Al Jazeera 21 Nov) - already recorded 11-19; folded into T1 Trump hit as context",
+  "PIF tower damage 19 Nov (ABC/Al Jazeera restatements) - already recorded 11-20; only the Hodeidah operation and Saree port/airspace threats are new",
+  "IAEA 13 Nov Board items (Al Jazeera, The National, IranWire, Kayhan) - pre-gate",
+  "Netanyahu unity-coalition / 'Israel's fate is at stake', Liberman on Shas/UTJ coalition, Beit Shemesh protests, Shin Bet Arab-towns report, settlers ambush - Israeli domestic",
+  "Vance 'worth losing the Senate' (ABC 2:02pm, ToI 8:59pm) - domestic politics; one line kept in the Trump T1 hit",
+  "Black Sea sinkings BETUL 8 / GAS HUSKY (gCaptain) and Gulf of Aden piracy - not Hormuz",
+  "UKMTO week tally 115 out/148 in (gCaptain) - UKMTO weekly series, noted in the incident item, hormuz.now daily series used for readings",
+  "Kpler 8.3 mb/d to 11 Nov, Lloyd's List 7-9% 9 Nov, IEA Dated $93, PortWatch 15 Nov (hormuz.now/oil, straits.live) - unchanged, already recorded",
+  "hormuz.now 14-day archive conflicting inbound counts ('65 in' 19 Nov, '93 in' 18 Nov) - unexplained, table used",
+  "Trump Asia/Xi/Putin press-conference items (CBS headline) - not standoff",
+  "Global stocks longest losing streak, copper/AI, Treasuries rally (Bloomberg via Rigzone) - macro, not standoff",
+  "US retail gasoline $3.69 (Bloomberg) - noted in O hit only",
+  "wam.ae 'Oil prices settle higher' - fetch returned metadata only, no figures recorded",
+  "houseofsaud 'Trump total control of Hormuz' / 'Iran 3 tankers mines Nov 18' - undated or already recorded"
+ ],
+ "items": [
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "brent.m1.settle",
+   "value": 92.57,
+   "unit": "USD/bbl",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "ICE Brent January 2027 (M1) settle, Fri 20 Nov: 92.57 (+0.59, +0.64%); week -3.41% (from 95.84 on 13 Nov), third straight weekly loss",
+   "source": "Bloomberg via Rigzone 20 Nov 4:25pm EST ('January settlement rose 0.6% to $92.57'); cappnotes Closing Look 20 Nov (+0.64% 92.57); Reuters via financefeeds 21 Nov 07:00 GMT (92.57, -3.41% w/w); straits.live 20 Nov brief (92.57 status line)",
+   "url": "https://www.rigzone.com/news/wire/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "Dollar change computed from Thu 91.98. Four sources agree on 92.57. Intraday path: 91.15 (-0.83) at 9:30 EST (DTN) before the UKMTO 214-26 tanker fire (~15:00Z) and the Tasnim Qeshm 'missile' report; straits.live quotes 92.75 (+0.27%) at 20:41Z. Weekly change sentence (Bloomberg): Brent fell 3.4% on the week, its third straight weekly loss, and has dropped about one-fifth so far this month as Middle East supply recovered and the US held off renewed strikes. Rasmussen (Global Risk Management): 'Without fresh escalation, the market remains biased lower'; Ruecker (Julius Baer): 'geopolitics appears to be taking a back seat'; Hansen (Saxo): crude may struggle to fall further 'until we get solid evidence of a solution'. IEA ~2 mb/d Q4 surplus; Goldman glut risk 2027; European gasoil fell on the week. Brent Jan - WTI Jan = 9.16 (vs 9.54 Thu); Brent Jan - WTI Dec(expiry) = 8.59. Jan Brent expires 30 Nov; OPEC+ ministerial 29 Nov.",
+   "other_urls": [
+    "https://cappnotes.substack.com/p/closing-look-friday-november-20-2026",
+    "https://financefeeds.com/brent-crude-oil-price-92-57-saturday-week-ahead-opec-plus-29-november-bull-96-bear-89/",
+    "https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/20/oil-prices-eye-third-weekly-drop"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "brent.m2.settle",
+   "value": null,
+   "unit": "USD/bbl",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "ICE Brent February 2027 (M2) settle, Fri 20 Nov - not printed by any fetched source; Bloomberg: prompt spread 'has weakened' (no figure)",
+   "source": "Bloomberg via Rigzone 20 Nov ('Brent's prompt spread, the gap between its two nearest contracts, has weakened' - no number); cappnotes 20 Nov, financefeeds 21 Nov, DTN 20 Nov morning note: front month only; oilprice.com/futures/brent fetched but stale/untimed (discarded)",
+   "url": "https://www.rigzone.com/news/wire/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "late": false,
+   "note": "Three settle sources plus one dedicated search tried; no Feb-27 print. Last dated M2: Thu 19 Nov 89.44 (Jan/Feb 2.54 backwardation). Directional only: Bloomberg says the Jan/Feb spread weakened Friday, i.e. backwardation narrower than 2.54 - not carried forward as a value. A DTN afternoon settle piece for 20 Nov (which printed Feb on 19 Nov) did not surface; retry Monday with the Weekend Spread or DTN."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "wti.m1.settle",
+   "value": 83.41,
+   "unit": "USD/bbl",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "NYMEX WTI January 2027 (new M1, most active) settle, Fri 20 Nov: 83.41 (+0.97, +1.2%); December 2026 expired Fri 20 Nov at 83.98 (+0.77, +0.93%), week -5.17%",
+   "source": "Bloomberg via Rigzone 20 Nov 4:25pm EST ('WTI for January delivery, the most-active contract, rose 1.2% to $83.41'; 'December, which expires Friday, rose 0.9% to $83.98'); cappnotes 20 Nov (WTI +0.93% 83.98 = the expiring Dec); financefeeds 21 Nov (Dec 83.98 -5.17% w/w; Jan 83.41 via Rigzone)",
+   "url": "https://www.rigzone.com/news/wire/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "Contract roll: Dec-26 expired 20 Nov (confirmed by Bloomberg 'expires Friday' and the 11-20 DTN note). From this run wti.m1.settle is January 2027; comparable base is Thu's Jan 82.44, so +0.97 (computed). Dec expiry settle 83.98 recorded here for continuity with the prior Dec series (Thu 83.21, +0.77). Dec-Jan expiry spread 0.57 (Dec premium, vs 0.77 Thu). cappnotes' single WTI figure (83.98 +0.93%) is the expiring December. No Feb-27 WTI print. US retail gasoline $3.69/gal (Bloomberg). Trump at the podium: oil 'almost down to $80 a barrel'."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "dated_brent.premium",
+   "value": null,
+   "unit": "USD/bbl",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "Dated Brent / physical premium, 20-21 Nov - no dated quote",
+   "source": "none surfaced (Rigzone/Bloomberg, cappnotes, financefeeds, DTN carry no Dated or physical-premium figure; hormuz.now/oil 21:34Z still relays IEA 'North Sea Dated $93' from the November OMR)",
+   "url": "https://hormuz.now/oil",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "late": false,
+   "note": "Only structure signals: Bloomberg 'prompt spread has weakened' (no figure), European gasoil futures lower on the week, Brent-WTI (Jan/Jan) narrowed to 9.16. straits.live Escalation Forecast still lists the Brent-WTI forward spread as top contributor (index, not a quote)."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "hormuz.crossings.7d_avg",
+   "value": 6.9,
+   "unit": "ships/day",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "hormuz.now 7-day average crossings per day (AIS), to 20 Nov 21:50Z",
+   "source": "hormuz.now/traffic, Live Updated 20 Nov 2026 21:50 UTC",
+   "url": "https://hormuz.now/traffic",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "48 crossings in 7 days = 6.9/day ('8% of normal traffic'), up from 5.7 (40/7d) on 19 Nov and 5.9 on 18 Nov - highest 7d average since the 11-17 run (6.6). 214 crossings in 30 days (7.1/day). Last 24h to 21:50Z: 10 (7 in / 3 out). Last commercial crossing DONA BELLA inbound 20 Nov 13:08Z - i.e. before the ~15:00Z UKMTO 214-26 hit; no crossing logged in the ~7 hours after it. gCaptain/UKMTO weekly: 115 outbound / 148 inbound transits in 7 days (down from 139/169), ~65% below pre-conflict - the UKMTO count includes escorted/AIS-dark hulls hormuz.now does not see; not reconciled."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "hormuz.crossings.pct_baseline",
+   "value": 8,
+   "unit": "percent",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "hormuz.now crossings as percent of pre-crisis baseline (84.8/day)",
+   "source": "hormuz.now/traffic, 20 Nov 21:50 UTC",
+   "url": "https://hormuz.now/traffic",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "Page prints '8% of normal traffic' (6.9/84.8 = 8.1%). Prior run 7% (6.7%)."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "hormuz.crossings.daily",
+   "value": 6,
+   "unit": "ships",
+   "as_of": "2026-11-19",
+   "period_end": "2026-11-19",
+   "name": "hormuz.now latest full-day crossings: Thu 19 Nov = 6 (5 in / 1 out); Fri 20 Nov 9 so far (6 in / 3 out) at 21:50Z",
+   "source": "hormuz.now/traffic 30-day table (verbatim)",
+   "url": "https://hormuz.now/traffic",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "Daily totals: 17 Nov 5 (3/2), 18 Nov 9 (3/6), 19 Nov 6 (5/1) - the 11-20 partial '3 (2/1)' at 21:50Z finished at 6; 20 Nov 9 (6/3) at 21:50Z, not a full day but already tying the 18 Nov high, on the day of the UKMTO 214-26 hit (as 18 Nov was the day of 212-26). Inbound-heavy two days (11 in / 4 out). The 14-day archive list again shows conflicting inbound figures ('65 in / 1 out' 19 Nov, '93 in / 6 out' 18 Nov) - unexplained, table used."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "hormuz.tankers.7d",
+   "value": 13,
+   "unit": "tankers/7d",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "hormuz.now tanker crossings, trailing 7 days to 20 Nov (AIS-visible)",
+   "source": "hormuz.now/oil, Live Updated 20 Nov 2026 21:34 UTC",
+   "url": "https://hormuz.now/oil",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "13 tankers/7d = 1.9/day, ~4% of 47.6/day pre-crisis (was 11/7d, 1.6/day, 3% on 19 Nov). New tanker crossings since last run: JKT MIRACLE (Panama MR, oil products, 34k dwt, in, 19 Nov 20:34Z), YOKO 1 (Panama MR, 47k, out, 20 Nov 06:48Z), FIBI (Nicaragua MR, oil products, 44k, in, 20 Nov 09:55Z) - first MR-size hulls logged since KIARA M 15 Nov; no crossing logged after the ~15:00Z 214-26 hit. Tankers visible in region 371 (39 VLCC), DOWN from 390/43 on 19 Nov - first fall in four runs. Strait status 'Restricted', day 266. Kpler 8.3 mb/d to 11 Nov and PortWatch 18k t/day (0.8%) to 15 Nov unchanged. DTN: Middle East crude exports >80% of pre-war in October and climbing in November, total outflows approaching February levels with Iranian exports nearly shut."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "hormuz.holding_vessels",
+   "value": 48,
+   "unit": "vessels",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "straits.live: AIS-visible vessels holding position away from berth in the Strait/Gulf watch box, 20 Nov 21:00Z = 48",
+   "source": "straits.live/briefs/2026-11-20 (published 21:00:52Z), 'Strait of Hormuz Closed, Day 265'",
+   "url": "https://straits.live/briefs/2026-11-20",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "48 holding (excludes ships within 25 km of a working port), vs 44 at 05:30Z 19 Nov and 43 on 18 Nov - third consecutive rise, evening edition so it follows the 214-26 hit by ~6 hours. Brent 92.75 (+0.27%) at 20:41Z. PortWatch 2 transits 15 Nov vs 85 baseline (unchanged). Hormuz Index: Crisis Pressure 'extreme' flat; Escalation Forecast 'elevated' flat, Brent-WTI forward spread top contributor. 32 headlines indexed in 24h (79 the prior day). Brief carries a correction: the earlier 'three tankers' Iranian claim is the army's 18 Nov claim, separate from the IRGC two-supertanker claim. Brief also lists: Houthis order ships out of Saudi Red Sea ports; Arab News Qeshm missile; 'Washington and Tehran are exchanging terms through Qatari and Omani mediators. Nothing has been signed.' 21 Nov brief surfaced but client_error."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "incidents.confirmed_advisories",
+   "value": 1,
+   "unit": "count",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "UKMTO-confirmed incidents in gate: 1 - Warning 214-26, Fri 20 Nov ~1500Z: unnamed outbound tanker struck on the port bow by an unknown projectile 8 nm N of Khasab, Oman (Musandam), fire onboard, no casualties, no environmental impact, authorities investigating; fifth hull hit in the Khasab sequence (UKMTO 208/208/211/212/214); JMIC threat level 'SEVERE', further deliberate attacks 'highly likely'",
+   "source": "gCaptain 20 Nov 09:43 PST (Warning 214-26, ~1500 UTC, port bow, company security officer); Reuters via Yahoo 20 Nov 17:04Z ('no casualties or environmental impact'); Middle East Eye liveblog 20 Nov 17:09 GMT; Arab News Japan 21 Nov 03:50Z; straits.live 20 Nov brief (Baird Maritime: outbound); ToI liveblog 20 Nov 6:16pm headline 'Fire reported on tanker after projectile strike off Oman'; DTN 20 Nov (UKMTO 19 tanker attacks in Gulf/Gulf of Oman in November through Thursday)",
+   "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "First confirmed hull hit since 212-26 (18 Nov). Vessel name, flag, owner, cargo and fire status not given by any fetched page. UKMTO 213-26 did not surface - the gap between 212 and 214 is unexplained (may be an advisory, not an incident). The 212-26 'Phoenix' name remains unconfirmed (no page). Weekly context (gCaptain/Orbital Risk, Kelly): 15 attacks and piracy incidents worldwide in 7 days (+50% w/w, highest since mid-October), 7 strikes on 6 vessels in Gulf/Hormuz/Gulf of Oman; UKMTO period to 18 Nov 6 verified attacks (4 Strait, 2 wider Gulf); since the 17 Aug ceasefire expiry 6 vessel losses, 22 assisted, 31 continued; 2 seafarers missing, 13 injured (NAVIG8 MESSI 1 missing/11 injured under tow; TARA GAS abandoned). UOB via cappnotes: attacks running 'roughly one incident per day in November'; DTN: 19 tanker attacks in November through Thursday (UKMTO). Market reaction: Brent went from -0.83 at 9:30 EST to +0.59 at settle; the hit coincided with the Tasnim Qeshm 'missile' report (later re-attributed to munitions disposal). Count still rests on relays and trackers, not a fetched ukmto.org page.",
+   "other_urls": [
+    "https://www.yahoo.com/news/world/articles/tanker-catches-fire-projectile-strike-170458570.html",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/tanker-catches-fire-after-projectile-strike-near-hormuz-ukmto",
+    "https://www.arabnews.jp/en/middle-east/tanker-hit-in-strait-of-hormuz-as-missile-strikes-irans-qeshm-island-3001550",
+    "https://straits.live/briefs/2026-11-20"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "incidents.iranian_mine_claims_confirmed",
+   "value": 0,
+   "unit": "count confirmed",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "Iranian mine claims 20-21 Nov vs confirmation: 1 new IRGC claim (20 Nov, state media/Press TV: an oil tanker caught fire after hitting a mine while trying to transit near Khasab) - same event as UKMTO 214-26, which attributes it to an 'unknown projectile' striking the port bow; 0 claims confirmed as mines, 0 sinkings, 0 deaths confirmed",
+   "source": "Reuters via Yahoo 20 Nov 17:04Z (IRGC 'shortly afterward'); Middle East Eye 20 Nov 17:09 GMT; straits.live 20 Nov brief ('no maritime authority has attributed'); Arab News Japan 21 Nov; gCaptain 20 Nov (no Iranian claim mentioned, 'authorities are investigating')",
+   "url": "https://www.yahoo.com/news/world/articles/tanker-catches-fire-projectile-strike-170458570.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "Cumulative confirmed Iranian mine sinkings in this series: 0. The IRGC's mine framing versus UKMTO's projectile/port-bow description is the same conflict as the 16-18 Nov hits; a port-bow strike with fire is consistent with a projectile, not a mine, but no authority has ruled. The IRGC did not claim the 20 Nov hit as an attack - the Araghchi interview the same evening implicitly keeps the 'unauthorised route / mine' narrative. Also in gate, Sat 21 Nov (Al Jazeera 09:30Z): IRGC claims an MQ-9 downed over Hormuz by a 'new air defence system' (58th of the war) and an MQ-1 over Qeshm (19th) - US military no immediate comment; unconfirmed, recorded as an M hit not a mine claim. Qeshm 20 Nov: Tasnim first reported a missile strike (ToI 6:19pm), then an official said the explosion and smoke were disposal of unexploded munitions (Reuters/ToI 7:15pm) - no strike confirmed.",
+   "other_urls": [
+    "https://www.aljazeera.com/news/2026/11/21/irans-irgc-downs-us-drone-over-hormuz-as-efforts-to-end-war-remain-stalled",
+    "https://www.timesofisrael.com/liveblog_entry/explosion-on-irans-qeshm-island-said-linked-to-disposal-of-unexploded-munitions/"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "war_risk.premium_pct_hull",
+   "value": null,
+   "unit": "percent of hull",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "Gulf war-risk premium, % hull - no dated 20-21 Nov quote",
+   "source": "hormuz.now/oil 20 Nov (still Lloyd's List via Insurance Business 9 Nov, 7-9% hull; Marsh July 3-10%); gCaptain 20 Nov, Rigzone/Bloomberg 20 Nov, cappnotes, financefeeds, straits.live: no insurance figure; procurementinstitute 'Hormuz VLCC War-Risk Costs' dated 29 Jun ($300-700k per transit, no % hull)",
+   "url": "https://hormuz.now/oil",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "late": false,
+   "note": "Eighth consecutive null for a dated hull quote. A fresh confirmed hit (214-26) plus the Houthi threat to Jeddah and all Saudi Red Sea ports (Saree: ships should 'immediately evacuate') are the kind of events that reprice Gulf and Red Sea war-risk, but no underwriter or broker figure dated 20-21 Nov surfaced. Hung Cao '$64m per crossing' (17 Nov) remains unverified context only.",
+   "other_urls": [
+    "https://www.procurementinstitute.io/intel/hormuz-loadings-hold-but-war-risk-costs-are-quietly-compressing-vlcc-voyage-margins"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "td3c",
+   "value": null,
+   "unit": "Worldscale",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "Baltic TD3C (MEG-China VLCC) - no 20-21 Nov print surfaced",
+   "source": "none (Rigzone/Bloomberg 20 Nov, DTN 20 Nov, cappnotes 20 Nov, financefeeds 21 Nov, gCaptain 20 Nov, hormuz.now/oil, straits.live 20 Nov: no freight figure)",
+   "url": "https://www.rigzone.com/news/wire/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "late": false,
+   "note": "No Baltic print in any fetched page. Brent-WTI (Jan/Jan) narrowed 38c to 9.16 - directional only. Last recorded WS1,220.63 (6 Nov)."
+  },
+  {
+   "kind": "reading",
+   "group": "standoff",
+   "series": "ofac.iran_actions",
+   "value": 1,
+   "unit": "count",
+   "as_of": "2026-11-20",
+   "period_end": "2026-11-20",
+   "name": "OFAC 20 Nov: 'Iran Designations; Issuance of Cuba Frequently Asked Questions' - 4 individuals, 0 entities: Mohammad Javad Bavand and Majid Taj [IRAN-EO13902]; Mohammadhossein Servati (a.k.a. Sarvati; linked to Sepehr Energy Jahan Nama Pars) and Mojtaba Arabnejad (linked to Mahan Air) [SDGT][IFSR]; all subject to secondary sanctions; press release 'Operation Economic Outcast Targets Corrupt Regime Insiders Exploiting Iran's Oil Sector for Personal Gain'",
+   "source": "ofac.treasury.gov/recent-actions/20261120; ofac.treasury.gov/recent-actions index (no 21 Nov entry); Al Jazeera 21 Nov (Treasury: four Iranian 'oil trustees', Servati/Arabnejad oil brokering and Mahan Air)",
+   "url": "https://ofac.treasury.gov/recent-actions/20261120",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "late": false,
+   "note": "First IRAN-tagged OFAC action since 4 Nov (ends a 16-day streak without one); second 'Operation Economic Outcast' action in three days after the 18 Nov Hezbollah tranche. Oil-sector insiders, not shipping or shadow-fleet vessels - sanctions pressure continuing on the same day Trump said he wants 'a real deal' and Araghchi listed sanctions relief among the seven Hormuz conditions. Arab News headline: Bessent says the US will keep squeezing Iran's economy (not fetched). Two Cuba FAQs (1277, 1278) not standoff."
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Trump at a White House press conference (Fri 20 Nov, ~12:57-14:05 EST, Vance and Rubio present): 'They want to make a deal, but they don't want to make a deal that's acceptable to me'; 'We want to make a real deal, not a fake deal... They've been bullshitting people for 51 years'; 'Iran will never have a nuclear weapon, ever' (invoking Bush's 'read my lips'); 'rumor' Iran is 'building a dirty bomb... We will not allow that'; oil 'almost down to $80', war's fuel-price impact 'far less than I thought', would 'absolutely' do the war again; Vance: blocking an Iranian bomb 'absolutely what we need to be doing'",
+   "headline": "Trump: Iran wants to make a deal, but what it's offering is unacceptable / Trump insists Iran won't make an 'acceptable' deal as concerns grow about next steps",
+   "claim": "Times of Israel liveblog (20 Nov 7:43pm, Jacob Magid): at a White House news conference Trump said 'They want to make a deal, but they don't want to make a deal that's acceptable to me' and 'Want to make a real deal, not a fake deal... They've been bullshitting people for 51 years'. AP (20 Nov 4:54pm): Trump repeated 'Iran will never have a nuclear weapon, ever'; he has oscillated between favouring an agreement and saying the US does not need a deal; a Middle Eastern diplomat said Gulf states seek a partial solution - lifting all constraints on Hormuz shipping in exchange for limited sanctions relief, paving the way for broader talks including the nuclear programme; mediating countries 'put little stock' in public statements and take closed-door talks seriously; a Navy-overseen coalition issued a new warning about ships that may be violating the blockade; Yacoubian (CSIS): neither side willing to jump back into all-out conflict, Iran may be hardening terms, depriving Trump of 'that face-saving off-ramp'; Singh: 'strategic patience'; Vaez: Tehran determined to show Washington cannot declare victory while keeping Iran under economic siege. ABC liveblog (12:57-2:05pm): Trump said oil was 'almost down to $80 a barrel' and he had expected $300, fuel prices rose 'far less than I thought', he would 'absolutely' do the war again; Vance called Iran 'the biggest state sponsor of terrorism'; ToI 8:37pm: 'rumor' that Iran is 'building a dirty bomb' - 'We will not allow that'. Al Jazeera 21 Nov: Vance declined to say whether he would have authorised the February strikes.",
+   "candidate_tell": "T1",
+   "source": "Times of Israel liveblog 20 Nov 7:43pm and 8:37pm; AP via news4jax 20 Nov 4:54pm; ABC News liveblog 20 Nov 12:57pm-2:05pm EST; Al Jazeera 21 Nov 09:30Z",
+   "url": "https://www.timesofisrael.com/liveblog_entry/trump-iran-wants-to-make-a-deal-but-what-its-offering-is-unacceptable/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Shift from Wednesday's 'we don't need a deal' and Thursday's 'not rushing' to an explicit 'we want a real deal' with a 'not acceptable to me' qualifier - the first time this month Trump has publicly confirmed Tehran is offering terms. No deadline, no mediator named, no strike order; paired the same day with the Witkoff/Kushner-Qatar 'no major progress' (T3 hit) and Araghchi's two-day plan (Iran-side T1 hit), so both sides are now publicly describing a deal they want on their own terms. The 'dirty bomb' rumour line and 'never have a nuclear weapon' keep the strike rationale alive alongside the deal talk. Oil comment: Trump framing the ~$80 WTI as a win is a political floor-reading for the O panel. Khanna/Ansari funding condition restated (Al Jazeera) - already recorded.",
+   "other_urls": [
+    "https://www.news4jax.com/news/politics/2026/11/20/trump-insists-iran-wont-make-an-acceptable-deal-as-concerns-grow-about-next-steps/",
+    "https://abcnews.com/International/live-updates/iran-live-updates-tanker-attacked-strait-hormuz-ukmto?id=138171071",
+    "https://www.timesofisrael.com/liveblog_entry/trump-says-theres-a-rumor-that-irans-building-a-dirty-bomb-we-wont-allow-it/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Araghchi interview with the Iran newspaper (Fri 20 Nov; Press TV 23:05Z, IRIB, newsquawk 21:36Z, Reuters 21 Nov): seven conditions 'must be implemented for the Strait of Hormuz to reopen' (end the war, lift sanctions and the naval blockade on southern ports among them); the two-day plan - US fulfils commitments day one, Iran reopens day two - is still on the table and Iran is willing to shorten the implementation window 'from two days to one day or two hours'; requires an explicit US declaration of readiness and tangible confidence-building measures; 400 kg of 60% HEU stays in Iran, a 'fair solution' is possible within a comprehensive package and mediators' proposals are 'worth examining'; 'no war, no peace' is undesirable but no deal that would 'hand victory to the other side'; messages exchanged via Qatar and Pakistan; 'We are people of diplomacy, and we still have hope in diplomacy'",
+   "headline": "Iran FM outlines proposal to US, says seeks honorable agreement preventing return to war / Araghchi says Iran wants diplomacy to end war, Trump says terms unacceptable / Iran's IRGC downs US drone over Hormuz as efforts to end war remain stalled",
+   "claim": "Press TV (20 Nov 23:05Z): Araghchi outlined a two-day plan, streamlined from an earlier seven-day framework - day one the US fulfils its required commitments, day two Iran reopens the Strait, paving the way for final talks; Tehran first requires an explicit US declaration of readiness and tangible confidence-building measures; 'If Iran's demands are met, the Strait will be reopened'; the 60% stockpile will not be exported, a fair formula can be reached within a comprehensive package, nuclear doctrine unchanged; any deal must be honourable, sustainable, prevent a return to war and avoid concessions the other side could portray as a political victory; mediators Qatar and Pakistan. Newsquawk (21:36Z, IRIB): the US must correct its position; Iran willing to reduce the Hormuz implementation time 'from two days to one day or two hours'; the 400 kg of 60% HEU stays for domestic needs; changing nuclear doctrine is disputed domestically and opposed by Russia and China; seven conditions before reopening; ready for dialogue if the US has implementation proposals. Reuters via Ariana (21 Nov 08:29 +04:30): Tehran wants 'an agreement that would ensure there was no further war', wants guarantees Washington is serious before going further, has discussed confidence-building measures with mediators; 'fair solution can be reached on the issue of nuclear material'; officials have floated diluting the stockpile under IAEA supervision; IAEA pre-June-2025 estimate 440.9 kg of 60%. Al Jazeera (21 Nov): he called the 'no war, no peace' situation undesirable but Iran would not accept a deal that would 'hand victory to the other side'.",
+   "candidate_tell": "T1",
+   "source": "Press TV 20 Nov 23:05Z; newsquawk 20 Nov 21:36 UTC (IRIB); Reuters via Ariana News 21 Nov 08:29 (+04:30); Al Jazeera 21 Nov 09:30Z",
+   "url": "https://www.presstv.co.uk/Detail/2026/11/20/781205/iran-fm-outlines-proposal-to-reopen-strait-of-hormuz-seeks-honorable-agreement-preventing-return-to",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Most detailed Iranian deal text since the MOU collapse: a named sequence (US first, Hormuz second, nuclear inside a package), a compressible timetable ('one day or two hours'), a named mediator pair (Qatar and Pakistan - Pakistan re-enters after three runs absent; Oman not named by Araghchi though straits.live/Gulf News cite Omani channel), and an HEU red line with a dilution-under-IAEA formula floated by 'officials'. Contrast with the IRGC's Mohebbi 19 Nov ('battlefield or conditions'): same seven conditions, but the FM frames flexibility on timing and the stockpile. The 'seven conditions' list is still not published in full by any fetched page. Delivered the same evening Trump said Iran's offer is 'not acceptable to me' - the two statements are the public face of the terms being exchanged.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/iran-fm-araghchi-interview-says-if-us-wants-agreement-it-must-correct-position-willing-to-reduce-the-time-for-implementing-the-conditions-for-opening-the-strait-of-hormuz-from-two-days-to-one-day-or-two-hours",
+    "https://www.ariananews.af/araqchi-says-iran-wants-diplomacy-to-end-war-trump-says-terms-unacceptable/",
+    "https://www.aljazeera.com/news/2026/11/21/irans-irgc-downs-us-drone-over-hormuz-as-efforts-to-end-war-remain-stalled"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-19",
+   "late": true,
+   "name": "Mediator channel: Witkoff and Kushner met Qatari PM Sheikh Mohammed bin Abdulrahman Al Thani and envoy Ali al-Thawadi in Berlin on Thu 19 Nov on a diplomatic resolution with Iran - Axios: 'no major progress has been made'; a low-level Iranian delegation met Qatari counterparts in Doha earlier in the week; straits.live 20 Nov: 'Washington and Tehran are exchanging terms through Qatari and Omani mediators. Nothing has been signed'",
+   "headline": "No progress reported after Trump envoys meet with Qatari mediators to discuss Iran deal",
+   "claim": "Times of Israel liveblog (20 Nov 9:09pm, citing Axios): US envoys Steve Witkoff and Jared Kushner met Qatari Prime Minister Sheikh Mohammed bin Abdulrahman Al Thani and his envoy Ali al-Thawadi in Berlin on Thursday to discuss a diplomatic resolution to the US conflict with Iran; Axios sources: 'no major progress has been made'; a low-level Iranian delegation met Qatari counterparts in Doha earlier that week. AP (20 Nov): Gulf Arab states are working through existing channels; a Middle Eastern diplomat described the partial-deal concept (Hormuz constraints lifted for limited sanctions relief, then broader talks). straits.live 20 Nov brief: Washington and Tehran exchanging terms through Qatari and Omani mediators, nothing signed. Press TV (Araghchi): messages pass through Qatar and Pakistan.",
+   "candidate_tell": "T3",
+   "source": "Times of Israel liveblog 20 Nov 9:09pm (Axios relay); AP via news4jax 20 Nov; straits.live 20 Nov brief; Press TV 20 Nov",
+   "url": "https://www.timesofisrael.com/liveblog_entry/no-progress-reported-after-trump-envoys-meet-with-qatari-mediators-to-discuss-iran-deal",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "late:true - meeting was Thu 19 Nov (pre-gate) but first reported 20 Nov evening and not in the 11-20 file. First dated Witkoff item in four runs and the first named US-mediator contact since the Islamabad MOU collapse: a real channel (Witkoff/Kushner-Qatar in Berlin, Iran-Qatar in Doha) with a negative result. Together with Trump's 'not acceptable to me' and Araghchi's 'two days to one day or two hours' it reads as terms being traded, not a deal forming. Axios itself not fetched (ToI relay).",
+   "other_urls": [
+    "https://straits.live/briefs/2026-11-20",
+    "https://www.news4jax.com/news/politics/2026/11/20/trump-insists-iran-wont-make-an-acceptable-deal-as-concerns-grow-about-next-steps/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Strike-planning plumbing, 20 Nov: CBS News (via ToI 3:05pm) - Israel and the US are weighing an attack on Iran 'in the near future', Netanyahu alarmed by Iran's missile rebuilding and moves to put missile and nuclear programmes underground, IDF on heightened alert for an Iranian first strike; Liberman (new Knesset FADC chair, Channel 12, ToI 9:44pm) - 'there is currently no urgency', no intelligence justifying a strike now, a strike now would be 'completely motivated by politics and not security concerns'; Qeshm blast ~18:19 Israel time first reported by Tasnim as a missile strike, then attributed by a Tasnim-cited official to disposal of unexploded munitions - no strike confirmed; Sat 21 Nov IRGC claims an MQ-9 downed over Hormuz (58th) and an MQ-1 over Qeshm (19th), no US comment",
+   "headline": "Israel, US weighing attack on Iran in coming days - report / Liberman: There's no security justification for striking Iran now / Missile reportedly strikes Iran's Qeshm Island / Explosion on Qeshm Island said linked to disposal of unexploded munitions / Iran's IRGC downs US drone over Hormuz",
+   "claim": "Times of Israel (20 Nov 3:05pm, Lazar Berman, citing CBS News unnamed sources): Israel and the US are weighing an attack on Iran in the near future; Netanyahu is reportedly alarmed by Iran's rebuilding of its ballistic missile programme and efforts to move missile and nuclear programmes underground; the report follows a string of similar dispatches that both countries have plans ready for an immediate attack; Israel's military is in heightened alert in case Iran attacks first. ToI (9:44pm): Liberman, days after being appointed Foreign Affairs and Defense Committee chair, told Channel 12 he does not know what Netanyahu is planning but 'there is currently no urgency', he sees no intelligence justifying a strike now, and a strike now would show 'it's completely motivated by politics and not security concerns'; Netanyahu has reportedly told aides renewed war with Iran is unavoidable and that a strike would require a unity government under him. ToI (6:19pm): Tasnim reports a missile hit Qeshm Island, cause unclear, no damage information; ToI/Reuters (7:15pm): Tasnim, citing an official, says the explosion and smoke were caused by disposal of unexploded munitions. Al Jazeera (21 Nov 09:30Z): the IRGC said a new air defence system shot down an MQ-9 over the Strait of Hormuz (IRIB; 58th since the war began) and later claimed an MQ-1 downed over Qeshm Island (19th); no immediate US military comment. AP: Iran widened attacks on Gulf neighbours in the past week after the 17 Nov US strike on the Qeshm IRGC missile site.",
+   "candidate_tell": "T4",
+   "source": "Times of Israel liveblog 20 Nov 3:05pm (CBS relay), 6:19pm, 7:15pm (Reuters/Tasnim), 9:44pm (Channel 12); Al Jazeera 21 Nov 09:30Z; AP via news4jax 20 Nov",
+   "url": "https://www.timesofisrael.com/liveblog_entry/israel-us-weighing-attack-on-iran-in-coming-days-report",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No confirmed US or Israeli strike in gate: the Qeshm event resolved (per Tasnim) to munitions disposal within an hour, after briefly trading as a strike alongside the 214-26 tanker fire. The CBS 'coming days' report is the fourth strike-imminence dispatch in three days (NYT/Axios 4-7 day campaign, Channel 12 'backed out', Mako) and is now publicly contested inside Israel's own security establishment (Liberman, who chairs the oversight committee). The IRGC drone claims are the first claimed Iran-on-US kinetic events since the Sheikh Isa radar claim (17 Nov); if CENTCOM confirms an MQ-9 loss it is a hard-event candidate under the dashboard's confirmed-attack definition - at run time it is an Iranian claim only. Scorer: Israel pushing, Washington talking deal and keeping the strike option, Iran shooting at drones and tankers while offering a timetable.",
+   "other_urls": [
+    "https://www.timesofisrael.com/liveblog_entry/liberman-theres-no-security-justification-for-striking-iran-now-if-pm-decides-to-do-so-its-politically-motivated",
+    "https://www.timesofisrael.com/liveblog_entry/blast-heard-on-irans-qeshm-island-cause-unclear/",
+    "https://www.timesofisrael.com/liveblog_entry/explosion-on-irans-qeshm-island-said-linked-to-disposal-of-unexploded-munitions/",
+    "https://www.aljazeera.com/news/2026/11/21/irans-irgc-downs-us-drone-over-hormuz-as-efforts-to-end-war-remain-stalled"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Maritime regime, 20 Nov: UKMTO Warning 214-26 - outbound tanker hit by an unknown projectile 8 nm N of Khasab ~1500Z, fire, no casualties (IRGC: hit a mine); JMIC threat 'SEVERE', further deliberate attacks 'highly likely'; Orbital Risk: 15 attacks/piracy incidents in 7 days (+50%), 7 strikes on 6 vessels in Gulf/Hormuz/Gulf of Oman; UKMTO 7-day transits 115 out / 148 in (from 139/169); AP: Navy-overseen coalition issues new warning on ships possibly violating the blockade; hormuz.now 7d average rises to 6.9/day (8%), tankers 13/7d, visible tankers fall to 371/39 VLCC; straits.live 48 holding",
+   "headline": "Another Tanker Hit in Strait of Hormuz as Maritime Attacks Surge Worldwide / Tanker catches fire after projectile strike near Strait of Hormuz, UKMTO says",
+   "claim": "gCaptain (20 Nov 09:43 PST): UKMTO Warning 214-26 - at about 1500 UTC an outbound tanker 8 nm north of Khasab, Oman, was struck on the port bow by an unknown projectile, the company security officer reported a fire onboard, no casualties, authorities investigating; Martin Kelly (Orbital Risk Intelligence): 15 attacks and piracy-related incidents in the past seven days, up 50% and the highest weekly total since mid-October, 7 strikes on 6 vessels in the Gulf/Hormuz/Gulf of Oman, 2 seafarers missing and 13 injured; UKMTO's latest period through 18 Nov: 6 verified attacks (4 Strait, 2 wider Gulf); since the ceasefire expired 17 Aug: 6 vessel losses, 22 assisted, 31 continued voyages; UKMTO 7-day transits 115 outbound / 148 inbound, down from 139/169, ~65% below pre-conflict; JMIC rates the threat 'SEVERE'. Reuters via Yahoo (17:04Z): UKMTO 'no casualties or environmental impact'; the IRGC said shortly afterward an oil tanker caught fire after hitting a mine while trying to transit near Khasab. AP (20 Nov): a Navy-overseen coalition issued a new warning about ships that may be violating the US blockade of Iranian ports; thousands of US troops remain off Iran's coast. hormuz.now (21:50Z): 48 crossings/7d, 8% of normal, last 24h 10 (7 in/3 out), tankers 13/7d, 371 tankers/39 VLCC visible. straits.live (21:00Z): 48 holding.",
+   "candidate_tell": "M",
+   "source": "gCaptain 20 Nov 09:43 PST; Reuters via Yahoo 20 Nov 17:04Z; AP via news4jax 20 Nov; hormuz.now/traffic and /oil 20 Nov 21:50Z/21:34Z; straits.live 20 Nov brief 21:00Z",
+   "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Regime unchanged and tightening on the kinetic side: a fifth Khasab-sequence hit in five days while AIS-visible crossings tick up (6.9/day) and the first MR-size tankers in five days transit - the hits are not stopping small/medium hulls, and the visible-tanker count falling (390 to 371) may mean departures via STS or AIS-dark rather than fewer ships. The blockade side is also hardening (new coalition warning on blockade violators). Araghchi's 'one day or two hours' reopening offer and the IRGC's mine framing of 214-26 sit on the same day. No CENTCOM/NAVCENT advisory text surfaced; no Aspides/EU escort item in gate.",
+   "other_urls": [
+    "https://www.yahoo.com/news/world/articles/tanker-catches-fire-projectile-strike-170458570.html",
+    "https://hormuz.now/traffic",
+    "https://straits.live/briefs/2026-11-20"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Houthi-Saudi front escalates to ports, 20 Nov: Saudi-led coalition tells civilians to leave Hodeidah port then begins a 'targeted operation' (Malki: operational capabilities used for smuggling weapons and ballistic missiles), operations 'ongoing' in Sanaa, Saada and Taiz; Houthi spokesman Saree: Jeddah and all Saudi Red Sea ports are 'targets', shipping companies should 'immediately evacuate their ships from these ports', airlines should avoid Saudi airspace (Mecca/Medina excepted) which 'will be the scene of our operations in the coming hours', Shuqaiq power station threatened; Saudi Arabia intercepts multiple Houthi drones and missiles Friday; Marisks: 'significant' escalation",
+   "headline": "Saudi coalition and Houthis exchange threats to bomb key ports / Saudis and Houthis continue exchanging threats",
+   "claim": "Al Jazeera (20 Nov 14:48): the Saudi-led coalition urged civilians to evacuate areas of Hodeidah port 'for their safety', then said on X it had begun a 'targeted operation' against Houthi assets; spokesman Turki al-Malki said it targeted operational capabilities at Hodeidah port used for smuggling and transporting weapons and ballistic missiles, with operations ongoing in Sanaa, Saada and Taiz; Houthi spokesman Yahya Saree threatened to attack Saudi Arabia's Red Sea ports if Hodeidah were struck - Jeddah port and all Saudi Red Sea ports 'targets', shipping companies urged to 'immediately evacuate their ships from these ports', airlines to avoid Saudi airspace, a power station at Shuqaiq to be targeted; the Houthis struck a Riyadh tower the day before amid the heaviest air strikes since the conflict began and are advancing on Aden. ABC (2:31pm EST): maritime security firm Marisks called the escalation 'significant'. DTN (20 Nov): Saudi Arabia said it intercepted multiple Houthi drones and missiles Friday; the Houthis recently regained ground used to enforce an embargo on Saudi oil exports; attacks on Saudi oil infrastructure have accelerated. straits.live 20 Nov: Houthis ordered ships to leave Saudi Red Sea ports after the Hodeidah strike (gCaptain, MarineLink).",
+   "candidate_tell": "T4",
+   "source": "Al Jazeera 20 Nov 14:48; ABC News liveblog 20 Nov 2:31pm EST; DTN 20 Nov 8:42am CST; cappnotes 20 Nov; straits.live 20 Nov brief",
+   "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Escalation of the Gulf-state front from Riyadh towers to Red Sea ports and oil-export routes: the Saudi east-west bypass (Yanbu/Jeddah side) that has carried Hormuz workaround barrels is now an explicitly named Houthi target set, with an evacuation order to shipping - relevant to the O panel's 'Middle East exports >80% of pre-war' framing. No strike on a Saudi port confirmed in gate; no Iranian strike on Gulf states in gate (Bahrain/Kuwait items are 15-18 Nov). Red Sea war-risk likely repriced but no figure surfaced.",
+   "other_urls": [
+    "https://abcnews.com/International/live-updates/iran-live-updates-tanker-attacked-strait-hormuz-ukmto?id=138171071",
+    "https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/20/oil-prices-eye-third-weekly-drop"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "standoff",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Oil structure, Fri 20 Nov: Brent Jan settles 92.57 (+0.6%) after a morning low near 91.15, WTI Jan (new M1) 83.41 (+1.2%), Dec expires 83.98 (+0.9%); week -3.4% Brent / -5.2% WTI Dec, third weekly loss, ~-20% in November; Bloomberg: Brent prompt spread 'has weakened', 'geopolitics appears to be taking a back seat' (Ruecker), 'Without fresh escalation, the market remains biased lower' (Rasmussen), crude may struggle to fall further 'until we get solid evidence of a solution' (Hansen); IEA ~2 mb/d Q4 surplus; DTN: Mideast crude exports >80% of pre-war in October and climbing, UKMTO 19 tanker attacks in November through Thursday; UOB: 'roughly one incident per day'; Trump: oil 'almost down to $80', expected $300; energy sector -0.62%",
+   "headline": "Oil Posts Third Weekly Loss Amid Surplus / Oil Prices Eye Third Weekly Drop as Surplus Signs Mount / Closing Look - Friday, November 20, 2026 / Brent Crude Price $92.57: 8 Days to OPEC+ 2027 Quota Call",
+   "claim": "Bloomberg via Rigzone (20 Nov 4:25pm EST): Brent January settled +0.6% at 92.57, WTI January (most active) +1.2% at 83.41, WTI December (expiring) +0.9% at 83.98; Brent -3.4% on the week, third straight weekly loss, about one-fifth lower this month as Middle East supplies recovered and the US held off renewed strikes; Brent's prompt spread has weakened; Trump's 'not rushing' eased fears of renewed strikes; Energy Secretary Wright said Hormuz flows were at a record; US warplanes struck Qeshm this week and Tehran stepped up tanker attacks; Houthis continue to strike Riyadh; the US is widening its blockade of Iran; IEA forecasts a ~2 mb/d surplus this quarter, Goldman flags a 2027 glut; European gasoil fell on the week; US retail gasoline $3.69; Rasmussen: 'Without fresh escalation, the market remains biased lower, with weakness across commodities and fragile risk appetite'; Ruecker: 'geopolitics appears to be taking a back seat', 'we believe this pressure is likely to persist'; Hansen: crude may struggle to fall further 'until we get solid evidence of a solution'. DTN (20 Nov 8:42am CST): Brent Jan 91.15 (-0.83) and WTI Dec 82.63 (-0.58) at 9:30 EST; front-month Brent down more than 18% in November to a late-August range; Middle East crude exports >80% of pre-war in October and climbing in November, total outflows approaching February levels with Iranian exports nearly shut; UKMTO recorded 19 attacks on tankers in the Gulf/Gulf of Oman in November through Thursday; workarounds and a sizable surplus have reduced the perceived impact of disruptions. cappnotes (22:53Z): WTI +0.93% 83.98, Brent +0.64% 92.57 on 'Iran war worries and pre-holiday buying', energy -0.62%; UOB: attacks on Hormuz tankers 'running at roughly one incident per day in November'. financefeeds (21 Nov 07:00 GMT): Brent 92.57 -3.41% w/w (95.84 on 13 Nov), WTI Dec 83.98 -5.17%; IBTimes: the tanker fire 'revived shipping concerns'; OPEC+ 29 Nov 'the much more important test' (Rystad's Leon). ABC: Trump said oil was 'almost down to $80 a barrel' and he had expected $300.",
+   "candidate_tell": "O",
+   "source": "Bloomberg via Rigzone 20 Nov 4:25pm EST; DTN 20 Nov 8:42am CST; cappnotes Closing Look 20 Nov 22:53Z; Reuters via financefeeds 21 Nov 07:00 GMT; ABC News liveblog 20 Nov",
+   "url": "https://www.rigzone.com/news/wire/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "O-panel: a confirmed tanker hit, a Qeshm 'missile' scare, a 'real deal' press conference and a Saudi-Houthi ports exchange produced a +0.6% close and a -3.4% week - the market is pricing the surplus (IEA 2 mb/d) and the >80% export recovery over the kinetic tape, and Bloomberg's analysts say so in as many words ('back seat', 'biased lower'). Structure: the Jan/Feb prompt spread weakened Friday (no figure; Thu 2.54), so the one structural tightness signal that survived the $11 flat-price fall has started to give - M2 settle needed Monday to size it. Brent-WTI narrowed again (9.16 Jan/Jan). Energy equities underperformed (-0.62%) on an up-crude day. Dec WTI expiry at 83.98 above Jan 83.41 keeps a 57c prompt premium. Trump's '$80' framing is the political floor-reading. OPEC+ 29 Nov is the next scheduled O event; Jan Brent expiry 30 Nov.",
+   "other_urls": [
+    "https://www.dtnpf.com/agriculture/web/ag/news/world-policy/article/2026/11/20/oil-prices-eye-third-weekly-drop",
+    "https://cappnotes.substack.com/p/closing-look-friday-november-20-2026",
+    "https://financefeeds.com/brent-crude-oil-price-92-57-saturday-week-ahead-opec-plus-29-november-bull-96-bear-89/"
+   ]
+  }
+ ]
+}

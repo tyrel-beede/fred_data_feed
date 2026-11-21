@@ -1,8 +1,8 @@
 {
  "group": "P2_epfr",
- "last_run_at": "2026-11-14T05:11:00-07:00",
- "last_as_of": "2026-11-11",
- "last_file": "dials/flows/2026-11-14.json",
+ "last_run_at": "2026-11-21T05:11:00-07:00",
+ "last_as_of": "2026-11-18",
+ "last_file": "dials/flows/2026-11-21.json",
  "status": "partial",
- "error": "Bull & Bear indicator level for the 13 Nov Flow Show not printed in any reachable relay (null; last printed level 7.4 from 15 Oct). EPFR ETF and active-fund splits not printed (null). Lipper tech-sector split not printed (null). Bloomberg (refused host) and gurufocus (client_error) and finvaulta series page (client_error) could not be fetched."
+ "error": "Flow Show 20 Nov 2026 (week to Wed 18 Nov) read via Yahoo/Investing.com, chaincatcher 2306709, longbridge 306272547 and kucoin relays; BofA HY weekly flow and Treasury weekly flow not printed in any reachable relay (epfr.hy_usd_bn null, quiet; Treasuries noted null inside the bonds item). All other EPFR series incl. ETF/mutual-fund split and Bull & Bear (7.1) printed. Lipper US series all printed incl. tech sector (10.3bn). au.investing.com Reuters relay returned SERVER_ERROR (fetched the 1049thewolf/Reuters relay and longbridge/Zhitong relay instead). Bloomberg and gurufocus not attempted (refused/failed hosts)."
 }

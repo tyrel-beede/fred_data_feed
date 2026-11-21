@@ -1,0 +1,295 @@
+{
+ "group": "events",
+ "run_at": "2026-11-21T05:11:00-07:00",
+ "run_weekday": "Sat",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Client_error (not read): datacenterdynamics Prometheus Hyperscale page (item is 28 Oct, pre-gate anyway), cryptobriefing / techflowpost / aistockwire Alibaba 20 GW relays (huggingnews relay read instead), lubbocklights Ledger 21 Nov, trib.com (tollbit redirect, not followed). Refused hosts not fetched: Bloomberg 'UBS's Lovell sees AI capex at risk of 5-10% cut' video (20 Nov, headline only), CNBC 'Anthropic falls nearly 9%', CNN 'Nasdaq wipes out gains for the year'. No gilt or OAT level dated 20 Nov surfaced (Yahoo Europe-close page carries index moves only; Yahoo SG global-yields page gives Bund/JGB/AU/UST but no gilt/OAT). cappnotes Friday table carries no MSFT/GOOGL/META/AMZN/ORCL/GEV/VRT/ANET lines - META -5.9% and AMZN -3.9% come from Reuters via Yahoo; Alphabet 'flat' per stockanalysis is intraday. HY OAS printed by cappnotes is the 19 Nov FRED value (352bp); the 20 Nov value is not yet published.",
+ "gate": {
+  "since": "2026-11-20",
+  "note": "New = Fri 20 Nov US session and Europe through early Sat 21 Nov. Tolerance 2 days: 18-19 Nov items NOT in the 11-20 file are kept once with late:true (Waller CNBC 18 Nov 50bp remarks; Alibaba 20 GW target 19 Nov 12:31Z). Older items discarded. Run 2026-11-21 05:11 MST (Sat); Asia closes dated 20 Nov were already recorded 11-20 (TAIEX) - the Nikkei/KOSPI/HSI official closes are added here as an update line, not re-recorded as hits.",
+  "last_as_of": "2026-11-20",
+  "tolerance_days": 2
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized November 2026",
+  "fund gates redemptions November 2026",
+  "capex cut OR deferral OR digestion AI November 2026",
+  "funding round repriced AI lab November 2026",
+  "LTA renegotiation memory November 2026",
+  "gigawatt deferral data center November 2026",
+  "Treasury auction tail November 2026",
+  "sovereign bond stress November 2026"
+ ],
+ "notes": "HARD-EVENT CHECK: (a) PRINCIPAL CAPEX / ORDER CUT by a registered ticker - analyst-sourced, unconfirmed: TF International's Ming-Chi Kuo (X post, Fri 20 Nov) says Google is trimming 2027 shipments of Broadcom-designed TPU 8i by ~1m units (~20%), mostly the higher-priced 8i Max ('Whalefish'), shifting volume to the MediaTek-designed TPU 8t, 'an adjustment to tight supply and limited data center power'; neither GOOGL nor AVGO commented; AVGO -12.19% (USD ~191bn lost, 36% below its 2 Jun record), MediaTek -10% in Taipei. This is the first order-cut reading on a registered ticker pair (GOOGL buyer / AVGO supplier) - it is a supply-chain survey, not company guidance, and is partly a vendor shift rather than a GW cut; Broadcom reports 9 Dec. (b) NVIDIA SEC ACCOUNTING PROBE (Reuters exclusive, 20 Nov ~14:00 ET): SEC enforcement staff examining 'potential accounting issues' at Nvidia; scope and start date unknown; NVDA -14.01% to 125.53 (worst day since Jan 2025; -23% w/w; -46/-48% from the 6 Oct record 239-243; ~USD 431bn lost Friday, ~2.7-2.8tn since October), volume 633m vs 161m avg, +3.3% after hours; California AG subpoena Thu 19 Nov over the Huang/Megaspeed chip-diversion question; interim CEO Kress said Tue she will be 'far more selective' about AI financing deals. (c) US EQUITY CORRECTION: S&P 500 6,910.39 (-3.70%, seventh straight loss - longest since Feb 2020; -8.6% w/w, worst week since Apr 2025; 11.5% below the 6 Oct record), Dow 48,147.33 (-1.93%; -8.0% w/w, worst week since Mar 2020; 11.4% below the 5 Aug record), Nasdaq 22,617.73 (-5.28%, negative YTD, worst week since Mar 2020), NDX 25,028.98 (-5.61%, touched bear-market territory intraday), RUT 2,581.79 (-2.76%), VIX 35.89 (+26.2%, highest close since Apr 2025), breadth 123/376, tech -7.27%, staples +0.67%; SOX -8% intraday, YTD gain shrunk to 18.7% from +106.6% in June; AMD -13.25%, MU -13.89%, ARM -14.09%, CRWV -12.02%, NBIS -16.11%, META -5.9%, AMZN -3.9%, AAPL -1.90%; EWT -10.95% (-23.2% w/w, biggest since 2000), EWY -8.42%. Deutsche's Chadha 'very oversold', BNP's Lowe 'panic selling', Ives 'panic-driven', Big Tech 2027 capex 'USD 1.5tn range' unchanged. (d) AI CREDIT: CoreWeave 5y CDS 1,232.6bp Fri (+76bp intraday, >1,289 Thu per Deutsche, >65% implied 5y default odds), CRWV 9.75% 2031 ~16%; Oracle 5y CDS 327.9bp (highest since 20 Oct, from <80bp a year ago); ICE BofA HY OAS 352bp as of 19 Nov (+5, +18bp since 16 Nov), IG 94bp; HYG -0.26%, LQD +0.59%; UBS: 'sharp repricing of the credit spreads of a number of neocloud players'. No deal pulled or downsized Friday (query 1 returned only Investrade/stocktitan/Ledger close pages and the pre-gate Iqony/NYC items). (e) FLIGHT TO SAFETY, NOT SOVEREIGN STRESS: UST 2y 4.63% (-13bp), 10y 4.92% (-12bp, biggest drop since 22 Oct, 5.05 -> 4.94 intraday), 30y 5.31% (-9bp), 2s10s 29bp; Bund 10y ~3.37% (biggest rally in ~a month), JGB 10y 2.787%, Australia 10y 4.951% (lowest since Aug); TLT +1.37%. No gilt/OAT level dated 20 Nov. No coupon auction Friday; no tail >= 2bp (TIPS 19 Nov tail 0.3bp recorded 11-20); next coupons 2y/5y/7y week of 24 Nov. (f) FED-SPEAK: Cook (speech text for a Chile conference, Fri): policy rate 'is not high enough', 'waiting longer to implement rate increases risks getting behind the curve', 'we do not have that luxury', 'little evidence inflation is declining', late action 'could increase stress on our financial system'; Paulson open to back-to-back hikes; Waller (CNBC Wed 18 Nov, LATE): 'you have to go 50 in December' unless January is clearly signalled, reverse all three 2025 cuts 'plus maybe some more', 'people are starting to think 3% may be the norm... that's the kind of psychology we need to start breaking'; Kalshi 90% +25bp / 2% larger for 9 Dec, CME ~96%; ECB hike 17 Dec 91%, BoJ 18 Dec 79%. UMich final Nov sentiment 51.5 (from 48.0), 1y inflation expectations 3.7% from 4.3% mid-month. Trump: 'tremendous penalties' for US firms building data centres abroad. (g) ANTHROPIC day two: ANT open 89.86, high 92.56, low 83.05 (5 cents above IPO), close 88.91 (-8.50%; -20.3% from the 111.50 first print), volume ~400m vs 857m; intraday low -12%; Seaport initiates Neutral; Broadcom lends up to USD 42bn to Anthropic per prospectus. (h) GW DEFERRAL (LATE, 19 Nov 12:31Z, non-registered ticker): Alibaba executives on the earnings call said 'global compute policy changes' may lead to a downward revision of the long-term 20 GW data-centre target and lower overall capex; cloud +53% to USD 9.1bn, 2027 cloud growth guided 30-45%, domestic chip investment at peak through 1H28, FCF positive 2H28. (i) Europe Fri: STOXX 600 625.65 (-2.00%, ~-5% w/w, worst week since March), DAX -2.13 to -2.60% (~-7% w/w), CAC 7,927.75 (-1.89%, ~-5% w/w), FTSE 10,346.34 (-1.02%, ~-4% w/w), Infineon -7.6%, STMicro ~-11%. Official Asia closes Fri: Nikkei 56,436.65 (-5.06%), KOSPI 4,869.96 (-5.21%), TAIEX 36,033.29 (-6.23%; cappnotes: record 17.5% weekly loss), Hang Seng 22,410.80 (-1.89%). Commodities: gold 3,515 (-4.63%, 14.5-month low), silver 41.03 (-7.41%), copper 5.4665 (-2.82%), WTI 83.98 (+0.93%, third weekly loss), nat gas +4.4%; DXY 103.84 (-0.07%), USD/JPY -0.74%, USD/KRW 1,336.2 (+0.47%), USD/MXN 19.1631 (peso worst week since Jul 2024). Quiet: fund gates (SS&C indicator only), repriced AI lab round (Isomorphic USD 5bn Series C 17 Nov is an up-round, pre-gate), memory LTA renegotiation (FourWeekMBA Baker/onsemi piece ~8 Nov; onsemi 'certain LTSAs were modified' is 2025 10-K language), auction tail.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026",
+   "result": "no hit",
+   "note": "Results: Bloomberg Iqony loan pulled (3 Nov, pre-gate, recorded earlier), Bond Buyer NYC GO downsize (March 2026), Investrade Market Review 20 Nov and stocktitan 20 Nov live page (close pages, fetched stocktitan), Lubbock Lights Ledger 21 Nov (client_error), CFR Treasury buyback piece (undated), Wikipedia pages. No deal pulled or downsized dated 20 Nov; no relaunch news on the USD 3bn Alphabet prepaid energy deals recorded 11-20."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026",
+   "result": "no hit",
+   "note": "Same result set as 11-20: investinglive Apollo-gates explainer, whitesecuritieslaw / angelinvestorsnetwork BDC explainers, SS&C GlobeOp Forward Redemption Indicator (20 Nov 07:00 ET, hedge-fund indicator, not a gate, not fetched), theleadpc 'Through the gates' (undated), crowdfundedwealth tracker (recorded 11-19), Energy Income Fund annual redemption (Sep). No new gate or suspension dated 20 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026",
+   "result": "partial",
+   "note": "Results: Bloomberg video 'UBS's Lovell sees AI capex at risk of 5-10% cut' (20 Nov, refused host - headline only, analyst view not principal cut), 456X 5 Nov / letsdatascience / biztoc Microsoft USD 170bn (28 Oct, recorded), SemiAnalysis 28% (recorded 11-18), discoveryalert / useluminix / valueaddvc / dreaming.press aggregators (pre-gate). The in-gate principal-side item surfaced via the market-close sweep instead: Kuo report that Google cut 2027 Broadcom TPU 8i orders ~20% (stockanalysis and 247wallst fetched, 20 Nov 14:10-14:13 ET) - recorded as a hit."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026",
+   "result": "no hit",
+   "note": "Results: Isomorphic Labs USD 5bn Series C (AIwire 17 Nov, up-round, pre-gate), Wikipedia company pages (AI21, AMI Labs, ElevenLabs, Cursor/Anysphere, Peak), MegaRobo USD 200m (aiweekly, undated), startuphub weekly roundup (USD 7.9bn / 69 rounds). No down round or repricing dated 20 Nov. Public-market repricing of Anthropic (-8.5% day two, low 83.05 vs 83 IPO) recorded under the ANT item."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026",
+   "result": "no hit",
+   "note": "Fetched FourWeekMBA 'Baker sees durable memory LTAs; onsemi's LTSA book fell 57%' - undated, latest cited material 8 Nov (pre-gate): Gavin Baker argues game theory makes memory LTAs durable; onsemi LTSA remaining performance obligations 16.6bn (2022) -> 7.1bn (2025), 2025 10-K 'certain LTSAs were modified in response to changes in demand' - analog/power, not memory, and not dated in gate. Other results: koreadaily / koreajoongangdaily sold-out-to-2029 pieces, edaily Aug 2026, FourWeekMBA 58 AI memory deals, 404k Morgan Stanley legacy-memory downgrades (undated). No renegotiation of a memory LTA dated 20 Nov. MU -13.89% Friday is price action."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026",
+   "result": "hit",
+   "note": "Results: DCD / trib / wyofile / oilcity 'Prometheus Hyperscale pulls out of GW-scale Casper, Wyoming project' - oilcity dates it 28 Oct (USD 500m campus; Falls Ranch project proceeds without Prometheus) - pre-gate, discarded (DCD client_error, trib tollbit redirect). cryptobriefing / Longbridge-Zhitong (19 Nov 12:31Z) / techflowpost / huggingnews (19 Nov 13:22Z) 'Alibaba executive signals 20 GW target may shrink' - 19 Nov, not in the 11-20 file, within tolerance - recorded late:true from the huggingnews relay (cryptobriefing/techflowpost/aistockwire client_error). Fool 14 Nov Huang 1 GW quote, KJZZ Arizona AG asks to delay SpaceX data-centre vote (19 Nov, policy), Inside Climate News permitting fight (19 Nov, policy), zerohedge/shiporskip/theaiconsultingnetwork 'half of 2026 DCs delayed' republications - discarded."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026",
+   "result": "no hit",
+   "note": "Results: TheStreet 12 Nov, Treasury tentative schedule pdf, TFTC / helious / fedratecalc / summitcapnews schedule pages, cryptobriefing 10y tail 'highest since February' (12 Nov, recorded), herecolumbia 30y USD 25bn tail 13 Nov (recorded). No coupon auction Fri 20 Nov; TIPS 19 Nov tail 0.3bp recorded 11-20. Next coupons 2y/5y/7y week of 24 Nov."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026",
+   "result": "partial",
+   "note": "Results: ECB Financial Stability Review Nov 2026 (pdf/html, 18 Nov, policy document, not fetched), BNP Paribas WM Fixed Income Focus Nov 2026 (undated monthly), globalmarketsreview ECB sovereign-risk piece (undated), einnews FSR relay, Globe and Mail 'bond storm of 2026 may be passing' (undated), Wikipedia. In-gate yield levels came from Yahoo SG 'Global bond yields plunge as AI rout triggers flight to safety' (fetched; timestamp 19 Nov 22:45 PST, describes Friday Asia trade: UST 10y 5.012%, Bund ~3.37%, JGB 10y 2.787%, AU 10y 4.951%) and cappnotes Friday (UST 4.63/4.92/5.31). Rally, not stress; no gilt/OAT level dated 20 Nov - recorded within the US-close item."
+  },
+  {
+   "query": "cappnotes \"Closing Look\" Friday November 20 2026",
+   "result": "hit",
+   "note": "Fetched cappnotes Closing Look Friday 20 Nov (full index/sector/breadth/yield/FX/commodity/credit table, correction calls, Cook/Paulson lines, Kalshi odds, global closes); stocktitan 20 Nov live page (ETF closes and intraday checkpoints, SPY/DIA correction math, EWT/EWY weekly, ANT path, NVDA/AMD/AVGO/MU path, Cook quote, Chadha/Lowe quotes); Reuters via Yahoo 'Wall St ends sharply lower on AI selloff, S&P 500, Dow in correction' (20 Nov 13:36 PST; streak/weekly records, SOX YTD, META/AMZN/CRWV/NBIS). Investrade and acthreesixty Weekend Roundup surfaced, not fetched."
+  },
+  {
+   "query": "Anthropic ANT stock day three Friday November 20 2026 close Nvidia CoreWeave Nebius",
+   "result": "hit",
+   "note": "Fetched financefeeds 21 Nov 07:00 GMT (ANT OHLC 89.86/92.56/83.05/88.91, volume ~400m, Seaport Neutral, week-ahead), Yahoo/Ines Ferre 'Nvidia drops 12%' (20 Nov 12:21 PST; SEC probe catalyst, SK hynix >-10%, Broadcom USD 42bn Anthropic loan, Ives quote), Yahoo/Stocktwits 'CRWV, IREN, NBIS extend neocloud selloff' (19 Nov 22:21 PST; trio -12 to -24% w/w, Burry/Jackson quotes, NBIS cut 2026 outlook on third-party capacity delays, IREN capacity delay cut Microsoft spend). CNBC 'Anthropic falls nearly 9%' and CNN 'Nasdaq wipes out gains for the year' refused hosts (headlines)."
+  },
+  {
+   "query": "Fed Waller Cook speech November 20 2026 rate hike December",
+   "result": "hit",
+   "note": "Fetched Kitco/Reuters 'Fed's Cook says rate hikes needed to lower high inflation' (20 Nov 13:31 EST, Chile conference speech text), Fortune 'Fed governor admits people see higher inflation as normal' (20 Nov 16:08 ET; Waller CNBC quotes + Cook Friday line), Yahoo/Schonberger 'Waller doubles down on a jumbo rate hike in December' (18 Nov 09:46 PST - late, within tolerance, not in prior files). admiralmarkets previews, southshorepress Fed-minutes piece, investing.com 2025 Waller cut piece - not fetched / stale."
+  },
+  {
+   "query": "gilts OATs Bund yields Europe stocks close Friday November 20 2026 Stoxx 600",
+   "result": "partial",
+   "note": "Fetched Yahoo 'European markets close lower as AI trade concerns trigger sell-off' (20 Nov 10:33 PST; Stoxx 600 -1.68/-2.00%, DAX -2.13/-2.60%, CAC -1.60%, FTSE -0.91/-1.02%, weekly FTSE ~-4% DAX ~-7% CAC ~-5%, Infineon -7.6%, STMicro ~-11%; no bond yields). Longbridge 'European stocks plunge 5% this week', ceoeconomy 'Stoxx 600 worst week since March', tradingeconomics, Kitco gold PM report, Saxo 20 Nov (recorded 11-20) surfaced, not fetched. No gilt/OAT level dated 20 Nov."
+  },
+  {
+   "query": "Nvidia SEC probe accounting November 20 2026 shares plunge",
+   "result": "hit",
+   "note": "Fetched investing.com relay of the Reuters exclusive 'Nvidia's accounting is a focus of US SEC investigation, sources say' (20 Nov 14:16, updated 16:06), 247wallst 'Nvidia plunges 12%... lost USD 2.7tn since October' (20 Nov 15:17 ET), Fool 'Here's why Nvidia stock crashed on Friday' (20 Nov 20:25 EST; California AG subpoena Thu, close/volume/range). mediaite, nacionale, Fool coverage page, SEC filings - not fetched."
+  },
+  {
+   "query": "Prometheus Hyperscale pulls out Casper Wyoming gigawatt data center",
+   "result": "no hit",
+   "note": "Confirmation search: oilcity.news dates the pull-out 28 Oct 2026 (USD 500m campus), county17 29 Oct 'Falls Ranch project moving forward without Prometheus' - pre-gate by >3 weeks, discarded. DCD client_error, trib tollbit redirect not followed."
+  },
+  {
+   "query": "Alibaba 20 GW data center target may shrink executive November 2026",
+   "result": "hit",
+   "note": "Fetched huggingnews (19 Nov 13:22Z; paraphrase of executive remark, cloud +53% to USD 9.1bn, 2027 cloud guide 30-45%, peak domestic chip investment through 1H28, FCF positive 2H28) and Longbridge/Zhitong headline page (19 Nov 12:31Z). cryptobriefing, techflowpost, aistockwire client_error; hokanews, ppc.land, tapeout not fetched. Recorded late:true."
+  },
+  {
+   "query": "Google cuts Broadcom AI chip plans TPU report Broadcom shares fall November 20 2026",
+   "result": "hit",
+   "note": "Fetched stockanalysis (20 Nov 14:10 ET; Kuo ~1m units / ~20% of 2027 TPU 8i, mostly 8i Max, shift to MediaTek TPU 8t, 'frontier model development gets first call on compute', SOX -8%, MediaTek -10%, 10y 5.05 -> 4.94) and 247wallst (20 Nov 14:13 ET; AVGO 306.55 intraday, USD 191bn lost, 36% below 2 Jun record, Tan 'engagement with Google has never been stronger', Anthropic 'largest XPU customer in 2027'). gurufocus, seekingalpha, letsdatascience, invezz, tipranks, mlq.ai, explainx relays not fetched."
+  },
+  {
+   "query": "high yield bond spreads widen neocloud CoreWeave bonds November 20 2026 credit",
+   "result": "hit",
+   "note": "Fetched The Private Banker 'AI credit gauges worsen as CoreWeave default swaps widen toward 1,233bp and Oracle hits a one-month high' (20 Nov 16:04 GMT). qz / CNBC CoreWeave >16% (6 Nov, recorded), CNBC 'doom cycle' (9 Nov, recorded), Longbridge 'troubling signals', futunn GPU-rental piece, ceoeconomy CCC spreads piece, BigGo neocloud -79% - undated or pre-gate, not fetched."
+  }
+ ],
+ "discarded": [
+  "events: Prometheus Hyperscale pulls out of GW-scale Casper/Natrona County data-centre project (DCD / trib / wyofile / oilcity 28 Oct 2026, USD 500m campus; Falls Ranch proceeds without Prometheus) - 28 Oct, pre-gate (>2 days)",
+  "events: Bloomberg 'Europe's junk market sees another loan pulled as Iqony axes deal' - 3 Nov, pre-gate, recorded earlier",
+  "events: New York City downsizes first big GO deal under Mamdani (Bond Buyer) - March 2026",
+  "events: Bloomberg video 'UBS's Lovell sees AI capex at risk of 5-10% cut' - 20 Nov, refused host, analyst view not a principal cut; headline folded into the Broadcom/Google item note",
+  "events: Microsoft USD 170bn capex 'cut' (456X 5 Nov / letsdatascience / biztoc) - 28 Oct FQ1 call, recorded late Oct",
+  "events: SemiAnalysis 28% 2028 capex downgrade (BigGo) - recorded 11-18",
+  "events: Isomorphic Labs USD 5bn Series C (AIwire 17 Nov) - up-round, pre-gate, not a repricing",
+  "events: FourWeekMBA 'Baker sees durable memory LTAs; onsemi LTSA book fell 57%' - undated, latest material 8 Nov; onsemi is analog/power and the 'LTSAs were modified' language is 2025 10-K - no memory LTA renegotiation",
+  "events: koreadaily / koreajoongangdaily Samsung-SK hynix sold out to 2029, edaily Aug 2026 five-year contracts, 404k Morgan Stanley legacy-memory downgrades - pre-gate/undated",
+  "events: Fool 14 Nov Huang 1 GW delay quote - pre-gate, discarded 11-18",
+  "events: KJZZ Arizona AG asks Cochise County to delay SpaceX data-centre vote (19 Nov); Inside Climate News permitting-bill fight (19 Nov) - policy, not a deferral",
+  "events: zerohedge / shiporskip / theaiconsultingnetwork 'half of 2026 US data centres cancelled or delayed' - recorded earlier, republications",
+  "events: cryptobriefing 10y auction tail 'highest since February' (12 Nov) and herecolumbia 30y tail (13 Nov) - recorded that week; Treasury schedule pages undated",
+  "events: SS&C GlobeOp Forward Redemption Indicator (20 Nov 07:00 ET) - hedge-fund indicator release, not a gate; investinglive Apollo-gates / BDC gate explainers - undated; crowdfundedwealth tracker - recorded 11-19",
+  "events: ECB Financial Stability Review Nov 2026 (18 Nov), BNP Paribas WM Fixed Income Focus Nov 2026, globalmarketsreview ECB sovereign-risk piece, Globe and Mail 'bond storm may be passing' - undated policy/monthly documents, not fetched",
+  "events: Yahoo/Stocktwits neocloud piece (19 Nov 22:21 PST): CRWV Q3 revenue +168% to USD 3.66bn, USD 132.5bn backlog; NBIS cut 2026 sales outlook on third-party capacity delays; IREN capacity delay cut Microsoft spend; Burry 'I didn't say short' - earnings context already recorded 11-11/11-12; weekly drawdown folded into the US-close item",
+  "events: California AG Bonta investigative subpoena to Nvidia (Thu 19 Nov) over whether Huang's actions let China obtain advanced chips - legal/geopolitical, folded into the Nvidia SEC-probe item note",
+  "events: Global Payments (GPN) +9.95% on ~USD 50bn takeover interest; CrowdStrike in talks to buy Zscaler (ZS +16% after hours); Intuit -9% pre-market; Trump 'tremendous penalties' for building data centres abroad - corporate actions / policy, not event categories",
+  "events: UMich final Nov sentiment 51.5 (from 48.0), 1y inflation expectations 3.7% from 4.3% mid-month - macro prints, folded into the US-close item",
+  "events: Official Fri 20 Nov Asia closes (Nikkei 56,436.65 -5.06%, KOSPI 4,869.96 -5.21%, Hang Seng 22,410.80 -1.89%, TAIEX 36,033.29 -6.23% record 17.5% weekly loss) - Asia 'Red Friday' already recorded 11-20 as a hit; closes folded into the US-close item note as an update, not re-recorded",
+  "events: Gold 3,515 (-4.63%, 14.5-month low), silver -7.41%, copper -2.82%, WTI 83.98, nat gas +4.4%, DXY 103.84, USD/KRW 1,336.2, USD/MXN 19.1631 (peso worst week since Jul 2024) - folded into the US-close item"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Fri 20 Nov US close - S&P 500 and Dow enter correction, NDX touches bear territory intraday, Nasdaq negative YTD: S&P 500 6,910.39 (-3.70%, seventh straight loss - longest since Feb 2020; -8.6% w/w, worst since Apr 2025; 11.5% below 6 Oct record), Dow 48,147.33 (-1.93%; -8.0% w/w, worst since Mar 2020; 11.4% below 5 Aug record), Nasdaq 22,617.73 (-5.28%, worst week since Mar 2020), NDX 25,028.98 (-5.61%), RUT 2,581.79 (-2.76%), VIX 35.89 (+26.2%, highest close since Apr 2025), breadth 123/376, tech -7.27%, staples +0.67%; SOX -8% intraday (YTD +18.7% from +106.6% in June); NVDA -14.01% to 125.53, AMD -13.25%, MU -13.89%, AVGO -12.19%, ARM -14.09%, CRWV -12.02%, NBIS -16.11%, META -5.9%, AMZN -3.9%, AAPL -1.90%, ANT -8.50%; EWT -10.95% (-23.2% w/w, biggest since 2000), EWY -8.42%; UST 2y 4.63% (-13bp), 10y 4.92% (-12bp, biggest drop since 22 Oct), 30y 5.31% (-9bp); Bund 10y ~3.37%, JGB 10y 2.787%, AU 10y 4.951%; ICE BofA HY OAS 352bp (19 Nov, +5, +18bp since 16 Nov), IG 94bp; HYG -0.26%, LQD +0.59%, TLT +1.37%; DXY 103.84; gold 3,515 (-4.63%, 14.5-month low), silver -7.41%, copper -2.82%, WTI 83.98; Europe: STOXX 600 625.65 (-2.00%, worst week since March), DAX ~-2.1 to -2.6% (~-7% w/w), CAC 7,927.75 (-1.89%), FTSE 10,346.34 (-1.02%), Infineon -7.6%, STMicro ~-11%; Asia closes: Nikkei 56,436.65 (-5.06%), KOSPI 4,869.96 (-5.21%), TAIEX 36,033.29 (-6.23%, record -17.5% w/w), HSI 22,410.80 (-1.89%); Kalshi 90% +25bp 9 Dec; UMich 51.5, 1y expectations 3.7%",
+   "headline": "Closing Look - Friday, November 20, 2026 / Wall St ends sharply lower on AI selloff, S&P 500, Dow in correction / Stock Market Today, November 20, 2026: US Stocks Close Sharply Lower / Nasdaq wipes out gains for the year as Anthropic IPO fails to quell AI nerves",
+   "claim": "cappnotes: S&P 500 -3.70% (-265.44) to 6,910.39, seventh straight loss, -8.6% w/w; Nasdaq Composite -5.28% (-1,261.47) to 22,617.73, negative for 2026; Nasdaq-100 -5.61% (-1,488.07) to 25,028.98, touched bear-market territory intraday; Dow -1.93% (-949.73) to 48,147.33, ~10% below its record; Russell 2000 -2.76% to 2,581.79; RSP -1.98%; MidCap 400 -2.68%, SmallCap 600 -2.50%; VIX +26.20% to 35.89, highest close since late March [Reuters: since 7 Apr 2025]; breadth 123 advancers / 376 decliners; staples +0.67%, health care -0.12%, energy -0.62%, utilities -0.74%, real estate -0.98%, financials -1.82%, materials -2.19%, comm services -2.66%, discretionary -2.95%, industrials -3.09%, technology -7.27%; NVDA -14.01% to 125.53 (worst day since Jan 2025), AMD -13.25%, MU -13.89%, AVGO -12.19%, CRWV -12.02%, NBIS -16.11%, ARM -14.09%, AAPL -1.90%; ANT -8.50% to 88.91 in its first full session (touched 83.05); GPN +9.95%; 2y -13bp to 4.63%, 10y -12bp to 4.92% (biggest drop since 22 Oct), 30y -9bp to 5.31%, 2s10s 29bp; ICE BofA HY OAS 3.52% on 19 Nov from 3.47%, +18bp since 16 Nov; IG 0.94%; LQD +0.59%, HYG -0.26%; DXY -0.07% to ~103.84; USD/JPY -0.74%, USD/KRW +0.47% to 1,336.2, USD/MXN +0.23% to 19.1631 (peso's worst week since Jul 2024); WTI +0.93% to 83.98 (third weekly loss), Brent 92.57; gold -4.63% to ~3,515 (14.5-month low), silver -7.41% to ~41.03, copper -2.82% to 5.4665, nat gas +4.4%; UMich 1y inflation expectations 3.7% from 4.3% mid-month, final Nov sentiment 51.5 (+7.3% m/m); Cook: 'waiting longer to raise rates risks falling behind the curve'; Paulson open to back-to-back hikes; Trump: 'tremendous penalties' for US companies building data centres abroad; Kalshi 9 Dec: 25bp 90%, hold 9%, larger 2%; BoJ 18 Dec hike 79%, ECB 17 Dec 91%; Nikkei -5.06% to 56,436.65, KOSPI -5.21% to 4,869.96, TAIEX -6.23% to 36,033.29 (record 17.5% weekly loss), Hang Seng -1.89% to 22,410.80, STOXX 600 -2.00% to 625.65, FTSE -1.02% to 10,346.34, CAC -1.89% to 7,927.75, TSX -2.47%, Sensex +1.08%. Reuters via Yahoo (20 Nov 13:36 PST): Dow and S&P 500 'more than 10% below their record closing highs', S&P and Dow largest weekly % losses since Apr 2025, Nasdaq largest since Mar 2020, S&P seventh consecutive drop - longest since Feb 2020; Nvidia -13.8%, CoreWeave -12.1%, Nebius -16.1%, Amazon -3.9%, Meta -5.9%; SOX was up as much as 106.6% in mid-June, YTD gain now 18.7%; US Bank's Northey: 'sentiment is clearly winning the day today'; Horizon's Carlson: Nvidia 'did everything right'. stocktitan: SPY -3.64% to 689.81 (11.5% below 6 Oct record 779.09), DIA -1.98% (11.4% below 5 Aug record 542.81; -8.0% w/w, worst since w/e 20 Mar 2020), QQQ -5.67% (-0.69% at 10:01, -4.63% at 15:02), IWM -2.88%, EWT -10.95% (-23.2% w/w, biggest weekly drop since Jun 2000), EWY -8.42%, EWJ -4.11%, TLT +1.37%; NVDA +3.27% after hours; BNP's Lowe: 'panic selling'; Deutsche's Chadha: 'very oversold'. Yahoo/Ferre: Ives 'panic-driven sell-off', Big Tech 2027 capex 'USD 1.5 trillion range' unchanged; SK hynix >-10%, Bloom -7%, Coherent -6%. Yahoo Europe close: Stoxx 600 -1.68%/-2.00%, DAX -2.13%/-2.60% (~-7% w/w), CAC -1.60% (~-5% w/w), FTSE -0.91% (~-4% w/w), Infineon -7.6%, STMicro ~-11%. Yahoo SG (Friday Asia trade): UST 10y 5.012% fifth straight fall, Bund ~3.37% biggest rally in ~a month, JGB 10y 2.787%, AU 10y 4.951% lowest since Aug; UBS: 'sharp repricing of the credit spreads of a number of neocloud players'. Stocktwits: CRWV/IREN/NBIS -12 to -24% w/w.",
+   "candidate_dial": "C-equity (S&P and Dow in correction, NDX bear-market touch, VIX 35.9, seventh straight loss, semis -8%, Taiwan ETF -23% w/w) / C-credit (HY OAS +18bp in three sessions, neocloud spread repricing) / B-sovereign (flight-to-quality rally, not stress: UST 10y -12bp, Bund/JGB/AU 10y lower)",
+   "source": "cappnotes Closing Look 20 Nov; Reuters via Yahoo Finance 20 Nov 13:36 PST; stocktitan 20 Nov live page; Yahoo/Ferre 20 Nov 12:21 PST; Yahoo Europe close 20 Nov 10:33 PST; Yahoo SG global yields (19 Nov 22:45 PST, Friday Asia trade); Yahoo/Stocktwits 19 Nov 22:21 PST",
+   "url": "https://cappnotes.substack.com/p/closing-look-friday-november-20-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard readings: first correction close for both S&P and Dow this cycle; NDX touched -20% intraday; VIX 35.89 highest close since Apr 2025; semis -8% on the day with the two largest names each -12 to -14% on company-specific news (NVDA SEC probe, AVGO Google order cut - separate items). Treasuries rallied hard (10y 5.05 -> 4.92 intraday) so the sovereign side is a safe-haven bid, not stress; FX stress persists (KRW, MXN, Taiwan). HY OAS 352bp is the 19 Nov FRED print; the Friday value is not yet published. cappnotes carries no MSFT/GOOGL/ORCL/GEV/VRT/ANET lines; Alphabet 'flat' intraday per stockanalysis. Bund/JGB/AU levels are Friday Asia-trade intraday; no gilt/OAT level dated 20 Nov.",
+   "other_urls": [
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html",
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026",
+    "https://finance.yahoo.com/markets/article/nvidia-amd-and-broadcom-lead-chip-stocks-lower-133658985.html",
+    "https://finance.yahoo.com/markets/world-indices/articles/european-markets-close-lower-ai-183330519.html",
+    "https://sg.finance.yahoo.com/news/global-bond-yields-plunge-ai-064541188.html",
+    "https://finance.yahoo.com/markets/stocks/articles/crwv-iren-nbis-stocks-extend-062109368.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Google reportedly cuts 2027 orders for Broadcom-designed TPU 8i by ~1m units (~20%), mostly the higher-priced 8i Max, shifting volume to MediaTek-designed TPU 8t - TF International's Ming-Chi Kuo (X post, Fri 20 Nov, 'details not final'); reason 'an adjustment to tight supply and limited data center power' / 'frontier model development gets first call on compute'; neither GOOGL nor AVGO commented; AVGO -12.19% (intraday 306.55 vs 346.65 prior close, ~USD 191bn lost, worst day since 4 Jun, 36% below 2 Jun record 481.57), MediaTek -10% in Taipei; Broadcom reports FQ4 on 9 Dec; Tan (Sep): 'our engagement with Google has never been stronger', Anthropic 'on track to become our largest XPU customer in 2027'",
+   "headline": "Broadcom falls 11% after an analyst says Google cut 2027 orders for its TPU 8i chips by 20% / Broadcom Stock Plunges 12% and Loses $191 Billion After a Report That Google Cut Its Plans for Broadcom AI Chips",
+   "claim": "stockanalysis (20 Nov 14:10 ET): Ming-Chi Kuo (TF International Securities), citing his latest industry survey, says Google is trimming 2027 shipments of its TPU 8i series by about 1m units, roughly 20%, with most of the cut falling on the pricier 8i Max ('Whalefish'); Google plans to ship more TPU 8t (MediaTek-designed) instead; details are not final; Kuo tied the shift to 'frontier model development gets first call on compute', a tight supply chain and data-centre power constraints; neither company commented; Alphabet shares flat; AVGO -11.4% at 14:09 ET amid SOX -8.0%, NDX -3.7%, S&P -2.1%, MU -11.4%, AMD -11.2%, MRVL -9.2%, NVDA -7.1%; MediaTek -10% in Taipei (trading ended before the post); 10y fell from 5.05% to 4.94%; no dollar revenue impact estimated. 247wallst (20 Nov 14:13 ET): Kuo described it as 'an adjustment to tight supply and limited data center power'; AVGO ~-12% to 306.55 at 13:43 ET vs 346.65 Thursday close, ~USD 191bn lost, heading for its worst day since 4 Jun, 36% below its 2 Jun record 481.57; Broadcom bought USD 1bn of Anthropic at USD 83; Hock Tan 2 Sep: 'our engagement with Google has never been stronger', TPU 8i production shipments started and would ramp to high volumes, Anthropic 'on track to become our largest XPU customer in 2027'. cappnotes close: AVGO -12.19%. Yahoo/Ferre: Broadcom agreed to lend Anthropic up to USD 42bn for infrastructure per the prospectus.",
+   "candidate_dial": "C-capex (first order-cut reading on a registered-ticker pair: GOOGL as buyer, AVGO as supplier - analyst-sourced, unconfirmed, partly a vendor shift) / C-equity",
+   "source": "stockanalysis.com 20 Nov 14:10 ET; 247wallst 20 Nov 14:13 ET; cappnotes 20 Nov (close); Yahoo/Ferre 20 Nov",
+   "url": "https://stockanalysis.com/news/broadcom-falls-google-tpu-cut-mediatek/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard-event test (principal capex cut by a registered ticker) PARTIALLY met: the cut is to a supplier's 2027 unit allocation (~20% of one product line) per a sell-side survey, not Google guidance, and part of the volume moves to MediaTek rather than disappearing; the stated reason is power/supply constraint, not demand. Still the first in-gate order-cut headline on GOOGL/AVGO and the market priced it as a cut (-12%, USD 191bn). Verification points: Broadcom FQ4 call 9 Dec; Alphabet Q4 capex guide late Jan. Bloomberg video 20 Nov 'UBS's Lovell sees AI capex at risk of 5-10% cut' surfaced on query 3 (refused host, analyst view).",
+   "other_urls": [
+    "https://247wallst.com/investing/2026/11/20/broadcom-stock-plunges-12-and-loses-191-billion-after-a-report-that-google-cut-its-plans-for-broadcom-ai-chips/",
+    "https://seekingalpha.com/news/4675350-broadcom-sinks-12-as-google-trims-2027-tpu-orders-tech-stocks-drop",
+    "https://mlq.ai/news/broadcom-falls-11-after-analyst-ming-chi-kuo-says-google-cut-2027-orders-for-its-tpu-chips/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Reuters exclusive (Fri 20 Nov ~14:00 ET): SEC enforcement staff examining 'potential accounting issues' at Nvidia - scope and start date undetermined, SEC declined comment, Nvidia did not respond; NVDA -14.01% to 125.53 (worst day since Jan 2025; -6% before the report, ~-13% after; -23% w/w; 46-48% below the 6 Oct record; ~USD 431bn lost Friday, ~USD 2.7-2.8tn since October; volume 633m vs 161m avg; day range 124.50-143.73; +3.3% after hours); California AG Bonta served an investigative subpoena Thu 19 Nov over whether Huang's actions let China obtain advanced chips (Megaspeed / Alice Huang); interim CEO Kress (17 Nov call): will be 'far more selective' about AI financing deals; DOJ reviewing the USD 12.9bn Hugging Face deal and a broader antitrust probe",
+   "headline": "Nvidia's accounting is a focus of US SEC investigation, sources say (Reuters) / Nvidia Stock Plunges 12% After Reuters Reports an SEC Probe of Its Accounting. It's Nvidia's Worst Day Since DeepSeek and It Has Lost $2.7 Trillion Since October / Here's Why Nvidia Stock Crashed on Friday",
+   "claim": "Reuters via investing.com (20 Nov 14:16, updated 16:06): two people briefed on the matter said SEC enforcement staff are looking at 'potential accounting issues' at Nvidia; Reuters could not determine when the inquiry opened or what issues it covers; investigations 'are not evidence of wrongdoing'; Nvidia did not immediately respond, SEC declined to comment; shares were down ~13% Friday per LSEG after the report, having fallen >6% before it, and down more than a third in the broader crisis; on Tuesday's call interim CEO Colette Kress said the company would be 'far more selective' about AI financing deals; background: Huang 'ousted' after an 8 Nov statement admitting an affair, US authorities suspect Alice Huang - formerly head of Singapore-based Megaspeed, a historically large Nvidia customer under export-control investigation since 2024 - is a Chinese spy (China denies); Nvidia last year switched geographic revenue reporting to customer HQ, removing Singapore (FT: Singapore sales had risen to almost half of revenue); DOJ reviewing the USD 12.9bn Hugging Face acquisition and a broader antitrust investigation. 247wallst (15:17 ET): ~USD 431bn lost Friday, ~USD 2.7tn since the October record, ~USD 900bn on the week, 46% below the 6 Oct record close 239.24, market value ~USD 3.1tn; Q3 revenue USD 115.8bn, USD 130bn guide, first report without Huang; stock rose after hours on the report 'and has fallen every day since'. Fool (20 Nov 20:25 EST): -14.01% to 125.53, day range 124.50-143.73, 52-week range 124.50-243.37 (nearly -50% from the October high), volume 633.4m vs 161.1m average, market cap USD 3.52tn; California AG Rob Bonta served Nvidia an investigative subpoena Thursday: 'My office is investigating whether Nvidia or Jensen Huang's actions resulted in China obtaining advanced chips'; Huang departed as CEO 12 Nov.",
+   "candidate_dial": "C-equity (governance/legal shock to the index's largest AI name - largest one-day market-cap loss of the drawdown) / C-credit (circular-financing scrutiny: Kress 'far more selective' on AI financing deals)",
+   "source": "Reuters via investing.com 20 Nov 14:16; 247wallst 20 Nov 15:17 ET; Motley Fool 20 Nov 20:25 EST; Yahoo/Ferre 20 Nov 12:21 PST",
+   "url": "https://www.investing.com/news/economy-news/exclusiveus-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-5042460",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Not one of the eight sweep categories but a registered-ticker (NVDA) hard reading: a regulatory accounting probe into the supplier at the centre of the circular-financing debate, landing the week after the CEO's exit and the day after a state subpoena. Market cap figures differ by source (3.1tn vs 3.52tn) - both recorded. The -6% pre-report move was the Broadcom/Google read-across (separate item).",
+   "other_urls": [
+    "https://247wallst.com/investing/2026/11/20/nvidia-stock-plunges-12-after-reuters-reports-an-sec-probe-of-its-accounting-its-nvidias-worst-day-since-deepseek-and-it-has-lost-2-7-trillion-since-october/",
+    "https://www.fool.com/investing/2026/11/20/here-is-why-nvidia-stock-crashed-on-friday/",
+    "https://www.fool.com/investing/2026/11/20/nvidia-stock-plunge-wipes-out-nearly-usd500-billion-in-one-day-as-sec-reportedly-probes-its-accounting/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "AI credit gauges Fri 20 Nov: CoreWeave 5y CDS 1,232.6bp (+76.2bp intraday; >1,289bp Thu 19 Nov per Deutsche Bank, wider than the October peak; 1,100-1,200 range recent days; >65% implied 5y default probability), CRWV 9.75% 2031 notes ~16% yield; Oracle 5y CDS 327.9bp (+4.2bp, highest since 20 Oct, from <80bp a year ago); Amazon and Meta CDS more than doubled over a year, major tech spreads at five-year highs earlier in November; ICE BofA HY OAS 352bp (19 Nov, +18bp since 16 Nov), IG 94bp; co-founder Venturo bought USD 30m of CRWV unsecured bonds (Wed); two CDS-based AI-credit ETF filings (Tuttle, Defiance)",
+   "headline": "AI Credit Gauges Worsen as CoreWeave Default Swaps Widen Toward 1,233 Basis Points and Oracle Hits a One-Month High",
+   "claim": "The Private Banker (20 Nov 16:04 GMT): CoreWeave five-year CDS 1,232.6bp on Friday, up as much as 76.2bp intraday, pricing more than a 65% chance of default within five years, quoted 1,100-1,200 in recent days, and above 1,289bp on Thursday per Deutsche Bank data - wider than its October peak; the 9.75% bond due 2031 yields close to 16%; spreads above 1,000bp are generally treated as distress; Oracle five-year CDS 327.9bp, up as much as 4.2bp, highest since 20 Oct, more than tripled in a year from below 80bp; credit protection on Amazon and Meta has more than doubled over the past year; major tech spreads reached five-year highs earlier in November; co-founder Brian Venturo said he bought USD 30m of the unsecured bonds; Tuttle Capital and Defiance filed for CDS-based ETFs tied to AI-linked companies (unapproved); no deals pulled or priced wide reported. cappnotes: ICE BofA HY OAS 3.52% on 19 Nov from 3.47%, +18bp since 16 Nov; IG 0.94% from 0.93%; HYG -0.26%, LQD +0.59% Friday. Yahoo SG / UBS: 'a sharp repricing of the credit spreads of a number of neocloud players' that use debt to buy chips and data centres.",
+   "candidate_dial": "C-credit (neocloud CDS at distressed levels with a new Thursday wide; ORCL CDS one-month high; HY OAS +18bp in three sessions)",
+   "source": "The Private Banker 20 Nov 16:04 GMT; cappnotes 20 Nov (FRED HY/IG OAS 19 Nov); Yahoo SG 20 Nov (UBS note)",
+   "url": "https://leprivatebanker.com/2026/11/20/ai-credit-gauges-worsen-as-coreweave-default-swaps-widen-toward-1233-basis-points-and-oracle-hits-a-one-month-high/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Hard-event test (deal pulled/downsized) NOT met - these are secondary-market stress levels. CRWV CDS >1,000bp has been true since early November (16% bond yield recorded 11-06); new is the Thursday print above the October peak and Oracle's one-month high. Friday HY OAS not yet published; the 352bp is Thursday's FRED value. No primary HY issuance news surfaced for 20 Nov.",
+   "other_urls": [
+    "https://cappnotes.substack.com/p/closing-look-friday-november-20-2026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Fed-speak Fri 20 Nov: Cook (speech text, Chile central-bank conference) - the policy rate 'is not high enough', 'waiting longer to implement rate increases risks getting behind the curve', 'we do not have that luxury', 'there is little evidence inflation is declining', September 25bp 'was not enough', financial conditions still accommodative, late action 'could increase stress on our financial system', 'every additional day poses greater risk that price- and wage-setters will adjust their inflation expectations upward' (explaining her October dissent for a hike); Paulson open to back-to-back hikes; Kalshi 9 Dec: +25bp 90%, hold 9%, +50bp 2%; CME ~96% +25bp; Fed funds 3.75-4.00%; ECB hike 17 Dec 91%, BoJ 18 Dec 79%",
+   "headline": "Fed's Cook says rate hikes needed to lower high inflation (Reuters via Kitco) / Fed governor admits people see higher inflation as normal, vows to break that 'kind of psychology' (Fortune)",
+   "claim": "Reuters via Kitco (20 Nov 13:31 EST): in a speech prepared for a central-bank conference in Chile, Cook said the Fed's policy rate is not high enough to address inflation, that 'waiting longer to implement rate increases risks getting behind the curve', that 'we do not have that luxury' of patience, that the September quarter-point hike was not enough, that there is 'little evidence inflation is declining' and recent data fail to provide 'sufficient evidence that inflation is returning to a sustainable path' after more than five and a half years above target; growth 'strong and accelerating', labour market 'solid'; financial conditions remain accommodative; acting too late could force larger later hikes that 'could increase stress on our financial system'; she dissented in October when the Fed held at 3.75-4.00%. Fortune (20 Nov 16:08 ET): Cook on Friday said 'every additional day poses greater risk that price- and wage-setters will adjust their inflation expectations upward'; CME FedWatch fully prices a 25bp December hike; a 50bp move would take the range to 4.25-4.50%; Chair Warsh has opposed forward guidance. cappnotes: Paulson open to back-to-back hikes; Kalshi 25bp 90% / hold 9% / larger 2%.",
+   "candidate_dial": "B-sovereign (policy-rate path: a sitting governor arguing the Fed is behind the curve on the day the S&P enters correction and the 10y falls 12bp - hikes into a drawdown)",
+   "source": "Reuters via Kitco 20 Nov 13:31 EST; Fortune 20 Nov 16:08 ET; cappnotes 20 Nov",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-11-20/feds-cook-says-rate-hikes-needed-lower-high-inflation",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Dial vocabulary suggestion only - the prior files carry no rates dial, so B-sovereign is used as the nearest. The Waller 50bp remarks are a separate late item (18 Nov). Odds barely moved on the equity rout (Kalshi +25bp 89.3% Thu -> 90% Fri; +50bp 6.3% -> 2%): the market removed the jumbo tail, not the hike. Cook's text was 'to be presented' - delivery not confirmed.",
+   "other_urls": [
+    "https://fortune.com/2026/11/20/fed-rate-hikes-higher-inflation-expectations-unanchored-chris-waller/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-18",
+   "late": true,
+   "name": "LATE (18 Nov, not in the 11-18/11-19/11-20 files): Waller on CNBC Wed 18 Nov - if the Fed hikes 25bp in December it must clearly signal another 25bp in January, otherwise 'you have to go 50 in December'; the Fed should take back all three 2025 cuts and 'may have to go above... three hikes plus maybe some more'; 'people are starting to think 3% may be the norm... that's the kind of psychology we need to start breaking'; 'we can't wait, we can't do this in like the next two years'; signal could come via the statement, Warsh's presser or the December SEP; NY Fed's Williams: 'I don't think the situation calls for dramatic action'; October CPI 0.4% m/m (vs 0.3%), core 0.3% (vs 0.2%)",
+   "headline": "Fed's Waller doubles down on a jumbo rate hike in December, sees more hikes to come",
+   "claim": "Yahoo Finance / Schonberger (18 Nov 09:46 PST): Waller said on CNBC that if the Fed raises 25bp next month it needs to clearly signal another 25bp in January, otherwise 'you have to go 50 in December'; 'it only affects market pricing if you signal you're going to do it'; the signal could come in the statement, at Chair Kevin Warsh's press conference, or via December's quarterly projections; the Fed 'may need to do more' and should reverse last year's three cuts; inflation has been above 2% for nearly six years; October CPI +0.4% (vs 0.3% expected), core +0.3% (vs 0.2%); Williams: 'I don't think the situation calls for dramatic action'; Warsh, chair since May, has sought to eliminate forward guidance. Fortune (20 Nov) quoting the same interview: 'People are starting to think 3% may be the norm', 'that's the kind of psychology we need to start breaking', 'We can't wait. We can't do this in like the next two years', 'So we may have to go above... three hikes plus maybe some more to get it to start actually coming back down'; a 50bp move would take the range to 4.25-4.50% from 3.75-4.00%.",
+   "candidate_dial": "B-sovereign (policy-rate path: 50bp December option on the table from a governor; terminal above the pre-cut level)",
+   "source": "Yahoo Finance / Schonberger 18 Nov 09:46 PST; Fortune 20 Nov 16:08 ET; CNBC interview 18 Nov (refused host)",
+   "url": "https://finance.yahoo.com/economy/policy/article/feds-waller-doubles-down-on-a-jumbo-rate-hike-in-december-sees-more-hikes-to-come-174616572.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Kept once with late:true under the 2-day tolerance (dated 18 Nov, absent from yesterday's items/discarded lists, which only logged Waller as a Friday scheduled speaker). Market pricing on 20 Nov (Kalshi +50bp 2%) shows the jumbo option was not taken up after the equity rout. Waller's scheduled Friday 08:25 ET remarks were not separately surfaced by search.",
+   "other_urls": [
+    "https://fortune.com/2026/11/20/fed-rate-hikes-higher-inflation-expectations-unanchored-chris-waller/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-20",
+   "late": false,
+   "name": "Update vs 11-20: Anthropic 'ANT' day two Fri 20 Nov - open 89.86, high 92.56, low 83.05 (five cents above the USD 83 IPO price; -12% intraday), close 88.91 (-8.50% vs 97.17; 7.1% above IPO, 20.3% below the 111.50 first print); volume ~400m vs 857m debut day; pre-market -7.6% at 06:49 ET, -9.9% at 09:02 ET; Seaport initiates Neutral; Broadcom to lend up to USD 42bn and bought USD 1bn at IPO; CNBC: first full day as tech 'shellacked'; next tests - whether 83 holds on a second test, Nvidia SEC-probe follow-ups, further initiations; holiday-shortened week (closed 26 Nov, 13:00 ET close 27 Nov)",
+   "headline": "Anthropic falls nearly 9% in first full day of trading as tech stocks get shellacked / ANT Stock $88.91: Friday Low Came 5 Cents Above IPO Price",
+   "claim": "financefeeds (21 Nov 07:00 GMT, citing Nasdaq.com/Yahoo): ANT Friday open 89.86, high 92.56, low 83.05, close 88.91 (-8.26, -8.50% from Thursday's 97.17); volume ~400m vs 857m on debut day; week-ahead: whether the USD 83 IPO price holds on a second test (a close below leaves IPO buyers under water), follow-up on the Reuters SEC/Nvidia report, further initiations after Seaport's Neutral, holiday week. stocktitan: -7.62% at 06:49 ET, -9.52% to 87.92 at 08:02, -9.94% to 87.51 at 09:02; close -8.50% to 88.91, ~7.1% above the IPO price and ~20.3% below the 111.50 first trade; CNBC: Anthropic 'pressuring the broader AI trade'. Reuters via Yahoo: day two -9.1% (intraday). Yahoo/Ferre: fell as much as 12% intraday; per the prospectus Broadcom agreed to lend Anthropic up to USD 42bn for infrastructure and bought ~USD 1bn in the IPO-related placement. cappnotes: -8.50% to 88.91, touched 83.05.",
+   "candidate_dial": "C-equity (record IPO tested its offer price on day two; the AI complex sold 12-16% around it)",
+   "source": "financefeeds 21 Nov 07:00 GMT; stocktitan 20 Nov; cappnotes 20 Nov; Reuters via Yahoo 20 Nov; Yahoo/Ferre 20 Nov; CNBC 20 Nov (headline, refused host)",
+   "url": "https://financefeeds.com/anthropic-ant-stock-88-91-saturday-week-ahead-after-friday-low-tested-83-ipo-price-bull-97-bear-80/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Extends the 11-19/11-20 debut items. The 83.05 low is the reading: the deal has not broken issue but was within five cents on its first full session with volume still ~400m. Stabilisation/greenshoe activity not reported by any fetched source.",
+   "other_urls": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026",
+    "https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-19",
+   "late": true,
+   "name": "LATE (19 Nov 12:31Z, not in the 11-20 file): Alibaba executives on the FQ2 call said 'global compute policy changes' may lead to a downward revision of the long-term 20 GW data-centre capacity target, which would lower overall capex; AI/cloud revenue +53% to ~USD 9.1bn, 2027 cloud revenue guided +30-45%; domestic chip investment to stay at peak levels through 1H28, free cash flow positive from 2H28; '2027-2028 will be the period in which compute supply is at its scarcest in China's domestic market' (tweet paraphrase); net profit ~CNY 64.5bn (~USD 9.7bn, ~3x, vs ~3.6bn est.)",
+   "headline": "Alibaba stated that it may lower its 20-gigawatt data center construction target (Zhitong/Longbridge) / Alibaba Guides 30-45% Cloud Growth, May Cut 20 GW Capacity Target (huggingnews) / Alibaba executive signals its 20 GW data center target may shrink (cryptobriefing)",
+   "claim": "huggingnews (19 Nov 13:22Z, paraphrase - no direct executive quote): an Alibaba executive said shifts in global compute policy may lead the company to revise its long-term 20 GW data-centre capacity target downward, which could reduce overall capital expenditure; cloud revenue projected +30-45% next year; AI cloud revenue +53% to USD 9.1bn; domestic chip investment stays at peak levels through the first half of 2028; free cash flow turns positive in the second half of 2028; tweet paraphrase of the executive: '2027-2028 will be the period in which compute supply is at its scarcest in China's domestic market'; net profit reportedly ~USD 9.68bn (~CNY 64.5bn) vs ~USD 3.6bn estimate. Longbridge/Zhitong (19 Nov 12:31Z) headline: 'Alibaba stated that it may lower its 20-gigawatt data center construction target'; BABA -1.26% at capture.",
+   "candidate_dial": "C-capex (GW-target deferral by a non-registered hyperscaler - policy/chip-access driven, not demand; the 20 GW figure was Alibaba's multi-year China AI build target)",
+   "source": "huggingnews 19 Nov 13:22Z; Longbridge/Zhitong 19 Nov 12:31Z; cryptobriefing / techflowpost / aistockwire relays (client_error, not read)",
+   "url": "https://huggingnews.com/earnings/alibaba-guides-30-45percent-cloud-growth-may-cut-20-gw-capacity-target-c52373e8",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Kept once with late:true under the 2-day tolerance: published 19 Nov ~12:31Z, inside yesterday's window but absent from the 11-20 items and discarded lists. Hard-event test (GW deferral) partially met: it is a 'may revise downward' of a long-dated target attributed to US chip-export policy, with near-term domestic chip investment held at peak - not a cancellation, and Alibaba is not on the registered-ticker list. Primary relays unreadable; figures are from a secondary relay quoting tweets, so treat as unverified until the transcript surfaces.",
+   "other_urls": [
+    "https://longbridge.com/en/news/306119066",
+    "https://cryptobriefing.com/alibaba-may-cut-20-gw-data-center-target/"
+   ]
+  }
+ ]
+}
