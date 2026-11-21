@@ -1,0 +1,134 @@
+{
+ "hazards_per_month": {
+  "choreographed_strike_then_ceasefire": 8,
+  "crew_fatality_confirmed": 25,
+  "disorderly_treasury_move": 15,
+  "energy_infra_strike_either_direction": 14,
+  "fed_50bp_dec": 5,
+  "fuse_pricing_fails_or_sweetened_by_1231": 30,
+  "gulf_state_engages_iran": 8,
+  "iran_npt_withdrawal_announced": 8,
+  "iran_nuclear_test": 2,
+  "joint_us_israel_campaign_4_7_days": 10,
+  "red_sea_or_pipeline_shutdown": 18
+ },
+ "ledger_note": "1 resolved this run (S-20261130-STRIKE2, Brier 0.4225); 9 re-priced or held; 2 new. Rolling Brier is read from dials/state/scoreboard.json after materialization.",
+ "registered": [
+  {
+   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-SIGN",
+   "lead_days": 25,
+   "note": "from 0.15: Trump defers to 'after January 1', Berlin mediator meeting 'no major progress', no venue; Araghchi's shortenable two-day plan is the counter. Within the R+ + R- H2 weight of 15.",
+   "p": 0.1,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "E criteria met by Dec 9 (a strike on energy infrastructure in either direction confirmed by the owning state, a Gulf state engaging Iran directly, or an Iranian nuclear test)",
+   "depth": 2,
+   "id": "S-20261209-E",
+   "lead_days": 25,
+   "note": "held at 0.35: Iran struck US bases in Kuwait and Bahrain (intercepted) - a Gulf state being struck is not a Gulf state engaging Iran; Houthi pumping-station claims unacknowledged; 18 days left. The E weight (60) is carried by modalities outside this criterion - see cone_validity.",
+   "p": 0.35,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles >= 120 on any day by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-BRENT120",
+   "lead_days": 25,
+   "note": "from 0.10: Brent 92.57 needs +30% in 12 sessions; Kalshi WTI >= 115 by Dec 31 at 9.2%; the E-strike path only.",
+   "p": 0.07,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles <= 90 on any day by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-BRENT90",
+   "lead_days": 25,
+   "note": "from 0.30: week low settle 91.95 (Nov 18), 'biased lower' absent escalation, IEA ~2 mb/d Q4 surplus, OPEC+ Nov 29; Kalshi WTI below $80 in November 59.5% (crowd, +10 cap not needed).",
+   "p": 0.4,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-M3",
+   "lead_days": 25,
+   "note": "from 0.05: 6-10% carried, six hull hits and casualties this week; no deal path inside the window.",
+   "p": 0.03,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a new Israeli government sworn in by Dec 4",
+   "depth": 1,
+   "id": "S-20261204-ISRAELGOV",
+   "lead_days": 20,
+   "note": "held at 0.30; no coalition reporting in the gather; Liberman described as the new FADC chair (Channel 12, Nov 20) - a Knesset committee change, not a government.",
+   "p": 0.3,
+   "resolves": "2026-12-04"
+  },
+  {
+   "criterion": "any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "depth": 3,
+   "id": "S-20261231-FUSE",
+   "lead_days": 47,
+   "note": "held at 0.05: chip-collateralized by construction; SpaceX 5y CDS 265 bp (Nov 16); 'as soon as this week' (Nov 18), nothing priced in gate.",
+   "p": 0.05,
+   "resolves": "2026-12-31"
+  },
+  {
+   "criterion": "within 7 days of the Nov 19 Shenzhen trilateral, a US-Iran meeting with a named venue and date is announced by the US or Iran (not a mediator)",
+   "depth": 1,
+   "id": "S-20261126-VENUE",
+   "lead_days": 12,
+   "note": "from 0.15: Shenzhen passed with no Iran paragraph; Berlin 'no major progress'; Trump 'after January 1'; 5 days left.",
+   "p": 0.05,
+   "resolves": "2026-11-26"
+  },
+  {
+   "criterion": "the FOMC raises the funds rate by >= 25 bp on Dec 9",
+   "depth": 2,
+   "id": "S-20261209-FEDHIKE",
+   "lead_days": 25,
+   "note": "from 0.90: FedWatch 95.7% (Nov 19) / 96.9% (Nov 20); minutes 'nearly all'; Kalshi/Polymarket 89.5%.",
+   "p": 0.95,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a further US or Israeli strike on Iranian territory Nov 21-Dec 5, reported by CENTCOM/IDF or confirmed by two wires",
+   "depth": 1,
+   "id": "S-20261205-STRIKE3",
+   "lead_days": 14,
+   "note": "new: the tit-for-tat template has produced a confirmed US strike in each of the last three weeks (Nov 6, 9/12, 17) in answer to IRGC fire at US assets; Trump's deferral to January is about a campaign, not self-defense strikes; CBS 'coming days' vs Liberman 'no urgency'.",
+   "p": 0.55,
+   "resolves": "2026-12-05"
+  },
+  {
+   "criterion": "the FOMC raises the funds rate by 50 bp on Dec 9",
+   "depth": 2,
+   "id": "S-20261209-FED50",
+   "lead_days": 18,
+   "note": "new (F3 mode fork): FedWatch 4.3% (Nov 19); Waller floated it Nov 18, Williams ruled it out; registered so the hike-into-floor mode is scored on its size.",
+   "p": 0.05,
+   "resolves": "2026-12-09"
+  }
+ ],
+ "resolved": [
+  {
+   "brier": 0.4225,
+   "criterion": "a further US or Israeli strike on Iranian territory Nov 15-30, reported by CENTCOM/IDF or confirmed by two wires",
+   "event_time": "2026-11-17",
+   "evidence": "US fighter jets struck an IRGC missile launch site on Qeshm Island Nov 17; a US military official confirmed it ~19:27Z as 'self-defense... in response to IRGC aggression targeting US personnel and assets'; Fars reported the explosion ~13:33Z; multiple outlets ('US confirms it struck IRGC missile launch site on Iran's Qeshm Island'). Criterion met Nov 17; resolved early.",
+   "id": "S-20261130-STRIKE2",
+   "kind": "standoff",
+   "log_score": -1.049822,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "outcome": 1,
+   "p": 0.35,
+   "resolved_at": "2026-11-21",
+   "source_node": "dials/standoff/2026-11-18.json"
+  }
+ ],
+ "run_id": "2026-11-21T0611-standoff"
+}

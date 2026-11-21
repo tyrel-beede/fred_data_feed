@@ -1,0 +1,35 @@
+{
+ "error": "gather group standoff status partial every day Nov 16-21; unmeasured this run: M3 war-risk % of hull (no November quote; Oct 6-10% carried); O3 Dated Brent (IEA ~93 Nov 13 carried); Brent Feb-27 settle for Nov 20 (M1-M2 2.54 is the Nov 19 print); O5 TD3C after Oct 15; O6 rial, O7 CDS not read; Semafor Nov 18 fuse piece robots_disallowed (BigGo relay used); M8 is a DTN ship-tracking estimate, not IEA/EIA",
+ "grade_the_gap": null,
+ "inputs_commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+ "kind": "standoff",
+ "mode": "full",
+ "repo_commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+ "run_at": "2026-11-21T06:11:50-07:00",
+ "run_id": "2026-11-21T0611-standoff",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 1,
+  "task": "dials-weekly"
+ },
+ "skill_version": "standoff-watch SKILL.md, repository-state version (dials/runs/<RUN_ID>/), synced skill folder 2026-11-21",
+ "state_prev": {
+  "H2": {
+   "E": 45,
+   "F": 35,
+   "R+": 5,
+   "R-": 15
+  },
+  "H2_exact": {
+   "E": 45.9,
+   "F": 34.43,
+   "R+": 6.56,
+   "R-": 13.11
+  },
+  "run_id": "2026-11-14T0611-standoff"
+ },
+ "status": "partial",
+ "test_materialize": "state reproduces byte-for-byte from runs/; the one FAIL line is the test's hard-coded migration anchor (dials Brier 0.121, n=12) which the 2026-11-14 dials run already outgrew (now 0.1178, n=18) - pre-existing on main before this run, a test bug not a folder fault; tools are not edited by a scorer run"
+}

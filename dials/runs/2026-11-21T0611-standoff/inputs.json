@@ -1,0 +1,290 @@
+{
+ "fetch_rule": "every page reached through a WebSearch result link (unattended session); 6 searches, 16 pages, 3 unreachable; no memory tool called",
+ "files": [
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/state/latest.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-standoff/cone.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-standoff/export.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-standoff/forecasts.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-standoff/report.md"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/state/ledger.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/state/scoreboard.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/state/register.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/rulings.md"
+  },
+  {
+   "as_of": "2026-11-06b",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/config.json"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (status partial; tolerance 2 days)",
+   "path": "dials/_status_standoff.json"
+  },
+  {
+   "as_of": "2026-11-16",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-16.json"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-17.json"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-18.json"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-19.json"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-20.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-21.json"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DGS2.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DGS10.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DGS30.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DFII10.csv"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/T5YIE.csv"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/T5YIFR.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLC0A0CM.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A0HYM2.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/OVXCLS.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/SP500.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/CPIAUCSL.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/CPILFESL.csv"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DCOILBRENTEU.csv"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DCOILWTICO.csv"
+  }
+ ],
+ "pages": [
+  {
+   "as_of": "2026-11-19",
+   "field": "F3",
+   "gate": "fetched",
+   "url": "https://en.sedaily.com/society/2026/11/19/us-dec-rate-hike-odds-at-957-percent-as-fed-resists-bigger"
+  },
+  {
+   "as_of": "2026-11-20",
+   "field": "F3",
+   "gate": "fetched",
+   "url": "https://finance.biggo.com/news/78ad00f8-6255-4ebc-9b35-179f5a35e276"
+  },
+  {
+   "as_of": "2026-11-18",
+   "field": "F3",
+   "gate": "unreachable (server error)",
+   "url": "https://247wallst.com/investing/2026/11/18/traders-now-see-a-95-chance-the-fed-hikes-rates-in-december/"
+  },
+  {
+   "as_of": "2026-11-18",
+   "field": "F5",
+   "gate": "fetched",
+   "url": "https://finance.biggo.com/news/dbb31113-6401-47aa-a4af-583fd9711e9b"
+  },
+  {
+   "as_of": "2026-11-18",
+   "field": "F5",
+   "gate": "unreachable (robots_disallowed)",
+   "url": "https://www.semafor.com/article/11/18/2026/spacex-40-billion-chip-financing-to-stay-off-balance-sheet"
+  },
+  {
+   "as_of": "2026-11-18",
+   "field": "F5",
+   "gate": "unreachable (client_error)",
+   "url": "https://www.roic.ai/news/spacex-prepares-40-billion-off-balance-sheet-ai-chip-financing-with-apollo-11-18-2026"
+  },
+  {
+   "as_of": "2026-11-17",
+   "field": "F6",
+   "gate": "fetched",
+   "url": "https://hedgeco.net/news/11/2026/fund-managers-cut-their-tech-overweight-by-the-most-since-2006-in-bofas-november-survey-as-cash-fell-to-3-6.html"
+  },
+  {
+   "as_of": "2026-11-17",
+   "field": "F6",
+   "gate": "fetched",
+   "url": "https://fortune.com/2026/11/17/ai-bubble-popping-bofa-fund-manager-survey-largest-cut-since-2006/"
+  },
+  {
+   "as_of": "2026-11-17",
+   "field": "F6",
+   "gate": "fetched",
+   "url": "https://atranicapital.substack.com/p/november-2026-bank-of-america-global"
+  },
+  {
+   "as_of": "2026-11-21",
+   "field": "F7",
+   "gate": "fetched",
+   "url": "https://reflectionsofreality.substack.com/p/polymarketkalshi-macro-weekly-2026-b3d"
+  },
+  {
+   "as_of": "2026-11-21",
+   "field": "F7",
+   "gate": "fetched",
+   "url": "https://straits.live/when-will-the-strait-of-hormuz-reopen"
+  },
+  {
+   "as_of": "2026-10-24",
+   "field": "M3",
+   "gate": "fetched (no November figure)",
+   "url": "https://www.ces-intelligence.com/analysis/strait-of-hormuz-war-risk-insurance-2026-daily-signal"
+  },
+  {
+   "as_of": "2026-07 (figure) / 2026-11-20 (stamp)",
+   "field": "M3",
+   "gate": "fetched (stale figure)",
+   "url": "https://thehormuzstrait.com/strait-of-hormuz-war-risk-insurance/"
+  },
+  {
+   "as_of": "2026-10-30",
+   "field": "M3/O5",
+   "gate": "fetched (Oct figures)",
+   "url": "https://www.alupetra.com/insights/hormuz-tanker-freight-rates-war-risk-insurance-2026.html"
+  },
+  {
+   "as_of": "2026-11-18",
+   "field": "M5",
+   "gate": "fetched",
+   "url": "https://boereport.com/2026/11/18/qatarenergys-lng-expansion-may-leave-it-bigger-but-not-less-exposed/"
+  },
+  {
+   "as_of": "2026-11-20",
+   "field": "M5/M8",
+   "gate": "fetched",
+   "url": "https://houseofsaud.com/hormuz-lng-october-record-war-era-high/"
+  }
+ ],
+ "run_id": "2026-11-21T0611-standoff"
+}

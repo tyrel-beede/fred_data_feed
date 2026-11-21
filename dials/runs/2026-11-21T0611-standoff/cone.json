@@ -1,0 +1,73 @@
+{
+ "H2": {
+  "E": 60,
+  "F": 25,
+  "R+": 5,
+  "R-": 10
+ },
+ "H3": {
+  "E": 65,
+  "F": 20,
+  "R+": 5,
+  "R-": 10
+ },
+ "applied": [
+  "T7 -1 x2 toward E (new modalities under ruling s-T7: Iran's first strikes on Kuwait (Ali Al-Salem, Nov 18) after four rounds at Bahrain radars Nov 13-18, and the first crew casualties of the standoff - one Indian seafarer missing from TARA GAS after a second strike Nov 17, 2 hospitalised, ADNOC L&S reporting 1 missing / 11 injured on NAVIG8 MESSI (disputed); E odds x2)"
+ ],
+ "cone_validity": "valid for F/E with a definitional flag: the E weight (60) is carried by harassment modalities (casualties, Gulf host-state bases struck) that do not meet the S-20261209-E criterion (energy-infrastructure strike confirmed by the owning state, a Gulf state engaging Iran directly, or a nuclear test), which is held at 0.35. The F/E boundary ('frozen harassment with casualties') needs an attended ruling; until then the fork, not the weight, is the scored object. R branches sum to 15 at H2.",
+ "exact": {
+  "H2": {
+   "E": 62.92,
+   "F": 23.6,
+   "R+": 4.49,
+   "R-": 8.99
+  },
+  "H3": {
+   "E": 68.09,
+   "F": 19.15,
+   "R+": 4.26,
+   "R-": 8.51
+  }
+ },
+ "horizons": {
+  "H1": "Nov 26 (S-20261126-VENUE) / Nov 29 OPEC+ ministerial",
+  "H2": "~six weeks, through FOMC Dec 9",
+  "H3": "one quarter, ~Feb 20 (+/-15)"
+ },
+ "method": "odds-form (= weight-multiply and renormalize), rounded to 5 by largest remainder; from the Nov 14 exact weights H2 6.56/13.11/34.43/45.90 -> T7 (E x2) 6.56/13.11/34.43/91.80 (sum 145.90) -> exact 4.49/8.99/23.6/62.92 -> logged 5/10/25/60; H3 6.45/12.90/29.03/51.61 -> E x2 -> exact 4.26/8.51/19.15/68.09 -> logged 5/10/20/65. Not scored (recorded): T7 US side; T1; T2; T3; T4; T6; M9; M8; O1",
+ "prior_exact": {
+  "H2": {
+   "E": 45.902,
+   "F": 34.426,
+   "R+": 6.557,
+   "R-": 13.115
+  },
+  "H3": {
+   "E": 51.613,
+   "F": 29.032,
+   "R+": 6.452,
+   "R-": 12.903
+  }
+ },
+ "run_id": "2026-11-21T0611-standoff",
+ "state_label": "E-leaning on modality, F in the price: harassment with casualties and a new Gulf front, no deal, no decisive strike; oil pricing surplus over Hormuz",
+ "steelman": "What would make this wrong: the next-most-likely branch is F (25). Its case: every escalation this week was answered by interceptions, not strikes - six confirmed hull hits, four Bahrain rounds and a Kuwait round produced no energy-infrastructure strike, no Gulf state firing at Iran and no US campaign; Trump deferred any decision to 'after the beginning of the year', Vance bounded the war's length, Liberman (Israel) says no security case for a strike now; Hormuz crude transits are reported near 13.5 mb/d with Gulf exports >80% of pre-war, Brent fell 3.4% on the week to 92.57 through all of it and the prompt spread narrowed to 2.54 - the market is pricing the new normal, not E. A fortnight with M2 in 1-3 and no new modality would move F back by x1.5. The R case: Araghchi's two-day plan 'shortenable to two hours' and Trump's 'they want to make a deal' are the T4 pair; a venue and date (S-20261126-VENUE) would be T3 +1 x2 within days.",
+ "steps": {
+  "H2": [
+   {
+    "E": 91.804,
+    "F": 34.426,
+    "R+": 6.557,
+    "R-": 13.115
+   }
+  ],
+  "H3": [
+   {
+    "E": 103.226,
+    "F": 29.032,
+    "R+": 6.452,
+    "R-": 12.903
+   }
+  ]
+ }
+}

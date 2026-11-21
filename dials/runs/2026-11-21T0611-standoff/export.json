@@ -1,0 +1,98 @@
+{
+ "H2": {
+  "E": 60,
+  "F": 25,
+  "R+": 5,
+  "R-": 10
+ },
+ "H2_exact": {
+  "E": 62.92,
+  "F": 23.6,
+  "R+": 4.49,
+  "R-": 8.99
+ },
+ "H3": {
+  "E": 65,
+  "F": 20,
+  "R+": 5,
+  "R-": 10
+ },
+ "brent": {
+  "front_contract": "Jan-27",
+  "front_date": "2026-11-20",
+  "front_month": 92.57,
+  "low_settle_since": {
+   "date": "2026-11-18",
+   "value": 91.95
+  },
+  "m1_m2_date": "2026-11-19",
+  "m1_m2_note": "Nov 19 pair (M1 91.98 / M2 89.44); Nov 20 Feb settle not printed",
+  "m1_m2_spread": 2.54,
+  "next_contract": "Feb-27",
+  "next_date": "2026-11-19",
+  "next_month": 89.44,
+  "recent_high": 117.6,
+  "recent_high_date": "2026-10-30",
+  "recent_high_note": "Dec-26 expiry settle; Jan-27 high 116.72 on 2026-10-23",
+  "week_chg_pct": -3.41
+ },
+ "cone_validity": "valid for F/E with a definitional flag: the E weight (60) is carried by harassment modalities (casualties, Gulf host-state bases struck) that do not meet the S-20261209-E criterion (energy-infrastructure strike confirmed by the owning state, a Gulf state engaging Iran directly, or a nuclear test), which is held at 0.35. The F/E boundary ('frozen harassment with casualties') needs an attended ruling; until then the fork, not the weight, is the scored object. R branches sum to 15 at H2.",
+ "equity_note": "S&P 500 -5.1% Nov 13-19 (7561.67 -> 7175.83), HY OAS +29 bp to 3.52 - the AI/tech de-rating, not an oil-channel move",
+ "floor_zone": "85-100",
+ "floor_zone_prev": "85-100",
+ "fuse": "strained",
+ "fuse_note": "SpaceX ~$40B Apollo SPV chip lease (five years) + $7B down payment + Goldman-led $8.3B senior secured loan, off balance sheet; 'could be sold as soon as this week' (Nov 18) - no tranche priced; SpaceX 5y CDS 265 bp (Nov 16) vs ~110 at the June IPO; IG OAS 0.94, HY 3.52 (Nov 19, +5 / +29 bp wk)",
+ "hazards_per_month": {
+  "choreographed_strike_then_ceasefire": 8,
+  "crew_fatality_confirmed": 25,
+  "disorderly_treasury_move": 15,
+  "energy_infra_strike_either_direction": 14,
+  "fed_50bp_dec": 5,
+  "fuse_pricing_fails_or_sweetened_by_1231": 30,
+  "gulf_state_engages_iran": 8,
+  "iran_npt_withdrawal_announced": 8,
+  "iran_nuclear_test": 2,
+  "joint_us_israel_campaign_4_7_days": 10,
+  "red_sea_or_pipeline_shutdown": 18
+ },
+ "hormuz_fork_p_signing_by": {
+  "2026-12-09": 0.1
+ },
+ "line": "standoff 2026-11-21T0611-standoff | R+ 5 / R- 10 / F 25 / E 60 (H2) | floor 85-100 | Hormuz fork 0.10 by Dec 9 | supply | fuse strained | status partial",
+ "positioning": {
+  "bull_bear": 7.4,
+  "cash_pct": 3.6,
+  "fms": "Nov 6-12",
+  "rotation_10y_level": 5.8,
+  "short_treasuries_crowded_pct": 10,
+  "tech_net_ow": 12,
+  "tech_prev": 37,
+  "top_tail_risk": "AI bubble 34%"
+ },
+ "run_at": "2026-11-21T06:11:50-07:00",
+ "run_id": "2026-11-21T0611-standoff",
+ "shock_type": "supply",
+ "state_label": "E-leaning on modality, F in the price: harassment with casualties and a new Gulf front, no deal, no decisive strike; oil pricing surplus over Hormuz",
+ "status": "partial",
+ "transmission": {
+  "core_ge_0p4_twice": false,
+  "cpi_oct_core_mm": 0.3,
+  "cpi_oct_headline_mm": 0.35,
+  "dec_50bp_p": 0.043,
+  "dec_hike_p": 0.957,
+  "dfii10": 2.88,
+  "dgs10": 5.04,
+  "dgs2": 4.76,
+  "dgs30": 5.4,
+  "jan_hike_p": 0.475,
+  "t5yie": 2.18,
+  "t5yifr": 2.12
+ },
+ "unmeasured": "M3 war-risk % of hull (no November quote; Oct 6-10% carried); O3 Dated Brent (IEA ~93 Nov 13 carried); Brent Feb-27 settle for Nov 20 (M1-M2 2.54 is the Nov 19 print); O5 TD3C after Oct 15; O6 rial, O7 CDS not read; Semafor Nov 18 fuse piece robots_disallowed (BigGo relay used); M8 is a DTN ship-tracking estimate, not IEA/EIA",
+ "wti": {
+  "front_contract": "Jan-27",
+  "front_date": "2026-11-20",
+  "front_month": 83.41,
+  "note": "Dec-26 expired Nov 20 at 83.98"
+ }
+}
