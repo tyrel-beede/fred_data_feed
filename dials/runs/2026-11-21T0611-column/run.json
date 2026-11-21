@@ -1,0 +1,33 @@
+{
+ "built_from": "2026-11-21T0611-dials",
+ "built_from_status": "partial",
+ "error": "",
+ "freshness": "fresh: dials run_at 2026-11-21T06:11 > last column built_from 2026-11-14T0611-dials; no fork passed between run_at and today; dials status partial (not failed)",
+ "headline": "The Market Broke. The Confirmations Didn't.",
+ "inputs_commit": "1eaf52e",
+ "kind": "column",
+ "mode": "weekly",
+ "pigs_added": 6,
+ "pigs_graded": 5,
+ "pigs_retired": 0,
+ "post_mode": "pr (dials/config.json column.post_mode)",
+ "post_url": null,
+ "repo_commit": "1eaf52e",
+ "run_at": "2026-11-21T06:11:50-07:00",
+ "run_id": "2026-11-21T0611-column",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 3,
+  "task": "dials-weekly"
+ },
+ "status": "ok",
+ "tally": {
+  "cost": 10,
+  "paid": 5,
+  "void": 0
+ },
+ "test_note": "test_materialize.py's migration-seed assertion (dials Brier 0.121, n=12) fails by construction (n=24 after stage 2); state/ reproduces byte-for-byte with no Brier mismatches.",
+ "words": 5495
+}

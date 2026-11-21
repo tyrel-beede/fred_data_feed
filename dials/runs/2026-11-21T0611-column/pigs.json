@@ -1,0 +1,175 @@
+{
+ "built_from": "2026-11-21T0611-dials",
+ "graded": [
+  {
+   "basis": "NVDA closed 145.98 on Nov 19 = -32.4% from 216.00 (10/26) vs a +/-10% line (data/prices/NVDA.csv)",
+   "grade": "paid",
+   "graded_on": "2026-11-21",
+   "hindsight": "asymmetry real and large; the reprice came before the print and on governance (Huang exit, SEC report), not on the guide, which beat",
+   "id": "PG-20261027-NVDA-LAST-NODE"
+  },
+  {
+   "basis": "F-20261117-NVDA-BACKSTOP fired (neocloud commitments $36bn -> $32bn, made conditional; flagged marginal in the dials run); F-NVDA-GUIDE did not (guide $130bn vs ~$110bn); NVDA -2.89% Nov 18",
+   "flag": "marginal",
+   "grade": "paid",
+   "graded_on": "2026-11-21",
+   "hindsight": "paid on the weaker leg; the stock's -14% came two days later on the SEC report, outside the pig's window - direction right, mechanism different",
+   "id": "PG-20261114-NVDA-GUIDE"
+  },
+  {
+   "basis": "Nov 20: 45.8% of S&P 500 above the 200-day (line 63.7%); A/D line 1,874 vs 2,960 on Oct 29 (data/breadth/sp500_breadth.csv). Nov 13 had both legs met (63.9%, 3,124)",
+   "grade": "cost",
+   "graded_on": "2026-11-21",
+   "hindsight": "the trend held for three weeks and broke in the last five sessions; a date-binary that lost on timing",
+   "id": "PG-20261030-BREADTH-TREND"
+  },
+  {
+   "basis": "top-8 dispersion sigma 12.45 (>= 12) but SPX -11.5% from its high vs a within-5% condition (readings.json E10; divergence)",
+   "grade": "cost",
+   "graded_on": "2026-11-21",
+   "hindsight": "dispersion arrived with the index break rather than before it - the 'discrimination inside a rising index' premise failed; the finding is the information",
+   "id": "PG-20261030-UNHEDGED-NAMES"
+  },
+  {
+   "basis": "MU/SMH 594.51/400.06 = ratio 1.486 vs 1.693 (10/30) = -12.2%, through the -10% line before the Dec 18 date (data/prices)",
+   "grade": "paid",
+   "graded_on": "2026-11-21",
+   "hindsight": "asymmetry real: the last supplier lost more than its sector in the de-rating (MU -35% 1m vs SMH -28%)",
+   "id": "PG-20261030-LAST-SUPPLIER"
+  }
+ ],
+ "open": [
+  {
+   "criterion": "AVGO close on Dec 1 >= +/-8% from 329.17 (10/26)",
+   "id": "PG-20261027-AVGO-SPV",
+   "resolves": "2026-12-01",
+   "status_1121": "304.41 = -7.5%; grades Dec 1; four-week carry limit reached at the next column"
+  },
+  {
+   "criterion": "CRWV 5y CDS <= 900 bp on any day by Dec 9 -> paid; else cost",
+   "id": "PG-20261027-CRWV-80",
+   "resolves": "2026-12-09",
+   "status_1121": "CDS 1,233-1,289 bp (Nov 19-20); against; carry limit at the next column"
+  },
+  {
+   "criterion": "HY OAS >= 400 on any day by Dec 9 -> paid; else cost",
+   "id": "PG-20261027-SINGLE-B",
+   "resolves": "2026-12-09",
+   "status_1121": "HY 352 (Nov 19), single-B 380, CCC 1,361; against; carry limit at the next column"
+  },
+  {
+   "criterion": "equal-weight (LRCX, AMAT, 000660.KS, 005930.KS) beats top-8 equal-weight by > 5 pts from Oct 30 -> paid; void if a B element fires first",
+   "id": "PG-20261030-JUNE-TOP",
+   "resolves": "2026-12-09",
+   "status_1121": "78.52 vs 90.26 since Oct 30 = -11.7 pts; against"
+  },
+  {
+   "claim": "oil fell 27% without a deal and the back of the curve has not moved",
+   "criterion": "paid if Brent front-month settles outside $85-105 on any day by Dec 9; cost otherwise",
+   "id": "PG-20261114-BACK-END",
+   "kill": "a confirmed energy-infrastructure strike (resolves E instead)",
+   "resolves": "2026-12-09",
+   "status_1121": "Brent 92.57 (Nov 20), week low 91.95; inside the band; standoff E 60 / fork 0.35"
+  },
+  {
+   "claim": "if the bears are right, the price that has not moved is investment grade",
+   "criterion": "paid if IG OAS >= 100 on any day by Dec 9; cost otherwise",
+   "id": "PG-20261114-IG-UNMOVED",
+   "kill": "IG < 85 with SpaceX tranches priced inside 7.75-8.75%",
+   "resolves": "2026-12-09",
+   "status_1121": "IG 94 (Nov 19-20), +7 1m; SpaceX priced inside (8.259%) but IG is not < 85 - not killed; fork IG100 raised to 0.40"
+  },
+  {
+   "claim": "the long end is priced for nothing (C weight 1) and three auctions just said otherwise",
+   "criterion": "paid if the 20y (Nov 18) or the 30y reopening (Dec 10) tails >= 2 bp; cost if both stop through",
+   "id": "PG-20261114-LONG-END",
+   "kill": "20y stop-through with indirects > 65%",
+   "resolves": "2026-12-10",
+   "status_1121": "20y leg lost: tail 0.0 (on the screws, not a stop-through), indirects 60.2 (< 65, kill not fired); 30y Dec 10 remains; C weight 0"
+  },
+  {
+   "claim": "a half-point hike is an 11% tail and the real-yield regime line is 14 bp away",
+   "criterion": "paid if DFII10 > 3.0 on any day by Dec 9; cost otherwise",
+   "id": "PG-20261114-REAL3",
+   "kill": "Nov core CPI <= 0.2 on Dec 10",
+   "resolves": "2026-12-09",
+   "status_1121": "DFII10 2.88 (Nov 19), peak 2.92 Nov 16; 50 bp odds 4.3%; fork REAL3 cut to 0.12"
+  },
+  {
+   "claim": "if the bulls are right, the asymmetry is in the suppliers that have already lost the rent",
+   "criterion": "paid if the E6 one-month spread >= +3 on Dec 17 with no B element; cost if <= -3; void if a B element fires",
+   "id": "PG-20261114-SUPPLIER-RENT",
+   "kill": "a memory contract price cut or any B element",
+   "resolves": "2026-12-17",
+   "status_1121": "E6 1m -8.7 / 3m -21.9; SUP 79.7; against unless a B element fires (then void)"
+  },
+  {
+   "claim": "the CoreWeave loan is a nine-day binary the credit market has decided and the dashboard has not",
+   "criterion": "paid if the >= $4bn IG secured loan prices by Nov 30 at or below 9% with 5y CDS <= 1,000 bp on any day by Dec 9; cost if F-20261130-CRWV-LOAN fires; void if neither by Dec 9",
+   "id": "PG-20261121-CRWV-LOAN",
+   "kill": "a silent extension past Nov 30 with no launch",
+   "market_vs_dashboard": "CDS 1,233-1,289 bp (>65% five-year default odds), 2031s ~16% vs fork 0.30 that the loan fails (p|B 0.90 / p|rest 0.23)",
+   "payoff": "if the loan prices, the distance from 1,233 toward 900; if it fails, bounded further downside in a distressed name against a x4 B signal",
+   "resolves": "2026-12-09",
+   "status_1121": "new"
+  },
+  {
+   "claim": "Broadcom on Dec 9 is the week's binary and the stock has already shown how it punishes the answer",
+   "criterion": "paid if F-20261209-AVGO or F-20261209-GOOGL-TPU fires; cost if the FQ1 guide is at or above consensus and AVGO closes higher on Dec 10",
+   "id": "PG-20261121-AVGO-DEC9",
+   "kill": "Alphabet confirms the cut before Dec 9 (the pig becomes a different trade)",
+   "market_vs_dashboard": "AVGO -11.4% Nov 20 on an analyst survey (Google TPU 8i orders ~-20%, unconfirmed) vs dashboard 0.30 (guide/confirmation) and 0.15 (confirmed cut, x4 B element)",
+   "payoff": "a confirmed cut is the first principal defection (x4) and a periphery reprice; a denial on FOMC day is a relief in a rumor-priced name",
+   "resolves": "2026-12-09",
+   "status_1121": "new"
+  },
+  {
+   "claim": "if the bulls are right, the asymmetry is in the neoclouds sold to distress, not in the index",
+   "criterion": "paid if the NEO basket >= 75 on Dec 17 with no B element fired; cost if <= 55; void if a B element fires",
+   "id": "PG-20261121-NEO-MIRROR",
+   "kill": "any B element firing",
+   "market_vs_dashboard": "NEO 64.14 vs HYP 89.40 (base 100 Oct 16); E7 1m -24.9 / 3m -40.5; state TRANSITION (B 11) vs stage 6 of 7",
+   "payoff": "mean reversion of a 36% drawdown if the confirmation set stays empty; the next leg down if the CoreWeave loan fails",
+   "resolves": "2026-12-17",
+   "status_1121": "new"
+  },
+  {
+   "claim": "if the bears are right, the price that has not moved is the labor market",
+   "criterion": "paid if the 4-week average of initial claims >= 214,800 (+10% from the 195,250 low) on any release by Dec 24; cost if <= 201,000 on Dec 24",
+   "id": "PG-20261121-CLAIMS-UNMOVED",
+   "kill": "4-week average below 195,000",
+   "market_vs_dashboard": "4-wk claims 197,750 (+1.3%) vs F-20261209-FOMC 0.05 (hike with claims > +10%); Fed 96% priced to hike with 'nearly all' seeing more",
+   "payoff": "the G4 path to position 2 (hiking into rising claims) repriced inside a meeting cycle; the cost is weeks of a benign reading",
+   "resolves": "2026-12-24",
+   "status_1121": "new"
+  },
+  {
+   "claim": "the debt-crunch branch is priced at zero and its insurance just got cheaper",
+   "criterion": "paid if gold >= +10% from ~3,515 (Nov 20) by Dec 31 with DGS10 > 5.0 the same day; cost if gold is lower on Dec 31",
+   "id": "PG-20261121-C-TAIL",
+   "kill": "30y reopening stop-through with indirects above average",
+   "market_vs_dashboard": "gold -14.8% 1m / -23.7% 3m, DFII10 2.88 (99th pct), dollar +2% vs C weight 0, sovereign-stress hazard 0.15, Dec 8 / Dec 10 reopening tails 0.25 each",
+   "payoff": "many times the premium if a December auction tails into the hike and the stock-bond correlation flips; a further drift in an asset already down a quarter if not",
+   "resolves": "2026-12-31",
+   "status_1121": "new"
+  },
+  {
+   "claim": "the dashboard versus the tape: which one was lagging",
+   "criterion": "paid if the Dec 9 dials run labels the state A and SPX closes >= 6,910.39 on Dec 9; cost if the label is TRANSITION or B-LEANING and SPX < 6,910.39; void otherwise",
+   "id": "PG-20261121-STATE-VS-TAPE",
+   "kill": "an event-mode run that re-scores the window",
+   "market_vs_dashboard": "cone B 11 (6-19), s2 0.22 / s3 0.27 (one point from A) vs SPX in correction, NDX at bear territory, FMS 52% expecting a capex cut",
+   "payoff": "pays if the non-event discipline is vindicated against the tape (the rarer outcome by market pricing); costs the opposite",
+   "resolves": "2026-12-09",
+   "status_1121": "new"
+  }
+ ],
+ "retired": [],
+ "run_id": "2026-11-21T0611-column",
+ "tally": {
+  "cost": 10,
+  "paid": 5,
+  "void": 0
+ },
+ "tally_note": "from 2/8/0: +3 paid (NVDA-LAST-NODE, NVDA-GUIDE marginal, LAST-SUPPLIER), +2 cost (BREADTH-TREND, UNHEDGED-NAMES). The paid items were magnitude pigs; the cost items were date binaries. The four Oct 27 pigs reach the four-week carry limit at the next column."
+}
