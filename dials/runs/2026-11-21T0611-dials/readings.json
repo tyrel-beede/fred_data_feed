@@ -1,0 +1,1122 @@
+{
+ "basket_levels": {
+  "HYP": 89.4,
+  "NEO": 64.14,
+  "PRIN": 86.82,
+  "SUP": 79.7,
+  "TOP8": 86.96
+ },
+ "branch_read": "TRANSITION on state (s2 0.22 / s3 0.27 - one point from an A flip on H2) / 6 on stage. The discriminator this week ran the other way from the tape: the three strongest scheduled B tests passed (Nvidia +18% above consensus, Anthropic priced above range, SpaceX $44bn oversubscribed at A3), IG sits at 94 under the 100 line, the 20y and TIPS cleared on the screws and the bond hedged the equity fall (rules against C). What fired - the conditional neocloud guarantees, the AR/inventory build, the SEC report, SMH's seven-session slide, Nscale's funding warning - is the chain's periphery and governance, not the confirmation set. B's confirmation now runs through IG 100/115, the CoreWeave loan by Nov 30, Broadcom/Google TPU orders on Dec 9 and Oracle's language.",
+ "convergence": {
+  "broadening": {
+   "channels": 2,
+   "counted_after_cap": 2,
+   "fired": false,
+   "members_present": {
+    "equity": [
+     "E8 +11.8 (>= +3)"
+    ],
+    "prices_of_money": [],
+    "quantities": [
+     "P1 domestic-equity combined MA4 positive (+16.1bn over four weeks to Nov 11; EPFR US equity +45.6bn, 7th straight week)"
+    ]
+   },
+   "not_met": [
+    "E1 +6.5 but RSP -4.3% 1m (RSP not up: the two-leg rule fails - the 493 are falling less, not rising)",
+    "E2 -10.7 but RSP down",
+    "E4 -2.9",
+    "CCC/HY wider",
+    "real 10y +11",
+    "claims 4-wk 197.75 vs 195.25 (rising)",
+    "SLOOS not easing"
+   ],
+   "reason": "the Nov 2 broad fire has decayed: RSP is down on the month, so breadth is now relative, not absolute - the dual-resolution shape without the A leg"
+  },
+  "crunch": {
+   "channels": 1,
+   "counted_after_cap": 2,
+   "fired": false,
+   "members_present": {
+    "equity": [],
+    "prices_of_money": [],
+    "quantities": [
+     "foreign official custody down 3 of 4 weeks (-28.8bn 4w)",
+     "indirects below average two auctions running (3y 55.5 vs 62.7; 20y 60.2 vs 63.7)"
+    ]
+   },
+   "not_met": [
+    "30y -2 bp 1m",
+    "term premium unmeasured",
+    "10y falling with SPX (negative correlation)",
+    "dollar +2.0% 1m (criterion is -2 with yields up)",
+    "gold -15%",
+    "E3 -5.3 but real yields +11 only",
+    "dealer inventories not read",
+    "MMF -35.7bn w/w while bill supply rises: one week",
+    "lev-fund Treasury short: TY/TN/WN shorts grew, TU/FV cut - 3-year extreme not computable (repo TFF files hold nulls)"
+   ],
+   "reason": "two quantity members only; the price channels moved against C this week (bonds rallied)"
+  },
+  "periphery_squeeze": {
+   "channels": 3,
+   "counted_after_cap": 4,
+   "fired": false,
+   "members_present": {
+    "equity": [
+     "E5 3m -13.9 (<= -5)",
+     "E6 1m -8.7 (<= -5)",
+     "E7 1m -24.9 (<= -10)"
+    ],
+    "prices_of_money": [
+     "CRWV 5y CDS 1,167 (Oct 22) -> 1,233/1,289 (Nov 19-20): +66 to +122 bp (>= +100 on the Thursday print)"
+    ],
+    "quantities": [
+     "Anthropic IPO $81.3bn priced Nov 18 (a lab funding capacity: qualifying chain-member equity issuance)"
+    ]
+   },
+   "not_met": [
+    "HY +19 1m (<40)",
+    "CCC +34 (<50)",
+    "single-B +42 with CCC +34 (not +100)",
+    "real 10y +11 (<15)",
+    "E4 1m -2.9 (> -3)",
+    "E8 +11.8",
+    "P1 domestic-equity MA4 positive (+16bn)",
+    "margin debt +2.2% 3m",
+    "C7 unmeasured",
+    "AI issuance down 25% m/m: not measured (SpaceX $44bn argues the other way)",
+    "SLOOS +1.7"
+   ],
+   "reason": "fired at the convergence tier in the Oct 18-28 window; inside the same month it can re-fire only on escalation to broad, which needs 5 counted members; held >= 3 members for two consecutive months without a confirmation event -> stage note: chronic periphery stress (the 2000 H2 shape)",
+   "tier_if_fresh": "convergence (x1.5) - 4 counted from 3 channels, short of broad (5)"
+  }
+ },
+ "discourse": {
+  "N1": {
+   "ai_bubble": {
+    "MA4": 0.023,
+    "d7": 0.0438,
+    "d7_prev": 0.0266,
+    "dMA": 0.0139,
+    "z3m": 1.1,
+    "zone": "elevated (z 1.1; saturated needs 1.5)"
+   },
+   "as_of": "2026-11-20",
+   "dc_capex": {
+    "d7": 0.0173,
+    "z3m": 0.33,
+    "zone": "elevated"
+   },
+   "note": "repository GDELT files; run day excluded; gap and zero days excluded (45-67 complete days of 90) - flagged",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "private_credit": {
+    "status": "file empty - unmeasured"
+   },
+   "rotating_hormuz": {
+    "d7": 0.3393,
+    "z3m": -0.62,
+    "zone": "neutral, falling"
+   },
+   "source_node": "data/gdelt/*_timelinevol.json",
+   "term_premium": {
+    "d7": 0.0062,
+    "note": "file ends Nov 12 - stale, flagged",
+    "z3m": 0.09,
+    "zone": "neutral"
+   }
+  },
+  "N3": {
+   "as_of": "2026-11-06 (consensus pages carried; 15 days old, inside 2x tolerance)",
+   "capex_2027_consensus_big4_bn": 934.5,
+   "goldman_2027_spx_target": 8700,
+   "ms_12m_spx_target": 8700,
+   "ms_hyperscaler_capex_2027_tn": 1.6,
+   "note": "an independent anchor (SemiAnalysis) cut 2027-28 accelerator capex 19-28% hours before Nvidia guided $130bn (+18% above consensus): the sell-side's forward anchor moved down while the company's near anchor moved up - the Cisco-shape divergence between the last node and the leading forecast",
+   "nvda_consensus_implied_bn": 110,
+   "nvda_q4_guide_bn": 130,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "semianalysis_accelerator_capex": {
+    "2026": 392,
+    "2027": 627,
+    "2027_prev": 774,
+    "2028": 758,
+    "2028_prev": 1054,
+    "date": "2026-11-17"
+   },
+   "source_node": "dials/consensus/2026-11-09.json; dials/events/2026-11-18.json; dials/voices/2026-11-19.json"
+  },
+  "N4": {
+   "as_of": "2026-11-06 (carried)",
+   "hold_sell": 55,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "of": 581,
+   "principals_suppliers_sb_b_share": 90.5,
+   "pt_upside_note": "prices fell 10-45% in the month against October-dated targets: NVDA PT 327 vs 125.53 (+160% implied); first visible downgrades: Bernstein NVDA to Market Perform (Nov 16), Seaport ANT Neutral",
+   "source_node": "dials/consensus/2026-11-09.json; dials/events/2026-11-17.json"
+  },
+  "N5": [
+   {
+    "as_of": "2026-11-20",
+    "claim": "Hartnett (Flow Show Nov 20): markets trade 'post-bubble' resembling 2000; 71 global hikes Jun 2026-May 2027; a bigger rally needs 10y <4.5%, WTI <$70, a dollar peak; price selling has not yet become position selling",
+    "source_node": "dials/flows/2026-11-21.json",
+    "tag": "measured (P2/P12 positioning, B2, B1-oil); the 'position selling' claim is the G3 revealed side - P4 asset managers trimmed, FMS tech cut, ETF inflows still +73bn"
+   },
+   {
+    "as_of": "2026-11-18",
+    "claim": "Lamont (Acadian, Nov 18): 70% chance the US market is already in an AI bubble - all four horsemen present now that issuance has arrived (net issuance $2.4tn in 12 months; ex-SpaceX $192bn; Mag 7 from $144bn net buybacks to $276bn net issuance)",
+    "source_node": "dials/voices/2026-11-19.json",
+    "tag": "measured (P8 equity supply, S5); the issuance figure is checkable against the calendar group"
+   },
+   {
+    "as_of": "2026-11-18",
+    "claim": "Fed minutes (Nov 18): staff warned 'off-balance-sheet leasing commitments and circular financing arrangements among AI-related firms' could amplify losses; 'a few' participants: AI exposures concentrating in a small number of firms; Slok (Nov 14): the Fed is behind the curve and 'will have to raise rates much more than markets expect'",
+    "source_node": "dials/events/2026-11-19.json; dials/voices/2026-11-19.json",
+    "tag": "measured (S4/S7 for the leasing and circular-financing map; B2/G4 for the Fed path) - the SPV/lease-accounting hazard is raised to 0.15"
+   }
+  ],
+  "N6": {
+   "as_of": "2026-11-19",
+   "conversions": "none: Burry, Krugman, Thompson, Zitron, Kedrosky, Marcus, Hartnett, Perkins, Grant stay bear; Azhar, Wilson (8,700 12m target; buy the December dip), Baker (Huang return) stay bull; Snider enters bull (8,700 end-2027). Patel: bearish Nvidia specifically, bullish the US buildout (neutral). El-Erian: Nvidia 'systemically important'. Quiet: Dalio, Wang, Alden, O'Laughlin, Cahn, Marks, Grantham, Chanos",
+   "source_node": "dials/voices/2026-11-19.json"
+  },
+  "N7": {
+   "status": "narratives/ledger.json not rebuilt this run (tool not run unattended); carried"
+  },
+  "stated_vs_revealed": {
+   "candidates_outside_sets": [
+    "S&P -8.6% wk / seventh straight loss / VIX 35.9",
+    "equity ETF +73.5bn absorbing while mutual funds -6.8bn",
+    "Anthropic traded to $83.05 on day two (5c above IPO)",
+    "TAIEX -17.5% wk, KOSPI -5.2%, Nikkei -5.1%"
+   ],
+   "corner": "synchronizing (provisional, stated 2/2 / revealed 1/2)",
+   "revealed": {
+    "high": true,
+    "markers": [
+     "official custody down 3 of 4 weeks - yes",
+     "MMF rising 4 weeks with SPX within 3% of high - no",
+     "insider sell ratio - not evaluable",
+     "asset-manager equity positioning at a 26-week low - not computable (repo TFF nulls); gather shows a second weekly trim"
+    ],
+    "note": "0.5 of two evaluable markers = high by the rule; provisional on n=2",
+    "share": "1/2"
+   },
+   "stated": {
+    "high": true,
+    "markers": [
+     "N4 unanimity 90.5% with PT upside widening on the fallers (N1 not saturated, so N4 is the fallback) - yes",
+     ">= 2 bubble arguments since last run (Hartnett 'post-bubble', Lamont 70%, Marcus 'burst', Zitron 'popped') - yes"
+    ],
+    "share": "2/2"
+   }
+  }
+ },
+ "event_tally": {
+  "business": 0,
+  "capital": -5,
+  "debt": 1,
+  "late_flagged": 1,
+  "note": "five capital-cycle negatives inside one window = signal again; but the three strongest registered B tests (Nvidia guide, Anthropic pricing, SpaceX pricing) all passed, and their computed non-event LRs (0.43, 0.58, 0.29) outweigh the five firings in the odds arithmetic. Confirmation stays with credit (IG 94), capex guidance (none cut) and auctions (clean).",
+  "toward_A": 0
+ },
+ "events_scored": [
+  {
+   "cycle": "capital",
+   "dial": "C8/C4 (fork F-20261117-NVDA-BACKSTOP)",
+   "event_time": "2026-11-17",
+   "flag": "marginal",
+   "lr": "x2 B (q 0.7, marginal: an 11% cut plus conditionality)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "reading": "Nvidia neocloud financing commitments $36bn -> $32bn, conditional on the provider's own financing and milestones; 'disciplined and selective' (Nov 17 call)",
+   "score": -1,
+   "source_node": "dials/events/2026-11-18.json; 11-19 (8-K Ex.99.1; Kiplinger; Barchart; TechCrunch)"
+  },
+  {
+   "cycle": "capital",
+   "dial": "C4 vendor-financing flag (fork F-20261117-NVDA-AR)",
+   "event_time": "2026-11-17",
+   "lr": "x1.2 B (as registered; the 'third quarter' moderate tier is a candidate for the attended run)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "reading": "AR $63.1bn -> $81.0bn (+28.5% q/q) vs revenue +20.4%; inventory $31.6bn -> $39.7bn (+25.8%); AR/revenue 70%; supply commitments $279bn (Jul 26)",
+   "score": -1,
+   "source_node": "sec.gov q3fy27pr.htm; nvda-20260726.htm (10-Q)"
+  },
+  {
+   "cycle": "capital",
+   "dial": "hazard realized: Nvidia governance shock",
+   "event_time": "2026-11-20",
+   "lr": "x2 B (q 0.8: sourced report, not an SEC statement)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "reading": "Reuters (Nov 20): SEC enforcement staff examining 'potential accounting issues' (two sources; SEC declined comment); chair: Huang will not return (Nov 18); NVDA -14.0% Nov 20, -22.9% wk",
+   "score": -1,
+   "source_node": "dials/events/2026-11-21.json (Reuters via investing.com)"
+  },
+  {
+   "cycle": "capital",
+   "dial": "divergence: SMH down 6+ consecutive sessions",
+   "event_time": "2026-11-20",
+   "lr": "x1.5 B",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "reading": "SMH down 7 straight sessions to Nov 20 (-17.8% wk, -28.1% 1m); SOX -17.1% wk",
+   "score": -1,
+   "source_node": "data/prices/SMH.csv; IDX_SOX.csv"
+  },
+  {
+   "cycle": "capital",
+   "dial": "C8 counterparty funding (late)",
+   "event_time": "2026-11-12",
+   "flag": "late",
+   "lr": "x1.5 B",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "reading": "Nscale S-1/A (Nov 12): must obtain additional financing for 2027 obligations after Vera Rubin orders for the $44.6bn Anthropic agreements, reversing 'funded 12 months'; 9-month loss ~$1.7bn, debt ~$5.5bn",
+   "score": -1,
+   "source_node": "dials/events/2026-11-16.json (FT via Dealroom; S-1/A)"
+  },
+  {
+   "cycle": "debt",
+   "dial": "D3 stock-bond correlation",
+   "event_time": "2026-11-20",
+   "lr": "1/1.5 on C odds",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "reading": "bonds rallied on equity down days: 10y -23 bp over the week SPX fell 8.6% (Nov 20: -12 bp / -3.7%); rules against C; first eligible window after Nov 13 (ruling a)",
+   "score": 1,
+   "source_node": "data/fred/DGS10.csv; data/prices/IDX_GSPC.csv"
+  }
+ ],
+ "fields": {
+  "CCC": 1361,
+  "DFII10": 2.88,
+  "DGS10": 5.04,
+  "DGS30": 5.4,
+  "DXY_broad": 122.65,
+  "E1_1m": 6.53,
+  "E2_1m": -10.71,
+  "E4_1m": -2.94,
+  "E5_1m": -12.04,
+  "E6_1m": -8.69,
+  "E7_1m": -24.86,
+  "E8_1m": 11.82,
+  "HY": 352,
+  "ICSA_4wk": 197.75,
+  "IG": 94,
+  "SPX": 6910.39,
+  "T5YIFR": 2.12,
+  "WTI": 89.53
+ },
+ "fields_detail": {
+  "B1 CPI": {
+   "core_mm_oct": 0.296,
+   "core_prev_mm": 0.335,
+   "core_yy": 2.87,
+   "event_time": "2026-10-01",
+   "headline_mm_oct": 0.35,
+   "headline_yy": 4.08,
+   "marker_core_ge_0p4_twice": false,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "source_node": "data/fred/CPIAUCSL.csv; CPILFESL.csv; dials/calendar/2026-11-21.json (UMich)",
+   "umich_1y_final_nov": 3.7
+  },
+  "B1 T5YIE": {
+   "d1m": -0.22,
+   "d3m": -0.16,
+   "date": "2026-11-20",
+   "event_time": "2026-11-20",
+   "level": 2.18,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pct_1y": 1.6,
+   "pct_window": 13.8,
+   "read": "5y breakeven watch -> benign, confirmed by two prints (Nov 19 2.22, Nov 20 2.18); branch mapping of this transition undefined in the rules - recorded, no LR applied, flagged for an attended ruling",
+   "source_node": "data/fred/T5YIE.csv",
+   "transition": true,
+   "transition_pending": false,
+   "window": "6y from 2020-11-23",
+   "zone": "benign",
+   "zone_20s_ago": "watch"
+  },
+  "B1 T5YIFR": {
+   "d1m": -0.22,
+   "d3m": -0.22,
+   "date": "2026-11-20",
+   "event_time": "2026-11-20",
+   "level": 2.12,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pct_1y": 10.0,
+   "pct_window": 13.3,
+   "read": "anchored, falling",
+   "source_node": "data/fred/T5YIFR.csv",
+   "transition": false,
+   "transition_pending": false,
+   "window": "6y from 2020-11-23",
+   "zone": "benign",
+   "zone_20s_ago": "benign"
+  },
+  "B1-oil": {
+   "brent_fred": {
+    "d1m": -26.39,
+    "d3m": -2.35,
+    "date": "2026-11-17",
+    "event_time": "2026-11-17",
+    "level": 92.94,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 52.4,
+    "pct_window": 79.5,
+    "source_node": "data/fred/DCOILBRENTEU.csv",
+    "transition": true,
+    "transition_pending": false,
+    "window": "6y from 2020-11-23",
+    "zone": "watch",
+    "zone_20s_ago": "stress"
+   },
+   "event_time": "2026-11-20",
+   "front_months_nov20": {
+    "brent_jan27": 92.57,
+    "brent_m1_m2": 2.54,
+    "m1_m2_date": "2026-11-19",
+    "wti_jan27": 83.41
+   },
+   "hormuz": "closed; standoff H2 R+5/R-10/F25/E60; Hormuz fork 0.10 by Dec 9",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "shock_type": "supply (standoff export)",
+   "source_node": "data/fred; dials/runs/2026-11-21T0611-standoff/export.json",
+   "wti_fred": {
+    "d1m": -18.68,
+    "d3m": 3.05,
+    "date": "2026-11-17",
+    "event_time": "2026-11-17",
+    "level": 89.53,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 52.8,
+    "pct_window": 81.3,
+    "source_node": "data/fred/DCOILWTICO.csv",
+    "transition": true,
+    "transition_pending": false,
+    "window": "6y from 2020-11-23",
+    "zone": "stress",
+    "zone_20s_ago": "acute"
+   },
+   "zone_transitions": "WTI acute -> stress, Brent stress -> watch (confirmed) - oil is a hazard/fork field, not scored"
+  },
+  "B2 Fed": {
+   "dec_50bp_p": 0.043,
+   "dec_hike_p": 0.957,
+   "event_time": "2026-11-20",
+   "fedspeak": "minutes (Nov 18): 'nearly all' see further increases, 'a couple' floated >25 bp; Waller (Nov 18) 50 or signal January; Williams against a bigger move; Cook (Nov 20) 'behind the curve'; Paulson open to back-to-back",
+   "funds_range": "3.75-4.00 (IORB 3.90, EFFR 3.88)",
+   "jan_hike_p": 0.475,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "source_node": "data/fred/IORB.csv, EFFR.csv; standoff export F3; dials/events/2026-11-19.json, 11-21"
+  },
+  "B3 claims": {
+   "event_time": "2026-11-14",
+   "icsa_last": 203000.0,
+   "ism": "not read",
+   "ma4": 197750,
+   "ma4_52wk_low": 195250,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pct_above_low": 1.3,
+   "sloos_q3": 1.7,
+   "source_node": "data/fred/ICSA.csv; DRTSCILM.csv",
+   "umich_sentiment_final_nov": 51.5,
+   "zone": "benign (<+10%)"
+  },
+  "B4 DFII10": {
+   "d1m": 0.11,
+   "d3m": 0.53,
+   "date": "2026-11-19",
+   "event_time": "2026-11-19",
+   "level": 2.88,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pct_1y": 95.6,
+   "pct_window": 99.3,
+   "reference_lines": "2.5 crossed (Oct); 3.0 event line not crossed (peak 2.92 Nov 16)",
+   "source_node": "data/fred/DFII10.csv",
+   "tape_nov20": "10y nominal 4.92 (-12 bp); real 10y not printed for Nov 20",
+   "transition": false,
+   "transition_pending": false,
+   "window": "6y from 2020-11-23",
+   "zone": "acute",
+   "zone_20s_ago": "acute"
+  },
+  "C1 credit": {
+   "BB": {
+    "d1m": 8.0,
+    "d3m": 47.0,
+    "date": "2026-11-19",
+    "event_time": "2026-11-19",
+    "level": 210.0,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 98.9,
+    "pct_window": 87.7,
+    "source_node": "data/fred/BAMLH0A1HYBB.csv",
+    "transition": false,
+    "transition_pending": false,
+    "window": "6y from 2023-11-03",
+    "zone": "stress",
+    "zone_20s_ago": "stress"
+   },
+   "BBB": {
+    "d1m": 9.0,
+    "d3m": 17.0,
+    "date": "2026-11-19",
+    "event_time": "2026-11-19",
+    "level": 117.0,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 100.0,
+    "pct_window": 78.1,
+    "source_node": "data/fred/BAMLC0A4CBBB.csv",
+    "transition": false,
+    "transition_pending": false,
+    "window": "6y from 2023-11-03",
+    "zone": "watch",
+    "zone_20s_ago": "watch"
+   },
+   "CCC": {
+    "d1m": 34.0,
+    "d3m": 326.0,
+    "date": "2026-11-19",
+    "event_time": "2026-11-19",
+    "level": 1361.0,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 100.0,
+    "pct_window": 100.0,
+    "source_node": "data/fred/BAMLH0A3HYC.csv",
+    "transition": false,
+    "transition_pending": false,
+    "window": "6y from 2023-11-03",
+    "zone": "acute",
+    "zone_20s_ago": "acute"
+   },
+   "HY": {
+    "d1m": 19.0,
+    "d3m": 77.0,
+    "date": "2026-11-19",
+    "event_time": "2026-11-19",
+    "level": 352.0,
+    "note": "+18 bp Nov 17-19 (3.34 -> 3.52); tape Nov 20 3.52 (Nov 19 print)",
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 100.0,
+    "pct_window": 90.6,
+    "source_node": "data/fred/BAMLH0A0HYM2.csv",
+    "transition": false,
+    "transition_pending": false,
+    "window": "6y from 2023-11-03",
+    "zone": "stress",
+    "zone_20s_ago": "stress"
+   },
+   "IG": {
+    "d1m": 7.0,
+    "d3m": 12.0,
+    "date": "2026-11-19",
+    "event_time": "2026-11-19",
+    "level": 94.0,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 100.0,
+    "pct_window": 77.5,
+    "reference": "100 x2 B; 115 element",
+    "source_node": "data/fred/BAMLC0A0CM.csv",
+    "tape_nov20": 94,
+    "transition": false,
+    "transition_pending": false,
+    "window": "6y from 2023-11-03",
+    "zone": "watch",
+    "zone_20s_ago": "watch"
+   },
+   "singleB": {
+    "d1m": 42.0,
+    "d3m": 86.0,
+    "date": "2026-11-19",
+    "event_time": "2026-11-19",
+    "level": 380.0,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "pct_1y": 100.0,
+    "pct_window": 93.7,
+    "source_node": "data/fred/BAMLH0A2HYB.csv",
+    "transition": false,
+    "transition_pending": false,
+    "transmission_test": "single-B +42 1m with CCC +34 1m: CCC not +100, event not met",
+    "window": "6y from 2023-11-03",
+    "zone": "stress",
+    "zone_20s_ago": "stress"
+   },
+   "window_note": "BAML files 3y from 2023-11 (ruling l)"
+  },
+  "C6 weakest tier": {
+   "crwv_2031_yield": "~16%",
+   "crwv_cds_5y_bp": 1232.6,
+   "crwv_cds_oct22_record": 1167,
+   "crwv_cds_thu": 1289,
+   "event_time": "2026-11-20",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "orcl_cds_5y_bp": 327.9,
+   "source_node": "dials/events/2026-11-21.json (The Private Banker / Deutsche Bank data)",
+   "zone": "acute (>15 hand zone)"
+  },
+  "C7 compute price": {
+   "event_time": null,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "status": "not refreshed this run (carried: Bernstein/MS $2.00/GPU-hr re-contracting debate, Nov 14)"
+  },
+  "D1 auctions": {
+   "10y_tips_nov19": {
+    "btc": 2.43,
+    "dealer": 6.0,
+    "high_real": 2.903,
+    "indirect": 68.6,
+    "tail_bp": 0.3,
+    "verdict": "clean"
+   },
+   "20y_nov18": {
+    "btc": 2.63,
+    "btc_avg": 2.63,
+    "dealer": 13.1,
+    "dealer_avg": 12.0,
+    "high": 5.459,
+    "indirect": 60.2,
+    "indirect_avg": 63.7,
+    "tail_bp": 0.0,
+    "verdict": "in line"
+   },
+   "event_time": "2026-11-19",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "repo_file_note": "data/treasury/auctions_results.csv carries no November auctions (TreasuryDirect robots); gather figures used",
+   "source_node": "dials/events/2026-11-19.json; 11-20 (helious, investinglive, Newsquawk)"
+  },
+  "D2 term premium": {
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "status": "unmeasured (ACM not fetched; series conflict ACM 0.64 Oct 22 vs Kim-Wright 1.07 Oct 9 unresolved)"
+  },
+  "D3 correlation": {
+   "event_time": "2026-11-20",
+   "month": "10y -8 bp 1m, SPX -10.9% 1m: negative",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "sign_20s": "negative (bonds rallied on equity down days)",
+   "source_node": "data/fred/DGS10.csv; data/prices/IDX_GSPC.csv; dials/calendar/2026-11-21.json",
+   "week": "10y 5.15 -> 4.92 (-23 bp) while SPX -8.6%; Nov 20: 10y -12 bp / SPX -3.7%"
+  },
+  "D5 gold": {
+   "dfii10_d1m": 0.11,
+   "event_time": "2026-11-20",
+   "gold_1m_pct": -14.8,
+   "gold_nov20": "~3,515 (-4.6% on the day)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "read": "gold -15% 1m with real yields +11 bp: no divergence; GVZ 28.7 (95th pct, pending acute)",
+   "source_node": "data/prices/GLD.csv; data/fred/GVZCLS.csv"
+  },
+  "D6 foreign demand": {
+   "20y_indirects": 60.2,
+   "custody_d4w_mn": -28836,
+   "custody_weeks_down_of_4": 3,
+   "event": "indirects 60.2 is not <60: 0 (marginal)",
+   "event_time": "2026-11-18",
+   "jgb_10y": "2.865-2.89 (Nov 18); 20y JGB auction tail 0.29 yen, b/c 3.64 vs 5.84 (Nov 18)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "source_node": "dials/events/2026-11-19.json; dials/flows/2026-11-20.json; data/fred/WMTSECL1.csv",
+   "tic_sep_net_lt_bn": 155.3
+  },
+  "DXY": {
+   "d1m": 0.6466,
+   "d3m": 3.7475,
+   "date": "2026-11-13",
+   "dxy_1m_pct": 2.02,
+   "dxy_nov20": 103.84,
+   "event_time": "2026-11-13",
+   "level": 122.6503,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pct_1y": 100.0,
+   "pct_window": 79.2,
+   "source_node": "data/fred/DTWEXBGS.csv",
+   "transition": false,
+   "transition_pending": false,
+   "window": "6y from 2020-11-23",
+   "zone": "watch",
+   "zone_20s_ago": "watch"
+  },
+  "SPX": {
+   "close_nov20": 6910.39,
+   "d1m": -536.74,
+   "d3m": -465.33,
+   "date": "2026-11-19",
+   "down_streak": 7,
+   "event_time": "2026-11-19",
+   "level": 7175.83,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pct_1y": 44.0,
+   "pct_window": 90.6,
+   "source_node": "data/fred/SP500.csv",
+   "transition": true,
+   "transition_pending": false,
+   "vix_nov20": 35.89,
+   "vs_52wk_high_pct": -11.46,
+   "week_pct": -8.56,
+   "window": "6y from 2020-11-23",
+   "zone": "stress",
+   "zone_20s_ago": "acute"
+  }
+ },
+ "flows": {
+  "P10_liquidity": {
+   "event_time": "2026-11-19",
+   "iorb": 3.9,
+   "net_liquidity_bn": 5824.4,
+   "netliq_d4w_bn": 23.1,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "rrp_bn": 0.4,
+   "sofr": 3.91,
+   "sofr_minus_iorb_bp": 1,
+   "source_node": "data/fred/WALCL.csv, RRPONTSYD.csv, WTREGEN.csv, SOFR.csv, IORB.csv",
+   "tga_bn": 916.6,
+   "walcl_bn": 6741.5,
+   "zone": "SOFR at IORB +1 bp (no repo stress; FE3 needs +10); TGA flat, ON RRP zero"
+  },
+  "P11_credit": {
+   "event_time": "2026-11-11",
+   "gate": "carried (as of 2026-11-11; tolerance 8 days)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "sloos_q3": 1.7,
+   "source_node": "dials/flows/2026-11-21.json; data/fred/TOTCI.csv",
+   "totci_bn": 3018.1,
+   "wk_changes_bn": [
+    2.14,
+    -0.59,
+    -8.29,
+    26.03
+   ],
+   "zone": "C&I loans at a record (+26bn in the week to Nov 11 - the largest weekly rise of the quarter; acute by level, benign by meaning); SLOOS +1.7 not a turn (FE6 needs >0 from <0 or +10)"
+  },
+  "P12_fms": {
+   "bond_switch_yield": 5.8,
+   "bond_uw": 23,
+   "bond_uw_prev": 37,
+   "bull_bear": 7.4,
+   "capex_cut_expected_6m_pct": 52,
+   "cash_pct": 3.6,
+   "cash_prev": 3.9,
+   "equity_ow": 41,
+   "event_time": "2026-11-12",
+   "gate": "fresh (Nov 6-12 survey, released Nov 17)",
+   "hard_landing_pct": 3,
+   "most_crowded": "long global semiconductors 39% (from 45); short China stocks 14% new #2; short Treasuries crowding 10% (from 27)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "overinvesting_net_pct": 38,
+   "read": "the largest tech cut since June 2006 with cash still 3.6% (sell signal on): positioning capitulated in tech, not in equities; the Treasury short the C branch would need has been covered",
+   "source_node": "dials/flows/2026-11-18.json",
+   "tech_ow": 12,
+   "tech_prev": 37,
+   "top_tail": "AI bubble 34% (from 23); AI hyperscaler credit event 31% (from 11); disorderly rise in yields 13% (from 31)",
+   "us_ow": 13
+  },
+  "P1_ici": {
+   "combined_domestic_equity_wk_bn": [
+    13.845,
+    7.096,
+    11.913,
+    31.505
+   ],
+   "combined_equity_MA4_bn": 16.1,
+   "etf_net_issuance_wk_bn": 56.88,
+   "event_time": "2026-11-11",
+   "gate": "carried (as of 2026-11-11; tolerance 8 days)",
+   "mf_domestic_equity_wk_bn": [
+    -20.7,
+    -19.5,
+    -19.0,
+    -5.6
+   ],
+   "mmf_total_bn": [
+    7901.28,
+    8015.74,
+    7980.02
+   ],
+   "mmf_wk_change_bn": -35.72,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "read": "combined domestic-equity inflow accelerating (+31.5bn, largest of the four weeks) into the Nov 11 close; mutual-fund outflow shrank; MMF -35.7bn after +114bn",
+   "source_node": "dials/flows/2026-11-19.json",
+   "taxable_bond_wk_bn": [
+    0.43,
+    1.45,
+    2.46,
+    1.18
+   ],
+   "z": "history building"
+  },
+  "P2_epfr": {
+   "bonds_bn": -7.4,
+   "bonds_note": "first outflow since Apr 2025",
+   "bull_bear": 7.1,
+   "bull_bear_prev": 7.4,
+   "cash_bn": 0.4,
+   "em_debt_bn": -7.5,
+   "equity_etf_bn": 73.5,
+   "equity_mf_bn": -6.8,
+   "event_time": "2026-11-18",
+   "gate": "fresh (as of 2026-11-18, partial: HY and Treasury weekly not printed)",
+   "global_equity_bn": 66.6,
+   "ig_bn": -0.7,
+   "lipper_us_equity_bn": 45.71,
+   "lipper_us_mmf_bn": -19.12,
+   "lipper_us_tech_bn": 10.3,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "read": "retail/ETF absorbing US equity at record pace into the drawdown (ETFs +73.5bn vs mutual funds -6.8bn) while bonds see the first outflow in 19 months - the G3 absorber is the ETF buyer",
+   "source_node": "dials/flows/2026-11-21.json",
+   "tech_bn": 5.4,
+   "us_equity_bn": 45.6,
+   "us_equity_streak": "7th straight week"
+  },
+  "P3_P7": {
+   "status": "not gathered (no sub-skill group)"
+  },
+  "P4_cftc": {
+   "es_am_wow": -19081,
+   "es_asset_mgr_net": 895049,
+   "es_lev_money_net": -234978,
+   "es_lm_wow": 68082,
+   "event_time": "2026-11-17",
+   "fv_lm_wow": 104000,
+   "gate": "fresh (as of 2026-11-17)",
+   "nq_asset_mgr_net": 82900,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pctile": "not computable (repo tff_*.json rows hold nulls; web cross-checks lag a week) - history building",
+   "read": "asset managers trimmed S&P longs a second week; leveraged funds covered ES shorts (+68k) and front-end Treasury shorts (TU +216k, FV +104k) while adding to 10y/ultra shorts; the basis-trade proxy rotated out the curve, not off",
+   "rty_asset_mgr_net": 30671,
+   "source_node": "dials/flows/2026-11-21.json",
+   "tu_lev_money_net": -1288895,
+   "tu_lm_wow": 216000,
+   "ty_lev_money_net": -2482443,
+   "ty_lm_wow": -181000,
+   "vx_lev_money_net": -72916
+  },
+  "P5_sentiment": {
+   "aaii_bear": 42.2,
+   "aaii_bull": 33.3,
+   "aaii_spread": -8.9,
+   "event_time": "2026-11-20",
+   "gate": "fresh (as of 2026-11-19)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "pc_equity_nov17": 0.71,
+   "pc_total_nov17": 0.98,
+   "skew_nov13": 147.14,
+   "skew_nov19": 140.9,
+   "source_node": "dials/flows/2026-11-20.json; dials/calendar/2026-11-21.json",
+   "vix3m_nov19": 27.03,
+   "vix_futures_dec": 24.54,
+   "vix_nov19": 28.44,
+   "vix_nov20": 35.89,
+   "vix_vix3m": 1.052,
+   "zone": "neutral by AAII (bears 42 < 50 for FE7); term structure inverted (VIX/VIX3M 1.05, 1.33 implied Nov 20 vs Dec future 24.5) - stress, not capitulation"
+  },
+  "P6_margin": {
+   "debit_bn": 1448.4,
+   "debit_prev_bn": 1480.1,
+   "event_time": "2026-10-31",
+   "free_credit_bn": 423.2,
+   "gate": "fresh (as of 2026-10-31)",
+   "m3_pct": 2.2,
+   "mm_pct": -2.1,
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "read": "first decline after the Jul-Sep climb to a record; -2.1% m/m from the Sep peak (FE4 needs +15%/3m with SPX flat: not met; the Mar 2000 / Jul 2007 / Oct 2021 pattern was a peak then decline)",
+   "source_node": "dials/flows/2026-11-16.json"
+  },
+  "P8_calendar": {
+   "alphabet_maple": "C$6bn 40y Maple at 6.00% (Nov 19), no book printed",
+   "anthropic_ipo": "priced Nov 18 at $83 (range $70-78), $81.3bn + $26bn strategic placement; opened 111.50, closed 97.17 (+17%) Nov 19, 88.91 (-8.5%) Nov 20, low 83.05",
+   "event_time": "2026-11-20",
+   "gate": "fresh (partial: no IG dealer tally for the week)",
+   "google_prepaid_muni": "$3bn delayed on demand (Nov 19)",
+   "ig_weekly_bn": null,
+   "ipo_ytd": {
+    "count": 124,
+    "proceeds_bn": 230.3
+   },
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "read": "equity supply at a record (Anthropic $81bn on top of SpaceX's June IPO; Lamont: ex-SpaceX net issuance $192bn, Mag 7 from $144bn net buybacks to $276bn net issuance) - S5 late; the debt window is open at a 230 bp premium",
+   "source_node": "dials/calendar/2026-11-21.json; dials/events/2026-11-20.json",
+   "spacex_gpu_financing": "~$44bn priced Fri Nov 20 via Saturn Funding Trust (Apollo): Class A3 $25.2bn Apr-2033 8.259% (Moody's A3 / KBRA A-), A2 $4.4bn Apr-2031, B $2.6bn, private C-E $2.4bn + senior secured loan; ~$26bn pre-committed; upsized and oversubscribed; anchors BlackRock, GSAM, KKR; +~230 bp over the IG index; SPCX -8.1% wk"
+  },
+  "P9_custody": {
+   "d4w_mn": -28836,
+   "event_time": "2026-11-18",
+   "gate": "fresh (as of 2026-11-18)",
+   "mof_residents_foreign_lt_bonds_100m_yen": -4407,
+   "mof_week": "2026-11-08..14 (seventh week of net selling)",
+   "observed_time": "2026-11-21T06:11:50-07:00",
+   "read": "custody bounced +19.8bn in the rally week after three down weeks (-28.8bn 4w); Japanese residents still net sellers of foreign bonds",
+   "source_node": "dials/flows/2026-11-20.json; data/fred/WMTSECL1.csv",
+   "tic_china_bn": 563.9,
+   "tic_japan_bn": 1063.1,
+   "tic_sep_net_lt_bn": 155.3,
+   "weeks_down_of_4": 3,
+   "wmtsecl1_mn": 2544011,
+   "wow_mn": 19822
+  }
+ },
+ "flows_log": {
+  "P10_netliq_d4_bn": 23.1,
+  "P11_SLOOS": 1.7,
+  "P1_MMF_d4": null,
+  "P1_bond_MA4": 1.38,
+  "P1_eq_MA4": 16.1,
+  "P4_AM_eq_pctile": null,
+  "P4_LF_UST_pctile": null,
+  "P5_AAII_spread": -8.9,
+  "P5_PC10": 0.98,
+  "P6_margin_d3m_pct": 2.2,
+  "P9_MOF_4w": "net selling (4 of 4)",
+  "P9_custody_d4w_bn": -28.8
+ },
+ "games": {
+  "G1": {
+   "marker": "principals guiding 2027 capex down: 0 confirmed; candidates: Kuo's Google TPU 8i order cut (~20%, unverified, registered F-20261209-GOOGL-TPU); Nvidia 'far more selective' on AI financing; SemiAnalysis -19%/-28% 2027/28 forecast cut; Nvidia guided $130bn (+18% above consensus) - the GPU vendor's near anchor rose while the independent forward anchor fell; involuntary coordinators: BIS third-country chip rule (Nov 16), state data-center ballot measures (40 of 41 passed)",
+   "position": 2,
+   "prev": 2,
+   "status": "provisional"
+  },
+  "G2": {
+   "marker": "commitment devices tightening one more notch: Nvidia's neocloud guarantees now contingent on the provider's own funding and milestones (a supplier underwriting its customers' credit); Nscale warns of a 2027 funding gap; Samsung-Apple minimum-threshold LTA; Epoch Digital syndication delayed; a chain break (3) would need a neocloud default - CRWV CDS prices >65% in five years",
+   "position": 2,
+   "prev": 2
+  },
+  "G3": {
+   "corner": "synchronizing (provisional, stated 2/2 / revealed 1/2)",
+   "marker_share": "2/3 (FMS cash 3.6% <4 yes; N4 unanimity 90.5% with PT upside widening yes (carried); AAII bulls 33.3 z<1 no; margin-debt z, insider ratio, lev-ETF AUM not evaluable)",
+   "note": "Position 2 is event-driven (ruling m): the registered print was in line or better and its own r was -0.40; the second-order move came on the governance/SEC news and the Anthropic debut, which are outside the defined trigger set. No tracked bull converted (Wilson raised his target; Baker and Azhar held). The week is logged as the strongest candidate yet for a synchronizer outside the sets - flagged for an attended ruling on whether a governance shock counts as the 'small event' of Abreu-Brunnermeier",
+   "position": 1,
+   "prev": 1,
+   "reaction_ratios": {
+    "ANT Nov 19 debut": "+17% day one, -8.5% day two to 5c above the IPO price - not a registered print",
+    "NVDA Nov 17 print": "content better (rev $115.8bn, guide $130bn vs ~$110bn); next session -2.89% / indicative E|move| 7.3% (Nov 2 chain; the Nov 16 chain not read) = r -0.40: not a synchronizer by the rule; Nov 20 -14.0% was the SEC report, not the print",
+    "NVDA week": "-22.9%; the AI complex -12 to -30% (CRWV -25.6, NBIS -29.8, MU -23.6, TSM -20.1, ORCL -19.3)"
+   }
+  },
+  "G4": {
+   "Fed": 1,
+   "Treasury": 1,
+   "marker": "Fed: Dec 25 bp 96% priced with claims +1.3% from the low (stays 1 until a hike meets rising claims); 'almost all' see more hikes; Cook 'behind the curve'. Treasury: coupons held, 'at least' dropped; buybacks in use; 20y and TIPS clean"
+  }
+ },
+ "lenses": {
+  "E10": {
+   "by_name": {
+    "AAPL": -0.4,
+    "AMZN": -5.9,
+    "AVGO": -9.9,
+    "GOOGL": -20.8,
+    "META": -19.6,
+    "MSFT": -9.1,
+    "NVDA": -43.4,
+    "TSLA": -10.5
+   },
+   "range": 43.03,
+   "sigma": 12.45
+  },
+  "as_of": "2026-11-20",
+  "divergence": {
+   "IWM_new_52wk_low": false,
+   "IWM_vs_52wk_low_pct": 12.0,
+   "RSP_200d": 209.23,
+   "RSP_below_200d": true,
+   "SMH_down_streak": 7,
+   "SOX_week": -17.13,
+   "SPY_200d": 732.76,
+   "SPY_above_200d": false,
+   "SPY_down_streak": 7,
+   "SPY_vs_52wk_high_pct": -11.46,
+   "SPY_week": -8.56
+  },
+  "observed_time": "2026-11-21T06:11:50-07:00",
+  "ret_1m": {
+   "GLD": -14.8,
+   "HYG": -0.84,
+   "IVE": -4.33,
+   "IVW": -16.11,
+   "IWM": -7.19,
+   "LQD": 0.47,
+   "QQQ": -16.1,
+   "RSP": -4.25,
+   "SMH": -28.14,
+   "SPCX": -19.79,
+   "SPY": -10.77,
+   "TLT": 1.51,
+   "TSM": -26.21,
+   "XHB": 1.05,
+   "XLI": -7.09,
+   "XLP": 3.85,
+   "XLU": 1.64,
+   "XLY": -2.66
+  },
+  "source_node": "data/prices/<T>.csv at commit a2cf888",
+  "spreads_1m": {
+   "E1 RSP-SPY": 6.53,
+   "E2 TOP8-RSP": -10.71,
+   "E3 QQQ-SPY": -5.33,
+   "E4 IWM-RSP": -2.94,
+   "E5 SMH-QQQ": -12.04,
+   "E6 SUP-PRIN": -8.69,
+   "E7 NEO-HYP": -24.86,
+   "E8 XHB-SPY": 11.82,
+   "E9 DEF-CYC": 7.62,
+   "E9 IVE-IVW": 11.78
+  },
+  "spreads_3m": {
+   "E1": 3.49,
+   "E2": -3.36,
+   "E3": -4.8,
+   "E4": -8.03,
+   "E5": -13.9,
+   "E6": -21.93,
+   "E7": -40.49,
+   "E8": 0.62
+  },
+  "two_leg": "E1 +6.5 with both legs down (RSP -4.3%, SPY -10.8%): the dual resolution's B leg without the A leg; E7 -24.9 / NEO 64.1 is the periphery inside the chain breaking first; E5 -12.0 1m / -13.9 3m is the capex cycle priced ahead of guidance (Nvidia guided up and SMH fell 18% in the week); E8 +11.8 and E9 defensives +7.6 / value +11.8 are the late-cycle rotation; E3 -5.3 with real yields +11 bp: the duration channel working",
+  "week": {
+   "AVGO": -12.28,
+   "CRWV": -25.64,
+   "GLD": -9.17,
+   "HYG": -0.79,
+   "IWM": -7.54,
+   "MU": -23.62,
+   "NBIS": -29.83,
+   "NVDA": -22.92,
+   "ORCL": -19.27,
+   "QQQ": -10.51,
+   "RSP": -6.2,
+   "SMH": -17.81,
+   "SPCX": -8.14,
+   "SPY": -8.56,
+   "TLT": 2.61,
+   "TSM": -20.07,
+   "XHB": -5.36
+  }
+ },
+ "mode": "full",
+ "not_scored": [
+  "C2: Kuo (TF International, Nov 20) - Google trimming 2027 TPU 8i orders ~20% (~1m units), partly a shift to TPU 8t; analyst survey, neither company commented - unverified against a primary source; registered as F-20261209-GOOGL-TPU (x4 B if confirmed)",
+  "C3: Google-linked $3bn prepaid-energy muni bonds postponed on 'lackluster demand amid market volatility' (Nov 19) - a tax-exempt prepaid structure, not a hyperscaler bond; stage note. The same week SpaceX priced ~$44bn (A3/A-, 8.259% senior) upsized and oversubscribed and Alphabet a C$6bn Maple at 6.00% - the AI debt window is open at a price",
+  "C3/C8: $488m Epoch Digital (Malaysia) data-center loan syndication delayed; Citi pulls $400m UST Global term loan (non-AI software); ING/SocGen offloading ~$800m data-center debt - credit-window stage notes, not AI-deal pulls",
+  "C8: 700 MW Anthropic TPU deployment via Broadcom pushed 2027 -> 2028 (456X brief, source unnamed) - single unverified source; G2 candidate",
+  "C8: Moonshot AI scrapped a $150m B300 rental after the BIS third-country rule - export-control driven, not demand",
+  "N3: SemiAnalysis cut its 2028 accelerator capex forecast 28% to $758bn and 2027 19% to $627bn (Nov 17), Nvidia compute revenue -22% 2027 - an anchor moving before the companies speak; discourse, no LR",
+  "C1: single-B +42 1m with CCC +34 (ruling h needs CCC +100) - transmission event not met; IG 94 (fork IG100 open)",
+  "D6: 20y indirects 60.2 (not <60) with the JGB 20y tail - marginal non-event",
+  "D5: gold -15% 1m with real yields +11 bp - no divergence",
+  "B1: T5YIE watch -> benign (confirmed two prints) - a percentile transition with no branch mapping in the rules; recorded, no LR; attended ruling needed",
+  "SP500 acute -> stress and VIX watch -> stress percentile transitions - index fields, not dials",
+  "Flow events FE1-FE8: none fired (custody down 3 of 4 not 4; MMF -35.7bn after +114bn; AAII bears 42.2 < 50; margin debt -2.1% m/m)",
+  "Standoff export fuse line ('strained, not priced', written at 06:11 before the calendar gather was read) is superseded here by the calendar gather: SpaceX ~$44bn priced Nov 20; the standoff fork S-20261231-FUSE ('IG spread, no collateral') is the standoff stage's to score (collateral by construction -> NO)"
+ ],
+ "run_at": "2026-11-21T06:11:50-07:00",
+ "run_id": "2026-11-21T0611-dials",
+ "stage": {
+  "S1": "late - supplier margins at prior-cycle peaks (NVDA GAAP GM 74.8%, Q3; SK hynix OP 80%, Micron GM 86.8%); E6 1m -8.7 / 3m -21.9 says the market is pricing mean-reversion",
+  "S2": "late - capex > OCF at the top spenders; SpaceX funds ~$47bn of GPUs off balance sheet via a five-year non-cancellable lease (Saturn Funding Trust); Amazon sells $5bn of data centers at a 7% cap rate and leases back (asset recycling)",
+  "S3": "late - supply under contract: Nvidia supply and capacity commitments $279bn (Jul 26, from $119bn); Samsung-Apple 4-5 year DRAM LTA with a minimum threshold; 700 MW Anthropic TPU deployment reportedly 2027 -> 2028 (unverified)",
+  "S4": "late - vendor financing: Nvidia AR $81.0bn (70% of quarterly revenue, from 65.5%), inventory $39.7bn (+26% q/q), neocloud commitments $32bn made conditional; SB Energy/OpenAI guarantees capped $105bn (10-Q); $26bn strategic placement into Anthropic's IPO by its suppliers; the Fed's staff names 'circular financing' in the minutes",
+  "S5": "late - the debt window is open at a price (SpaceX A3 paper at 8.26%, +230 bp over IG; Alphabet 40y at 6.00%) while equity supply hits a record (Anthropic $81.3bn; Nscale IPO pending with a funding warning); a Google-linked $3bn prepaid muni delayed",
+  "S6": "not late - relative breadth: RSP -4.3% vs SPY -10.8% 1m, value - growth +11.8, defensives - cyclicals +7.6; but the 493 are falling, not rising (FactSet not read)",
+  "S7": "late - fragility rising: Nvidia's customer concentration (one direct customer 16%, five AR customers 70% of receivables per the 10-Q summary), CoreWeave CDS 1,233-1,289 bp pricing >65% five-year default odds, Oracle CDS 328; the lab -> neocloud -> GPU -> memory take-or-pay chain now carries an $81bn public equity node",
+  "cycles": {
+   "business": "late expansion (Dec hike 96% priced, claims benign at +1.3%, core 0.3 x3, UMich 51.5)",
+   "capital": "late (the periphery has broken - NEO 64, SUP 80 vs 100 base; confirmation elements unfired)",
+   "debt": "late, but this week the bond hedged (10y -23 bp as SPX -8.6%; 20y and TIPS clean; custody bounced)"
+  },
+  "prev": 6,
+  "stage_score": 6
+ },
+ "standoff_export": {
+  "H2": {
+   "E": 60,
+   "F": 25,
+   "R+": 5,
+   "R-": 10
+  },
+  "H2_exact": {
+   "E": 62.92,
+   "F": 23.6,
+   "R+": 4.49,
+   "R-": 8.99
+  },
+  "H3": {
+   "E": 65,
+   "F": 20,
+   "R+": 5,
+   "R-": 10
+  },
+  "brent": {
+   "front_contract": "Jan-27",
+   "front_date": "2026-11-20",
+   "front_month": 92.57,
+   "low_settle_since": {
+    "date": "2026-11-18",
+    "value": 91.95
+   },
+   "m1_m2_date": "2026-11-19",
+   "m1_m2_note": "Nov 19 pair (M1 91.98 / M2 89.44); Nov 20 Feb settle not printed",
+   "m1_m2_spread": 2.54,
+   "next_contract": "Feb-27",
+   "next_date": "2026-11-19",
+   "next_month": 89.44,
+   "recent_high": 117.6,
+   "recent_high_date": "2026-10-30",
+   "recent_high_note": "Dec-26 expiry settle; Jan-27 high 116.72 on 2026-10-23",
+   "week_chg_pct": -3.41
+  },
+  "cone_validity": "valid for F/E with a definitional flag: the E weight (60) is carried by harassment modalities (casualties, Gulf host-state bases struck) that do not meet the S-20261209-E criterion (energy-infrastructure strike confirmed by the owning state, a Gulf state engaging Iran directly, or a nuclear test), which is held at 0.35. The F/E boundary ('frozen harassment with casualties') needs an attended ruling; until then the fork, not the weight, is the scored object. R branches sum to 15 at H2.",
+  "equity_note": "S&P 500 -5.1% Nov 13-19 (7561.67 -> 7175.83), HY OAS +29 bp to 3.52 - the AI/tech de-rating, not an oil-channel move",
+  "floor_zone": "85-100",
+  "floor_zone_prev": "85-100",
+  "fuse": "strained",
+  "fuse_note": "SpaceX ~$40B Apollo SPV chip lease (five years) + $7B down payment + Goldman-led $8.3B senior secured loan, off balance sheet; 'could be sold as soon as this week' (Nov 18) - no tranche priced; SpaceX 5y CDS 265 bp (Nov 16) vs ~110 at the June IPO; IG OAS 0.94, HY 3.52 (Nov 19, +5 / +29 bp wk)",
+  "hazards_per_month": {
+   "choreographed_strike_then_ceasefire": 8,
+   "crew_fatality_confirmed": 25,
+   "disorderly_treasury_move": 15,
+   "energy_infra_strike_either_direction": 14,
+   "fed_50bp_dec": 5,
+   "fuse_pricing_fails_or_sweetened_by_1231": 30,
+   "gulf_state_engages_iran": 8,
+   "iran_npt_withdrawal_announced": 8,
+   "iran_nuclear_test": 2,
+   "joint_us_israel_campaign_4_7_days": 10,
+   "red_sea_or_pipeline_shutdown": 18
+  },
+  "hormuz_fork_p_signing_by": {
+   "2026-12-09": 0.1
+  },
+  "line": "standoff 2026-11-21T0611-standoff | R+ 5 / R- 10 / F 25 / E 60 (H2) | floor 85-100 | Hormuz fork 0.10 by Dec 9 | supply | fuse strained | status partial",
+  "positioning": {
+   "bull_bear": 7.4,
+   "cash_pct": 3.6,
+   "fms": "Nov 6-12",
+   "rotation_10y_level": 5.8,
+   "short_treasuries_crowded_pct": 10,
+   "tech_net_ow": 12,
+   "tech_prev": 37,
+   "top_tail_risk": "AI bubble 34%"
+  },
+  "run_at": "2026-11-21T06:11:50-07:00",
+  "run_id": "2026-11-21T0611-standoff",
+  "shock_type": "supply",
+  "state_label": "E-leaning on modality, F in the price: harassment with casualties and a new Gulf front, no deal, no decisive strike; oil pricing surplus over Hormuz",
+  "status": "partial",
+  "transmission": {
+   "core_ge_0p4_twice": false,
+   "cpi_oct_core_mm": 0.3,
+   "cpi_oct_headline_mm": 0.35,
+   "dec_50bp_p": 0.043,
+   "dec_hike_p": 0.957,
+   "dfii10": 2.88,
+   "dgs10": 5.04,
+   "dgs2": 4.76,
+   "dgs30": 5.4,
+   "jan_hike_p": 0.475,
+   "t5yie": 2.18,
+   "t5yifr": 2.12
+  },
+  "unmeasured": "M3 war-risk % of hull (no November quote; Oct 6-10% carried); O3 Dated Brent (IEA ~93 Nov 13 carried); Brent Feb-27 settle for Nov 20 (M1-M2 2.54 is the Nov 19 print); O5 TD3C after Oct 15; O6 rial, O7 CDS not read; Semafor Nov 18 fuse piece robots_disallowed (BigGo relay used); M8 is a DTN ship-tracking estimate, not IEA/EIA",
+  "wti": {
+   "front_contract": "Jan-27",
+   "front_date": "2026-11-20",
+   "front_month": 83.41,
+   "note": "Dec-26 expired Nov 20 at 83.98"
+  }
+ }
+}

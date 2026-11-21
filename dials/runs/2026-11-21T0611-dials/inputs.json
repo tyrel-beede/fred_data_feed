@@ -1,0 +1,506 @@
+{
+ "fetch_rule": "every page reached through a WebSearch result link (unattended); 1 search, 2 pages (sec.gov 8-K and 10-Q) fetched by this stage; all other inputs are repository files; no memory tool called",
+ "files": [
+  {
+   "as_of": "2026-11-21",
+   "commit": "ebdfce5",
+   "gate": "fresh (after stage 1)",
+   "path": "dials/state/latest.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-dials/cone.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-dials/spec.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-dials/forecasts.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-dials/readings.json"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-14T0611-dials/lens.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "ebdfce5",
+   "gate": "fresh (stage 1, status partial)",
+   "path": "dials/runs/2026-11-21T0611-standoff/export.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "ebdfce5",
+   "gate": "fresh",
+   "path": "dials/state/ledger.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "ebdfce5",
+   "gate": "fresh",
+   "path": "dials/state/register.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/rulings.md"
+  },
+  {
+   "as_of": "2026-11-06b",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/config.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/_status_main.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P1_ici.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P2_epfr.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P4_cftc.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P5_sentiment.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P6_margin.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P8_calendar.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P9_custody.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P11_h8.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_P12_fms.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_consensus.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_events.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_standoff.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/_status_voices.json"
+  },
+  {
+   "as_of": "2026-10-31",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/flows/2026-11-16.json"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/flows/2026-11-18.json"
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "carried",
+   "path": "dials/flows/2026-11-19.json"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/flows/2026-11-20.json"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (partial)",
+   "path": "dials/flows/2026-11-21.json"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/voices/2026-11-19.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "carried",
+   "path": "dials/consensus/2026-11-09.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (partial)",
+   "path": "dials/calendar/2026-11-21.json"
+  },
+  {
+   "as_of": "2026-11-16",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-16.json"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-17.json"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-18.json"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-19.json"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-20.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-21.json"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DFII10.csv"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/T5YIFR.csv"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/T5YIE.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DGS10.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DGS30.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DGS2.csv"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DCOILWTICO.csv"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DCOILBRENTEU.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLC0A0CM.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A0HYM2.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A3HYC.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A2HYB.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A1HYBB.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/BAMLC0A4CBBB.csv"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DTWEXBGS.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/SP500.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/NASDAQCOM.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/VIXCLS.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/OVXCLS.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/GVZCLS.csv"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/NFCI.csv"
+  },
+  {
+   "as_of": "2026-11-13",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/STLFSI4.csv"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/ICSA.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/CPIAUCSL.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/CPILFESL.csv"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/WALCL.csv"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/RRPONTSYD.csv"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/WTREGEN.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/SOFR.csv"
+  },
+  {
+   "as_of": "2026-11-23",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/IORB.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/EFFR.csv"
+  },
+  {
+   "as_of": "2026-11-19",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DFF.csv"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/WMTSECL1.csv"
+  },
+  {
+   "as_of": "2026-11-11",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/TOTCI.csv"
+  },
+  {
+   "as_of": "2026-10-01",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/fred/DRTSCILM.csv"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh",
+   "path": "data/prices/<T>.csv (SPY RSP QQQ IWM SMH XHB XLP XLU XLY XLI IVE IVW; baskets; top 8; IDX_GSPC IDX_SOX GLD TLT HYG LQD TSM DX_Y_NYB)"
+  },
+  {
+   "as_of": "2026-11-20 (term_premium 2026-11-12; private_credit empty)",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "fresh (gaps flagged)",
+   "path": "data/gdelt/*_timelinevol.json"
+  },
+  {
+   "as_of": "nulls",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "unusable - gather values used",
+   "path": "data/cftc/tff_*.json"
+  },
+  {
+   "as_of": "no November rows",
+   "commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+   "gate": "stale - gather values used",
+   "path": "data/treasury/auctions_results.csv"
+  }
+ ],
+ "freshness_gate": {
+  "P11_h8": "carried (as of 2026-11-11, tol 8)",
+  "P12_fms": "fresh (2026-11-17)",
+  "P1_ici": "carried (as of 2026-11-11, tol 8)",
+  "P2_epfr": "fresh (2026-11-18, partial)",
+  "P3_etf, P7_retail": "no sub-skill group - not gathered",
+  "P4_cftc": "fresh (2026-11-17, partial: no web verification of the 17 Nov nets)",
+  "P5_sentiment": "fresh (2026-11-19, partial)",
+  "P6_margin": "fresh (2026-10-31, tol 35)",
+  "P8_calendar": "fresh (2026-11-21, partial: no IG tally)",
+  "P9_custody": "fresh (2026-11-18)",
+  "_status_main": "ok (run 2026-11-21T03:27Z; CFTC tff files hold nulls - flagged)",
+  "consensus": "carried (as of 2026-11-06, tol 8; inside 2x)",
+  "events": "fresh (2026-11-20)",
+  "standoff": "fresh (2026-11-20, partial) - stage-1 export read",
+  "voices": "fresh (as of 2026-11-18, tol 4)"
+ },
+ "pages": [
+  {
+   "as_of": "2026-11-17",
+   "field": "C4/F-NVDA-*",
+   "gate": "fetched",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm"
+  },
+  {
+   "as_of": "2026-07-26",
+   "field": "C4 AR q/q base; S3/S4 commitments",
+   "gate": "fetched (partial read of a long page)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm"
+  }
+ ],
+ "run_id": "2026-11-21T0611-dials",
+ "stage1_pages": "the six standoff fetches (F3, F5, F6, F7, M3, M5) are listed in dials/runs/2026-11-21T0611-standoff/inputs.json"
+}

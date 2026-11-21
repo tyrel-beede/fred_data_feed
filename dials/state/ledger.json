@@ -592,8 +592,24 @@
    "p": 0.6,
    "p_rest": 0.58,
    "p_target": 0.69,
+   "resolution": {
+    "brier": 0.16,
+    "brier_recomputed": 0.16,
+    "criterion": "AR growth > revenue growth again (third quarter)",
+    "event_time": "2026-11-17",
+    "evidence": "AR $63,059m (Jul 26) -> $81,033m (Oct 25): +28.5% q/q vs revenue $96,221m -> $115,844m: +20.4%; inventories +25.8%. Fired; x1.2 applied as registered.",
+    "id": "F-20261117-NVDA-AR",
+    "kind": "dials",
+    "log_score": -0.510826,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "outcome": 1,
+    "p": 0.6,
+    "resolved_at": "2026-11-21",
+    "resolved_in_run": "2026-11-21T0611-dials",
+    "source_node": "sec.gov q3fy27pr.htm; nvda-20260726.htm"
+   },
    "resolves": "2026-11-17",
-   "status": "open",
+   "status": "resolved",
    "target": "B",
    "tier": "x1.2"
   },
@@ -614,8 +630,25 @@
    "p": 0.2,
    "p_rest": 0.17,
    "p_target": 0.34,
+   "resolution": {
+    "brier": 0.64,
+    "brier_recomputed": 0.64,
+    "criterion": "Nvidia withdraws, cancels or materially shrinks the proposed $250bn OpenAI credit backstop or another vendor-financing commitment, stated on the call",
+    "event_time": "2026-11-17",
+    "evidence": "Kress: neocloud commitments $32bn (from $36bn), effective only if the neocloud 'secures the funding they need' and meets milestones; a stalled project's guarantee 'doesn't exist anymore'; 'disciplined and selective'. Scored YES and flagged marginal (an 11% cut plus conditionality; the OpenAI backstop itself was not addressed in the gather). x2 applied at q 0.7.",
+    "flag": "marginal",
+    "id": "F-20261117-NVDA-BACKSTOP",
+    "kind": "dials",
+    "log_score": -1.609438,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "outcome": 1,
+    "p": 0.2,
+    "resolved_at": "2026-11-21",
+    "resolved_in_run": "2026-11-21T0611-dials",
+    "source_node": "dials/events/2026-11-18.json; 11-19 (Kiplinger live; Barchart; TechCrunch)"
+   },
    "resolves": "2026-11-17",
-   "status": "open",
+   "status": "resolved",
    "target": "B",
    "tier": "x2"
   },
@@ -641,8 +674,24 @@
    "p": 0.25,
    "p_rest": 0.16,
    "p_target": 0.64,
+   "resolution": {
+    "brier": 0.0625,
+    "brier_recomputed": 0.0625,
+    "criterion": "Q4 FY27 revenue guide below the ~$110B implied consensus",
+    "event_time": "2026-11-17",
+    "evidence": "Q4 outlook $130.0bn +/- 3% (ex China DC compute), GM 71-72%; Q3 revenue $115.8bn (+103% y/y). Non-event; LR_non 0.43 applied.",
+    "id": "F-20261117-NVDA-GUIDE",
+    "kind": "dials",
+    "log_score": -0.287682,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "outcome": 0,
+    "p": 0.25,
+    "resolved_at": "2026-11-21",
+    "resolved_in_run": "2026-11-21T0611-dials",
+    "source_node": "sec.gov q3fy27pr.htm; dials/events/2026-11-18.json"
+   },
    "resolves": "2026-11-17",
-   "status": "open",
+   "status": "resolved",
    "target": "B",
    "tier": "x4"
   },
@@ -668,8 +717,24 @@
    "p": 0.3,
    "p_rest": 0.3,
    "p_target": 0.59,
+   "resolution": {
+    "brier": 0.09,
+    "brier_recomputed": 0.09,
+    "criterion": "20y auction tail >= 2 bp vs when-issued",
+    "event_time": "2026-11-18",
+    "evidence": "$16bn 20y: high 5.459 = WI 5.459, tail 0.0 (avg 0.5), b/c 2.63 = avg, indirects 60.2 (avg 63.7), dealers 13.1 (avg 12.0): 'in line'. Non-event; LR_non 0.58 on C.",
+    "id": "F-20261118-20Y",
+    "kind": "dials",
+    "log_score": -0.356675,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "outcome": 0,
+    "p": 0.3,
+    "resolved_at": "2026-11-21",
+    "resolved_in_run": "2026-11-21T0611-dials",
+    "source_node": "dials/events/2026-11-19.json (helious; investinglive; Saxo)"
+   },
    "resolves": "2026-11-18",
-   "status": "open",
+   "status": "resolved",
    "target": "C",
    "tier": "x2"
   },
@@ -695,332 +760,485 @@
    "p": 0.35,
    "p_rest": 0.29,
    "p_target": 0.59,
+   "resolution": {
+    "brier": 0.1225,
+    "brier_recomputed": 0.1225,
+    "criterion": "IPO delayed past Nov 30, downsized below the ~$75bn reported raise, or priced below the top of the initial range ($78)",
+    "event_time": "2026-11-18",
+    "evidence": "Priced Nov 18 at $83 (range $70-78 set Nov 17), 980m shares, ~$81.3bn, plus $26bn strategic placement at the IPO price; listed Nov 19. All three legs now impossible: resolved early NO. LR_non 0.58 applied.",
+    "id": "F-20261120-ANTHROPIC",
+    "kind": "dials",
+    "log_score": -0.430783,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "outcome": 0,
+    "p": 0.35,
+    "resolved_at": "2026-11-21",
+    "resolved_in_run": "2026-11-21T0611-dials",
+    "source_node": "dials/events/2026-11-20.json; dials/calendar/2026-11-21.json"
+   },
    "resolves": "2026-11-30",
-   "status": "open",
+   "status": "resolved",
    "target": "B",
    "tier": "x2"
   },
   {
+   "baseline_p": {
+    "bucket": "0.2-0.4",
+    "note": "ledger hit rate in bucket: 2 of 6 dials resolutions (0.33)"
+   },
    "cluster": "neocloud-credit",
-   "criterion": "CoreWeave's >= $4bn IG-rated secured loan is pulled, not launched, or prices with a blended rate above 9% or a downsized amount by Nov 30 (a failed refinancing)",
+   "criterion": "CoreWeave's >= $4bn IG-rated secured loan is pulled, not launched, or prices with a blended rate above 9% or a downsized amount by Nov 30 (a failed refinancing: x4 B)",
    "depth": 1,
    "element": null,
-   "feeds": "C6, G2",
    "first_registered_run": "2026-11-14T0611-dials",
-   "history": [],
+   "history": [
+    {
+     "p": 0.2,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
    "id": "F-20261130-CRWV-LOAN",
+   "implied_p_rest": 0.23,
+   "implied_p_target": 0.9,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
+   "last_seen_run": "2026-11-21T0611-dials",
    "lead_days": 16,
-   "non_fire": 0.56,
-   "note": "new: Bloomberg Nov 11 / Semafor Nov 13 - ~7.5% target vs 16% unsecured, GPUs and Meta contracts as collateral",
-   "p": 0.2,
-   "p_rest": 0.13,
-   "p_target": 0.51,
+   "nonfire_lr": 0.12,
+   "note": "from 0.20: unconfirmed a sixth run; 5y CDS 1,233-1,289 bp (>65% five-year default odds); 2031s ~16%; nine days left",
+   "p": 0.3,
    "resolves": "2026-11-30",
    "status": "open",
    "target": "B",
    "tier": "x4"
   },
   {
+   "baseline_p": null,
    "cluster": "long-end",
-   "criterion": "10y reopening tail >= 2 bp",
+   "criterion": "10y reopening tail >= 2 bp vs when-issued (Dec 8, verified)",
    "depth": 2,
    "element": null,
-   "feeds": "D1",
    "first_registered_run": "2026-11-14T0611-dials",
-   "history": [],
+   "history": [
+    {
+     "p": 0.25,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
    "id": "F-20261208-10YR",
+   "implied_p_rest": 0.25,
+   "implied_p_target": 0.5,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 24,
-   "non_fire": 0.67,
-   "note": "new (schedule PDF verified)",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 17,
+   "nonfire_lr": 0.67,
+   "note": "held: 20y and TIPS cleared on the screws; indirects 60.2 below average; the day before the FOMC",
    "p": 0.25,
-   "p_rest": 0.25,
-   "p_target": 0.49,
    "resolves": "2026-12-08",
    "status": "open",
    "target": "C",
    "tier": "x2"
   },
   {
-   "cluster": null,
-   "criterion": "B confirmed by Dec 9 (two of the five B elements)",
+   "baseline_p": {
+    "bucket": "0.2-0.4",
+    "note": "0.33"
+   },
+   "cluster": "principal-language",
+   "criterion": "Broadcom FQ1 FY27 revenue guide below the published consensus midpoint, or management confirms a reduction in 2027 TPU unit orders (Dec 9 after close, verified; same day as the FOMC)",
    "depth": 2,
    "element": null,
-   "feeds": "ledger",
-   "first_registered_run": "2026-11-02",
-   "history": [
-    {
-     "p": 0.17,
-     "run": "2026-11-02T1935-dials-lite"
-    }
-   ],
-   "id": "F-20261209-B-CONF",
+   "first_registered_run": "2026-11-21T0611-dials",
+   "history": [],
+   "id": "F-20261209-AVGO",
+   "implied_p_rest": 0.27,
+   "implied_p_target": 0.54,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "note": "layer 2 P(B confirmed) 0.071 (was 0.17); independence 0.05 / comonotone 0.08",
-   "p": 0.071,
-   "resolves": "2026-12-09",
-   "status": "open",
-   "target": null,
-   "tier": null
-  },
-  {
-   "cluster": null,
-   "criterion": "C confirmed by Dec 9",
-   "depth": 2,
-   "element": null,
-   "feeds": "ledger",
-   "first_registered_run": "2026-11-02",
-   "history": [
-    {
-     "p": 0.13,
-     "run": "2026-11-02T1935-dials-lite"
-    }
-   ],
-   "id": "F-20261209-C-CONF",
-   "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "note": "layer 2 prints 0.00 with one registered C element; hand-set 0.02 (floor) and flagged: the C elements that are fields (term premium >1 rising, correlation month) are not forks",
-   "p": 0.02,
-   "resolves": "2026-12-09",
-   "status": "open",
-   "target": null,
-   "tier": null
-  },
-  {
-   "cluster": "rates",
-   "criterion": "Dec 9 hike with claims 4-wk > +10% from the 189k low (LR-carrying form); market P(hike) 0.89",
-   "depth": 2,
-   "element": null,
-   "feeds": "B2, G4",
-   "first_registered_run": "2026-10-27",
-   "history": [
-    {
-     "p": 0.15,
-     "run": "2026-11-02T1935-dials-lite"
-    }
-   ],
-   "id": "F-20261209-FOMC",
-   "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "non_fire": 0.93,
-   "note": "from 0.15: claims +3.3%",
-   "p": 0.08,
-   "p_rest": 0.07,
-   "p_target": 0.13,
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.63,
+   "note": "new: Kuo's TPU 8i cut (~20%) and the 11% ASIC forecast cut; AVGO -11.4% Nov 20; consensus anchor from the October-dated page (stale) - criterion written against the midpoint published at the print",
+   "p": 0.3,
    "resolves": "2026-12-09",
    "status": "open",
    "target": "B",
    "tier": "x2"
   },
   {
-   "cluster": "oil",
-   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
+   "baseline_p": null,
+   "cluster": null,
+   "criterion": "B confirmed by Dec 9 (two of the five B elements inside the horizon)",
    "depth": 2,
    "element": null,
-   "feeds": "B1-oil, B2, D2",
+   "first_registered_run": "2026-11-02",
+   "history": [
+    {
+     "p": 0.17,
+     "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.071,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
+   "id": "F-20261209-B-CONF",
+   "implied_p_rest": null,
+   "implied_p_target": null,
+   "kind": "dials",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": null,
+   "note": "cone layer 2 (independence 0.07, comonotone 0.10); from 0.071",
+   "p": 0.1,
+   "resolves": "2026-12-09",
+   "status": "open",
+   "target": null,
+   "tier": null
+  },
+  {
+   "baseline_p": null,
+   "cluster": null,
+   "criterion": "C confirmed by Dec 9",
+   "depth": 2,
+   "element": null,
+   "first_registered_run": "2026-11-02",
+   "history": [
+    {
+     "p": 0.13,
+     "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.02,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
+   "id": "F-20261209-C-CONF",
+   "implied_p_rest": null,
+   "implied_p_target": null,
+   "kind": "dials",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": null,
+   "note": "cone layer 2 0.00 (one C element registered) - hand-set 0.01; from 0.02",
+   "p": 0.01,
+   "resolves": "2026-12-09",
+   "status": "open",
+   "target": null,
+   "tier": null
+  },
+  {
+   "baseline_p": null,
+   "cluster": "rates",
+   "criterion": "Dec 9 hike with claims 4-wk > +10% from the 195k low (LR-carrying form); market P(hike) 0.96",
+   "depth": 2,
+   "element": null,
+   "first_registered_run": "2026-10-27",
+   "history": [
+    {
+     "p": 0.15,
+     "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.08,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
+   "id": "F-20261209-FOMC",
+   "implied_p_rest": 0.05,
+   "implied_p_target": 0.09,
+   "kind": "dials",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.95,
+   "note": "from 0.08: claims +1.3%; the hike itself is ~certain, the claims leg is not",
+   "p": 0.05,
+   "resolves": "2026-12-09",
+   "status": "open",
+   "target": "B",
+   "tier": "x2"
+  },
+  {
+   "baseline_p": null,
+   "cluster": "principal-language",
+   "criterion": "Alphabet or Broadcom confirms, in a primary source (transcript, 8-K, release), a reduction in 2027 TPU unit orders versus prior plan by Dec 9 (a principal's capex deferral, verified: x4 B, B element)",
+   "depth": 2,
+   "element": "B",
+   "first_registered_run": "2026-11-21T0611-dials",
+   "history": [],
+   "id": "F-20261209-GOOGL-TPU",
+   "implied_p_rest": 0.11,
+   "implied_p_target": 0.45,
+   "kind": "dials",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.62,
+   "note": "new: the Kuo report is analyst-sourced and partly a vendor shift (8i -> 8t); a confirmed unit cut is the first C2 -1 by a principal",
+   "p": 0.15,
+   "resolves": "2026-12-09",
+   "status": "open",
+   "target": "B",
+   "tier": "x4"
+  },
+  {
+   "baseline_p": null,
+   "cluster": "oil",
+   "criterion": "a written US-Iran agreement announced by both governments by Dec 9 (x2 A via B1, B2, term premium)",
+   "depth": 2,
+   "element": null,
    "first_registered_run": "2026-10-27",
    "history": [
     {
      "p": 0.38,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.15,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20261209-HORMUZ",
+   "implied_p_rest": 0.05,
+   "implied_p_target": 0.11,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "non_fire": 0.91,
-   "note": "from 0.38: standoff stage S-20261209-SIGN 0.15 (T5 -1, 'don't need a deal')",
-   "p": 0.15,
-   "p_rest": 0.08,
-   "p_target": 0.17,
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.94,
+   "note": "from 0.15: aligned to the standoff export (S-20261209-SIGN 0.10)",
+   "p": 0.1,
    "resolves": "2026-12-09",
    "status": "open",
    "target": "A",
    "tier": "x2"
   },
   {
+   "baseline_p": null,
    "cluster": "credit",
    "criterion": "IG OAS >= 100 bp on any day by Dec 9",
    "depth": 2,
    "element": null,
-   "feeds": "C1",
    "first_registered_run": "2026-10-27",
    "history": [
     {
      "p": 0.45,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.3,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20261209-IG100",
+   "implied_p_rest": 0.36,
+   "implied_p_target": 0.72,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "non_fire": 0.66,
-   "note": "from 0.45: IG 89 on Nov 12, 17 sessions left",
-   "p": 0.3,
-   "p_rest": 0.25,
-   "p_target": 0.5,
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.44,
+   "note": "from 0.30: IG 94 (77.5th pct), +7 1m; HY +18 bp in three sessions; CRWV CDS at records; the first transmission test",
+   "p": 0.4,
    "resolves": "2026-12-09",
    "status": "open",
    "target": "B",
    "tier": "x2"
   },
   {
+   "baseline_p": null,
    "cluster": "credit",
    "criterion": "IG OAS >= 115 bp on any day by Dec 9 (B element)",
    "depth": 2,
    "element": "B",
-   "feeds": "C1",
    "first_registered_run": "2026-10-27",
    "history": [
     {
      "p": 0.14,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.08,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20261209-IG115",
+   "implied_p_rest": 0.09,
+   "implied_p_target": 0.18,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "non_fire": 0.93,
-   "note": "from 0.14",
-   "p": 0.08,
-   "p_rest": 0.07,
-   "p_target": 0.13,
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.9,
+   "note": "from 0.08",
+   "p": 0.1,
    "resolves": "2026-12-09",
    "status": "open",
    "target": "B",
    "tier": "x2"
   },
   {
+   "baseline_p": null,
    "cluster": "oil",
    "criterion": "standoff E criteria met or Brent front-month >= 120 by Dec 9",
    "depth": 2,
    "element": null,
-   "feeds": "B1-oil",
    "first_registered_run": "2026-10-27",
    "history": [
     {
      "p": 0.33,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.35,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20261209-OILE",
+   "implied_p_rest": 0.32,
+   "implied_p_target": 0.63,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "non_fire": 0.58,
-   "note": "from 0.33: standoff S-20261209-E 0.35 / BRENT120 0.10",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.54,
+   "note": "held at the standoff's 0.35 (E weight 60 but the fork criterion unmet; Brent 92.57)",
    "p": 0.35,
-   "p_rest": 0.29,
-   "p_target": 0.59,
    "resolves": "2026-12-09",
    "status": "open",
    "target": "B",
    "tier": "x2"
   },
   {
+   "baseline_p": null,
    "cluster": "rates",
    "criterion": "DFII10 > 3.0 on any day by Dec 9 (x4 toward B and C)",
    "depth": 2,
    "element": null,
-   "feeds": "B4",
    "first_registered_run": "2026-11-02",
    "history": [
     {
      "p": 0.09,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.2,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20261209-REAL3",
+   "implied_p_rest": 0.09,
+   "implied_p_target": 0.36,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 25,
-   "non_fire": 0.56,
-   "note": "from 0.09: 2.86 with the 10y +26 bp on the week and a Dec hike priced",
-   "p": 0.2,
-   "p_rest": 0.13,
-   "p_target": 0.51,
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 18,
+   "nonfire_lr": 0.7,
+   "note": "from 0.20: 2.88 (peak 2.92 Nov 16); 10y -23 bp on the week",
+   "p": 0.12,
    "resolves": "2026-12-09",
    "status": "open",
    "target": "B",
    "tier": "x4"
   },
   {
+   "baseline_p": null,
    "cluster": "long-end",
-   "criterion": "30y reopening tail >= 2 bp (a C element with the next tail)",
+   "criterion": "30y reopening tail >= 2 bp (Dec 10, verified; a C element with the next tail)",
    "depth": 3,
    "element": "C",
-   "feeds": "D1",
    "first_registered_run": "2026-11-14T0611-dials",
-   "history": [],
+   "history": [
+    {
+     "p": 0.25,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
    "id": "F-20261210-30YR",
+   "implied_p_rest": 0.25,
+   "implied_p_target": 0.5,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 26,
-   "non_fire": 0.67,
-   "note": "new (schedule PDF verified); one day past the H2 date, included",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 19,
+   "nonfire_lr": 0.67,
+   "note": "held",
    "p": 0.25,
-   "p_rest": 0.25,
-   "p_target": 0.49,
    "resolves": "2026-12-10",
    "status": "open",
    "target": "C",
    "tier": "x2"
   },
   {
+   "baseline_p": null,
    "cluster": "rates",
-   "criterion": "Nov core CPI m/m >= 0.4 (Dec 10 08:30 ET; a second >= 0.4 would be the B1 x2 event)",
+   "criterion": "Nov core CPI m/m >= 0.4 (Dec 10 08:30 ET, verified; a second >= 0.4 would be the B1 x2 event)",
    "depth": 3,
    "element": null,
-   "feeds": "B1",
    "first_registered_run": "2026-11-14T0611-dials",
-   "history": [],
+   "history": [
+    {
+     "p": 0.25,
+     "run": "2026-11-14T0611-dials"
+    }
+   ],
    "id": "F-20261210-CPI",
+   "implied_p_rest": 0.24,
+   "implied_p_target": 0.36,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 26,
-   "non_fire": 0.85,
-   "note": "new (BLS schedule verified)",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 19,
+   "nonfire_lr": 0.84,
+   "note": "held: three 0.3s; oil -20% in November argues down, Waller argues the Fed must 'shock'",
    "p": 0.25,
-   "p_rest": 0.23,
-   "p_target": 0.34,
    "resolves": "2026-12-10",
    "status": "open",
    "target": "B",
    "tier": "x1.5"
   },
   {
+   "baseline_p": null,
    "cluster": "principal-language",
-   "criterion": "FQ2 capex cut, deferral or verified restraint language (date after Dec 11 by the IV term structure; Dec 14 aggregator, unverified)",
+   "criterion": "FQ2 capex cut, deferral or verified restraint language (date unverified: ~Dec 8 aggregator; no 'Sets the Date' release yet)",
    "depth": 3,
    "element": "B",
-   "feeds": "C2, G1",
    "first_registered_run": "2026-10-27",
    "history": [
     {
      "p": 0.09,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.09,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20261210-ORCL",
+   "implied_p_rest": 0.07,
+   "implied_p_target": 0.27,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 30,
-   "note": "held; outside H2 layer 2",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 23,
+   "nonfire_lr": 0.78,
+   "note": "held; ORCL -19.3% wk, CDS 328",
    "p": 0.09,
    "resolves": "2026-12-14",
    "status": "open",
    "target": "B",
    "tier": "x4"
+  },
+  {
+   "baseline_p": null,
+   "cluster": "nvidia",
+   "criterion": "Micron FQ1 guide below consensus or LTA-renegotiation language (Dec 17 16:30 ET, verified)",
+   "depth": 3,
+   "element": null,
+   "first_registered_run": "2026-11-21T0611-dials",
+   "history": [],
+   "id": "F-20261217-MU",
+   "implied_p_rest": 0.14,
+   "implied_p_target": 0.27,
+   "kind": "dials",
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 26,
+   "nonfire_lr": 0.84,
+   "note": "held; MU -34.9% 1m; Samsung-Apple LTA tightening argues against renegotiation",
+   "p": 0.15,
+   "resolves": "2026-12-17",
+   "status": "open",
+   "target": "B",
+   "tier": "x2"
   },
   {
    "cluster": "credit",
@@ -1036,8 +1254,24 @@
    "lead_days": 47,
    "note": "new from the standoff F5 read: pieces being sold pre-syndication, indicated 7.75-8.75%, market 'cooled'",
    "p": 0.3,
+   "resolution": {
+    "brier": 0.09,
+    "brier_recomputed": 0.09,
+    "criterion": "SpaceX's $40bn GPU financing: no tranche priced by Dec 31, or a tranche pulled, downsized or sweetened beyond the Oct 26 terms",
+    "event_time": "2026-11-20",
+    "evidence": "~$44bn priced Fri Nov 20 (Apollo/GS release 11:02 ET) via Saturn Funding Trust: Class A3 $25.2bn Apr-2033 at 8.259% (Moody's A3 / KBRA A- prelim), A2 $4.4bn, B $2.6bn, private C-E $2.4bn, plus a senior secured loan; upsized and oversubscribed; inside the Nov 5 7.75-8.75% indication; secured structure and the $7bn prepayment were in the Oct 26 terms. Resolved early NO. LR_non 0.29 applied. (The standoff fork S-20261231-FUSE - 'IG spread with no collateral' - is the standoff stage's to resolve.)",
+    "id": "F-20261231-SPCX-FUSE",
+    "kind": "dials",
+    "log_score": -0.356675,
+    "observed_time": "2026-11-21T06:11:50-07:00",
+    "outcome": 0,
+    "p": 0.3,
+    "resolved_at": "2026-11-21",
+    "resolved_in_run": "2026-11-21T0611-dials",
+    "source_node": "dials/calendar/2026-11-21.json"
+   },
    "resolves": "2026-12-31",
-   "status": "open",
+   "status": "resolved",
    "target": "B",
    "tier": "x4"
   },
@@ -1066,24 +1300,31 @@
    "tier": "x2"
   },
   {
+   "baseline_p": null,
    "cluster": null,
    "criterion": "B confirmed by Jan 20, 2027 (cone H3 median)",
    "depth": 4,
    "element": null,
-   "feeds": "ledger",
    "first_registered_run": "2026-11-02",
    "history": [
     {
      "p": 0.31,
      "run": "2026-11-02T1935-dials-lite"
+    },
+    {
+     "p": 0.313,
+     "run": "2026-11-14T0611-dials"
     }
    ],
    "id": "F-20270120-B-H3",
+   "implied_p_rest": null,
+   "implied_p_target": null,
    "kind": "dials",
-   "last_seen_run": "2026-11-14T0611-dials",
-   "lead_days": 67,
-   "note": "re-set from layer 1 H3 median 31.3",
-   "p": 0.313,
+   "last_seen_run": "2026-11-21T0611-dials",
+   "lead_days": 60,
+   "nonfire_lr": null,
+   "note": "from 0.313",
+   "p": 0.194,
    "resolves": "2027-01-20",
    "status": "open",
    "target": null,
@@ -1432,6 +1673,6 @@
    "status": "open"
   }
  ],
- "n_open": 35,
- "n_resolved": 22
+ "n_open": 32,
+ "n_resolved": 28
 }

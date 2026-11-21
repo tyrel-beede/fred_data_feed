@@ -1,0 +1,40 @@
+{
+ "error": "all stage inputs read; carried or unmeasured this run: P1_ici and P11_h8 as of Nov 11 (gate 8 days); consensus/N4 as of Nov 6 (15 days; pages October-dated); P4 percentiles not computable (repo tff files hold nulls; web cross-checks a week behind); D2 term premium unmeasured; B3 ISM, B5 forward P/E and the 493 earnings (FactSet) not read; C7 rental rates not refreshed; N1 term_premium file ends Nov 12, private_credit empty; N2 tone not computed; N7 narratives ledger not rebuilt; P3 ETF creations and P7 retail metrics not gathered; the Nov 16 NVDA option chain not read (indicative Nov 2 implied move used for the reaction ratio); November auctions absent from data/treasury (gather figures used)",
+ "inputs_commit": "ebdfce5 (after stage 1)",
+ "kind": "dials",
+ "mode": "full",
+ "repo_commit": "a2cf8884bdb58b2741a7bf6ef93930db6fee7f29",
+ "run_at": "2026-11-21T06:11:50-07:00",
+ "run_id": "2026-11-21T0611-dials",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 2,
+  "task": "dials-weekly"
+ },
+ "skill_version": "macro-dials SKILL.md, repository-state version (dials/runs/<RUN_ID>/), synced skill folder 2026-11-21",
+ "standoff_stage": {
+  "carried": "this run's export used, labeled partial (FEED §4); its fuse line ('not priced') superseded by the Nov 21 calendar gather (SpaceX ~$44bn priced Nov 20)",
+  "run_id": "2026-11-21T0611-standoff",
+  "status": "partial"
+ },
+ "state_prev": {
+  "H2": [
+   79.9,
+   18.9,
+   1.0
+  ],
+  "H3": [
+   67.4,
+   31.3,
+   1.1
+  ],
+  "label": "TRANSITION",
+  "run_id": "2026-11-14T0611-dials",
+  "s2": 0.47,
+  "s3": 0.53
+ },
+ "status": "partial",
+ "test_note": "dials/tools/test_materialize.py: state/ rebuilt byte-for-byte and no logged-vs-recomputed Brier mismatch (FEED §8 invariants pass); its hard-coded migration assertion 'dials Brier 0.121, n=12' fails by construction once any new dials fork resolves (now n=24). Tools are not edited by a scheduled run; reported to the user again."
+}

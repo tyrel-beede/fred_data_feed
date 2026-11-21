@@ -1,0 +1,345 @@
+{
+ "applied": [
+  {
+   "judgment": true,
+   "lr": 2.0,
+   "name": "Fork F-20261117-NVDA-BACKSTOP fired (marginal): neocloud financing commitments cut to $32bn from $36bn and made conditional on the provider's own funding and milestones, 'disciplined and selective' (Kress, Nov 17 call) x2 B",
+   "q": 0.7,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "lr": 1.2,
+   "name": "Fork F-20261117-NVDA-AR fired: AR +28.5% q/q ($63.1bn -> $81.0bn) vs revenue +20.4% ($96.2bn -> $115.8bn); inventory +25.8%; AR/revenue 65.5% -> 70% (10-Q Jul 26; 8-K Nov 17) x1.2 B",
+   "q": 1.0,
+   "target": "B",
+   "tier": "weak"
+  },
+  {
+   "judgment": true,
+   "lr": 2.0,
+   "name": "Hazard realized: Nvidia governance shock - Reuters (Nov 20): SEC enforcement staff looking at 'potential accounting issues'; chair: Huang will not return (Nov 18); NVDA -14% x2 B",
+   "q": 0.8,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "lr": 1.5,
+   "name": "Divergence: SMH down 7 consecutive sessions to Nov 20 (-17.8% wk, -28% 1m) -1 capital x1.5 B",
+   "q": 1.0,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "lr": 1.5,
+   "name": "C8 -1 (late): Nscale S-1/A (Nov 12) - must obtain additional financing for 2027 obligations after Vera Rubin orders for the $44.6bn Anthropic agreements, reversing 'funded 12 months'; debt ~$5.5bn x1.5 B",
+   "q": 1.0,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "lr": 0.6667,
+   "name": "D3 +1: bonds rallied on equity down days (10y 5.15 -> 4.92, -23 bp over the week SPX fell 8.6%; Nov 20 10y -12 bp / SPX -3.7%) - rules against C; ruling (a) window eligible after Nov 13; LR 1/1.5 on C odds",
+   "q": 1.0,
+   "target": "C",
+   "tier": "default"
+  }
+ ],
+ "confirm_k": 2,
+ "forks": [
+  {
+   "cluster": "neocloud-credit",
+   "element": null,
+   "id": "F-20261130-CRWV-LOAN",
+   "lr": 4,
+   "p_fire": 0.3,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": "long-end",
+   "element": null,
+   "id": "F-20261208-10YR",
+   "lr": 2,
+   "p_fire": 0.25,
+   "target": "C",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "long-end",
+   "element": "C",
+   "id": "F-20261210-30YR",
+   "lr": 2,
+   "p_fire": 0.25,
+   "target": "C",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "credit",
+   "element": null,
+   "id": "F-20261209-IG100",
+   "lr": 2,
+   "p_fire": 0.4,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "credit",
+   "element": "B",
+   "id": "F-20261209-IG115",
+   "lr": 2,
+   "p_fire": 0.1,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "rates",
+   "element": null,
+   "id": "F-20261209-REAL3",
+   "lr": 4,
+   "p_fire": 0.12,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": "rates",
+   "element": null,
+   "id": "F-20261209-FOMC",
+   "lr": 2,
+   "p_fire": 0.05,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "oil",
+   "element": null,
+   "id": "F-20261209-HORMUZ",
+   "lr": 2,
+   "p_fire": 0.1,
+   "target": "A",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "oil",
+   "element": null,
+   "id": "F-20261209-OILE",
+   "lr": 2,
+   "p_fire": 0.35,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "rates",
+   "element": null,
+   "id": "F-20261210-CPI",
+   "lr": 1.5,
+   "p_fire": 0.25,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "cluster": "principal-language",
+   "element": null,
+   "id": "F-20261209-AVGO",
+   "lr": 2,
+   "p_fire": 0.3,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "principal-language",
+   "element": "B",
+   "id": "F-20261209-GOOGL-TPU",
+   "lr": 4,
+   "p_fire": 0.15,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": "principal-language",
+   "element": "B",
+   "id": "F-20261210-ORCL",
+   "lr": 4,
+   "p_fire": 0.09,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": "nvidia",
+   "element": null,
+   "id": "F-20261217-MU",
+   "lr": 2,
+   "p_fire": 0.15,
+   "target": "B",
+   "tier": "moderate"
+  }
+ ],
+ "hazards": [
+  {
+   "cluster": "neocloud-credit",
+   "element": null,
+   "lr": 4,
+   "name": "neocloud / AI-credit event (default, failed refi, gated fund)",
+   "p_window": 0.1,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": "lab-funding",
+   "element": null,
+   "lr": 2,
+   "name": "frontier-lab round down-priced or delayed (OpenAI final close, Nscale IPO pulled/downsized)",
+   "p_window": 0.12,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "credit",
+   "element": "B",
+   "lr": 4,
+   "name": "hyperscaler deal pulled or booked < 2x",
+   "p_window": 0.07,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": null,
+   "element": "B",
+   "lr": 4,
+   "name": "GPU rental -20% q/q",
+   "p_window": 0.04,
+   "target": "B",
+   "tier": "strong"
+  },
+  {
+   "cluster": "nvidia",
+   "element": null,
+   "lr": 2,
+   "name": "Nvidia: SEC action confirmed / Wells notice / restatement (beyond the Nov 20 report)",
+   "p_window": 0.12,
+   "target": "B",
+   "tier": "moderate"
+  },
+  {
+   "cluster": null,
+   "element": null,
+   "lr": 1.5,
+   "name": "hyperscaler SPV / lease-accounting story (Fed minutes flagged off-balance-sheet leasing; Saturn Funding Trust)",
+   "p_window": 0.15,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "cluster": "long-end",
+   "element": null,
+   "lr": 1.5,
+   "name": "sovereign stress (JGB 20y tail, gilts, rupiah) spilling into the long end",
+   "p_window": 0.15,
+   "target": "C",
+   "tier": "default"
+  },
+  {
+   "cluster": "long-end",
+   "element": null,
+   "lr": 2,
+   "name": "basis-trade unwind (P4 extreme + repo stress + tailed auction)",
+   "p_window": 0.04,
+   "target": "C",
+   "tier": "moderate"
+  },
+  {
+   "cluster": null,
+   "element": null,
+   "lr": 2,
+   "name": "Fed-independence shock",
+   "p_window": 0.04,
+   "target": "C",
+   "tier": "moderate"
+  },
+  {
+   "cluster": "oil",
+   "element": null,
+   "lr": 1.5,
+   "name": "oil +20% in a month (Hormuz E)",
+   "p_window": 0.08,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "cluster": "oil",
+   "element": null,
+   "lr": 1.5,
+   "name": "oil -20% in a month (settlement or surplus)",
+   "p_window": 0.06,
+   "target": "A",
+   "tier": "default"
+  }
+ ],
+ "ledger": {
+  "B_confirmed": 0.15,
+  "C_confirmed": 0.03
+ },
+ "nonevents": [
+  {
+   "lr": 4,
+   "name": "F-20261117-NVDA-GUIDE: Q4 guide $130bn +/-3% vs ~$110bn implied consensus (above, not below)",
+   "p": 0.25,
+   "target": "B",
+   "tier": "strong",
+   "w_at": 0.189
+  },
+  {
+   "lr": 2.0,
+   "name": "F-20261118-20Y: tail 0.0 bp (WI 5.459 = high 5.459), b/c 2.63 = avg, indirects 60.2 (avg 63.7), dealers 13.1",
+   "p": 0.3,
+   "target": "C",
+   "tier": "moderate",
+   "w_at": 0.01
+  },
+  {
+   "lr": 2.0,
+   "name": "F-20261120-ANTHROPIC (resolved early NO): priced Nov 18 at $83 above the $70-78 range, $81.3bn raised + $26bn strategic placement; not delayed, not downsized",
+   "p": 0.35,
+   "target": "B",
+   "tier": "moderate",
+   "w_at": 0.189
+  },
+  {
+   "lr": 4,
+   "name": "F-20261231-SPCX-FUSE (resolved early NO): ~$44bn priced Fri Nov 20 via Saturn Funding Trust - Class A3 $25.2bn Apr-2033 at 8.259% (Moody's A3 / KBRA A-), upsized and oversubscribed; inside the Nov 5 7.75-8.75% indication; collateral was in the Oct 26 terms",
+   "p": 0.3,
+   "target": "B",
+   "tier": "strong",
+   "w_at": 0.189
+  }
+ ],
+ "prior": {
+  "H2": [
+   80.1,
+   18.9,
+   1.0
+  ],
+  "H3": [
+   67.5,
+   31.4,
+   1.1
+  ]
+ },
+ "prior_note": "layer-1 medians of 2026-11-14T0611-dials (H2 79.9/18.9/1.0, H3 67.4/31.3/1.1), renormalized; new window Nov 14 - Nov 21",
+ "rho": 0.5,
+ "run_at": "2026-11-21T06:11:50-07:00 (2026-11-21T0611-dials)",
+ "seed": 7,
+ "sigma": {
+  "default": 0.25,
+  "moderate": 0.35,
+  "strong": 0.5,
+  "weak": 0.15
+ },
+ "state": {
+  "hi": 0.75,
+  "lo": 0.25,
+  "prev": "TRANSITION",
+  "t2": 20,
+  "t3": 30
+ }
+}
