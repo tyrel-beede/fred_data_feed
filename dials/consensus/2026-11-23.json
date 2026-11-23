@@ -1,0 +1,809 @@
+{
+ "group": "consensus",
+ "run_at": "2026-11-23T05:07:41-07:00",
+ "skill": "dials-voices",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "Pages read for all 14 tickers, but the stockanalysis copies served for ORCL, SPCX, GEV, VRT, ANET are the same October/early-November copies read on 2026-11-09 (stale ratings, price and PT; see each item's as_of and notes). No post-Q3-earnings 2027 capex consensus compile found; the four-company total and GOOGL/AMZN/MSFT figures remain the 2026-08-05 I/O Fund-MarketScreener compile relayed on a page updated 2026-11-10; META 209.69bn is a Nov 2 'Wall Street estimate' with the compiler unnamed.",
+ "notes": "Scheduled Monday run. Levels only, from stockanalysis.com /forecast/ pages reached via search-surfaced links and read through WebFetch's summarizer (not raw HTML). as_of is each page's own 'last updated' date; the price timestamp can differ (see item notes). Fresh copies (Nov 17-20): MSFT, GOOGL, META, AMZN, NVDA, MU, AVGO, CRWV; NBIS Nov 13. Stale copies (identical to the 11-09 run): ORCL (Nov 6), SPCX (Oct 27), GEV (Oct 30), VRT and ANET (Oct 26). The year after the current fiscal year comes from the unlabelled 'Next Year' summary box with the fiscal-year label inferred from column order (table cell paywalled). Figures recorded as shown but flagged implausible or sharply revised by the reader: MU (PT average 1,562 vs price 594.51, FY2027 EPS 176.67), SPCX FY2027 revenue 180.37bn, GOOGL FY2026 EPS 13.09 vs 15.77 on the Nov 6 copy, AMZN FY2026 EPS 9.60 vs 10.76, META FY2026 EPS below FY2025, NBIS FY2026/FY2027 EPS revised to -1.01/-2.88. NVDA: consensus rating now Buy, holds 2 to 16, PT average 327.14 to 244.18, price 125.53 (Nov 20 close). memory_no_surface tickers not gathered. capex_consensus: single-bank post-Q3 2027 figures seen in write-ups but not recorded as consensus values (BofA ~300bn GOOGL, JPMorgan 395bn AMZN, Morgan Stanley 225bn META and 1.641tn eight-company total, Wells Fargo ~250bn META; Goldman five-company 1.1tn Sept 25 pre-Q3); ORCL value null (guidance only).",
+ "items": [
+  {
+   "kind": "consensus",
+   "name": "MSFT",
+   "tier": "principals",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-20",
+   "url": "https://stockanalysis.com/stocks/msft/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 484.52,
+   "pt_average": 636.12,
+   "pt_median": 631,
+   "pt_high": 870,
+   "pt_low": 440,
+   "analyst_count": 58,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 41,
+    "buy": 13,
+    "hold": 4,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-06-30",
+     "revenue": 331.84,
+     "revenue_unit": "USD bn",
+     "eps": 17.28
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-06-30",
+     "revenue": 395.97,
+     "revenue_unit": "USD bn",
+     "eps": 20.01
+    },
+    {
+     "fiscal_year": "FY2028",
+     "period_end": "2028-06-30",
+     "revenue": 477.76,
+     "revenue_unit": "USD bn",
+     "eps": 24.2
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated: Nov 20, 2026' (Last checked Nov 20); price is close Nov 20, 2026 (after-hours 489.20). Targets/forecasts per page: S&P Global Market Intelligence; individual analyst data TipRanks. Estimate basis: FY2026: the 'from' value in the This Year summary boxes (331.84B, 17.28); FY2027: table (395.97B, 20.01, 47 analysts; separate revenue table rounds to 396.0B); FY2028: 'Next Year' summary box (477.76B, +20.66%; EPS 24.20, +20.92%); FY2028/FY2029 table cells paywalled ('Upgrade'). Fiscal-year label for the Next Year box inferred from table column order. Oct '26 ratings column: 41/12/5/0/0."
+  },
+  {
+   "kind": "consensus",
+   "name": "GOOGL",
+   "tier": "principals",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-20",
+   "url": "https://stockanalysis.com/stocks/googl/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 265.29,
+   "pt_average": 397.13,
+   "pt_median": 390.69,
+   "pt_high": 500,
+   "pt_low": 300,
+   "analyst_count": 58,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 43,
+    "buy": 10,
+    "hold": 5,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 402.84,
+     "revenue_unit": "USD bn",
+     "eps": 10.81
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 499.67,
+     "revenue_unit": "USD bn",
+     "eps": 13.09
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 636.42,
+     "revenue_unit": "USD bn",
+     "eps": 15.3
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's 'Last updated: Nov 20, 2026' (Last checked Nov 20); price is close Nov 20, 2026 (after-hours 270.17). Targets/forecasts per page: S&P Global Market Intelligence. Estimate basis: FY2025: 'from' values in the This Year boxes; FY2026: table (499.67B, 13.09, 48 analysts); FY2027: 'Next Year' summary box (636.42B, +27.37%; EPS 15.30, +16.87%); FY2027/FY2028 table cells paywalled. Fiscal-year label for the Next Year box inferred from table column order. PT median 390.69 is a non-round figure as shown. FY2026 EPS 13.09 is well below the 15.77 shown on the 2026-11-06 copy (-17%) while FY2026 revenue is essentially unchanged - recorded as shown, flagged. EPS non-GAAP adjusted per page. Oct '26 ratings column identical to Nov."
+  },
+  {
+   "kind": "consensus",
+   "name": "META",
+   "tier": "principals",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-17",
+   "url": "https://stockanalysis.com/stocks/meta/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 560.84,
+   "pt_average": 848.23,
+   "pt_median": 850,
+   "pt_high": 1050,
+   "pt_low": 650,
+   "analyst_count": 62,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 45,
+    "buy": 10,
+    "hold": 6,
+    "sell": 0,
+    "strong_sell": 1,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 200.97,
+     "revenue_unit": "USD bn",
+     "eps": 29.68
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 256.85,
+     "revenue_unit": "USD bn",
+     "eps": 29.36
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 312.95,
+     "revenue_unit": "USD bn",
+     "eps": 35.68
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated: Nov 17, 2026' (Last checked Nov 17); price is close Nov 20, 2026 (560.84, -5.93% on the day; after-hours 568.47) - price timestamp differs from forecast date. Targets/forecasts per page: S&P Global Market Intelligence. 62 analysts polled for targets; table shows 57 analysts for FY2026E. Estimate basis: FY2025: table; FY2026: table (256.85B, 29.36, 57 analysts); FY2027: 'Next Year' summary box (312.95B, +21.84%; EPS 35.68, +21.52%); FY2027/FY2028 table cells paywalled. Fiscal-year label for the Next Year box inferred from table column order. FY2026 EPS 29.36 is shown BELOW FY2025's 29.68 (page: 'Decreased by -1.08%'), recorded as shown. EPS non-GAAP adjusted per page. Oct '26 ratings column: 46/10/6/0/1 (total 63). PT low moved to 650 from 629.06 on the prior copy."
+  },
+  {
+   "kind": "consensus",
+   "name": "AMZN",
+   "tier": "principals",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-20",
+   "url": "https://stockanalysis.com/stocks/amzn/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 246.82,
+   "pt_average": 326.51,
+   "pt_median": 328,
+   "pt_high": 405,
+   "pt_low": 230,
+   "analyst_count": 62,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 45,
+    "buy": 14,
+    "hold": 3,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 716.92,
+     "revenue_unit": "USD bn",
+     "eps": 7.17
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 829.17,
+     "revenue_unit": "USD bn",
+     "eps": 9.6
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 959.66,
+     "revenue_unit": "USD bn",
+     "eps": 10.93
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's 'Last updated: Nov 20, 2026' (Last checked Nov 20); price is close Nov 20, 2026 (246.82, -4.10% on the day; after-hours 251.00). Targets/forecasts per page: S&P Global Market Intelligence. Estimate basis: FY2025: table; FY2026: table (829.17B, 9.60, 57 analysts; EPS sub-table high 14.18 / low 7.95); FY2027: 'Next Year' summary box (959.66B, +15.74%; EPS 10.93, +13.78%); FY2027/FY2028 table cells paywalled. Fiscal-year label for the Next Year box inferred from table column order. FY2026 EPS 9.60 vs 10.76 on the 2026-11-06 copy (-11%) with revenue unchanged - recorded as shown, flagged. Oct '26 ratings column: 43/16/2/0/0 (total 61)."
+  },
+  {
+   "kind": "consensus",
+   "name": "ORCL",
+   "tier": "principals",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-06",
+   "url": "https://stockanalysis.com/stocks/orcl/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 116.1,
+   "pt_average": 235.77,
+   "pt_median": 225,
+   "pt_high": 400,
+   "pt_low": 110,
+   "analyst_count": 42,
+   "consensus_rating": "Buy",
+   "ratings": {
+    "strong_buy": 28,
+    "buy": 7,
+    "hold": 6,
+    "sell": 0,
+    "strong_sell": 1,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-05-31",
+     "revenue": 67.36,
+     "revenue_unit": "USD bn",
+     "eps": 7.63
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-05-31",
+     "revenue": 90.45,
+     "revenue_unit": "USD bn",
+     "eps": 8.14
+    },
+    {
+     "fiscal_year": "FY2028",
+     "period_end": "2028-05-31",
+     "revenue": 131.82,
+     "revenue_unit": "USD bn",
+     "eps": 11.05
+    }
+   ],
+   "error": "",
+   "notes": "STALE COPY: the fetched page shows 'Last updated: Nov 6, 2026' / 'Last checked: Nov 6, 2026' and price 'At close: Nov 6, 2026' - identical to the 2026-11-09 run's copy; no fresher version was served on 2026-11-23. Figures therefore unchanged from the prior file. Targets/forecasts per page: S&P Global Market Intelligence. Estimate basis: FY2026: table (analyst count shown '-'); FY2027: table (90.45B, 8.14, 38 analysts; revenue sub-table high 91.7B / low 89.1B); FY2028: 'Next Year' summary box (131.82B, +45.74%; EPS 11.05, +35.77%); FY2028/FY2029 table cells paywalled. Fiscal-year label for the Next Year box inferred from table column order. Price 116.10 vs PT average 235.77 - very wide gap, recorded as shown. Oct '26 ratings column: 28/7/7/0/1 (total 43)."
+  },
+  {
+   "kind": "consensus",
+   "name": "SPCX",
+   "tier": "principals",
+   "source": "stockanalysis.com",
+   "as_of": "2026-10-27",
+   "url": "https://stockanalysis.com/stocks/spcx/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 134.72,
+   "pt_average": 257.11,
+   "pt_median": 247.5,
+   "pt_high": 800,
+   "pt_low": 70,
+   "analyst_count": 39,
+   "consensus_rating": "Buy",
+   "ratings": {
+    "strong_buy": 23,
+    "buy": 8,
+    "hold": 6,
+    "sell": 0,
+    "strong_sell": 2,
+    "as_of_month": "Oct '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 18.67,
+     "revenue_unit": "USD bn",
+     "eps": null
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 48.93,
+     "revenue_unit": "USD bn",
+     "eps": -0.24
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 180.37,
+     "revenue_unit": "USD bn",
+     "eps": 2.37
+    }
+   ],
+   "error": "",
+   "notes": "STALE COPY: the fetched page shows 'Last updated: Oct 27, 2026' / 'Last checked: Oct 27, 2026' and price 'At close: Oct 30, 2026' (134.72, -6.37%) - identical to the copy read on 2026-11-09; no fresher version was served on 2026-11-23, and the ratings table still ends at Oct '26 (Sep '26 column: 23/7/5/0/3, total 38). Figures unchanged from the prior file. stockanalysis.com page for Space Exploration Technologies Corp. (SPCX). Targets/forecasts per page: S&P Global Market Intelligence. Estimate basis: FY2025: table; FY2026: table (48.93B, -0.24, 35 analysts; revenue sub-table high 54.5B / low 40.8B, EPS high 0.18 / low -1.29); FY2027: 'Next Year' summary box (180.37B, +268.61%; EPS 2.37, no growth % shown); FY2027/FY2028 table cells paywalled. Fiscal-year label for the Next Year box inferred from table column order. Revenue Next Year 180.37B looks implausibly large vs FY2026 48.93B - recorded as shown, flagged. PT high 800 / low 70 as shown."
+  },
+  {
+   "kind": "consensus",
+   "name": "NVDA",
+   "tier": "suppliers",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-19",
+   "url": "https://stockanalysis.com/stocks/nvda/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 125.53,
+   "pt_average": 244.18,
+   "pt_median": 235,
+   "pt_high": 425,
+   "pt_low": 130,
+   "analyst_count": 63,
+   "consensus_rating": "Buy",
+   "ratings": {
+    "strong_buy": 34,
+    "buy": 11,
+    "hold": 16,
+    "sell": 0,
+    "strong_sell": 2,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-01-25",
+     "revenue": 215.94,
+     "revenue_unit": "USD bn",
+     "eps": 4.77
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-01-31",
+     "revenue": 423.75,
+     "revenue_unit": "USD bn",
+     "eps": 9.67
+    },
+    {
+     "fiscal_year": "FY2028",
+     "period_end": "2028-01-31",
+     "revenue": 725.52,
+     "revenue_unit": "USD bn",
+     "eps": 16.61
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated' date (Nov 19, 2026; 'Last checked' Nov 18); price is close Nov 20, 2026 4:00 PM EST (-20.45, -14.01% on the day; after-hours 130.03). Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2026: table (reported); FY2027: table; 49 analysts; also 'This Year' box (revenue high/avg/low 431.7B/423.8B/412.4B, EPS 10.52/9.67/9.39); FY2028: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Versus the 2026-11-09 file: consensus label moved from Strong Buy to Buy, holds 2 -> 16, PT average 327.14 -> 244.18, PT low 180 -> 130; price 186.64 -> 125.53. Recorded as shown; the page's own news item says Q3 FY2027 revenue grew 103% to $115.8B with a $130B guide, so the -14% day and the lower targets are what the page shows, not interpreted here."
+  },
+  {
+   "kind": "consensus",
+   "name": "MU",
+   "tier": "suppliers",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-18",
+   "url": "https://stockanalysis.com/stocks/mu/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 594.51,
+   "pt_average": 1562,
+   "pt_median": 1550,
+   "pt_high": 3000,
+   "pt_low": 361,
+   "analyst_count": 49,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 36,
+    "buy": 9,
+    "hold": 4,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-09-03",
+     "revenue": 133.19,
+     "revenue_unit": "USD bn",
+     "eps": 75.52
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-08-31",
+     "revenue": 276.02,
+     "revenue_unit": "USD bn",
+     "eps": 176.67
+    },
+    {
+     "fiscal_year": "FY2028",
+     "period_end": "2028-08-31",
+     "revenue": 320.83,
+     "revenue_unit": "USD bn",
+     "eps": 208.83
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated' date (Nov 18, 2026; 'Last checked' Nov 18); price is close Nov 20, 2026 4:00 PM EST (-95.93, -13.89% on the day; after-hours 610.60). Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2026: table (reported); FY2027: table; 43 analysts; also 'This Year' box; FY2028: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Figures again look extreme (PT average $1,562 vs price $594.51; PT range $361-$3,000; FY2027 EPS 176.67; FY2026 reported revenue 133.19B vs FY2025 37.38B) but match the page text and the 2026-11-09 file's values; recorded as shown, flagged implausible. Price targets and ratings split unchanged from the 2026-11-09 file; only FY2027/FY2028 estimates ticked up slightly."
+  },
+  {
+   "kind": "consensus",
+   "name": "GEV",
+   "tier": "suppliers",
+   "source": "stockanalysis.com",
+   "as_of": "2026-10-30",
+   "url": "https://stockanalysis.com/stocks/gev/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 857.87,
+   "pt_average": 1191,
+   "pt_median": 1200,
+   "pt_high": 1450,
+   "pt_low": 940,
+   "analyst_count": 38,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 26,
+    "buy": 6,
+    "hold": 6,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Oct '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 38.07,
+     "revenue_unit": "USD bn",
+     "eps": 16.67
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 46.93,
+     "revenue_unit": "USD bn",
+     "eps": 15.62
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 53.47,
+     "revenue_unit": "USD bn",
+     "eps": 25.79
+    }
+   ],
+   "error": "",
+   "notes": "STALE COPY: the fetched page is dated 'Last updated: Oct 30, 2026' with price at close Oct 30, 2026 4:00 PM EDT (-29.98, -3.38%); identical to the copy read for the 2026-11-09 file, so no November update was obtained for GEV. Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2025: table; FY2026: table; 32 analysts; 'This Year' box (revenue high/avg/low 47.9B/46.9B/45.9B; EPS 18.29/15.62/13.23); FY2027: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Latest ratings month is Oct '26."
+  },
+  {
+   "kind": "consensus",
+   "name": "VRT",
+   "tier": "suppliers",
+   "source": "stockanalysis.com",
+   "as_of": "2026-10-26",
+   "url": "https://stockanalysis.com/stocks/vrt/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 199.78,
+   "pt_average": 333,
+   "pt_median": 330,
+   "pt_high": 427,
+   "pt_low": 236,
+   "analyst_count": 30,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 23,
+    "buy": 3,
+    "hold": 4,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Oct '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 10.23,
+     "revenue_unit": "USD bn",
+     "eps": 4.2
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 14.0,
+     "revenue_unit": "USD bn",
+     "eps": 6.73
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 18.27,
+     "revenue_unit": "USD bn",
+     "eps": 9.19
+    }
+   ],
+   "error": "",
+   "notes": "STALE COPY: the fetched page is dated 'Last updated: Oct 26, 2026' with price at close Oct 26, 2026 4:00 PM EDT (+5.46, +2.81%; pre-market Oct 27 204.40); identical to the copy read for the 2026-11-09 file, so no November update was obtained for VRT. Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2025: table; FY2026: table; 30 analysts; 'This Year' box (revenue high/avg/low 14.4B/14.0B/13.5B; EPS 6.91/6.73/6.60); FY2027: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Latest ratings month is Oct '26."
+  },
+  {
+   "kind": "consensus",
+   "name": "ANET",
+   "tier": "suppliers",
+   "source": "stockanalysis.com",
+   "as_of": "2026-10-26",
+   "url": "https://stockanalysis.com/stocks/anet/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 172.37,
+   "pt_average": 243.59,
+   "pt_median": 248,
+   "pt_high": 290,
+   "pt_low": 190,
+   "analyst_count": 32,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 24,
+    "buy": 7,
+    "hold": 1,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Oct '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 9.01,
+     "revenue_unit": "USD bn",
+     "eps": 2.98
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 12.68,
+     "revenue_unit": "USD bn",
+     "eps": 4.12
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 16.36,
+     "revenue_unit": "USD bn",
+     "eps": 5.22
+    }
+   ],
+   "error": "",
+   "notes": "STALE COPY: the fetched page is dated 'Last updated: Oct 26, 2026' with price at close Oct 23, 2026 4:00 PM EDT (+1.30, +0.76%; pre-market Oct 26 175.00); identical to the copy read for the 2026-11-09 file, so no November update was obtained for ANET. Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2025: table; FY2026: table; 27 analysts; 'This Year' box (revenue high/avg/low 13.0B/12.7B/12.6B; EPS 4.22/4.12/4.05); FY2027: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Latest ratings month is Oct '26."
+  },
+  {
+   "kind": "consensus",
+   "name": "AVGO",
+   "tier": "suppliers",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-18",
+   "url": "https://stockanalysis.com/stocks/avgo/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 304.41,
+   "pt_average": 526.47,
+   "pt_median": 525,
+   "pt_high": 660,
+   "pt_low": 398.47,
+   "analyst_count": 51,
+   "consensus_rating": "Strong Buy",
+   "ratings": {
+    "strong_buy": 40,
+    "buy": 8,
+    "hold": 3,
+    "sell": 0,
+    "strong_sell": 0,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-11-02",
+     "revenue": 63.89,
+     "revenue_unit": "USD bn",
+     "eps": 6.82
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-10-31",
+     "revenue": 105.98,
+     "revenue_unit": "USD bn",
+     "eps": 11.66
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-10-31",
+     "revenue": 174.98,
+     "revenue_unit": "USD bn",
+     "eps": 19.41
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated' date (Nov 18, 2026; 'Last checked' Nov 18); price is close Nov 20, 2026 4:00 PM EST (-42.24, -12.19% on the day; after-hours 311.53). Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2025: table (reported); FY2026 (FY2026E in the table, fiscal year not yet reported): table; 42 analysts; also 'This Year' box (revenue high/avg/low 106.7B/106.0B/105.8B; EPS 12.38/11.66/11.50); FY2027: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Versus the 2026-11-09 file (Oct 28 copy): PT average 533.42 -> 526.47, PT low 400 -> 398.47, strong buy 41 -> 40, hold 2 -> 3; price 293.69 -> 304.41."
+  },
+  {
+   "kind": "consensus",
+   "name": "CRWV",
+   "tier": "neoclouds",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-20",
+   "url": "https://stockanalysis.com/stocks/crwv/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 39.51,
+   "pt_average": 115.08,
+   "pt_median": 115,
+   "pt_high": 268,
+   "pt_low": 39,
+   "analyst_count": 41,
+   "consensus_rating": "Buy",
+   "ratings": {
+    "strong_buy": 24,
+    "buy": 7,
+    "hold": 7,
+    "sell": 1,
+    "strong_sell": 2,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 5.13,
+     "revenue_unit": "USD bn",
+     "eps": -1.39
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 13.12,
+     "revenue_unit": "USD bn",
+     "eps": -3.75
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 27.1,
+     "revenue_unit": "USD bn",
+     "eps": -1.78
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated' date (Nov 20, 2026; 'Last checked' Nov 20); price is close Nov 20, 2026 4:00 PM EST (-5.40, -12.02% on the day; after-hours 40.95). Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2025: table (reported); FY2026 (FY2026E): table; 40 analysts; also 'This Year' box (revenue high/avg/low 13.3B/13.1B/12.4B; EPS -2.92/-3.75/-4.66); FY2027: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Versus the 2026-11-09 file (Oct 27 copy): PT average 134.58 -> 115.08, PT high 278 -> 268, analyst count 42 -> 41, buy 8 -> 7; price 58.14 -> 39.51; PT low 39 is within pennies of the price, as shown."
+  },
+  {
+   "kind": "consensus",
+   "name": "NBIS",
+   "tier": "neoclouds",
+   "source": "stockanalysis.com",
+   "as_of": "2026-11-13",
+   "url": "https://stockanalysis.com/stocks/nbis/forecast/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "price": 115.88,
+   "pt_average": 234.5,
+   "pt_median": 234,
+   "pt_high": 395,
+   "pt_low": 84,
+   "analyst_count": 22,
+   "consensus_rating": "Buy",
+   "ratings": {
+    "strong_buy": 13,
+    "buy": 2,
+    "hold": 6,
+    "sell": 0,
+    "strong_sell": 1,
+    "as_of_month": "Nov '26"
+   },
+   "estimates": [
+    {
+     "fiscal_year": "FY2025",
+     "period_end": "2025-12-31",
+     "revenue": 0.5298,
+     "revenue_unit": "USD bn",
+     "eps": null
+    },
+    {
+     "fiscal_year": "FY2026",
+     "period_end": "2026-12-31",
+     "revenue": 3.19,
+     "revenue_unit": "USD bn",
+     "eps": -1.01
+    },
+    {
+     "fiscal_year": "FY2027",
+     "period_end": "2027-12-31",
+     "revenue": 12.32,
+     "revenue_unit": "USD bn",
+     "eps": -2.88
+    }
+   ],
+   "error": "",
+   "notes": "as_of = page's forecast 'Last updated' date (Nov 13, 2026; 'Last checked' Nov 13); price is close Nov 13, 2026 4:00 PM EST (-12.76, -9.92% on the day; after-hours 112.80). Fetched copy is a week behind the run date (Nov 23) but is a November update, unlike the Oct 22 copy in the 2026-11-09 file. Source of targets per page: S&P Global Market Intelligence. Estimate basis: FY2025: table (529.80M, reported; EPS shown as '-'); FY2026: table; 20 analysts; also 'This Year' box (revenue high/avg/low 3.4B/3.2B/3.0B; EPS -0.20/-1.01/-1.96); FY2027: 'Next Year' summary box; table cell paywalled. Fiscal-year label for the 'Next Year' box is inferred from the table's column order (the box itself is unlabelled). EPS non-GAAP adjusted per page. Versus the 2026-11-09 file: PT average 281 -> 234.5, PT median 302 -> 234, PT high 410 -> 395, ratings split unchanged; FY2026 EPS -2.10 -> -1.01 and FY2027 EPS -3.60 -> -2.88 (flag: a large estimate revision between copies, recorded as shown); price 153.27 -> 115.88."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "hyperscaler total (GOOGL+AMZN+MSFT+META)",
+   "source": "Yield Theory (yieldtheory.app); consensus compiled by I/O Fund citing MarketScreener",
+   "as_of": "2026-11-10",
+   "url": "https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": 934.5,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "Page published 2026-10-04, last updated 2026-11-10 (as_of = update date). The consensus compile itself is dated Aug 5, 2026 (I/O Fund article, confirmed directly: published/updated 2026-08-05, 'Source: MarketScreener'), i.e. it PREDATES the Q3 earnings season (Oct 28-30); the page itself says estimates have moved since. No post-Q3 four-company consensus compile with per-company figures was found in any Nov 2026 write-up searched (456x Research Nov 1, movertape Oct 30/Nov 10, AL Capital Nov 2 all carry only qualitative 2027 guidance or single-bank forecasts). Read via WebFetch summarizer."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "GOOGL",
+   "source": "Yield Theory (yieldtheory.app); consensus compiled by I/O Fund citing MarketScreener",
+   "as_of": "2026-11-10",
+   "url": "https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": 284.8,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "Page updated 2026-11-10 (as_of); consensus compile dated Aug 5, 2026 - predates Q3 earnings; not a fresh post-earnings compile. Post-Q3 colour found is single-bank only: Bank of America 'about $300 billion' for 2027 (Barchart via Yahoo Finance, Nov 5, 2026); company guidance is qualitative ('increase significantly' in 2027, details on Q4 call). Read via WebFetch summarizer."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "AMZN",
+   "source": "Yield Theory (yieldtheory.app); consensus compiled by I/O Fund citing MarketScreener",
+   "as_of": "2026-11-10",
+   "url": "https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": 256.5,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "Page updated 2026-11-10 (as_of); consensus compile dated Aug 5, 2026 - predates Q3 earnings; not a fresh post-earnings compile. Post-Q3 colour found is single-bank only: JPMorgan '$395 billion in 2027' (+77%) (huggingnews, Nov 2, 2026, story dated Oct 29); company guidance qualitative ('meaningfully more' / 'meaningfully increase in 2027' per 10-Q). Read via WebFetch summarizer."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "MSFT",
+   "source": "Yield Theory (yieldtheory.app); consensus compiled by I/O Fund citing MarketScreener",
+   "as_of": "2026-11-10",
+   "url": "https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": 207.6,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "Page updated 2026-11-10 (as_of); consensus compile dated Aug 5, 2026 - predates Q3 earnings; not a fresh post-earnings compile. Calendar-2027 basis per compiler. No post-Q3 Street consensus figure for Microsoft 2027 capex found; company said only that spending accelerates in H2 of fiscal 2027 (search surfaced headlines about a '$170bn' fiscal 2027 figure, but those pages were not fetched and the figure is not recorded). Read via WebFetch summarizer."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "META",
+   "source": "Foreign Policy Journal write-up citing unnamed 'analysts model' / 'Wall Street' estimate (compiler not named)",
+   "as_of": "2026-11-02",
+   "url": "https://www.foreignpolicyjournal.com/2026/11/02/70-billion-forecasting-gap-puts-meta-platforms-nasdaq-meta-at-the-center-of-an-unprecedented-ai-spending-debate/",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": 209.69,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "Published 2026-11-02, i.e. AFTER Meta's Q3 report (Oct 29) - the only post-Q3 Street-consensus-style 2027 capex figure found for any principal. Article: 'analysts model $209.69 billion and $227.23 billion' for 2027 and 2028, also called 'Wall Street's $209.69 billion estimate'; compiler/data provider not named, so treat as a secondary relay. Same article: S&P Global Ratings forecast 'more than $225 billion in 2027' (rating-agency forecast, not consensus). Other Nov 2026 single-bank 2027 figures (not consensus): Morgan Stanley $225bn (Yahoo Finance, Nov 18), Wells Fargo 'roughly $250 billion' (Investing.com, Nov 19). For comparison the pre-Q3 I/O Fund/MarketScreener compile (Aug 5, 2026; Yield Theory page updated 2026-11-10) shows $185.6bn. Company 2027 guidance: none (budget still being developed; 2026 guidance $135-145bn)."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "hyperscaler total (five companies incl. ORCL)",
+   "source": "Yield Theory (yieldtheory.app); 'Street view' as cited by Goldman Sachs (Sept 25, 2026), reported by Bloomberg",
+   "as_of": "2026-11-10",
+   "url": "https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": 1100,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "Page updated 2026-11-10 (as_of); the Street figure is dated Sept 25, 2026 per the page - predates Q3 earnings; not a fresh post-earnings compile. Same page: Goldman's own 2027 forecast $1.2tn; a June Goldman note put consensus-implied 2027 at $920bn. Other Nov 2026 single-bank totals seen (not consensus): Morgan Stanley $1.641tn for eight companies (Yahoo Finance, Nov 18); AL Capital Advisory page (updated Nov 2) cites BofA $1.32tn incl. neoclouds and Morgan Stanley $1.58tn incl. leases, with no named consensus compiler. Read via WebFetch summarizer."
+  },
+  {
+   "kind": "capex_consensus",
+   "name": "ORCL",
+   "source": "Yield Theory (yieldtheory.app) hyperscaler capex page; no consensus compiler - company guidance only",
+   "as_of": "2026-11-10",
+   "url": "https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast",
+   "status": "ok",
+   "fetched_how": "WebFetch",
+   "year": 2027,
+   "value": null,
+   "unit": "USD bn",
+   "error": "",
+   "notes": "No analyst consensus figure for Oracle 2027 capex found in any Nov 2026 write-up searched; the Yield Theory page (updated 2026-11-10) gives only Oracle's own FY2027 (Jun 2026-May 2027) guidance of $90-95bn gross capex (Sept 10, 2026 call; CFO reaffirmed per search headlines). value left null because it is guidance, not consensus."
+  }
+ ]
+}

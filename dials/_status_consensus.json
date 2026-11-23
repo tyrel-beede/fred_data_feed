@@ -1,8 +1,8 @@
 {
  "group": "consensus",
- "last_run_at": "2026-11-09T05:01:33-07:00",
- "last_as_of": "2026-11-06",
- "last_file": "dials/consensus/2026-11-09.json",
+ "last_run_at": "2026-11-23T05:07:41-07:00",
+ "last_as_of": "2026-11-20",
+ "last_file": "dials/consensus/2026-11-23.json",
  "status": "partial",
- "error": "Pages read for all 14 tickers, but the stockanalysis copies fetched for SPCX, GEV, VRT, ANET, AVGO, CRWV, NBIS carry forecast dates of 2026-10-22..10-30 (October ratings, stale price/PT); see each item's as_of. No post-Q3-earnings 2027 capex consensus compile found; the one recorded is dated 2026-08-05."
+ "error": "Pages read for all 14 tickers, but the stockanalysis copies served for ORCL, SPCX, GEV, VRT, ANET are the same October/early-November copies read on 2026-11-09 (stale ratings, price and PT; see each item's as_of and notes). No post-Q3-earnings 2027 capex consensus compile found; the four-company total and GOOGL/AMZN/MSFT figures remain the 2026-08-05 I/O Fund-MarketScreener compile relayed on a page updated 2026-11-10; META 209.69bn is a Nov 2 'Wall Street estimate' with the compiler unnamed."
 }
