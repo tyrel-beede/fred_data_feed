@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-21T05:11:00-07:00",
- "last_as_of": "2026-11-20",
- "last_file": "dials/events/2026-11-21.json",
+ "last_run_at": "2026-11-23T05:11:00-07:00",
+ "last_as_of": "2026-11-23",
+ "last_file": "dials/events/2026-11-23.json",
  "status": "ok",
- "error": "Client_error (not read): datacenterdynamics Prometheus Hyperscale page (item is 28 Oct, pre-gate anyway), cryptobriefing / techflowpost / aistockwire Alibaba 20 GW relays (huggingnews relay read instead), lubbocklights Ledger 21 Nov, trib.com (tollbit redirect, not followed). Refused hosts not fetched: Bloomberg 'UBS's Lovell sees AI capex at risk of 5-10% cut' video (20 Nov, headline only), CNBC 'Anthropic falls nearly 9%', CNN 'Nasdaq wipes out gains for the year'. No gilt or OAT level dated 20 Nov surfaced (Yahoo Europe-close page carries index moves only; Yahoo SG global-yields page gives Bund/JGB/AU/UST but no gilt/OAT). cappnotes Friday table carries no MSFT/GOOGL/META/AMZN/ORCL/GEV/VRT/ANET lines - META -5.9% and AMZN -3.9% come from Reuters via Yahoo; Alphabet 'flat' per stockanalysis is intraday. HY OAS printed by cappnotes is the 19 Nov FRED value (352bp); the 20 Nov value is not yet published."
+ "error": "Client_error (not read): fourweekmba 22 Nov AI daily roundup, CNBC 'Anthropic, Nvidia shares rise in premarket' (23 Nov), invezz ANT premarket, techflowpost ANT premarket; investing.com ANT premarket RATE_LIMIT_EXCEEDED (not retried). Refused hosts not attempted: Bloomberg, CNN, NPR. No Treasury yield levels for Mon 23 Nov surfaced in the fetched Asia pages (2y/10y pre-open not recorded). Nvidia premarket figure not found in any fetched page (only Fri after-hours 130.01). The Anthropic closing figures are from a secondary roundup, not the 8-K."
 }

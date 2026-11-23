@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-21T05:11:00-07:00",
- "last_as_of": "2026-11-21",
- "last_file": "dials/calendar/2026-11-21.json",
+ "last_run_at": "2026-11-23T05:11:00-07:00",
+ "last_as_of": "2026-11-23",
+ "last_file": "dials/calendar/2026-11-23.json",
  "status": "partial",
- "error": "No US IG dealer tally for Fri 20 Nov or for the week of 16-20 Nov surfaced (cappnotes Closing Look Fri 20 Nov has no issuance section; goodman-macro has no 20 Nov page; IG-tally searches returned cambonds/SIFMA/pre-gate USD 35bn forecast pages) - ig.us_daily_volume_usd_bn and ig.us_weekly_volume_usd_bn recorded quiet (null), not zero. The SpaceX GPU financing DID price Fri 20 Nov and is far larger than tracked (~USD 44bn of notes / USD 32bn public bonds via Saturn Funding Trust, not the ~USD 4bn / Atlas SP framing carried since 11-17) - tranche yields other than the A3 8.259%, spreads vs IPT, order book and ratings per tranche are not printed by any fetched page (IFR primary coverage not reachable; FourWeekMBA client_error). CoreWeave >=USD 4bn IG loan: BigGo 'Launches' page SERVER_ERROR for the fifth run; no dated launch page anywhere - still unconfirmed. Alphabet C$6bn Maple: no page prints book or IPT. Google-linked USD 3bn prepaid muni: no page dated 20 Nov (all hits 17-18 Nov 'delayed'). Treasury: treasuryauctions.gov announcements and savingsbonds.gov RSS both robots_disallowed; 2y/5y/7y sizes remain the RTTNews relay (69/70/44bn), 2y FRN R size still not found; us500 confirms the Mon-Wed dates and that Friday 20 Nov had no auction. bea.gov full schedule client_error - BEA/BLS/Fed dates carried from the 11-14/11-16 agency reads. ORCL FQ2 remains aggregator-only (verified:false, 17+ days out)."
+ "error": "Run at 05:11 MST precedes the US session, so Monday issuance and the 2y auction are not observable (ig.us_daily_volume_usd_bn quiet/null). SpaceX/Saturn: order book, initial price talk and Moody's level still unprinted by any fetched page (A2 +290bp is a final spread, not vs IPT); the ~USD 11.9bn private balance is not itemised. ORCL FQ2 date still aggregator-only (verified:false, 15+ days out; aggregators now 8/9/10/14 Dec). 2y FRN R USD 28bn size and the 7y 11:30 ET time are aggregator-sourced. Anthropic closing figures (1,127m shares, option fully exercised) come from a secondary roundup, not the 8-K. Fetch failures: CNBC and invezz ANT premarket pages client_error, investing.com rate-limited, techflowpost client_error, fourweekmba 22 Nov roundup client_error; bea.gov not re-attempted."
 }

@@ -1,0 +1,45 @@
+{
+ "group": "flows",
+ "run_at": "2026-11-23T05:11:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "",
+ "gate": {
+  "since": "2026-11-16T05:11:00-07:00",
+  "last_as_of": "2026-10-31",
+  "note": "FINRA margin statistics are monthly; record only if the page shows a month newer than Oct-26. It does not. Run 2026-11-23 05:11 MST (Mon)."
+ },
+ "groups": [
+  "P6_margin"
+ ],
+ "notes": "FINRA Margin Statistics page read 2026-11-23: latest row is still Oct-26 (debit balances 1,448,360; free credit cash 210,290; free credit margin 212,890 USD mn) - identical to the 11-16 read. No Nov-26 row; FINRA publishes in the third week of the following month, so Nov-26 is expected ~mid-December. Nothing new recorded; last_as_of stays 2026-10-31.",
+ "sources": [
+  {
+   "query": "finra.org \"Margin Statistics\" \"Debit Balances in Customers' Securities Margin Accounts\" November 2026 (standard)",
+   "result": "hit",
+   "note": "Returned https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics; fetched. Table rows Oct-26 1,448,360 / 210,290 / 212,890; Sep-26 1,480,054 / 215,328 / 218,581; Aug-26 1,453,832 / 207,641 / 217,499; Jul-26 1,417,225 / 205,132 / 217,305. No Nov-26 row."
+  }
+ ],
+ "discarded": [],
+ "items": [
+  {
+   "kind": "reading",
+   "as_of": "2026-10-31",
+   "name": "FINRA margin statistics check Mon 23 Nov - no month newer than Oct-26 on the page (latest row Oct-26 1,448,360 debit balances, already recorded 11-16); nothing new",
+   "series": "finra.margin_debit",
+   "value": null,
+   "unit": "USD mn",
+   "period_end": "2026-10-31",
+   "source": "FINRA Margin Statistics (page read 2026-11-23)",
+   "url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "group": "P6_margin",
+   "late": false,
+   "note": "Value null = no new observation this run, not a missing page. Oct-26 values stand as recorded in dials/flows/2026-11-16.json. Nov-26 row expected ~third week of December."
+  }
+ ]
+}

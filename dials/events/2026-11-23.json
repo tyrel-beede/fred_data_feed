@@ -1,0 +1,190 @@
+{
+ "group": "events",
+ "run_at": "2026-11-23T05:11:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Client_error (not read): fourweekmba 22 Nov AI daily roundup, CNBC 'Anthropic, Nvidia shares rise in premarket' (23 Nov), invezz ANT premarket, techflowpost ANT premarket; investing.com ANT premarket RATE_LIMIT_EXCEEDED (not retried). Refused hosts not attempted: Bloomberg, CNN, NPR. No Treasury yield levels for Mon 23 Nov surfaced in the fetched Asia pages (2y/10y pre-open not recorded). Nvidia premarket figure not found in any fetched page (only Fri after-hours 130.01). The Anthropic closing figures are from a secondary roundup, not the 8-K.",
+ "gate": {
+  "since": "2026-11-20",
+  "note": "New = Sat 21 Nov through Mon 23 Nov ~12:11Z (weekend + Asia/Europe Monday; the US Monday session is after this run). Tolerance 2 days: 18-19 Nov items NOT in the 11-19/11-20/11-21 files would be kept once with late:true - none found this run (the Samsung-Apple LTA 18 Nov is already in 11-18). Run 2026-11-23 05:11 MST (Mon).",
+  "last_as_of": "2026-11-20",
+  "tolerance_days": 2
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized November 2026",
+  "fund gates redemptions November 2026",
+  "capex cut OR deferral OR digestion AI November 2026",
+  "funding round repriced AI lab November 2026",
+  "LTA renegotiation memory November 2026",
+  "gigawatt deferral data center November 2026",
+  "Treasury auction tail November 2026",
+  "sovereign bond stress November 2026"
+ ],
+ "notes": "HARD-EVENT CHECK: none new. (a) No pulled or downsized hyperscaler deal 21-23 Nov. (b) No principal capex cut - the Google TPU order-cut report (20 Nov, recorded 11-21) is still analyst-sourced and uncommented by either company through Sun 22 Nov; the update is logged as a non-counting line. (c) No coupon auction in the window (the 2y prints Mon 13:00 ET after this run). Weekend substance is governance, not events: Bessent on Face the Nation (Sun 22 Nov) keeps the Treasury-Nvidia line open with a ten-day clock closing ~25 Nov, on top of the Reuters SEC-accounting report (20 Nov). Anthropic's closing shows the 147m-share option fully exercised - a stabilisation detail the orchestrator may care about given the 83.05 low on Friday. Monday Asia split: Korea memory -3.3% (intraday -5.8%) while Taiwan +2.2% and US futures +2.2-2.9%; Tokyo closed. Eight sweep queries: zero in-gate hits (weekend; results were the same pre-gate pages as 11-20/11-21). Memory basket -35% on the month (Prime Report RS, author's data) while Korea chip exports +294% y/y in the first 20 days of November - the divergence the orchestrator's C-capex vs C-equity read should see.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026",
+   "result": "no hit",
+   "note": "Same pre-gate set: Bloomberg Iqony loan pulled (3 Nov, recorded), Bond Buyer NYC GO downsize (March), Investrade 20 Nov review, briefs.co Treasury auction-size piece (refunding, pre-gate), CFR buyback piece (undated). Nothing dated 21-23 Nov."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026",
+   "result": "no hit",
+   "note": "Same set as 11-20/11-21: investinglive Apollo-gates explainer, whitesecuritieslaw / angelinvestorsnetwork BDC explainers, SS&C GlobeOp FRI 20 Nov (recorded), crowdfundedwealth October tracker, a researchsquare preprint on 2026 semi-liquid private-credit gates (undated academic). No new gate dated 21-23 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026",
+   "result": "no hit",
+   "note": "Returned 456X 5 Nov (MSFT capex cut to USD 170bn - recorded early Nov), cryptobriefing BofA FMS 52% expect a hyperscaler cut (pre-gate), BigGo SemiAnalysis 2028 capex forecast -30% (undated page, not fetched), discoveryalert analysis, useluminix Q3 guide. Nothing dated 21-23 Nov."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026",
+   "result": "no hit",
+   "note": "Wikipedia company pages, startuphub weekly funding roundup (USD 7.9bn / 69 rounds, undated week), Agon USD 70m Series A, superpowerdaily tracker. No repriced round."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026",
+   "result": "no hit",
+   "note": "FourWeekMBA Baker/onsemi piece (fetched; 7-8 Nov items, pre-gate), koreadaily / explainx 'sold out to 2029', cryptobriefing Goldman DRAM thresholds (pre-gate), TrendForce Samsung-Apple LTA 18 Nov (fetched; already recorded 11-18 - new LTAs, the opposite sign of a renegotiation), 404k Morgan Stanley legacy-memory downgrades (undated). No renegotiation dated 21-23 Nov."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026",
+   "result": "no hit",
+   "note": "fool.com 14 Nov 'ousted CEO said a 1 GW delay costs USD 10bn a quarter' (pre-gate), electricchoice moratorium tracker (undated), Alibaba 20 GW relays (recorded 11-21 as late), shiporskip / zerohedge 'half of 2026 US data centers canceled or delayed' (undated relays of an earlier report, not fetched), oilprice political-reality piece (undated). Nothing dated 21-23 Nov."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026",
+   "result": "no hit",
+   "note": "No coupon auction 20-23 Nov before the run (2y is Mon 13:00 ET, after this run). Results: cryptobriefing 10y tail (12 Nov, recorded), hererockhill 30y tail (13 Nov, recorded), helious/fedratecalc/500metrics schedule pages, TFTC results page (not fetched). The Monday 2y result belongs to the 11-24 run."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026",
+   "result": "no hit",
+   "note": "ECB FSR 18 Nov (recorded 11-20/11-21), gurufocus / BNP / globalmarketsreview commentary (undated or pre-gate), fxstreet July 2025. No gilt/OAT/JGB stress item dated 21-23 Nov; Al Jazeera/AP Monday pages carry no yield levels."
+  },
+  {
+   "query": "supplementary: Nvidia SEC accounting probe weekend reaction November 22 2026 stock futures (extended)",
+   "result": "hit",
+   "note": "Fetched Mitrade/Beincrypto (Bessent Face the Nation), Fool 21 Nov, Prime Report 22 Nov. investing.com Reuters exclusive (recorded 11-21), beincrypto futures page, trefis, coinotag, journalarta not fetched."
+  },
+  {
+   "query": "supplementary: Google TPU order cut Broadcom response analysts November 21 22 2026 (extended)",
+   "result": "hit",
+   "note": "Fetched TheStreet 22 Nov (update line). Seeking Alpha / Yahoo / 247wallst / mlq / tradingkey relays not fetched."
+  },
+  {
+   "query": "supplementary: AI data center OR hyperscaler OR OpenAI news weekend November 22 2026 cut delay pause (extended)",
+   "result": "partial",
+   "note": "Fetched aitoolsrecap 22 Nov (ANT closing). fourweekmba 22 Nov roundup client_error. Yahoo Oracle/OpenAI denial page is Dec 2025 - discarded. TechCrunch 'OpenAI chief scientist on limiting AI development' (22 Nov) not fetched - not an event class. OpenAI Saturday outage (21 Nov) noted, not a dial."
+  },
+  {
+   "query": "supplementary: Asia markets Monday November 23 2026 KOSPI Hang Seng Nikkei holiday chip stocks selloff (extended)",
+   "result": "hit",
+   "note": "Fetched KSAT/AP and Al Jazeera 23 Nov. CNBC/invezz ANT premarket pages client_error; investing.com rate-limited (not retried)."
+  }
+ ],
+ "discarded": [
+  {
+   "what": "TrendForce Samsung-Apple DRAM LTA (18 Nov)",
+   "why": "already recorded in events 11-18; also a new LTA, not a renegotiation"
+  },
+  {
+   "what": "fool.com 'ousted CEO said a 1 GW delay costs USD 10bn a quarter' (14 Nov)",
+   "why": "pre-gate beyond tolerance"
+  },
+  {
+   "what": "456X / letsdatascience MSFT capex cut to USD 170bn (5 Nov)",
+   "why": "pre-gate, recorded early November"
+  },
+  {
+   "what": "Yahoo/Reuters 'Oracle denies report on OpenAI data center delays'",
+   "why": "dated 12 Dec 2025"
+  },
+  {
+   "what": "tradingeconomics 'Brent Remains Volatile' 535326",
+   "why": "dated 22 Mar 2026"
+  },
+  {
+   "what": "OpenAI Saturday 21 Nov outage (75% of requests failed >3h)",
+   "why": "operational, not an event class on the dashboard"
+  },
+  {
+   "what": "FourWeekMBA Baker/onsemi LTA durability piece (7-8 Nov items)",
+   "why": "pre-gate commentary, not a renegotiation"
+  },
+  {
+   "what": "Houthi Rabigh refinery claim, Bahrain Patriot strikes, Kharg convoy, Trump Fox remarks",
+   "why": "standoff file, not events"
+  }
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Mon 23 Nov Asia session after Friday's US rout: KOSPI -3.3% to 4,708.54 (intraday -5.8%; Samsung -3.1%, SK Hynix -2.5%), Tokyo closed for Labour Thanksgiving Day, TAIEX +2.2% (TSMC +1.5%) after opening lower, Hang Seng -0.1%, Shanghai +0.2%, Sensex -1.7%; US futures bounce: S&P +2.2-2.6%, Nasdaq +2.9%, Dow +1.8%; Europe +0.5-0.6% early; ANT premarket 92.90 +4.5%; SocGen's Agarwal calls Friday 'a more than three-standard-deviation event in tech indices'",
+   "headline": "Mon 23 Nov Asia session after Friday's US rout: KOSPI -3.3% to 4,708.54 (intraday -5.8%; Samsung -3.1%, SK Hynix -2.5%), Tokyo closed for Labour Thanksgiving Day, TAIEX +2.2% (TSMC +1.5%) after opening lower, Hang Seng -0.1%, Shanghai +0.2%, Sensex -1.7%; US futures bounce: S&P +2.2-2.6%, Nasdaq +2.9%, Dow +1.8%; Europe +0.5-0.6% early; ANT premarket 92.90 +4.5%; SocGen's Agarwal calls Friday 'a more than three-standard-deviation event in tech indices'",
+   "candidate_dial": "C-equity (Korea memory complex extends the selloff while Taiwan and US futures rebound - a split tape, not a second leg; the memory basket is -35% on the month per the Prime Report's RS data)",
+   "source": "KSAT/AP 'US futures climb and world shares are mixed' (published 22 Nov 22:23, updated 23 Nov 04:02 ET); Al Jazeera 'Asian stock markets tumble as AI bubble fears mount' (23 Nov, updated 08:48Z); coinpedia 10:23Z (ANT premarket)",
+   "url": "https://www.ksat.com/business/2026/11/23/us-futures-climb-and-asian-shares-mostly-decline-as-some-tech-stocks-fall/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Readings, not an event: Friday's S&P correction / Nasdaq-negative-YTD hit is already recorded 11-21. AP Brent 92.02 -0.6%, WTI 83.04 -0.4% at the same snapshot. Korea's first-20-days November semiconductor exports +294.4% y/y (ANZ) - the fundamental tape is still accelerating while the equity tape breaks. Al Jazeera: Gartner global AI investment USD 2.7trn 2026 / 3.6trn 2027; Democratic midterm sweep flagged as a data-centre construction headwind.",
+   "other_urls": [
+    "https://www.aljazeera.com/news/2026/11/23/south-koreas-stock-market-tumbles-as-ai-bubble-fears-mount",
+    "https://coinpedia.org/crypto-live-news/anthropic-stock-premarket-ant-bounces-4-5-to-stay-above-ipo-price/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-22",
+   "late": false,
+   "name": "Bessent on CBS Face the Nation (Sun 22 Nov) on Nvidia: 'Jensen is on the outside now', 'we have to see where the buck stops', 'it behooves Nvidia to move quickly' - his ten-day deadline for answers (set ~15 Nov) closes ~Wed 25 Nov; Huang resigned 12 Nov, board chair Harvey Jones said 17 Nov the board 'does not intend to reinstate Jensen as CEO'; NVDA options imply ~±11.5% (115-145) to the 27 Nov expiry; stock ~48% below its 52-week high, after-hours Fri 130.01",
+   "headline": "Bessent on CBS Face the Nation (Sun 22 Nov) on Nvidia: 'Jensen is on the outside now', 'we have to see where the buck stops', 'it behooves Nvidia to move quickly' - his ten-day deadline for answers (set ~15 Nov) closes ~Wed 25 Nov; Huang resigned 12 Nov, board chair Harvey Jones said 17 Nov the board 'does not intend to reinstate Jensen as CEO'; NVDA options imply ~±11.5% (115-145) to the 27 Nov expiry; stock ~48% below its 52-week high, after-hours Fri 130.01",
+   "candidate_dial": "C-equity (governance / Treasury-vs-Nvidia plumbing on the index's largest AI name: a Treasury deadline landing inside the holiday week, on top of the Reuters SEC-accounting report recorded 11-21) / C-credit (Kress 'far more selective' on AI financing, recorded 11-21)",
+   "source": "Mitrade/Beincrypto 'Bessent Softens on Jensen Huang' (23 Nov, citing CBS Face the Nation 22 Nov); Motley Fool 21 Nov 01:10 EST (SEC probe context: WSJ report 17 Nov preceded Reuters 20 Nov; NVDA -23% on the week, worst since 2008; ~USD 1trn mcap lost); Prime Report 22 Nov",
+   "url": "https://www.mitrade.com/au/insights/stock-analysis/us-stocks/beincrypto-NVDA-202611231008",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Bessent's exact deadline date is Mitrade's arithmetic ('around Nov 25'), not a quote. Mitrade also cites a separate US chip-export probe involving Megaspeed. Fool 'read-next' headline 23 Nov: 'Nvidia Just Reported Its First Quarter Without Jensen Huang' (not fetched). The Huang resignation (12 Nov) and board statement (17 Nov) are pre-gate context, recorded here only because the Sunday remarks reference them.",
+   "other_urls": [
+    "https://www.fool.com/investing/2026/11/21/after-its-worst-week-in-18-years-nvidia-now-faces-an-sec-investigation-what-it-means-for-investors/",
+    "https://primetrading.substack.com/p/the-prime-report-1122"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-22",
+   "late": false,
+   "name": "Anthropic IPO closing (reported Sun 22 Nov): 1,127,000,000 Class A shares at USD 83.00 - underwriters exercised ALL 147,000,000 option shares; USD 26bn concurrent private placement closed - the stabilisation short was covered by exercise, not by market purchases, on the week the stock traded to 83.05",
+   "headline": "Anthropic IPO closing (reported Sun 22 Nov): 1,127,000,000 Class A shares at USD 83.00 - underwriters exercised ALL 147,000,000 option shares; USD 26bn concurrent private placement closed - the stabilisation short was covered by exercise, not by market purchases, on the week the stock traded to 83.05",
+   "candidate_dial": "C-equity (the record IPO's greenshoe fully exercised at the offer price while the stock tested it - the syndicate's support bid is now the aftermarket's problem) / C-credit (USD ~93.5bn + 26bn of primary AI equity absorbed in one week, arithmetic not printed)",
+   "source": "aitoolsrecap 'AI News Today: 22 November 2026' (secondary roundup of the closing figures)",
+   "url": "https://aitoolsrecap.com/Blog/ai-news-november-22-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Secondary source; the company closing release / 8-K not fetched. Also in the same roundup (22 Nov, OpenAI's own claims): OpenAI models rewrote AMD GPU circuit code for 'up to 14% PPA', 'some changes are in a design already sent for manufacturing' - AMD has published nothing; noted, not a hit."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-22",
+   "late": false,
+   "name": "Update vs 11-21: Google 2027 TPU 8i order cut (~1m units, ~20%, mostly 8i Max, shifted to MediaTek-designed TPU 8t) - TheStreet 22 Nov 11:47 EST recaps the Ming-Chi Kuo X post; as of Friday neither Google nor Broadcom had commented; Kuo's reason: 'frontier model development gets first call on compute' under tight supply and data-center power limits; AVGO -11% Fri, ~USD 200bn erased; Rothschild Redburn had cut to Hold / PT 398 from 595 on 13 Nov",
+   "headline": "Update vs 11-21: Google 2027 TPU 8i order cut (~1m units, ~20%, mostly 8i Max, shifted to MediaTek-designed TPU 8t) - TheStreet 22 Nov 11:47 EST recaps the Ming-Chi Kuo X post; as of Friday neither Google nor Broadcom had commented; Kuo's reason: 'frontier model development gets first call on compute' under tight supply and data-center power limits; AVGO -11% Fri, ~USD 200bn erased; Rothschild Redburn had cut to Hold / PT 398 from 595 on 13 Nov",
+   "candidate_dial": "C-capex (unchanged from 11-21: analyst-sourced order cut on a registered buyer/supplier pair, still unconfirmed by either company after two days; the power-limit rationale is the GW-deferral mechanism in a different costume)",
+   "source": "TheStreet 'Google's 2027 chip plan is bad news for Broadcom' (22 Nov 16:47Z)",
+   "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Update line only - the hit is already recorded 11-21 (as_of 20 Nov); do not double-count. New information: no company comment through the weekend; AVGO FQ4 print 9 Dec is the confirmation venue. Mitrade/TradingKey headline: AVGO 'USD 289.97 now the floor to hold' (not fetched)."
+  }
+ ]
+}

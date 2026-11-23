@@ -1,0 +1,361 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-23T05:11:00-07:00",
+ "run_weekday": "Mon",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "Run at 05:11 MST precedes the US session, so Monday issuance and the 2y auction are not observable (ig.us_daily_volume_usd_bn quiet/null). SpaceX/Saturn: order book, initial price talk and Moody's level still unprinted by any fetched page (A2 +290bp is a final spread, not vs IPT); the ~USD 11.9bn private balance is not itemised. ORCL FQ2 date still aggregator-only (verified:false, 15+ days out; aggregators now 8/9/10/14 Dec). 2y FRN R USD 28bn size and the 7y 11:30 ET time are aggregator-sourced. Anthropic closing figures (1,127m shares, option fully exercised) come from a secondary roundup, not the 8-K. Fetch failures: CNBC and invezz ANT premarket pages client_error, investing.com rate-limited, techflowpost client_error, fourweekmba 22 Nov roundup client_error; bea.gov not re-attempted.",
+ "gate": {
+  "since": "2026-11-21T05:11:00-07:00",
+  "note": "New = 21 Nov after ~12:11Z through 23 Nov ~12:11Z (weekend + Monday pre-market). Tolerance 2 days: 20 Nov items not in the 11-20/11-21 files kept once with late:true (none found - the SpaceX tranche detail is an update to a recorded deal, dated 21 Nov). Run 2026-11-23 05:11 MST (Mon)."
+ },
+ "notes": "WEEKEND + MONDAY PRE-OPEN. Tape (Mon 23 Nov Asia/early Europe, KSAT/AP 04:02 ET and Al Jazeera): Tokyo closed (Labour Thanksgiving Day); KOSPI -3.3% to 4,708.54 after -5.8% intraday (Samsung -3.1%, SK Hynix -2.5%); TAIEX +2.2% (TSMC +1.5%) after opening lower; Hang Seng -0.1% 22,383.74; Shanghai +0.2% 3,538.95; ASX -0.3%; Sensex -1.7%; FTSE/CAC/DAX +0.5-0.6% early; S&P futures +2.6% (AP) / +2.2% (AJ), Nasdaq futures +2.9%, Dow futures +1.8%; Brent 92.02 -0.6%, WTI 83.04 -0.4% (AP snapshot); USD/JPY 159.13, EUR/USD 1.0982; gold reclaimed 3,600 (Mitrade ticker 3,612.94 +2.1%, undated). ANT premarket 92.90 +4.48% (coinpedia 10:23Z); NVDA after-hours Fri 130.01 (Mitrade). Korea chip exports first 20 days of Nov +294.4% y/y (ANZ via AJ). ISSUANCE: SpaceX/Saturn tranche detail landed (A2 4.37bn 2031 7.666% = UST+290bp; A3 25.17bn 2033 8.259%; B 2.564bn 2033 8.36%; ~44bn total incl. loans; upsized ~10%; anchors BlackRock/GSAM/KKR) - book, IPT, Moody's still unprinted. No registered-issuer deal dated 21-23 Nov. No IG supply forecast for Thanksgiving week found. IPO: Anthropic closing per a 22 Nov roundup - 1,127,000,000 Class A at 83 with all 147,000,000 option shares exercised, USD 26bn private placement closed. Renaissance stats rolled to 'as of 11/23' unchanged (124 / USD 230.3bn / 217 / 158 SPACs); calendar: nothing set to price week of 11/23; RGNA (USD 18m) queued undated. DATES: Treasury 2y 69bn Mon 13:00, 5y 70bn + FRN 28bn Tue 13:00, 7y Wed 11:30 (aggregator time); Wed 25 Nov 08:30 GDP Q3 2nd (cons 3.5%) + Oct PCE (core +0.3% m/m, 3.2-3.3% y/y) + durables + claims; Beige Book 14:00; Williams Mon 16:00; flash PMIs Mon 09:45; no FOMC minutes this week; Thu closed, Fri early close. HPE Mon AMC, Dell Tue AMC. ORCL FQ2 still unannounced (aggregators 8/9/10/14 Dec). AVGO 9 Dec and MU 17 Dec carried verified.",
+ "sources": [
+  {
+   "query": "Oracle \"second quarter fiscal year 2027\" earnings date announcement December 2026 (extended)",
+   "result": "no hit",
+   "note": "Returned the Q1 FY27 SEC exhibit (fetched; no Q2 date), investing.com/tipranks/days.to/earnings.fru.dev aggregators (not fetched), lucabytheway (fetched; 'Dec 14 estimated, not confirmed'). No Oracle 'Sets the Date' release."
+  },
+  {
+   "query": "renaissancecapital.com US IPO statistics YTD 2026 IPO calendar week of November 23 (extended)",
+   "result": "hit",
+   "note": "Fetched Stats (as of 11/23: 124 / 230.3bn / 217 / 158 SPACs), Calendar (no listings week of 11/23; RGNA queued), Weekly Recap 20 Nov."
+  },
+  {
+   "query": "week ahead markets Thanksgiving week November 23 2026 GDP PCE FOMC minutes 2-year auction Nvidia (extended)",
+   "result": "hit",
+   "note": "Fetched tradingeconomics (table did not render), tradingkey, theweekendspread (times, 2y 69bn / 5y 70bn / FRN 28bn, 7y 11:30), sensei (paywalled below Monday). No IG supply forecast on any."
+  },
+  {
+   "query": "SpaceX Saturn Funding Trust GPU notes tranches yields Class A2 Class B order book November 21 2026 (extended)",
+   "result": "hit",
+   "note": "Fetched caproasia 21 Nov (truncated), Longbridge/Cailian (A2 7.666% +290bp), FourWeekMBA (A2/A3/B sizes and yields, anchors). No book, no IPT, no Moody's level on any page."
+  },
+  {
+   "query": "Anthropic ANT stock Monday November 23 2026 premarket analyst coverage (extended)",
+   "result": "hit",
+   "note": "Fetched coinpedia (92.90 +4.48%). CNBC and invezz client_error; investing.com RATE_LIMIT (not retried); techflowpost client_error."
+  },
+  {
+   "query": "AI data center OR hyperscaler OR OpenAI news weekend November 22 2026 cut delay pause (extended)",
+   "result": "partial",
+   "note": "Fetched aitoolsrecap 22 Nov (ANT closing: 1,127m shares, all 147m option shares exercised). fourweekmba 22 Nov roundup client_error. Yahoo 'Oracle denies report on OpenAI data center delays' fetched - it is the 12 Dec 2025 Reuters piece, discarded."
+  },
+  {
+   "query": "Asia markets Monday November 23 2026 KOSPI Hang Seng Nikkei holiday chip stocks selloff (extended)",
+   "result": "hit",
+   "note": "Fetched KSAT/AP 04:02 and Al Jazeera 23 Nov (futures and Asia closes - used in events file)."
+  }
+ ],
+ "discarded": [
+  {
+   "what": "tradingeconomics 'Brent Remains Volatile' news/535326",
+   "why": "dated 2026-03-22; stale page returned by a dated query"
+  },
+  {
+   "what": "Yahoo/Reuters 'Oracle pushes back several data centers' denial",
+   "why": "dated 12 Dec 2025 - the OpenAI-delay denial is a year old"
+  },
+  {
+   "what": "theweekendspread 'MU December 23'",
+   "why": "conflicts with Micron's own 19 Nov release (17 Dec); company release kept"
+  },
+  {
+   "what": "ECB Financial Stability Review (18 Nov)",
+   "why": "already recorded in events 11-20 / 11-21"
+  }
+ ],
+ "items": [
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "US IG new-issue volume Mon 23 Nov - run precedes the US session (05:11 MST); no Thanksgiving-week IG supply forecast surfaced in four week-ahead pages (tradingeconomics, tradingkey, theweekendspread, sensei) - quiet, not zero",
+   "source": "week-ahead pages fetched 23 Nov (none carries an IG supply forecast)",
+   "url": "https://theweekendspread.substack.com/p/the-week-ahead-monday-november-23",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Holiday week: US markets closed Thu 26 Nov, stocks close 13:00 ET / bonds 14:00 ET Fri 27 Nov. The ~USD 35bn forecast for 16-20 Nov (recorded 11-16) still has no realised tally.",
+   "series": "ig.us_daily_volume_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "period_end": "2026-11-23"
+  },
+  {
+   "kind": "deal",
+   "group": "P8_calendar",
+   "as_of": "2026-11-21",
+   "late": false,
+   "name": "Update vs 11-21: SpaceX (SPCX) / Saturn Funding Trust GPU financing (priced Fri 20 Nov) - tranche detail now printed: Class A2 senior secured ~USD 4.37bn Apr-2031 at 7.666% (= UST +290bp per Cailian/Longbridge), Class A3 senior secured ~USD 25.17bn Apr-2033 at 8.259%, Class B subordinated USD 2.564bn Apr-2033 at 8.36% (FourWeekMBA); notes ~USD 32.1bn + loans = ~USD 44bn; oversubscribed and upsized ~10% vs the ~USD 40bn October framing; anchors BlackRock, GSAM, KKR accounts; leases ~5-5.25 years from H1-2027 delivery; still NO order book, NO initial price talk, NO Moody's level printed",
+   "source": "caproasia 21 Nov 03:19Z (USD 32bn in 3 tranches, A3 8.259%); Longbridge/Cailian 20 Nov 23:36Z (A2 7.666% / +290bp, 'oversubscribed and expanded', KBRA bankruptcy-remote note); FourWeekMBA update 20 Nov (A2 ~4.4bn 7.66%, B 2.564bn 8.36%, anchors, lease terms, Reuters)",
+   "url": "https://www.caproasia.com/2026/11/21/trillionaire-elon-musk-1-8-trillion-spacex-issues-32-billion-bonds-via-apollo-backed-vehicle-saturn-funding-trust-to-fund-47-3-billion-purchase-of-nvidia-gpu-equipments-bonds-issued-in-3-tranches/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Spread vs IPT remains unprinted - the +290bp on the A2 is the final spread to Treasuries, not a move from talk. The ~USD 11.9bn balance of the ~USD 44bn (private C-E notes, senior secured loan) is not itemised by any fetched page. Yields 7.66-8.36% on every tranche = the AI-capex funding-cost marker (vs Alphabet 40y Maple 6.00% on 19 Nov). Caproasia page truncated at ~40K chars; its tranche lines come from the summarised portion.",
+   "issuer": "SpaceX (SPCX) via Saturn Funding Trust (Apollo-managed lessor)",
+   "size": "~USD 44bn total; public notes ~USD 32.1bn (A2 4.37bn / A3 25.17bn / B 2.564bn)",
+   "tranches": [
+    {
+     "class": "A2 senior secured",
+     "size_usd_bn": 4.37,
+     "maturity": "2031-04",
+     "yield_pct": 7.666,
+     "spread_bp_ust": 290
+    },
+    {
+     "class": "A3 senior secured",
+     "size_usd_bn": 25.17,
+     "maturity": "2033-04",
+     "yield_pct": 8.259,
+     "spread_bp_ust": null
+    },
+    {
+     "class": "B subordinated secured",
+     "size_usd_bn": 2.564,
+     "maturity": "2033-04",
+     "yield_pct": 8.36,
+     "spread_bp_ust": null
+    }
+   ],
+   "spread_vs_ipt": null,
+   "book": null,
+   "other_urls": [
+    "https://longbridge.com/en/news/306337326",
+    "https://fourweekmba.com/ai-spacex-gpu-financing-upsized-to-44b-3x-its-q3-revenue/"
+   ]
+  },
+  {
+   "kind": "deal",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "No registered-issuer (MSFT/GOOGL/META/AMZN/ORCL/NVDA/MU/GEV/VRT/ANET/AVGO/CRWV/NBIS) or AI-infra bond or equity deal dated Sat 21 - Mon 23 Nov (pre-US-open) surfaced; CoreWeave >=USD 4bn IG loan still unconfirmed (seventh run); Alphabet C$6bn Maple book/IPT still unprinted - quiet",
+   "source": "event-sweep and calendar searches 23 Nov (no deal hits dated 21-23 Nov)",
+   "url": "https://investrade.com/market-review-november-20-2026/",
+   "fetched_how": "WebSearch (no in-gate deal result)",
+   "status": "quiet",
+   "note": "Weekend plus a holiday-week Monday before the open; the first realistic US print window is Mon-Tue. The Google-linked USD 3bn prepaid-energy muni ('delayed' since 17-18 Nov) has no new page.",
+   "issuer": null,
+   "size": null,
+   "tranches": [],
+   "spread_vs_ipt": null,
+   "book": null
+  },
+  {
+   "kind": "ipo",
+   "group": "P8_calendar",
+   "as_of": "2026-11-22",
+   "late": false,
+   "name": "Anthropic (ANT) IPO closing (reported 22 Nov): 1,127,000,000 Class A shares at USD 83.00 - underwriters exercised ALL 147,000,000 option shares; the USD 26bn concurrent private placement closed alongside",
+   "source": "aitoolsrecap 22 Nov roundup (closing figures; secondary - the company closing release itself not fetched)",
+   "url": "https://aitoolsrecap.com/Blog/ai-news-november-22-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Full exercise of the option means the stabilisation short was covered by exercise, not by open-market buying - consistent with the stock holding 5c above USD 83 on Fri 20 Nov without a reported stabilisation bid. 980m base + 147m option = 1,127m; ~USD 93.5bn gross at 83 (arithmetic, not printed). Verify against the 8-K / closing press release when it surfaces.",
+   "size": "1,127,000,000 Class A at USD 83.00 (980m + 147m option, fully exercised) + USD 26bn Class N private placement",
+   "priced": true
+  },
+  {
+   "kind": "ipo",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Anthropic (ANT) premarket Mon 23 Nov: 92.90 (+4.48%, +3.98 vs Fri close 88.91) per coinpedia 10:23Z; above the USD 83 offer; Nasdaq futures +2.9% / S&P futures +2.2-2.6% early Monday",
+   "source": "coinpedia 23 Nov 10:23Z; KSAT/AP 23 Nov 04:02 (futures); Al Jazeera 23 Nov (futures)",
+   "url": "https://coinpedia.org/crypto-live-news/anthropic-stock-premarket-ant-bounces-4-5-to-stay-above-ipo-price/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Premarket, not a close. CNBC 'Anthropic, Nvidia shares rise in premarket' and invezz pages client_error; investing.com rate-limited (not retried). No analyst initiation named in any fetched page; Renaissance expected research to open this week.",
+   "size": "n/a (secondary trading)",
+   "priced": true,
+   "other_urls": [
+    "https://www.ksat.com/business/2026/11/23/us-futures-climb-and-asian-shares-mostly-decline-as-some-tech-stocks-fall/"
+   ]
+  },
+  {
+   "kind": "ipo",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Renaissance IPO calendar: 'No public listings are currently set to price for the week of 11/23/2026'; NYSE none; only queued name RegenLab USA (RGNA, Nasdaq, 2.5m sh at USD 6-8, USD 18m, StoneX; date paywalled) - post-Thanksgiving candidates ABGC (~USD 6bn est.) / CORE (~USD 250m est.) per the 20 Nov week-ahead (recorded 11-21)",
+   "source": "renaissancecapital.com IPO Calendar (fetched 23 Nov)",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Calendar",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Weekly recap (20 Nov): one pricing (ANT, USD 81.34bn, mcap USD 1,376,963m, +12% vs midpoint, +17% day one, +7% at 20 Nov), one filing (CORE, ~USD 250m, JPM); Renaissance IPO Index -5.4% YTD vs S&P +5.7% as of 11/19.",
+   "size": "none scheduled",
+   "priced": false,
+   "other_urls": [
+    "https://www.renaissancecapital.com/IPO-Center/News/122813/us-ipo-weekly-recap-anthropic-seesaws-in-record-debut"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Renaissance US IPO YTD pricings (>= USD 50m mcap) as of 11/23/2026: 124 (-36.1% y/y) - unchanged",
+   "source": "renaissancecapital.com Stats page ('as of 11/23/2026')",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No pricing since Anthropic (19 Nov). Beta FinTech USD 19m withdrawal (20 Nov) listed on the page, recorded 11-21.",
+   "series": "ipo.us_ytd_count",
+   "value": 124,
+   "unit": "count",
+   "period_end": "2026-11-23"
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Renaissance US IPO YTD proceeds as of 11/23/2026: USD 230.3bn (+533.3% y/y) - unchanged",
+   "source": "renaissancecapital.com Stats page ('as of 11/23/2026')",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No pricing since Anthropic (19 Nov). Beta FinTech USD 19m withdrawal (20 Nov) listed on the page, recorded 11-21.",
+   "series": "ipo.us_ytd_proceeds_usd_bn",
+   "value": 230.3,
+   "unit": "USD bn",
+   "period_end": "2026-11-23"
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Renaissance US IPO YTD filings as of 11/23/2026: 217 (-8.8% y/y) - unchanged; 158 SPAC IPOs",
+   "source": "renaissancecapital.com Stats page ('as of 11/23/2026')",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No pricing since Anthropic (19 Nov). Beta FinTech USD 19m withdrawal (20 Nov) listed on the page, recorded 11-21.",
+   "series": "ipo.us_ytd_filings",
+   "value": 217,
+   "unit": "count",
+   "period_end": "2026-11-23"
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Treasury week of 23 Nov - 2y USD 69bn Mon 23 Nov 13:00 ET (13w/26w bills 11:30); 5y USD 70bn AND 2y FRN R USD 28bn Tue 24 Nov 13:00 ET; 7y (USD 44bn per RTTNews 11-20) Wed 25 Nov in the early 11:30 ET slot per theweekendspread (holiday-week shift; Treasury time not re-read) - dates verified from the Treasury tentative schedule PDF (read 11-18); the FRN USD 28bn size and the 11:30 7y time are aggregator-only",
+   "source": "theweekendspread 'The Week Ahead: Monday November 23' (sizes 69/70/28bn, times); RTTNews 19 Nov relay (7y 44bn, read 11-20); home.treasury.gov Tentative-Auction-Schedule.pdf (dates, read 11-18)",
+   "url": "https://theweekendspread.substack.com/p/the-week-ahead-monday-november-23",
+   "fetched_how": "WebFetch (search-surfaced link) for the week-ahead page; dates carried from the agency PDF read 11-18",
+   "status": "ok",
+   "note": "verified:true applies to the DATES only (agency PDF). The 2y FRN R USD 28bn size fills the gap flagged since 11-19 but is aggregator-sourced (verified:false for size). 7y at 11:30 ET on 25 Nov would land three hours after the 08:30 GDP/PCE/durables/claims cluster. 2y closed 4.63% Fri; S&P futures +2.2-2.6% into the Monday auction.",
+   "ticker_or_release": "UST 2Y / 5Y / 2Y FRN R / 7Y",
+   "datetime": "2026-11-23T13:00:00-05:00",
+   "verified": true,
+   "other_urls": [
+    "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+    "https://www.rttnews.com/3716479/treasury-announces-details-of-two-year-five-year-seven-year-note-auctions.aspx"
+   ]
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Thanksgiving-week data: Mon 23 Nov S&P Global flash PMIs 09:45 ET (cons mfg 54.5 / svcs 55.6), Chicago Fed NAI 08:30, NY Fed Williams 16:00 ET; Tue 24 Nov Conf. Board confidence 10:00, Richmond Fed 10:00, ADP weekly 08:15; Wed 25 Nov 08:30 ET GDP Q3 2nd (cons 3.5% vs 3.4% adv) + Oct PCE (cons +0.3% m/m headline and core; core 3.2-3.3% y/y) + durable goods (cons +0.5%) + jobless claims + personal income/spending; new home sales 10:00; Beige Book 14:00 ET; Fri 27 Nov advance goods trade 08:30; NO FOMC minutes this week (Oct minutes already out); Thu 26 closed, Fri 27 early close 13:00 stocks / 14:00 bonds - aggregator times; GDP/PCE Wed 08:30 carried verified from the BEA read 11-16",
+   "source": "theweekendspread (times, consensus); tradingkey week-ahead; tradingeconomics week-ahead narrative; sensei.news (partially paywalled); BEA schedule read 11-16 (GDP/PCE verified)",
+   "url": "https://theweekendspread.substack.com/p/the-week-ahead-monday-november-23",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "verified:true for the Wed 25 Nov 08:30 GDP/PCE only (agency read 11-16; bea.gov client_error again not re-attempted). Flash PMI, Beige Book, Williams and the Friday early-close times are aggregator-sourced. CME FedWatch ~92% for +25bp on 9 Dec (theweekendspread); sensei: Waller arguing for 50bp.",
+   "ticker_or_release": "GDP Q3 (2nd) + PCE Oct / flash PMIs / Beige Book / Williams",
+   "datetime": "2026-11-25T08:30:00-05:00",
+   "verified": true,
+   "other_urls": [
+    "https://www.tradingkey.com/analysis/stocks/us-stocks/262316778-week-ahead-us-gdp-pce-dell-hpe-report-anthropic-tradingkey",
+    "https://www.sensei.news/p/the-week-ahead-november-23-to-27"
+   ]
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "AI-complex earnings this week (non-registered): HPE Mon 23 Nov after close (cons EPS 1.28 / rev USD 14.4bn); Dell FQ3 FY27 Tue 24 Nov after close; HP, Workday, Autodesk, Analog Devices Tue; Deere Tue or Wed (sources conflict) - aggregator dates",
+   "source": "tradingkey week-ahead; theweekendspread; primetrading 'Prime Report 11/22' (HPE consensus)",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262316778-week-ahead-us-gdp-pce-dell-hpe-report-anthropic-tradingkey",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Not registered tickers; recorded because Dell/HPE are the first AI-server prints after the NVDA/AVGO/MU rout. verified:false (no IR page read).",
+   "ticker_or_release": "HPE / DELL",
+   "datetime": "2026-11-23T16:30:00-05:00",
+   "verified": false
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Update vs 11-21: ORCL FQ2 FY2027 results - STILL no Oracle 'Sets the Date' release or 8-K (SEC exhibit 0001193125-26-387905 is the 10 Sep Q1 release, no Q2 date; search 23 Nov returns only aggregators); aggregators now split 8 / 9 / 10 / 14 Dec (theweekendspread and lucabytheway 'Dec 14, not confirmed by Oracle') - verified:false, 15 days to the earliest aggregator date",
+   "source": "sec.gov Oracle ex99_1 (Q1 FY27 release, fetched 23 Nov); lucabytheway.com ORCL earnings-date page (Dec 14 estimate, last checked 27 Sep); theweekendspread week-ahead ('ORCL December 14, after the close'); investing.com / tipranks / days.to / earnings.fru.dev aggregators (not fetched)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001341439/000119312526387905/orcl-ex99_1.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Outside the ten-day threshold (enters it ~28 Nov if 8 Dec holds, ~4 Dec if 14 Dec). datetime kept at the earliest aggregator date (8 Dec). Last year's notice came 2 Dec for a 10 Dec print - expect the FY27 Q2 notice ~1-3 Dec; keep checking daily. investor.oracle.com itself not fetched (no search-surfaced link).",
+   "ticker_or_release": "ORCL",
+   "datetime": "2026-12-08T16:30:00-05:00",
+   "verified": false,
+   "other_urls": [
+    "https://www.lucabytheway.com/orcl-earnings-date/",
+    "https://theweekendspread.substack.com/p/the-week-ahead-monday-november-23"
+   ]
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "AVGO Q4/FY2026 results Wed 9 Dec after close, call 2pm PT / 5pm ET - carried verified from investors.broadcom.com release read 11-16 (16 days out); TheStreet 22 Nov repeats Dec 9",
+   "source": "investors.broadcom.com release 9 Nov (read 11-16)",
+   "url": "https://investors.broadcom.com/",
+   "fetched_how": "carried (IR read 11-16)",
+   "status": "ok",
+   "note": "Not re-read this session. Same day as the FOMC decision (9 Dec); the Google TPU order-cut report (20 Nov) makes this the key supplier print.",
+   "ticker_or_release": "AVGO",
+   "datetime": "2026-12-09T17:00:00-05:00",
+   "verified": true
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "MU FQ1 FY2027 results Thu 17 Dec 2026, 2:30pm MT / 4:30pm ET - carried verified from the company GlobeNewswire release (19 Nov, read 11-20); 24 days out. NOTE theweekendspread lists 'MU December 23' - conflicts with the company release; company release kept",
+   "source": "Micron GlobeNewswire release 19 Nov (read 11-20)",
+   "url": "https://www.globenewswire.com/news-release/2026/11/19/3407102/14450/en/micron-technology-to-report-fiscal-first-quarter-results-on-december-17-2026.html",
+   "fetched_how": "carried (company wire release read 11-20)",
+   "status": "ok",
+   "note": "Aggregator conflict noted, company release wins.",
+   "ticker_or_release": "MU",
+   "datetime": "2026-12-17T16:30:00-05:00",
+   "verified": true
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-18",
+   "late": false,
+   "name": "UST December coupon auctions - 3y Mon 7 Dec, 10y R Tue 8 Dec, 30y R Thu 10 Dec; 20y R Tue 22 Dec, 2y FRN R Wed 23 Dec, 5y TIPS R Wed 23 Dec, 2y/5y Mon 28 Dec, 7y Tue 29 Dec; FOMC Dec 8-9 (statement Wed 9 Dec 14:00 ET); BLS payrolls Fri 4 Dec / CPI Thu 10 Dec / PPI Tue 15 Dec 08:30 ET - carried verified from the 11-14/11-16/11-18 agency reads",
+   "source": "home.treasury.gov Tentative-Auction-Schedule.pdf (read 11-18); bls.gov / federalreserve.gov calendars (read 11-14/11-16)",
+   "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+   "fetched_how": "carried (agency reads 11-14/11-16/11-18)",
+   "status": "ok",
+   "note": "Not re-read this session.",
+   "ticker_or_release": "UST Dec coupons / FOMC Dec / Employment Situation Nov / CPI Nov / PPI Nov",
+   "datetime": "2026-12-07T13:00:00-05:00",
+   "verified": true
+  }
+ ]
+}
