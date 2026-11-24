@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-23T05:11:00-07:00",
- "last_as_of": "2026-11-23",
- "last_file": "dials/calendar/2026-11-23.json",
+ "last_run_at": "2026-11-24T05:11:00-07:00",
+ "last_as_of": "2026-11-24",
+ "last_file": "dials/calendar/2026-11-24.json",
  "status": "partial",
- "error": "Run at 05:11 MST precedes the US session, so Monday issuance and the 2y auction are not observable (ig.us_daily_volume_usd_bn quiet/null). SpaceX/Saturn: order book, initial price talk and Moody's level still unprinted by any fetched page (A2 +290bp is a final spread, not vs IPT); the ~USD 11.9bn private balance is not itemised. ORCL FQ2 date still aggregator-only (verified:false, 15+ days out; aggregators now 8/9/10/14 Dec). 2y FRN R USD 28bn size and the 7y 11:30 ET time are aggregator-sourced. Anthropic closing figures (1,127m shares, option fully exercised) come from a secondary roundup, not the 8-K. Fetch failures: CNBC and invezz ANT premarket pages client_error, investing.com rate-limited, techflowpost client_error, fourweekmba 22 Nov roundup client_error; bea.gov not re-attempted."
+ "error": "Run at 05:11 MST precedes the US session: Tuesday's 5y/FRN auctions, Dell and ANT's regular session are not observable (ANT 82 is a premarket print). No US IG tally for Mon 23 Nov in any fetched page (cappnotes carries only the China MOF deal) and no Thanksgiving-week forecast (ig.us_daily_volume_usd_bn quiet/null). SpaceX/Saturn: Moody's A3 now printed and 9fin gives IPT mid-300s -> 345bp, but the 9fin page is dated 20 Nov (kept once, late:true), names no tranche, and conflicts with the Cailian A2 +290bp print; order book still unprinted; IFRE (robots_disallowed) and tradersunion KBRA page (client_error) unreadable. 7y 11:30 ET time and FRN USD 28bn size remain aggregator-sourced (Treasury PDF has no times; TreasuryDirect RSS robots_disallowed). ORCL FQ2 date still aggregator-only (8/9/10/14 Dec, 14 days to earliest). CoreWeave >=USD 4bn loan unconfirmed for an eighth run. Alphabet Maple book/IPT unprinted (settles today)."
 }

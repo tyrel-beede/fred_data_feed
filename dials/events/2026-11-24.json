@@ -1,0 +1,278 @@
+{
+ "group": "events",
+ "run_at": "2026-11-24T05:11:00-07:00",
+ "run_weekday": "Tue",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Fetch failures (not retried): investinglive 2y-auction page SERVER_ERROR (helious + marketscreener used instead; when-issued level at the deadline not printed by any fetched page - the 0.3bp stop-through is helious's figure); Nocta daily brief 24 Nov client_error; bondstats daily 23 Nov client_error; strisker data-centers daily notes 23 Nov client_error; mlq TAIEX page client_error (TAIEX level from AP only as '+9%'); investinglive Asia-Pacific SERVER_ERROR. Refused hosts not attempted: CNBC (Williams, Congress reaction, Tuesday premarket), Bloomberg, CNN. No source printed a Monday CoreWeave or Oracle CDS level (recorded as a quiet reading). Monday 2y close conflicts between sources: CappNotes 4.63% unchanged vs marketscreener 4.694% (+8.3bp, 11:49 ET), Saxo 'as much as +8bp to 4.73%', tradingeconomics prior-session 4.71% - the 4.71 close is the better-supported figure and CappNotes's 2y/10y line looks stale.",
+ "gate": {
+  "since": "2026-11-23T05:11:00-07:00",
+  "note": "New = Mon 23 Nov after ~12:11Z (US session: 2y auction 13:00 ET, Williams 16:00 ET, close, HPE after the bell) through Tue 24 Nov ~12:11Z (Asia, Europe open, US premarket). Tolerance 2 days: items dated 21-22 Nov not in the 11-21/11-23 files kept once with late:true - none qualified (the Pelletier 22 Nov post relays 16 Nov and 20 Nov loan-sale events, beyond tolerance, listed in discarded). Run 2026-11-24 05:11 MST (Tue).",
+  "last_as_of": "2026-11-23",
+  "tolerance_days": 2
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized November 2026",
+  "fund gates redemptions November 2026",
+  "capex cut OR deferral OR digestion AI November 2026",
+  "funding round repriced AI lab November 2026",
+  "LTA renegotiation memory November 2026",
+  "gigawatt deferral data center November 2026",
+  "Treasury auction tail November 2026",
+  "sovereign bond stress November 2026"
+ ],
+ "notes": "HARD-EVENT CHECK: none of the four classes fired. (a) No pulled or downsized hyperscaler/AI-infra deal 23-24 Nov (query 1 returned the same pre-gate set; the ING USD 500m data-centre loan auction that drew weak bids is a 20 Nov Bloomberg item, beyond tolerance, listed in discarded - the orchestrator may want it noted as a secondary-market stress signal, not a primary deal pulled). (b) No principal capex cut - the Google TPU 8i cut remains analyst-sourced with no company comment through Monday (financefeeds: 'no company disclosure independently confirming'). HPE's FQ4 is the opposite sign on orders (AI orders USD 5.7bn, +84% q/q; AI backlog 10.5bn) but the FY27 Cloud & AI margin guide (~14% vs 18.4% printed) sent the stock -6 to -8% after hours - margin digestion, not demand digestion. (c) The Monday USD 69bn 2y auction did NOT tail: high 4.700%, stopped through 0.3bp, bid-to-cover 2.65 (avg 2.63, prior 2.59), indirects 51.5% (avg 56.5%) replaced by directs 38.1% (avg 32.0%), dealers 10.4%; helious 'in line, no directional read'. (d) No gated fund of size: the only redemption item is SS&C's November FRI 2.31% (already recorded 11-20/11-23), below the 2.91% five-year November average. THE EVENT OF THE WINDOW IS GOVERNANCE, NOT A DIAL CLASS: Nvidia's board unanimously reinstated Jensen Huang as president, CEO and director on Monday 23 Nov (8-K/press release), eleven days after his 12 Nov resignation and six days after chair Jones said the board 'does not intend to reinstate' him; the release says the board 'consulted senior U.S. government officials' and 'is confident that Mr. Huang's reinstatement poses no national security risk'; Trump told CNBC 'I convinced them' and posted that the government 'has no reason to believe' his return poses a risk. NVDA +31.48% to 165.05 (best day since 2003), SOX +14.03%, S&P 500 +4.73% to 7,237.17 (best day since Apr 2025, recovering a little over half of last week's loss), Nasdaq +6.51% to 24,089.56, NDX +6.86%, Dow +3.01% to 49,595.31, VIX 26.62 (-25.8%), breadth 417/83, tech +8.97%; CRWV +22.3%, DELL +20.5%, MU +19.0%, ARM +16.1%; ANT -1.43% Monday and 82.08 (-6%) Tuesday premarket - BELOW the USD 83 IPO price on day four, with the greenshoe fully exercised (11-23 item). Tuesday premarket gives back: NVDA -5%, Nasdaq-100 futures -1.73%, S&P -0.82%; Goldman TMT: 'Jensen is back - but better sentiment is not the same as a clearing event for semis'; Raymond James 'Nvidia does not get a do-over'; Congress (Cornyn, Coons, Warren, Mast/Moolenaar/Crawford) demands testimony, Huang due before committees early December; the SEC accounting examination, California AG subpoena, DOJ/Megaspeed and shareholder litigation all remain open - the Bessent ten-day clock (~25 Nov) has been overtaken by the White House. Rates did not rally with stocks: 2y ~4.71% (+8bp; auction high 4.700%), 10y 4.92-4.94% (peak ~4.98% intraday), 30y 5.29% (-2bp), 2s10s ~22-29bp; Williams (Mount Saint Vincent, 16:00 ET): 'there is still work to do', 'the risk to maximum employment is dialed down, but the risk to achieving price stability is dialed up', inflation ~3.5% this year, 'just above 2 percent next year', 2% 'in 2028', AI buildout risk 'two-sided and roughly balanced'; Dec 9 hike priced ~98%. US flash composite PMI 54.6 (from 55.9, four-month low), services 54.7 vs 55.6-55.7 consensus, manufacturing 54.5 in line. Credit: HY OAS 376bp as of Fri (CappNotes, from 352 Thu; i.e. Friday's widening was ~23bp), Saxo has Monday -11bp to 356bp; HYG +0.25%, LQD +0.23%; no Monday CoreWeave/Oracle CDS print. Tuesday Asia: KOSPI +6.32% to 5,006.04 (Samsung +6.7%, Hynix +6.7-8.6%), Nikkei +3.91% to 58,644.63 after Monday's holiday (Tokyo Electron +10.5%, Advantest +14.1%, Kioxia +9.95%), TAIEX +9% (TSMC, MediaTek ~+10%), Hang Seng +0.2%; Brent 86.3-88.7 (three-month lows, Monday -3.6%); gold 3,635 after +3.4% Monday from a 14-month low. Eight sweep queries: zero in-gate hits.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026 (extended)",
+   "result": "no hit",
+   "note": "Same pre-gate set as 11-23 (Bond Buyer NYC GO downsize - March; briefs.co CVC/Irca banks-stuck piece - undated European LBO financing; briefs.co Treasury auction sizes - refunding; CFR buyback - undated) plus No1's Daily Digest 21 Nov (not fetched, aggregator). No AI-infra or hyperscaler deal pulled 23-24 Nov; Saxo 24 Nov explicitly: no pulled deals, the only deal news is CrowdStrike's USD 43.9bn all-share bid for Zscaler (M&A, calendar group if anywhere)."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026 (extended)",
+   "result": "no hit",
+   "note": "Opalesque 23 Nov on SS&C GlobeOp FRI November 2.31% (Oct 1.62%, Nov-2025 2.43%, five-year Nov avg 2.91%) fetched - no gates or suspensions mentioned, and the FRI print itself is already recorded (11-20/11-23). Rest: investinglive Apollo-gates explainer, whitesecuritieslaw / angelinvestorsnetwork / icapital BDC gate explainers, researchsquare preprint, crowdfundedwealth October tracker - all pre-gate/undated. Supplementary 'private credit fund limits redemptions OR gates OR BDC November 23 2026' returned the same explainer set plus SEC N-PORT filings. No gate dated 23-24 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026 (extended)",
+   "result": "no hit",
+   "note": "456X/letsdatascience MSFT 5 Nov (recorded), cryptobriefing BofA FMS (pre-gate), BigGo SemiAnalysis 2028 forecast (undated), alcapitaladvisory / discoveryalert / useluminix / valueaddvc / dreaming.press analysis pages, a Sable Offshore 8-K (irrelevant). Nothing dated 23-24 Nov. HPE's FY27 margin guide (recorded as a hit via the supplementary HPE search) is the only 'digestion' language in the window and it is margin, not capex."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026 (extended)",
+   "result": "no hit",
+   "note": "parsers.substack weekly funding rounds report (week of 24 Nov, 65 rounds - aggregate, not fetched), Wikipedia company pages, superpowerdaily / workinsiders trackers (371 rounds / USD 38.2bn Nov-to-date). No repriced or down round for a lab or neocloud."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026 (extended)",
+   "result": "no hit",
+   "note": "Identical set to 11-23: FourWeekMBA Baker/onsemi, koreadaily / koreajoongangdaily / explainx 'sold out to 2029', cryptobriefing Goldman DRAM thresholds, TrendForce Samsung-Apple LTA 18 Nov (recorded 11-18), 404k Morgan Stanley legacy-memory downgrades. No renegotiation dated 23-24 Nov; the memory complex rallied 6-10% in Asia Tuesday (recorded in the Asia hit)."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026 (extended)",
+   "result": "no hit",
+   "note": "strisker 'Data Centers: Daily Notes' 23 Nov surfaced but client_error (not read). KUOW 23 Nov rural-Washington opposition (local siting, not a GW deferral by an operator). fool.com 14 Nov, cryptonews Alibaba 20 GW relay (recorded 11-21), shiporskip / zerohedge / theaiconsultingnetwork 'half of 2026 US data centers delayed' (undated relays), Forbes 22 Nov IEA data-centre energy forecast (forecast, not a deferral). Nothing dated 23-24 Nov."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026 (extended)",
+   "result": "no hit",
+   "note": "Query returned only the 12-13 Nov 10y/30y tails (recorded) and schedule pages; the Monday 2y result came via the supplementary auction search (helious 18:04Z page fetched; investinglive SERVER_ERROR; marketscreener fetched for prior-auction comparison). Result: stop-through 0.3bp - NOT a tail, recorded as a hit with figures. 5y auction Tue 13:00 ET and 7y Wed are after this run."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026 (extended)",
+   "result": "no hit",
+   "note": "ECB FSR 18 Nov (recorded), gurufocus / BNP / globalmarketsreview / einnews commentary, fxstreet 2025. Monday European levels from marketscreener (11:49 ET): Bund 10y 3.279% (largest decline since Friday), gilt 10y 5.196%, OAT 10y 4.810% (-6.9bp on a weak French flash PMI) - bonds bid, not stressed; no JGB level found for Tuesday's reopening."
+  },
+  {
+   "query": "supplementary: 2-year Treasury auction results November 23 2026 tail bid-to-cover (extended)",
+   "result": "hit",
+   "note": "helious auction page fetched (18:04Z); investinglive SERVER_ERROR (not retried); marketscreener 'Treasury Yields Rise as Huang Returns as CEO' fetched (prior-auction 4.708% / b-c 2.59). WI at the deadline not printed anywhere."
+  },
+  {
+   "query": "supplementary: stock market close Monday November 23 2026 S&P 500 Nasdaq Dow Nvidia (extended) + cappnotes closing look November 23 2026 (extended)",
+   "result": "hit",
+   "note": "CappNotes Closing Look Monday 23 Nov fetched (full tape). Nocta daily brief 24 Nov client_error. CNBC/CNN/Yahoo/stl.news/mlq relays not fetched (refused or redundant)."
+  },
+  {
+   "query": "supplementary: HPE fourth quarter results November 23 2026 AI systems backlog guidance (extended)",
+   "result": "hit",
+   "note": "HPE 8-K exhibit 99.1 (sec.gov, 23 Nov) fetched - release carries no orders/backlog figures; BigGo Finance 23 Nov evening fetched for the slide/call figures (AI orders, backlog, FY27 Cloud & AI margin ~14%) and the after-hours move. Benzinga/Investing.com transcripts not fetched."
+  },
+  {
+   "query": "supplementary: Nvidia board reinstates Jensen Huang CEO November 23 2026 Bessent SEC statement (extended) + Bessent Huang reinstatement reaction Monday (extended) + Nvidia stock Tuesday premarket November 24 2026 futures Dell earnings preview (extended)",
+   "result": "hit",
+   "note": "Nvidia 8-K press release (sec.gov) fetched; AP via WSLS fetched; Yahoo Finance 'long road ahead in Washington' (23 Nov 09:10 PST) fetched for Congress / DOJ-Megaspeed / NVDA close; Investing.com (updated 24 Nov 05:52 ET) fetched for Goldman/Raymond James and Tuesday premarket; unite.ai fetched - turned out to be the 22 Nov pre-reinstatement Bessent piece (already recorded); TradingKey US pre-market 24 Nov fetched (ANT 82.08, futures). NakedCapitalism 23 Nov fetched (secondary; its CDS levels are undated Groundbreaker figures). CNBC Congress / Trump pages and Axios/NBC/CBS/ABC relays not fetched. No Bessent statement AFTER the reinstatement surfaced in any fetched page."
+  },
+  {
+   "query": "supplementary: Williams New York Fed speech November 23 2026 'work to do' rates (extended)",
+   "result": "hit",
+   "note": "NY Fed speech text 'The Economic Mixdown' fetched. investinglive / Yahoo / Bloomberg / CNBC relays not fetched. No other FOMC voice dated 23-24 Nov surfaced."
+  },
+  {
+   "query": "supplementary: Asia markets Tuesday November 24 2026 Nikkei KOSPI Samsung SK Hynix Nvidia Huang futures (extended)",
+   "result": "hit",
+   "note": "KSAT/AP (23 Nov 21:31 ET, updated 22:06) fetched; TradingKey Japan/Korea closes (24 Nov 06:58) fetched; Saxo Market Quick Take 24 Nov (~05:00 CET) fetched. investinglive Asia-Pacific SERVER_ERROR; mlq TAIEX page client_error (TAIEX level not captured, only '+9%')."
+  },
+  {
+   "query": "supplementary: CoreWeave CDS Oracle credit default swaps Monday November 23 2026 AI credit (extended)",
+   "result": "partial",
+   "note": "No Monday print: aiweekly / leprivatebanker / tradingview-cryptobriefing pages are the 20 Nov 1,233bp item (recorded 11-21). NakedCapitalism 23 Nov relays Groundbreaker's Oracle 316bp / CoreWeave 1,145bp without dates (not used). Recorded as a quiet reading, value null."
+  },
+  {
+   "query": "supplementary: Broadcom OR Google comment TPU order cut Kuo November 23 2026 AVGO shares (extended)",
+   "result": "hit",
+   "note": "financefeeds 23 Nov fetched: 'no company disclosure independently confirming the proposed reduction' as of Monday; AVGO 309.89 +1.80% at 14:46 ET (close not printed; Monday's +2.76% per gurufocus/TradingView headline, not fetched). Recorded as an update line only."
+  },
+  {
+   "query": "supplementary: HSBC sold data centre loans 85 cents ING $500 million sale no bids November 2026 (extended) + Bisnow ING auction (extended)",
+   "result": "partial",
+   "note": "Both events are beyond tolerance: HSBC USD 300m at ~85c (Bloomberg, 16 Nov per geronimou 24 Nov) and ING's USD 500m auction stalling on weak bids (Bloomberg 20 Nov; longbridge/CoinLive 20 Nov 16:26Z fetched: 'muted demand', ING now selling loans individually). Neither is in the events files (the ING BWIC launch is in calendar 11-05/11-06). Listed in discarded with a flag for the orchestrator."
+  },
+  {
+   "query": "supplementary: Megaspeed inquiry transferred Justice Department Nvidia Teter New York Times (extended)",
+   "result": "no hit",
+   "note": "The Commerce-to-DOJ transfer is the NYT report of 9-10 Nov (inquirer / seekingalpha / daringfireball), pre-gate; Yahoo 23 Nov merely recaps it. Investing.com 24 Nov says 'reports said the Commerce Department added Megaspeed to its China blacklist' - undated, unverified, noted inside the Huang item only."
+  }
+ ],
+ "discarded": [
+  "ING USD 500m data-centre loan auction stalls on weak bids, ING to sell loans individually (Bloomberg 20 Nov; longbridge 20 Nov 16:26Z) - dated 20 Nov, beyond the 2-day tolerance; NOT previously in the events files (calendar 11-05/11-06 recorded the BWIC launch only) - orchestrator may wish to note it as C-credit secondary-market stress (bids below the seller's reserve on Vantage/CyrusOne/Stargate NM paper)",
+  "HSBC reportedly sold ~USD 300m of data-centre loans at ~85 cents (Bloomberg, 16 Nov per geronimou substack 24 Nov; relayed by Pelletier X post 22 Nov and NakedCapitalism 23 Nov) - 16 Nov, beyond tolerance; not in any events file",
+  "unite.ai 'Bessent Declines to Back Huang's Return' (22 Nov 15:10 ET) - the Face the Nation remarks, already recorded 11-23",
+  "SS&C GlobeOp FRI November 2.31% (Opalesque 23 Nov) - the 20 Nov release is already recorded 11-20/11-23; no gate",
+  "Commerce Megaspeed inquiry transferred to DOJ after Nvidia GC Teter's email (NYT 9-10 Nov) - pre-gate; Yahoo 23 Nov recap only",
+  "Groundbreaker CDS levels (Oracle 316bp / CoreWeave 1,145bp) relayed by NakedCapitalism 23 Nov - undated, superseded by the dated 20 Nov 1,232.6bp item",
+  "Goldman hyperscaler debt-issuance forecast USD 250bn 2026 -> 420bn 2027 (NakedCapitalism/geronimou relays) - forecast, undated",
+  "CrowdStrike USD 43.9bn all-share bid for Zscaler (23 Nov; ZS +17.7%, CRWD -8.9%) - M&A, not an event class; left for the calendar group",
+  "Amazon ~USD 7.5bn Decart acquisition, Tesla/SpaceX merger directors, Pentagon drone talks (TradingKey 24 Nov premarket) - not event classes",
+  "Bessent fresh Iran sanctions / Hormuz warnings Tuesday premarket (Benzinga headline, not fetched) - standoff group",
+  "Brent -3.6% Monday to 86.68 (AP) / Jan Brent 89.37 (Saxo) - standoff/oil settles, not events",
+  "KUOW 23 Nov rural-Washington community organises against a data-centre proposal - local siting opposition, not a GW deferral",
+  "Forbes 22 Nov IEA data-centre energy forecast - forecast, not a deferral",
+  "briefs.co 'Banks stuck with EUR 1.2bn after CVC abandons Irca' - European LBO hung financing, undated page, not AI-infra",
+  "parsers.substack weekly funding rounds (24 Nov), workinsiders Nov-to-date tracker - aggregates, no repriced round",
+  "Dell FQ3 (Tue 24 Nov after close) - not observable; Monday DELL +20.46% to 334.91 recorded inside the close tape only"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Nvidia board unanimously reinstates Jensen Huang as president, CEO and director (Mon 23 Nov, 8-K) eleven days after his resignation and six days after chair Jones said the board 'does not intend to reinstate' him; the board 'consulted senior U.S. government officials' and 'is confident that Mr. Huang's reinstatement poses no national security risk'; Trump on CNBC: 'I convinced them'; NVDA +31.48% to 165.05 (best day since 2003); Kress back to CFO; independent-director probe of the foreign-intelligence targeting continues, new National Security and Export Control Committee, CCO search; Congress demands testimony (Huang due before committees early December); SEC accounting examination, California AG subpoena, DOJ/Megaspeed and shareholder litigation remain open; Goldman: 'better sentiment is not the same as a clearing event for semis'; NVDA -5% Tuesday premarket",
+   "headline": "Nvidia board unanimously reinstates Jensen Huang as president, CEO and director (Mon 23 Nov, 8-K) eleven days after his resignation and six days after chair Jones said the board 'does not intend to reinstate' him; the board 'consulted senior U.S. government officials' and 'is confident that Mr. Huang's reinstatement poses no national security risk'; Trump on CNBC: 'I convinced them'; NVDA +31.48% to 165.05 (best day since 2003); Kress back to CFO; independent-director probe of the foreign-intelligence targeting continues, new National Security and Export Control Committee, CCO search; Congress demands testimony (Huang due before committees early December); SEC accounting examination, California AG subpoena, DOJ/Megaspeed and shareholder litigation remain open; Goldman: 'better sentiment is not the same as a clearing event for semis'; NVDA -5% Tuesday premarket",
+   "candidate_dial": "C-equity (governance reversal on the index's largest AI name, resolved by White House intervention rather than by the board's own process - the Bessent ten-day clock (~25 Nov, recorded 11-23) is overtaken; none of the regulatory overhangs recorded 11-21 is closed; a one-day +31% on a name with an open SEC accounting examination is a sentiment event, not a clearing event, by Goldman's own words)",
+   "source": "Nvidia press release 'NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director' (8-K exhibit, sec.gov, 23 Nov); AP via WSLS 23 Nov; Yahoo Finance 'Jensen Huang is back atop Nvidia. He has a long road ahead in Washington' (23 Nov 09:10 PST); Investing.com (updated 24 Nov 05:52 ET) for Goldman/Raymond James/Tuesday premarket",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Release text: the board acted 'after a series of discussions and meetings with Mr. Huang, after which the Board was satisfied with respect to Mr. Huang's candor and ability to lead NVIDIA'; Jones: 'The Board believes Jensen is the right person to lead NVIDIA'; Huang: 'I take this responsibility with the greatest humility and renewed commitment', thanking Kress for leading during 'the brief period of disorder'. The release does not mention the SEC examination or Megaspeed. Trump Truth Social: the government 'has no reason to believe that Jensen's return to NVIDIA poses any risk to National Security'; 'If I thought he did something wrong, I wouldn't be recommending to his board to hire him'. Congress: Cornyn 'No national security risk? Based on what?'; Coons questions the claim; Warren: Huang and Nvidia 'still owe Congress answers'; Reps Mast, Moolenaar, Crawford request testimony citing 'significant national security concerns'; Cotton (WSJ) says Lutnick ignored his China chip warnings. Raymond James: 'Nvidia does not get a do-over' (Strong Buy kept). Rabobank's Every: who is held responsible for export-control circumvention if Huang is pressed in Congress. Investing.com: 'reports said the Commerce Department added Megaspeed to its China blacklist' - undated, unverified here. No Bessent statement after the reinstatement surfaced in any fetched page. NVDA overnight 163.92 (02:07 ET), -5% premarket at 05:49 ET (Investing.com; ~157 implied, not printed).",
+   "other_urls": [
+    "https://www.wsls.com/news/2026/11/23/nvidia-board-unanimously-reinstates-jensen-huang-as-ceo/",
+    "https://finance.yahoo.com/markets/article/jensen-huang-is-back-atop-nvidia-he-has-a-long-road-ahead-in-washington-164747640.html",
+    "https://www.investing.com/news/stock-market-news/nvidia-shares-surge-30-as-board-announces-jensen-huangs-reinstatement-5045795"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Mon 23 Nov US close - best day since April 2025 on the Huang reinstatement: S&P 500 7,237.17 (+4.73%, recovering a little over half of last week's -8.6%), Nasdaq 24,089.56 (+6.51%, best since 9 Apr 2025), NDX 26,746.10 (+6.86%), Dow 49,595.31 (+3.01%), RUT 2,669.66 (+3.40%), RSP +2.59%; VIX 26.62 (-25.8% from 35.89; Dec VIX futures 23.80 above Jan, backwardation into the 9 Dec FOMC); breadth 417/83; tech +8.97%, energy -1.06%, staples -0.09%; SOX +14.03%, SOXX +13.63%, NVDA +31.48%, ARM +16.08%, TSM +14.08%, ALAB +23.16%, CRWV +22.32%, DELL +20.46% to 334.91, MU +19.04%, HPE +17.38% (then -6 to -8% AH), AMD +6.85%, META +6.55%, GOOGL +6.34%, MSFT +1.65%, AVGO ~+1.8-2.8% (lagging); ANT -1.43% Monday, 82.08 (-6%) Tuesday premarket - below the USD 83 IPO price; rates did not rally: 2y ~4.71% (+8bp, peak 4.73%), 10y 4.92-4.94% (peak ~4.98%), 30y 5.29% (-2bp); HY OAS 376bp as of Fri (from 352 Thu), Saxo: Monday -11bp to 356bp; HYG +0.25%, LQD +0.23%; Europe: Stoxx 600 +1.8%, DAX +2.2%, ASML +8.9%; Brent -3.6%, gold +3.4% from a 14-month low; Tuesday premarket: NQ -1.73%, ES -0.82%, YM -0.37%, Intel -5%, Hynix/SanDisk -4%",
+   "headline": "Mon 23 Nov US close - best day since April 2025 on the Huang reinstatement: S&P 500 7,237.17 (+4.73%, recovering a little over half of last week's -8.6%), Nasdaq 24,089.56 (+6.51%, best since 9 Apr 2025), NDX 26,746.10 (+6.86%), Dow 49,595.31 (+3.01%), RUT 2,669.66 (+3.40%), RSP +2.59%; VIX 26.62 (-25.8% from 35.89; Dec VIX futures 23.80 above Jan, backwardation into the 9 Dec FOMC); breadth 417/83; tech +8.97%, energy -1.06%, staples -0.09%; SOX +14.03%, SOXX +13.63%, NVDA +31.48%, ARM +16.08%, TSM +14.08%, ALAB +23.16%, CRWV +22.32%, DELL +20.46% to 334.91, MU +19.04%, HPE +17.38% (then -6 to -8% AH), AMD +6.85%, META +6.55%, GOOGL +6.34%, MSFT +1.65%, AVGO ~+1.8-2.8% (lagging); ANT -1.43% Monday, 82.08 (-6%) Tuesday premarket - below the USD 83 IPO price; rates did not rally: 2y ~4.71% (+8bp, peak 4.73%), 10y 4.92-4.94% (peak ~4.98%), 30y 5.29% (-2bp); HY OAS 376bp as of Fri (from 352 Thu), Saxo: Monday -11bp to 356bp; HYG +0.25%, LQD +0.23%; Europe: Stoxx 600 +1.8%, DAX +2.2%, ASML +8.9%; Brent -3.6%, gold +3.4% from a 14-month low; Tuesday premarket: NQ -1.73%, ES -0.82%, YM -0.37%, Intel -5%, Hynix/SanDisk -4%",
+   "candidate_dial": "C-equity (a one-day retracement of ~half of the correction week on a governance headline, cap-weighted (RSP +2.6% vs SPX +4.7%), with the IPO bellwether ANT breaking its offer price the next morning and futures giving back a third of the Nasdaq gain premarket; the stock-bond correlation flipped - 2y +8bp on the up day) / A-debt (2y back at 4.71% with Dec hike ~98%)",
+   "source": "CappNotes 'Closing Look - Monday, November 23, 2026'; Saxo 'Market Quick Take - Nvidia's CEO returns and Wall Street rebounds - 24 November 2026' (~05:00 CET); marketscreener 'Treasury Yields Rise as Huang Returns as CEO' (23 Nov 11:49 ET); tradingeconomics US 2y page (prior session 4.71%); TradingKey US pre-market 24 Nov; financefeeds AVGO 23 Nov",
+   "url": "https://cappnotes.substack.com/p/closing-look-monday-november-23-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "SOURCE CONFLICT on the 2y: CappNotes prints '2y 4.63% unchanged, 10y 4.92% unchanged, 2s10s ~29bp' (looks stale - Friday's levels); marketscreener 4.694% (+8.3bp) at 11:49 ET, Saxo 'as much as +8bp to 4.73%' then 4.67% early Tuesday, tradingeconomics prior-session close 4.71% (Tuesday 4.66% intraday); the auction high of 4.700% supports the ~4.70-4.71 close. 10y: marketscreener 4.936% (+2.7bp) intraday, AP 'rose to 4.93% from 4.92%', Saxo peak ~4.98% then ~4.91% early Tuesday. HY spread: CappNotes 'ICE BofA HY 3.76% as of Friday, from 3.52% Thursday' - vs the 11-21 file's 352bp as of 19 Nov; Saxo 'tightened 11bp to 356bp Monday, recovering about half of Friday's 23bp widening' - the two do not reconcile exactly (376-11=365); record both as printed. AVGO Monday close not printed (financefeeds 309.89 +1.80% at 14:46 ET; TradingView/gurufocus headline +2.76%). ANT Monday close level not printed (CappNotes gives -1.43% only); Tuesday 82.08 is TradingKey's premarket print (12:02 page time). Options (Saxo): implied move 1.26% Tuesday, 2.09% through Friday incl. Wednesday PCE; skew 140.37, 'High Vol Bear' regime label is Saxo's. FX: USDJPY tested 159.50 Monday, AUDUSD 2026 low <0.6600. Trump quote via AP: 'I believe my intervention was very important'.",
+   "other_urls": [
+    "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---nvidias-ceo-returns-and-wall-street-rebounds---24-november-2026-24112026",
+    "https://www.marketscreener.com/news/treasury-yields-rise-as-huang-returns-as-ceo-european-bond-yields-slip-update-ce7851dadd81f32d",
+    "https://tradingeconomics.com/united-states/2-year-note-yield",
+    "https://www.tradingkey.com/analysis/stocks/us-stocks/262319957-us-pre-market-trump-jensen-huang-nvidia-ai-chips-xau-wti-oil-gold-ant-tradingkey"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Mon 23 Nov USD 69bn 2-year note auction (13:00 ET): high yield 4.700% (prior 4.708%), stopped through 0.3bp (NOT a tail), bid-to-cover 2.65 (avg 2.63, prior 2.59), indirects 51.5% (avg 56.5%), directs 38.1% (avg 32.0%), dealers 10.4% (avg 11.5%) - 'in line demand, no directional read'; demand held with the 2y at a fresh cycle-high yield on a +31% NVDA day",
+   "headline": "Mon 23 Nov USD 69bn 2-year note auction (13:00 ET): high yield 4.700% (prior 4.708%), stopped through 0.3bp (NOT a tail), bid-to-cover 2.65 (avg 2.63, prior 2.59), indirects 51.5% (avg 56.5%), directs 38.1% (avg 32.0%), dealers 10.4% (avg 11.5%) - 'in line demand, no directional read'; demand held with the 2y at a fresh cycle-high yield on a +31% NVDA day",
+   "candidate_dial": "A-debt (auction) - no tail; the front end clears at 4.70% with foreign (indirect) share 5pts below average replaced by directs - a composition shift the orchestrator may track across the 5y (Tue) and 7y (Wed) prints",
+   "source": "helious.io '2-Year Note Auction, Nov 23, 2026: 4.700% High, In Line' (18:04Z); marketscreener 23 Nov 11:49 ET update (prior-auction comparison)",
+   "url": "https://helious.io/news/auc-91282CRY9-2026-11-23/2-year-note-auction-in-line",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "When-issued level at the 13:00 deadline not printed by any fetched page; the 0.3bp stop-through is helious's computation (investinglive's result page SERVER_ERROR). helious 'avg' comparators are its own averages (period not stated). Saxo 24 Nov: 'Monday's 2-year note auction saw solid demand'. CUSIP 91282CRY9. Tuesday's 5y auction is 13:00 ET (17:00 GMT), after this run.",
+   "other_urls": [
+    "https://www.marketscreener.com/news/treasury-yields-rise-as-huang-returns-as-ceo-european-bond-yields-slip-update-ce7851dadd81f32d"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "HPE FQ4 FY26 (Mon 23 Nov after close): revenue USD 14.5bn +50% y/y, Cloud & AI 11.3bn +69%, Server 8.8bn +95%; AI orders USD 5.7bn in the quarter (4.5bn systems + 1.2bn networking, +84% q/q from 3.1bn), AI backlog 10.5bn (from 7.6bn), AI systems backlog 8.8bn (+80% y/y); FY27 revenue guide raised to 59.4-63.1bn (+27-35%, from +13-17%), EPS 5.05-5.35, FCF >= 5.5bn; but Cloud & AI operating margin guided to ~14% for FY27 vs 18.4% printed - stock +17.4% in the session, then -6.3% to 44.98 at 17:25 ET (-8%+ at the lows) after hours",
+   "headline": "HPE FQ4 FY26 (Mon 23 Nov after close): revenue USD 14.5bn +50% y/y, Cloud & AI 11.3bn +69%, Server 8.8bn +95%; AI orders USD 5.7bn in the quarter (4.5bn systems + 1.2bn networking, +84% q/q from 3.1bn), AI backlog 10.5bn (from 7.6bn), AI systems backlog 8.8bn (+80% y/y); FY27 revenue guide raised to 59.4-63.1bn (+27-35%, from +13-17%), EPS 5.05-5.35, FCF >= 5.5bn; but Cloud & AI operating margin guided to ~14% for FY27 vs 18.4% printed - stock +17.4% in the session, then -6.3% to 44.98 at 17:25 ET (-8%+ at the lows) after hours",
+   "candidate_dial": "B2-capex (opposite sign to a capex cut: an AI-systems OEM's orders +84% q/q and backlog +38% q/q through October - the demand tape is still accelerating; the margin guide is the digestion, i.e. the customer is taking the economics) / C-equity (a raised guide sold -8% after a +17% day - the market's reaction function has flipped to punish margin, which is the reading)",
+   "source": "HPE 8-K exhibit 99.1 (sec.gov, 23 Nov) for the reported figures and guidance; BigGo Finance 23 Nov evening for orders/backlog (slides/call), the FY27 margin guide and the after-hours move",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001645590/000164559026000097/ex-991x11232026x8k.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The release itself carries NO orders/backlog figures and no segment margin guide - those are from the slides/call as relayed by BigGo (Investing.com headline: 'AI orders hit $5.7B, revenue up 50%'); Q1 FY27 guide 14.0-14.6bn (+51-57%), EPS 1.30-1.40. Release lists 'component costs' and 'worldwide component availability' among risk factors; no DRAM/memory cost comment captured (Barclays' Long: memory price increases alone can lift hardware sales). Dell reports Tue 24 Nov after close - not observable; DELL +20.46% to 334.91 Monday. Not a calendar item: the earnings date was already in the calendar group; this is the print's content.",
+   "other_urls": [
+    "https://finance.biggo.com/news/9251b42f-2c8b-493a-8aaa-26c33b9290aa"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Fed-speak Mon 23 Nov: NY Fed's Williams ('The Economic Mixdown', Mount Saint Vincent, 16:00 ET) - 'the risk to maximum employment is dialed down, but the risk to achieving price stability is dialed up'; 'it is imperative that we restore inflation to our 2 percent target in a timely manner'; 'there is still work to do to get that done'; inflation ~3.5% this year, 'just above 2 percent next year', 2% 'in 2028'; GDP ~2.75% this year and near that next; unemployment to ~4%; AI buildout risks 'two-sided and roughly balanced'; tariff effects 'largely abated'; 'energy prices remain elevated, and the outlook is highly uncertain'; Dec 9 hike priced ~98%; flash PMIs: composite 54.6 (from 55.9, four-month low), services 54.7 vs 55.6-55.7 consensus, manufacturing 54.5 in line",
+   "headline": "Fed-speak Mon 23 Nov: NY Fed's Williams ('The Economic Mixdown', Mount Saint Vincent, 16:00 ET) - 'the risk to maximum employment is dialed down, but the risk to achieving price stability is dialed up'; 'it is imperative that we restore inflation to our 2 percent target in a timely manner'; 'there is still work to do to get that done'; inflation ~3.5% this year, 'just above 2 percent next year', 2% 'in 2028'; GDP ~2.75% this year and near that next; unemployment to ~4%; AI buildout risks 'two-sided and roughly balanced'; tariff effects 'largely abated'; 'energy prices remain elevated, and the outlook is highly uncertain'; Dec 9 hike priced ~98%; flash PMIs: composite 54.6 (from 55.9, four-month low), services 54.7 vs 55.6-55.7 consensus, manufacturing 54.5 in line",
+   "candidate_dial": "A-debt / business cycle (the FOMC's vice chair keeps December in play and does not mention the equity correction; inflation above 2% through 2027 on his own forecast; services PMI miss is the first soft US print of the window)",
+   "source": "NY Fed speech text 'The Economic Mixdown' (23 Nov); CappNotes 23 Nov (hike odds, PMI consensus); Saxo 24 Nov (PMI detail: Eurozone 51.7, UK 52.3, France sharpest contraction in six months; Germany composite 55.0 highest since Mar 2022 per CappNotes)",
+   "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil261123",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Williams does not state the funds range or explicitly call for a hike; investinglive headline 'Williams keeps December Fed hike in play as inflation seen above 2% until 2028' and marketscreener 'keeping options open on pace of future US rate hikes' (not fetched). No other FOMC voice dated 23-24 Nov surfaced. PMI consensus (54.5 mfg / 55.6 svcs) is from the task brief; CappNotes prints services 'versus 55.7 expected'.",
+   "other_urls": [
+    "https://cappnotes.substack.com/p/closing-look-monday-november-23-2026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "Tue 24 Nov Asia session on the Huang reversal: KOSPI +6.32% to 5,006.04 (reclaims 5,000; Samsung +6.7% to KRW 189,400, SK Hynix +6.7% to 1.158m; AP intraday +6.5% / Hynix +8.6%; the speed of the rebound briefly halted programme buying), Nikkei +3.91% to 58,644.63 reopening after Monday's holiday (briefly >59,000; Tokyo Electron +10.5%, Advantest +14.1%, Kioxia +9.95%, SoftBank +4.66%), TAIEX +9% (TSMC and MediaTek each ~+10%), Hang Seng +0.2% to 22,432.45 (could not hold early gains), Shanghai +0.7%, ASX +1.7%; 2y UST 4.67%, 10y ~4.91% early Tuesday; USDJPY ~159.15; Brent 86.3-88.7; US futures 'edged higher' overnight then NQ -1.73% / ES -0.82% by the US premarket with NVDA -5%, Intel -5%, Hynix ADR/SanDisk -4%",
+   "headline": "Tue 24 Nov Asia session on the Huang reversal: KOSPI +6.32% to 5,006.04 (reclaims 5,000; Samsung +6.7% to KRW 189,400, SK Hynix +6.7% to 1.158m; AP intraday +6.5% / Hynix +8.6%; the speed of the rebound briefly halted programme buying), Nikkei +3.91% to 58,644.63 reopening after Monday's holiday (briefly >59,000; Tokyo Electron +10.5%, Advantest +14.1%, Kioxia +9.95%, SoftBank +4.66%), TAIEX +9% (TSMC and MediaTek each ~+10%), Hang Seng +0.2% to 22,432.45 (could not hold early gains), Shanghai +0.7%, ASX +1.7%; 2y UST 4.67%, 10y ~4.91% early Tuesday; USDJPY ~159.15; Brent 86.3-88.7; US futures 'edged higher' overnight then NQ -1.73% / ES -0.82% by the US premarket with NVDA -5%, Intel -5%, Hynix ADR/SanDisk -4%",
+   "candidate_dial": "C-equity (the Korea memory complex that led Monday's Asia selloff (-3.3%) leads Tuesday's bounce (+6.3%); TAIEX +9% is a limit-style day; a two-sigma-down / two-sigma-up pair in four sessions is the volatility reading, not a direction)",
+   "source": "TradingKey 'Nvidia Rally Drives Japan and South Korea Stock Rebound' (24 Nov 06:58); KSAT/AP 'World stocks are mixed after Wall Street's rebound' (23 Nov 21:31 ET, updated 22:06 ET); Saxo Market Quick Take 24 Nov (~05:00 CET); TradingKey US pre-market 24 Nov (12:02)",
+   "url": "https://www.tradingkey.com/analysis/stocks/more/262319507-japan-south-korea-stocks-kospi-nikkei-softbank-sk-hynix-samsung-kioxia-tradingkey",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Intraday/close labels: KOSPI and Nikkei figures are TradingKey closes (06:58 page); AP figures (KOSPI 5,014.41 +6.5%, Nikkei 58,654.40 +3.9%) are an earlier snapshot. TAIEX level not captured (mlq page client_error; AP 'up more than 9%'). Astris Advisory's Newman (AP): 'It is obviously a big surprise and a knock-on effect will be through Asia'. No JGB level found for the reopening. US premarket figures are TradingKey's (no index levels printed); Yahoo/Benzinga live pages not fetched (Benzinga headline attributes the futures fall to Bessent's fresh Iran sanctions / Hormuz warnings - standoff group).",
+   "other_urls": [
+    "https://www.ksat.com/business/2026/11/24/asian-stocks-rally-after-wall-street-rebound-as-jensen-huang-returns-as-nvidias-ceo/",
+    "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---nvidias-ceo-returns-and-wall-street-rebounds---24-november-2026-24112026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "Update vs 11-21/11-23: Google TPU 8i order cut (Kuo, 20 Nov) - through Monday 23 Nov 'no company disclosure independently confirming the proposed reduction' from Google or Broadcom; AVGO lagged the chip rally (309.89 +1.80% at 14:46 ET vs SOX +14%; TradingView/gurufocus headline +2.76% on the day); Goldman's Schneider had cut the AVGO target to 460 from 540 on 18 Nov, before Kuo",
+   "headline": "Update vs 11-21/11-23: Google TPU 8i order cut (Kuo, 20 Nov) - through Monday 23 Nov 'no company disclosure independently confirming the proposed reduction' from Google or Broadcom; AVGO lagged the chip rally (309.89 +1.80% at 14:46 ET vs SOX +14%; TradingView/gurufocus headline +2.76% on the day); Goldman's Schneider had cut the AVGO target to 460 from 540 on 18 Nov, before Kuo",
+   "candidate_dial": "C-capex (unchanged: analyst-sourced, uncommented by either company after three sessions; the market is pricing it as real - AVGO +2-3% on a +14% SOX day; AVGO FQ4 9 Dec remains the confirmation venue)",
+   "source": "financefeeds 'Broadcom Stock Rebounds 1.8% After 12% Drop on TPU Cut' (23 Nov)",
+   "url": "https://financefeeds.com/broadcom-avgo-stock-rebounds-2-as-nvidia-rally-eases-google-tpu-selloff/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Update line only - the hit is recorded 11-21 (as_of 20 Nov) with a 11-23 update; do not double-count. AVGO Monday close not printed by the fetched page."
+  },
+  {
+   "kind": "reading",
+   "group": "events",
+   "as_of": "2026-11-23",
+   "late": false,
+   "name": "CoreWeave 5y CDS Mon 23 Nov - no print found (quiet); last recorded 1,232.6bp Fri 20 Nov; CRWV equity +22.32% Monday",
+   "series": "CRWV.CDS5Y.bp",
+   "value": null,
+   "unit": "bp",
+   "period_end": "2026-11-23",
+   "source": "search 'CoreWeave CDS Oracle credit default swaps Monday November 23 2026 AI credit' (extended) - only 20 Nov pages (aiweekly, leprivatebanker, tradingview/cryptobriefing) and undated Groundbreaker levels via NakedCapitalism 23 Nov",
+   "url": "https://www.nakedcapitalism.com/2026/11/ai-wobbles-continue-with-circular-financing-unravel-nvidia-criminal-reporting-investigation-megaspeed-shell-games-even-as-iran-and-ukraine-escalate.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "No source printed a Monday CoreWeave or Oracle CDS level. NakedCapitalism (23 Nov) relays Groundbreaker 'Mark to Swap': Oracle 5y 316bp (76bp a year earlier, ~23% implied default odds, 'that of a typical B+ company'), CoreWeave 1,145bp (~61%) - undated, lower than Friday's 1,232.6bp, so almost certainly pre-Friday; not used as a reading. Only credit prints for Monday are ETF/index: HYG +0.25%, JNK +0.28%, LQD +0.23%; HY OAS per Saxo -11bp to 356bp (see close item)."
+  }
+ ]
+}
