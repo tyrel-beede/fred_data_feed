@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-24T05:11:00-07:00",
- "last_as_of": "2026-11-24",
- "last_file": "dials/events/2026-11-24.json",
+ "last_run_at": "2026-11-25T05:11:00-07:00",
+ "last_as_of": "2026-11-25",
+ "last_file": "dials/events/2026-11-25.json",
  "status": "ok",
- "error": "Fetch failures (not retried): investinglive 2y-auction page SERVER_ERROR (helious + marketscreener used instead; when-issued level at the deadline not printed by any fetched page - the 0.3bp stop-through is helious's figure); Nocta daily brief 24 Nov client_error; bondstats daily 23 Nov client_error; strisker data-centers daily notes 23 Nov client_error; mlq TAIEX page client_error (TAIEX level from AP only as '+9%'); investinglive Asia-Pacific SERVER_ERROR. Refused hosts not attempted: CNBC (Williams, Congress reaction, Tuesday premarket), Bloomberg, CNN. No source printed a Monday CoreWeave or Oracle CDS level (recorded as a quiet reading). Monday 2y close conflicts between sources: CappNotes 4.63% unchanged vs marketscreener 4.694% (+8.3bp, 11:49 ET), Saxo 'as much as +8bp to 4.73%', tradingeconomics prior-session 4.71% - the 4.71 close is the better-supported figure and CappNotes's 2y/10y line looks stale."
+ "error": "Fetch failures (not retried): Fool Dell transcript client_error; fourweekmba ANT/CoreWeave client_error (7.75bn/6bn figure unverified, not recorded); investinglive Asia SERVER_ERROR; tradingpedia SERVER_ERROR. CNBC/Bloomberg refused (CoreWeave bonds via Yahoo relay). 2y FRN result unprinted. HY OAS conflict CappNotes 356 (Tue close) vs Saxo 364 (Wed morning) - both recorded. No CoreWeave/Oracle CDS print."
 }

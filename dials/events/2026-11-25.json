@@ -1,0 +1,173 @@
+{
+ "group": "events",
+ "run_at": "2026-11-25T05:11:00-07:00",
+ "run_weekday": "Wed",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Fetch failures (not retried): Fool Dell transcript client_error; fourweekmba ANT and CoreWeave pages client_error (the 'USD 7.75bn priced near 6bn' figure unverified, not recorded); investinglive Asia-Pacific SERVER_ERROR; tradingpedia SERVER_ERROR. Refused hosts not attempted: CNBC (ANT analysts, Dell), Bloomberg (CoreWeave bonds read via the Yahoo relay instead). Dell IR release truncated ~46% (table figures from the summarised remainder + investing.com). 2y FRN result not printed anywhere. HY OAS Tue close conflicts: CappNotes 356 (-11bp) vs Saxo 364 (+8bp, Wed morning) - both recorded. No CoreWeave/Oracle CDS print (Oracle 2036 cash-bond yield 8.47% recorded instead).",
+ "gate": {
+  "since": "2026-11-24T05:11:00-07:00",
+  "note": "New = Tue 24 Nov after ~12:11Z (US session: Conf. Board 10:00 ET, 5y + FRN 13:00 ET, close, Dell after the bell, Bloomberg CoreWeave bonds) through Wed 25 Nov ~12:11Z (Asia, Europe open, US premarket). Tolerance 2 days: items dated 22-23 Nov not in the 11-23/11-24 files kept once with late:true - none qualified (the Naked Capitalism 'junk bond market starts to crack' piece surfaced by query 1 is dated 2 Nov, discarded). Run 2026-11-25 05:11 MST (Wed).",
+  "last_as_of": "2026-11-24",
+  "tolerance_days": 2
+ },
+ "search_mode": "extended",
+ "queries_run": ["bond deal pulled OR downsized November 2026", "fund gates redemptions November 2026", "capex cut OR deferral OR digestion AI November 2026", "funding round repriced AI lab November 2026", "LTA renegotiation memory November 2026", "gigawatt deferral data center November 2026", "Treasury auction tail November 2026", "sovereign bond stress November 2026", "supplementary: 5-year note auction results November 24 2026", "supplementary: Dell earnings Q3 fiscal 2027 November 24 2026", "supplementary: cappnotes closing look Tuesday November 24 2026", "supplementary: Anthropic ANT Tuesday close / Micron BNP downgrade", "supplementary: CoreWeave OR Nebius OR OpenAI OR xAI bond loan financing November 24 2026", "supplementary: Micron BNP Paribas downgrade neutral November 24 2026", "supplementary: Asia markets Wednesday November 25 2026"],
+ "notes": "HARD-EVENT CHECK: none of the four classes fired. (a) No pulled or downsized hyperscaler/AI-infra deal 24-25 Nov (query 1 returned the same pre-gate set plus a 2 Nov Naked Capitalism piece; no new-issue AI-infra deal at all in the window - the credit reading is SECONDARY: CoreWeave bonds -3 to -4.6 pts to post-issue lows, Oracle 2036s at a cycle-high 8.47%, HY 364bp per Saxo). (b) No principal capex cut - the BNP Exane Micron downgrade (Ackerman: 'growing risks to hyperscaler capacity plans in 2028', 'data center permit delays', HBM content 'reduced in Vera Rubin Ultra', DRAM/NAND parity pulled to mid-2027) is analyst-sourced and names no hyperscaler; the Google TPU 8i cut (Kuo) remains uncommented; Dell's print is the opposite sign (AI orders 60.2bn in the quarter, backlog 132.3bn, FY27 AI-server guide raised to 78bn, 'no customers have rescheduled orders to date'). (c) The Tuesday USD 70bn 5y auction tailed 0.3bp (WI 4.716 -> 4.719; b/c 2.37 vs avg 2.31; indirects 54.3% vs avg 61.9% replaced by directs 36.7% vs 25.4%) - below the 2bp threshold; FRN unprinted. (d) No gated fund (query 2 returned the same explainers and the recorded SS&C FRI). THE TAPE OF THE WINDOW: the Monday Huang rally reversed in a day - S&P -0.50% (8th loss in 9), NDX -1.99%, tech -3.26%, SOXX -8.27%, NVDA -5.86%, MU -11.01%, HPE -16.31% (guide raised, margin cut), DELL -11.83% ahead of a beat-and-raise that only recovered +4% after hours; ANT's first close below the USD 83 offer (81.91, low 75.61); CRWV -14.67% with its bonds at record lows; Dow +0.85% to a first close above 50,000 and health care +2.95% - a rotation out of AI hardware, not a market-wide selloff; Conf. Board confidence 103.3 vs 92.5 (an 11-pt jump the orchestrator may read as the equity-rally/gasoline effect), Richmond +3; 2y 4.63-4.68%, 10y 4.90-4.93% then 4.875% early Wed; Dec hike ~95%. Wednesday Asia extended it: KOSPI -6.2% to 4,697.51 (Samsung -9.9%, SK hynix -11.1%), Nikkei -2.8% (SoftBank -14.8%, Kioxia -14.2%), TAIEX -5% (MediaTek -10%), Shanghai -1.5% to a one-year low, LME copper -5.3% to a 13-month low; AP's drivers: doubts AI can 'produce enough profit and productivity to justify massive investments', high rates making it 'more difficult to borrow', Democratic midterm wins raising regulation risk, plus a Section 301 tariff plan. Four-day sequence for the Korea memory pair: -3.3% / +6.3% / -6.2% - volatility, not direction. Eight sweep queries: zero in-gate hits from the queries themselves; all hits came from the supplementary searches.",
+ "sources": [
+  {"query": "1. bond deal pulled OR downsized November 2026 (extended)", "result": "no hit", "note": "Bloomberg Oct-2025 shipping bond pulled (stale), Bond Buyer NYC GO downsize (March), CFR buyback (undated), Naked Capitalism 'Junk bond market starts to crack' (fetched: dated 2 Nov; FT CCC yields 21%/18%, Gundlach BBB index at 65 - pre-gate, discarded), Wikipedia pages. No AI-infra or hyperscaler deal pulled 24-25 Nov; CappNotes names no bond deal Tuesday."},
+  {"query": "2. fund gates redemptions November 2026 (extended)", "result": "no hit", "note": "Opalesque SS&C FRI (recorded 11-20/11-23), researchsquare preprint (posted 25 Aug; fetched title only), investinglive Apollo-gates explainer, whitesecuritieslaw / angelinvestorsnetwork / twinfocus BDC-gate explainers, SS&C IR release 20 Nov, databento glossary - no new gate or suspension dated 24-25 Nov."},
+  {"query": "3. capex cut OR deferral OR digestion AI November 2026 (extended)", "result": "no hit", "note": "Allianz March PDF, letsdatascience MSFT 5 Nov (recorded), cxotoday / BigGo SemiAnalysis 2028 forecast (undated relays), Sable Offshore 8-K (irrelevant), discoveryalert / analysis.org tracker (undated) / dreaming.press 1 Nov / alcapitaladvisory / valueaddvc. Nothing dated 24-25 Nov from a principal. The BNP Micron note (supplementary) is the only in-window 'capacity risk' language."},
+  {"query": "4. funding round repriced AI lab November 2026 (extended)", "result": "no hit", "note": "parsers.substack weekly rounds (24 Nov aggregate; not fetched), Wikipedia company pages, MegaRobo USD 200m (23 Nov, lab-automation hardware - not a repricing), superpowerdaily tracker. No repriced or down round for a lab or neocloud."},
+  {"query": "5. LTA renegotiation memory November 2026 (extended)", "result": "no hit", "note": "Identical set to 11-23/11-24 (FourWeekMBA Baker/onsemi, koreadaily / koreajoongangdaily / explainx 'sold out to 2029', edaily Aug, cryptobriefing Goldman thresholds, TrendForce Samsung-Apple LTA 18 Nov, 404k MS legacy-memory downgrades). No renegotiation dated 24-25 Nov; the BNP note's 'DRAM/NAND parity mid-2027' is a forecast, recorded in the MU hit."},
+  {"query": "6. gigawatt deferral data center November 2026 (extended)", "result": "no hit", "note": "fool.com 14 Nov (Huang '1 GW delay costs USD 10bn a quarter' - pre-gate), KUOW 23 Nov local opposition (recorded as not-a-deferral 11-24), capacityglobal / invariant-ai / shiporskip / theaiconsultingnetwork undated, strisker daily notes 23 Nov (not re-tried), Bloom Energy Jan PR. No GW deferral by an operator dated 24-25 Nov; BNP's 'data center permit delays to 2028' is analyst language (MU hit)."},
+  {"query": "7. Treasury auction tail November 2026 (extended)", "result": "no hit", "note": "Query returned only the 12-13 Nov 10y/30y tails (recorded) and schedule pages; the Tuesday 5y result came via the supplementary auction search (helious + newsquawk fetched). Result: 0.3bp tail - recorded as a hit with figures, NOT a hard event. 7y Wed 11:30 ET after this run."},
+  {"query": "8. sovereign bond stress November 2026 (extended)", "result": "no hit", "note": "ECB FSR 18 Nov (recorded), financemango / gurufocus / BNP wealth / globalmarketsreview commentary, fxstreet 2025, Wikipedia. No sovereign stress item dated 24-25 Nov; no JGB level in any fetched page (Saxo/AP silent on JGBs); Bund/gilt/OAT Tuesday levels not fetched."},
+  {"query": "supplementary: 5-year note auction results November 24 2026 high yield tail bid-to-cover FRN (extended)", "result": "hit", "note": "helious (18:04Z) and newsquawk (18:22Z) fetched; both agree on every figure; FRN absent from both."},
+  {"query": "supplementary: Dell earnings Q3 fiscal 2027 November 24 2026 (extended)", "result": "hit", "note": "Dell IR release (16:05 EST; truncated) and investing.com slides piece (17:59) fetched; Fool transcript client_error; CNBC refused host; 247wallst / trendandticker not fetched."},
+  {"query": "supplementary: cappnotes closing look Tuesday November 24 2026 (extended)", "result": "hit", "note": "CappNotes (22:34Z) and investrade/Hammerstone (21:08Z) fetched - full tape, data prints, credit OAS, Fed odds, after-hours movers."},
+  {"query": "supplementary: Micron BNP Paribas downgrade neutral November 24 2026 (extended)", "result": "hit", "note": "Yahoo/Investing.com and TradingView/SeekingAlpha fetched (Ackerman quotes). gurufocus / cryptobriefing / stocktwits relays not fetched."},
+  {"query": "supplementary: CoreWeave OR Nebius OR OpenAI OR xAI bond loan financing November 24 2026 (extended)", "result": "hit", "note": "Bloomberg via Yahoo fetched (Trace prices 13:36 ET). fourweekmba client_error (7.75bn/6bn figure not recorded); superpowerdaily Apollo-CEO item undated (not fetched); tilt.now / mlq undated commentary."},
+  {"query": "supplementary: Anthropic ANT stock Tuesday close November 24 2026 (extended)", "result": "hit", "note": "TradingKey 25 Nov 11:50 fetched (close 81.91, low 75.61, vol 311.5m). fourweekmba client_error; CNBC refused; fool / parameter / admiral / trefis not fetched."},
+  {"query": "supplementary: Asia markets Wednesday November 25 2026 Nikkei KOSPI SK hynix Samsung Dell (extended)", "result": "hit", "note": "Saxo Quick Take 25 Nov (~05:00 CET), AP/KSAT 25 Nov 07:31Z (closes), TradingKey 25 Nov 00:35 (early session) fetched; investinglive SERVER_ERROR; cityam / Al Jazeera / longbridge / piqmarkets / pomegra relays not fetched."}
+ ],
+ "discarded": [
+  "Naked Capitalism 'Junk Bond Market Starts to Crack, in Further Sign AI End Game is Nearing' - dated 2 Nov 2026 (FT CCC yields, Gundlach BBB-index-at-65, WSJ CoreWeave puts) - pre-gate by three weeks",
+  "fourweekmba 'CoreWeave bonds hit record lows; USD 7.75bn now priced near USD 6bn' - client_error; the implied ~77c average is consistent with Bloomberg's prints but the aggregate figure is unverified and not recorded",
+  "superpowerdaily 'Apollo CEO warns AI cloud firms could lose financing if Nvidia pulls support' - undated relay; not fetched",
+  "tilt.now 'CoreWeave and Nebius shut out of bond market'; mlq 'from CoreWeave's 16% bonds to SpaceX's USD 40bn chip lease, lenders are pulling back' - undated commentary",
+  "researchsquare 'Do Redemption Gates Discipline or Destabilize? Evidence from the 2026 Run on Semi-Liquid Private Credit Funds' (Woo) - posted 25 Aug 2026; academic, pre-gate",
+  "MegaRobo ~USD 200m raise (technode 23 Nov) - lab-automation hardware, an up-round, not a repricing",
+  "fool.com 14 Nov 'Nvidia's ousted CEO said a 1-GW data center delay costs USD 10bn a quarter' - pre-gate",
+  "Sanofi USD 41bn Insmed acquisition; Kymera USD 1.75bn equity; HPQ / ADSK / WDAY / NTNX / URBN after-hours moves - not event classes (Nutanix 'cautious FY revenue guidance' -9% AH is enterprise software, noted here only)",
+  "investing.com Dell risk-section text on DRAM/NAND cost pressure and consumer-PC 'deferred demand' - the article's own text, not management; the CSG deferral is consumer PCs, not AI",
+  "Conference Board 103.3 / Richmond +3 / Case-Shiller / FHFA - macro prints recorded inside the close hit, not event-class items",
+  "Saxo 'Section 301 tariff plan on China, the EU and others' - policy headline without a dated primary in any fetched page; noted as an AP/Saxo driver inside the Asia hit only",
+  "AP 'Brent up 2.4% to 88.78' - oil series, standoff group",
+  "TradingKey ANT 'IPO 980m Class A shares' vs the 1,127m recorded 11-23 - not reconciled; calendar group"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "Tue 24 Nov US close - the Huang rally reverses in one session: S&P 500 7,201.09 (-0.50%; eighth loss in nine), Nasdaq 23,733.54 (-1.48%), NDX 26,214.17 (-1.99%, weakest major), Dow 50,018.70 (+0.85%, first close above 50,000), RUT 2,684.94 (+0.57%), RSP +0.54%; VIX 26.36 (-0.98%); breadth 346/154 advancers; technology -3.26% vs health care +2.95%, staples +1.66%, real estate +1.31%, energy +0.97%; SOXX -8.27% (SOXL -24.55%), NVDA -5.86% to 155.38 (after +31.48%), MU -11.01%, AVGO -3.98%, TSM -3.96%, AMD -8.86%, INTC -8.15%, MRVL -9.10%, ADI -17.37%, HPE -16.31%, DELL -11.83% (then +4% AH on the print), CRWV -14.67%, ANT -6.54% to 81.91 (first close below the 83 offer; low 75.61); 2y 4.63% unch (Saxo ~4.68%), 10y 4.90% (-1bp; Saxo 4.93%), 30y 5.29% flat, 2s10s ~27bp; IG OAS 94 (-2), HY OAS 356 (-11) per CappNotes vs 364 (+8) per Saxo Wed; DXY 103.83 (-0.47%); gold 3,555 (-2.64%), silver -5.65%, copper -2.53%; Conf. Board Nov confidence 103.3 vs 92.2-92.5 cons (Oct rev 91.9; +11.4 pts), Richmond Fed +3 (Oct -2), Case-Shiller 20-city Sep +0.1% m/m / +2.6% y/y (cons +0.2 / +2.7), FHFA 0.0% (cons +0.2); Fed: Williams inflation 'too high', Waller open to 50bp; CME Dec hike ~95-96% (25bp), Polymarket/Kalshi 94%; Fear & Greed 18 (Extreme Fear)",
+   "headline": "Tue 24 Nov: S&P -0.50%, NDX -1.99%, SOXX -8.27%, NVDA -5.86%, MU -11%, HPE -16%, ANT closes below its IPO price; Dow +0.85% to a first close above 50,000; Conf. Board 103.3 vs 92.5",
+   "candidate_dial": "C-equity (the Monday retracement is fully given back in the AI-hardware complex within one session while the equal-weight index and defensives rise - a rotation out of the capex beneficiaries, not a de-risking; the IPO bellwether closing below its offer on day four with the greenshoe exercised is the clearest supply-of-equity signal in the window) / business cycle (Conf. Board +11.4 pts to 103.3 against a cons 92.5 is a two-year-scale beat the orchestrator should check against the Fed's 'work to do' framing)",
+   "source": "CappNotes 'Closing Look - Tuesday, November 24, 2026' (22:34Z); investrade/Hammerstone 'Market Review: November 24, 2026' (21:08Z); Saxo Quick Take 25 Nov (2y, 10y, HY 364bp); TradingKey 25 Nov (NVDA 155.38, ANT 81.91)",
+   "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-24",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Index levels differ by a few points between CappNotes and investrade (near-close snapshot); CappNotes closes recorded. HY OAS: CappNotes 356 at the Tue close vs Saxo 364 Wed morning - both printed; Saxo's reads as a Wednesday-morning widening. The stock-bond relation flipped again: yields flat-to-lower on the equity down day after rising on the up day (11-24). After-hours: DELL +4%, HPQ +9%, ADSK -4%, WDAY -4%, NTNX -9%, URBN -11%.",
+   "other_urls": [
+    "https://investrade.com/market-review-november-24-2026/",
+    "https://www.home.saxo/en-gb/content/articles/macro/market-quick-take---chip-stocks-slump-again-in-new-york-and-seoul---25-november-2026-25112026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "Tue 24 Nov USD 70bn 5-year note auction (13:00 ET): high yield 4.719% (WI 4.716%; prior 4.845%; six-auction avg 4.510%), TAIL 0.3bp (prior 0.4bp, avg 0.9bp) - NOT a hard-event tail; bid-to-cover 2.37 (prior 2.33, avg 2.31); indirects 54.3% (prior 60.05%, avg 61.9%), directs 36.7% (prior 29.4%, avg 25.4%), dealers 9.0% (prior 10.56%, avg 12.6%) - helious 'in line, no directional read'; newsquawk 'adequate but unremarkable', flags the lower indirect share as a softer foreign/real-money signal; 2y FRN R USD 28bn (same slot) result not printed by any fetched page",
+   "headline": "5y auction: 4.719%, 0.3bp tail, b/c 2.37, indirects 54.3% (avg 61.9%) replaced by directs 36.7% - in line, no tail",
+   "candidate_dial": "A-debt (auction) - a small tail below threshold; the composition shift (indirects ~8 pts below average, directs ~11 above) now repeats across the 2y and 5y this week - the orchestrator may track it into Wednesday's 7y",
+   "source": "helious.io '5-Year Note Auction, Nov 24, 2026: 4.719% High, In Line' (18:04Z); newsquawk 'US sells USD 70bln of 5-year notes; Tail 0.3bps' (18:22Z)",
+   "url": "https://helious.io/news/auc-91282CRZ6-2026-11-24/5-year-note-auction-in-line",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Both pages agree on every figure. The high yield is 13bp below October's 4.845% (a cycle-high print) with the 5y secondary ~4.7%. Two consecutive coupon auctions with below-average indirects (2y 51.5% Mon, 5y 54.3% Tue) absorbed by directs - demand held, buyer mix changed.",
+   "other_urls": [
+    "https://www.newsquawk.com/headlines/us-sells-usd-70bln-of-5-year-notes-tail-03bps"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "CoreWeave (CRWV) bonds fall to their lowest prices since issuance Tue 24 Nov, 'among the day's biggest corporate bond losses' (Bloomberg, Trace 13:36 ET): 9% due 2031 -3.6 pts to 76.6c (lowest since the Jul-2025 issue), 9.625% due 2032 -4.6 pts to 74.9c (lowest since its Jun-2026 launch), 9.75% due 2031 -3.75 pts to 76.3c (lowest since the April issue), 9.25% due 2030 -3 pts to 80.9c (lowest since May-2025) - Monday's Huang-reinstatement rally in the bonds fully reversed; CRWV equity -14.67% (NVDA -7.72% at the Yahoo snapshot); same morning: Oracle 2036 5.7% bonds at a cycle-high 8.47% yield (+18bp) and US HY +8bp to 364bp, near Friday's 367bp cycle high (Saxo, Wed ~05:00 CET); no CoreWeave CDS print; CoreWeave's planned >=USD 4bn IG-style loan unconfirmed for a ninth run",
+   "headline": "CoreWeave bonds hit post-issue lows (74.9-80.9c, -3 to -4.6 pts); Oracle 2036s at a cycle-high 8.47%; HY 364bp",
+   "candidate_dial": "A-debt / C-credit (the first dated secondary-market stress print on a registered neocloud's bonds in the files - prices in the mid-70s on 9-9.75% coupons put yields in the mid-to-high teens, i.e. the market is pricing CoreWeave paper as distressed-adjacent while the company's equity swung +22% / -15% on two consecutive days; the Oracle cycle-high yield extends the principal-side read from 11-20/11-21; neither is a pulled deal or a gate, so not a hard event)",
+   "source": "Bloomberg via Yahoo Finance 'CoreWeave Bonds Hit All-Time Lows, Erasing Nvidia-Fueled Gains' (Josie Reich; Tue 24 Nov 10:55 AM PST; Trace data as of 13:36 New York); Saxo Quick Take 25 Nov (Oracle 2036, HY 364bp)",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-time-lows-185527465.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Bloomberg gives prices, not yields; the orchestrator computes. 'All-time lows' in the headline = lowest since each bond's issuance. Context: HPE's Monday 'HPE Financial Services has not financed neoclouds' (11-24) and the BNP Micron 2028-capacity note (below) landed within 24 hours; Dell's after-hours print (orders 60.2bn) is the opposite demand sign. fourweekmba's 'USD 7.75bn face now priced near USD 6bn' could not be read and is not recorded.",
+   "other_urls": [
+    "https://www.home.saxo/en-gb/content/articles/macro/market-quick-take---chip-stocks-slump-again-in-new-york-and-seoul---25-november-2026-25112026"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "BNP Paribas Exane (Karl Ackerman) downgrades Micron (MU) to Neutral from Outperform, PT 775 from 1,700 (Tue 24 Nov note): 'growing risks to hyperscaler capacity plans in 2028 further threaten S/D fundamentals'; 'DRAM and NAND supply-demand can approach parity starting in mid-2027 and result in ASP declines' - 'earlier than our prior view of mid-2028'; drivers listed: 'content reductions in AI servers, PC, and mobile, and accelerated memory capacity by memory producers', 'HBM content is being reduced in Vera Rubin Ultra', 'PC and mobile units will decline in '26 and '27', 'incremental wafer capacity comes online', 'growing risks of data center permit delays to 2028 data center capacity'; DRAM/NAND prices peaked y/y in August; 'memory stocks peak when ASPs peak on a Y/Y basis'; AI-related memory/storage cost share peaks at 40% in 2027, 27% by 2030; EPS estimates 45% below consensus for CY2028, trough EPS 86 in CY2029; MU -11.01% on the day (from 707.70; 'nearly 12%' intraday) after +19.0% Monday; shares '42% from the June peak' before the note",
+   "headline": "BNP Exane cuts Micron to Neutral (PT 1,700 -> 775): 2028 hyperscaler-capacity risk, HBM content cut in Vera Rubin Ultra, DRAM/NAND parity pulled to mid-2027; MU -11%",
+   "candidate_dial": "B2-capex / memory-no-surface (analyst-sourced, no hyperscaler named, no company comment - a capacity-DEFERRAL thesis (permits, 2028) and a content-reduction thesis (Rubin Ultra HBM) landing on the same name within a week of the Goldman target cuts on Samsung/SK hynix (11-24) and the Kuo TPU note; not a principal capex cut, but the second sell-side 2027-28 digestion call on the memory complex in four sessions; Korea/Japan memory -10 to -14% Wednesday on it)",
+   "source": "Investing.com via Yahoo 'BNP Paribas cuts Micron rating on risks to 2028 hyperscaler capacity plans' (24 Nov); Seeking Alpha via TradingView 'Micron downgraded to Neutral over data center risks, memory reductions: BNP' (24 Nov, 'nearly 12% during afternoon trading'); CappNotes 24 Nov (-11.01%); investrade (PT detail)",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/bnp-paribas-cuts-micron-rating-145304912.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The 'HBM content is being reduced in Vera Rubin Ultra' line is the first printed claim of a content cut on Nvidia's next platform - sell-side, unsourced, uncommented by NVDA or MU. Neither article cites supply-chain checks. MU FQ1 17 Dec (verified) is the confirmation venue; Micron's own 'sold out to 2029' LTA framing (koreadaily/explainx, pre-gate) is the counter-claim.",
+   "other_urls": [
+    "https://www.tradingview.com/news/seekingalpha:e3ef3a19c094b:0-micron-downgraded-to-neutral-over-data-center-risks-memory-reductions-bnp/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "Dell FQ3 FY27 (Tue 24 Nov after close, IR release 16:05 ET): revenue USD 54.94bn +103% y/y, non-GAAP EPS 9.45 vs 6.56 consensus (+44% beat; investing.com), AI-optimized server revenue 22.03bn +291%, AI ORDERS USD 60.2bn in the quarter ('each rigorously vetted' - Clarke), AI BACKLOG a record USD 132.3bn; non-GAAP operating margin 14.2% (9.3%), opex 7% of revenue 'the lowest in our 42-year history' (Kennedy); OCF 4.46bn; FY27 guide RAISED: revenue 202.0bn (from 192.0; +78%), AI-server revenue 78.0bn (from 74.0; +216%), non-GAAP EPS 29.68 (from 25.50), ~350bp op-margin expansion; Q4: revenue 56.3bn +-0.5, EPS 8.40, AI servers ~23.5bn; management: 'no customers have rescheduled orders to date' (investing.com paraphrase); 'Demand continues to accelerate and broaden globally'; long-term debt 31.2bn (from 23.5bn at FY-end; Q3 proceeds 7.85bn / repayments 4.53bn); +USD 25bn buyback; stock -11.83% to 295.28 in the session (SOXX -8%), +4.03% AH to 307.19",
+   "headline": "Dell FQ3: AI orders USD 60.2bn, backlog USD 132.3bn, FY27 AI-server guide raised to 78bn, 'no customers have rescheduled orders'; debt +7.7bn q/q; stock -11.8% then +4% AH",
+   "candidate_dial": "B2-capex (opposite sign to a capex cut, and stronger than HPE's: a full quarter of AI orders (60.2bn) exceeds the prior backlog print and the FY27 AI-server guide moves UP 4bn in the same week two sell-side notes (Kuo TPU, BNP Micron) call 2027-28 digestion; the 'no customers have rescheduled' line is the direct negative read on deferral) / A-debt (Dell's own debt +7.7bn in the quarter is vendor balance-sheet financing of the buildout - a channel the orchestrator's capex-credit fuse may want to count) / C-equity (a 44% EPS beat and raise recovered only a third of the day's -11.8% - the reaction function is still 'sell the print')",
+   "source": "investors.delltechnologies.com 'Dell Technologies Delivers Third Quarter Fiscal 2027 Financial Results' (24 Nov 2026, 4:05pm EST; page truncated ~46%, balance summarised); investing.com 'Dell Q3 FY27 slides: revenue doubles, AI backlog hits USD 132B' (24 Nov 17:59); CappNotes 24 Nov",
+   "url": "https://investors.delltechnologies.com/news-events/press-releases/detail/1665/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Transcript not read (Fool client_error) - no verbatim management line on memory-cost pass-through or margin mix; the 'rescheduled orders' and DRAM/NAND cost-pressure lines are investing.com's paraphrase/risk text respectively. Release quotes Jeff Clarke as vice chairman and COO (investing.com calls him chief executive - conflict noted). HPE (11-24) + Dell: the two US AI-server OEMs printed orders +84% q/q and 60.2bn/quarter respectively in the same week - the demand tape through October is not digesting; the margin tape (HPE) and the credit tape (CoreWeave, Oracle) are.",
+   "other_urls": [
+    "https://www.investing.com/news/company-news/dell-q3-fy27-slides-revenue-doubles-ai-backlog-hits-132b-93CH-5049313"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-25",
+   "late": false,
+   "name": "Wed 25 Nov Asia session - the AI-hardware selloff returns: KOSPI -6.2% to 4,697.51 (gives back Tuesday's +6.32%; Samsung -9.9%, SK hynix -11.1%; TradingKey early: -4.78%, Samsung -6.6% to KRW 176,900, SK hynix -6.3% to 1.085m; 'programme buying halted' Tuesday now the reverse), Nikkei -2.8% to 57,011.62 (SoftBank -14.8%, Kioxia -14.2%; Advantest 'significant selling pressure'), TAIEX -5% (TSMC -3.6%, MediaTek -10%), Hang Seng -0.3% to 22,151.28, Shanghai -1.5% to 3,494.75 (lowest in more than a year), ASX -0.4%, Sensex +2.4%; US futures 'slipped' (AP; no level); 10y UST 4.875% early Wed (two-week low, from 4.93%); USD/JPY 159.42; gold 3,547 (-0.4%) after -2% Tue; LME copper -5.3% to 11,826/t (13-month low); AP drivers: doubts AI can 'produce enough profit and productivity to justify massive investments in data centers', 'high interest rates are making it more difficult to borrow', Democratic midterm wins raising AI-regulation risk 'potentially slowing construction of data centers'; Saxo: 'renewed doubts over AI investment returns and the prospect of additional US tariffs' (Section 301 plan); Huang's return 'tempered by questions' about governance",
+   "headline": "Wed Asia: KOSPI -6.2% (Samsung -9.9%, SK hynix -11.1%), Nikkei -2.8% (SoftBank -14.8%, Kioxia -14.2%), TAIEX -5%, Shanghai at a one-year low, copper -5.3%; 10y 4.875%",
+   "candidate_dial": "C-equity (the Korea memory pair has now printed -3.3% / +6.3% / -6.2% in three sessions - a volatility regime, with the Wednesday leg led by the names the BNP note and the Goldman cuts targeted; copper at a 13-month low and Shanghai at a one-year low broaden it from an AI-trade reversal to a growth/commodity read the orchestrator should separate) / memory-no-surface (Samsung/SK hynix/Kioxia -10 to -14% in one session is the sharpest memory-complex day of the sequence)",
+   "source": "AP via KSAT 'Global stocks are mixed as AI shares tumble after a retreat on Wall Street' (25 Nov, updated 07:31Z; closes); Saxo Market Quick Take 25 Nov (~05:00 CET); TradingKey 'Japan, South Korea stocks drop as Kospi falls nearly 5%' (25 Nov 00:35, early session)",
+   "url": "https://www.ksat.com/business/2026/11/25/asian-stocks-mostly-decline-as-ai-shares-tumble-after-a-retreat-on-wall-street/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "AP levels are the closing-type figures (update stamp 07:31Z, after the Tokyo/Seoul closes); TradingKey's are early-session. No JGB yield or auction in any fetched page. investinglive Asia wrap SERVER_ERROR. Tariff-plan item has no dated primary in a fetched page - recorded as a cited driver only.",
+   "other_urls": [
+    "https://www.home.saxo/en-gb/content/articles/macro/market-quick-take---chip-stocks-slump-again-in-new-york-and-seoul---25-november-2026-25112026",
+    "https://www.tradingkey.com/analysis/stocks/more/262320970-japan-south-korea-stocks-kospi-nikkei-softbank-sk-hynix-samsung-kioxia-tradingkey"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "events",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "CoreWeave 5y CDS Tue 24 Nov - no print found (quiet); last recorded 1,232.6bp Fri 20 Nov; cash bonds at post-issue lows 74.9-80.9c (see hit); Oracle CDS no print - Oracle 2036 5.7% cash yield 8.47% cycle high (Saxo, Wed morning)",
+   "source": "search 'CoreWeave OR Nebius OR OpenAI OR xAI bond loan financing November 24 2026' (extended) - Bloomberg/Yahoo bond-price piece carries no CDS; Saxo 25 Nov (Oracle cash yield)",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-bonds-hit-time-lows-185527465.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Recorded as quiet, value null; the cash-bond prints are the credit reading this run.",
+   "series": "crwv.cds_5y_bp",
+   "value": null,
+   "unit": "bp",
+   "period_end": "2026-11-24"
+  }
+ ]
+}

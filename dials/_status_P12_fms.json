@@ -1,8 +1,8 @@
 {
  "group": "P12_fms",
- "last_run_at": "2026-11-18T05:11:00-07:00",
+ "last_run_at": "2026-11-25T05:11:00-07:00",
  "last_as_of": "2026-11-17",
  "last_file": "dials/flows/2026-11-18.json",
  "status": "ok",
- "error": ""
+ "error": "2026-11-25 run: no newer BofA Global FMS than the November survey (fielded 6-12 Nov, published 17 Nov; recorded in flows/2026-11-18.json) - one extended search ('BofA global fund manager survey December 2026 Hartnett cash level') returned only the Nov-2026 relays and Dec-2025 pages; next survey expected ~mid-December. No flows file written today; last_as_of unchanged (8 days old, tolerance 35)."
 }
