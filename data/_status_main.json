@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-25T22:25:18Z",
+ "run_utc": "2026-11-26T04:21:46Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -51,6 +51,8 @@
   "fred:NFCI",
   "fred:STLFSI4",
   "fred:MORTGAGE30US",
+  "treasury:auctions",
+  "treasury:tga",
   "nyfed:sofr",
   "nyfed:pd_positions",
   "cftc:es",
@@ -132,11 +134,10 @@
   "prices:AMAT",
   "prices:000660.KS",
   "prices:005930.KS",
-  "breadth"
+  "breadth",
+  "eia"
  ],
  "failed": {
-  "treasury:auctions": "TimeoutError: The read operation timed out",
-  "treasury:tga": "TimeoutError: The read operation timed out",
   "options:SPY": "HTTPError: HTTP Error 403: Forbidden",
   "options:QQQ": "HTTPError: HTTP Error 403: Forbidden",
   "options:RSP": "HTTPError: HTTP Error 403: Forbidden",
@@ -153,7 +154,6 @@
   "options:AMZN": "HTTPError: HTTP Error 403: Forbidden",
   "options:AVGO": "HTTPError: HTTP Error 403: Forbidden",
   "options:CRWV": "HTTPError: HTTP Error 403: Forbidden",
-  "options:ORCL": "HTTPError: HTTP Error 403: Forbidden",
-  "eia": "TimeoutError: The read operation timed out"
+  "options:ORCL": "HTTPError: HTTP Error 403: Forbidden"
  }
 }
