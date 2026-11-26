@@ -1,0 +1,1287 @@
+{
+ "group": "voices",
+ "run_at": "2026-11-26T04:48:53-07:00",
+ "skill": "dials-voices",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "O'Laughlin (Fabricated Knowledge) unreachable: fabricatedknowledge.com ROBOTS_UNREACHABLE; all other roster voices read or confirmed quiet.",
+ "date_gate": "2026-11-23",
+ "notes": "Scheduled run (Thursday, Thanksgiving). Date gate: previous last_as_of 2026-11-23; items published Nov 24-26 are new, and Nov 23 items absent from dials/voices/2026-11-23.json (which ran 05:07 that morning) are also recorded and marked in their notes: Dalio podcast, Thompson Amazon post, Marcus Jensengate, Slok 'Global Equities', Mackintosh 'Jensen Is Back', Grant's 'Planet Fitness'. Conversion compares each new bull/bear sign with the voice's most recent bull/bear sign in the Nov 23 file and earlier (previous_sign, previous_sign_as_of); bear-bonds, neutral and n/a do not trigger it. ONE CONVERSION CANDIDATE: Burry - previous sign bear (Nov 19-20 Trading Posts); Nov 25 'Portpourri' per three write-ups and his X post: sold the last NDX puts, 'temporarily almost entirely long' apart from PLTR/MET puts, ~25% cash (Fool, unverified), still assessing shorts. The 'temporarily' qualifier is his. No other flip: Krugman, Zitron, Kedrosky, Marcus, Mackintosh, Grant stay bear; Wilson stays bull; El-Erian, Thompson, Snider stay neutral; Slok reads bear on software credit (Nov 24) after neutral (Nov 23) - sector call, not a flip. Dalio's Nov 23 podcast is his first bull/bear-tagged item (bear, debt-cycle framing). Status partial: O'Laughlin unreachable (fabricatedknowledge.com ROBOTS_UNREACHABLE; first failed run - Nov 23 read him as dormant). Quiet: Setser (index current, Nov 11), Wang (dormant since Feb 23), Baker (latest Nov 20 X posts), Cahn (Oct 19), Azhar (#611 Nov 22; index unread), Doomberg (Nov 21 Pro post; Nov 23 podcast appearance title only), Hartnett (next Flow Show Nov 27), Marks (Nov 11), Grantham (June), Chanos (Oct 26), Perkins (Nov 19-20). Stale-roster candidates repeated from Nov 23: Wang, O'Laughlin, Grantham, Alden (lynalden.com dormant since July; she is read through podcasts/X). Pages were read through WebFetch's summarizer; figures are as reported and not cross-checked. Week's dominant stories: Huang reinstated as Nvidia CEO after a Trump intervention (NVDA +31.48% Nov 23, biggest day since 2003, ~$1T market cap; Dow first cash close above 50,000 Nov 24), the bounce fading Nov 24-25 (Nasdaq 100 briefly -20% from its Oct high intraday Nov 25, then recovered; Anthropic below its $83 IPO price), Burry's exit from NDX puts, the 7-year auction, Dec 9 hike pricing ~97%, Thanksgiving holiday thinning. Consensus (N3/N4) not due (Monday only); dials/_status_consensus.json untouched. Fetch-rule notes: every WebFetch used a search-returned link; no PROVENANCE_REQUIRED raised. Robots/client blocks: x.com (all profiles and posts - text taken from search snippets where used), bloomberg.com (Money Stuff 'Anthropic Drops', Odd Lots Nov 24 'What Jensen Huang's Stunning Return Means for the AI Trade' - titles only), cnbc.com video/excerpt pages, benzinga.com, qz.com, 247wallst.com, cryptobriefing.com, washingtontimes.com, threads.com, ratednews.com, fabricatedknowledge.com. N5 fixed sweep: Apollo Daily Spark (read), Grant's (read), Stratechery (read), SemiAnalysis (read; nothing on capex in gate), BofA Flow Show (no new issue), Money Stuff and Odd Lots (titles only), WSJ Streetwise (Nov 23 column via excerpt), WSJ Heard on the Street, FT Alphaville and FT Unhedged (no dated result surfaced for Nov 24-25; unread). N1 queries run in extended mode with the month; the Fortune/Lamont '70% chance' piece (Nov 18) and the SemiAnalysis forecast cut (Nov 13/16) fell before the gate and were discarded. Eight argument candidates recorded, untagged.",
+ "items": [
+  {
+   "kind": "voice",
+   "key": "dalio",
+   "lane": "debt",
+   "name": "Ray Dalio",
+   "source": "Sourcery podcast (Molly O'Shea), via Wisevoter/Benzinga write-up",
+   "as_of": "2026-11-23",
+   "title": "Podcast remarks (Nov 23): the election changes who addresses the problems, not the problems; bubbles deflate when holders must sell to meet debt payments",
+   "url": "https://wisevoter.com/world/us/2026/11/25/dalio-election-wont-fix-debt-problems",
+   "status": "ok",
+   "position": "Per the Nov 25 write-up of his Nov 23 podcast remarks: the midterm result changes who handles the country's debt problems, not the problems themselves; paper wealth is not spendable until sold, and bubbles can burst when holders need cash, including to service debt. No direct quotes relayed; no owned post in gate.",
+   "sign": "bear",
+   "sign_basis": "Debt-cycle framing of forced selling by levered holders; recorded bear on the voice's own framework, not a market call.",
+   "numbers": [
+    {
+     "claim": "SpaceX (SPCX) -16.13% since June listing, Anthropic (ANT) -26.54% since listing, Nov 24 closes $125.81 / $81.91 (writer's market data, not Dalio's)",
+     "checkable_against": "repo data/prices SPCX, ANT"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Owned index raydalio.substack.com fetched but rendered no post list (index unread). Search surfaced only older owned posts (The Big Thing Apr 7; midterms Nov 9; Numbers Behind the Bond Bear Market Oct 13) and a Nov 3 Substack note on 'imperfectionism' (no market content). Nov 23 is the gate boundary; this item was not in the 2026-11-23 file so it is recorded here.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "setser",
+   "lane": "debt",
+   "name": "Brad Setser",
+   "source": "CFR Follow the Money",
+   "as_of": "2026-11-11",
+   "title": "quiet - latest seen 'Three Questions About China's Hidden Foreign Exchange Assets' (2026-11-11)",
+   "url": "https://www.cfr.org/blogs/follow-the-money",
+   "status": "quiet",
+   "position": "Nothing new in gate. CFR index read: newest post Nov 11 (China's hidden FX assets), Nov 2 (Europe's deal limiting Chinese auto imports). Search surfaced no X thread dated Nov 24-26.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Index read in full (10 newest posts listed, none after Nov 11). x.com/Brad_Setser robots-blocked; search snippets showed only older threads (Q3 BoP reserve gap, yen carry doubts).",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "burry",
+   "lane": "debt",
+   "name": "Michael Burry",
+   "source": "Cassandra Unchained (michaeljburry.substack.com)",
+   "as_of": "2026-11-24",
+   "title": "Short Thoughts & Trading Post November 24, 2026 - Nvidia: Donald Returns the Don. What Just Happened, and Hong Kong's Big Tech Carnage",
+   "url": "https://michaeljburry.substack.com/p/short-thoughts-and-trading-post-november",
+   "status": "paywalled",
+   "position": "Free preview: Burry says the market is 'not all clear' on Nvidia under a returned Huang, and leans on BTIG's Krinsky: after an NDX swing of -5% then +5%, the next 30 trading days have always brought a further drawdown. The rest is paywalled.",
+   "sign": "bear",
+   "sign_basis": "'not all clear' on Nvidia; relays drawdown statistics.",
+   "numbers": [
+    {
+     "claim": "12 prior NDX -5%/+5% swings: 11 of 12 lower three days later (avg -5.4%); all 12 had >=-4.6% 30-day drawdown, 10 of 12 >=-9.4%, avg/median -16%",
+     "checkable_against": "Krinsky (BTIG) stats; checkable against repo QQQ/NDX price history"
+    },
+    {
+     "claim": "-16% QQQ would be ~$550, 'essentially the March lows'",
+     "checkable_against": "repo data/prices QQQ"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Preview also embeds two 'Hystory Rhymes' reposts. Same-day free post 'Cassandra Unchained Reaches #1 Bestseller in Finance' (Nov 24, one-year anniversary; no market view).",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "burry",
+   "lane": "debt",
+   "name": "Michael Burry",
+   "source": "Cassandra Unchained (michaeljburry.substack.com) + Unusual Whales / Motley Fool / Benzinga-Yahoo write-ups",
+   "as_of": "2026-11-25",
+   "title": "Portpourri November 25, 2026 - Stocking Up, Shorting Less, Eyeing Future Opportunities",
+   "url": "https://michaeljburry.substack.com/p/portpourri-november-25-2026",
+   "status": "paywalled",
+   "position": "Body paywalled; per three write-ups of the post and his X post the same day: he sold the rest of his Nasdaq 100 puts, his portfolio is more long and less short than it has been in some time, and apart from Palantir and MetLife puts he is 'temporarily almost entirely long' while continuing to assess short opportunities; AI-name options now cost too much given elevated vol. He says his portfolio review was discussed on CNBC about the time the market reversed off its lows (Nov 25).",
+   "sign": "bull",
+   "sign_basis": "His own words per write-ups: 'temporarily almost entirely long', 'more long and less short'. The 'temporarily' qualifier and the continued short assessment are his; Benzinga's line that he plans to short NVDA again near $200 is not shown as a direct quote. Krugman-style check: the phrase is a long-book statement, not a bottom call (Fool's 'he isn't calling a bottom' is the writer's inference).",
+   "numbers": [
+    {
+     "claim": "~25% of portfolio in cash (Fool, attributed to the post; unverified)",
+     "checkable_against": "n/a - paywalled"
+    },
+    {
+     "claim": "remaining puts: PLTR, MET only; last NDX puts sold this week, two weeks after doubling them",
+     "checkable_against": "n/a - paywalled"
+    },
+    {
+     "claim": "Nov 25: Nasdaq Composite closed 23,585.80 (-0.62%) after -4.6% at the low; S&P 500 7,182.78 (-0.25%) after -3.2% at the low (Benzinga market data)",
+     "checkable_against": "repo data/prices"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Conversion candidate: previous recorded sign bear (Nov 19-20 Trading Posts, Nov 23 file; Nov 20 item noted he sold half his NDX puts, read then as profit-taking). This post completes the exit from the NDX put position and states a net-long book. Flagged for the orchestrator; the tactical/temporary framing is the voice's own. Sources: unusualwhales.com (Nov 25), fool.com (Nov 25, Ponciano), finance.yahoo.com Benzinga (Nov 25). qz.com failed (client_error).",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": true
+  },
+  {
+   "kind": "voice",
+   "key": "krugman",
+   "lane": "debt",
+   "name": "Paul Krugman",
+   "source": "paulkrugman.substack.com",
+   "as_of": "2026-11-24",
+   "title": "Treason, Corruption and Cowardice (Don't miss the forest for the sex)",
+   "url": "https://paulkrugman.substack.com/p/treason-corruption-and-cowardice",
+   "status": "ok",
+   "position": "Podcast-transcript post: the real Nvidia story is that sales of restricted chips to China through third parties were a profit driver, the administration knew, and Huang's reinstatement shows elite impunity. No market or macro call.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Free. No figures; Singapore named as transshipment point.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "krugman",
+   "lane": "debt",
+   "name": "Paul Krugman",
+   "source": "paulkrugman.substack.com",
+   "as_of": "2026-11-25",
+   "title": "The Big Splat (Surprise! Elite impunity isn't even good for the stock market)",
+   "url": "https://paulkrugman.substack.com/p/the-big-splat",
+   "status": "ok",
+   "position": "The post-reinstatement rally was 'a one-day dead cat bounce' that faded by Tuesday; the deflation of the AI bubble has resumed and the rehiring bought no market gain, only lost accountability.",
+   "sign": "bear",
+   "sign_basis": "'the deflation of the AI bubble has resumed' - his words.",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Free. No figures. 'Taking a Few Days Off' (Nov 25) announces a Thanksgiving pause; archive (cached) lists Nov 13-24 posts, all previously recorded or non-market.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-23",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "tooze",
+   "lane": "debt",
+   "name": "Adam Tooze",
+   "source": "Chartbook (adamtooze.substack.com)",
+   "as_of": "2026-11-24",
+   "title": "Top Links 1295 Trump's Nvidia intervention. Copper in chaos. Aron on political ennui. Revolutionary war on the Hudson.",
+   "url": "https://adamtooze.substack.com/p/top-links-1295-trumps-nvidia-intervention",
+   "status": "paywalled",
+   "position": "Paid link digest; free portion shows only the headline 'Jensen Huang reinstated as CEO after Donald Trump intervention' and a bolded line objecting to some formulations of 'political capitalism' while asking what else to call this.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Index page rendered no post list (JS).",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "tooze",
+   "lane": "debt",
+   "name": "Adam Tooze",
+   "source": "Chartbook (adamtooze.substack.com)",
+   "as_of": "2026-11-25",
+   "title": "Chartbook 485 Recursively accelerating accumulation: Speedball capitalism speeds up.",
+   "url": "https://adamtooze.substack.com/p/chartbook-485-recursively-accelerating",
+   "status": "paywalled",
+   "position": "Free lede: Huang's Nov 12 ouster first 'confirmed growing anxiety' about the massively capitalized AI boom and markets sold off; 'but then, Nvidia reported record revenue...' - the argument continues behind the paywall.",
+   "sign": "neutral",
+   "sign_basis": "Lede only; two-sided setup, no visible conclusion.",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Also Nov 25: Top Links 1296 (WSJ on Trump's state capitalism; China's household assets) - paid, headline only.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "wang",
+   "lane": "debt",
+   "name": "Joseph Wang",
+   "source": "Fed Guy (fedguy.com)",
+   "as_of": "2026-02-23",
+   "title": "quiet - latest seen 'War and Policy' (2026-02-23)",
+   "url": "https://fedguy.com",
+   "status": "quiet",
+   "position": "Nothing new. fedguy.com has had no post since Feb 23, 2026; search surfaced only the X profile (robots-blocked) and a 2025 podcast.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "Stale-roster candidate, repeated from the Nov 23 run (nine months without a post).",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "elerian",
+   "lane": "debt",
+   "name": "Mohamed El-Erian",
+   "source": "CNBC interview (Nov 25), via Stocktwits write-up",
+   "as_of": "2026-11-25",
+   "title": "Mohamed El-Erian Is Buying The Tech Dip 'Very Slowly,' Says Nvidia Is 'Too Big to Wobble'",
+   "url": "https://stocktwits.com/news-articles/markets/equity/mohamed-el-erian-is-buying-the-tech-dip-very-slowly-says-nvidia-is-too-big-to-wobble/cNbHNilR9mp",
+   "status": "ok",
+   "position": "He had lightened up on tech before the pullback and is now scaling back in very slowly because the technicals are bad; expects margin calls and forced selling, with pressure spreading into credit (tech CDS rising). The 31% Monday Nvidia pop was excessive and the investigations are unresolved - 'too big to wobble, not to fail'. Expects a quarter-point 'dovish hike' on Dec 9 that could trim January/March hike pricing; AI's long-run potential is intact but productivity gains have not spread through corporate America.",
+   "sign": "neutral",
+   "sign_basis": "Two-sided own words: buying slowly, expects forced selling.",
+   "numbers": [
+    {
+     "claim": "Fed hike Dec 9 expected, 25bp, paired with cautious outlook",
+     "checkable_against": "CME FedWatch / repo rates files"
+    },
+    {
+     "claim": "US government holds direct stakes in more than 30 US companies",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "NVDA +31% Nov 23 (writer); Nov 25 midday Nasdaq -4%, S&P -3% (writer)",
+     "checkable_against": "repo data/prices"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "CNBC video page and his X post (Nov 25, on October PCE and falling gasoline) could not be fetched (client_error / robots). Nocta daily brief (Nov 25) quotes him that the Huang episode is 'not the way capitalism is supposed to work'. Nov 13 NewsNation and Oct 24 Substack items are out of gate.",
+   "previous_sign": "neutral",
+   "previous_sign_as_of": "2026-11-19",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "alden",
+   "lane": "debt",
+   "name": "Lyn Alden",
+   "source": "TFTC podcast write-up (Marty Bent) of an interview recorded ~Nov 20",
+   "as_of": "2026-11-25",
+   "title": "Lyn Alden: Bitcoin's Mildest Bear Market Yet",
+   "url": "https://www.tftc.io/lyn-alden-bitcoin-mildest-bear-market",
+   "status": "ok",
+   "position": "Per the host's write-up: this bitcoin bear market is the mildest on record by percentage and the pain comes from two 'lackluster' bull-market multiples, not a network break; altcoins are in long-term decline; deficits are demographic and locked in; frontier AI lab valuations look mismatched and semiconductors are the sounder bet; she worries more about Europe than Japan.",
+   "sign": "neutral",
+   "sign_basis": "Own framing relayed by host; no market call.",
+   "numbers": [
+    {
+     "claim": "gold supply growth ~1.5%/yr; Treasuries ~-1% net dilution (M2 ~6% vs 10y ~5%); bitcoin long-run dilution ~0 (her framework)",
+     "checkable_against": "FRED M2SL, DGS10"
+    },
+    {
+     "claim": "US deficit ~7% of GDP (writer's backdrop)",
+     "checkable_against": "FiscalData MTS"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "lynalden.com newest item still July 15, 2026 (newsletter dormant; stale-roster note repeated). x.com robots-blocked. Benzinga 'Bitcoin bears eye $25,000, no reason for that' (Nov 2026) failed client_error.",
+   "previous_sign": "neutral",
+   "previous_sign_as_of": "2026-11-21",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "patel",
+   "lane": "capex-ai",
+   "name": "Dylan Patel",
+   "source": "SemiAnalysis (newsletter.semianalysis.com)",
+   "as_of": "2026-11-26",
+   "title": "Evaluating Recent Model Releases on GDPx",
+   "url": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+   "status": "paywalled",
+   "position": "Model-capability piece (co-authored): SemiAnalysis's GDPx benchmark finds OpenAI leading and argues the negative sentiment around OpenAI's models is overblown. No capex or market claim.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "GDPx: GPT-6.2 Astra 19.3%, Fable 5.2 16.4%, Gemini 4 Carbon 10.9%, Opus 5.5 ~12%",
+     "checkable_against": "n/a"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Nothing on capex in gate. SemiAnalysis's Nov 13 forecast cut (2028 accelerator capex -28% to $758B; Nvidia compute-revenue shipments 2027 -22%, 2028 -39%) is out of gate (relayed by Deep News/Tiger Nov 16) and is listed in notes only for the orchestrator's reference.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "thompson",
+   "lane": "capex-ai",
+   "name": "Ben Thompson",
+   "source": "Stratechery",
+   "as_of": "2026-11-23",
+   "title": "Amazon Earnings, The Chip Question, About Agents",
+   "url": "https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/",
+   "status": "paywalled",
+   "position": "Subscriber-only; the free subtitle says Amazon argues it is not like other compute providers while signalling it will give up margin to serve the frontier.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Nov 23 item not in the 2026-11-23 file; recorded here.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "thompson",
+   "lane": "capex-ai",
+   "name": "Ben Thompson",
+   "source": "Stratechery",
+   "as_of": "2026-11-24",
+   "title": "The Individual Exception",
+   "url": "https://stratechery.com/2026/the-individual-exception/",
+   "status": "ok",
+   "position": "Huang's ouster and reinstatement is the apotheosis of an individual granted an exception from managerial norms; AI will let tiny groups attack sectors from below, incumbents will struggle short-term. He says he is sympathetic to the bears 'only in the short-term', and that the bull case in which a trillion dollars of capex is justified by jobs eliminated is a pretty terrible one for society; Nvidia's long-term outlook is in some respects brighter for the exception.",
+   "sign": "neutral",
+   "sign_basis": "Short-term sympathy with bears, long-term constructive; own words.",
+   "numbers": [
+    {
+     "claim": "Nvidia 2026: revenue $361.8B, 42,000 employees, market cap $3.99T (~$95M per employee)",
+     "checkable_against": "NVDA 10-K / repo data/prices"
+    },
+    {
+     "claim": "Anthropic 2026: revenue $35.3B, 5,300 employees, market cap $1.17T",
+     "checkable_against": "ANT S-1 / repo data/prices"
+    },
+    {
+     "claim": "Nvidia gained 'nearly $1 trillion' in market cap after reinstatement (attributed to ChatGPT)",
+     "checkable_against": "repo data/prices NVDA Nov 20 vs Nov 23"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "",
+   "previous_sign": "neutral",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "zitron",
+   "lane": "capex-ai",
+   "name": "Ed Zitron",
+   "source": "Where's Your Ed At",
+   "as_of": "2026-11-24",
+   "title": "Defective Accelerationism",
+   "url": "https://www.wheresyoured.at/defective-accelerationism/",
+   "status": "ok",
+   "position": "Huang's reinstatement under White House pressure is a sign the AI industry is fragile, not fixed: debt, circular financing and the ROI gap remain and the industry is 'functionally in default' - the money is running out.",
+   "sign": "bear",
+   "sign_basis": "'functionally in default' - his words.",
+   "numbers": [
+    {
+     "claim": "NVIDIA >$100B into AI across 293 deals since 2023 (WSJ)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "backstops and vendor financing a little under $700B (FT)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "Jefferies: $44-62B of NVIDIA FY2028 revenue at risk",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "OpenAI Q3: $10.9B operating loss on $10B revenue",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "~$200B of NVIDIA GPUs sitting in warehouses",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "Anthropic IPO $83, shares ~$86-87 later, market cap ~$1.17T",
+     "checkable_against": "repo data/prices ANT"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Index tags the post 'paid' but full text was served. Index: Nov 20 Premium: Bursting Bubbles (recorded), Nov 17 The NVIDIA Bubble, Nov 10 Jensen's Bizarre Adventure - all pre-gate.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "kedrosky",
+   "lane": "capex-ai",
+   "name": "Paul Kedrosky",
+   "source": "paulkedrosky.com",
+   "as_of": "2026-11-24",
+   "title": "Four Post-Noise Notes on Huang's Return: GPU currency pegs, the Trump call, Meta-bubbles, etc.",
+   "url": "https://paulkedrosky.com/four-post-noise-notes-on-huangs-return-gpu-currency-pegs-the-trump-call-meta-bubbles-etc/",
+   "status": "paywalled",
+   "position": "Visible part: 'Nvidia has been the central bank of AI' - stimulus, an implicit GPU-value backstop and a dovish commitment markets liked; a Huang-free Nvidia would have lost those functions, and the White House's transactional GPU-withholding stance is a growing problem for Huang. Framing uses 'meta-bubble' and 'parabolic party'.",
+   "sign": "bear",
+   "sign_basis": "Skeptical framing in own words; the paywalled remainder is unseen.",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Same day: 'Kedrosky Daily Brief - President restores Nvidia CEO, AI debt hits $450bn' (paywalled, title only; $450bn AI debt figure unsourced in the visible text).",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-19",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "kedrosky",
+   "lane": "capex-ai",
+   "name": "Paul Kedrosky",
+   "source": "paulkedrosky.com",
+   "as_of": "2026-11-25",
+   "title": "Plain English Appearance, Memory Prices, Jobs Data, RSI, etc.",
+   "url": "https://paulkedrosky.com/plain-english-appearance-memory-prices-jobs-data-rsi-etc/",
+   "status": "paywalled",
+   "position": "Visible part: memory forecasters are cutting AI memory outlooks because Chinese demand destruction now exceeds incremental North American demand - 'memory cycle is turning even sooner than expected'; research finds firms more exposed to agentic AI cut hiring growth over six months.",
+   "sign": "bear",
+   "sign_basis": "Reportorial; memory-cycle turn is a bearish supplier read in his framing.",
+   "numbers": [
+    {
+     "claim": "NAND spot prices corrected >20%; NAND contract prices expected to decline from Q1 2027; turning point pulled forward ~six months from H2 2027",
+     "checkable_against": "n/a - memory price trackers; repo MU filings"
+    },
+    {
+     "claim": "NAND industry capex forecast +26.7% in 2027",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "jobs research covers 34.8M US postings",
+     "checkable_against": "n/a"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Same day: 'Kedrosky Daily Brief - AI spending stops growing, Nvidia lawsuits pile up' (paywalled, title only). The /tag/newsletters index served a stale Dec 2025 page.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-24",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "olaughlin",
+   "lane": "capex-ai",
+   "name": "Doug O'Laughlin",
+   "source": "Fabricated Knowledge",
+   "as_of": "2026-08-13",
+   "title": "unreachable - fabricatedknowledge.com could not be fetched (ROBOTS_UNREACHABLE); latest known post 'The Cost of Time and AI Timelines' (2026-08-13)",
+   "url": "https://www.fabricatedknowledge.com",
+   "status": "unreachable",
+   "position": "Page could not be read this run. The Substack profile (@foolallthetime) loaded without a post list. No search result surfaced a post dated after Aug 13, 2026.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "ROBOTS_UNREACHABLE on fabricatedknowledge.com (search link carried a malformed query string); substack.com/@foolallthetime rendered no posts",
+   "notes": "First unreachable run (Nov 23 run read it as quiet/dormant). Stale-roster candidate repeated: no post in three and a half months.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "baker",
+   "lane": "capex-ai",
+   "name": "Gavin Baker",
+   "source": "Atreides / X, via TIKR write-up",
+   "as_of": "2026-11-20",
+   "title": "quiet - latest seen X posts Nov 20 ('at least three companies' vying to be AI's new central bank; 'there is only one Jensen'), relayed by TIKR Nov 23",
+   "url": "https://www.tikr.com/blog/gavin-baker-at-least-three-companies-want-to-replace-nvidia-as-ais-central-bank-good-news-for-coreweave",
+   "status": "quiet",
+   "position": "Nothing dated inside the gate. The Nov 23 TIKR piece relays his Nov 20 X posts: at least three companies are aggressively vying to replace Nvidia as the 'Central Bank' of AI, offering more favorable terms; the CoreWeave reading is the writer's.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "CNBC Nov 17 excerpts page failed (client_error). x.com robots-blocked.",
+   "previous_sign": "bull",
+   "previous_sign_as_of": "2026-11-19",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "cahn",
+   "lane": "capex-ai",
+   "name": "David Cahn",
+   "source": "Sequoia",
+   "as_of": "2026-10-19",
+   "title": "quiet - latest seen 'The Market's AI Faith Test' (2026-10-19)",
+   "url": "https://www.sequoiacap.com/article/",
+   "status": "quiet",
+   "position": "Nothing new. Search surfaced only the July 2026 '$3T revenue gap' coverage and the Dec 2025 'Tale of Two AIs' essay.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "azhar",
+   "lane": "capex-ai",
+   "name": "Azeem Azhar",
+   "source": "Exponential View",
+   "as_of": "2026-11-22",
+   "title": "quiet - latest seen 'Certified human, twin primes, Anthropic++ #611' (2026-11-22); index unread",
+   "url": "https://www.exponentialview.co",
+   "status": "quiet",
+   "position": "No post dated Nov 24-26 surfaced; the weekly issue cadence puts #612 on the weekend. exponentialview.co/listen and /about rendered no episode or post list.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "index unread (site pages carry no post list in server HTML).",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "marcus",
+   "lane": "capex-ai",
+   "name": "Gary Marcus",
+   "source": "Marcus on AI (garymarcus.substack.com)",
+   "as_of": "2026-11-23",
+   "title": "Could Jensengate take down the President?",
+   "url": "https://garymarcus.substack.com/p/could-jensengate-take-down-the-president",
+   "status": "ok",
+   "position": "Two speculations he made on CNN about the rehiring - White House pressure on NVIDIA and pardon-like assurances - have been at least partly confirmed; shareholders who lost money could sue and Congress should look at who profited from the rebound.",
+   "sign": "bear",
+   "sign_basis": "Critical of how the rebound was produced; no price call.",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Nov 23 item not in the 2026-11-23 file; recorded here.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-22",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "marcus",
+   "lane": "capex-ai",
+   "name": "Gary Marcus",
+   "source": "Marcus on AI (garymarcus.substack.com)",
+   "as_of": "2026-11-24",
+   "title": "Breaking: When it comes to generative AI, the bump from rehiring Jensen doesn't appear to be holding",
+   "url": "https://garymarcus.substack.com/p/breaking-when-it-comes-to-generative",
+   "status": "paywalled",
+   "position": "Free opening: Monday brought a bounce and Tuesday has not held it; Anthropic is below its IPO price; the rehiring is a political fix that does not hold.",
+   "sign": "bear",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Also Nov 24 (free): 'BREAKING: Employees at OpenAI and Anthropic are panicking' - cites Axios on dozens of employees who think some unreleased models cannot be safely released; calls for pulling internet-connected agents. Safety, not markets - no sign.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-23",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "marcus",
+   "lane": "capex-ai",
+   "name": "Gary Marcus",
+   "source": "X (@GaryMarcus), search snippet",
+   "as_of": "2026-11-25",
+   "title": "X post: 'what exactly is the bull case for generative AI *now*...'",
+   "url": "https://x.com/GaryMarcus/status/2125590419367153973",
+   "status": "ok",
+   "position": "Asks what the bull case for generative AI is now, listing: usage growth finally tapering off, spot GPU prices down, the global AI stock market falling, credit (spreads) going up, profitability and ROI never established, and the 'Anflopic' IPO.",
+   "sign": "bear",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "spot GPU prices down; usage growth tapering (his list, unquantified)",
+     "checkable_against": "n/a"
+    }
+   ],
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "Text from the WebSearch snippet; x.com fetch robots-blocked. Post ID 2125590419367153973 dated by the search result to Nov 25.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-24",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "doomberg",
+   "lane": "capex-ai",
+   "name": "Doomberg",
+   "source": "newsletter.doomberg.com",
+   "as_of": "2026-11-23",
+   "title": "quiet - latest owned post 'Basin Kings' (Pro, Nov 21); Doomcasts index lists a Nov 23 appearance 'Oil to $50, Gold Collapse & Can NVIDIA Save the Stock Market?' (Wealth Building Blueprint)",
+   "url": "https://newsletter.doomberg.com/p/doomcasts",
+   "status": "quiet",
+   "position": "No owned post in gate. The Nov 23 podcast appearance is listed by title only (not listened to); Nov 21 'Basin Kings' is a Pro-tier EQT deep dive (blurb only). Nov 15 'Lame Duck a L'Orange' (paid, intro only) argues China is out-building the US on data centres and a lame-duck permitting bill could revive US projects.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "China 24 GW operational DC capacity vs 56 GW US, ~50 GW more under construction/announced (FT/SemiAnalysis, as quoted Nov 15)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "40 of 41 data-centre ballot measures sought restrictions (Redbud via Reuters, as quoted Nov 15)",
+     "checkable_against": "n/a"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Substack profile rendered no post list; archive page not fetched.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "slok",
+   "lane": "strategist",
+   "name": "Torsten Slok",
+   "source": "Apollo Daily Spark (apollo.com)",
+   "as_of": "2026-11-23",
+   "title": "'Global Equities' Is a US Tech Bet",
+   "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/global-equities-is-a-us-tech-bet",
+   "status": "ok",
+   "position": "Owning the global market by cap weight has quietly become 'a growing concentration bet on AI': a handful of AI-linked US mega-caps drove the US share of developed-market equity value to about 75%.",
+   "sign": "neutral",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "US ~75% of developed-market equity value, up from ~50% in 2008; Europe roughly halved from >30% to ~15% (Bloomberg, Apollo)",
+     "checkable_against": "MSCI World weights"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Nov 23 item not in the 2026-11-23 file; recorded here.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "slok",
+   "lane": "strategist",
+   "name": "Torsten Slok",
+   "source": "Apollo Daily Spark (apollo.com)",
+   "as_of": "2026-11-24",
+   "title": "The Distress in Software Is About To Get Worse",
+   "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/The-distress-in-software-is-about-to-get-worse",
+   "status": "ok",
+   "position": "Software is being hit by a double whammy - AI disruption and rates higher for longer - pushing software loan yields above 13% and selling off software equities; loans underwritten in 2021-22 as seven-year term loans with minimal amortization face a maturity wall in 2028-29.",
+   "sign": "bear",
+   "sign_basis": "Bearish on software credit in his framing; not an index call.",
+   "numbers": [
+    {
+     "claim": "software loan yields >13% (PitchBook, Apollo)",
+     "checkable_against": "n/a - leveraged loan index"
+    },
+    {
+     "claim": "software maturity wall concentrated in 2028-2029; data through Aug 31, 2026 (PitchBook LCD / Morningstar LSTA)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "software was >30% of all buyout deal value at peak (PitchBook LCD)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "2028 maturity wall shrank only ~10% for software vs 22% for the rest of the market (Nov 12 Spark)",
+     "checkable_against": "n/a"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "No Nov 25 Spark surfaced. Index page on apolloacademy.com served a 2025 archive. The Oct 24 'No Signs of AI Payoff Outside the Tech Sector' Spark is out of gate (relayed by APILama Nov 24 with Ramp AI Index data: 56.8% of businesses paid for AI in October; 1% of businesses drive 80% of OpenAI/Anthropic revenue).",
+   "previous_sign": "neutral",
+   "previous_sign_as_of": "2026-11-23",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "hartnett",
+   "lane": "strategist",
+   "name": "Michael Hartnett",
+   "source": "BofA Flow Show, via write-ups",
+   "as_of": "2026-11-20",
+   "title": "quiet - latest Flow Show 'From Johnny Lovedrop to Billy Big Boots' (data to Nov 18/20) recorded in the Nov 23 file; next issue due Nov 27",
+   "url": "https://thedarksideoftheboom.substack.com/p/bofas-michael-hartnett-the-surest",
+   "status": "quiet",
+   "position": "No new Flow Show in gate. Additional figures from the Nov 22 Innes write-up of the Nov 20 note, not previously recorded: market-driven pivot trigger is S&P below 6,845 (2025 close) with IG CDX wider than 80bp; otherwise the Mar 18 / Apr 28, 2027 FOMCs are the earliest points to position for peak rates; recession tells are initial claims >250k and IG spreads >100bp; valuation matrix $408 EPS x 18 = ~7,338 vs $370 x 16 = ~5,913.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "Bull & Bear 7.1 (from 7.4); Global Breadth Rule at 68% vs 88% buy trigger; FMS cash 3.6%",
+     "checkable_against": "repo dials/flows P2_epfr, P12_fms"
+    },
+    {
+     "claim": "equity inflows ~$310bn over four weeks (record); week to Nov 18 +$66.6bn (ETF +$73.5bn, MF -$6.8bn)",
+     "checkable_against": "repo dials/flows P2_epfr"
+    },
+    {
+     "claim": "top-10 AI stocks ~38% of US equities; S&P equal-weight ~16x fwd; MidCap 400 ~15x; ACWI ex-US ~12x",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "2026 YTD cross-asset: oil +44.9%, USD +5.7%, US equities +4.8%, govt bonds -3.9%, gold -15.1%, bitcoin -29.5% (to Thu Nov 19)",
+     "checkable_against": "repo data/prices"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "wilson",
+   "lane": "strategist",
+   "name": "Mike Wilson",
+   "source": "Morgan Stanley client note, via TheStreet (Todd Campbell) and Longbridge/Zhitong write-ups",
+   "as_of": "2026-11-24",
+   "title": "Morgan Stanley's Mike Wilson just made another gutsy forecast (coverage of the post-Nov 20 note)",
+   "url": "https://www.thestreet.com/investing/he-correctly-said-the-s-now-morgan-stanleys-mike-wilson-has-another-gutsy-forecast",
+   "status": "ok",
+   "position": "Same note as the Nov 23 'buying opportunity' item, with more of his framing: last week was the capitulation and index catch-down he had waited for; the break below his 7,100-7,300 range is an overshoot of fair value; markets bottom on bad news and deleveraging; the Fed is the principal risk but the market has already done the tightening; 'this is the fat pitch we have patiently been waiting for'.",
+   "sign": "bull",
+   "sign_basis": "Own words: fat pitch, constructive into 2027.",
+   "numbers": [
+    {
+     "claim": "S&P 500 at 16.4x vs his 19-19.6x fair value; Nasdaq 100 below 17x",
+     "checkable_against": "repo dials/consensus / data/prices"
+    },
+    {
+     "claim": "MS sentiment indicator -1.6; VIX 36; Daily Sentiment Index 9; put/call >1.20 (week of Nov 20)",
+     "checkable_against": "CBOE put/call, VIX history"
+    },
+    {
+     "claim": "S&P closed week at 6,910 after opening ~7,150 on Nov 20; Nov 23 S&P +4.7%, Nasdaq +6.5%",
+     "checkable_against": "repo data/prices"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Neo Reports Nov 24 brief quotes him: 'the opportunity we have been waiting for'. morganstanley.com Thoughts on the Market page is stale (Dec 2025). Not a flip - continues the Nov 23 bull sign.",
+   "previous_sign": "bull",
+   "previous_sign_as_of": "2026-11-23",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "snider",
+   "lane": "strategist",
+   "name": "Ben Snider",
+   "source": "Goldman Sachs, via Neo Reports (Nov 24) and TheStreet (Nov 25)",
+   "as_of": "2026-11-25",
+   "title": "Goldman Sachs lays out three signals stock investors should watch",
+   "url": "https://www.thestreet.com/investing/stocks/goldman-sachs-lays-out-three-signals-stock-investors-should-watch",
+   "status": "ok",
+   "position": "Restates his three bottom conditions (AI profits showing up, a dovish Fed, washed-out positioning) and keeps recommending select defensives; per the Nov 24 brief the Goldman desk says the market is close to a 'tactical entry' point but flags three offsets. No new dated Snider quote in gate.",
+   "sign": "neutral",
+   "sign_basis": "Conditional framing unchanged from Nov 22-23.",
+   "numbers": [
+    {
+     "claim": "Goldman: AI boom ~half of S&P 500 EPS growth through September",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "GS desk: panic gauge 9.8/10 (Fri Nov 20); shorts 1.5x long buys; single-name shorting highest since June 2022; L/S net leverage 42.3%; fwd P/E 16x (-25% YTD); ~$170bn Q4-to-date US equity fund/ETF inflows; asset-manager futures longs 82nd pct",
+     "checkable_against": "repo dials/flows P4_cftc, P2_epfr"
+    },
+    {
+     "claim": "S&P 500 12% below record; ~$8T lost since Oct 6 peak (writer)",
+     "checkable_against": "repo data/prices"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "",
+   "previous_sign": "neutral",
+   "previous_sign_as_of": "2026-11-23",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "mackintosh",
+   "lane": "strategist",
+   "name": "James Mackintosh",
+   "source": "WSJ Streetwise, via Motley Fool community excerpt and X relay",
+   "as_of": "2026-11-23",
+   "title": "Jensen Is Back. But AI's Problems Haven't Gone Away",
+   "url": "https://discussion.fool.com/t/scorching-critique-of-nvidia/127380",
+   "status": "paywalled",
+   "position": "Per the excerpt and the WSJ subhead: 'Huang's return is bad on multiple levels' and does not remove the serious challenges facing the AI ecosystem in general or Nvidia in particular; the long list of pitfalls was snipped by the poster.",
+   "sign": "bear",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "Nasdaq +7% Monday Nov 23 (Composite close +6.51% per Neo Reports); NVDA +31.48%, ~$1T of market value added; >4 in 5 S&P members up",
+     "checkable_against": "repo data/prices"
+    }
+   ],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "Nov 23 item not in the 2026-11-23 file (which recorded his Nov 22 'Has the AI Bubble Already Burst?'). WSJ page not fetchable; threads.com and ratednews relays robots/client-blocked.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-22",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "marks",
+   "lane": "strategist",
+   "name": "Howard Marks",
+   "source": "Oaktree memos",
+   "as_of": "2026-11-11",
+   "title": "quiet - latest memo 'A Layman Thinks About AI' (2026-11-11)",
+   "url": "https://www.oaktreecapital.com/insights",
+   "status": "quiet",
+   "position": "Nothing new. Search surfaced only Nov 12-21 relays of the Nov 11 memo (~$600B 2026 global AI debt per Goldman, ~$400B US IG; predictability 2/10 for frontier labs; no buy/sell call).",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "Oaktree insights index not surfaced by search; the Feb 26 'AI Hurtles Ahead' PDF fetched for reference only.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "grantham",
+   "lane": "strategist",
+   "name": "Jeremy Grantham",
+   "source": "GMO",
+   "as_of": "2026-06-26",
+   "title": "quiet - nothing since the June 26 CNBC appearance; GMO research library renders no list (newest visible items July 2026 by other authors)",
+   "url": "https://www.gmo.com/americas/research-library/",
+   "status": "quiet",
+   "position": "Nothing new. Search surfaced only the Jan 28, 2026 Viewpoints 'Valuing AI: Extreme Bubble, New Golden Era, or Both' (Part 1 Grantham, Part 2 Chancellor) and June coverage.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Stale-roster candidate repeated (five months).",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "chanos",
+   "lane": "strategist",
+   "name": "Jim Chanos",
+   "source": "X / interviews",
+   "as_of": "2026-10-26",
+   "title": "quiet - latest seen Oct 26 X post on SpaceX chip debt; nothing dated Nov 24-26 surfaced",
+   "url": "",
+   "status": "quiet",
+   "position": "Nothing new. Searches for Chanos on Huang's return surfaced only September-October items and general Nov 24 news; x.com robots-blocked.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "",
+   "notes": "",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-10-26",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "levine",
+   "lane": "strategist",
+   "name": "Matt Levine",
+   "source": "Bloomberg Money Stuff",
+   "as_of": "2026-11-24",
+   "title": "Anthropic Drops",
+   "url": "https://www.bloomberg.com/opinion/newsletters/2026-11-24/anthropic-drops",
+   "status": "paywalled",
+   "position": "Title only: the Nov 24 column on Anthropic trading below its IPO price. bloomberg.com robots-blocked; no relay with column text surfaced.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "search-surfaced",
+   "error": "robots_disallowed on bloomberg.com",
+   "notes": "Yahoo markets wrap Nov 24: S&P 500 and Nasdaq fell after the Monday rally as Nvidia led an AI sell-off; Anthropic closed below the $83 IPO price.",
+   "previous_sign": "",
+   "previous_sign_as_of": "",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "perkins",
+   "lane": "strategist",
+   "name": "Dario Perkins",
+   "source": "TS Lombard, via coverage",
+   "as_of": "2026-11-20",
+   "title": "quiet - latest seen Nov 19-20 'eerily similar' to 2000 remarks (recorded Nov 23 file)",
+   "url": "https://en.coinotag.com/ts-lombard-ai-stock-selloff-dot-com-comparison",
+   "status": "quiet",
+   "position": "Nothing dated inside the gate. Coinotag (Nov 20) says a Nov 20 X post 'sharpened the point with a number' but the number is behind its cut-off.",
+   "sign": "n/a",
+   "sign_basis": "",
+   "numbers": [],
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": "",
+   "previous_sign": "neutral",
+   "previous_sign_as_of": "2026-11-19",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Grant's Interest Rate Observer - Almost Daily Grant's",
+   "as_of": "2026-11-23",
+   "title": "Planet Fitness (ADG 11.23.2026) and Recap",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "Anthropic's IPO raised more than $100B at a valuation above $1.1T against ~$900B of compute commitments; SpaceX's 2031 notes trade at 252bp OAS vs 110bp at issue. Recap: S&P +4.7% on Huang's return; 2-year 4.63%.",
+   "sign": "bear",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "Anthropic IPO proceeds >$100B at >$1.1T; $900B compute commitments",
+     "checkable_against": "ANT S-1 / repo dials/calendar"
+    },
+    {
+     "claim": "SpaceX 2031 notes 252bp OAS vs 110bp at issue",
+     "checkable_against": "TRACE / repo dials/calendar deal record"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Nov 23 item not in the 2026-11-23 file; recorded here.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-20",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Grant's Interest Rate Observer - Almost Daily Grant's",
+   "as_of": "2026-11-24",
+   "title": "Split Rating / Chunk Play (ADG 11.24.2026) and Recap",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "'As the AI boom goes, so goes the broader US economy': PIMCO's Ivascyn says AI capex and disruption have made the finance/real-economy link much stronger, 10-year yields sit near post-GFC highs of ~5% and PIMCO is happy in quality bonds; PIMCO's Karoui finds the BBB-over-AA premium at 50bp (narrowest since 2002) while CCC-over-BB is 400bp (2020/2016/GFC levels) - IG tightness reflects hyperscaler releveraging and heavy supply, HY dispersion reflects fundamental stress. Grant's frames this as a case for trimming risk. Chunk Play: SF median home price $2.39M, up ~70% since start of 2025 on AI wealth. Recap: S&P -0.5%, Nasdaq 100 -2%.",
+   "sign": "bear",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "BBB-AA spread 50bp, narrowest since 2002; CCC-BB 400bp (PIMCO/Karoui)",
+     "checkable_against": "FRED BAMLC0A4CBBB, BAMLH0A3HYC, BAMLH0A1HYBB"
+    },
+    {
+     "claim": "10-year ~5% (Ivascyn)",
+     "checkable_against": "FRED DGS10"
+    },
+    {
+     "claim": "SF median home price $2.39M, +~70% since Jan 2025",
+     "checkable_against": "n/a"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-23",
+   "conversion": false
+  },
+  {
+   "kind": "voice",
+   "key": "grant",
+   "lane": "strategist",
+   "name": "Jim Grant",
+   "source": "Grant's Interest Rate Observer - Almost Daily Grant's",
+   "as_of": "2026-11-25",
+   "title": "Hum Dinger (ADG 11.25.2026) and Recap",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "A BlackRock-led consortium is weighing a lower bid for Stack Infrastructure's Asia-Pacific data centers (smaller equity component, deferred payments, delivery contingencies - Bloomberg), which Grant's reads as ill for Blackstone Digital Infrastructure Trust: BXDC deployed $1.9B of IPO proceeds at a 7% cap rate with a 2.75% escalator in tertiary markets at ~50% LTV, is down ~25% since the Aug 28 bear case and trades at 0.8x NAV; MoffettNathanson calls a NAV discount 'potentially existential' for equity-funded growth. Recap: Nasdaq 100 briefly 20% below its early-October high intraday, S&P flat; 2-year 4.61%, 30-year 5.24%; WTI $84; gold $3,571; VIX 28 after topping 34.",
+   "sign": "bear",
+   "sign_basis": "",
+   "numbers": [
+    {
+     "claim": "BXDC at 0.8x NAV, -25% since Aug 28, -10% over seven sessions; first deal $1.9B at 7% cap rate, 2.75% escalator, ~50% LTV vs 40% target",
+     "checkable_against": "repo data/prices BXDC"
+    },
+    {
+     "claim": "Nov 25: 2y 4.61% (-2bp), 30y 5.24% (-6bp), VIX 28 (high 34), WTI $84, gold $3,571",
+     "checkable_against": "FRED DGS2, DGS30; repo data/prices"
+    },
+    {
+     "claim": "Nasdaq 100 briefly -20% from early-October high intraday Nov 25",
+     "checkable_against": "repo data/prices NDX"
+    }
+   ],
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Grant's says ADG resumes next week. Flagship issue Nov 20 (Vol. 44 No. 22) recorded previously.",
+   "previous_sign": "bear",
+   "previous_sign_as_of": "2026-11-24",
+   "conversion": false
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-24",
+   "name": "Torsten Slok (Apollo Daily Spark): software credit faces a double whammy of AI disruption and higher-for-longer rates, with loan yields above 13% and a 2028-29 maturity wall.",
+   "source": "Apollo Daily Spark (apollo.com)",
+   "title": "The Distress in Software Is About To Get Worse",
+   "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/The-distress-in-software-is-about-to-get-worse",
+   "status": "ok",
+   "position": "Software loan yields have risen above 13% and software equities have sold off as AI disruption and higher rates hit together; 2021-22 seven-year term loans with minimal amortization mature in 2028-29, and software was over 30% of buyout deal value at the peak.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "software loan yields >13%",
+     "checkable_against": "leveraged loan index (PitchBook/LCD)"
+    },
+    {
+     "claim": "maturity wall 2028-29",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "software >30% of buyout value at peak",
+     "checkable_against": "n/a"
+    }
+   ],
+   "carries_number": ">13%, 2028-29, >30%",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": ""
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-24",
+   "name": "PIMCO's Lotfi Karoui and Daniel Ivascyn (via Almost Daily Grant's 'Split Rating'): the BBB-over-AA premium is 50bp, the narrowest since 2002, while CCC-over-BB is 400bp - IG tightness is hyperscaler releveraging and supply, HY dispersion is fundamental stress.",
+   "source": "Grant's Almost Daily (grantspub.com), relaying PIMCO/Bloomberg",
+   "title": "Split Rating (ADG 11.24.2026)",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "Ivascyn: AI capex, profit potential and disruption have made the finance/real-economy link much stronger in a year; 10-year yields near post-GFC highs of ~5% make quality bonds attractive. Karoui: BBB-AA at 50bp (narrowest since 2002) vs CCC-BB at 400bp (2020, 2016 shale bust, GFC).",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "BBB-AA 50bp, narrowest since 2002",
+     "checkable_against": "FRED BAMLC0A4CBBB minus BAMLC0A2CAA"
+    },
+    {
+     "claim": "CCC-BB 400bp",
+     "checkable_against": "FRED BAMLH0A3HYC minus BAMLH0A1HYBB"
+    },
+    {
+     "claim": "10-year ~5%",
+     "checkable_against": "FRED DGS10"
+    }
+   ],
+   "carries_number": "50bp, 400bp, ~5%",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": ""
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-24",
+   "name": "Ed Zitron (Where's Your Ed At): Huang's reinstatement is a sign of fragility, not a fix - the industry is 'functionally in default' with ~$700B of backstops and vendor financing, ~$200B of GPUs in warehouses and OpenAI losing $10.9B on $10B of Q3 revenue.",
+   "source": "Where's Your Ed At",
+   "title": "Defective Accelerationism",
+   "url": "https://www.wheresyoured.at/defective-accelerationism/",
+   "status": "ok",
+   "position": "The debt, circular financing and ROI gap remain after the CEO reversal; NVIDIA has put >$100B into AI across 293 deals since 2023 (WSJ), backstops and vendor financing total just under $700B (FT), Jefferies sees $44-62B of FY2028 NVIDIA revenue at risk, and an ING $500M data-center loan auction drew muted bids.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "backstops/vendor financing ~$700B (FT)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "NVIDIA >$100B across 293 deals (WSJ)",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "Jefferies $44-62B FY28 revenue at risk",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "OpenAI Q3 op loss $10.9B on $10B revenue",
+     "checkable_against": "n/a"
+    },
+    {
+     "claim": "~$200B GPUs in warehouses",
+     "checkable_against": "n/a"
+    }
+   ],
+   "carries_number": "$700B, 293 deals, $44-62B, $10.9B/$10B, $200B",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": ""
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-24",
+   "name": "Jonathan Krinsky (BTIG), relayed by Michael Burry: after an NDX move of -5% or worse followed by +5% or better, all 12 prior cases saw a further drawdown of at least 4.6% within 30 trading days, averaging -16% - which would put QQQ near $550, the March lows.",
+   "source": "Cassandra Unchained (michaeljburry.substack.com), free preview",
+   "title": "Short Thoughts & Trading Post November 24, 2026",
+   "url": "https://michaeljburry.substack.com/p/short-thoughts-and-trading-post-november",
+   "status": "paywalled",
+   "position": "Of 12 prior occurrences, 11 saw NDX lower three days later (avg -5.4%, median -5.46%); all 12 had at least a -4.6% drawdown over the next 30 trading days, 10 of 12 at least -9.4%, with average and median 30-day drawdowns of -16%; average 30-day draw-ups ~10%, mostly after T+15.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "12/12 >=-4.6% within 30 days; avg -16%",
+     "checkable_against": "repo data/prices QQQ/NDX history"
+    },
+    {
+     "claim": "QQQ -16% = ~$550",
+     "checkable_against": "repo data/prices QQQ"
+    }
+   ],
+   "carries_number": "12 cases, -16%, $550",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": ""
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-25",
+   "name": "Treasury 7-year auction (Nov 25): $44B at 4.708%, a 1.0bp tail with bid-to-cover 2.43 and indirects 58.2% (below the ~63.6% average) but directs at a near-record 33.2% - read as 'in line' by Helious and 'ugly, biggest tail since May 2024' by CapWolf.",
+   "source": "Helious (helious.io) and CapWolf (capwolf.com, Steven Soarez)",
+   "title": "7-Year Note Auction, Nov 25, 2026: 4.708% High / Ugly 7 Year Treasury Auction Shows Biggest Tail Since May 2024",
+   "url": "https://capwolf.com/ugly-7-year-treasury-auction-shows-biggest-tail-since-may-2024/",
+   "status": "ok",
+   "position": "High yield 4.708% vs when-issued 4.698% (tail 1.0bp); bid-to-cover 2.430 (prior 2.465, six-auction avg ~2.48); indirect 58.2% (prior 57.8%, avg ~63.6%); direct 33.2% (July record 33.7%); dealers 8.61%; prior-month high yield 4.894%. The two write-ups agree on the figures and differ on the reading.",
+   "sign": "bear-bonds",
+   "numbers": [
+    {
+     "claim": "7y high yield 4.708%, tail 1.0bp, BTC 2.43, indirect 58.2%, direct 33.2%, dealer 8.6%",
+     "checkable_against": "TreasuryDirect auction results 91282CSA0; repo dials/calendar P8"
+    }
+   ],
+   "carries_number": "4.708%, 1.0bp, 2.43, 58.2%, 33.2%",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": "Second page: https://helious.io/news/auc-91282CSA0-2026-11-25/7-year-note-auction-in-line. Completes the 2/5/7-year week flagged in the Nov 22 OptionBeast preview (recorded Nov 23 file)."
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-25",
+   "name": "Grant's Almost Daily ('Hum Dinger'): a BlackRock-led consortium is weighing a lower, buyer-friendlier bid for Stack Infrastructure's APAC data centers, and Blackstone Digital Infrastructure Trust trades at 0.8x NAV, a discount MoffettNathanson calls 'potentially existential' for its equity-funded growth.",
+   "source": "Grant's Almost Daily (grantspub.com), relaying Bloomberg and MoffettNathanson",
+   "title": "Hum Dinger (ADG 11.25.2026)",
+   "url": "https://www.grantspub.com/resources/commentary.cfm",
+   "status": "ok",
+   "position": "Bloomberg (Wed): the consortium is studying a smaller equity component, deferred payments and delivery contingencies, citing political opposition to new construction and uncertain compute demand. BXDC's first deal (Nov 16) put $1.9B of IPO proceeds into 13 buildings in Indiana and Mississippi via an Amazon sale-leaseback at a 7% cap rate, 2.75% escalator, ~50% LTV vs a 40% target; shares -10% over seven sessions, -25% since Aug 28, 0.8x NAV.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "BXDC 0.8x NAV; -25% since Aug 28",
+     "checkable_against": "repo data/prices BXDC"
+    },
+    {
+     "claim": "first deal $1.9B, 7% cap rate, 2.75% escalator, ~50% LTV",
+     "checkable_against": "BXDC 8-K"
+    }
+   ],
+   "carries_number": "0.8x NAV, $1.9B, 7%, 50% LTV",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": ""
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-25",
+   "name": "Paul Kedrosky: the memory cycle is turning about six months sooner than forecast - NAND spot prices have corrected more than 20% and contract prices are expected to fall from Q1 2027 as Chinese demand destruction exceeds incremental North American demand.",
+   "source": "paulkedrosky.com",
+   "title": "Plain English Appearance, Memory Prices, Jobs Data, RSI, etc.",
+   "url": "https://paulkedrosky.com/plain-english-appearance-memory-prices-jobs-data-rsi-etc/",
+   "status": "paywalled",
+   "position": "Memory forecasters are cutting AI memory outlooks; the turning point moved up roughly six months from a July forecast of H2 2027; NAND industry capex is still forecast +26.7% in 2027. Separately, research on 34.8M US job postings finds firms more exposed to agentic AI cut hiring growth over six months.",
+   "sign": "bear",
+   "numbers": [
+    {
+     "claim": "NAND spot -20%+; contract decline from Q1 2027; turn pulled forward ~6 months",
+     "checkable_against": "memory price trackers; MU filings"
+    },
+    {
+     "claim": "NAND capex +26.7% 2027",
+     "checkable_against": "n/a"
+    }
+   ],
+   "carries_number": "-20%, Q1 2027, +26.7%",
+   "conversion": false,
+   "fetched_how": "WebFetch",
+   "error": "",
+   "notes": ""
+  },
+  {
+   "kind": "argument",
+   "key": null,
+   "as_of": "2026-11-25",
+   "name": "Mohamed El-Erian (CNBC, via Stocktwits): expects a quarter-point 'dovish hike' on Dec 9 that trims January/March hike pricing; sees margin calls and forced selling ahead with pressure spreading into credit via rising tech CDS, and is buying the tech dip 'very slowly'.",
+   "source": "Stocktwits (Prabhjote Gill) write-up of CNBC interview",
+   "title": "Mohamed El-Erian Is Buying The Tech Dip 'Very Slowly,' Says Nvidia Is 'Too Big to Wobble'",
+   "url": "https://stocktwits.com/news-articles/markets/equity/mohamed-el-erian-is-buying-the-tech-dip-very-slowly-says-nvidia-is-too-big-to-wobble/cNbHNilR9mp",
+   "status": "ok",
+   "position": "The Nvidia 31% pop was excessive and the investigations are unresolved; Nvidia's circular financing is the key investor question with effects on AI investment and growth; the whole sector faces more oversight; the US government holds direct stakes in more than 30 companies. CME FedWatch priced a 25bp December hike at 97.4% (Nocta, Nov 25 morning).",
+   "sign": "neutral",
+   "numbers": [
+    {
+     "claim": "Dec 9 25bp hike; FedWatch 97.4% (Nocta)",
+     "checkable_against": "CME FedWatch / repo rates"
+    },
+    {
+     "claim": ">30 US companies with direct government stakes",
+     "checkable_against": "n/a"
+    }
+   ],
+   "carries_number": "25bp, Dec 9, 97.4%, >30",
+   "conversion": false,
+   "fetched_how": "secondary coverage",
+   "error": "",
+   "notes": ""
+  }
+ ]
+}
