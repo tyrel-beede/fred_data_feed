@@ -1,8 +1,8 @@
 {
  "group": "P1_ici",
- "last_run_at": "2026-11-19T05:11:00-07:00",
- "last_as_of": "2026-11-11",
- "last_file": "dials/flows/2026-11-19.json",
- "status": "ok",
- "error": ""
+ "last_run_at": "2026-11-26T05:10:46-07:00",
+ "last_as_of": "2026-11-18",
+ "last_file": "dials/flows/2026-11-26.json",
+ "status": "partial",
+ "error": "Combined MF+ETF page (ici.org/research/stats/combined_flows) still served the 2026-11-18 release (latest week 2026-11-11) on both the initial fetch and one retry after the 15-minute fetch cache expired, although ICI's listing page (weekly-combined-estimated-etf-and-longterm-flows) dates the release and the summary xls 'Nov 25'; the summary xls (combined_flows_data_2026.xls) could not be read (WebFetch PROVENANCE_REQUIRED permission not answered; curl CONNECT denied 403 by the egress proxy). Combined series therefore recorded as-is from the 18 Nov release (weeks 11-11..10-21), the 11-18 week NOT recorded for ici_combined.*. MMF page (ici.org/research/stats/mmf) still served the 2026-11-19 release (week ended 11-18) on both fetches although the MMF listing page dates a release 'Nov 25' (week ending 11-24, per the holiday schedule note on the 11-19 release); the 11-24 week is NOT recorded."
 }
