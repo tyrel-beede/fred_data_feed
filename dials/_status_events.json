@@ -1,8 +1,8 @@
 {
  "group": "events",
- "last_run_at": "2026-11-26T05:10:46-07:00",
- "last_as_of": "2026-11-26",
- "last_file": "dials/events/2026-11-26.json",
+ "last_run_at": "2026-11-27T05:10:46-07:00",
+ "last_as_of": "2026-11-27",
+ "last_file": "dials/events/2026-11-27.json",
  "status": "ok",
- "error": "Fetch failures (not retried): qz.com CoreWeave Meta-loan piece client_error (read via aiaffairs relay of Bloomberg/Business Times instead); cnttrading daily (single-stock intraday lows) client_error; CNN AI-selloff piece robots_disallowed. Refused hosts not attempted: Bloomberg (CoreWeave loan primary), CNBC (live blog, Burry). CappNotes carries no IG/HY OAS Wednesday (LQD/HYG ETF moves only) - OAS not printed, not carried. 7y prior-auction figures not printed by either auction page (averages only). GDS transcript machine-generated. 247wallst ANT after-hours card internally inconsistent (NVDA '+3.6%') - discarded."
+ "error": "Fetch failures (not retried): vlsi.kr 'Daily Silicon 26 Nov' (Nvidia SE Asia halt + Korea close) client_error; urgent.news 26 Nov DC-pipeline deliverability piece server_error; memesita / ctol.digital / ai.info-only BoE FSR relays - memesita and ctol client_error (ai.info fetched, no USD 4tn figure, no gilt-leverage detail); fourweekmba 'AI Daily 26 Nov: BoE USD 4T, banks sell AI loans' client_error (the 'banks sell AI loans' item therefore unread); digitimes 26 Nov 'Micron, Samsung, SK Hynix strike multiyear memory deals' access-denied (IP block); vantagemarkets ANT piece client_error; barchart 'private credit crisis deepens as more funds block withdrawals' returned empty content (date unknown - NOT recorded as a gate); thedataletter piece is 20 Oct (pre-gate, paywalled). zerohedge PJM emergency-auction piece redirect loop, not fetched, undated. Refused hosts not attempted: Bloomberg (Asia DC-loan primary 25 Nov; BoE repo reform 26 Nov), CNBC, FT (Nvidia SE Asia primary), WSJ. BoE FSR/FPC record primary PDF not read (einpresswire relay not fetched). No CoreWeave CDS print dated 26-27 Nov (US closed Thu) - reading recorded quiet. Brent conflict: Saxo 'tops USD 97' vs Newsquawk Feb'27 Brent range 91.84-93.17 - standoff group reconciles."
 }

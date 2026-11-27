@@ -1,0 +1,295 @@
+{
+ "group": "events",
+ "run_at": "2026-11-27T05:10:46-07:00",
+ "run_weekday": "Fri",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Fetch failures (not retried): vlsi.kr 'Daily Silicon 26 Nov' (Nvidia SE Asia halt + Korea close) client_error; urgent.news 26 Nov DC-pipeline deliverability piece server_error; memesita / ctol.digital / ai.info-only BoE FSR relays - memesita and ctol client_error (ai.info fetched, no USD 4tn figure, no gilt-leverage detail); fourweekmba 'AI Daily 26 Nov: BoE USD 4T, banks sell AI loans' client_error (the 'banks sell AI loans' item therefore unread); digitimes 26 Nov 'Micron, Samsung, SK Hynix strike multiyear memory deals' access-denied (IP block); vantagemarkets ANT piece client_error; barchart 'private credit crisis deepens as more funds block withdrawals' returned empty content (date unknown - NOT recorded as a gate); thedataletter piece is 20 Oct (pre-gate, paywalled). zerohedge PJM emergency-auction piece redirect loop, not fetched, undated. Refused hosts not attempted: Bloomberg (Asia DC-loan primary 25 Nov; BoE repo reform 26 Nov), CNBC, FT (Nvidia SE Asia primary), WSJ. BoE FSR/FPC record primary PDF not read (einpresswire relay not fetched). No CoreWeave CDS print dated 26-27 Nov (US closed Thu) - reading recorded quiet. Brent conflict: Saxo 'tops USD 97' vs Newsquawk Feb'27 Brent range 91.84-93.17 - standoff group reconciles.",
+ "gate": {
+  "since": "2026-11-26T05:10:46-07:00",
+  "note": "New = Thu 26 Nov after ~12:11Z (US closed for Thanksgiving; Asia afternoon, Europe Thursday session and close, BoE FSR, FT/WSJ Nvidia SE Asia shipment halt, 247wallst CoreWeave follow-ups) through Fri 27 Nov ~12:11Z (Asia Friday closes, Tokyo CPI, Europe Friday morning, Newsquawk/Saxo opening notes; US early-close session not yet open). Tolerance 2 days: items dated 24-25 Nov not in the 11-25/11-26 files kept once with late:true - two qualified (Bloomberg 25 Nov Asia data-center loan freeze tied to ByteDance/Alibaba/Tencent; TrendForce 25 Nov 2027 DRAM forecast cut with Chinese CSPs trimming non-LTA server DRAM). Run 2026-11-27 05:10 MST (Fri).",
+  "last_as_of": "2026-11-26",
+  "tolerance_days": 2
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized November 2026",
+  "fund gates redemptions November 2026",
+  "capex cut OR deferral OR digestion AI November 2026",
+  "funding round repriced AI lab November 2026",
+  "LTA renegotiation memory November 2026",
+  "gigawatt deferral data center November 2026",
+  "Treasury auction tail November 2026",
+  "sovereign bond stress November 2026",
+  "supplementary: Asia markets Friday November 27 2026 Nikkei KOSPI Samsung SK hynix TSMC",
+  "supplementary: CoreWeave OR Nebius OR OpenAI OR xAI OR Anthropic financing loan bond November 26 2026",
+  "supplementary: Nvidia S&P CreditWatch negative reaction November 26 2026 board governance Huang",
+  "supplementary: DRAM contract price TrendForce November 26 2026 SK hynix Samsung Micron long-term agreement",
+  "supplementary: Nvidia freezes AI server shipments Southeast Asia November 26 2026",
+  "supplementary: European markets Friday November 27 2026 Stoxx 600 Bund yield Gilt OAT ASML SAP morning",
+  "supplementary: hyperscaler capex Microsoft Google Meta Amazon Oracle data center delay OR pause OR slowdown November 26 2026",
+  "supplementary: Aolani Cloud $480 million loan paused lenders Malaysia ByteDance GPU Bloomberg",
+  "supplementary: private credit fund limits redemptions OR gates withdrawals November 26 2026",
+  "supplementary: Bank of England Financial Stability Report November 26 2026 AI private credit gilt leverage hedge funds",
+  "supplementary: Anthropic ANT stock Thanksgiving week November 26 2026 shares IPO offer price 83",
+  "supplementary: JGB yield Friday November 27 2026 Tokyo CPI BoJ Tamura hike December gilt OAT France spread",
+  "supplementary: Black Friday 2026 early sales read consumer Adobe Salesforce November 27 2026 forecast",
+  "supplementary: Kioxia Nvidia partnership report November 27 2026 shares jump",
+  "supplementary: data center power interconnection deferral OR delayed utility gigawatt November 26 2026 OR November 27 2026"
+ ],
+ "notes": "HARD-EVENT CHECK: none of the four classes fired in the window; two near-misses, one of them new to the files and close to class (a). (a) No pulled or downsized hyperscaler/AI-infra deal - but a LATE item (Bloomberg Tue/Wed 25 Nov, relayed 24/7 Wall St 26 Nov 05:28 PST and AI Affairs 25 Nov 18:50Z; not in the 11-26 file) reports lenders FREEZING or stepping back from Asian AI-data-center loans after the 16 Nov BIS interim final rule (effective 19 Nov; licences needed for overseas DCs supplying >12m TPP to China-HQ firms; 90-day window to ~17 Feb 2027): a USD 480m Aolani Cloud GPU loan (Malaysian DC serving ByteDance) frozen since 17 Nov with five lenders discussing withdrawal, Bain's Bridge Data Centers' upsized USD 6.6bn loan delayed for due diligence, one bank declining a fully underwritten USD 372m Digital Halo loan, at least one fund leaving a USD 300m GMI Cloud (Tencent) chip loan that had been offered at low-teens yields, a ~USD 1bn UOB risk transfer slowed, DayOne's US listing on hold; APAC DC lending >USD 49bn since 2023. This is lender withdrawal from AI-infra debt, but regulatory (export-control) rather than demand-driven, none of the loans was formally pulled, and the borrowers are Chinese-tenant neoclouds outside the registered set - recorded as a near-miss for the orchestrator, not a fired event; the same day's companion is Nvidia instructing Dell/Supermicro to halt AI-server deliveries to Malaysia, Singapore, Thailand and Indonesia (FT/WSJ 26 Nov; Nvidia booked USD 104bn of 2025 revenue through its Singapore entity, Nvidia's USD 130bn Q4 guide assumes no China DC compute revenue, USD 32bn of neocloud agreements depend on partner financing). The CoreWeave USD 4.5bn Meta-GPU-secured loan remains 'as soon as the week of 30 Nov', unconfirmed, with demand reportedly matching the full size - the live primary test is next week. (b) No principal capex cut: no MSFT/GOOGL/META/AMZN/ORCL language dated 26-27 Nov; the capex search returned pre-gate items (MSFT 170bn, Axios 23 Nov 'spending slowdown', BofA FMS 52%, the latter the FMS group's) and GDS (recorded). (c) No US coupon auction Thu/Fri (Thanksgiving); the Japanese 10/20/30y liquidity-enhancement auction Friday drew b/c 3.89 (prev 3.77) and Australia sold AUD 1bn 2032s at 4.5776% b/c 2.79 - no tails. (d) No sovereign stress event: OAT-Bund 10y below 150bp into S&P's France review (A+/stable) due after hours Fri 27 Nov - a watch item; Gilt 10y 5.16% (+2bp Thu) with the BoE FSR/FPC (26 Nov) proposing a 30bp cut to UK bank capital requirements while warning AI financing (hyperscaler bond issuance >USD 305bn in 2026, ~8% of global IG; circular financing, private credit, 'complex structures') makes cross-market stress contagion more likely and that a severe shock could see global investors cut leverage in sovereign debt; Bloomberg 26 Nov: BoE to proceed with gilt-repo reform next year over hedge-fund leverage (refused host); Saxo: Commerzbank reviewing a reduction of US Treasury trading, possibly exiting US repo. No fund gated (query 2 returned the recorded SS&C FRI and explainers; a barchart 'more funds block withdrawals' link returned empty and undated - not recorded). TAPE OF THE WINDOW: with the US shut, the AI complex rebounded hard. Thursday: Stoxx 600 +1.8%, DAX +2.1%, FTSE +1.8%, ASML/Infineon >+3%, on tariffs 'less severe than feared' (Section 301 caps 15% Japan/Korea/Taiwan/EU/CH, 20% China under truce / 40% if it collapses, chips/equipment proposed exempt; hearing 25 Jan 2027); Kioxia +14.5% intraday (Nvidia GB200 NVL72 SSD proof-of-concept: 144 SSDs ~1.1 PB as a memory tier), Advantest +7.8%; UST futures-implied 10y 4.918% (+~6bp), 30y 5.305%, 2y 4.685%, 2s10s 23bp; VIX 26.80 overnight, VIX1D had jumped to 39.36 Wed; MOVE <100. Friday Asia: KOSPI +4.34% to 4,915.68 (Samsung +4.55% to 179,100, SK hynix +5.41% to 1,110,000; week: -3.31/+6.32/-6.16/+0.29/+4.34, now +0.9% w/w, -46.1% from the June peak), Korea's finance minister/BoK/FSC meeting said the market's chip-cycle linkage 'needs close watching' (buyback-limit lift, ~KRW 11tn stabilisation fund enlargement, no new measure); Nikkei +2.11% to 58,711.11 (Kioxia +8.86% to 8,450), TSMC +1.63% to NT$2,180 but TAIEX only +0.4% with foreigners net selling NT$29.6bn; Tokyo core CPI 2.9% (exp 3.0%, prior 2.6%), BoJ Dec hike ~75% priced, USD/JPY ~159.4, MoF warning on one-sided moves; China State Council pledged to strengthen the 'national team' and Huijin, CNY fix 6.7075 vs 6.6604 expected, PBoC net CNY 223bn injection; copper +4.9% (biggest in ten months), gold +3.2% to ~3,660 from Wednesday's 3,427 low, silver +7%; ECB consumer 1y inflation expectations 3.5% (prior 3.1%); French CPI 2.9% (exp 3.2%), Spain 4.1% (exp 4.6%). Europe Friday 08:12 GMT: Stoxx 600 +0.9% to 642.65, tech +2.3%, ASML/ASMI/Infineon +3.8-4.5%, miners +3.5%; NQ futures +2.3-2.9%, NVDA +5% pre-market, SNDK +10%, IREN +7%. ANT: 82.79 Wed close (below the 83 offer two sessions; 73.85 Wed low ~USD 987bn), lock-up release of up to 303m shares from 15 Dec. Memory: TrendForce (25 Nov, late) cut its 2027 DRAM revenue forecast to USD 1.15tn (still +69%) and NAND to ~419bn, saying Chinese CSPs began scaling back 2027 orders in mid-November (GPU shortages, inventories, token price war) and have trimmed 2027 server DRAM demand OUTSIDE LTAs since early October, with LTAs holding 'until the next contracts are priced into a different market'. Oil/Hormuz (standoff group): Saudi Jazan refinery hit Thu (one dead), Iran navy says Hormuz stays closed, OPEC+ Sunday expected unchanged, Brent conflict 97 (Saxo) vs 91.8-93.2 (Newsquawk Feb'27). Eight sweep queries: query 1 surfaced only a 2 Nov nakedcapitalism piece (pre-gate), query 6 a 26 Nov urgent.news analysis (unreachable) - no in-gate hit from the eight themselves; all items came from the supplementary searches.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026 (extended)",
+   "result": "no hit",
+   "note": "Same pre-gate set as 11-25/11-26 (Bloomberg Oct-2025 shipping deal, Bond Buyer NYC GO, CFR buyback, Wikipedia) plus nakedcapitalism 'Junk bond market starts to crack' fetched - dated 2 Nov 2026 (Yves Smith; FT CCC yields >21% Europe / 18% US, Gundlach BBB-index 65) - pre-gate, discarded. No pulled or downsized deal 26-27 Nov."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026 (extended)",
+   "result": "no hit",
+   "note": "Opalesque SS&C FRI (recorded 11-20/11-23), researchsquare preprint, investinglive Apollo-gate explainer, whitesecuritieslaw / angelinvestorsnetwork BDC-gate explainers, SS&C IR 20 Nov, databento glossary, business-standard 2022 - no new gate or suspension dated 26-27 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026 (extended)",
+   "result": "no hit",
+   "note": "456x 5 Nov MSFT, letsdatascience MSFT 170bn, vlsi.kr Goldman/Montage, X post on BofA FMS 52% expecting a hyperscaler capex cut (FMS group; undated snippet), Sable 8-K, cxotoday SemiAnalysis, dreaming.press 1 Nov, pivotnews GDS (recorded 11-26), digestai 'Nvidia ~25% of Big Tech capex' (estimate piece), davefriedman substack - nothing new dated 26-27 Nov; not fetched."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026 (extended)",
+   "result": "no hit",
+   "note": "Wikipedia company pages, technode MegaRobo USD 200m (23 Nov, lab-automation robotics, not a lab repricing), superpowerdaily tracker, workinsiders November aggregate - no repriced or down round for a lab or neocloud 26-27 Nov; not fetched."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026 (extended)",
+   "result": "no hit",
+   "note": "Identical set to 11-24..11-26 (FourWeekMBA, koreadaily, cryptobriefing Goldman thresholds, TrendForce Samsung-Apple LTA 18 Nov, vlsi.kr CXMT, 456x MS legacy-memory, explainx). The in-gate LTA content came from the supplementary DRAM search (TrendForce 25 Nov forecast cut via theinference, late:true) and digitimes 26 Nov 'multiyear memory deals' (access denied, unread)."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026 (extended)",
+   "result": "unreachable",
+   "note": "urgent.news 26 Nov 'Beyond the announcement: assessing the deliverability of the US data center pipeline' - server_error on fetch (analysis piece by title). Others pre-gate/undated: fool.com 14 Nov Huang 1-GW, fool.com 25 Nov Goldman 52 GW (recorded as discarded 11-26), aidatacenterinsights changelog, mordorintelligence, pacificsoftwareventures moratorium tracker, theaiconsultingnetwork 'half delayed', cryptobriefing Norway grid-reservation halt to Aug 2027 (undated snippet, not fetched). No GW deferral by an operator dated 26-27 Nov."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026 (extended)",
+   "result": "no hit",
+   "note": "roic.ai / capwolf ('biggest tail since May 2024') 7y pieces (25 Nov, recorded 11-26), thestreet 12 Nov, cryptobriefing 10y (recorded), herecolumbia 30y 13 Nov (recorded), helious / thevaultreport / fedratecalc schedule pages. No US coupon auction Thu 26 / Fri 27 Nov (holiday); next are the Dec 2/5/7y cycle."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026 (extended)",
+   "result": "hit",
+   "note": "BoE Financial Stability Report / FPC record November 2026 (published 26 Nov; bankofengland.co.uk PDF and einpresswire relay not fetched; ai.info 26 Nov relay fetched - AI-financing contagion warning, hyperscaler issuance >USD 305bn, sovereign-deleveraging scenario; Saxo adds the FPC's proposed 30bp capital cut) - recorded inside the Thursday Europe/BoE hit. ECB FSR (recorded 11-18), FSB Schindler (discarded 11-26), gurufocus / globalmarketsreview commentary, memesita relay client_error."
+  },
+  {
+   "query": "supplementary: Asia markets Friday November 27 2026 (extended)",
+   "result": "hit",
+   "note": "techi.com (27 Nov 02:13 ET) fetched - KOSPI 4,915.68 +4.34%, Samsung/SK hynix, Nikkei 58,711.11, TSMC NT$2,180, Korea finance-chiefs meeting, NQ futures; tokenpost (27 Nov 03:09 ET) fetched - Kioxia 8,450 +8.86%, TAIEX +0.40%, foreign net selling NT$29.6bn, tariff-exemption driver. vlsi.kr daily client_error; local10 AP (Thu, already recorded), tradingview CNBC-TV18, wisevoter Kosdaq +6.7%, BigGo, talkmarkets not fetched."
+  },
+  {
+   "query": "supplementary: CoreWeave OR Nebius OR OpenAI OR xAI OR Anthropic financing November 26 2026 (extended)",
+   "result": "hit",
+   "note": "247wallst 'CoreWeave can now borrow at 7% with Meta's name on the loan' (26 Nov 10:48 ET) fetched - loan still unconfirmed, CRWV close 42.57 / 52-wk low 37.40, Meta contract up to USD 14.2bn to Dec 2031, Q3 capex 14.5bn; thedataletter fetched - 20 Oct, paywalled, pre-gate; briefs.co / nodiligence / marketarchitect substack not fetched; Bloomberg refused."
+  },
+  {
+   "query": "supplementary: Nvidia S&P CreditWatch reaction November 26 2026 (extended)",
+   "result": "no hit",
+   "note": "Yahoo/Bloomberg 'reliance on Huang could hurt credit rating', AOL, thebostonreport 26 Nov, ailookout, finexus, lapaasvoice, world-today-news x3 - all relays of the 25 Nov action already recorded; no new agency action, no company response found; not fetched."
+  },
+  {
+   "query": "supplementary: DRAM contract price TrendForce November 26 2026 LTA (extended)",
+   "result": "hit",
+   "note": "theinference 'TrendForce cuts 2027 DRAM forecast to USD 1.15tn as China cuts orders' (25 Nov) fetched and recorded late:true; digitimes 26 Nov 'Micron, Samsung, SK Hynix strike multiyear memory deals' access-denied (IP block) - unread; TrendForce Jul-2026 SK hynix price-cap removal (pre-gate), trendforce mobile DRAM 4Q26 report page, bloomingbit 'battle over memory-cycle peak' (undated, not fetched)."
+  },
+  {
+   "query": "supplementary: Nvidia freezes AI server shipments Southeast Asia November 26 2026 (extended)",
+   "result": "hit",
+   "note": "TrendForce news (26 Nov; FT-sourced; four countries, Dell/Supermicro, Aolani loan pause, Singapore USD 104bn revenue) fetched; TechCrunch (26 Nov 12:03 PST; WSJ-sourced; IFP 24% of China AI compute via remote DCs) fetched. Forbes, madrobot, factrail, thebrief relays not fetched; FT/WSJ primaries refused/not attempted."
+  },
+  {
+   "query": "supplementary: European markets Friday November 27 2026 (extended)",
+   "result": "hit",
+   "note": "Saxo 'Market Quick Take - Brent tops USD 97 and Asian stocks extend rebound - 27 Nov' fetched (Thu Europe closes, UST/Gilt levels, VIX structure, BoE FPC 30bp, Commerzbank repo review, Section 301 caps, China State Council); Reuters via WHBL 'European stocks extend recovery as tech, miners advance' (27 Nov 08:12 GMT) fetched; Newsquawk US Opening News 27 Nov via stocknow.ai fetched (Tokyo CPI, JGB/AU auctions, OAT-Bund, S&P France review, ECB expectations, French/Spanish CPI, commodities ranges, Hormuz). investing.com Reuters 'bruising November leaves AI scars', oninvest, finanzen.at, mlq Lumibird midday not fetched."
+  },
+  {
+   "query": "supplementary: hyperscaler capex delay OR pause OR slowdown November 26 2026 (extended)",
+   "result": "no hit",
+   "note": "seekingalpha Ives 'hyperscalers benefit if a DC slowdown occurs' (undated snippet), Axios 23 Nov 'AI's spending slowdown' (pre-gate), mezha relay, tech-insider '7 GW' tracker, walnutinvest tracker, useluminix Dell backlog, analysis.org 'hyperscalers borrow USD 67bn in a week' (undated), valueaddvc, shattered.io 27 Nov 'tech 20% off highs, Nvidia 9x' (commentary) - no principal capex language dated 26-27 Nov; not fetched."
+  },
+  {
+   "query": "supplementary: Aolani Cloud USD 480m loan paused lenders ByteDance Bloomberg (extended)",
+   "result": "hit",
+   "note": "Yahoo relay of 24/7 Wall St 'New US chip rule is now hitting AI data-center loans' (26 Nov 05:28 PST) fetched - BIS rule dates, Aolani frozen 17 Nov, Bridge 6.6bn, Digital Halo 372m, GMI 300m, UOB ~1bn SRT, DayOne; AI Affairs relay (25 Nov 22:50 UTC+4) fetched - Bloomberg 25 Nov, five lenders, GMI early-repayment clause, APAC DC loans ~USD 49bn since 2023. cryptobriefing / mlq / l0g.fr / explainx / businessmodelanalyst relays not fetched; Bloomberg primary refused."
+  },
+  {
+   "query": "supplementary: private credit fund limits redemptions OR gates withdrawals November 26 2026 (extended)",
+   "result": "unreachable",
+   "note": "barchart 'private credit crisis deepens as more funds move to block investor withdrawals' fetched but returned empty content (date and outlet unknown) - NOT recorded; gfmag 'exit problem', iCapital 'beyond the gates', CAIA Apr, investinglive Apollo explainer, wealthmanagement 'semi-liquid label', capitalfounders, angelinvestorsnetwork 'USD 15.6bn trapped', aitrademarkreview - explainers/undated, not fetched. No named gate dated 26-27 Nov."
+  },
+  {
+   "query": "supplementary: Bank of England FSR November 26 2026 AI private credit gilt leverage (extended)",
+   "result": "hit",
+   "note": "ai.info (26 Nov) fetched; fourweekmba 'AI Daily 26 Nov: BoE flags USD 4T; banks sell AI loans' client_error; ctol.digital client_error; einnews FPC record / einpresswire FSR / bankofengland.co.uk PDF not fetched; Bloomberg 'BoE prepares repo reform as hedge fund leverage raises risks' (26 Nov) refused host - headline only; newsminimalist 'USD 4tn AI exposure' not fetched (figure unverified, not recorded)."
+  },
+  {
+   "query": "supplementary: Anthropic ANT stock November 26 2026 (extended)",
+   "result": "hit",
+   "note": "wisevoter 'Anthropic shares dip below USD 1 trillion value' (26 Nov 15:33Z) fetched - 24/25 Nov closes (recorded), 73.85 Wed low, 13.37bn shares, 15 Dec lock-up (303m shares); vantagemarkets client_error; fool.com 26 Nov '-7% since IPO', leverageshares tracker, CNN/CNBC 18 Nov not fetched. No trade Thu; folded into the Thursday item note, no separate item."
+  },
+  {
+   "query": "supplementary: JGB yield Friday November 27 2026 Tokyo CPI BoJ Gilt OAT France (extended)",
+   "result": "hit",
+   "note": "Newsquawk US Opening News 27 Nov (stocknow.ai relay, AI-summarised) fetched - Tokyo CPI prints, 75% Dec BoJ, JGB liquidity auction b/c 3.89, Gilt futures 86.41 low, OAT-Bund <150bp, S&P France review after hours; japantimes / fxstreet / BigGo / newsminimalist 'JGB yields rise, Tokyo inflation 16-month high' not fetched - no JGB 10y level printed in fetched pages (not carried)."
+  },
+  {
+   "query": "supplementary: Black Friday 2026 early sales read (extended)",
+   "result": "no hit",
+   "note": "AP 'Black Friday's new playbook' syndications (27 Nov), mlq 'Adobe tracks USD 82.5bn online so far, +9.1%' (27 Nov, not fetched), wisevoter 'retailers brace for record Black Friday amid cost pressures' - no macro claim beyond the Adobe season-to-date tally; not recorded as an item."
+  },
+  {
+   "query": "supplementary: Kioxia Nvidia partnership November 27 2026 (extended)",
+   "result": "hit",
+   "note": "investing.com 'Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound' (26 Nov 00:58) fetched - GB200 NVL72 SSD memory-tier proof-of-concept, 144 SSDs ~1.1 PB, Advantest +7.8%, SoftBank +5.3%, Nikkei 57,745.27 (+1.3%; AP had 57,768.92). dataconomy / aistockwire / wisevoter / BigGo / theoutpost not fetched. Folded into the Thursday item."
+  },
+  {
+   "query": "supplementary: data center power interconnection deferral November 26-27 2026 (extended)",
+   "result": "no hit",
+   "note": "baxtel PG&E '12.87 GW pipeline, defers load beyond 1.8 GW' fetched - dated 28 Oct (Q3 materials 22 Oct; USD 2bn cut from the 2027 capital plan to 11.4bn) - pre-gate, discarded; zerohedge 'PJM scraps emergency data-center power auction one day after FERC' redirect loop, undated, not fetched; latitudemedia / semianalysis 'stop saying half canceled' / tech-insider / savrn trackers / energynewsbeat PJM-FERC 12-month studies - undated, not fetched."
+  }
+ ],
+ "discarded": [
+  "nakedcapitalism 'Junk bond market starts to crack' - 2 Nov 2026 (FT CCC yields >21% Europe / 18% US; Gundlach BBB index 65) - pre-gate",
+  "baxtel PG&E 12.87 GW pipeline / load beyond 1.8 GW deferred - 28 Oct (Q3 materials 22 Oct) - pre-gate",
+  "thedataletter 'CoreWeave's credit scare, Volta's 11%+ loan, OpenAI's USD 30bn race' - 20 Oct, paywalled - pre-gate",
+  "Axios 23 Nov 'AI's spending slowdown', Ives SA note, BofA FMS 52% capex-cut expectation (X post) - pre-gate or FMS group",
+  "technode MegaRobo ~USD 200m (23 Nov) - lab-automation robotics, not an AI-lab repricing",
+  "newsminimalist / fourweekmba 'BoE flags USD 4 trillion AI exposure' - figure not verified in any fetched page (ai.info relay carries no such number); not recorded",
+  "barchart 'private credit crisis deepens as more funds block withdrawals' - empty fetch, undated, outlet unknown",
+  "Adobe Black Friday season-to-date USD 82.5bn online (+9.1%) via mlq (27 Nov) - retail tally, no macro claim, not fetched",
+  "Rheinmetall cuts 2030 guidance (Newsquawk 27 Nov) - defence, not an event class",
+  "Imperial Brands +13.3% on possible Altria approach (Thu) - not an event class",
+  "Saudi Jazan refinery hit Thu (one dead), Ras Tanura drone interceptions Wed, Iran navy 'Hormuz stays closed', Kuwait drone, OPEC+ Sunday unchanged in principle, Brent 97 (Saxo) vs 91.84-93.17 Feb'27 (Newsquawk) - standoff group",
+  "Bitcoin ETFs record USD 5.39bn November outflow, IBIT USD 453m Wed; MSCI removes Strategy 30 Nov - not an event class",
+  "ANT: no trade Thu; wisevoter 'below USD 1tn' rests on the 73.85 Wed low; lock-up 15 Dec noted inside the Thursday item",
+  "China Oct industrial profits +20.1% y/y; PBoC CNY 223bn net injection; NZ election coalition arithmetic (relay internally inconsistent) - noted in the Friday item only where market-relevant"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-26",
+   "late": false,
+   "name": "Nvidia halts AI-server shipments to Malaysia, Singapore, Thailand and Indonesia (FT Thu 26 Nov; WSJ same day): Nvidia instructed manufacturing partners including Dell and Supermicro to stop server deliveries to the four countries for an unspecified period while it assesses whether regional partners meet US export requirements; partners have told customers 'Nvidia will not authorize their shipments'; trigger is the BIS interim final rule of 16 Nov (effective 19 Nov) requiring licences for overseas data centres that remotely supply >12m TPP of advanced chips to China/Macau-HQ companies (Indonesia, Malaysia, Singapore, Thailand and Brazil named; existing DCs have 90 days, to ~17 Feb 2027; comment period to 19 Jan 2027); Institute for Progress estimates such remote DCs supply ~24% of China's AI compute; Nvidia booked USD 104bn of 2025 revenue (+72%) through its Singapore subsidiary (which also books part of Taiwan/China revenue); CNBC: sellers seeking buyers for thousands of B300 GPUs meant for Chinese-rented capacity; Malaysia approved MYR 123.5bn of DC/cloud investment in 9M26 (35.2% of all approved investment); Nvidia's Q4 guide (USD 130bn) assumes no China DC compute revenue; USD 32bn of neocloud agreements depend on partners obtaining financing (24/7 Wall St); no Nvidia statement in the pages read; whether the suspension is temporary 'remains unclear'",
+   "headline": "Nvidia freezes AI-server deliveries to four Southeast Asian countries over the new US remote-access chip rule (FT/WSJ 26 Nov); Dell and Supermicro told to hold shipments; duration unspecified",
+   "candidate_dial": "B2-capex / supplier (a supplier-side shipment PAUSE, not a capex cut - the demand is Chinese-tenant remote compute that the 16 Nov rule targets; the macro question for the orchestrator is how much of the Singapore-booked revenue (USD 104bn in 2025, part of it Taiwan/China pass-through) is at risk and whether the GPUs are re-routed to US buyers (supportive for US-chain supply) or stranded (the B300 resale reports); pairs with the late Asia DC-loan item below - the export-control channel, not the demand channel, is what is shutting AI-infra credit and shipments this week)",
+   "source": "TrendForce news 'NVIDIA reportedly suspends AI server shipments to four Southeast Asian countries amid tighter US curbs' (26 Nov; FT-sourced); TechCrunch 'Nvidia hits pause on chip shipments to Southeast Asia' (26 Nov 12:03 PST; WSJ-sourced); 24/7 Wall St via Yahoo 'New US chip rule is now hitting AI data-center loans' (26 Nov 05:28 PST; rule detail)",
+   "url": "https://www.trendforce.com/news/2026/11/26/news-nvidia-reportedly-suspends-ai-server-shipments-to-four-southeast-asian-countries-as-u-s-targets-chinese-ai-access/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "FT and WSJ primaries not read (refused/not attempted); vlsi.kr 'Daily Silicon' (which also carried the Korea Thu close) client_error. TrendForce dates the Commerce measures 'last week'; 24/7 Wall St gives 16 Nov issued / 19 Nov effective. No shipment volumes, chip models or revenue-at-risk figure printed. Market reaction Thu: none in the US (closed); Asia Friday rallied regardless (see the Friday item).",
+   "other_urls": [
+    "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+    "https://finance.yahoo.com/technology/ai/articles/u-chip-rule-now-hitting-132829525.html"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-25",
+   "late": true,
+   "name": "Lenders freeze or step back from Asian AI-data-center loans tied to ByteDance, Alibaba and Tencent after the 16 Nov BIS rule (Bloomberg Wed 25 Nov, citing people familiar; relayed AI Affairs 25 Nov 18:50Z and 24/7 Wall St 26 Nov): Aolani Cloud (Singapore) USD 480m loan for Nvidia GPUs at a Malaysian DC serving ByteDance - work frozen since 17 Nov, bankers at five lenders discussed withdrawing or declining, no lender formally cited the rule; Bridge Data Centers (Bain-owned; Malaysian sites serve ByteDance) seeking an upsized USD 6.6bn loan - some lenders delaying for more due diligence; Digital Halo (Malaysia) - one bank declined to join a fully underwritten USD 372m loan; GMI Cloud (Thailand DC used by Tencent) USD 300m chip loan - at least one fund left; loan had been offered at low-teens yields when first sought in September, and a proposed condition requires full early repayment if Tencent is added to a US restricted-party list; United Overseas Bank ~USD 1bn significant-risk-transfer slowed; DayOne (largest customer ByteDance) US listing plans on hold; banks struggling to find buyers for loan portions they want to sell; APAC data-centre lending grew from almost nothing in 2023 to >USD 49bn; trade lawyer Kostrzewa: 'it could be a good pause'; Nvidia interim CEO Kress (17 Nov): outlook 'considers data center readiness, the strength and durability of end-customer demand'",
+   "headline": "Bloomberg: banks freeze a USD 480m Aolani GPU loan (ByteDance tenant), delay Bridge DC's USD 6.6bn, a bank drops a USD 372m Digital Halo deal and a fund exits GMI Cloud's USD 300m (Tencent) after the new US remote-access chip rule - 'billions' of Asian AI-DC loans stalled",
+   "candidate_dial": "A-debt / C-credit (NEAR-MISS for the hard-event class 'pulled or downsized AI-infra deal': this is lenders withdrawing from or freezing AI-infra loans - five deals, ~USD 8.7bn gross - but none was formally pulled or resized, the cause is export-control licensing risk on Chinese tenants rather than AI demand or credit appetite, and the borrowers are Chinese-tenant neoclouds outside the registered set; the orchestrator should decide whether a regulatory freeze counts; the 24/7 Wall St test is the right one: if Bridge or Aolani close once licences issue, it was a pause; if both stay stuck and Nvidia trims neocloud commitments (USD 32bn financing-contingent) at its next print, it was a pull. Companion to the Nvidia SE Asia shipment halt (26 Nov) and the only new primary-market withdrawal in the files since the selloff began)",
+   "source": "24/7 Wall St via Yahoo Finance 'New US chip rule is now hitting AI data-center loans, not just Nvidia chips' (Omor Ibne Ehsan; 26 Nov 05:28 PST; Bloomberg-sourced); AI Affairs 'Lenders halt billions in loans tied to ByteDance, Alibaba and Tencent' (25 Nov 22:50 UTC+4; relaying Bloomberg 25 Nov and TrendForce 20 Nov); Bloomberg primary (25 Nov) refused host",
+   "url": "https://finance.yahoo.com/technology/ai/articles/u-chip-rule-now-hitting-132829525.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "late:true - Bloomberg 25 Nov (inside the 11-26 window) but not in the 11-25/11-26 files; surfaced via the Nvidia SE Asia search this run. Deal sizes and statuses are second-hand (two relays agree on Aolani 480m / five lenders / GMI 300m; the 6.6bn Bridge, 372m Digital Halo, UOB SRT and DayOne items come from the 24/7 Wall St relay only). No Alibaba-specific loan detail in either relay. Yields on the stalled loans other than GMI's 'low teens' not printed.",
+   "other_urls": [
+    "https://www.aiaffairs.com/markets/lenders-halt-loans-bytedance-alibaba-tencent-chip-curbs/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-25",
+   "late": true,
+   "name": "TrendForce cuts its 2027 DRAM industry revenue forecast to USD 1.15tn (Wed 25 Nov; prior figure not printed; still +69% y/y) and 2027 NAND to ~USD 419.3bn with prices falling through an oversupplied year - the first forecast cut after its first 2027 memory-price warning ~a week earlier (NAND Q1-27 flat-to-down 5%, 19 Nov): unnamed Chinese cloud providers began scaling back 2027 orders in mid-November (GPU shortages, heavy inventories, an AI-token price war) by more than North American CSPs added; some Chinese providers have trimmed 2027 server-DRAM demand OUTSIDE long-term agreements since early October; DRAM quarterly contract-price increases to narrow and possibly level off in 2H27; phone/PC makers expected to strip storage from 2027 models; LTA coverage: Micron >75% of FY27 shipments committed, Sandisk ~half of FY27 output - 'those hold while prices flatten; the next contracts are priced into a different market'; 'NAND has no such cushion'; MU -42% from its June peak (Q4 FY26 revenue USD 54.23bn, six straight rises), Sandisk -49% in a month; HPE (24 Nov): memory/NAND constraints last at least into 2H28; next test MU FQ1 17 Dec",
+   "headline": "TrendForce (25 Nov) cuts 2027 DRAM revenue forecast to USD 1.15tn and NAND to ~419bn: Chinese CSPs scaling back 2027 orders since mid-November, trimming non-LTA server DRAM since early October; LTAs 'hold while prices flatten'",
+   "candidate_dial": "memory-no-surface / B2-capex (the first forecaster to attribute the 2027 memory cut to a NAMED buyer class - Chinese CSPs - and to locate it OUTSIDE the LTAs, which is the query-5 distinction the sweep tracks: no renegotiation, but the uncontracted tail is being cut first; the China-order cut sits alongside the same week's export-control freezes (Nvidia SE Asia halt, Asian DC-loan freeze) as a China-channel, not a US-hyperscaler-channel, retreat; still a forecaster, not a principal - no hard event)",
+   "source": "The Inference 'TrendForce cuts 2027 DRAM forecast to USD 1.15 trillion as China cuts orders, Micron and SK hynix carry the bill' (Richard Tang; 25 Nov 2026)",
+   "url": "https://theinference.org/article/trendforce-cuts-2027-dram-forecast-to-1-15-trillion-as-china-cuts-orders-micron-and-sk-hynix-carry-the-bill",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "late:true - dated 25 Nov (inside the 11-26 window) but not in the 11-25/11-26 files (the BofA item there carries only the 19 Nov TrendForce NAND outlook). TrendForce's own release not read; the prior 2027 DRAM figure (size of the cut) is not printed; no quarterly contract-price percentages. digitimes 26 Nov 'Micron, Samsung, SK Hynix strike multiyear memory deals' (possibly the counter-claim) was access-denied - unread."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-26",
+   "late": false,
+   "name": "Update vs 2026-11-26.json: CoreWeave (CRWV) Thu 26 Nov follow-up (24/7 Wall St 10:48 ET) - the USD 4.5bn Meta-GPU-secured delayed-draw term loan (Morgan Stanley / MUFG; escrow-drawn as GPUs for Meta at Dalton, GA are bought; expected IG on the Meta contract; early talk ~7-7.5%; 'as soon as the week of 30 Nov') remains UNCONFIRMED - 'none of this is confirmed', not launched or priced, investors 'have already indicated demand that matches the full size', CoreWeave/MS declined comment, MUFG/Meta no response; the supporting Meta order is not identified (the order on record: 25 Sep 2025, up to ~USD 14.2bn through 14 Dec 2031; Meta 2026 capex guide USD 135-145bn); CoreWeave Q3 capex USD 14.5bn, 9M USD 30.65bn, average cost of debt 7.9%; 9% 2031s at a record low / 18% yield Wed, a 2031 bond 76.6c on 24 Nov (lowest since the Jul-2025 sale); 5y CDS implying >70% default probability (record spread 13.14% = the 1,314bp print recorded 11-26; S&P GMI implies 68%); CRWV Wed: 52-week low 37.40 intraday, close 42.57 (-0.08%), +2.33% after hours; -40.55% YTD, -76.8% from the 183.58 record close; 'if the launch shifts or the pricing goes higher, the 18% yield is the better guide'",
+   "headline": "CoreWeave USD 4.5bn Meta-tied loan still unconfirmed Thu (demand reportedly matches size; launch week of 30 Nov); CRWV 42.57 Wed close after a 37.40 52-week low; 2031s ~18%, CDS >70% implied default",
+   "candidate_dial": "A-debt / C-credit (status update only - the live primary test of secured neocloud credit is next week's launch; the new data are the CRWV equity close/low (not printed in the 11-26 file) and the Meta contract size (up to 14.2bn) backing a 4.5bn loan, i.e. ~3x contract-to-loan coverage before amortisation; no hard event)",
+   "source": "24/7 Wall St 'CoreWeave can now borrow at 7% with Meta's name on the loan' (Omor Ibne Ehsan; 26 Nov 10:48 ET; Bloomberg 25 Nov-sourced)",
+   "url": "https://247wallst.com/investing/2026/11/26/coreweave-can-now-borrow-at-7-with-metas-name-on-the-loan/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The article's 'Quick Read' box says USD 5bn while the body says 4.5bn - 4.5bn (Bloomberg's figure) retained. No new CDS print (US closed Thu). Bloomberg primary refused. Meta +3.4% to 609.89 Wed is the 11-26 file's figure."
+  },
+  {
+   "kind": "reading",
+   "group": "events",
+   "as_of": "2026-11-26",
+   "late": false,
+   "name": "CoreWeave 5y CDS Thu 26 Nov - no new print (US markets closed; 24/7 Wall St repeats the Wed 1,314bp / '>70%' figures); last recorded 1,314bp Wed 25 Nov",
+   "source": "24/7 Wall St 26 Nov (repeats Reuters/Bloomberg 25 Nov figures); no vendor print dated 26-27 Nov found",
+   "url": "https://247wallst.com/investing/2026/11/26/coreweave-can-now-borrow-at-7-with-metas-name-on-the-loan/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Pages checked: 247wallst 26 Nov, Saxo Quick Take 27 Nov (no CoreWeave mention), Newsquawk opening 27 Nov (no CoreWeave mention). Next print expected after Friday's US half-session.",
+   "series": "crwv.cds_5y_bp",
+   "value": null,
+   "unit": "bp",
+   "period_end": "2026-11-26"
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-26",
+   "late": false,
+   "name": "Thu 26 Nov Europe close, Asia afternoon and the BoE FSR (US closed for Thanksgiving): Stoxx 600 +1.8%, DAX +2.1%, Euro Stoxx 50 +2.0%, FTSE 100 +1.8% - 'proposed US tariffs appeared less severe than feared' (Section 301 caps: 15% Japan/Korea/Taiwan/EU/Switzerland, 20% China under the truce / 40% if it collapses, up to 35% Vietnam, 18% Thailand; chips, equipment, computers, phones, networking proposed exempt; hearing 25 Jan 2027, no effective date); ASML and Infineon each >+3%; Imperial Brands +13.3% (Altria approach); Tokyo: Kioxia +14.5% intraday to 7,895 (close +8.86% per widget; after -14.18% Wed) on a Kioxia-Nvidia proof-of-concept using 144 Kioxia NVMe SSDs in a GB200 NVL72 (~1.1 PB raw, 2tn-vector database) with Nvidia SCADA / Storage-Next as a petabyte-scale GPU memory tier ('still evaluating technical feasibility'), Advantest +7.8%, SoftBank +5.3%, Nikkei 57,745.27 (+1.3%; AP 57,768.92); RATES (Saxo, futures-implied, US cash closed): UST 10y 4.918% (+~6bp), 30y 5.305% (+~6bp), 2y 4.685% (+4bp), 2s10s 23bp (-6bp w/w); Gilt 10y 5.16% (+~2bp); Bund up, no level; VIX 26.80 overnight, Dec future 23.73 (backwardation; skew 142.06; VIX1D had jumped ~two-thirds to 39.36 Wed; options price 1.37% for Friday's half-session, 3.2% into 4 Dec, the Dec contract spanning the 8-9 Dec FOMC); MOVE <100; EUR 1.0980, USD/JPY ~159.35 (MoF: ready to act with the US Treasury); BoJ's Tamura: another hike to be discussed in December or later; gold ~3,660 (+2.6%; 3,427 Wed low), silver 44.30 (+6.6%), copper +~5% (biggest in ten months) after China's State Council pledged to stabilise markets; Bitcoin ETFs record USD 5.39bn November outflow; BANK OF ENGLAND FSR / FPC record (26 Nov): FPC proposes a 30bp cut to UK bank capital requirements; AI financing - hyperscaler bond issuance expected >USD 305bn in 2026 (~8% of global IG, higher with other AI issuers), funding spread across equities, public bonds, private credit and 'complex structures including circular financing tied to future revenue commitments' that can obscure concentrations, makes it more likely that 'financial stress will spread between markets'; stretched valuations with sharp post-midterm AI-share falls; hedge funds reducing borrowing amplified moves and in a severe shock global investors could cut leverage in other markets 'including sovereign debt'; US CCC and lower-quality AI-related spreads widened sharply, higher-rated more limited; MPC's Greene: rates may need to rise faster if the Middle East conflict persists; Bloomberg (26 Nov): BoE to proceed with gilt-repo reform next year as hedge-fund leverage raises risks (headline only, refused host); Saxo: Commerzbank reviewing a reduction in US Treasury trading, possibly exiting the US repo market; ANT: no trade; 82.79 Wed close (second session below the 83 offer; 73.85 Wed low ~USD 987bn on 13.37bn shares), lock-up release of up to 303m shares from 15 Dec",
+   "headline": "Thu 26 Nov: Europe +1.8-2.1% as tariff caps read less severe; Kioxia +14.5% on an Nvidia SSD memory-tier PoC; UST 10y back to 4.918% (+6bp) in futures; BoE FSR cuts bank capital 30bp while warning AI financing (hyperscaler issuance >USD 305bn) spreads stress across markets and could force sovereign-debt deleveraging in a shock",
+   "candidate_dial": "C-equity (Thursday's bounce was tariff-exemption-driven, not AI-demand-driven - the chips/equipment carve-out from the Section 301 caps is the proximate catalyst for ASML/Infineon/Kioxia; Wednesday's 10y low (4.852%) gave back 6bp overnight, so the duration bid of the 11-26 file was partly a one-day event) / A-debt (the BoE joins the ECB and FSB in naming the AI-financing-to-sovereign-deleveraging channel explicitly, and is simultaneously easing bank capital - the orchestrator may want the 30bp cut and the Commerzbank repo-exit review as plumbing reads; the Bloomberg gilt-repo-reform headline is the hedge-fund-leverage counterpart of the FSB Schindler remark discarded 11-26, now with a policy action attached)",
+   "source": "Saxo 'Market Quick Take - Brent tops USD 97 and Asian stocks extend rebound - 27 November 2026' (Thu closes, rates, vol, BoE FPC, Commerzbank); investing.com 'Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound' (26 Nov 00:58); ai.info 'Bank of England warns AI financing could spread financial stress' (26 Nov); wisevoter ANT (26 Nov 15:33Z)",
+   "url": "https://www.home.saxo/en-ch/content/articles/macro/market-quick-take---brent-tops-usd-97-and-asian-stocks-extend-rebound---27-november-2026-27112026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "UST levels are Saxo's futures-implied Thursday figures (US cash closed) - treat as indicative; no Bund or JGB 10y level printed Thursday in any fetched page. BoE FSR/FPC primary PDF not read; the 'USD 4tn' figure in fourweekmba/newsminimalist headlines is unverified and not recorded. Kioxia Thursday close: investing.com widget +8.86% vs AP (11-26 file) +12.4% - the Friday +8.86% to 8,450 (tokenpost) suggests the widget was Friday's; Thursday intraday high +14.5% retained. Brent: Saxo '~97' conflicts with Newsquawk's Feb'27 range (91.84-93.17) - standoff group.",
+   "other_urls": [
+    "https://www.investing.com/news/stock-market-news/kioxia-jumps-14-after-nvidia-collaboration-as-chip-stocks-rebound-5052074",
+    "https://ai.info/news/bank-of-england-ai-financing-systemic-risk-november-2026",
+    "https://wisevoter.com/world/us/2026/11/26/anthropic-shares-dip-below-1-trillion-value"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Fri 27 Nov Asia close and Europe morning (US half-session not yet open at ~12:11Z): KOSPI +4.34% to 4,915.68 (Samsung +4.55% to KRW 179,100; SK hynix +5.41% to 1,110,000; week -3.31% / +6.32% / -6.16% / +0.29% / +4.34%, +0.9% above the 20 Nov close 4,869.96; -46.1% from the 22 Jun peak 9,114.55, -14.2% from 30 Oct; Kosdaq +6.7% per wisevoter, unverified) - Finance Minister Lee met the BoK governor and FSC chair: the market's ties to the chip cycle 'need close watching', volatility rising on AI-sector uncertainty and trade conditions, prior steps cited (listed-company buyback limit lifted last week, ~KRW 11tn stabilisation fund being enlarged), no new measure; Nikkei +2.11% to 58,711.11 (+1,211.95; SoftBank +3.1%, Kioxia +8.86% to 8,450); TSMC +1.63% to NT$2,180 but TAIEX +0.40% only with foreigners net selling NT$29.63bn (driver cited: proposed Section 301 exemption of chips/equipment); Tokyo Nov CPI 2.8% (exp 3.0%), core 2.9% (exp 3.0%, prior 2.6%), ex-food-and-energy 2.5% (exp 2.7%) - BoJ December hike ~75% priced; JGB 10/20/30y liquidity-enhancement auction JPY 499bn b/c 3.89 (prev 3.77), highest accepted spread -0.013% (prev -0.007%); Australia AUD 1bn Nov-2032 at 4.5776% b/c 2.79; USD/JPY 159.14-159.48, DXY 103.63-103.87 (flat w/w; Bloomberg dollar index at a 19-month high Monday), KRW ~1,336.86 (+0.5%), TWD 32.932; PBoC fix 6.7075 vs 6.6604 expected, net CNY 223bn injection, State Council to strengthen the 'national team' and Huijin; China Oct industrial profits +20.1% y/y; EUROPE 08:12 GMT (Reuters): Stoxx 600 +0.9% to 642.65 (Newsquawk +1.0%), on track for a weekly gain after the steepest weekly fall since Mar-2025, tech +2.3%, ASML / ASM International / Infineon +3.8-4.5%, miners +3.5% (copper +4.9% LME 11,840-12,609; gold +3.2% 3,558-3,681; silver +~7%), Sanofi -1.6%, Rheinmetall cut 2030 guidance; USTs -10 ticks from 106-22 (firmer w/w), Gilts to an 86.41 low (-30 ticks), OAT-Bund 10y <150bp with S&P's France review (A+/A-1, stable) due after hours Fri; French Nov CPI 2.9% (exp 3.2%; HICP 3.2% vs 3.6%), Spain 4.1% (exp 4.6%), German unemployment 6.4%, ECB consumer expectations 1y 3.5% (prior 3.1%), 3y 3.0%, 5y 2.5%; US futures: NQ +2.3% (Newsquawk) / NDX +2.88% vs Wed settle at 01:21 ET (techi), NVDA +5%, SNDK +10%, IREN +7% pre-market; VIX 26.80; Trump: has not spoken to Huang but 'probably will soon'; commodities: WTI Jan 83.16-86.60, Brent Feb 91.84-93.17 (Saxo: 'tops 97', first weekly gain in five), TTF EUR 83.9-88.7, Bitcoin ~61.4k",
+   "headline": "Fri 27 Nov: KOSPI +4.3% (SK hynix +5.4%, Samsung +4.6%), Nikkei +2.1%, Kioxia +8.9%; Europe +0.9-1.0% with chips +3.8-4.5%, NQ futures +2.3-2.9%, NVDA +5% pre; Tokyo core CPI 2.9%, BoJ Dec ~75%; Korea's finance chiefs flag chip-cycle linkage; OAT-Bund <150bp into S&P's France review tonight",
+   "candidate_dial": "C-equity (the Korea memory pair's five-session path is now -3.3/+6.3/-6.2/+0.3/+4.3 - the oscillation is NOT dampening (Friday's leg is the third >4% day of the week) and the authorities are now meeting about it; TAIEX lagging with foreign selling while TSMC rises is the one divergence; the US half-session is the first chance to price Wednesday's intraday break against two days of foreign relief) / business cycle (Tokyo core 2.9% with a 75% Dec BoJ hike, French/Spanish CPI misses to the downside but ECB 1y expectations jumping to 3.5% - the global-hike tape is intact while US duration gave back 6bp Thursday) / A-debt (S&P France decision after the US close is the window's one scheduled sovereign event; OAT-Bund <150bp going in; the JGB liquidity auction cleared well - no sovereign stress print Friday morning)",
+   "source": "TECHi 'Seoul jumps 4.3% as Korea's finance chiefs flag chip-market risk; Nasdaq futures rise' (27 Nov 02:13 ET; Yonhap-sourced); TokenPost 'Asian memory stocks rebound on Nov 27 as SK hynix gains 5.4%' (27 Nov 03:09 ET); Reuters via WHBL 'European stocks extend recovery as tech, miners advance' (27 Nov 08:12 GMT); Newsquawk 'US Opening News 27 Nov' via stocknow.ai (AI-summarised relay); Saxo Quick Take 27 Nov",
+   "url": "https://www.techi.com/kospi-jumps-samsung-sk-hynix-korea-finance-chiefs-chip-market-risk/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Korean officials' remarks are TECHi paraphrases of Yonhap, not direct quotes. Kosdaq +6.7% from a wisevoter headline, not fetched. Newsquawk relay is AI-summarised (its NZ-election arithmetic is internally inconsistent; market figures retained as ranges only). No JGB 10y or Bund 10y level printed in any fetched page Friday - not carried. Hormuz/Jazan/OPEC+ items are the standoff group's.",
+   "other_urls": [
+    "https://www.tokenpost.com/news/investing/63352",
+    "https://whbl.com/2026/11/27/european-stocks-extend-recovery-as-tech-miners-advance/",
+    "https://stocknow.ai/en/breaking-news/kdlol9oud2739kqvmpdaysty/newsquawk-daily-us-opening-news-27th-november-2026"
+   ]
+  }
+ ]
+}

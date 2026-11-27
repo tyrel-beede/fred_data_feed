@@ -1,8 +1,8 @@
 {
  "group": "P5_sentiment",
- "last_run_at": "2026-11-20T05:11:00-07:00",
- "last_as_of": "2026-11-19",
- "last_file": "dials/flows/2026-11-20.json",
+ "last_run_at": "2026-11-27T05:10:46-07:00",
+ "last_as_of": "2026-11-25",
+ "last_file": "dials/flows/2026-11-27.json",
  "status": "partial",
- "error": "CBOE total/equity put/call not printed for the 2026-11-18 and 2026-11-19 sessions (thetrading.tools stops at 11-17; Cboe daily market statistics page returned PROVENANCE_REQUIRED after a redirect, not retried). VIX9D/VIX6M/VIX1Y not printed on the thetrading.tools term-structure page (VIX9D from repo price file only). SKEW web page prints the latest close only (11-13..11-18 from repo). Nov VIX future expired 11-18, no Nov settlement printed. Repo FRED VIXCLS/VXVCLS run through 11-18 only."
+ "error": "CBOE total/equity put/call not printed for the 2026-11-25 session (thetrading.tools stops at 11-24; Cboe daily market statistics page, search-surfaced, was refused by the fetch permission layer). VIX9D/VIX6M/VIX1Y not printed on the thetrading.tools term-structure page (VIX9D and VVIX from repo price files only). SKEW web page prints the latest close only (11-20..11-24 from repo). thetrading.tools prints VIX 28.10 / VIX3M 26.20 for the 11-25 close vs repo price files 28.29 / 26.29 (not reconciled; both recorded). Repo FRED VIXCLS/VXVCLS run through 11-24 only. IDX_VIX.csv carries a 2026-11-26 vendor row (26.80) on a US holiday, recorded with a caveat. VIX futures settlements printed for 11-25 and 11-24 only (no 11-20..11-23 settlements)."
 }

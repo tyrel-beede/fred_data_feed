@@ -1,0 +1,406 @@
+{
+ "group": "P8_calendar",
+ "run_at": "2026-11-27T05:10:46-07:00",
+ "run_weekday": "Fri",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "Wed 25 Nov US IG daily tally and the Thanksgiving-week total still unprinted by any reachable page (Saxo 27 Nov / Asia QT, Reuters Europe close, wisevoter-Fitch carry none; cambonds weekly for the week not surfaced; CappNotes published no Thursday issue) - ig.us_daily_volume_usd_bn quiet/null for a fourth run (Thu = holiday closure). IG/HY OAS at the Wed 25 Nov close not printed: FRED ICE BofA series end at 24 Nov (IG 0.98% / HY 3.72%, recorded late:true on new slugs credit.ig_ice_bofa_oas_pct / credit.hy_ice_bofa_oas_pct; not the Bloomberg basis CappNotes uses). ORCL FQ2 FY2027 date still aggregator-only (8 Dec earliest = 11 days from 27 Nov; two searches, only prior-quarter notices and the 18 Nov annual-meeting 8-K). Thursday KOSPI close from a secondary recap flagged 'unsettled' by its own author; TAIEX Thu close not found; DXY level not printed by Saxo (Bloomberg Dollar Spot only). 2y FRN R result (11-25) not re-searched. No fetch failures this run.",
+ "gate": {
+  "since": "2026-11-26T05:10:46-07:00",
+  "note": "New = Thu 26 Nov after ~12:11Z (US markets CLOSED for Thanksgiving; Asia/Europe Thursday sessions) through Fri 27 Nov ~12:11Z (Asia/Europe Friday; the US early-close half-session - stocks 13:00 ET, bonds 14:00 ET - has not opened). Tolerance 2 days: 24-25 Nov items not in the 11-25/11-26 files kept once with late:true (the two FRED ICE BofA OAS prints at 24 Nov). Run 2026-11-27 05:10 MST (Fri).",
+  "last_as_of": "2026-11-26",
+  "tolerance_days": 2
+ },
+ "sources": [
+  {
+   "query": "home.saxo market quick take 27 November 2026 (extended)",
+   "result": "hit",
+   "note": "Fetched Saxo Market Quick Take 27 Nov 'Brent tops USD 97 and Asian stocks extend rebound' (en-mena): Europe Thu, Asia Fri, yields, FX, commodities, VIX, crypto, tariff caps, Fed/BOJ/BoE, Jazan strike, Fri/weekend calendar, MSCI removes Strategy 30 Nov; no OAS, no corporate deal, no Oracle/CoreWeave. Also fetched Saxo Asia Market Quick Take 27 Nov (en-sg): Europe Thu levels, KOSPI open, 10y 4.854%, futures after the close, USD/JPY/EUR/USD, gold ~3,565, Kioxia-Nvidia, debt-limit headroom, SIFMA 14:00 ET bond close, Mon 30 Nov bills. 26 Nov Options Brief not fetched."
+  },
+  {
+   "query": "Oracle Corporation announces fiscal 2027 second quarter earnings date December 2026 \"sets the date\" (extended)",
+   "result": "no hit",
+   "note": "Only prior-quarter notices: Q2 FY26 (2 Dec 2025 via marketscreener/abc27/morningstar/investingnews/centralcharts), Q1 FY27 PDF on q4cdn (Sep 2026), stocktitan Q1 FY27; weex aggregator. No FQ2 FY27 notice."
+  },
+  {
+   "query": "Oracle \"second quarter fiscal 2027\" OR \"fiscal year 2027 second quarter\" earnings announcement date oracle.com investor (extended)",
+   "result": "no hit",
+   "note": "Returns other issuers' Q2 FY27 releases on sec.gov (Take-Two, Nvidia, Dell, Nutanix), Oracle Q4 FY26 / Q2 FY23 / Q3 FY26 notices. Fetched sec.gov ORCL 8-K orcl-20261118 (Item 5.07 annual-meeting results, 18 Nov, signed 20 Nov; pre-gate; no earnings date) to confirm it is not a date notice."
+  },
+  {
+   "query": "renaissancecapital.com IPO calendar week of November 30 2026 (extended)",
+   "result": "hit",
+   "note": "Fetched Calendar: still 'IPOs This Week - 11/23/2026', no listings, no 11/30 or 12/7 section, RGNA USD 18m queued, NYSE none. Week-ahead for 30 Nov not yet published (only the 20 Nov 'Thanksgiving break' piece, recorded 11-21)."
+  },
+  {
+   "query": "renaissancecapital.com US IPO stats YTD pricings proceeds filings November 27 2026 (extended)",
+   "result": "hit",
+   "note": "Fetched Stats 'as of 11/27/2026': 124 / 230.3bn / 223 / 158 SPACs - unchanged; latest stories still the four 25 Nov filings and the Sonic Lighting withdrawal; no recent pricings. 3Q review PDF / Proceeds sub-page not fetched."
+  },
+  {
+   "query": "investment grade bond issuance Thanksgiving week November 2026 weekly total Wednesday November 25 (extended)",
+   "result": "no hit",
+   "note": "Treasury tentative schedule PDF, Nuveen muni, Yahoo holiday hours, cambonds category page (no dated post surfaced), hereflorence 'USD 35bn before Thanksgiving' (15 Nov forecast), investing.com Jan tally - nothing printing a Wed or weekly IG total."
+  },
+  {
+   "query": "cambonds investment grade weekly November 2026 issuance Thanksgiving week total $bn (extended)",
+   "result": "no hit",
+   "note": "cambonds returns the category index and Jan 2026 / Nov 2024 posts only; Raymond James muni weekly (23 Nov) not fetched. No week-of-23-Nov IG recap."
+  },
+  {
+   "query": "CoreWeave $4.5 billion Meta loan Morgan Stanley MUFG November 26 2026 (extended)",
+   "result": "hit",
+   "note": "Relays of the 25 Nov Bloomberg report dated 26 Nov (kucoin x2, qz, crypto.news, longbridge, stocktwits, blockonomi, capwolf, coinalertnews) - none reports a launch or pricing."
+  },
+  {
+   "query": "CoreWeave loan launch pricing investors November 27 2026 (extended)",
+   "result": "hit",
+   "note": "Fetched 24/7 Wall St 26 Nov 10:48 ET (delayed-draw structure, Dalton GA, demand 'reportedly' full size, 7-7.5% talk, launch possibly week of 30 Nov, not launched/priced; bond 18% yield, 76.6c on 24 Nov, spread 13.14%; CDS >70% / 68%; CRWV 42.57). stockanalysis/aiaffairs/cryptobriefing/biggo/fourweekmba not fetched (same source)."
+  },
+  {
+   "query": "cappnotes closing look Thursday November 26 2026 (extended)",
+   "result": "no hit",
+   "note": "No Thursday issue (US holiday); search returns the 25 Nov Closing Look (recorded 11-26) and older issues."
+  },
+  {
+   "query": "Asian stocks Friday November 27 2026 Nikkei KOSPI close Treasury yields dollar yen Reuters (extended)",
+   "result": "hit",
+   "note": "Fetched investing.com 'Japan shares higher at close; Nikkei 225 up 2.11%' (27 Nov 07:00: 58,711.11; USD/JPY 159.33; WTI 86.27; Brent Feb 92.69; gold 3,661.10) and nerosignal 'Tokyo bought the chips and ignored the inflation print' (27 Nov: Tokyo CPI, Nikkei/TOPIX/KOSPI/TAIEX closes, JGB 10y, Kioxia/Advantest/TEL). kotakneo (+0.67%/+0.3% - earlier snapshot), mlq 'Kospi jumps 4%', tldrdailynews, tradingview CNBC-TV18 not fetched."
+  },
+  {
+   "query": "European shares close Thursday November 26 2026 Stoxx 600 tariff Reuters (extended)",
+   "result": "hit",
+   "note": "Fetched Reuters via investing.com (26 Nov, upd 12:48): Stoxx 600 636.98 +1.8%, sectors, USTR tariff caps, de Cos ECB nomination, Imperial/Siemens Energy/Commerzbank/BAWAG/Soitec/Infineon; no bond issuance, no yields. Also fetched eurasiabusinessnews 27 Nov recap (Thu Asia closes: Nikkei 57,499.16 +0.86%, KOSPI 4,711.21 +0.29% 'unsettled', HSI 22,226.88 +1.19%, SHCOMP 3,476.88; Brent 96.25 / WTI 84.78 at 14:25 GMT; gold 3,570.90). Yahoo/longbridge/kwsn/qncnews relays not fetched."
+  },
+  {
+   "query": "data center bond OR ABS OR CMBS priced November 26 2026 Vantage OR Aligned OR \"data center\" financing (extended)",
+   "result": "no hit",
+   "note": "CREFC primer (Nov 2026) and New Issue Weekly dated 9 Nov, cranefrontier/ccir trackers (undated), 2021 Vantage release - no deal dated 26-27 Nov."
+  },
+  {
+   "query": "OpenAI OR xAI OR Anthropic OR Nebius debt financing bond November 26 2026 (extended)",
+   "result": "no hit",
+   "note": "Fetched omniterminal 'A USD 3.5bn AI debt deal, a 364-day repayment clock' (6 Nov post): Nebius USD 3.5bn Citi senior secured 364-day facility, Term SOFR +2.75% stepping to 3.50%, announced 22 Oct - pre-gate (discarded). Others are Wikipedia/trackers/commentary."
+  },
+  {
+   "query": "sec.gov 8-K filed November 25 2026 OR November 27 2026 Oracle OR CoreWeave OR Nebius OR \"GE Vernova\" OR Vertiv OR \"Arista Networks\" OR Microsoft OR Meta Platforms (extended)",
+   "result": "no hit",
+   "note": "Only pre-gate filings: GEV 8-K 28 Oct (Q3), ORCL 8-K 18 Nov (annual meeting; fetched), META 8-K 3-5 Nov (fetched: USD 15bn five-tranche notes 5.850% 2031 3.25bn / 6.250% 2033 3.25bn / 6.550% 2036 4.0bn / 7.350% 2046 1.75bn / 7.500% 2056 2.75bn + 46m-share forward sale - recorded early November), CRWV 8-K 10 Nov (Q3; index fetched). No registered-ticker 8-K dated 25-27 Nov."
+  },
+  {
+   "query": "week ahead December 1 2026 ISM manufacturing JOLTS ADP nonfarm payrolls December 4 economic calendar (extended)",
+   "result": "hit",
+   "note": "Fetched fedratecalc December 2026 calendar (JOLTS Tue 1 Dec 10:00, NFP Fri 4 Dec 08:30, FOMC Wed 9 Dec 14:00, CPI Thu 10 Dec 08:30; cites bls.gov/federalreserve.gov, reviewed 12 Sep; no ISM/ADP). talkmarkets/thomsoninvestmentgroup/financecalendar not fetched; ISM refused host."
+  },
+  {
+   "query": "IG credit spreads OAS Wednesday November 25 2026 investment grade high yield spread close (extended)",
+   "result": "hit",
+   "note": "Fetched FRED BAMLH0A0HYM2 (HY OAS 3.72% at 24 Nov; 25 Nov not posted) and, via a second standard search, FRED BAMLC0A0CM (IG OAS 0.98% at 24 Nov). govspending relay, thetrading.tools, clintsmith substack, finexus 'HY +29bp' not fetched."
+  },
+  {
+   "query": "euro bond market new issue Thursday 26 November 2026 priced tranche books data centre OR hyperscaler OR Nebius OR Oracle (extended)",
+   "result": "no hit",
+   "note": "ECB FSR Nov 2026, FourWeekMBA/analysis.org early-November hyperscaler tallies (USD 66.9bn week; Oracle 8.65%), wisevoter 26 Nov (fetched: Fitch - IG YTD USD 940bn through Oct +33%, hyperscalers USD 277bn through early Nov, AA share 22%; no weekly tally, no deals). No European AI-infra issuance Thu-Fri."
+  }
+ ],
+ "notes": "THANKSGIVING THURSDAY + FRIDAY MORNING. No US session Thursday; no registered-ticker or AI-infra bond/equity deal priced, launched, pulled or postponed Thu 26-Fri 27 Nov (Asia/Europe) surfaced; US IG daily tally for Wed 25 Nov and the holiday-week total remain unprinted (fourth quiet run); FRED ICE BofA OAS at 24 Nov: IG 0.98% (+5bp from 18 Nov), HY 3.72% (+25bp from 18 Nov; 20 Nov high 3.76) - 25 Nov not yet posted. COREWEAVE USD 4.5bn Meta-tied loan: NOT launched - Thursday relays (24/7 Wall St 26 Nov) add delayed-draw structure from escrow for GPUs at Dalton GA, demand 'reportedly' matching full size, 7-7.5% talk, launch possibly week of 30 Nov; 9% 2031 bond at a record-low 76.6c / 18% yield, 5y CDS-implied default >70%; CRWV 42.57 (52-wk low 37.40 intraday Wed). EUROPE THU: Stoxx 600 636.98 +1.8% (DAX 25,215 +2.1%, FTSE 10,609 +1.8%, CAC 8,109 +1.6%, SX5E 6,015 +2.0%) on USTR capping Section 301 tariffs at deal levels (EU/Japan/Korea/Taiwan 15%, China 20%/40%, Vietnam up to 35%, Thailand 18%; hearing 25 Jan 2027) and de Cos' ECB nomination; semis up 3-7%; Bund/gilt 10y +2bp. ASIA THU: Nikkei 57,499 +0.86%, KOSPI 4,711 +0.29% (unsettled), HSI 22,227 +1.19%. ASIA FRI: Nikkei 58,711.11 +2.11%, TOPIX 3,815 +1.73%, KOSPI 4,915.68 +4.34%, TAIEX 39,308 +0.40%; Kioxia +8.9% (reported Nvidia tie-up), Advantest +7.1%, TEL +4.4%; Tokyo CPI core 2.9% (cons 3.0, Oct 2.6), BOJ Tamura: hike discussion Dec or later. RATES ~05:00 CET: 10y 4.918% (+~6bp), 2y 4.685%, 30y 5.305%, 2s10s 23bp; USD/JPY 159.35, EUR/USD 1.098; Brent ~97 (first weekly gain in five), WTI ~85-86; gold ~3,660 +2.6% from the 3,427 Wed low, silver 44.30 +6.6%, copper +5%; VIX 26.80; US futures +0.5-0.6%; Jazan refinery hit Thu (standoff item). IPO: Renaissance calendar still no 11/30 section, RGNA USD 18m the only queued name; Stats as of 11/27 unchanged 124 / USD 230.3bn / 223 filings / 158 SPACs; nothing filed, priced or withdrawn 26-27 Nov; ANT no Thursday print; MSCI 30 Nov adds ANT and removes Strategy. DATES: Fri 27 Nov early close 13:00/14:00 ET (SIFMA per Saxo), advance goods trade 08:30 ET; Sun 29 Nov OPEC+ (targets expected unchanged); Mon 30 Nov Brent expiry / MSCI / USD 177bn bills; Tue 1 Dec JOLTS 10:00 ET (+ISM by convention); Fri 4 Dec payrolls; FOMC 9 Dec, CPI 10 Dec, AVGO 9 Dec and MU 17 Dec verified-carried; ORCL FQ2 FY27 STILL UNVERIFIED - 11 days to the earliest aggregator date (8 Dec), enters the ten-day flag window Sat 28 Nov; no other registered ticker reports inside six weeks. No registered-ticker 8-K dated 25-27 Nov.",
+ "discarded": [
+  {
+   "what": "Nebius USD 3.5bn Citi senior secured 364-day facility (Term SOFR +2.75% to 3.50%), announced 22 Oct; omniterminal post 6 Nov",
+   "why": "pre-gate by five weeks; presumably recorded in late October - flag to the orchestrator if not"
+  },
+  {
+   "what": "Meta 8-K (event 3 Nov, signed 5 Nov): USD 15bn five-tranche senior notes + 46m-share forward sale",
+   "why": "pre-gate; the early-November hyperscaler deals are in the 11-04/11-06 files"
+  },
+  {
+   "what": "Oracle 8-K orcl-20261118 (Item 5.07 annual-meeting votes; say-on-pay 1.50bn for / 0.85bn against)",
+   "why": "pre-gate (18 Nov, signed 20 Nov); fetched only to confirm it is not an earnings-date notice"
+  },
+  {
+   "what": "GE Vernova 8-K 28 Oct (Q3) and CoreWeave 8-K 10 Nov (Q3)",
+   "why": "pre-gate earnings filings"
+  },
+  {
+   "what": "wisevoter/Fitch 26 Nov: IG YTD USD 940bn through Oct, hyperscalers USD 277bn through early Nov, AA share 22%, 2027-29 maturities ~USD 1.5tn",
+   "why": "cumulative statistics, not a dated issuance observation; cited in the IG item note"
+  },
+  {
+   "what": "Aramco Jazan refinery projectile strike Thu 26 Nov (one worker killed; coalition blames Houthis)",
+   "why": "standoff group's item; noted here only as the Brent driver"
+  },
+  {
+   "what": "USTR Section 301 tariff caps (15/20-40/35/18%) and de Cos ECB nomination",
+   "why": "macro/policy, recorded only as the Thursday Europe rally driver inside the prints item"
+  },
+  {
+   "what": "Kioxia +8.9% Fri on a reported Nvidia partnership",
+   "why": "memory_no_surface name; a report, not a dated deal or event"
+  },
+  {
+   "what": "24/7 Wall St 'Quick Read' USD 5bn loan size",
+   "why": "internal inconsistency; the article body and Bloomberg say USD 4.5bn"
+  },
+  {
+   "what": "hereflorence/herecolumbia 'Bond desks eye USD 35bn before Thanksgiving slowdown' (15 Nov)",
+   "why": "pre-gate forecast, not a realised tally"
+  }
+ ],
+ "items": [
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-26",
+   "late": false,
+   "name": "Update vs 2026-11-26.json: US IG new-issue volume - Thu 26 Nov US primary market CLOSED (Thanksgiving) and no page fetched 27 Nov prints a Wed 25 Nov tally or a Thanksgiving-week total (Saxo Quick Take 27 Nov and Asia QT: no corporate deal; Reuters Europe close: no bond issuance; cambonds weekly not surfaced for the week; wisevoter/Fitch 26 Nov carries only YTD-through-October USD 940bn, +33% y/y, hyperscaler USD 277bn through early November) - fourth consecutive run without a daily tally; quiet, not zero. Fri 27 Nov is a 14:00 ET bond early close (SIFMA per Saxo Asia QT) - no supply expected",
+   "source": "Saxo Market Quick Take 27 Nov; Saxo Asia Market Quick Take 27 Nov; Reuters via investing.com 26 Nov; wisevoter 26 Nov (Fitch)",
+   "url": "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---brent-tops-usd-97-and-asian-stocks-extend-rebound---27-november-2026-27112026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Thursday's null is a holiday closure (US primary market shut), not an unprinted number; Wednesday's tally remains unprinted by any reachable page. The Thanksgiving week's realised supply (Mon-Wed) is still unmeasured in the files; the next chance is a Monday 30 Nov weekly recap. Last printed OAS from CappNotes: IG 94 / HY 356 (Tue close, recorded 11-25); ICE BofA OAS through 24 Nov recorded below as late items.",
+   "series": "ig.us_daily_volume_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "period_end": "2026-11-26",
+   "other_urls": [
+    "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take--27-november-2026-27112026",
+    "https://www.investing.com/news/economy-news/european-stocks-rally-as-tech-and-banks-rebound-tariff-fears-ease-5052228",
+    "https://wisevoter.com/world/us/2026/11/26/hyperscalers-share-investment-grade-bond-issuance"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-24",
+   "late": true,
+   "name": "ICE BofA US High Yield Index OAS (BAMLH0A0HYM2, FRED) 3.72% at Tue 24 Nov - path 18 Nov 3.47 / 19 Nov 3.52 / 20 Nov 3.76 / 23 Nov 3.63 / 24 Nov 3.72; the 25 Nov observation NOT yet posted at 12:10Z 27 Nov (FRED lags one business day plus the holiday). Kept once as late: not in the 11-25/11-26 files (those carry Bloomberg-basis CappNotes HY 356bp Tue close and Saxo HY 364 Wed morning - different index, not reconciled)",
+   "source": "FRED series page BAMLH0A0HYM2 (ICE BofA)",
+   "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "NEW series slug (none existed in the calendar files for an OAS level): credit.hy_ice_bofa_oas_pct. +25bp from 18 Nov to 24 Nov on the ICE basis, with the 20 Nov 'Friday mayhem' print (3.76) the high. Wed 25 Nov close still unprinted on any basis.",
+   "series": "credit.hy_ice_bofa_oas_pct",
+   "value": 3.72,
+   "unit": "percent (OAS)",
+   "period_end": "2026-11-24",
+   "release_date": "2026-11-25"
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-24",
+   "late": true,
+   "name": "ICE BofA US Corporate Index OAS (BAMLC0A0CM, FRED) 0.98% at Tue 24 Nov - path 18 Nov 0.93 / 19 Nov 0.94 / 20 Nov 0.98 / 23 Nov 0.97 / 24 Nov 0.98; 25 Nov not yet posted. Kept once as late (CappNotes Bloomberg-basis IG 94bp Tue close recorded 11-25 is a different index)",
+   "source": "FRED series page BAMLC0A0CM (ICE BofA)",
+   "url": "https://fred.stlouisfed.org/series/BAMLC0A0CM?ref=11am.cz",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "NEW series slug: credit.ig_ice_bofa_oas_pct. +5bp over four sessions into the holiday on the ICE basis despite the NVDA CreditWatch (25 Nov, after this observation).",
+   "series": "credit.ig_ice_bofa_oas_pct",
+   "value": 0.98,
+   "unit": "percent (OAS)",
+   "period_end": "2026-11-24",
+   "release_date": "2026-11-25"
+  },
+  {
+   "kind": "deal",
+   "group": "P8_calendar",
+   "as_of": "2026-11-26",
+   "late": false,
+   "name": "Update vs 2026-11-26.json: CoreWeave (CRWV) USD 4.5bn Meta-tied loan - NO launch or pricing dated 26-27 Nov; Thursday relays of the 25 Nov Bloomberg report (24/7 Wall St 26 Nov 10:48 ET; kucoin, crypto.news, cryptobriefing, aiaffairs, stockanalysis, blockonomi, biggo 26 Nov) add: delayed-draw term loan drawn from escrow as GPUs are bought for Meta at CoreWeave's Dalton, Georgia site; collateral = the GPUs serving Meta; investors 'reportedly indicated demand matching the full size' (pre-launch reverse enquiry, not a book); early price talk 7-7.5%; launch 'possibly the week of 30 Nov'; expected IG ratings vs junk-rated parent; CoreWeave and Morgan Stanley declined comment, MUFG and Meta did not respond. Secondary per 24/7: 9% 2031 bond at a record low yielding 18% on 25 Nov (76.6c on 24 Nov, spread a record 13.14%); 5y CDS-implied default probability >70% (S&P Global MI: 68%); CRWV 52-week low 37.40 intraday Wed, close 42.57 -0.08%, +2.33% after hours; -40.55% YTD, -76.8% vs the 183.58 record close. No Saxo (27 Nov or Asia QT) mention of CoreWeave",
+   "source": "24/7 Wall St 26 Nov 10:48 ET (Bloomberg-sourced); search snippets kucoin/crypto.news/cryptobriefing/aiaffairs/stockanalysis/blockonomi/biggo 26 Nov",
+   "url": "https://247wallst.com/investing/2026/11/26/coreweave-can-now-borrow-at-7-with-metas-name-on-the-loan/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Still a pre-launch report; the test remains launch and pricing vs 7-7.5% in the week of 30 Nov. The 24/7 'Quick Read' box says USD 5bn while the body says USD 4.5bn - the body (and Bloomberg via roic 25 Nov) is recorded. Not pulled, not downsized - no HARD-EVENT. No registered-ticker or other AI-infra (OpenAI/xAI/Anthropic/Nebius/Vantage/Aligned/data-center ABS-CMBS) bond or equity deal priced, launched, pulled or postponed Thu 26-Fri 27 Nov (Asia/Europe) surfaced; the Nebius USD 3.5bn Citi 364-day facility that the search returned is dated 22 Oct (discarded).",
+   "issuer": "CoreWeave, Inc. (CRWV)",
+   "size": "USD 4.5bn (reported)",
+   "tranches": [
+    "delayed-draw secured term loan (escrow draws as GPUs purchased for Meta, Dalton GA); maturity not set"
+   ],
+   "spread_vs_ipt": "early price talk 7-7.5% (pre-launch; no IPT, no book)",
+   "book": null,
+   "other_urls": [
+    "https://stockanalysis.com/news/coreweave-meta-backed-loan-7-percent/",
+    "https://www.roic.ai/news/coreweaves-banks-to-sell-45-billion-meta-tied-loan-next-week-11-25-2026"
+   ]
+  },
+  {
+   "kind": "ipo",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Renaissance IPO calendar (fetched 27 Nov): page still headed 'IPOs This Week - 11/23/2026' - 'No public listings are currently set to price for the week of 11/23/2026'; STILL NO section for the week of 11/30 or 12/7 (nothing scheduled post-holiday); NYSE none; RegenLab USA (RGNA, Nasdaq, 2.5m sh at USD 6-8, USD 18m, StoneX) the only queued name, undated; Stats page latest stories unchanged (four filings and the Sonic Lighting withdrawal all dated 25 Nov; nothing dated 26-27 Nov). Anthropic (ANT): no US session Thu 26 Nov - nothing to record; Wed close 82.79 (recorded 11-26) stands as the last print; MSCI inclusion at the Mon 30 Nov close carried; Saxo 27 Nov notes MSCI also REMOVES Strategy (MSTR) from its indexes on 30 Nov",
+   "source": "renaissancecapital.com IPO Calendar and Stats pages (fetched 27 Nov); Saxo Quick Take 27 Nov (MSCI/Strategy)",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Calendar",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Eighth consecutive run with no >= USD 100m launch since ANT; the week-of-11/30 section not yet created on Friday morning means no post-holiday pricing is set. Renaissance's 'week ahead' article for 30 Nov not yet published at fetch time (search surfaced only the 20 Nov 'Thanksgiving break' piece).",
+   "size": "none scheduled",
+   "priced": false,
+   "other_urls": [
+    "https://www.renaissancecapital.com/IPO-Center/Stats",
+    "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---brent-tops-usd-97-and-asian-stocks-extend-rebound---27-november-2026-27112026"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Renaissance US IPO YTD pricings (>= USD 50m mcap) as of 11/27/2026: 124 (-36.1% y/y) - unchanged",
+   "source": "renaissancecapital.com Stats page ('as of 11/27/2026')",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "No pricing since ANT (19 Nov). Page also prints 2026 monthly high June 19 / low September 7; 2025 total 202.",
+   "series": "ipo.us_ytd_count",
+   "value": 124,
+   "unit": "count",
+   "period_end": "2026-11-27"
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Renaissance US IPO YTD proceeds as of 11/27/2026: USD 230.3bn (+533.3% y/y) - unchanged",
+   "source": "renaissancecapital.com Stats page ('as of 11/27/2026')",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "",
+   "series": "ipo.us_ytd_proceeds_usd_bn",
+   "value": 230.3,
+   "unit": "USD bn",
+   "period_end": "2026-11-27"
+  },
+  {
+   "kind": "reading",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Renaissance US IPO YTD filings as of 11/27/2026: 223 (-5.9% y/y) - unchanged from 11/26; 158 SPAC IPOs; no new filing or withdrawal dated 26-27 Nov",
+   "source": "renaissancecapital.com Stats page ('as of 11/27/2026')",
+   "url": "https://www.renaissancecapital.com/IPO-Center/Stats",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "The four 25 Nov micro-cap filings remain the latest stories; the page's own count is recorded.",
+   "series": "ipo.us_ytd_filings",
+   "value": 223,
+   "unit": "count",
+   "period_end": "2026-11-27"
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Thursday 26 / Friday 27 Nov prints for the record (US closed Thu; Fri US half-session not yet open at 12:10Z): EUROPE THU - Stoxx 600 636.98 +1.8% (YTD +7.6% vs S&P 500 +5%; all sectors up, miners/autos/defence >3%, tech rebounded after two down days), DAX +2.1% to 25,215, FTSE 100 +1.8% to 10,609, CAC 40 +1.6% to 8,109, Euro Stoxx 50 +2.0% to 6,015 - driver: USTR said Wed it will cap the new Section 301 tariffs at trade-deal levels (15% Japan/Korea/Taiwan/EU/Switzerland; 20% China under the truce, 40% if it collapses; up to 35% Vietnam; 18% Thailand; hearing 25 Jan 2027, consultation to 5 Jan, no effective date) and Pablo Hernandez de Cos nominated to head the ECB; UK and German 10y +2bp; Imperial Brands +13.3% (Altria approach), Commerzbank -2.6%, ASML +3.2%, Infineon +3.6-4.0%, STMicro +4.3%, Soitec +7%. ASIA THU - Nikkei 57,499.16 +0.86%, KOSPI 4,711.21 +0.29% (eurasiabusinessnews, 'unsettled'), Hang Seng 22,226.88 +1.19%, Shanghai 3,476.88 +0.01%; Brent 96.25 / WTI 84.78 at 14:25 GMT (Reuters via eurasia), gold 3,570.90 (Kitco). ASIA FRI - Nikkei 58,711.11 +2.11% (+1,211.95), TOPIX 3,815.20 +1.73%, KOSPI 4,915.68 +4.34% (opened 4,728.80; Korea reviewing a bigger market-stabilisation fund), TAIEX 39,308.08 +0.40%, MSCI Asia Pacific +0.6%; Kioxia +8.86% to 8,450 (reported Nvidia tie-up; -40% in November), Advantest +7.07%, Tokyo Electron +4.43%, Socionext +12.56%, Lasertec +9.98%; Hang Seng Tech -38% YTD; Shanghai near 3,400 support; Tokyo CPI Nov: headline 2.8% (Oct 2.7), core ex-fresh 2.9% (Oct 2.6; cons 3.0), core-core 2.5% (Oct 2.6); BOJ Tamura: another hike to be discussed in December or later; JGB 10y 2.704% (26 Nov). RATES/FX/COMMODITIES ~05:00 CET FRI (Saxo): 10y 4.918% (+~6bp vs the 4.854% Asia-QT print), 2y 4.685% (+4bp), 30y 5.305% (+~6bp), 2s10s 23bp (-6bp on the week), UK 10y ~5.16%, MOVE <100; USD/JPY 159.33-159.36, EUR/USD 1.0960-1.0980, Bloomberg Dollar Spot flat on the week after Monday's 19-month high (DXY unprinted); Brent ~97 (first weekly gain in five; Monday low <90; investing.com Feb Brent 92.69 +1.11% Fri Tokyo), WTI ~85-86.27; gold ~3,660 +2.6% (Dec futures 3,661.10) from the Wed low 3,427, silver 44.30 +6.6% (week low 38.21), copper +5% (biggest in ten months; -17% in Nov); BCOM +1.4% w/w; VIX 26.80 overnight, VIX1D 39.36 (Wed), Dec VIX futures 23.73; options imply ~1.37% for the half-session and 3.2% into 4 Dec; bitcoin 61,369 (+1.44%; Nov ETF outflow a record USD 5.39bn; IBIT -453m Wed; ~USD 7bn options expire Fri); US futures after the holiday close S&P +0.6%, NDX +0.6%, Dow +0.5%; Aramco Jazan refinery hit by a projectile Thu (one worker killed; coalition blames the Houthis) - standoff group's item",
+   "source": "Saxo Market Quick Take 27 Nov (~05:00 CET); Saxo Asia Market Quick Take 27 Nov; Reuters 'European stocks rally' via investing.com 26 Nov; investing.com 'Japan shares higher at close' 27 Nov; nerosignal 'Tokyo bought the chips' 27 Nov; eurasiabusinessnews 27 Nov (Thu Asia closes)",
+   "url": "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---brent-tops-usd-97-and-asian-stocks-extend-rebound---27-november-2026-27112026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Nothing in this window is a HARD-EVENT (Brent +~2 vs the Wed 94.61 settle, no auction, no deal). 10y/2y/30y are Saxo's early-Friday Asia/Europe cash prints, not a US settle; Thursday had no US cash close. Thursday KOSPI/Nikkei figures come from a secondary recap (eurasiabusinessnews) and carry its 'unsettled' caveat; Friday Asia closes from nerosignal/investing.com. Gold conflict from 11-26 resolved in direction only: Saxo and investing.com both print ~3,660 Friday after a 3,427 Wednesday low; CappNotes' 3,534.70 Wed close stands as the US settle. CappNotes published no Thursday 'Closing Look' (holiday; search returns only the 25 Nov issue). No Thursday ANT print (US closed).",
+   "ticker_or_release": "Thu 26 / Fri 27 Nov Asia-Europe closes / Tokyo CPI / rates-FX-commodities",
+   "datetime": "2026-11-27T05:00:00+01:00",
+   "verified": false,
+   "other_urls": [
+    "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take--27-november-2026-27112026",
+    "https://www.investing.com/news/economy-news/european-stocks-rally-as-tech-and-banks-rebound-tariff-fears-ease-5052228",
+    "https://uk.investing.com/news/stock-market-news/japan-shares-higher-at-close-of-trade-nikkei-225-up-211-5006086",
+    "https://nerosignal.substack.com/p/tokyo-bought-the-chips-and-ignored",
+    "https://eurasiabusinessnews.com/2026/11/27/stock-markets-today-november-26-2026-european-and-asian-stocks-rally-as-tariff-fears-ease/"
+   ]
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Schedule after this run: Fri 27 Nov US EARLY CLOSE - stocks 13:00 ET (19:00 CET), bonds 14:00 ET (20:00 CET; Saxo Asia QT cites SIFMA - sifma.org not read), advance goods trade balance / retail-wholesale inventories 08:30 ET (CappNotes 25 Nov, carried; not on today's Saxo list), ECB consumer inflation expectations 09:00 GMT, eurozone consumer confidence 10:00 GMT, Meituan earnings; Sun 29 Nov OPEC+ ministerial - 'output targets widely expected to stay unchanged' (Saxo 27 Nov; 11-26 Saxo framed it as a 2027 baseline decision); Mon 30 Nov January Brent expiry (carried), MSCI rebalance at the close - ANT added, Strategy (MSTR) removed (Saxo 27 Nov), 7y notes settle, USD 95bn 3m + USD 82bn 6m bills (Saxo Asia QT); Tue 1 Dec JOLTS Oct 10:00 ET (fedratecalc citing bls.gov schedule) and ISM manufacturing (aggregator convention, not surfaced on a dated page this run); Wed 2 Dec ADP (convention), SharkNinja joins the S&P 500 before the open (carried); Fri 4 Dec Employment Situation Nov 08:30 ET (BLS, carried verified 11-14/11-16); CoreWeave loan launch 'possibly' the week of 30 Nov; Tue 8-Wed 9 Dec FOMC (decision 14:00 ET Wed 9 Dec; 'all but priced in' hike per Saxo); Thu 10 Dec CPI Nov 08:30 ET; US debt-limit headroom USD 511.1bn of the USD 41.1tn limit at 24 Nov (Saxo Asia QT); Section 301 tariff hearing 25 Jan 2027 / consultation to 5 Jan",
+   "source": "Saxo Market Quick Take 27 Nov; Saxo Asia Market Quick Take 27 Nov; fedratecalc December 2026 calendar (cites bls.gov / federalreserve.gov; reviewed 12 Sep); CappNotes 25 Nov (carried); financefeeds 24 Nov (carried)",
+   "url": "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---brent-tops-usd-97-and-asian-stocks-extend-rebound---27-november-2026-27112026",
+   "fetched_how": "WebFetch (search-surfaced link) + carried",
+   "status": "ok",
+   "note": "verified:false for this block as a whole - all times this run are aggregator-sourced (Saxo, fedratecalc, CappNotes); the BLS payrolls/CPI/PPI, FOMC, Treasury and BEA dates are separately carried verified in the next item from the agency reads of 11-14 to 11-24. ISM Tue 1 Dec and ADP Wed 2 Dec are the standard-cadence assumption, not read from ismworld.org or adp.com (ISM a refused host).",
+   "ticker_or_release": "Fri 27 Nov early close / OPEC+ 29 Nov / Brent expiry + MSCI 30 Nov / JOLTS 1 Dec / payrolls 4 Dec / CRWV loan week of 30 Nov",
+   "datetime": "2026-11-27T13:00:00-05:00",
+   "verified": false,
+   "other_urls": [
+    "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take--27-november-2026-27112026",
+    "https://fedratecalc.com/us-economic-calendar/december-2026/",
+    "https://cappnotes.substack.com/p/closing-look-wednesday-november-25"
+   ]
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Update vs 2026-11-26.json: ORCL FQ2 FY2027 results date - STILL UNVERIFIED. Two further searches 27 Nov ('Oracle Corporation announces fiscal 2027 second quarter earnings date ... sets the date'; 'Oracle second quarter fiscal 2027 ... oracle.com investor') return only prior-quarter 'Sets the Date' notices (Q2 FY26 = 2 Dec 2025 release for a 10 Dec 2025 print; Q1 FY27 PDF on q4cdn dated Sep 2026; Q4 FY26 10 Jun) and other issuers' Q2 FY27 releases (Take-Two, Nvidia, Dell, Nutanix); the only Oracle SEC filing surfaced is the 18 Nov 8-K (Item 5.07, annual-meeting votes; signed 20 Nov; no earnings date). Aggregator split unchanged 8 / 9 / 10 / 14 Dec. verified:false - 11 DAYS to the earliest aggregator date (8 Dec) from Fri 27 Nov; ENTERS THE TEN-DAY FLAG WINDOW SAT 28 NOV unless a notice appears in Friday's half-session",
+   "source": "WebSearch 27 Nov (two queries; prior-quarter snippets and sec.gov ORCL 8-K orcl-20261118 fetched)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526470351/orcl-20261118.htm",
+   "fetched_how": "WebFetch (search-surfaced link; SEC 8-K is the annual-meeting filing, not an earnings notice)",
+   "status": "ok",
+   "note": "Last year's cadence (notice 2 Dec for a 10 Dec print) puts the expected notice Tue 1-Wed 2 Dec, i.e. inside the ten-day window; the parent should expect flag (b) from the 28 Nov run onward until verified. investor.oracle.com / oracle.com/news still not search-surfaced.",
+   "ticker_or_release": "ORCL",
+   "datetime": "2026-12-08T16:30:00-05:00",
+   "verified": false,
+   "other_urls": [
+    "https://www.stocktitan.net/news/ORCL/oracle-sets-the-date-for-its-first-quarter-fiscal-year-2027-earnings-fqtq4w8iudxn.html",
+    "https://www.investing.com/equities/oracle-corp-earnings"
+   ]
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-16",
+   "late": false,
+   "name": "AVGO Q4/FY2026 results Wed 9 Dec after close, call 2pm PT / 5pm ET - carried verified from investors.broadcom.com release read 11-16 (12 days out); same day as the FOMC decision",
+   "source": "investors.broadcom.com release 9 Nov (read 11-16)",
+   "url": "https://investors.broadcom.com/",
+   "fetched_how": "carried (IR read 11-16)",
+   "status": "ok",
+   "note": "Not re-read this session; no AVGO 8-K dated 25-27 Nov surfaced.",
+   "ticker_or_release": "AVGO",
+   "datetime": "2026-12-09T17:00:00-05:00",
+   "verified": true
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-19",
+   "late": false,
+   "name": "MU FQ1 FY2027 results Thu 17 Dec 2026, 2:30pm MT / 4:30pm ET - carried verified from the company GlobeNewswire release (19 Nov, read 11-20); 20 days out",
+   "source": "Micron GlobeNewswire release 19 Nov (read 11-20)",
+   "url": "https://www.globenewswire.com/news-release/2026/11/19/3407102/14450/en/micron-technology-to-report-fiscal-first-quarter-results-on-december-17-2026.html",
+   "fetched_how": "carried (company wire release read 11-20)",
+   "status": "ok",
+   "note": "Not re-read this session. Other registered tickers: CRWV (reported 10 Nov), NBIS, GEV (28 Oct 8-K), VRT, ANET, SPCX, META, MSFT, GOOGL, AMZN, NVDA (reported 19 Nov) - next reports are January/February, outside six weeks; no new date announcement for any of them surfaced (sec.gov search returned only the pre-gate CRWV 10 Nov, GEV 28 Oct, META 3-5 Nov and ORCL 18 Nov filings). Kioxia (memory_no_surface) +8.9% Fri on a reported Nvidia tie-up - not a dated event.",
+   "ticker_or_release": "MU",
+   "datetime": "2026-12-17T16:30:00-05:00",
+   "verified": true
+  },
+  {
+   "kind": "event_date",
+   "group": "P8_calendar",
+   "as_of": "2026-11-24",
+   "late": false,
+   "name": "UST December coupon auctions carried verified from the Treasury tentative schedule PDF (read 11-24): 3y Mon 7 Dec, 10y R Tue 8 Dec, 30y R Thu 10 Dec (announced 3 Dec, settle 15 Dec); 20y R Tue 22 Dec, 2y FRN R + 5y TIPS R Wed 23 Dec, 2y/5y Mon 28 Dec, 7y Tue 29 Dec; FOMC Dec 8-9 (statement Wed 9 Dec 14:00 ET); BLS payrolls Fri 4 Dec / CPI Thu 10 Dec / PPI Tue 15 Dec 08:30 ET carried verified from the 11-14/11-16 agency reads; BEA GDP 3rd + Nov PCE Wed 23 Dec (verified 11-24); JOLTS Tue 1 Dec 10:00 ET per fedratecalc citing the BLS schedule (aggregator - not separately verified)",
+   "source": "home.treasury.gov Tentative-Auction-Schedule.pdf (read 11-24); bls.gov / federalreserve.gov calendars (read 11-14/11-16); bea.gov (read 11-24); fedratecalc Dec 2026 page (JOLTS)",
+   "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf",
+   "fetched_how": "carried (agency pages read 11-14 to 11-24)",
+   "status": "ok",
+   "note": "Not re-read this session; fedratecalc (reviewed 12 Sep, citing bls.gov and federalreserve.gov) prints the same 4 Dec / 9 Dec / 10 Dec dates. Saxo Asia QT adds Mon 30 Nov bills: USD 95bn 3m + USD 82bn 6m. The week's 2y FRN R result remains unprinted (11-25/11-26 open item; not re-searched).",
+   "ticker_or_release": "UST Dec coupons / FOMC Dec / Employment Situation Nov / CPI Nov / PPI Nov / GDP 3rd + Nov PCE / JOLTS Oct",
+   "datetime": "2026-12-07T13:00:00-05:00",
+   "verified": true,
+   "other_urls": [
+    "https://fedratecalc.com/us-economic-calendar/december-2026/"
+   ]
+  }
+ ]
+}

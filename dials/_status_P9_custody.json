@@ -1,8 +1,8 @@
 {
  "group": "P9_custody",
- "last_run_at": "2026-11-20T05:11:00-07:00",
- "last_as_of": "2026-11-18",
- "last_file": "dials/flows/2026-11-20.json",
- "status": "ok",
- "error": ""
+ "last_run_at": "2026-11-27T05:10:46-07:00",
+ "last_as_of": "2026-11-21",
+ "last_file": "dials/flows/2026-11-27.json",
+ "status": "partial",
+ "error": "Fed H.4.1 for the week ending 2026-11-25 was NOT released as of the run (federalreserve.gov current page and PDF still dated November 19, 2026; FRED WSEFINT1 lists next release Fri 2026-11-27) - WMTSECL1 11-25 Wednesday level, week-average change and total custody recorded as quiet/null. MOF week.pdf raised PROVENANCE_REQUIRED (not retried); the 11-15..11-21 week was read from the historical week.csv (search-surfaced via the MOF index page) and reconciles exactly with the Reuters relays and tradingeconomics. MOF English index page still listed the Nov 19 release at fetch time (stale listing)."
 }

@@ -1,8 +1,8 @@
 {
  "group": "P8_calendar",
- "last_run_at": "2026-11-26T05:10:46-07:00",
- "last_as_of": "2026-11-26",
- "last_file": "dials/calendar/2026-11-26.json",
+ "last_run_at": "2026-11-27T05:10:46-07:00",
+ "last_as_of": "2026-11-27",
+ "last_file": "dials/calendar/2026-11-27.json",
  "status": "partial",
- "error": "No US IG tally for Wed 25 Nov in any fetched page (CappNotes names no bond deal; Saxo 26 Nov names none) - ig.us_daily_volume_usd_bn quiet/null for a third day and the Thanksgiving week's realised supply remains unmeasured; IG/HY OAS at the Wed close not printed by CappNotes or Saxo (LQD +0.48% / HYG +0.12% only). 2y FRN R result still unprinted (helious/investinglive carry the 7y only). ORCL FQ2 date still aggregator-only (8 Dec earliest = 12 days out; snippet-only). Fetch failures: qz.com CoreWeave-loan piece client_error (roic.ai relay of the Bloomberg story used instead; Bloomberg itself refused host), stockanalysis ANT history client_error (Fool 26 Nov used for session stats), theweekendspread 'The Close' client_error, babypips recap client_error. Durables ex-transport/core capex and new home sales not in the fetched data page. Gold close conflicts between CappNotes (3,534.70 -0.71%) and Saxo ('near 3,600' after a 3,427 low) - both recorded, neither reconciled."
+ "error": "Wed 25 Nov US IG daily tally and the Thanksgiving-week total still unprinted by any reachable page (Saxo 27 Nov / Asia QT, Reuters Europe close, wisevoter-Fitch carry none; cambonds weekly for the week not surfaced; CappNotes published no Thursday issue) - ig.us_daily_volume_usd_bn quiet/null for a fourth run (Thu = holiday closure). IG/HY OAS at the Wed 25 Nov close not printed: FRED ICE BofA series end at 24 Nov (IG 0.98% / HY 3.72%, recorded late:true on new slugs credit.ig_ice_bofa_oas_pct / credit.hy_ice_bofa_oas_pct; not the Bloomberg basis CappNotes uses). ORCL FQ2 FY2027 date still aggregator-only (8 Dec earliest = 11 days from 27 Nov; two searches, only prior-quarter notices and the 18 Nov annual-meeting 8-K). Thursday KOSPI close from a secondary recap flagged 'unsettled' by its own author; TAIEX Thu close not found; DXY level not printed by Saxo (Bloomberg Dollar Spot only). 2y FRN R result (11-25) not re-searched. No fetch failures this run."
 }
