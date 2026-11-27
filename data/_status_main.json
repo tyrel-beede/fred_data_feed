@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-26T22:14:55Z",
+ "run_utc": "2026-11-27T04:31:03Z",
  "ok": [
   "fred:DGS2",
   "fred:DGS5",
@@ -51,8 +51,6 @@
   "fred:NFCI",
   "fred:STLFSI4",
   "fred:MORTGAGE30US",
-  "treasury:auctions",
-  "treasury:tga",
   "nyfed:sofr",
   "nyfed:pd_positions",
   "cftc:es",
@@ -137,6 +135,8 @@
   "breadth"
  ],
  "failed": {
+  "treasury:auctions": "HTTPError: HTTP Error 504: Gateway Time-out",
+  "treasury:tga": "HTTPError: HTTP Error 504: Gateway Time-out",
   "options:SPY": "HTTPError: HTTP Error 403: Forbidden",
   "options:QQQ": "HTTPError: HTTP Error 403: Forbidden",
   "options:RSP": "HTTPError: HTTP Error 403: Forbidden",
