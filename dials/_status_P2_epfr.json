@@ -1,8 +1,8 @@
 {
  "group": "P2_epfr",
- "last_run_at": "2026-11-21T05:11:00-07:00",
- "last_as_of": "2026-11-18",
- "last_file": "dials/flows/2026-11-21.json",
+ "last_run_at": "2026-11-28T05:10:00-07:00",
+ "last_as_of": "2026-11-25",
+ "last_file": "dials/flows/2026-11-28.json",
  "status": "partial",
- "error": "Flow Show 20 Nov 2026 (week to Wed 18 Nov) read via Yahoo/Investing.com, chaincatcher 2306709, longbridge 306272547 and kucoin relays; BofA HY weekly flow and Treasury weekly flow not printed in any reachable relay (epfr.hy_usd_bn null, quiet; Treasuries noted null inside the bonds item). All other EPFR series incl. ETF/mutual-fund split and Bull & Bear (7.1) printed. Lipper US series all printed incl. tech sector (10.3bn). au.investing.com Reuters relay returned SERVER_ERROR (fetched the 1049thewolf/Reuters relay and longbridge/Zhitong relay instead). Bloomberg and gurufocus not attempted (refused/failed hosts)."
+ "error": "BofA Flow Show for the week to Wed 25 Nov not found: 13 extended searches surfaced no relay with EPFR weekly flows or a Bull & Bear update; BofA's Thanksgiving-week publication was Hartnett's Year Ahead 2027 note (relays dated 26-27 Nov: longbridge 306960407, TheStreet, tokenpost; vblgoldfix and darksideoftheboom paywalled) which prints only '$1.5tn annualised 2026 equity inflows'. All 12 EPFR/B&B series recorded value null, status quiet. LSEG Lipper US series all printed (Reuters relay via Investing.com 5053333 + wkzo global story); Lipper US HY not printed in the US story (global HY -1.54bn noted). Bloomberg/CNBC/FT/WSJ not attempted (refused hosts)."
 }

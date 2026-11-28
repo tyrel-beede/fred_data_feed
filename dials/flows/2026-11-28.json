@@ -1,0 +1,741 @@
+{
+ "group": "flows",
+ "run_at": "2026-11-28T05:10:00-07:00",
+ "run_weekday": "Sat",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "partial",
+ "error": "P2_epfr: BofA Flow Show for the week to Wed 25 Nov not found: 13 extended searches surfaced no relay with EPFR weekly flows or a Bull & Bear update; BofA's Thanksgiving-week publication was Hartnett's Year Ahead 2027 note (relays dated 26-27 Nov: longbridge 306960407, TheStreet, tokenpost; vblgoldfix and darksideoftheboom paywalled) which prints only '$1.5tn annualised 2026 equity inflows'. All 12 EPFR/B&B series recorded value null, status quiet. LSEG Lipper US series all printed (Reuters relay via Investing.com 5053333 + wkzo global story); Lipper US HY not printed in the US story (global HY -1.54bn noted). Bloomberg/CNBC/FT/WSJ not attempted (refused hosts).",
+ "groups_gathered": [
+  "P2_epfr",
+  "P4_cftc",
+  "P11_h8"
+ ],
+ "group_status": {
+  "P2_epfr": {
+   "status": "partial",
+   "error": "BofA Flow Show for the week to Wed 25 Nov not found: 13 extended searches surfaced no relay with EPFR weekly flows or a Bull & Bear update; BofA's Thanksgiving-week publication was Hartnett's Year Ahead 2027 note (relays dated 26-27 Nov: longbridge 306960407, TheStreet, tokenpost; vblgoldfix and darksideoftheboom paywalled) which prints only '$1.5tn annualised 2026 equity inflows'. All 12 EPFR/B&B series recorded value null, status quiet. LSEG Lipper US series all printed (Reuters relay via Investing.com 5053333 + wkzo global story); Lipper US HY not printed in the US story (global HY -1.54bn noted). Bloomberg/CNBC/FT/WSJ not attempted (refused hosts).",
+   "gate": {
+    "since": "2026-11-18",
+    "note": "Flow Show of Fri 20 Nov (week to 18 Nov) already recorded. New observation: week to Wed 2026-11-25 (Flow Show expected Fri 2026-11-27, Thanksgiving week - not found; Reuters/LSEG Lipper Fri 2026-11-27 found)."
+   },
+   "notes": "No BofA Flow Show with week-to-25-Nov EPFR flows reachable; BofA published Hartnett's Year Ahead 2027 instead (longbridge 27 Nov / TheStreet 26 Nov): S&P 2027 paths 8,888 bubble / 7,777 soft-landing base / 6,666 hard landing (the underpriced risk; FMS 3% hard, 50% soft, 42% no landing, cash 3.6%); preserve capital into the spring hike cycle and dollar peak (BofA fed funds 4.50-4.75% end-2027, three hikes), then buy 'C' assets (chips, commodities, crypto, consumer); hedge with 'GRAB' (govt bonds, real estate, AAA, bullion); equity inflows record 1.5tn annualised 2026; EPS growth <10% vs 17% consensus. Bull & Bear last 7.1 (20 Nov), no update. LSEG Lipper (Reuters, week to 25 Nov, published Fri 27 Nov): US equity -30.57bn (largest since 9 Sep; prior +45.71bn), multi-cap -3.4bn, large -2.72bn, mid -2.71bn, small -0.952bn; sector funds -12.41bn (largest since 24 Jun): tech -9.27bn, healthcare -2.36bn, industrials -2.26bn; US bond -0.649bn (prior -5.59bn; short/intermediate IG -6.51bn largest since 9 Apr 2025, general taxable -0.897bn, short/intermediate gov +5.21bn); US MMF -18.15bn (3rd straight outflow). Lipper global: equity -22.73bn (largest since 17 Sep 2025), Europe +7.29bn, Asia -2.75bn, EM equity +0.971bn (8th straight), global tech -7.57bn, bonds -3.51bn (3rd straight; USD medium-term -5.85bn, euro -2.73bn, HY -1.54bn, government +7.14bn, short-term +1.17bn), EM bond -1.42bn, MMF -49.42bn, gold/precious metals -2.14bn (largest since 25 Mar), energy -0.463bn."
+  },
+  "P4_cftc": {
+   "status": "ok",
+   "error": "",
+   "gate": {
+    "since": "2026-11-17",
+    "note": "Last gathered report date 2026-11-17 (released Fri 20 Nov, recorded in the 2026-11-21 file). No new CFTC report this week: the 24 Nov positions report is on the delayed Thanksgiving schedule, due Mon 30 Nov 2026 (cftc.gov release schedule, fetched 28 Nov). Repo tff_*.json / disagg_* latest report_date 2026-11-17 confirms. last_as_of stays 2026-11-17."
+   },
+   "notes": "No new observation (24 Nov report due Mon 30 Nov, confirmed on the cftc.gov release-schedule page: Nov 06, 16*, 20, 30*; Dec 04, 11, 18, 28*; * = delayed for federal holiday). The 17 Nov nets already recorded on 21 Nov are not re-recorded. Web cross-check of the 17 Nov ES futures-only TFF nets now succeeds exactly: futuresbench.com/cot/sp500-emini/ (as of 17 Nov, released 20 Nov) shows AM 895,049 (-19,081), LF -234,978 (+68,082; 197,833/432,811), dealer -787,376 (-52,087), OI 2,096,958 (prior 2,017,687) = repo values and repo net_prev values exactly; thetrading.tools/es-cot now on 17 Nov (LF -235K, 198K/433K, -11.21% of OI, +68K since 10 Nov); and cftc.gov/dea/futures/financial_lf.htm (stale 20 Oct cache last week) now serves 'Positions as of November 17, 2026' with ES OI 2,096,958, dealer 189,843/977,219, AM 1,122,337/227,288, LF 197,833/432,811 - nets identical to the repo. Last week's partial (unverified) status is therefore cleared. Press relay of the 17 Nov report 23-28 Nov: none reachable (fxtribune AUD piece client_error again; investing.com result was a 2016 article; no new hits), recorded as no hit in sources. Data issue carried: tff_gc.json still PAX Gold perp (latest 2026-10-27), tff_cl.json empty; gold/oil read from disagg files."
+  },
+  "P11_h8": {
+   "status": "ok",
+   "error": "",
+   "gate": {
+    "since": "2026-11-11",
+    "note": "New since gate: TOTCI week ending 2026-11-18 (H.8 release Fri 27 Nov 2026, 4:15 p.m. ET - the Thanksgiving-week release, confirmed on the Fed's November calendar). The Fed's current/default.htm serves the 27 Nov vintage; the current/h8.pdf as indexed by search still served the 20 Nov vintage on 28 Nov."
+   },
+   "notes": "FRED TOTCI (repo, C&I loans SA, USD bn): 10-28 2998.504, 11-04 2992.2532, 11-11 3018.2743, 11-18 3007.4514 (w/w -10.82 after +26.02). Revisions in the 27 Nov vintage vs the 21 Nov file: 10-21 2998.7073 (was 3000.3691), 10-28 2998.504 (was 3000.4008), 11-04 2992.2532 (was 2992.1147), 11-11 3018.2743 (was 3018.1473). SLOOS DRTSCILM 2026-10-01 = 1.7 (unchanged). Web: federalreserve.gov/releases/h8/current/default.htm printed 'Release Date: November 27, 2026', Table 2 SA all commercial banks, week ending Nov 18 (prior Nov 11, revised): bank credit 20,147.4 (20,134.7; +12.7); securities 5,880.1 (5,869.1; +11.0); loans & leases 14,267.3 (14,265.5; +1.8); C&I 3,007.5 (3,018.3; -10.8) - matches FRED to the tenth; deposits 19,918.5 (19,825.2; +93.3); large time deposits 2,647.1 (2,678.8; -31.7); borrowings 2,356.5 (2,375.0; -18.5). The Fed's H.8 feed carries a 20 Nov 'Notice to Users': domestically chartered banks shed USD 6.8 bn of assets/liabilities to nonbanks in the week ending 4 Nov, mainly C&I loans (explains part of that week's dip). Fed November calendar: H.8 at 4:15 p.m. on Nov 6/13/20/27, Thanksgiving-day releases moved to Fri 27 Nov; H.8 landing page footer 'Last Update: November 27, 2026'."
+  }
+ },
+ "items": [
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.global_equity_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR global equity fund flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. LSEG Lipper global equity for the same week: -22.73bn (largest since 17 Sep 2025), recorded in the lipper items' notes, not as this series. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.us_equity_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR US equity flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Lipper US equity -30.57bn for the same week is the lipper.us_equity item, not this series. Prior EPFR week +45.6bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.tech_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR tech fund flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Lipper US tech sector -9.27bn / global tech -7.57bn recorded in the lipper items. Prior EPFR week +5.4bn (8th straight inflow). No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.bonds_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR bond fund flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Treasury weekly flow also not printed (null). Lipper global bond -3.51bn, US bond -0.649bn same week (lipper items). Prior EPFR week -7.4bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.ig_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR IG bond flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Prior EPFR week -0.7bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.hy_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR HY bond flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Lipper global HY -1.54bn same week (noted in lipper.us_bond item). Prior EPFR week not printed either. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.cash_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR money-market/cash flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Lipper global MMF -49.42bn / US MMF -18.15bn same week (lipper items). Prior EPFR week +0.4bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.gold_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR gold flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Lipper gold & precious metals funds -2.14bn (largest since 25 Mar) same week. Prior EPFR week +0.2bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.em_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR EM equity flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Lipper EM equity +0.971bn (8th straight inflow), EM bond -1.42bn same week. Prior EPFR week +8.3bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.etf_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR equity ETF flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Prior EPFR week +73.5bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "epfr.active_usd_bn",
+   "value": null,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "EPFR equity mutual (active) fund flows, week to 25 Nov 2026",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Prior EPFR week -6.8bn. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "bofa.bull_bear",
+   "value": null,
+   "unit": "index 0-10",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": null,
+   "late": false,
+   "name": "BofA Bull & Bear indicator, week to 25 Nov 2026 (no Flow Show found)",
+   "source": "BofA Flow Show (Hartnett) - not found for this week; Year Ahead 2027 note relays (longbridge 306960407, TheStreet, tokenpost) carry no weekly flow",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Not printed by any reachable relay. Last printed 7.1 (Flow Show 20 Nov, from 7.4); no update surfaced this week. No BofA Flow Show with EPFR weekly flows for the week to Wed 25 Nov surfaced in 13 extended searches (Thanksgiving week). What BofA published instead was Hartnett's 'Year Ahead 2027' note (relays: longbridge 306960407 27 Nov 02:17 UTC, TheStreet 26 Nov 09:03 EST, tokenpost 63937 27 Nov, vblgoldfix 'Founders: Hartnett - Year Ahead 2027' 26 Nov, darksideoftheboom 'Grab the Popcorn' 27 Nov); none of these prints a weekly flow figure - only '$1.5tn annualised equity inflows 2026' and the 4-week '$310bn' already carried in the 20 Nov edition. No relay printed a Bull & Bear update from 7.1. Treated as Flow Show skipped/absorbed into Year Ahead; weekly EPFR series recorded null/quiet."
+  },
+  {
+   "kind": "hit",
+   "group": "P2_epfr",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Hartnett Year Ahead 2027 (Thanksgiving week, in place of the weekly Flow Show): 7777 soft landing base, 6666 hard landing underpriced, 8888 bubble; preserve capital, GRAB hedges",
+   "headline": "BofA's Hartnett on US Stocks in 2027: Full-Blown Bubble at 8888, Soft Landing at 7777, Hard Landing at 6666",
+   "claim": "Three 2027 paths for the S&P 500: bubble/no landing ~8,888 (AI + government driven), soft-landing base case ~7,777 (breadth-driven, EPS growth ~10% vs 17% consensus), hard landing ~6,666 - the risk markets are least prepared for (only 3% of FMS respondents expect it; 50% soft, 42% no landing; FMS cash 3.6%). Preserve capital in the coming months while awaiting the spring rate-hike cycle and the dollar peak; BofA sees fed funds 4.50-4.75% by end-2027 (three hikes, no cuts). Once the narrative turns to cuts, buy cyclical 'C' assets (chips, commodities, crypto, consumer); hedge now with 'GRAB' (government bonds, real estate, AAA, bullion). Equity fund inflows a record $1.5tn annualised in 2026; investors broadly overweight stocks and commodities, underweight cash and bonds; K-shaped wealth effect and AI capex supports are weakening. Recession is not the base case (Goldilocks soft landing) but the hard landing is the biggest threat to consensus; 'play defense now' until fear is more visible.",
+   "candidate_dial": "N6 Hartnett",
+   "source": "Longbridge relay (Wallstreetcn) of BofA Hartnett Year Ahead 2027 note, 2026-11-27 02:17 UTC; TheStreet 2026-11-26 09:03 EST; tokenpost 63937 2026-11-27",
+   "url": "https://longbridge.com/en/news/306960407",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "This is the Year Ahead note, not a Flow Show with weekly EPFR flows; no weekly flow, Bull & Bear or YTD-by-asset figures beyond the 1.5tn annualised equity number were printed. Longbridge topic 45398471 (26 Nov) repeats the 20 Nov post-Thanksgiving-rebound stance (10y <4.5%, WTI <$70, dollar peak; 'likely Q2 next year'; ~2-week rebound) with snapshot 10y 4.855%, WTI 84.4, DXY 103.81. Year Ahead relays also cite a 2025 BofA projection of a bull-market peak ~Sep 2027 at 9,914.",
+   "other_urls": [
+    "https://www.thestreet.com/investing/bank-of-america-sp500-2027-recession-risk",
+    "https://www.tokenpost.com/news/investing/63937",
+    "https://longbridge.com/en/topics/45398471"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "lipper.us_equity_usd_bn",
+   "value": -30.57,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "LSEG Lipper US equity fund flows, week to 25 Nov 2026",
+   "source": "Reuters (LSEG Lipper data) relay via Investing.com, 2026-11-27 06:17",
+   "url": "https://www.investing.com/news/stock-market-news/us-equity-funds-post-biggest-outflows-in-11-weeks-as-tech-rout-weighs-5053333",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Largest weekly net sale since 9 Sep ('biggest outflows in 11 weeks'), ending a 3-week inflow run (prior +45.71bn). Multi-cap -3.4bn, large cap -2.72bn, mid -2.71bn, small -0.952bn. Sector funds -12.41bn total (largest since 24 Jun): tech -9.27bn, healthcare -2.36bn, industrials -2.26bn. Driver: tech selloff on AI-capex return doubts plus hawkish Fed comments. Lipper global (wkzo Reuters relay): equity -22.73bn (largest since 17 Sep 2025, 'biggest in 14 months'), US -30.57bn, Europe +7.29bn, Asia -2.75bn; EM equity +0.971bn (8th straight). ACWI at 1,019.01, lowest since 8 Apr."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "lipper.us_tech_sector_usd_bn",
+   "value": -9.27,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "LSEG Lipper US technology sector fund flows, week to 25 Nov 2026",
+   "source": "Reuters (LSEG Lipper data) relay via Investing.com, 2026-11-27 06:17",
+   "url": "https://www.investing.com/news/stock-market-news/us-equity-funds-post-biggest-outflows-in-11-weeks-as-tech-rout-weighs-5053333",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Largest sector outflow of the week; reverses prior week's +10.3bn (largest since 16 Jun). Lipper global tech sector -7.57bn (global figure, not recorded as this US series)."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "lipper.us_bond_usd_bn",
+   "value": -0.649,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "LSEG Lipper US bond fund flows, week to 25 Nov 2026",
+   "source": "Reuters (LSEG Lipper data) relay via Investing.com, 2026-11-27 06:17",
+   "url": "https://www.investing.com/news/stock-market-news/us-equity-funds-post-biggest-outflows-in-11-weeks-as-tech-rout-weighs-5053333",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Second straight weekly outflow, much smaller than prior -5.59bn. Short/intermediate IG -6.51bn (largest since 9 Apr 2025), general domestic taxable -0.897bn, short/intermediate gov/Treasury +5.21bn. US HY and loan participation not printed in the US story. Lipper global bond -3.51bn (3rd straight outflow): USD medium-term -5.85bn, euro bonds -2.73bn, HY -1.54bn, government +7.14bn, short-term +1.17bn; EM bond -1.42bn (5th straight)."
+  },
+  {
+   "kind": "reading",
+   "group": "P2_epfr",
+   "series": "lipper.us_mmf_usd_bn",
+   "value": -18.15,
+   "unit": "USD bn",
+   "as_of": "2026-11-25",
+   "period_end": "2026-11-25",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "LSEG Lipper US money market fund flows, week to 25 Nov 2026",
+   "source": "Reuters (LSEG Lipper data) relay via Investing.com, 2026-11-27 06:17",
+   "url": "https://www.investing.com/news/stock-market-news/us-equity-funds-post-biggest-outflows-in-11-weeks-as-tech-rout-weighs-5053333",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Third consecutive weekly outflow (prior -19.12bn, -38.49bn). Lipper global MMF -49.42bn (3rd straight). Gold & precious metals funds -2.14bn (largest since 25 Mar), energy -0.463bn (wkzo global relay)."
+  },
+  {
+   "kind": "reading",
+   "group": "P4_cftc",
+   "series": "cftc.release_schedule_check",
+   "value": null,
+   "unit": "n/a",
+   "as_of": "2026-11-17",
+   "period_end": "2026-11-17",
+   "release_date": "2026-11-20",
+   "late": false,
+   "name": "CFTC COT release schedule: no new report this week - the 24 Nov positions report is on the delayed (Thanksgiving) schedule, due Mon 30 Nov 2026; latest available report remains positions as of Tue 17 Nov (released Fri 20 Nov)",
+   "source": "cftc.gov Commitments of Traders Release Schedule page",
+   "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Page (fetched 28 Nov) lists November releases 06, 16*, 20, 30* and December 04, 11, 18, 28*; footnote '*Delayed release date due to a federal holiday.' Repo data/cftc/tff_*.json (all ten TFF contracts) and disagg_gc/disagg_cl latest report_date 2026-11-17 (prev 2026-11-10) - consistent; no new observation this run, so the 17 Nov nets recorded in the 2026-11-21 file are not re-recorded here. The 24 Nov report (post-Thanksgiving) arrives Mon 30 Nov 15:30 ET, i.e. before the next Friday gather, which should then find two things: the 24 Nov report on 30 Nov and the 1 Dec report on Fri 4 Dec."
+  },
+  {
+   "kind": "reading",
+   "group": "P4_cftc",
+   "series": "cftc.es.web_crosscheck",
+   "value": null,
+   "unit": "n/a",
+   "as_of": "2026-11-17",
+   "period_end": "2026-11-17",
+   "release_date": "2026-11-20",
+   "late": false,
+   "name": "ES TFF web cross-check of the 2026-11-17 report: EXACT futures-only match achieved - futuresbench, thetrading.tools and cftc.gov financial_lf.htm all now serve 17 Nov and agree with the repo (AM 895,049 / LF -234,978 / dealer -787,376 / OI 2,096,958)",
+   "source": "futuresbench.com/cot/sp500-emini/ ; thetrading.tools/es-cot ; cftc.gov/dea/futures/financial_lf.htm",
+   "url": "https://futuresbench.com/cot/sp500-emini/",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "futuresbench (fetched 28 Nov): positions as of Tue 2026-11-17, released 20 Nov - asset manager net 895,049 (w/w -19,081; prior 914,130), leveraged funds net -234,978 (+68,082; long 197,833 short 432,811; prior -303,060, 145,755/448,815), dealer net -787,376 (-52,087; prior -735,289), OI 2,096,958 (prior 2,017,687) - equals the repo tff_es.json 17 Nov values and net_prev values EXACTLY. thetrading.tools/es-cot: 17 Nov, LF net -235K (198K/433K), -11.21% of OI, moved 68K toward long since 2026-11-10 - consistent. cftc.gov financial_lf.htm (the short-format financial futures-only report, which last week served a stale 20 Oct cache) now serves 'Positions as of November 17, 2026': E-mini S&P 500 OI 2,096,958; dealer long 189,843 short 977,219 (net -787,376); asset manager long 1,122,337 short 227,288 (net 895,049); leveraged funds long 197,833 short 432,811 (net -234,978); changes from 10 Nov: OI +79,271, LF long +52,078 short -16,004 (covering), AM long +6,581 short +25,662, dealer long +14,838 short +66,925. Repo series validated through 17 Nov on the official source. Last week's partial status on this check is therefore resolved; modigin's 17 Nov figures (futures+options basis) remain non-comparable and are not used."
+  },
+  {
+   "kind": "reading",
+   "group": "P4_cftc",
+   "series": "cftc.gc.tff_file_check",
+   "value": null,
+   "unit": "n/a",
+   "as_of": "2026-10-27",
+   "period_end": "2026-10-27",
+   "late": false,
+   "name": "Data issue (persists, third week): repo tff_gc.json holds 'PAX GOLD PERP STYLE - COINBASE DERIVATIVES, LLC' (11 rows, latest 2026-10-27, OI 1,946), not COMEX gold; tff_cl.json is empty - gold and oil are read from disagg_gc.json / disagg_cl.json (both at 2026-11-17: GOLD - COMEX OI 407,834; WTI-PHYSICAL - NYMEX OI 1,869,789)",
+   "source": "repo data/cftc/tff_gc.json, tff_cl.json, disagg_gc.json, disagg_cl.json",
+   "url": "",
+   "fetched_how": "repo file",
+   "status": "quiet",
+   "note": "flag for the pull script's contract-code mapping; not a market reading. No change since the 2026-11-21 file."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "totci.ci_loans_sa_usd_bn",
+   "value": 2998.504,
+   "unit": "USD bn",
+   "as_of": "2026-10-28",
+   "period_end": "2026-10-28",
+   "release_date": null,
+   "late": false,
+   "name": "H.8 commercial and industrial loans, all commercial banks, SA (FRED TOTCI), week ending 2026-10-28",
+   "source": "repo data/fred/TOTCI.csv (FRED)",
+   "url": "",
+   "fetched_how": "repo file",
+   "status": "ok",
+   "note": "w/w -0.20 USD bn vs 10-21 (2998.7073). Revised in the 27 Nov vintage: was 3000.4008 in the 21 Nov file (10-21 also revised to 2998.7073 from 3000.3691). Fed page (27 Nov) prints 2,998.5 for this week."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "totci.ci_loans_sa_usd_bn",
+   "value": 2992.2532,
+   "unit": "USD bn",
+   "as_of": "2026-11-04",
+   "period_end": "2026-11-04",
+   "release_date": "2026-11-13",
+   "late": false,
+   "name": "H.8 commercial and industrial loans, all commercial banks, SA (FRED TOTCI), week ending 2026-11-04",
+   "source": "repo data/fred/TOTCI.csv (FRED)",
+   "url": "",
+   "fetched_how": "repo file",
+   "status": "ok",
+   "note": "w/w -6.25 USD bn. Revised from 2992.1147 in the 21 Nov file. Fed page (27 Nov) prints 2,992.3. The Fed's 20 Nov notice says domestically chartered banks shed USD 6.8 bn of assets/liabilities to nonbanks in this week, mainly C&I loans (a reclassification, not a credit contraction)."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "totci.ci_loans_sa_usd_bn",
+   "value": 3018.2743,
+   "unit": "USD bn",
+   "as_of": "2026-11-11",
+   "period_end": "2026-11-11",
+   "release_date": "2026-11-20",
+   "late": false,
+   "name": "H.8 commercial and industrial loans, all commercial banks, SA (FRED TOTCI), week ending 2026-11-11",
+   "source": "repo data/fred/TOTCI.csv (FRED)",
+   "url": "",
+   "fetched_how": "repo file",
+   "status": "ok",
+   "note": "w/w +26.02 USD bn, the largest weekly rise in the recent run. Revised from 3018.1473 in the 21 Nov file. Fed page (27 Nov) prints 3,018.3."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "totci.ci_loans_sa_usd_bn",
+   "value": 3007.4514,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 commercial and industrial loans, all commercial banks, SA (FRED TOTCI), week ending 2026-11-18",
+   "source": "repo data/fred/TOTCI.csv (FRED)",
+   "url": "",
+   "fetched_how": "repo file",
+   "status": "ok",
+   "note": "New since gate. w/w -10.82 USD bn, giving back ~40% of the prior week's +26.0 jump. Cross-checked against the Fed H.8 page of 27 Nov: 3,007.5 - matches to the tenth."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "sloos.drtscilm_net_pct_tightening",
+   "value": 1.7,
+   "unit": "net percent of banks tightening",
+   "as_of": "2026-10-01",
+   "period_end": "2026-10-01",
+   "late": false,
+   "name": "SLOOS net percentage of banks tightening C&I standards to large and middle-market firms (FRED DRTSCILM), quarter 2026-10-01",
+   "source": "repo data/fred/DRTSCILM.csv",
+   "url": "",
+   "fetched_how": "repo file",
+   "status": "ok",
+   "note": "quarterly; unchanged from the 21 Nov file. Prior rows 2026-07-01 0.0, 2026-04-01 8.1. Next SLOOS (January survey) due early Feb 2027."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.bank_credit_sa_usd_bn",
+   "value": 20147.4,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 bank credit, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Page prints 'Release Date: November 27, 2026'; Table 2 weekly columns Oct 28, Nov 04, Nov 11, Nov 18. Prior week (Nov 11) 20,134.7 (revised from 20,133.2 in the 20 Nov release); w/w +12.7. Note: the search-indexed current/h8.pdf still served the 20 Nov vintage when fetched on 28 Nov; the HTML current release page carries the 27 Nov data."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.securities_sa_usd_bn",
+   "value": 5880.1,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 securities in bank credit, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Prior week (Nov 11) 5,869.1 (revised from 5,869.0); w/w +11.0."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.loans_leases_sa_usd_bn",
+   "value": 14267.3,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 loans and leases in bank credit, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Prior week (Nov 11) 14,265.5 (revised from 14,264.2); w/w +1.8 - loans flat with C&I down 10.8 offset by other categories."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.ci_loans_sa_usd_bn",
+   "value": 3007.5,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 C&I loans, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Prior week (Nov 11) 3,018.3 (revised from 3,018.1); w/w -10.8. Matches repo FRED TOTCI (3007.4514 / 3018.2743) to the tenth - same 27 Nov vintage. Four-week row as printed: Oct 28 2,998.5 / Nov 04 2,992.3 / Nov 11 3,018.3 / Nov 18 3,007.5."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.deposits_sa_usd_bn",
+   "value": 19918.5,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 deposits, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Prior week (Nov 11) 19,825.2 (unrevised); w/w +93.3, reversing the prior week's -37.7."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.large_time_deposits_sa_usd_bn",
+   "value": 2647.1,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 large time deposits, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Prior week (Nov 11) 2,678.8 (revised from 2,672.6); w/w -31.7."
+  },
+  {
+   "kind": "reading",
+   "group": "P11_h8",
+   "series": "h8.borrowings_sa_usd_bn",
+   "value": 2356.5,
+   "unit": "USD bn",
+   "as_of": "2026-11-18",
+   "period_end": "2026-11-18",
+   "release_date": "2026-11-27",
+   "late": false,
+   "name": "H.8 Table 2 borrowings, SA, all commercial banks, week ending 18 Nov 2026",
+   "source": "Federal Reserve H.8 current release page (federalreserve.gov/releases/h8/current/default.htm), printed 'Release Date: November 27, 2026'",
+   "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Prior week (Nov 11) 2,375.0 (revised from 2,375.2); w/w -18.5. Deposits up, large time deposits and borrowings down - funding mix shifting back toward core deposits."
+  }
+ ],
+ "sources": {
+  "P2_epfr": [
+   {
+    "query": "BofA Hartnett Flow Show November 27 2026 fund flows week to November 25 equities",
+    "result": "partial",
+    "note": "Only Reuters/Lipper relays surfaced (AOL, krro/wkzo, rallies, piqmarkets); no BofA Flow Show relay. Fetched wkzo Lipper global story (27 Nov, week to 25 Nov)."
+   },
+   {
+    "query": "Lipper U.S. equity funds week to November 25 2026 Reuters LSEG",
+    "result": "hit",
+    "note": "Fetched investing.com 5053333 Reuters relay (27 Nov 06:17, week to 25 Nov) - primary Lipper US."
+   },
+   {
+    "query": "Hartnett \"Bull & Bear\" November 27 2026 Flow Show Thanksgiving EPFR",
+    "result": "no hit",
+    "note": "Only 20 Nov edition relays (chaincatcher 2306709, longbridge 306272547, kucoin, techflowpost) and a July substack (fetched: 19 Jul 2026, B&B 9.6 - discarded)."
+   },
+   {
+    "query": "Bank of America Hartnett weekly fund flows EPFR \"November 25\" OR \"Nov 25\" equity funds outflow bonds cash gold",
+    "result": "no hit",
+    "note": "Lipper relays only."
+   },
+   {
+    "query": "chaincatcher Hartnett Bank of America fund flows November 28 2026 OR November 27 2026 \"Bull & Bear\"",
+    "result": "partial",
+    "note": "Fetched chaincatcher 2307053 (22 Nov 14:57 UTC+8) - commentary on the 20 Nov Flow Show (S&P 6,845 = give back 2026 gains; IG CDX >80bp; claims >250k; B&B 7.1); no new weekly flows. Fetched darksideoftheboom 'surest way to sideline the Fed' (22 Nov) - same 20 Nov edition."
+   },
+   {
+    "query": "zerohedge Hartnett Flow Show November 2026 Thanksgiving week outflows EPFR \"Bull & Bear\"",
+    "result": "no hit",
+    "note": "Old editions only."
+   },
+   {
+    "query": "Hartnett Flow Show \"Nov 27\" OR \"November 27\" 2026 Bank of America strategists weekly note equity outflow investors",
+    "result": "partial",
+    "note": "Surfaced longbridge 306960407 (fetched, 27 Nov, Year Ahead 2027: 8888/7777/6666), tokenpost 63937 (fetched, 27 Nov, same note), longbridge topic 45398471 (fetched, 26 Nov, repeats 20 Nov stance), darksideoftheboom 'two numbers' (fetched: 27 Sep 2026 edition, B&B 9.3 - discarded). No weekly flow figures."
+   },
+   {
+    "query": "longbridge Bank of America Hartnett latest Flow Show fund flows week equity outflow November 2026 post-Thanksgiving",
+    "result": "no hit",
+    "note": "20 Nov edition relays only."
+   },
+   {
+    "query": "investing.com Hartnett BofA note November 28 2026 OR November 27 2026 stocks bonds flows",
+    "result": "no hit",
+    "note": "Older Investing.com Hartnett pieces (13 Nov 'three conditions', 20 Nov '2 questions'); nothing dated 27/28 Nov."
+   },
+   {
+    "query": "Hartnett Bank of America \"Bull & Bear\" indicator fell OR rose \"from 7.1\" November 2026",
+    "result": "no hit",
+    "note": "Fetched Yahoo/GuruFocus 'stark warning' - 23 Oct 2026 (B&B 7.2), discarded. No B&B update after 7.1."
+   },
+   {
+    "query": "futunn OR wallstreetcn Hartnett Flow Show November 28 2026 equity funds outflow EPFR week \"billion\"",
+    "result": "no hit",
+    "note": "Old futunn pieces only."
+   },
+   {
+    "query": "BofA Hartnett \"biggest outflow\" OR \"largest outflow\" equity funds EPFR week November 25 2026 tech funds outflow Flow Show",
+    "result": "no hit",
+    "note": "Lipper relays only (Yahoo CA, AOL, whtc, iux24, finwire)."
+   },
+   {
+    "query": "zerohedge Hartnett \"year ahead\" 2027 Flow Show 8888 7777 6666 \"GRAB\" preserve capital November 2026",
+    "result": "partial",
+    "note": "Fetched darksideoftheboom 'Grab the Popcorn' (27 Nov, paywalled after intro), vblgoldfix 'Founders: Hartnett - Year Ahead 2027' (26 Nov, paywalled), TheStreet 2027 hard-landing warning (26 Nov 09:03 EST; fetched; 4-week 310bn only). Confirms the week's BofA note is the Year Ahead, no weekly flows reachable."
+   },
+   {
+    "query": "biggo OR kucoin OR marketscreener Bank of America Hartnett EPFR fund flows latest week equity funds outflow November 27 2026 OR November 28 2026",
+    "result": "no hit",
+    "note": "Crypto ETF flow flashes and old biggo pieces only."
+   },
+   {
+    "query": "Hartnett Flow Show \"week to Nov 25\" OR \"week ending November 25\" OR \"week ending Nov 25\" EPFR \"bn\"",
+    "result": "no hit",
+    "note": "2022-2024 Flow Show PDFs only."
+   }
+  ],
+  "P4_cftc": [
+   {
+    "query": "cftc.gov commitments of traders release schedule November 2026",
+    "result": "no hit",
+    "note": "Standard search returned COT archive pages only; schedule page surfaced by the second query."
+   },
+   {
+    "query": "cftc.gov \"Release Schedule\" Commitments of Traders 2026 delayed Thanksgiving",
+    "result": "hit",
+    "note": "Fetched cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm - Nov 06, 16*, 20, 30*; Dec 04, 11, 18, 28*; '*Delayed release date due to a federal holiday.' Next report Mon 30 Nov."
+   },
+   {
+    "query": "futuresbench cot E-mini S&P 500",
+    "result": "no hit",
+    "note": "Standard search did not return futuresbench (stockcircle, tradingster, thetrading.tools/es-cot surfaced instead); futuresbench surfaced by the extended query below."
+   },
+   {
+    "query": "futuresbench.com cot sp500-emini asset manager leveraged funds dealer",
+    "result": "hit",
+    "note": "Fetched futuresbench.com/cot/sp500-emini/ - now on positions as of 2026-11-17 (released 20 Nov): AM 895,049 / LF -234,978 (197,833/432,811) / dealer -787,376 / OI 2,096,958, prior week 914,130 / -303,060 / -735,289 / 2,017,687 = repo exactly."
+   },
+   {
+    "query": "thetrading.tools es-cot E-mini S&P 500 COT leveraged funds",
+    "result": "hit",
+    "note": "Fetched thetrading.tools/es-cot - now 2026-11-17: LF net -235K (198K long / 433K short), -11.21% of OI, +68K toward long since 2026-11-10 (LF only; no AM/dealer/OI)."
+   },
+   {
+    "query": "CFTC commitments of traders November 17 report hedge funds S&P 500 futures short covering Treasury futures net short week ending November 17 2026",
+    "result": "partial",
+    "note": "Fetched cftc.gov/dea/futures/financial_lf.htm - now serves 'Positions as of November 17, 2026' (ES: OI 2,096,958; dealer 189,843/977,219; AM 1,122,337/227,288; LF 197,833/432,811; changes from 10 Nov OI +79,271) - official confirmation of the repo nets. Press relay: fxtribune AUD-week-to-17-Nov piece failed again (client_error); investing.com 'Dramatic spot currency moves' result is a 2016 article (discarded). No dated 23-28 Nov press relay of the 17 Nov report found."
+   }
+  ],
+  "P11_h8": [
+   {
+    "query": "federalreserve.gov H.8 Assets and Liabilities of Commercial Banks November 27 2026 h8.pdf",
+    "result": "partial",
+    "note": "Fetched federalreserve.gov/releases/h8/current/h8.pdf - still served the 20 Nov 2026 vintage ('For release at 4:15 p.m. Eastern Time, November 20, 2026', weekly columns to Nov 11; values identical to the 21 Nov file). Not used for the 18 Nov readings."
+   },
+   {
+    "query": "federalreserve.gov releases h8 current default.htm \"November 27, 2026\" Assets and Liabilities of Commercial Banks",
+    "result": "partial",
+    "note": "Surfaced the Fed November calendar (fetched: H.8 4:15 p.m. Nov 6/13/20/27; Thanksgiving-day releases moved to Fri 27 Nov) but not default.htm; the threads.com relay of the default.htm link was robots_disallowed."
+   },
+   {
+    "query": "federalreserve.gov newsevents December 2026 release calendar H.8 Assets and Liabilities of Commercial Banks",
+    "result": "hit",
+    "note": "Fetched federalreserve.gov/releases/H8 landing page (footer 'Last Update: November 27, 2026'; release each Friday 4:15 p.m., Thursday if Friday is a holiday) and federalreserve.gov/feeds/h8.html (latest entry 20 Nov 'Notice to Users': USD 6.8 bn shed to nonbanks in week ending 4 Nov, mainly C&I). December calendar page surfaced but not fetched (not needed: P11 is weekly Friday)."
+   },
+   {
+    "query": "\"federalreserve.gov/releases/h8/current/default.htm\" H.8 November 27 2026",
+    "result": "no hit",
+    "note": "Only x.com/threads relays and 2006 archive pages; x.com not attempted."
+   },
+   {
+    "query": "alfred.stlouisfed.org H.8 Assets and Liabilities of Commercial Banks in the United States Release Date 2026-11-27",
+    "result": "hit",
+    "note": "Surfaced federalreserve.gov/releases/h8/current/default.htm (search title stale 'November 20, 2026'); fetched - page prints 'Release Date: November 27, 2026', Table 2 columns Oct 28 / Nov 04 / Nov 11 / Nov 18, all seven P11 readings taken from it; C&I row 2,998.5 / 2,992.3 / 3,018.3 / 3,007.5 matches repo TOTCI to the tenth. alfred.stlouisfed.org/release?rid=22 fetched but its release-date list stops at 2026-10-09 (stale page), not used."
+   }
+  ]
+ },
+ "discarded": [
+  "P2_epfr: thedarksideoftheboom 'Hartnett Flow Show: The Mag7 Surprise' - 19 Jul 2026 edition (B&B 9.6), far outside gate",
+  "P2_epfr: thedarksideoftheboom 'two numbers that could trigger a risk-off deleveraging cascade' - 27 Sep 2026 edition (B&B 9.3), outside gate",
+  "P2_epfr: finance.yahoo.com 'Bank of America Sends Stark Warning' (GuruFocus) - 23 Oct 2026 (B&B 7.2), outside gate",
+  "P2_epfr: chaincatcher 2307053 (22 Nov) and thedarksideoftheboom 'surest way to sideline the Fed' (22 Nov) - commentary on the 20 Nov Flow Show already recorded in 2026-11-21.json (no new observation)",
+  "P2_epfr: longbridge topic 45398471 (26 Nov) - restates the 20 Nov post-Thanksgiving stance; folded into the Year Ahead hit's note rather than a separate item",
+  "P4_cftc: investing.com 'Dramatic Spot Currency Moves, Little Change In Speculative Positioning' - 2016-11-19 - decade-old article surfaced by the press-relay search",
+  "P4_cftc: fxtribune.com AUD net-shorts week-to-17-Nov piece - client_error on fetch (second week), unread",
+  "P4_cftc: repo tff_gc.json (PAX Gold perp, 2026-10-27) - wrong market, replaced by disagg_gc.json (flagged in item cftc.gc.tff_file_check)",
+  "P11_h8: federalreserve.gov/releases/h8/current/h8.pdf - served the 20 Nov vintage on 28 Nov (stale), superseded by current/default.htm (27 Nov vintage)",
+  "P11_h8: alfred.stlouisfed.org/release?rid=22 - release-date list stops at 2026-10-09, stale"
+ ]
+}

@@ -1,0 +1,310 @@
+{
+ "group": "events",
+ "run_at": "2026-11-28T05:10:00-07:00",
+ "run_weekday": "Sat",
+ "mode": "scheduled",
+ "skill": "dials-gather",
+ "config_version": "2026-11-06b",
+ "status": "ok",
+ "error": "Fetch failures (not retried): vlsi.kr 'Daily Silicon 28 Nov' (KOSPI close + US SOX; second day running) client_error; invezz 'Why are CoreWeave and Nebius stocks soaring' and invezz 'Why Nvidia pared opening gains' (27 Nov) client_error; Newsquawk 'European Market Wrap 27 Nov' client_error (no Friday Bund/Gilt/OAT levels or OAT-Bund spread read); theweekendspread 'The Close Fri 27 Nov' client_error; mlq 'consumer advocates urge delay of the December PJM capacity auction' client_error (undated); ajupress 'Korea's financial chiefs hold fire as stocks rebound, tightening deepens' - PROVENANCE_REQUIRED after the search link's session parameter was stripped (gatherer error, not retried; the companion ajupress 'silent on rescue fund' piece was read). Refused hosts not attempted: Bloomberg (BBVA EUR 500m DC-loan SRT 26 Nov; Iqony pulled loan 3 Nov; BoE repo reform), CNBC (Treasury yields 27 Nov), FT/WSJ. Semafor primary (Citi/JPM AI-loan offload, 26 Nov) not surfaced - relays only (Benzinga via AOL, Pivot News, FourWeekMBA); none prints portfolio sizes. BoE FSR PDF / FPC record primary not read; the 'just over USD 4tn' hyperscaler potential-exposure figure is carried from a FourWeekMBA relay attributing it to Bloomberg/FSR - relay-attributed, unverified against the PDF. No vendor CoreWeave 5y CDS print dated Fri 27 Nov found - reading recorded quiet; capexcat's 'nearly 1,390' Wednesday print (described as a single trade) conflicts with the 1,314bp recorded 11-26. No JGB/Gilt/Bund 10y Friday close in any fetched page (JGB 10y 2.64% is the THURSDAY 26 Nov level from note.com, carried as context only). S&P France: investing.com/Reuters relay prints action and reasons but no deficit/debt figures, no OAT reaction (markets closed).",
+ "gate": {
+  "since": "2026-11-27T05:10:46-07:00",
+  "note": "New = Fri 27 Nov after ~12:11Z (US half-session 09:30-13:00 ET, bonds to 14:00 ET; Friday Europe close; S&P France review after hours; Friday/Saturday weekly reviews) through Sat 28 Nov ~12:10Z. Tolerance 2 days: items dated 25-26 Nov not in the 11-26/11-27 files kept once with late:true - one qualified (Semafor 26 Nov: Citi and JPMorgan quietly marketing AI-loan portfolios / BBVA EUR 500m DC-loan SRT, the 11-27 file's unread 'banks sell AI loans' item). Thursday 26 Nov BoK +25bp to 3.25% and JGB 10y 2.64% are carried as context inside items, not as separate late hits. Run 2026-11-28 05:10 MST (Sat).",
+  "last_as_of": "2026-11-27",
+  "tolerance_days": 2
+ },
+ "search_mode": "extended",
+ "queries_run": [
+  "bond deal pulled OR downsized November 2026",
+  "fund gates redemptions November 2026",
+  "capex cut OR deferral OR digestion AI November 2026",
+  "funding round repriced AI lab November 2026",
+  "LTA renegotiation memory November 2026",
+  "gigawatt deferral data center November 2026",
+  "Treasury auction tail November 2026",
+  "sovereign bond stress November 2026",
+  "supplementary: Wall Street Black Friday half-session close November 27 2026 Nasdaq Nvidia S&P 500 Treasury yields",
+  "supplementary: CoreWeave stock Friday November 27 2026 Meta loan CDS bonds",
+  "supplementary: Nvidia Southeast Asia server shipment halt Malaysia Singapore reaction November 27 2026",
+  "supplementary: S&P France rating review November 27 2026 OAT decision",
+  "supplementary: CoreWeave CDS spread Friday November 27 2026 basis points default probability",
+  "supplementary: Korea market stabilisation fund KOSPI November 27 2026 close chip stocks finance ministry",
+  "supplementary: TrendForce DRAM NAND contract price November 27 2026 memory LTA Micron Samsung SK hynix orders cut",
+  "supplementary: private credit fund redemption limit OR gates OR suspends withdrawals November 27 2026",
+  "supplementary: hyperscaler capex Microsoft Google Meta Amazon Oracle data center delay OR pause OR cut November 27 2026",
+  "supplementary: PJM data center emergency auction FERC November 2026 scrapped OR delayed",
+  "supplementary: Bank of England Financial Stability Report AI financing gilt repo hedge fund leverage reaction November 27 2026",
+  "supplementary: Malaysia OR Singapore government response Nvidia server shipment halt export rule November 27 2026",
+  "supplementary: European markets close Friday November 27 2026 Stoxx 600 week gilt yield Bund OAT JGB",
+  "supplementary: Nvidia stock Friday November 27 2026 shipments Southeast Asia Huang Trump close",
+  "supplementary: banks selling AI data center loans risk transfer November 26 OR November 27 2026",
+  "supplementary: JGB 10-year yield Friday November 27 2026 close gilt 10-year yield Friday close"
+ ],
+ "notes": "HARD-EVENT CHECK: none of the four classes fired in the window. (a) No pulled or downsized hyperscaler/AI-infra deal. The CoreWeave USD 4.5bn Meta-GPU-secured loan (MS/MUFG) is still 'being prepared, possibly next week' - not launched; the live test remains the week of 30 Nov. The Asian DC-loan freeze (Bloomberg 25 Nov) was re-relayed Fri with new detail (DBS lead arranger on Aolani; Citi and JPMorgan reportedly added an export-control default clause to Bridge's upsized USD 6.6bn loan, each having held USD 120m of Bridge's earlier 2.8bn; Standard Chartered launched a broad DC-client review; Digital Halo's Malaysian site serves Alibaba; a BlackRock-led consortium weighing a LOWER bid for DayOne) - still no loan formally pulled or resized. The one LATE addition is the bank-side mirror: Semafor (26 Nov) reports Citigroup and JPMorgan quietly marketing portfolios of AI-related loans (some via synthetic risk transfers) to offload exposure, with AI issuance said to have 'crowded out' Treasuries and some investors 'tapped out'; Bloomberg (26 Nov, refused host) has BBVA weighing an SRT on ~EUR 500m of DC loans. Sizes and buyers are not printed anywhere read - a distribution/hedging signal, not a pull. (b) No principal capex cut: no MSFT/GOOGL/META/AMZN/ORCL language dated 27-28 Nov; the capex query returned only pre-gate items (SemiAnalysis 13/16 Nov 2028 accelerator-capex cut to USD 758bn from 1.054tn, -28%, not previously in the files but outside tolerance - discarded with its date). TrendForce (27 Nov press release) is the week's new memory-demand read: supply-chain participants have been 'reassessing 2027 and 2028 production and sales plans' since early 4Q26, slightly slowing DRAM procurement; base case conventional DRAM contract-price increases narrow through 2027, level off in 2H27, fall across all categories from 1Q28; bear case server-shipment growth decelerates in 2027 and prices turn down in 4Q27; named drivers are post-midterm caution on US DC development, 2028 power constraints, 'possible changes to NVIDIA's financing support for neocloud providers', Chinese CSPs scaling back server DRAM since early 4Q26 (North American CSPs 'largely absorbed' the freed supply), consumer-electronics price resistance and the BIS rules - no LTA renegotiation, a forecaster not a principal; the memory names rallied through it (MU +7.6%, SNDK +16%, SK hynix ADR +6% morning). (c) No US coupon auction Fri 27 Nov (holiday week; bills only Mon 30 Nov); no tail to record. (d) Sovereign: S&P revised France's outlook to NEGATIVE from stable, affirming A+/A-1, after the European close Fri 27 Nov (budget pressures, weak growth, higher interest costs) - the scheduled sovereign event of the window resolved one notch worse than the 'stable' going-in expectation recorded 11-27; OAT reaction not until Monday; OAT-Bund went in <150bp. Gilts: no Friday level read (Newsquawk wrap unreachable); BoE FSR relays add no gilt-leverage detail beyond 'gilt and repo markets functioned well' and the CCyB at 2%. No fund gated (query 2 returned the recorded 23 Nov SS&C FRI 2.31% and explainers; the Serrari 'giants gate withdrawals' piece is 16 Mar 2026, the BFSI piece 5 Nov - no new gate). TAPE OF THE WINDOW (Fri 27 Nov US half-session): S&P 500 7,297.49 +1.60%, Nasdaq Comp 24,129.50 +2.31%, NDX 26,726.39 +2.61%, Dow 50,774.94 +1.18%, Russell 2,750.30 +1.71%, breadth 406/94; week +5.6% S&P (best since Apr-2025), Dow best week since Oct-2022; November still -3.7% S&P / -5.1% Nasdaq / -1.9% Dow; S&P 6.7% below the 6 Oct record, Nasdaq 12.6% below; VIX 23.81 (-15.8% from Wed 28.29; 35.89 on 20 Nov). RATES gave back the duration bid: 2y 4.69% (+8bp), 10y 4.94% (+9bp), 30y 5.33% (+9bp), 2s10s ~25bp; FedWatch 97.4% for a 25bp HIKE at the 8-9 Dec FOMC (Polymarket 94.5%). DXY 104.04 (+0.36%), USD/JPY 159.55, EUR 1.0939, USD/BRL -3.97%. Gold 3,668.50 (+3.75%), silver 43.70 (+9.11%), copper 5.6005 (+5.03%); Brent Jan 95.44 (+0.88%), WTI 83.08 (-0.72%, fourth weekly loss). AI complex: SOX +4.69%, SNDK +15.96% (S&P best), MU +7.60%, AVGO +3.82%, META +3.13%, CRWV +3.71% (after a -3.4% morning to 41.13), ANT +10.98% to 91.88 (back above the 83 offer after four sessions below), NVDA only +0.80% to 150.49 after trading weak most of the session (reasons per unread invezz: SE Asia halt / CreditWatch; Trump 'probably will soon' speak to Huang); AMZN +4.0% on Black Friday reads; TSLA +5.2%; SpaceX 133.59 (below its 135 IPO). Credit ETFs calm (JNK +0.16%, HYG +0.12%, LQD -0.28%); capexcat weekly: HY OAS 3.77% Wed (widest in a year), IG at a one-year high, CoreWeave 5y CDS ~1,250 last Fri to 'nearly 1,390' Wed (single trade), Oracle/Nvidia CDS up on volume - 'stocks got their nerve back, the lenders didn't'. Europe Fri: Stoxx 600 +1.1% (week +1.81%, November -1.5%), DAX +0.9%, CAC +0.6%, FTSE +0.8%, ASML/ASMI/Soitec/Infineon +4-7% (widget figures lower), Rheinmetall +~5% (Telekom AI platform), front-end yields up on hawkish ECB minutes ('a large number of members' could have backed an October hike; 'further tightening was likely necessary'). Asia Fri (already in 11-27): KOSPI 4,915.68 +4.34%; new: KOSDAQ +8.1% to 708.99; Seoul 'silent on rescue fund' - the KRW 10.8tn stabilisation fund is being 'weighed' for enlargement with no size or date, officials 'ready to take more steps'; BoK hiked 25bp to 3.25% Thu 26 Nov (third hike of 2026, two-year high; 2026 growth forecast raised to 3.9%, 2027 4.1%) - Thursday context not in the 11-27 file. Singapore DPM Gan (Fri): the Nvidia halt is 'not confirmed', Singapore engaging businesses, working with the US to keep hyperscaler chip access, 'does not want to become a conduit for illegal trade'; no Nvidia statement in any page read. Next: OPEC+ Sun 29 Nov, Spain election Sun, bills Mon, ISM/JOLTS Tue, MRVL/CRDO/CRWD Tue, CRM/SNOW Wed, CoreWeave loan launch 'possibly next week', FOMC 8-9 Dec, MU FQ1 17 Dec, ANT lock-up 15 Dec. Eight sweep queries: no in-gate hit from the eight themselves (query 8 surfaced the BoE FSR primary PDF and relays, query 7 the recorded 25 Nov 7y tail pieces); all items came from the supplementary searches.",
+ "sources": [
+  {
+   "query": "1. bond deal pulled OR downsized November 2026 (extended)",
+   "result": "no hit",
+   "note": "New vs 11-27: Bloomberg 'Europe's junk market sees another loan pulled as Iqony axes deal' - dated 3 Nov 2026, refused host, pre-gate (discarded); otherwise the same pre-gate set (Bloomberg Oct-2025 shipping deal, Bond Buyer NYC GO, CFR buyback, Wikipedia, tradingview 'investors buy the November dip'). No pulled or downsized deal 27-28 Nov."
+  },
+  {
+   "query": "2. fund gates redemptions November 2026 (extended)",
+   "result": "no hit",
+   "note": "Opalesque SS&C FRI fetched - 23 Nov, November 2.31% vs 1.62% Oct, five-year Nov average 2.91% (recorded 11-23); researchsquare preprint, investinglive Apollo explainer, whitesecuritieslaw / angelinvestorsnetwork BDC-gate explainers, crowdfundedwealth MMF tables, business-standard 2022 - no new gate or suspension dated 27-28 Nov."
+  },
+  {
+   "query": "3. capex cut OR deferral OR digestion AI November 2026 (extended)",
+   "result": "no hit",
+   "note": "456x 5 Nov MSFT, letsdatascience MSFT 170bn, vlsi.kr Goldman/Montage, X post BofA FMS 52%, biztoc MSFT, Sable 8-K, marketintellabs/pivotnews GDS (recorded 11-26), dreaming.press 1 Nov. New: BigGo 'SemiAnalysis slashes 2028 capex forecast by nearly 30%' fetched - dated 16 Nov (model update 13 Nov): 2028 AI-accelerator capex USD 758bn from 1.054tn (-28%), 2027 627bn from 770bn (-19%), 2026 392bn ~unchanged; Nvidia 66% of the wafer-area cut; drivers weaker frontier-lab Q3 ARR growth, tighter financing for projects without hyperscaler offtake, ~5.8 GW of midterm-related commissioning delays (secondary) - pre-gate beyond tolerance, discarded with date; nothing from a principal dated 27-28 Nov."
+  },
+  {
+   "query": "4. funding round repriced AI lab November 2026 (extended)",
+   "result": "no hit",
+   "note": "Wikipedia company pages (Isomorphic, AI21, AMI Labs, ElevenLabs, Cursor/Anysphere), technode MegaRobo (23 Nov, robotics), superpowerdaily tracker, workinsiders November aggregate (371 rounds / USD 38.2bn) - no repriced or down round for a lab or neocloud 27-28 Nov; not fetched."
+  },
+  {
+   "query": "5. LTA renegotiation memory November 2026 (extended)",
+   "result": "no hit",
+   "note": "Identical set to 11-24..11-27 (FourWeekMBA Baker/onsemi, koreadaily sold-out-to-2029, cryptobriefing Goldman thresholds, TrendForce Samsung-Apple LTA 18 Nov, vlsi.kr CXMT, 404k MS legacy-memory, explainx). In-gate memory content came from the supplementary TrendForce search (27 Nov press release, recorded) - no renegotiation; 247wallst 27 Nov confirms 'no memory order cuts reported' and repeats MU >75% of FY27 committed, SNDK/WDC visibility to 2030-31."
+  },
+  {
+   "query": "6. gigawatt deferral data center November 2026 (extended)",
+   "result": "no hit",
+   "note": "fool.com 14 Nov Huang 1-GW, aidatacenterinsights changelog, aixenergy 'who can finance the next gigawatt' / Google Wyoming microgrid (undated), fool.com 25 Nov Goldman 52 GW (discarded 11-26), GS Group 2.4 GW Gangwon groundbreaking (piqmarkets/dailyaibrief, undated snippet - an addition, not a deferral), urgent.news 26 Nov deliverability piece (server_error 11-27, not retried), pacificsoftwareventures moratorium tracker. No GW deferral by an operator dated 27-28 Nov."
+  },
+  {
+   "query": "7. Treasury auction tail November 2026 (extended)",
+   "result": "no hit",
+   "note": "roic.ai / globaleye24 / capwolf 7y pieces (25 Nov, recorded 11-26: 1bp tail, 'biggest since May 2024'), cryptobriefing / gokhshtein 10y 10 Nov (recorded), helious / thevaultreport / fedratecalc schedule pages. No US coupon auction Fri 27 Nov; bills Mon 30 Nov; next coupons the Dec 2/5/7y cycle - no tail to record."
+  },
+  {
+   "query": "8. sovereign bond stress November 2026 (extended)",
+   "result": "no hit",
+   "note": "Surfaced the BoE FSR November 2026 primary PDF and bankofengland.co.uk page (not fetched - FSR content already recorded 11-27 via relays; financialmarkets.com 27 Nov relay fetched: 'gilt and gilt repo markets functioned well', CCyB 2%, ICE BofA HY OAS 3.47 to 3.72pp over four sessions to 24 Nov, CCC/low-grade AI spreads 'widened sharply'), ECB FSR (recorded 11-18), gurufocus / globalmarketsreview commentary, Nikkei/piqmarkets FSB Schindler (discarded 11-26), memesita relay, kucoin JPM yield-stickiness. The in-gate sovereign event (S&P France outlook to negative, 27 Nov) came from the supplementary France search - recorded as an item."
+  },
+  {
+   "query": "supplementary: Wall Street Black Friday half-session close November 27 2026 (extended)",
+   "result": "hit",
+   "note": "CappNotes 'Closing Look - Fri 27 Nov' fetched (full index/rate/FX/commodity/mover set, FedWatch 97.4% hike, event calendar); thecompanychronicle 'Stocks close: S&P +1.6%, Nasdaq +2.3% in a half-day, November still down' (27 Nov 13:35 ET) fetched (Wed-to-Fri table, November MTD, distance from 20 Nov lows and records, VIX path, NVDA 150.49, AMZN 254.12); stocktitan, BigGo (SNDK +6%, TSM ADR +3% - earlier intraday), eurasiabusinessnews, stl.news, archynewsy, tradingnews, tradingkey not fetched."
+  },
+  {
+   "query": "supplementary: CoreWeave stock Friday November 27 2026 Meta loan CDS bonds (extended)",
+   "result": "hit",
+   "note": "roic.ai 'CoreWeave shares extend slide as debt concerns mount' (27 Nov 14:56Z; morning 41.13 -3.4% from 42.57; 2031s 74.23c / 17.91%; loan 'being prepared, possibly next week', not completed) fetched; capexcat 'Weekly Review Nov 27: stocks got their nerve back, the lenders didn't' (posted 28 Nov 04:24Z) fetched - CDS ~1,250 last Fri to 'nearly 1,390' Wed (single trade), HY OAS 3.77% Wed, author's watch levels CRWV CDS <1,000 / ORCL <325 / HY <3.48%; invezz CoreWeave/Nebius client_error; newsminimalist, longbridge weekly, blockonomi, baseballnewssource (+3%), jianwang substack not fetched; 247wallst 26 Nov already recorded."
+  },
+  {
+   "query": "supplementary: CoreWeave CDS spread Friday November 27 2026 (extended)",
+   "result": "no hit",
+   "note": "aiweekly 'CoreWeave 5y CDS blows out to 1,233bp' fetched - dated 20 Nov (1,232.6bp; Oracle 327.9bp; Alphabet record 93.7bp) - pre-gate, discarded; gurufocus / Yahoo 'stark warning' / tradingview-SA / seekingalpha 'record levels' / roic 25 Nov / longbridge / BigGo Taiwan supply chain - all the 24-25 Nov record (recorded 11-26). No print dated 27 Nov - reading recorded quiet."
+  },
+  {
+   "query": "supplementary: Nvidia Southeast Asia shipment halt reaction / Singapore Malaysia response November 27 2026 (extended)",
+   "result": "hit",
+   "note": "Malay Mail/Bernama 'Singapore yet to verify Nvidia chip shipment halt, says DPM Gan' (27 Nov 17:40 MYT) fetched; techtimes 'Asia data center lenders slow USD 7.8bn in loans after US chip rule targets Chinese tenants' (27 Nov 05:11 ET; Bloomberg-sourced; DBS, Citi/JPM clause, StanChart review, DayOne lower bid) fetched; Peter Lewis Asian briefing (27 Nov 06:00 HKT; BoK hike, Thursday closes) fetched. manilatimes, taipeitimes, technode, theindependent.sg, tradingpedia, qz, techrepublic, techtimes Dell/SMCI, koreatimes 'Singapore engaging', voltgridnews, piqmarkets, Forbes, investing.com/Reuters FT relay not fetched (relays of the 26 Nov FT report). No Nvidia statement; no Malaysian government statement in pages read."
+  },
+  {
+   "query": "supplementary: S&P France rating review November 27 2026 OAT decision (extended)",
+   "result": "hit",
+   "note": "investing.com/Reuters 'S&P revises France outlook to negative on mounting budget pressures, weak growth' (27 Nov 16:27, updated 16:30, tz unstated) fetched - A+/A-1 affirmed, outlook negative from stable; no deficit/debt figures or OAT reaction printed. particle.news, startupfortune, gsmglobalnews, political.org (28 Nov), piqmarkets, splitangle, pollar relays not fetched; euronews Oct-2025 downgrade piece pre-gate."
+  },
+  {
+   "query": "supplementary: Korea market stabilisation fund KOSPI November 27 2026 (extended)",
+   "result": "hit",
+   "note": "KED Global 'Kospi storms toward 5,000 on hopes for bigger market rescue fund' (27 Nov 16:21 KST) fetched - fund KRW 10.8tn, expansion 'weighed', no size/date, KOSDAQ +8.1% to 708.99; ajupress 'Seoul watches markets, silent on rescue fund' (27 Nov 13:09 KST) fetched - no activation update, buyback-limit easing for three months from the 22 Nov package, 'ready to take more steps', hyperscaler H1-26 issuance USD 169.1bn vs 20.4bn; koreajoongangdaily 'authorities warn of volatility' (27 Nov 04:13Z) fetched - fund ~KRW 11tn (USD 8.2bn), last activated after 2008; ajupress 'financial chiefs hold fire ... tightening deepens' PROVENANCE_REQUIRED (session parameter stripped from the search link - gatherer error); vlsi.kr Daily Silicon 28 Nov client_error; bloomingbit Kosdaq +8%, coinpaper, nationpress not fetched."
+  },
+  {
+   "query": "supplementary: TrendForce DRAM contract price November 27 2026 LTA orders cut (extended)",
+   "result": "hit",
+   "note": "TrendForce press release 'Limited demand visibility and growing supply chain caution heighten risk of DRAM contract price declines in 2028' (27 Nov) fetched and recorded; 247wallst 'SanDisk jumps 10% ... despite TrendForce DRAM warning' (27 Nov 08:58 ET) fetched (morning prices, BNP Ackerman MU downgrade 24 Nov citing reduced HBM content in Vera Rubin Ultra); snapereport / cryptobriefing / voltgridnews / asiadaily relays, vlsi.kr NAND verdict (Q4 +8-13%, decline from 1Q27; undated), bloomingbit 'battle over memory-cycle peak' not fetched."
+  },
+  {
+   "query": "supplementary: private credit fund redemption limit OR gates November 27 2026 (extended)",
+   "result": "no hit",
+   "note": "serrarigroup 'private credit giants gate withdrawals' fetched - 16 Mar 2026 (Q1 gates: North Haven, HLEND, BCRED 7% cap, OBDC II freeze, Cliffwater) - pre-gate, discarded; bfsi.eletsonline 'surging redemption requests' fetched - 5 Nov (North Haven 11.4%, BCRED ~10%, Cliffwater ~16%, OTIC ~39% of shares vs 5% caps; no new gate) - pre-gate, discarded; lynkcm, CRS IN12674, multibagg, angelinvestorsnetwork, pitonim, YouTube BlackRock USD 26bn, streamlinefeed - explainers/undated, not fetched. No named gate dated 27-28 Nov."
+  },
+  {
+   "query": "supplementary: hyperscaler capex delay OR pause OR cut November 27 2026 (extended)",
+   "result": "no hit",
+   "note": "io-fund 'AI capex to hit USD 1tn', ldstn 'AI bear thesis part II', nextmsc / walnutinvest / buildermuse / ai-industry-reviews / valueaddvc trackers (MSFT 170bn, ~730bn after Q3), analysis.org 'hyperscalers borrow USD 67bn in a week' (undated) - no principal capex language dated 27-28 Nov; not fetched."
+  },
+  {
+   "query": "supplementary: PJM data center emergency auction FERC November 2026 (extended)",
+   "result": "no hit",
+   "note": "natlawreview 'FERC accepts PJM reliability backstop plan but delays auction' fetched - dated 13 Oct (FERC order 29 Sep, ER26-3380: 6,831 MW RBP suspended five months to 28 Feb 2027 over cost allocation, TO exit rules, USD 1.5m/MW LSE collateral) - pre-gate, discarded; mlq 'consumer advocates from seven states and the IMM urge delay of the December capacity auction over data-center forecasts' client_error (undated); witf/Yahoo 13 Nov IMM warning, actsofevolution, solmarcapital, lanternpodcasts 1 Oct, voltgridnews 'USD 5-10bn', wattreserve - pre-gate/undated, not fetched. The December BRA delay request is the live PJM thread - date unverified, not recorded."
+  },
+  {
+   "query": "supplementary: Bank of England FSR AI financing gilt repo reaction November 27 2026 (extended)",
+   "result": "hit",
+   "note": "financialmarkets.com 'The BoE calls AI financing circular and hard to trace; so far the stress sits in the lowest grades' (27 Nov) fetched - no USD 4tn figure, gilt/repo 'functioned well', HY OAS 3.47 to 3.72pp to 24 Nov, CCyB 2%; FourWeekMBA 'AI Daily 26 Nov: BoE flags USD 4T; banks sell AI loans' fetched this run (client_error 11-27) - 'just over USD 4 trillion' potential AI exposure of the big cloud companies incl. off-balance-sheet commitments, attributed to the FSR via Bloomberg (relay-attributed, PDF not read), Citi/JPM Semafor item, BBVA EUR 500m, CRWV 2031s 74c Wed, Musk-Samsung LTA offer (WSJ); bankofengland.co.uk page/PDF, Bloomberg repo-reform (refused), alpha-maven 'BoE targets hedge fund leverage with proposed gilt repo reforms' (undated), ECB FSR PDF, einpresswire/einnews, ctol not fetched."
+  },
+  {
+   "query": "supplementary: banks selling AI data center loans risk transfer November 26-27 2026 (extended)",
+   "result": "hit",
+   "note": "Benzinga via AOL 'AI risk is moving somewhere harder to see: Citigroup, JPMorgan reportedly look to offload AI debt' (27 Nov 05:33Z; Semafor 26 Nov-sourced) fetched; Pivot News 'Citi and JPMorgan quietly pitch AI data center loan portfolios' (27 Nov; via aiweekly summary of Semafor) fetched - no loans, amounts or investors identified; startupfortune 'banks try to offload the AI DC debt they just underwrote' fetched - dated 11 Oct (FT SRT exploration by JPM/MS/SMBC/MUFG; USD 38bn Oracle-leased TX/WI debt distribution at a discount) - pre-gate, discarded; Bloomberg 'BBVA weighs SRT to hedge about USD 500m of data center loans' (26 Nov) refused host - headline + FourWeekMBA relay only; FourWeekMBA SRT explainer, okx, theaiconsultingnetwork not fetched. Recorded late:true."
+  },
+  {
+   "query": "supplementary: European markets close Friday November 27 2026 Stoxx 600 week gilt Bund OAT JGB (extended)",
+   "result": "hit",
+   "note": "investing.com 'European shares extend rally, but bruising November leaves AI scars' (27 Nov, updated 12:26) fetched - Stoxx 600 +1.1%, week +1.81%, Nov -1.5%, DAX/CAC/FTSE, chips +4-7%, hawkish ECB minutes; Newsquawk European Market Wrap 27 Nov client_error (no Friday Bund/Gilt/OAT levels); Newsquawk US/European opening (recorded 11-27 via stocknow), investing.com/Reuters 08:12 GMT piece (recorded 11-27), edgeconsultancykw FTSE MIB +1.89%, theconcepttrader snapshot, mlq 'close up 1.1%' not fetched."
+  },
+  {
+   "query": "supplementary: Nvidia stock Friday November 27 2026 SE Asia Huang Trump close (extended)",
+   "result": "no hit",
+   "note": "invezz 'Why Nvidia pared opening gains to decline again on Friday' client_error - reasons for the weak session unread; NVDA +0.80% to 150.49 close from CappNotes/thecompanychronicle. Peter Lewis briefing fetched (Thursday Asia context: BoK +25bp to 3.25%, NVDA -3.9% Wed, NDX -8.2% Nov to Wed). investing.com/Reuters FT relay, okx, tradingpedia, finexus x2, tradingkey (ANT +~11%, Dow best week since 2022) not fetched."
+  },
+  {
+   "query": "supplementary: JGB 10-year yield Friday November 27 2026 close gilt (extended)",
+   "result": "no hit",
+   "note": "note.com 'Japan Market Report 27 Nov' fetched - figures are the THURSDAY 26 Nov close: JGB 10y 2.64% (-1.2bp), 2y 1.74% (+1.5bp), 30y 3.90% (-5.8bp), Nikkei 57,499.16, Kioxia limit-up +12.57%, chip names pared gains after the Nvidia SE Asia report - carried as context only; theweekendspread client_error; CNBC 'Treasury yields higher ahead of payrolls' refused; tradingeconomics JGB page, Bloomberg Japan rates (refused), squawknews JGB futures, stocktwits weekly spread, finwire 'global bonds cap strong weekly rally' not fetched. No Friday JGB or Gilt 10y level read."
+  }
+ ],
+ "discarded": [
+  "Bloomberg 'Europe's junk market sees another loan pulled as Iqony axes deal' - 3 Nov 2026 - pre-gate, refused host",
+  "BigGo 'SemiAnalysis slashes 2028 AI-accelerator capex forecast ~30%' - 16 Nov 2026 (model update 13 Nov; 2028 USD 758bn from 1.054tn, 2027 627bn from 770bn, Nvidia 66% of the cut, ~5.8 GW midterm-related commissioning delays) - pre-gate beyond tolerance; not previously in the files, orchestrator may want it as a dated forecaster read",
+  "Opalesque SS&C GlobeOp FRI November 2.31% (Oct 1.62%, five-year Nov avg 2.91%) - 23 Nov - recorded 11-23",
+  "aiweekly CoreWeave 5y CDS 1,232.6bp / Oracle 327.9bp / Alphabet 93.7bp - 20 Nov - pre-gate",
+  "serrarigroup 'private credit giants gate withdrawals' - 16 Mar 2026 (Q1 gates) - pre-gate",
+  "bfsi.eletsonline 'private credit funds face surging redemption requests' - 5 Nov 2026 (North Haven 11.4%, BCRED ~10%, Cliffwater ~16%, OTIC ~39% vs 5% caps; no new gate) - pre-gate",
+  "natlawreview 'FERC accepts PJM reliability backstop plan but delays auction' - 13 Oct 2026 (order 29 Sep; 6,831 MW suspended to 28 Feb 2027) - pre-gate",
+  "mlq 'consumer advocates and PJM IMM urge delay of the December capacity auction over data-center forecasts' - client_error, undated - not recorded",
+  "startupfortune 'banks try to offload the AI DC debt they just underwrote' - 11 Oct 2026 (FT SRT exploration; USD 38bn Oracle-leased debt) - pre-gate",
+  "GS Group 2.4 GW Gangwon AI DC groundbreaking (piqmarkets/dailyaibrief) - undated snippet, a capacity addition not a deferral - not fetched",
+  "note.com Japan Market Report - Thursday 26 Nov JGB levels (10y 2.64%) and Nikkei 57,499.16 - carried as context inside items, not a separate late hit",
+  "Peter Lewis briefing: BoK +25bp to 3.25% Thu 26 Nov, growth forecasts 3.9%/4.1% - business-cycle context folded into the Asia follow-up item, not a separate late hit",
+  "FourWeekMBA 26 Nov: Musk offered Samsung a long-term memory purchase commitment (WSJ), Lee Jae-yong 'others offering the same' - LTA demand signal, not a renegotiation; WSJ primary refused - noted only",
+  "Rheinmetall +~5% Fri on a Telekom AI-platform report; Imperial/Altria; Vertex FDA date; Spain election Sun; SpaceX 133.59 below 135 IPO - not event classes",
+  "Brent Jan 95.44 (+0.88%), WTI 83.08 (fourth weekly loss), OPEC+ Sun 29 Nov - standoff group"
+ ],
+ "items": [
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Fri 27 Nov US half-session close (09:30-13:00 ET; bonds 14:00 ET) and Friday Europe close: S&P 500 7,297.49 +1.60% (+114.71; breadth 406/94; week +5.6%, best since Apr-2025; Nov -3.7%; 6.7% below the 6 Oct record 7,818.93; 5.6% above the 20 Nov low 6,910.39), Nasdaq Comp 24,129.50 +2.31% (Nov -5.1%; 12.6% below record), NDX 26,726.39 +2.61%, Dow 50,774.94 +1.18% (best week since Oct-2022; Nov -1.9%), Russell 2,750.30 +1.71%, RSP +1.22%; VIX 23.81 (-15.8% from Wed 28.29; 35.89 on 20 Nov, 19.42 end-Oct); RATES: 2y 4.69% (+8bp), 10y 4.94% (+9bp; Wed 4.85% was the low of a seven-day decline), 30y 5.33% (+9bp), 2s10s ~25bp; CME FedWatch 97.4% for a 25bp HIKE at the 8-9 Dec FOMC (Polymarket 94.5%); DXY 104.04 (+0.36%), USD/JPY 159.55, EUR 1.0939 (-0.36%), USD/BRL 5.5156 (-3.97%); gold 3,668.50 (+3.75%), silver 43.70 (+9.11%), copper 5.6005/lb (+5.03%), Brent Jan 95.44 (+0.88%), WTI 83.08 (-0.72%, fourth weekly loss); AI/MEMORY: SOX +4.69%, SNDK +15.96% (S&P's best; 80.99 at +10% in the morning, -48% over the month, 8-for-1 split 19 Nov), MU +7.60% (634.56 at +6% morning; -30% over the month; BNP Ackerman downgrade 24 Nov cited balance by mid-2027 and reduced HBM content in Vera Rubin Ultra), SK hynix ADR +6% morning to 117.95, AVGO +3.82%, META +3.13%, CRWV +3.71%, ANT +10.98% to 91.88 (back above the 83 offer after four sessions below; AOL: -~30% since the 19 Nov IPO measured from the first-day high), NVDA +0.80% to 150.49 after trading weak most of the session (NDX -8.2% in November to Wed; NVDA -3.9% Wed, having given back ~two-fifths of Monday's +31%), AMZN +4.0% to 254.12 on Black Friday reads, TSLA +5.2% to 400, SpaceX 133.59 (+4.8%, below its 135 IPO); CREDIT: JNK +0.16%, HYG +0.12%, LQD -0.28% (no spread levels printed Friday); capexcat weekly (28 Nov 04:24Z): HY OAS 3.76% last Fri / 3.77% Wed (widest in a year), IG spreads at a one-year high, ten-year fell seven straight days to Wed (longest since Apr-2025), CoreWeave 5y CDS ~1,250 last Fri to 'nearly 1,390' Wed (a single trade), Oracle and Nvidia CDS up 'on plenty of volume' - 'stocks got their nerve back, the lenders didn't'; Dell booked ~USD 60bn of AI orders in the quarter, record USD 132bn backlog, next-quarter adj. EPS guided ~11% lower; HPE/ADI guided ~6% lower; Oct PCE 3.8% with flat real spending; EUROPE: Stoxx 600 +1.1% (week +1.81%, Nov -1.5%), DAX +0.9%, CAC +0.6%, FTSE +0.8%, ASML / ASM International / Soitec / Infineon +4-7% (page widgets lower), Rheinmetall +~5% (Telekom AI platform), front-end yields up on hawkish ECB minutes ('a large number of members' could have supported an October hike; 'further tightening was likely necessary'); S&P France outlook to negative after the close (separate item); CALENDAR: OPEC+ Sun 29 Nov, Spain election Sun, bills Mon 30 Nov, ISM/JOLTS Tue 1 Dec, MRVL/CRDO/CRWD Tue, CRM/SNOW Wed, FOMC 8-9 Dec, MU FQ1 17 Dec, ANT lock-up 15 Dec",
+   "headline": "Fri 27 Nov: S&P +1.6% to 7,297 (best week since Apr-2025, Nov still -3.7%), Nasdaq +2.3%, SOX +4.7%, SNDK +16%, MU +7.6%, ANT +11% back above its 83 offer, NVDA only +0.8%; 10y 4.94% (+9bp) with a Dec hike 97% priced; VIX 23.8; HY ETFs flat while HY OAS sits at a one-year wide - 'stocks got their nerve back, the lenders didn't'",
+   "claim": "The half-session completed a +5.6% week for the S&P 500 and a near-full round trip for the memory names, but the duration bid of 24-25 Nov reversed (+9bp across the curve with a December hike all but priced) and credit did not confirm the equity relief: high-yield spreads ended the week at a one-year wide and AI-complex CDS (CoreWeave, Oracle, Nvidia) rose into Wednesday on volume, so the lenders' read and the equity read diverged going into the CoreWeave loan week.",
+   "candidate_dial": "C-equity (the rebound is now +5.6% w/w in the S&P and +4.7% in SOX on the day, but November is still -3.7%/-5.1% and Nvidia itself could not hold a bid on the day the Southeast Asia halt and CreditWatch were digested; the memory pair's path is now a V, not a dampening oscillation) / A-debt (10y 4.94% is +9bp from Wednesday's seven-day-low - the flight-to-duration of the selloff is unwinding as fast as it formed, with the FOMC hike 97% priced; HY OAS at a one-year wide with HY ETFs flat is the divergence to score) / C-credit (capexcat's 'nearly 1,390' single-trade Wednesday CDS print vs the 1,314 recorded 11-26 - both are record territory; the orchestrator should treat 1,314 as the vendor print and 1,390 as a stray trade until a Friday print appears)",
+   "source": "CappNotes 'Closing Look - Friday, November 27, 2026' (Frank Cappelleri; 27 Nov evening); The Company Chronicle 'Stocks close: S&P 500 gains 1.6% and Nasdaq 2.3% in a half-day, but November is still down' (27 Nov 13:35 ET); Capex Cat 'Weekly Review (Nov 27, 2026): Stocks got their nerve back. The lenders didn't' (posted 28 Nov 04:24Z); 24/7 Wall St 'SanDisk jumps 10% ... despite TrendForce DRAM warning' (27 Nov 08:58 ET); Investing.com 'European shares extend rally, but bruising November leaves AI scars' (27 Nov 12:26)",
+   "url": "https://cappnotes.substack.com/p/closing-look-friday-november-27-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Treasury levels are CappNotes' 14:00 ET closes (thecompanychronicle's 10y 4.85% is the Wednesday Treasury-published figure, Friday's not yet posted at its 13:35 ET publication). VIX: CappNotes 23.81 vs thecompanychronicle 24.01 - different capture times, both carried. Morning memory prices (SNDK 80.99, MU 634.56, SKHY 117.95) are 247wallst's 08:58 ET figures, not closes; the closing percentages are CappNotes'. ANT '-30% since IPO' (AOL/Benzinga) measures from the first-day high, not the 83 offer. Europe chip percentages: article text +4-7% vs page widgets ASML +2.55%/Infineon +2.68% - text retained, widget noted. No Friday Bund/Gilt/OAT/JGB levels read (Newsquawk wrap, theweekendspread, invezz unreachable; CNBC refused).",
+   "other_urls": [
+    "https://thecompanychronicle.com/story/stocks-close-sp500-up-1-6-percent-nasdaq-up-2-3-percent-vix-24-half-day-november-27-2026",
+    "https://capexcat.substack.com/p/weekly-review-nov-27-2026-stocks",
+    "https://247wallst.com/investing/2026/11/27/sandisk-jumps-10-as-investors-return-to-beaten-down-memory-stocks-micron-and-sk-hynix-rise-6-despite-trendforce-dram-warning/",
+    "https://www.investing.com/news/stock-market-news/european-shares-extend-rally-but-bruising-november-leaves-ai-scars-5053023"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "S&P Global Ratings revises France's outlook to NEGATIVE from stable and affirms the A+/A-1 rating after the European close Fri 27 Nov (Reuters via investing.com, 16:27, updated 16:30): reasons given - growing budget pressures, weak economic growth and higher interest costs that make deficit reduction harder; no deficit/debt figures, growth forecasts, next-review date or S&P quotes in the relay; no OAT reaction possible (markets closed; OAT-Bund 10y went in <150bp per Newsquawk Fri morning, recorded 11-27); the 11-27 file had the review 'due after hours' with the going-in status A+/stable",
+   "headline": "S&P cuts France's outlook to negative (A+ affirmed) after Friday's close - budget pressures, weak growth, higher interest costs; OAT-Bund <150bp going in, reaction Monday",
+   "claim": "The window's one scheduled sovereign event resolved a notch worse than the stable outlook the market carried into it: France keeps A+ but is now on negative outlook, one step from a downgrade into the A range, with S&P citing interest costs explicitly - the sovereign-interest-cost channel the ECB FSR and BoE FSR both flagged this month.",
+   "candidate_dial": "A-debt / sovereign stress (an outlook change, not a downgrade and not a stress print - no spread move until Monday 30 Nov; the orchestrator should score the OAT-Bund open against the <150bp going-in level; pairs with the hawkish ECB minutes (further tightening 'likely necessary') and the +9bp US curve move the same day - sovereign cost-of-carry is rising on both sides of the Atlantic while S&P names it as France's problem)",
+   "source": "Reuters via Investing.com 'S&P revises France outlook to negative on mounting budget pressures, weak growth' (27 Nov, 16:27 / updated 16:30, time zone unstated)",
+   "url": "https://www.investing.com/news/economy-news/sp-revises-france-outlook-to-negative-on-mounting-budget-pressures-weak-growth-5053881",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "S&P's own release not read (not surfaced); the relay prints only the action and the three reasons. Secondary relays (particle, startupfortune, gsmglobalnews, political.org 28 Nov, piqmarkets, splitangle, pollar) not fetched. The euronews result is the Oct-2025 downgrade to A+ (pre-gate context: this is the second negative step in ~13 months)."
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "TrendForce press release Fri 27 Nov 'Limited demand visibility and growing supply chain caution heighten risk of DRAM contract price declines in 2028': since early 4Q26 supply-chain participants have been reassessing 2027 and 2028 production and sales plans, 'slightly slowing overall DRAM procurement'; BASE CASE - conventional DRAM contract-price increases narrow progressively through 2027, potentially levelling off in 2H27, then fall across ALL product categories from 1Q28 as shortages ease if server-shipment growth slows; BEAR CASE - server-shipment growth decelerates as early as 2027, contract prices reverse and decline from 4Q27 with declines widening in 2028, server OEMs scale back procurement and inventories are cut across the chain; named drivers: a more cautious stance toward domestic US data-centre development after the midterms, power-supply constraints reshaping 2028 DC construction demand, 'possible changes to NVIDIA's financing support for neocloud providers' that could indirectly reduce server procurement and DRAM demand, Chinese CSPs scaling back server DRAM demand since early 4Q26 (North American CSPs have 'largely absorbed' the freed supply), consumer-electronics makers with limited capacity to absorb further price rises, and the new BIS rules (remote-access licensing for DCs serving Chinese firms; foundry approval for advanced-node chips to Chinese IC designers) weighing on Asian DRAM demand; bear-case extras: neocloud consolidation, reduced investment, stricter BIS controls; supply: 'strong' global DRAM bit growth 2026-2028 from new capacity and node migration (no percentages); no HBM, NAND, LTA or inventory-level figures; no quarterly price percentages. Same day: 247wallst - 'no memory order cuts reported', MU >75% of FY27 committed (30 Sep call), SNDK NBM visibility beyond FY2030, WDC 'up to 2030, 2031' across its top seven customers; the memory names rallied through the release (MU +7.6%, SNDK +16%, SK hynix ADR +6% morning)",
+   "headline": "TrendForce (27 Nov): DRAM contract-price rises narrow through 2027 and turn to declines from 1Q28 (bear case 4Q27) - names post-midterm US DC caution, 2028 power limits, possible changes to Nvidia's neocloud financing support and Chinese CSP cutbacks since early 4Q26; memory stocks rallied anyway",
+   "claim": "Two days after cutting its 2027 DRAM revenue forecast, TrendForce now puts a date on the price turn (1Q28 base, 4Q27 bear) and lists Nvidia's neocloud financing support and US data-centre deliverability (midterms, power) alongside Chinese CSP cutbacks as the reasons demand visibility has shortened - the forecaster is tying memory pricing to the AI-credit channel, not just to supply growth.",
+   "candidate_dial": "F1 memory LTA / memory-no-surface (no renegotiation - the release does not mention LTAs, and 247wallst confirms no order cuts and >75% FY27 committed at Micron; the new content is (i) a dated price-turn (1Q28 base / 4Q27 bear) and (ii) the explicit citation of Nvidia neocloud-financing changes and post-midterm DC caution as demand-visibility risks - a forecaster linking the memory cycle to the C2-capex/credit fuse; the equity response (+6-16%) says the market read it as already priced after the 30-48% monthly drawdowns) / B2-capex (secondary)",
+   "source": "TrendForce press center 'Limited Demand Visibility and Growing Supply Chain Caution Heighten Risk of DRAM Contract Price Declines in 2028, Says TrendForce' (27 Nov 2026); 24/7 Wall St 'SanDisk jumps 10% as investors return to beaten-down memory stocks; Micron and SK hynix rise 6% despite TrendForce DRAM warning' (27 Nov 08:58 ET)",
+   "url": "https://trendforce.com/presscenter/news/20261127-13327.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Primary read. The release gives no 4Q26/1Q27 quarterly percentages and no bit-growth numbers; the vlsi.kr NAND piece (Q4 +8-13%, decline from 1Q27) was not fetched (undated). digitimes 26 Nov 'multiyear memory deals' (possible counter-claim) remains unread (IP block 11-27, not retried). The 25 Nov 2027 revenue cut is the 11-27 file's late item.",
+   "other_urls": [
+    "https://247wallst.com/investing/2026/11/27/sandisk-jumps-10-as-investors-return-to-beaten-down-memory-stocks-micron-and-sk-hynix-rise-6-despite-trendforce-dram-warning/"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Update vs 2026-11-27.json: CoreWeave (CRWV) Fri 27 Nov - the USD 4.5bn Meta-GPU-secured delayed-draw loan (Morgan Stanley / MUFG; Dalton, GA; IG sought on the Meta contract) is 'being prepared, possibly for next week' and NOT completed (roic.ai 14:56Z, Bloomberg 26 Nov-sourced); stock: 41.13 at 09:51 ET (-3.4% from Wed 42.57; roic says -2.3%, unexplained baseline), closed +3.71% (CappNotes) - a ~7% intraday reversal; 2031 notes 74.23c yielding 17.91% ('near 18%'), several bonds at lowest since issuance; S&P GMI implied 5y default probability 68%; debt ~USD 46.9bn carrying value at 30 Sep, ~89% recourse; Q3 interest expense USD 846m (vs 264m Q1-25); management expects ~USD 9bn of customer prepayments/deposits over the next three months; Q3 capex 14.5bn, 9M 30.65bn; -36% over a month, -41/42% YTD, ~-79% from the Jun-2025 peak (187 per roic; 183.58 record close per 247wallst); Wells Fargo Buy / 115, HSBC bearish; insiders Intrator/Jain/Agrawal sold 20 Nov (amounts not printed); IREN -15% / Nebius -13% Mon 24 Nov; capexcat (28 Nov): CDS ~1,250 last Fri to 'nearly 1,390' Wed on a single trade, Oracle/Nvidia CDS up on volume, author's watch level CRWV CDS <1,000bp / ORCL <325bp",
+   "headline": "CoreWeave Fri: USD 4.5bn Meta-tied loan still 'possibly next week', not launched; stock reversed a -3.4% morning to close +3.7%; 2031s 74.23c / 17.91%; capexcat has Wednesday's CDS at 'nearly 1,390' on one trade vs the 1,314bp recorded",
+   "claim": "Nothing was launched or pulled: the secured-neocloud-credit test slipped to the week of 30 Nov with the equity recovering intraday while the unsecured bonds stayed at ~18% - the equity/credit divergence of the week in one name.",
+   "candidate_dial": "A-debt / C-credit (status update only; the live primary test is next week's launch - the orchestrator should treat a launch at or near 7-7.5% with IG as a pass, a delay or wider pricing as a fail per the 11-26/11-27 framing; new data: 89% recourse on USD 46.9bn, USD 9bn of expected prepayments in three months, 2031s 74.23c - the bonds did not recover with the stock)",
+   "source": "roic.ai 'CoreWeave shares extend slide as debt concerns mount' (Marcus Hensley; 27 Nov 14:56Z); CappNotes Closing Look 27 Nov (close +3.71%); Capex Cat Weekly Review (28 Nov 04:24Z; CDS path)",
+   "url": "https://www.roic.ai/news/coreweave-shares-extend-slide-as-debt-concerns-mount-11-27-2026",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "roic's '2.3% decline' vs 41.13/42.57 (-3.4%) is internally inconsistent - the price retained. No closing price printed in any fetched page (only +3.71%); baseballnewssource headline '+3%' not fetched. invezz CoreWeave/Nebius piece client_error - Nebius Friday move unread. Bloomberg primary refused.",
+   "other_urls": [
+    "https://capexcat.substack.com/p/weekly-review-nov-27-2026-stocks"
+   ]
+  },
+  {
+   "kind": "reading",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "CoreWeave 5y CDS Fri 27 Nov - no vendor print dated 27 Nov found; last vendor print recorded 1,314bp Wed 25 Nov (11-26 file); capexcat (28 Nov) describes Wednesday as 'nearly 1,390' on a single trade and 'about 1,250' the prior Friday - carried as a conflict note, not as a value",
+   "source": "Searched: 'CoreWeave CDS spread Friday November 27 2026' (results all 20-25 Nov); roic.ai 27 Nov ('record', 68% implied, no bp); capexcat 28 Nov (Wed single-trade ~1,390); CappNotes 27 Nov (no CDS)",
+   "url": "https://capexcat.substack.com/p/weekly-review-nov-27-2026-stocks",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "quiet",
+   "note": "Half-session Friday; no Reuters/S&P GMI print dated 27 Nov surfaced. Next print expected Mon 30 Nov around the loan launch.",
+   "series": "crwv.cds_5y_bp",
+   "value": null,
+   "unit": "bp",
+   "period_end": "2026-11-27"
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-26",
+   "late": true,
+   "name": "Semafor (Wed 26 Nov, people familiar; relayed Benzinga/AOL 27 Nov 05:33Z and Pivot News 27 Nov via aiweekly): Citigroup and JPMorgan are among banks quietly marketing portfolios of AI-related loans, including data-centre loans, to outside investors to offload some exposure - some structured as synthetic risk transfers (loans stay on balance sheet, loss risk shifts to investors), pitched quietly to protect borrower relationships; Semafor: heavy AI debt issuance has 'crowded out' Treasuries and some investors feel 'tapped out'; some banks are simultaneously preparing to take on MORE AI lending; Citi declined comment, JPM no response; no loans, amounts, buyers or pricing identified in any relay; same day Bloomberg (refused host): BBVA weighs an SRT to hedge about EUR 500m (USD 547m) of data-centre loans ('considering', not done - FourWeekMBA relay); and the BoE FSR, per FourWeekMBA citing Bloomberg, puts the big cloud companies' total potential AI exposure at 'just over USD 4 trillion' including off-balance-sheet commitments, calling AI financing 'increasingly complex, circular and opaque' (figure relay-attributed; FSR PDF not read; the ai.info and financialmarkets.com relays carry no such number). Companion 27 Nov detail on the Asian DC-loan freeze (techtimes, Bloomberg-sourced): Citi and JPMorgan reportedly added an export-control DEFAULT CLAUSE to Bridge Data Centres' upsized USD 6.6bn loan (each had held USD 120.28m of Bridge's earlier 2.8bn facility; clause wording not public), DBS is lead arranger on the frozen USD 480m Aolani loan (declined comment), Standard Chartered launched a broad review of data-centre clients, Digital Halo's Malaysian site serves Alibaba (one bank passed on the fully underwritten 372m, others 'asking more questions'), UOB ~USD 1bn SRT not final, DayOne's listing paused with a BlackRock-led consortium weighing a LOWER bid; 'no cancelled deals are reported'",
+   "headline": "Semafor: Citi and JPMorgan quietly shopping AI-loan portfolios (some via SRTs) as AI issuance 'crowds out' Treasuries and investors feel 'tapped out'; Bloomberg: BBVA weighs a EUR 500m DC-loan SRT; Citi/JPM add an export-control default clause to Bridge DC's USD 6.6bn; BlackRock group weighs a lower DayOne bid",
+   "claim": "The bank-side mirror of the Asian loan freeze and the BoE's 'circular and opaque' warning: the two largest US AI-infrastructure lenders are now distributing or hedging exposure they recently underwrote, and adding export-control default triggers to new Asian DC loans, while the exit price for a Chinese-tenant DC platform (DayOne) is being marked down - risk is being moved and repriced, not yet pulled.",
+   "candidate_dial": "A-debt / D3 private credit (lender-withdrawal signal from the originating banks themselves - but no size, buyer or price printed, so unscoreable as a 'pulled deal'; the orchestrator's test: whether the SRT/portfolio sales clear (banks keep lending, risk moves to insurers/private credit - the BoE's 'harder to see' outcome) or stall (banks cut new AI commitments - the demand-side fuse). The Bridge default clause is the first printed instance of export-control risk being written into AI-DC loan covenants; the DayOne 'lower bid' is the first printed markdown of an Asian DC asset. NEAR-MISS, not a fired event - companion to the 11-27 late Asia DC-loan item)",
+   "source": "Benzinga via AOL 'AI risk is moving somewhere harder to see: Citigroup, JPMorgan reportedly look to offload AI debt as investors grow wary of buildout' (Radhika Anilkumar Nadig; 27 Nov 05:33Z; Semafor 26 Nov-sourced); Pivot News 'Citi and JPMorgan quietly pitch AI data center loan portfolios' (Marcus Bell; 27 Nov; via aiweekly); FourWeekMBA 'AI Daily 26 Nov: BoE flags USD 4T; banks sell AI loans' (26 Nov; Bloomberg BBVA relay, BoE figure); TechTimes 'Asia data center lenders slow USD 7.8bn in loans after US chip rule targets Chinese tenants' (Devin Culbertson; 27 Nov 05:11 ET; Bloomberg-sourced)",
+   "url": "https://www.aol.com/articles/ai-risk-moving-somewhere-harder-053352000.html",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "late:true - Semafor dated 26 Nov (inside the 11-27 window) and listed as unread in the 11-27 file (FourWeekMBA client_error then; fetched now). Semafor primary not surfaced; Bloomberg BBVA primary refused. The techtimes USD 7.8bn is the relay's own sum of four loans (Bridge 6.6bn, Aolani 480m, Digital Halo 372m, GMI 300m = 7.75bn); its Citi/JPM Bridge-clause detail is attributed to The Next Web and flagged 'unverified' by techtimes itself. The 'USD 4tn' BoE figure was discarded 11-27 as unverified; now carried with its relay attribution only - the orchestrator should not score it until the FSR PDF is read.",
+   "other_urls": [
+    "https://pivotnews.ai/finance/citi-and-jpmorgan-quietly-pitch-ai-data-center-loan",
+    "https://fourweekmba.com/ai-daily-roundup-26-nov-2026-boe-4-trillion-ai-loans/",
+    "https://www.techtimes.com/articles/331661/20261127/asia-data-center-lenders-slow-78b-loans-after-us-chip-rule-targets-chinese-tenants.htm"
+   ]
+  },
+  {
+   "kind": "hit",
+   "group": "events",
+   "as_of": "2026-11-27",
+   "late": false,
+   "name": "Fri 27 Nov Asia follow-ups to the open threads: (1) Nvidia SE Asia halt - Singapore DPM Gan Kim Yong at the Asia Future Summit: 'we have not confirmed it'; government 'in the process of engaging our businesses ... to see the impact', will keep working with the US so local businesses and the many US hyperscalers in Singapore keep access to high-end chips, Singapore 'does not want to become a conduit for illegal trade in any form', reviewing processes to strengthen regulation and monitoring, will investigate on 'credible information', some relevant activity occurs outside Singapore (Malay Mail/Bernama 17:40 MYT); no Nvidia statement, no Malaysian government statement in pages read (Malaysia's trade minister Johari named by techtimes without a quote); (2) Korea - Seoul 'silent on rescue fund': no activation update on the stock-market stabilisation fund (KRW 10.8tn per KED, ~11tn / USD 8.2bn per JoongAng; financial-institution-funded, last activated after 2008), enlargement 'weighed' with no size or date; Finance Minister Lee Hyoung-il met the BoK governor and FSC chair Friday - volatility rising on AI-linked uncertainty, prior steps (daily buyback-limit easing for three months from the 22 Nov package), 'ready to take more steps if conditions require'; currency and bond markets 'broadly stable'; KOSDAQ +8.1% to 708.99 alongside KOSPI +4.34% to 4,915.68, foreigners buying beaten-down chip and brokerage names (no amount); CONTEXT (Thu 26 Nov, not in the 11-27 file): BoK raised its base rate 25bp to 3.25% - third hike of 2026, two-year high - and lifted 2026 growth to 3.9% (from 3.3%) and 2027 to 4.1% (from 2.9%), inflation 2.8%, Q3 GDP +3.4% y/y; JGB 10y 2.64% (-1.2bp), 2y 1.74%, 30y 3.90% (-5.8bp) at the Thursday close, policy rate 1.25% with Tamura's neutral ~2% (room for ~three hikes); Hang Seng Tech -38% in 2026, CSI 300 -15.8% YTD, ChiNext -31.6%; (3) Asian DC-loan freeze new detail - see the Semafor/Citi-JPM item (Bridge default clause, DBS, StanChart review, DayOne lower bid)",
+   "headline": "Fri 27 Nov Asia: Singapore's DPM says the Nvidia halt is 'not confirmed' and Singapore is working with the US to keep chip access; Seoul silent on enlarging the KRW ~11tn stabilisation fund as KOSDAQ +8.1% / KOSPI +4.3%; BoK had hiked to 3.25% Thursday with growth raised to 3.9%",
+   "claim": "Neither government has confirmed or countered the Nvidia shipment halt, and Korea's authorities chose not to deploy or size the rescue fund on a +4% day - the policy response to the Asian leg of the AI selloff is watchful rather than active, while the BoK is tightening into it.",
+   "candidate_dial": "C-equity (Korea: a market that needed a stabilisation-fund meeting on Monday is +8% in Kosdaq by Friday with the fund untouched - the authorities' silence is itself the signal; the pair's V is complete, the volatility is not) / B2-capex / supplier (Singapore's non-confirmation and 'working with the US' line keep the SE Asia halt open-ended; no duration, volume or Nvidia statement in any page after two days) / business cycle (BoK hiking to a two-year high with growth upgraded to 3.9% is the Asian counterpart of the 97%-priced Fed hike - the global tightening tape that the 11-27 file flagged is confirmed from Seoul)",
+   "source": "Malay Mail / Bernama 'Singapore yet to verify Nvidia chip shipment halt, says DPM Gan' (27 Nov 17:40 MYT); KED Global 'Kospi storms toward 5,000 on hopes for bigger market rescue fund' (27 Nov 16:21 KST); Aju Press 'Seoul watches markets, silent on rescue fund' (27 Nov 13:09 KST); Korea JoongAng Daily 'Korean financial authorities warn of stock volatility amid AI and chip sector risks' (27 Nov 04:13Z); Peter Lewis 'Asian Business & Finance Briefing' (27 Nov 06:00 HKT; BoK, Thursday closes); note.com 'Japan Market Report 27 Nov' (Thursday JGB levels)",
+   "url": "https://www.malaymail.com/news/singapore/2026/11/27/singapore-yet-to-verify-nvidia-chip-shipment-halt-says-dpm-gan/245024",
+   "fetched_how": "WebFetch (search-surfaced link)",
+   "status": "ok",
+   "note": "Korean officials' remarks are paraphrases (no direct quotes in any relay). Fund size: KED 10.8tn vs JoongAng ~11tn - both carried. ajupress 'financial chiefs hold fire ... tightening deepens' not read (provenance error on a stripped session parameter); vlsi.kr Daily Silicon 28 Nov client_error. BoK hike and JGB levels are Thursday 26 Nov figures (inside tolerance) carried as context, not scored items. No Friday JGB close read.",
+   "other_urls": [
+    "https://www.kedglobal.com/korean-stock-market/newsView/ked202611270007",
+    "https://www.ajupress.com/view/20261127111536105",
+    "https://www.koreajoongangdaily.com/business/market-volatility-expanding-amid-ai-uncertainties-financial-authorities/12994458",
+    "https://peterlewismoneytalk.substack.com/p/peters-asian-business-and-finance-d6c",
+    "https://note.com/hirokimiyano/n/n447819dfb89d?hl=en"
+   ]
+  }
+ ]
+}

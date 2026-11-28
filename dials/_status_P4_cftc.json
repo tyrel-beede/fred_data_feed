@@ -1,8 +1,8 @@
 {
  "group": "P4_cftc",
- "last_run_at": "2026-11-21T05:11:00-07:00",
+ "last_run_at": "2026-11-28T05:10:00-07:00",
  "last_as_of": "2026-11-17",
- "last_file": "dials/flows/2026-11-21.json",
- "status": "partial",
- "error": "Exact web verification of the 2026-11-17 futures-only ES nets not achieved: futuresbench.com and thetrading.tools still served 2026-11-10 data on 21 Nov (those 10 Nov values match the repo's prior-week nets exactly), modigin.com served 17 Nov on a futures-and-options-combined basis (not comparable), and cftc.gov financial_lf.htm came back as a cached 2026-10-20 page. Gold/WTI prior-week nets not in the supplied disaggregated extract, so no w/w change recorded. No dated 20-21 Nov press relay of the 17 Nov report reachable (fxtribune client_error). Repo tff_gc.json still maps to PAX Gold perp and tff_cl.json is empty (flagged)."
+ "last_file": "dials/flows/2026-11-28.json",
+ "status": "ok",
+ "error": ""
 }
