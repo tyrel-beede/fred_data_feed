@@ -1,0 +1,241 @@
+{
+ "carried_or_missing": [
+  "P1 ICI combined (Nov 11)",
+  "P4 CFTC (Nov 17)",
+  "P11 H.8 (Nov 18, 10 days)",
+  "D2 term premium (unmeasured)",
+  "C7 rental rates (unmeasured)",
+  "B3 ISM, B5 forward P/E and FactSet 493 (not read)",
+  "P3 ETF creations, P7 retail (not gathered)",
+  "N2 tone, N7 narratives ledger (not computed)",
+  "options chains (pull failed)",
+  "auction tails from relays (Treasury results file stale)"
+ ],
+ "fetch_rule": "scheduled run: no page fetched by this stage (every input read from the repository and the sub-skills' dated outputs; the standoff stage fetched 9 pages by search-surfaced link); no memory tool called",
+ "files": [
+  {
+   "as_of": "2026-11-28",
+   "commit": "c39fe96",
+   "gate": "fresh (after stage 1)",
+   "path": "dials/state/latest.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (prior = layer-1 medians)",
+   "path": "dials/runs/2026-11-21T0611-dials/cone.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-dials/spec.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-dials/forecasts.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-dials/readings.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-dials/report.md"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (convergence history)",
+   "path": "dials/runs/2026-11-14T0611-dials/readings.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "c39fe96",
+   "gate": "fresh (stage 1, status partial - used and labeled)",
+   "path": "dials/runs/2026-11-28T0611-standoff/export.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "c39fe96",
+   "gate": "fresh",
+   "path": "dials/state/ledger.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "c39fe96",
+   "gate": "fresh (dials Brier 0.136875 n=24; standoff 0.2646 n=6)",
+   "path": "dials/state/scoreboard.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "c39fe96",
+   "gate": "fresh",
+   "path": "dials/state/register.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (rulings a-n applied; h unmet by 4 bp)",
+   "path": "dials/rulings.md"
+  },
+  {
+   "as_of": "2026-11-06b",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/config.json"
+  },
+  {
+   "as_of": "2026-11-28T04:13Z",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (ok: FRED; failed: options chains for all 17 names - no implied moves this run)",
+   "path": "data/_status_main.json"
+  },
+  {
+   "as_of": "2026-11-26",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (tol 4; partial: O'Laughlin unreachable)",
+   "path": "dials/_status_voices.json"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (tol 8; partial: ORCL, SPCX, GEV, VRT, ANET pages October copies)",
+   "path": "dials/_status_consensus.json"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "carried (tol 8; combined MF+ETF stale at Nov 11; MF-only Nov 18)",
+   "path": "dials/_status_P1_ici.json"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (partial: Flow Show not published; Lipper used)",
+   "path": "dials/_status_P2_epfr.json"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "carried (tol 8; Nov 24 report delayed to Nov 30)",
+   "path": "dials/_status_P4_cftc.json"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (partial: Nov 25 put/call unprinted)",
+   "path": "dials/_status_P5_sentiment.json"
+  },
+  {
+   "as_of": "2026-10-31",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (tol 35)",
+   "path": "dials/_status_P6_margin.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (partial: Thanksgiving-week IG tally unprinted)",
+   "path": "dials/_status_P8_calendar.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (tol 8; H.4.1 Nov 25 read from FRED WMTSECL1 instead)",
+   "path": "dials/_status_P9_custody.json"
+  },
+  {
+   "as_of": "2026-11-18",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "carried (tol 8; 10 days; release Nov 27 carries the Nov 18 week)",
+   "path": "dials/_status_P11_h8.json"
+  },
+  {
+   "as_of": "2026-11-17",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (tol 35)",
+   "path": "dials/_status_P12_fms.json"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/_status_events.json"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (partial)",
+   "path": "dials/_status_standoff.json"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh/partial per group above",
+   "path": "dials/flows/2026-11-23.json … 2026-11-28.json (4 files)"
+  },
+  {
+   "as_of": "2026-11-26",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/voices/2026-11-23.json; 2026-11-26.json"
+  },
+  {
+   "as_of": "2026-11-20",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (partial)",
+   "path": "dials/consensus/2026-11-23.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (partial)",
+   "path": "dials/calendar/2026-11-23.json … 2026-11-28.json (6 files)"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/events/2026-11-23.json … 2026-11-28.json (6 files)"
+  },
+  {
+   "as_of": "2026-11-25/27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/*.csv (DFII10, T5YIFR, T5YIE, DGS2/10/30, BAML IG/BBB/HY/BB/B/CCC, DCOILWTICO, DCOILBRENTEU, DTWEXBGS, SP500, NASDAQCOM, VIXCLS, OVXCLS, GVZCLS, ICSA, CPIAUCSL, CPILFESL, WALCL, RRPONTSYD, WTREGEN, SOFR, IORB, WMTSECL1, TOTCI, DRTSCILM)"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/prices/<T>.csv (lens ETFs, baskets, top 8, IDX_*)"
+  },
+  {
+   "as_of": "2026-11-27/28",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gap days flagged)",
+   "path": "data/gdelt/*_timelinevol.json"
+  },
+  {
+   "as_of": "2025-12-08",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "stale - November 2026 auctions absent; gather figures used (Helious / CapWolf / Newsquawk relays)",
+   "path": "data/treasury/auctions_results.csv"
+  },
+  {
+   "as_of": "stale",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "failed in _status_main for all 17 names - not read; no reaction-ratio implied moves",
+   "path": "data/options/*_chain.csv"
+  }
+ ],
+ "pages": [],
+ "run_id": "2026-11-28T0611-dials"
+}

@@ -1,0 +1,40 @@
+{
+ "error": "all stage inputs read; carried or unmeasured this run: P1 ICI combined as of Nov 11 (MF-only Nov 18), P4 CFTC as of Nov 17 (Nov 24 report delayed to Nov 30), P11 H.8 as of Nov 18 (10 days); P2 Flow Show not published (Lipper used); consensus pages for ORCL/SPCX/GEV/VRT/ANET October copies; D2 term premium unmeasured; C7 rental rates not refreshed; B3 ISM, B5 forward P/E and the FactSet 493 not read; N2 tone and N7 narratives ledger not computed; P3, P7 not gathered; options chains failed in the puller (no implied moves); November auction results absent from data/treasury (relay figures used); Oracle FQ2 date unverified (report threshold met)",
+ "inputs_commit": "c39fe96 (after stage 1)",
+ "kind": "dials",
+ "mode": "full",
+ "repo_commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+ "run_at": "2026-11-28T06:11:18-07:00",
+ "run_id": "2026-11-28T0611-dials",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 2,
+  "task": "dials-weekly"
+ },
+ "skill_version": "macro-dials SKILL.md, repository-state version (dials/runs/<RUN_ID>/), synced skill folder 2026-11-28",
+ "standoff_stage": {
+  "carried": "this run's export used, labeled partial (FEED §4); its fuse pricing was already scored here on Nov 21 as a non-event and is not re-applied",
+  "run_id": "2026-11-28T0611-standoff",
+  "status": "partial"
+ },
+ "state_prev": {
+  "H2": [
+   88.6,
+   10.9,
+   0.4
+  ],
+  "H3": [
+   80.1,
+   19.4,
+   0.5
+  ],
+  "label": "TRANSITION",
+  "run_id": "2026-11-21T0611-dials",
+  "s2": 0.22,
+  "s3": 0.27
+ },
+ "status": "partial",
+ "test_note": "dials/tools/test_materialize.py: state/ rebuilt byte-for-byte and no logged-vs-recomputed Brier mismatch (FEED §8 invariants pass); its hard-coded migration assertion 'dials Brier 0.121, n=12' fails by construction since n=24 - pre-existing on main, a test bug not a folder fault; tools are not edited by a scheduled run; reported to the user again"
+}

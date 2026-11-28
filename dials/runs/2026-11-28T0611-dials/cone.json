@@ -1,0 +1,382 @@
+{
+ "H2": [
+  80.9,
+  18.6,
+  0.5
+ ],
+ "H2_5_95_B": [
+  12,
+  30
+ ],
+ "H2_A_IQR": [
+  77,
+  84
+ ],
+ "H2_IQR_B": [
+  15.3,
+  22.6
+ ],
+ "H3": [
+  68.5,
+  30.9,
+  0.5
+ ],
+ "H3_5_95_B": [
+  21,
+  45
+ ],
+ "H3_A_IQR": [
+  63,
+  73
+ ],
+ "H3_IQR_B": [
+  26.1,
+  36.5
+ ],
+ "N": 40000,
+ "P_B_conf": 0.088,
+ "P_C_conf": 0.0,
+ "applied": [
+  {
+   "judgment": false,
+   "lr": 1.5,
+   "name": "C1 zone transition: IG OAS watch -> stress band (99 on Nov 25 and Nov 26 = 86th percentile of the 3y file vs 89 twenty sessions earlier in watch; two-print hysteresis met); HY 377 (95th), BB 228 and single-B 413 (97th, acute) cross the same way - one credit channel, counted once (same-story rule); the IG 100 event line is not crossed x1.5 B",
+   "q": 1.0,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "judgment": true,
+   "lr": 1.33,
+   "name": "Convergence escalation, periphery squeeze: convergence (Oct 18-28 fire) -> broad: ch1 CCC +96 / HY +59 over 4 wks and CRWV 5y CDS 1,167 -> 1,314 (+147 1m) (capped 2); ch2 E4 -3.1, E5 3m -11.3, E6 -16.2, E7 -28.5 (capped 2); ch3 Anthropic $81.3bn IPO + $26bn placement (lab equity issuance, Nov 18-22, inside the month) = 5 counted from 3 channels; ratio of tiers x1.33 B (judgment: the quantity member is 10 days old and the only one)",
+   "q": 0.8,
+   "target": "B",
+   "tier": "default"
+  },
+  {
+   "judgment": true,
+   "lr": 1.5,
+   "name": "Convergence, crunch -> C (first fire): ch2 E3 -4.6 with real 10y +7 bp 1m (marginal); ch3 foreign official custody down 3 of 4 weeks (Nov 4, 11, 25) and indirects below average three auctions running (2y 51.5 vs 56.5, 5y 54.3 vs 61.9, 7y 58.2 vs 63.6) = 3 counted from 2 channels; D6 (indirects <60 with JGB 10y rising 2.58 -> 2.65-2.70 Nov 25-26) is the same event - larger LR applied once x1.5 C",
+   "q": 0.7,
+   "target": "C",
+   "tier": "default"
+  }
+ ],
+ "capped": [
+  "F-20261209-IG100 at p 0.60 was capped (2 -> 1.97, p|B 1.00); re-registered at p 0.55 (cap 2.25) - accepted"
+ ],
+ "cone_validity": "H2 usable, H3 indicative, beyond: scenarios only. The B band (15-23) is tighter than last week's because the two applied LRs are small; the judgment flag (periphery escalation) moves the median by 4 points",
+ "confirmation": {
+  "B_elements": [
+   "IG115",
+   "hyperscaler deal pulled/<2x",
+   "GPU rental -20%",
+   "GOOGL-TPU cut confirmed",
+   "ORCL restraint"
+  ],
+  "C_elements": [
+   "30y tail Dec 10"
+  ],
+  "P_B_conf_by_2026-12-09": 0.088,
+  "P_C_conf_by_2026-12-09": 0.0,
+  "comonotone_B": 0.12,
+  "gap_note": "state-weight B 19 vs P(B conf) 0.09: the 10-point gap is the IG100 fork (p 0.55, not an element) and the OILE fork - B's weight is carried by credit widening and the standoff, while the confirmation set (IG 115, a pulled deal, a principal cut) stays low-probability inside 11 days",
+  "independence_B": 0.06,
+  "ledger_hand": {
+   "B": 0.15,
+   "C": 0.04
+  }
+ },
+ "drift_B": 0.4,
+ "flip": false,
+ "flips_this_month": 0,
+ "leverage": {
+  "crunch_convergence_q0.7": "H2 B median 18.5 -> 18.5 (C only)",
+  "periphery_broad_escalation_q0.8": "H2 B median 15.5 (off) -> 19.6 (on)"
+ },
+ "nonevents": [],
+ "odds_arithmetic": "B prior 10.9 -> odds 0.1223; x1.5 (IG zone transition) x1.33^0.8 (periphery escalation, q 0.8) = x1.88 -> odds 0.230 -> B 18.7; C prior 0.4 -> odds 0.004 x1.5^0.7 -> 0.5; layer-1 medians H2 A 80.9 / B 18.6 / C 0.5",
+ "per_item": [
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "F-20261130-CRWV-LOAN",
+   "nonfire_lr": 0.43,
+   "p": 0.25,
+   "p_rest": 0.16,
+   "p_target": 0.64,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261208-10YR",
+   "nonfire_lr": 0.57,
+   "p": 0.3,
+   "p_rest": 0.3,
+   "p_target": 0.6,
+   "target": "C"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261210-30YR",
+   "nonfire_lr": 0.57,
+   "p": 0.3,
+   "p_rest": 0.3,
+   "p_target": 0.6,
+   "target": "C"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261209-IG100",
+   "nonfire_lr": 0.14,
+   "p": 0.55,
+   "p_rest": 0.46,
+   "p_target": 0.93,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261209-IG115",
+   "nonfire_lr": 0.89,
+   "p": 0.12,
+   "p_rest": 0.1,
+   "p_target": 0.2,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "F-20261209-REAL3",
+   "nonfire_lr": 0.88,
+   "p": 0.06,
+   "p_rest": 0.04,
+   "p_target": 0.15,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261209-FOMC",
+   "nonfire_lr": 0.98,
+   "p": 0.02,
+   "p_rest": 0.02,
+   "p_target": 0.03,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261209-HORMUZ",
+   "nonfire_lr": 0.97,
+   "p": 0.05,
+   "p_rest": 0.03,
+   "p_target": 0.06,
+   "target": "A"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261209-OILE",
+   "nonfire_lr": 0.49,
+   "p": 0.4,
+   "p_rest": 0.34,
+   "p_target": 0.67,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 1.5,
+   "name": "F-20261210-CPI",
+   "nonfire_lr": 0.85,
+   "p": 0.25,
+   "p_rest": 0.23,
+   "p_target": 0.34,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261209-AVGO",
+   "nonfire_lr": 0.66,
+   "p": 0.3,
+   "p_rest": 0.25,
+   "p_target": 0.51,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "F-20261209-GOOGL-TPU",
+   "nonfire_lr": 0.75,
+   "p": 0.12,
+   "p_rest": 0.08,
+   "p_target": 0.31,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "F-20261210-ORCL",
+   "nonfire_lr": 0.82,
+   "p": 0.09,
+   "p_rest": 0.06,
+   "p_target": 0.23,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261217-MU",
+   "nonfire_lr": 0.8,
+   "p": 0.2,
+   "p_rest": 0.17,
+   "p_target": 0.34,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "F-20261231-CRWV-TERMS",
+   "nonfire_lr": 0.73,
+   "p": 0.25,
+   "p_rest": 0.21,
+   "p_target": 0.42,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "neocloud / AI-credit event (default, failed re",
+   "nonfire_lr": 0.84,
+   "p": 0.08,
+   "p_rest": 0.05,
+   "p_target": 0.21,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "frontier-lab round down-priced or delayed (Ope",
+   "nonfire_lr": 0.91,
+   "p": 0.1,
+   "p_rest": 0.08,
+   "p_target": 0.17,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "hyperscaler deal pulled or booked < 2x",
+   "nonfire_lr": 0.9,
+   "p": 0.05,
+   "p_rest": 0.03,
+   "p_target": 0.13,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 4.0,
+   "name": "GPU rental -20% q/q",
+   "nonfire_lr": 0.94,
+   "p": 0.03,
+   "p_rest": 0.02,
+   "p_target": 0.08,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "Nvidia: SEC action confirmed / Wells notice /",
+   "nonfire_lr": 0.91,
+   "p": 0.1,
+   "p_rest": 0.08,
+   "p_target": 0.17,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 1.5,
+   "name": "hyperscaler SPV / lease-accounting story (Satu",
+   "nonfire_lr": 0.94,
+   "p": 0.12,
+   "p_rest": 0.11,
+   "p_target": 0.16,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 1.5,
+   "name": "sovereign stress (JGB into the Dec BoJ, OATs a",
+   "nonfire_lr": 0.91,
+   "p": 0.15,
+   "p_rest": 0.15,
+   "p_target": 0.22,
+   "target": "C"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "basis-trade unwind (P4 extreme + repo stress +",
+   "nonfire_lr": 0.97,
+   "p": 0.03,
+   "p_rest": 0.03,
+   "p_target": 0.06,
+   "target": "C"
+  },
+  {
+   "flag": "",
+   "lr_used": 2.0,
+   "name": "Fed-independence shock",
+   "nonfire_lr": 0.97,
+   "p": 0.03,
+   "p_rest": 0.03,
+   "p_target": 0.06,
+   "target": "C"
+  },
+  {
+   "flag": "",
+   "lr_used": 1.5,
+   "name": "oil +20% in a month (Hormuz E / Gulf facility",
+   "nonfire_lr": 0.97,
+   "p": 0.07,
+   "p_rest": 0.06,
+   "p_target": 0.1,
+   "target": "B"
+  },
+  {
+   "flag": "",
+   "lr_used": 1.5,
+   "name": "oil -20% in a month (settlement or surplus)",
+   "nonfire_lr": 0.99,
+   "p": 0.04,
+   "p_rest": 0.03,
+   "p_target": 0.04,
+   "target": "A"
+  }
+ ],
+ "prior": {
+  "H2": [
+   88.7,
+   10.9,
+   0.4
+  ],
+  "H3": [
+   80.1,
+   19.4,
+   0.5
+  ]
+ },
+ "regime_pair": "TRANSITION / 6",
+ "rho": 0.5,
+ "run_id": "2026-11-28T0611-dials",
+ "s2": 0.4,
+ "s3": 0.55,
+ "seed": 7,
+ "source": "work/cone.py (SKILL.md verbatim) on spec.json; full output in cone_output.txt",
+ "state": "TRANSITION",
+ "state_prev": "TRANSITION (s2 0.22 / s3 0.27, Nov 21)"
+}
