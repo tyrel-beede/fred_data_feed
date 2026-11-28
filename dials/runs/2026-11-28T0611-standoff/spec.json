@@ -1,0 +1,40 @@
+{
+ "applied": [
+  {
+   "direction": -1,
+   "lr": 2.0,
+   "targets": [
+    "E"
+   ],
+   "tell": "T7"
+  }
+ ],
+ "branches": [
+  "R+",
+  "R-",
+  "F",
+  "E"
+ ],
+ "lr_tiers": {
+  "default": 1.5,
+  "moderate": 2,
+  "strong": 4,
+  "weak": 1.2
+ },
+ "prior_exact": {
+  "H2": {
+   "E": 62.92,
+   "F": 23.6,
+   "R+": 4.49,
+   "R-": 8.99
+  },
+  "H3": {
+   "E": 68.09,
+   "F": 19.15,
+   "R+": 4.26,
+   "R-": 8.51
+  }
+ },
+ "rounding": "nearest 5, largest remainder, sum 100",
+ "run_id": "2026-11-28T0611-standoff"
+}

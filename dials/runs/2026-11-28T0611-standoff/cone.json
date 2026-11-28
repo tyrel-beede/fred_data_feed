@@ -1,0 +1,73 @@
+{
+ "H2": {
+  "E": 75,
+  "F": 15,
+  "R+": 5,
+  "R-": 5
+ },
+ "H3": {
+  "E": 80,
+  "F": 10,
+  "R+": 5,
+  "R-": 5
+ },
+ "applied": [
+  "T7 -1 x2 toward E (ruling s-T7 new modality: the first ministry-confirmed, fatal, damage-causing strike on an energy facility in the sequence - Saudi Aramco's Jazan refinery, Houthi projectile, Nov 26: one dead, fire, 'some operations temporarily halted'; proxy direction and Red Sea coast keep it at the moderate tier rather than the x4 energy-infrastructure tier; E odds x2)"
+ ],
+ "cone_validity": "valid for F/E with the definitional flag sharpened: the E weight (75) is now carried by (a) harassment modalities that do not meet the S-20261209-E criterion (held at 0.40) and (b) a proxy energy-facility strike whose standing under 'either direction' needs the attended ruling s-E; if proxy strikes count, Jazan resolves S-E YES and E is self-consistent; if not, the weight is a stage read of modality and the fork is the scored object. R branches sum to 10 at H2 - the floor of the rounding, not a judgment that settlement is impossible (Kushner's confirmed channel, 'put that war to bed anytime', 'examining ideas that could open new paths' are the R tells that did not reach a scoreable tier)",
+ "exact": {
+  "H2": {
+   "E": 77.24,
+   "F": 14.486,
+   "R+": 2.756,
+   "R-": 5.518
+  },
+  "H3": {
+   "E": 81.011,
+   "F": 11.392,
+   "R+": 2.534,
+   "R-": 5.062
+  }
+ },
+ "horizons": {
+  "H1": "Nov 29 OPEC+ ministerial / Nov 30 Jan Brent expiry / Dec 4 S-20261204-ISRAELGOV / Dec 5 S-20261205-STRIKE3",
+  "H2": "~six weeks, through FOMC Dec 9",
+  "H3": "one quarter, ~Feb 27 (+/-15)"
+ },
+ "method": "odds-form (= weight-multiply and renormalize), rounded to 5 by largest remainder; from the Nov 21 exact weights H2 4.49/8.99/23.60/62.92 -> T7 (E x2) 4.49/8.99/23.60/125.84 (sum 162.92) -> exact 2.756/5.518/14.486/77.240 -> logged 5/5/15/75; H3 4.26/8.51/19.15/68.09 -> E x2 -> 4.26/8.51/19.15/136.18 (sum 168.10) -> exact 2.534/5.062/11.392/81.011 -> logged 5/5/10/80. Not scored (recorded): T1 Pacific Archer disabling and the Iranian closure order; T2 designations; T3 Kushner 'a couple times' and the Qatari shuttle; T4 mixed; the Kuwait fatalities and the fourth-seventh hull hits (modalities scored Nov 21); Ras Tanura (unconfirmed); M8 source split; O1 zone held; the fuse pricing (a macro-dials object)",
+ "prior_exact": {
+  "H2": {
+   "E": 62.92,
+   "F": 23.6,
+   "R+": 4.49,
+   "R-": 8.99
+  },
+  "H3": {
+   "E": 68.09,
+   "F": 19.15,
+   "R+": 4.26,
+   "R-": 8.51
+  }
+ },
+ "run_id": "2026-11-28T0611-standoff",
+ "state_label": "E-leaning on modality with a proxy energy strike confirmed, F in the price: harassment with fatalities on three Gulf fronts, a confirmed refinery hit, no deal, no US strike on Iranian territory; oil rebuilding a shallow premium into expiry",
+ "steelman": "What would make this wrong: the next-most-likely branch is F (15). Its case: for a second week every escalation was answered below the threshold that defines E - no US or Israeli strike on Iranian territory since Nov 17, Trump re-dated any campaign to after the New Year with an end-January funding horizon, UK and Gulf states are braking, Iran disowned the one strike that killed Europeans and offered a probe, and the Kharg convoy that would have forced a blockade battle did not sail. The market priced F all week: Brent's Nov 23 low close of 89.37 came on a day Iran ordered the strait shut 'more stringently', the week's +3% left Brent 'shy of $100' with Brent-WTI at 12.36 and OVX at a sequence low of 48 - a managed premium in the front spread, not an escalation bid. Non-Iranian Gulf exports are near pre-war (Kpler), Qatar loadings are at ~51% and rising, and the US-facilitated lane ran 32 crossings a day under fire. A fortnight with M2 in 1-3 and no owner-confirmed facility damage would move F back by x1.5; two such fortnights would put F above E. The R case: Kushner has met the Iranians 'a couple times', Araghchi is 'examining ideas that could open new paths', Qatar and Pakistan 'regularly pass ideas', and Trump says he can 'put that war to bed anytime' - a venue and date (T3 +1 x2) and an OFAC general license (T2 +1 x4) would take R from 10 to ~40 in one run; the AP 'Hormuz-for-limited-relief' sequencing is the printed shape of such a deal",
+ "steps": {
+  "H2": [
+   {
+    "E": 125.84,
+    "F": 23.6,
+    "R+": 4.49,
+    "R-": 8.99
+   }
+  ],
+  "H3": [
+   {
+    "E": 136.18,
+    "F": 19.15,
+    "R+": 4.26,
+    "R-": 8.51
+   }
+  ]
+ }
+}

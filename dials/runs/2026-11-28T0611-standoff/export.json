@@ -1,0 +1,125 @@
+{
+ "H2": {
+  "E": 75,
+  "F": 15,
+  "R+": 5,
+  "R-": 5
+ },
+ "H2_exact": {
+  "E": 77.24,
+  "F": 14.486,
+  "R+": 2.756,
+  "R-": 5.518
+ },
+ "H3": {
+  "E": 80,
+  "F": 10,
+  "R+": 5,
+  "R-": 5
+ },
+ "brent": {
+  "brent_wti": 12.36,
+  "front_contract": "Jan-27",
+  "front_date": "2026-11-27",
+  "front_month": 95.44,
+  "low_settle_since": {
+   "date": "2026-11-23",
+   "value": 89.37
+  },
+  "m1_m2_date": "2026-11-26",
+  "m1_m2_note": "The Edge feed calculation at the Nov 26 settle (provisional); 4.40 intraday Nov 27; 2.62 at the Nov 20 settle; expiry week (Jan expires Nov 30)",
+  "m1_m2_spread": 4.9,
+  "next_contract": "Feb-27",
+  "next_date": "2026-11-27",
+  "next_month": 91.9,
+  "next_note": "intraday 12:58Z (financefeeds); Feb settle unprinted Nov 26-27; provisional Feb settle 90.91 Nov 25 (Investing.com)",
+  "nov_chg_pct": -16.0,
+  "recent_high": 117.6,
+  "recent_high_date": "2026-10-30",
+  "recent_high_note": "Dec-26 expiry settle; Jan-27 high 116.72 on 2026-10-23",
+  "session_high": 98.06,
+  "week_chg_pct": 3.0
+ },
+ "cone_validity": "valid for F/E with the definitional flag sharpened: the E weight (75) is now carried by (a) harassment modalities that do not meet the S-20261209-E criterion (held at 0.40) and (b) a proxy energy-facility strike whose standing under 'either direction' needs the attended ruling s-E; if proxy strikes count, Jazan resolves S-E YES and E is self-consistent; if not, the weight is a stage read of modality and the fork is the scored object. R branches sum to 10 at H2 - the floor of the rounding, not a judgment that settlement is impossible (Kushner's confirmed channel, 'put that war to bed anytime', 'examining ideas that could open new paths' are the R tells that did not reach a scoreable tier)",
+ "equity_note": "S&P 500 6910.39 Nov 20 (-3.7% d/d, week -8.6%) then +4.7% Nov 23 (7237.17; NVDA +31%), 7182.78 Nov 25; HY OAS 3.77 (+25 bp wk), IG 0.99 - the AI/credit de-rating, with oil a secondary driver; oil-SPX sign negative (supply)",
+ "floor_zone": "85-100",
+ "floor_zone_prev": "85-100",
+ "flows": {
+  "ais_7d_per_day": 5.6,
+  "jmic_date": "2026-11-25",
+  "jmic_us_assisted_per_day": 32,
+  "kpler_date": "2026-11-24",
+  "kpler_hormuz_clearance_mbd": 9.25,
+  "kpler_pct_prewar": 54,
+  "m8_note": "source split vs the Nov 21 DTN 13.5 (13-15 zone); Kpler 9.25 = <10 zone; unscored pending ruling s-M8",
+  "qatar_lng_nov_loadings": 41,
+  "qatar_pct_prewar": 51
+ },
+ "fuse": "strained",
+ "fuse_note": "PRICED Nov 20 (late; missed by the Nov 21 run): ~$44B SpaceX notes via the chip-collateralised Saturn Funding Trust SPV, largest ~$25B tranche ~8.3% / ~T+345 (FT), KBRA A- / Moody's A3, upsized on demand (BlackRock, GSAM, KKR anchors); collateral by construction + a BB-wide spread on an A- wrapper = the F5 'collateral, sweeteners or a downsize' outcome -> -1 x2 to macro-dials C3/C6 per the F5 rule; Musk Nov 21 'cash shortage ... nuts next year'; SPCX 131.16 below IPO (Nov 20); IG OAS 0.99, HY 3.77 (Nov 26); Oracle 2036s 8.47% (Nov 25); NVDA on S&P CreditWatch Negative. Relay-sourced (IBTimes/BreezyScroll of FT/Bloomberg/KBRA)",
+ "fuse_priced": true,
+ "hazards_per_month": {
+  "blockade_run_engagement_iranian_tanker_vs_us": 20,
+  "choreographed_strike_then_ceasefire": 8,
+  "disorderly_treasury_move": 12,
+  "energy_infra_strike_either_direction": 18,
+  "fed_50bp_dec": 5,
+  "fuse_second_raise_or_oracle_print_wide_by_0131": 25,
+  "gulf_state_engages_iran": 10,
+  "iran_npt_withdrawal_announced": 8,
+  "iran_nuclear_test": 2,
+  "iranian_strike_on_gulf_data_center_or_cable": 6,
+  "joint_us_israel_campaign_4_7_days": 10,
+  "red_sea_or_pipeline_shutdown": 22,
+  "second_confirmed_crew_or_facility_fatality": 35
+ },
+ "hormuz_fork_p_signing_by": {
+  "2026-12-09": 0.05
+ },
+ "line": "standoff 2026-11-28T0611-standoff | R+ 5 / R- 5 / F 15 / E 75 (H2) | floor 85-100 | Hormuz fork 0.05 by Dec 9 | supply | fuse strained (priced, collateralised) | status partial",
+ "positioning": {
+  "bull_bear": 7.4,
+  "cash_pct": 3.6,
+  "fms": "Nov 6-12 (carried)",
+  "rotation_10y_level": 5.8,
+  "short_treasuries_crowded_pct": 10,
+  "tech_net_ow": 12,
+  "tech_prev": 37,
+  "top_tail_risk": "AI bubble 34%"
+ },
+ "rulings_requested": [
+  "s-M8: fix the M8 flow series (Kpler Hormuz clearance)",
+  "s-E: do proxy (Houthi) strikes with owner-confirmed damage on Saudi energy facilities count under the E criterion's 'either direction'? Jazan Nov 26 would meet it",
+  "s-FE: the F/E boundary for 'frozen harassment with casualties' (open since Nov 21; E now 75)"
+ ],
+ "run_at": "2026-11-28T06:11:18-07:00",
+ "run_id": "2026-11-28T0611-standoff",
+ "shock_type": "supply",
+ "state_label": "E-leaning on modality with a proxy energy strike confirmed, F in the price: harassment with fatalities on three Gulf fronts, a confirmed refinery hit, no deal, no US strike on Iranian territory; oil rebuilding a shallow premium into expiry",
+ "status": "partial",
+ "transmission": {
+  "core_ge_0p4_twice": false,
+  "cpi_oct_core_mm": 0.3,
+  "cpi_oct_headline_mm": 0.35,
+  "dec_50bp_p": 0.05,
+  "dec_hike_p": 0.95,
+  "dfii10": 2.73,
+  "dgs10": 4.85,
+  "dgs2": 4.61,
+  "dgs30": 5.24,
+  "jan_hike_p": 0.6,
+  "pce_oct_core_mm": 0.3,
+  "pce_oct_core_yy": 3.3,
+  "rates_date": "2026-11-25 (breakevens 11-27)",
+  "t5yie": 2.16,
+  "t5yifr": 2.14
+ },
+ "unmeasured": "M3 war-risk % of hull (ninth gather run with no November quote; Lloyd's List 7-9% of Nov 9 carried); O3 Dated Brent (no quote since IEA ~93 Nov 13; Bloomberg 'Middle East prompt crude bid' Nov 27 direction only); Brent Feb-27 settle for Nov 26 and Nov 27 (M1-M2 4.90 is The Edge's Nov 26 feed calculation, provisional; 4.40 is a Nov 27 13:00Z intraday pair); O5 TD3C after Sep 14 (Baltic 13 Nov in-Gulf/out-of-Gulf differential only); O6 rial 2.82-2.856m Nov 24 (Gulf News, record) read from the gather, no later print; O7 CDS not read; M8 source split (Kpler clearance 9.25 mb/d = <10 zone vs DTN 13.5 of Nov 17 = 13-15 zone, not scored); Jazan refinery output/restart figure (third day without one) and Ras Tanura damage (no Aramco statement); the SpaceX pricing read from IBTimes/BreezyScroll relays of FT/Bloomberg/KBRA, late (Nov 19-20, missed by the Nov 21 run)",
+ "wti": {
+  "front_contract": "Jan-27",
+  "front_date": "2026-11-27",
+  "front_month": 83.08,
+  "note": "no Thursday settle (Thanksgiving); Friday early close",
+  "week_chg_pct": -0.9
+ }
+}

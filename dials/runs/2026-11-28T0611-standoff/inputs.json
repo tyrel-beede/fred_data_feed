@@ -1,0 +1,273 @@
+{
+ "fetch_rule": "every page reached through a WebSearch result link (unattended session); 4 searches, 9 pages fetched, 1 unreachable, 1 stale; no memory tool called; no direct WebFetch of any config/skill URL",
+ "files": [
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/state/latest.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (prior = exact weights)",
+   "path": "dials/runs/2026-11-21T0611-standoff/cone.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-standoff/export.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-standoff/forecasts.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/runs/2026-11-21T0611-standoff/report.md"
+  },
+  {
+   "as_of": "2026-11-14",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (T1 precedent: M/V Huda disabling = stage note)",
+   "path": "dials/runs/2026-11-14T0611-standoff/forecasts.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (15 open S- ids listed; three of them resolved Nov 14 and duplicated by registration run)",
+   "path": "dials/state/ledger.json"
+  },
+  {
+   "as_of": "2026-11-21",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (standoff Brier 0.30625, n=4)",
+   "path": "dials/state/scoreboard.json"
+  },
+  {
+   "as_of": "2026-11-28",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/state/register.json"
+  },
+  {
+   "as_of": "2026-11-06",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (standoff rulings s-T7, s-O1, s-fuse, s-M7, s-gather applied)",
+   "path": "dials/rulings.md"
+  },
+  {
+   "as_of": "2026-11-06b",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "dials/config.json"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (status partial; tolerance 2 days)",
+   "path": "dials/_status_standoff.json"
+  },
+  {
+   "as_of": "2026-11-22",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-23.json"
+  },
+  {
+   "as_of": "2026-11-23",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-24.json"
+  },
+  {
+   "as_of": "2026-11-24",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-25.json"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-26.json"
+  },
+  {
+   "as_of": "2026-11-25 (Brent 26)",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-27.json"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh (gather status partial)",
+   "path": "dials/standoff/2026-11-28.json"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/DGS2.csv"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/DGS10.csv"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/DGS30.csv"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/DFII10.csv"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/T5YIE.csv"
+  },
+  {
+   "as_of": "2026-11-27",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/T5YIFR.csv"
+  },
+  {
+   "as_of": "2026-11-26",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/BAMLC0A0CM.csv"
+  },
+  {
+   "as_of": "2026-11-26",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/BAMLH0A0HYM2.csv"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/OVXCLS.csv"
+  },
+  {
+   "as_of": "2026-11-25",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/SP500.csv"
+  },
+  {
+   "as_of": "2026-11-24",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/DCOILBRENTEU.csv"
+  },
+  {
+   "as_of": "2026-11-24",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/DCOILWTICO.csv"
+  },
+  {
+   "as_of": "2026-10",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/CPIAUCSL.csv"
+  },
+  {
+   "as_of": "2026-10",
+   "commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+   "gate": "fresh",
+   "path": "data/fred/CPILFESL.csv"
+  }
+ ],
+ "pages": [
+  {
+   "as_of": "2026-11-27",
+   "field": "F3",
+   "gate": "fetched (search-surfaced)",
+   "note": "FedWatch Dec 25 bp 94-97%, 50 bp 3-10%; Oct core PCE 3.3% y/y (0.3 m/m), headline 3.8%; ~62 bp over three meetings",
+   "page": "marketintellabs.com/research/december-fed-rate-hike-odds"
+  },
+  {
+   "as_of": "2026-11-26",
+   "field": "F3",
+   "gate": "fetched (search-surfaced; 62% read)",
+   "note": "FedWatch 25 bp: 96.4% Nov 24, 94.4% post-PCE Nov 25, 98.1% cited Nov 26; Jan ~60% pre-PCE; Waller 'go 50' Nov 18, Williams 'no dramatic action' Nov 17; Q3 GDP 2nd est 4.3%",
+   "page": "admiralmarkets.com/analytics/traders-blog/fed-rate-decision-december-2026-preview"
+  },
+  {
+   "as_of": "2026-11-27",
+   "field": "F3",
+   "gate": "unreachable (client_error)",
+   "page": "fool.com Nov 27 rate-forecast piece"
+  },
+  {
+   "as_of": "2026-11-24",
+   "field": "F5",
+   "gate": "fetched (search-surfaced; relay of FT/Bloomberg)",
+   "note": "~$44B notes priced Fri Nov 20, upsized on demand; anchors BlackRock, GSAM, KKR accounts; Musk Nov 21 'cash shortage ... nuts next year'",
+   "page": "ibtimes.co.uk/apollo-goldman-sachs-raise-space-x-gpu-financing-1834258"
+  },
+  {
+   "as_of": "2026-11-24",
+   "field": "F5",
+   "gate": "fetched (search-surfaced; relay of FT/Bloomberg/KBRA/8-K)",
+   "note": "$32B bond sale Nov 19 (Bloomberg); KBRA prelim A- on ~$27.2B senior / $2.4B sub notes (Nov 16), Saturn Funding Trust SPV; largest ~$25B tranche ~8.3% / ~T+345 (FT); Moody's A3; SpaceX 2031s ~7.2%; lenders sought to bar chips from orbit; SPCX 131.16 Nov 20 below IPO price",
+   "page": "breezyscroll.com/money/spacex-lenders-nvidia-chips-orbit"
+  },
+  {
+   "as_of": "2026-11-04",
+   "field": "F5",
+   "gate": "fetched (pre-pricing structure: $8.3B bank loan, $7B lease prepayment, ~$47.3B equipment)",
+   "page": "stocktwits SPCX Nov 4 piece"
+  },
+  {
+   "as_of": "~2026-11-22 (undated table)",
+   "field": "F7",
+   "gate": "fetched (search-surfaced)",
+   "note": "Kalshi normal-by: Dec 1 1%, Jan 1 3%, Mar 1 8%, Apr 1 11%, Jun 1 14%, Jul 1 20%, Dec 2027 31%, Jan 2028 33%, Jan 2029 63%; Polymarket Dec 31 3%, Jan 31 6%, Mar 31 13%, Jun 30 23%, Dec 2027 35%",
+   "page": "predictmarketcap.com/canonical/strait-of-hormuz-traffic-returns-to-normal"
+  },
+  {
+   "as_of": "2026-11-17",
+   "field": "F7",
+   "gate": "fetched (search-surfaced; pre-window, context)",
+   "note": "US-Iran nuclear deal by Dec 31 5.5% (Mar 31 2027 33c); end of blockade by Dec 31 18.5%, by Mar 31 53.5%; ceasefire holds to Dec 31 65.5%",
+   "page": "predictionmarketspicks.com Iran war odds before Shenzhen"
+  },
+  {
+   "as_of": "2026-09-07",
+   "field": "F7",
+   "gate": "fetched (stale, discarded)",
+   "page": "geoodds.com Hormuz reopening odds"
+  },
+  {
+   "as_of": "2026-11-27",
+   "field": "M5",
+   "gate": "fetched (search-surfaced)",
+   "note": "Kpler: 41 Qatar loadings Nov to date (35 Oct, 21 Sep), ~3.3 mt projected vs >6.5 mt pre-war (~51%); long-term FM on China/Korea/Italy/Belgium contracts; Trains 4 and 6 (12.8 mtpa) out 3-5 years; ~15% of loadings AIS-on",
+   "page": "thenationalnews.com 2026/11/27 qatar-lng-exports-hit-highest-level-since-war-began"
+  },
+  {
+   "as_of": "2026-11-10",
+   "field": "M5",
+   "gate": "fetched (October data: 31 LNG tankers, Qatar 2.7 mt vs 6.2 Feb; Ras Laffan 'still under force majeure')",
+   "page": "oilprice.com LNG traffic through Hormuz highest since war began"
+  }
+ ],
+ "run_id": "2026-11-28T0611-standoff"
+}

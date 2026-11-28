@@ -1,0 +1,374 @@
+{
+ "grade_the_gap": null,
+ "maritime": [
+  {
+   "event_time": "2026-11-24",
+   "field": "IRGC authorization/toll regime",
+   "id": "M1",
+   "note": "hardened in writing; zone unchanged",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "in force",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-24.json; 11-25; 11-27",
+   "value": "formal Army order (Hatami, citing Mojtaba Khamenei) that closure become 'increasingly stringent day by day' until the seven conditions are met; IRGC Navy chief Azmayi: designated routes only; PGSA blacklist extended to 26 Omani/UAE-side tugboats (Nov 26); Iran now claims mines against US-escorted traffic",
+   "zone": "in force"
+  },
+  {
+   "event_time": "2026-11-26",
+   "field": "UKMTO attacks, weekly",
+   "id": "M2",
+   "note": "zone unchanged; the M2 event needs M1 ended or a deal",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": ">=4",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-23.json; 11-25; 11-26; 11-27; 11-28",
+   "value": "7 authority-confirmed incidents Nov 21-26 (215, 216, 217 'military forces', 219, 220, 221, 223-26) plus one no-damage projectile 50 nm W of Dubai; JMIC 17 tankers struck in November, 'Severe'; ~14-19 further hulls claimed mined by the IRGC/Army Nov 21-28, 0 confirmed as mines; 0 new UKMTO Hormuz warnings Nov 27-28 (224-26 gap unexplained)",
+   "zone": ">=4"
+  },
+  {
+   "event_time": "2026-11-09",
+   "field": "War-risk additional premium, % hull",
+   "id": "M3",
+   "note": "unmeasured; carried with as-of Nov 9",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "stress (carried)",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-27.json; 11-28",
+   "value": "no dated November quote in any gather day or fetched page (ninth run); Lloyd's List 7-9% per transit (Nov 9) carried; safety4sea Nov 27: premiums 'approached wartime highs' (no number); S&P June 3-4% relayed as 'no updated figure published'",
+   "zone": "stress (carried)"
+  },
+  {
+   "event_time": "2026-11-27",
+   "field": "Mine clearance",
+   "id": "M4",
+   "note": "",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "none",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-28.json",
+   "value": "no announced or underway operation; mine claims unconfirmed (UKMTO has used 'projectile', never 'mine')",
+   "zone": "none"
+  },
+  {
+   "event_time": "2026-11-27",
+   "field": "Qatar LNG force majeure",
+   "id": "M5",
+   "note": "loadings recovering under escort is not 'lifted'; the pure Hormuz tell stays in FM",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "FM",
+   "score": 0,
+   "source_node": "thenationalnews.com 2026/11/27; dials/standoff/2026-11-28.json",
+   "value": "long-term FM on China/Korea/Italy/Belgium contracts (Trains 4 and 6, 12.8 mtpa, out 3-5 years); Kpler: 41 Qatar loadings Nov to date (35 Oct, 21 Sep), ~3.3 mt projected vs >6.5 mt pre-war (~51%); 2 LNG AIS-visible Hormuz crossings/7d; IRGC claims an LNG carrier mined (Nov 25, uncorroborated)",
+   "zone": "FM (partial loadings)"
+  },
+  {
+   "event_time": "2026-11-28",
+   "field": "Gulf airspace / routing",
+   "id": "M6",
+   "note": "",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "partial",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-28.json",
+   "value": "Riyadh drone and cruise-missile interceptions Nov 27-28; Bahrain and Kuwait alerts; Houthi warning on Saudi airspace; no new NOTAM closure read",
+   "zone": "partial"
+  },
+  {
+   "event_time": "2026-11-25",
+   "field": "Transit calls/day (ruling s-M7: authority weekly counts)",
+   "id": "M7",
+   "note": "zone unchanged; the lane is thinning under fire, not closing (JMIC); no convoy-driven rise",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "20-60",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-27.json; 11-28",
+   "value": "JMIC US-assisted 128 crossings Nov 22-25 = ~32/day (from 114 Nov 19-21 = ~38/day); AIS-visible hormuz.now 7-day 5.6/day to Nov 27 (sequence low; 7% of 84.8 baseline), Fri Nov 27 8 crossings with inbound resumed; IMF PortWatch 2.7/day to Nov 22; Kpler weekly transits 217 -> 147 Nov 1-23",
+   "zone": "20-60"
+  },
+  {
+   "event_time": "2026-11-24",
+   "field": "Hormuz crude flows, mb/d",
+   "id": "M8",
+   "note": "source split, not a zone transition: the Nov 21 run read DTN transits (13.5), this week's only dated figure is Kpler clearance (9.25); scoring a x1.5 transition across series would be a measurement artefact. Proposed ruling s-M8 for the attended run: fix the M8 series (Kpler clearance, as s-M7 fixed M7). Unscored",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "13-15 (DTN)",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-27.json; 11-28; 11-25",
+   "value": "Kpler: Hormuz clearance 9.25 mb/d 7-day to Nov 24 = 54% of pre-war 17.14 (8.3 week to Nov 11; tanker crossings 11/day to Nov 21); Vortexa 10.2 mb/d mid-Nov; DTN 13.5 (Nov 17, the Nov 21 run's series); AP/Rystad: flows 'fell ~20% from October to ~13 mb/d' in early November; SOMO defers 20-30 mb of Iraqi November loadings into Dec 1-10; Kpler: non-Iranian Gulf exports 'nearly returned to prewar' (Nov 24)",
+   "zone": "<10 (Kpler) / 13-15 (DTN, carried)"
+  },
+  {
+   "event_time": "2026-11-26",
+   "field": "Bypass (East-West, Fujairah, Red Sea leg)",
+   "id": "M9",
+   "note": "the Jazan event is scored once, under T7; M9 records the zone (the Nov 9 'limited fire' precedent was scored under M9 x1.5 - this week's event is larger and scored at the higher tier instead, not in addition)",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "prev_zone": "contested",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-27.json; 11-28",
+   "value": "Jazan refinery hit with ministry-confirmed damage and a death (Nov 26) - the Red Sea leg; Rabigh claim (Nov 22) unconfirmed; no East-West pumping-station damage acknowledged; Balhaf hijack (UKMTO 225-26, Gulf of Aden, Nov 28); no Saudi export or pipeline flow figure printed",
+   "zone": "attacked (Red Sea leg: Jazan)"
+  }
+ ],
+ "mode": "full",
+ "musk_panel": "not run (event mode only); X3 lock-up Dec 9 and X5 AGM Dec 3 are in the fork table",
+ "oil": {
+  "O1": {
+   "brent_front": 95.44,
+   "contract": "Jan-27",
+   "date": "2026-11-27",
+   "event_time": "2026-11-27",
+   "note": "zone held every session (two-print hysteresis); the Nov 23 settle below 90 resolves S-20261209-BRENT90 YES; Brent-WTI 12.36 at Friday's settles, the widest of the sequence - the Gulf premium is not transmitting to the US barrel; November still ~-16 to -20%; Jan expires Nov 30",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "path": "92.57 (Nov 20) -> 89.37 (Nov 23, lowest close since Aug 28) -> 91.40 -> 94.61 -> 96.57 (Nov 26, London-only) -> 95.44 (Nov 27; session high 98.06, highest since Nov 9)",
+   "prev_zone": "85-100",
+   "source_node": "dials/standoff/2026-11-28.json; 11-24; 11-25; 11-26; 11-27",
+   "week_chg_pct": 3.0,
+   "wti_front": 83.08,
+   "zone": "85-100"
+  },
+  "O2": {
+   "basis": "The Edge feed calculation, Nov 26 settle (provisional); 4.40 intraday pair Nov 27 13:00Z (96.30/91.90); 3.97 Nov 25 (Edge) vs 3.70 implied by the provisional Feb settle 90.91; 2.62 at the Nov 20 settle",
+   "event_time": "2026-11-27",
+   "m1_m2": 4.9,
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "read": "prompt backwardation widened from 2.6 to 4.2-4.9 into the Jan expiry (Nov 30) - scarcity bid back in the front on confirmed events, with the physical East-of-Suez market now pointing the same way (Bloomberg: SOMO deferrals, Middle East prompt crude bid, Nov 27) after a 'bearish Dubai timespread' remark Nov 25; expiry distortion acknowledged; re-base to Feb/Mar after Monday",
+   "source_node": "dials/standoff/2026-11-27.json; 11-28; 11-26"
+  },
+  "O3": {
+   "dated_brent": null,
+   "event_time": "2026-11-27",
+   "note": "unmeasured (eighth gather run without a quote); direction only: Middle East prompt crude bid (Bloomberg Nov 27); Azeri Light 101.40 (Nov 27)",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "source_node": "dials/standoff/2026-11-28.json"
+  },
+  "O4": {
+   "date": "2026-11-25",
+   "event_time": "2026-11-25",
+   "note": "falling (54.12 Nov 20 -> 48.04) through a week the flat price rose 7% from Monday's low - the E branch de-pricing in vol while the premium rebuilt in the front spread",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "ovx": 48.04,
+   "source_node": "data/fred/OVXCLS.csv"
+  },
+  "O5": {
+   "event_time": "2026-11-13",
+   "note": "unmeasured; Baltic Nov 13: in-Gulf loading VLCC round trip >$1,078,000/day vs ~$307,160 loading outside the strait (~3.5x); safety4sea: freight 'approached wartime highs'",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "source_node": "dials/standoff/2026-11-25.json; 11-27",
+   "td3c": null
+  },
+  "O6": {
+   "date": "2026-11-24",
+   "event_time": "2026-11-24",
+   "note": "second consecutive daily record after the Nov 23 designations; relief not expected",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "rial": "2.82-2.856m/USD",
+   "source_node": "dials/standoff/2026-11-25.json"
+  },
+  "O7": {
+   "note": "not read this run (CDS, shekel, Tadawul)",
+   "observed_time": "2026-11-28T06:11:18-07:00"
+  },
+  "O8": {
+   "note": "not read this run (AAA)",
+   "observed_time": "2026-11-28T06:11:18-07:00"
+  },
+  "O9": {
+   "event_time": "2026-11-26",
+   "note": "supply shock: Nov 23 S&P +4.7% with Brent -3.5%; Nov 25-26 Brent +3.5% / +2.1% with the S&P -0.25% and -3.2% intraday; Nov 20 both fell (equity rout day, oil-independent)",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "sign": "negative",
+   "source_node": "data/fred/SP500.csv; dials/standoff/2026-11-26.json"
+  }
+ },
+ "run_at": "2026-11-28T06:11:18-07:00",
+ "run_id": "2026-11-28T0611-standoff",
+ "stage_notes": [
+  "Blockade-run test did not happen: the Kharg convoy (14+ tankers, transponders off, Nov 20) was denied by state broadcasting (Nov 24) after Trump's 'bottom of the sea' dare (Nov 22); the Pacific Archer disabling (Nov 26) shows the enforcement rule (strike to disable, crew unharmed) - the Nov 7 Huda precedent, not scored",
+  "The Iranian claim set outruns authority confirmation by ~3:1 (14-19 hulls claimed mined Nov 21-28 vs 7 UKMTO incidents, all 'projectile'); the claims now target the US-escorted lane and an LNG carrier - salience, not a new M1 state",
+  "US side bracketed a January decision window in its own words: strikes 'after the New Year', campaign 'funded until the end of January', Pickaxe Mountain named; Israel pushing (Gofman, Katz chemical-weapons claim, the Ynet infrastructure plan), UK/Gulf braking",
+  "Kuwait: two Italian technicians killed at Ali Al-Salem (Nov 26) - the first European civilian deaths of the war; Iran denies and offers a tripartite probe, the first time it has disowned a Gulf strike since Mar 30. Attribution by Kuwait, Italy and Saudi; Kuwait summons the ambassador. A Gulf state being struck is still not a Gulf state engaging Iran (S-20261209-E criterion not met)",
+  "Ras Tanura (Nov 25): drones intercepted over the refinery, a Reuters source says it 'came under attack', satellite smoke, no Saudi/Aramco damage statement - unconfirmed, 0; Jazan (Nov 26) IS confirmed (ministry: hit, fire, one dead, some operations halted) and is the week's scored event",
+  "Iraq: SOMO defers 20-30 mb of November loadings into Dec 1-10 - the first exporter-side volume response to the strike cluster; OPEC+ Nov 29 base case a rollover through Q1 2027 with the capacity audit fight deferred; Jan Brent expires Nov 30 (re-base O1/O2 slugs to Feb/Mar)",
+  "Proposed rulings for the attended run: (s-M8) fix the M8 flow series (Kpler Hormuz clearance) so zone transitions are not source artefacts; (s-E) decide whether proxy (Houthi) strikes with owner-confirmed damage on Saudi energy facilities count under the E criterion's 'either direction' - Jazan would already meet it if so; (s-FE) the F/E boundary for 'frozen harassment with casualties' asked for on Nov 21 is still open and now carries an E weight of 75",
+  "Fuse priced late: the ~$44B SpaceX notes (Nov 20) were in the window of the Nov 21 run and missed; scored here, flagged late; S-20261231-FUSE re-priced to 0.02 (collateral by construction), not resolved early because the criterion's window runs to Dec 31"
+ ],
+ "tells": [
+  {
+   "event_time": "2026-11-23/2026-11-27",
+   "field": "Blockade posture",
+   "id": "T1",
+   "note": "stage note on both sides: an enforcement strike on a blockade runner is the Nov 7 M/V Huda precedent (not scored); the Iranian closure order is M1 'in force' hardened in writing, not a rules-of-engagement change toward R. The convoy test Trump dared on Nov 22 ('bottom of the sea') did not happen",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-24.json; 11-25; 11-28",
+   "status": "US: CENTCOM disabled the Palau-flagged M/V Pacific Archer in the Gulf of Oman Nov 26 after it left Bandar Abbas (6 disabled / 158 redirected since mid-July; at least the 15th since April); Task Force Iron Gate extends interdiction to land borders and the Caspian (Nov 25). Iran: Army C-in-C Hatami, citing Mojtaba Khamenei, orders the Navy to make the strait's closure 'increasingly stringent day by day' until the seven conditions are met (Nov 23-24); IRGC Aerospace's Mousavi: 'breaking the blockade is already a settled matter' (Nov 27); the Kharg convoy (14+ tankers, Nov 20) did not sail (state broadcaster denial Nov 24)",
+   "targets": [],
+   "tier": null
+  },
+  {
+   "event_time": "2026-11-23/2026-11-27",
+   "field": "Treasury plumbing",
+   "id": "T2",
+   "note": "designations only; the plumbing tell is the FX print and the domestic austerity, both toward endurance, not relief",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-24.json; 11-25; 11-27",
+   "status": "OFAC Nov 23: 30-target shadow-banking action (8 individuals, 22 entities; Operation Economic Outcast); FinCEN $14.7bn Iran-linked flows advisory Nov 24; no general license, waiver or escrow; rial to a record 2.82-2.856m/USD Nov 24; Iran rolls back bread and petrol subsidies and rations electricity (Nov 27)",
+   "targets": [],
+   "tier": null
+  },
+  {
+   "event_time": "2026-11-20/2026-11-27",
+   "field": "Venue, date, principals",
+   "id": "T3",
+   "note": "papers and mediator traffic only (= 0 by the T3 rule); Kushner's confirmation is a channel-exists tell, undated; S-20261126-VENUE resolves NO",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-23.json; 11-24; 11-25; 11-27",
+   "status": "Qatari delegation two hours in Tehran Nov 20 ('not yet formal negotiations'); Tehran summons Qatar's charge d'affaires Nov 23 and an MP says Doha can no longer mediate; Qatar's PM meets Rubio (courtesy readout) and Vance (~10 min) Nov 23; Al Ansari: contacts 'to narrow' differences (Nov 24); Kushner: 'we met with the Iranians a couple times' (undated, Nov 26); Araghchi: mediators 'regularly pass ideas', Iran 'examining ideas that could open new paths', seven conditions restated in full, 'economic resilience' before negotiation (Nov 26). No US-Iran venue, date or principals",
+   "targets": [],
+   "tier": null
+  },
+  {
+   "event_time": "2026-11-21/2026-11-27",
+   "field": "Rhetoric regime",
+   "id": "T4",
+   "note": "mixed on both sides, no 'flexibility' language from the Supreme Leader's office; the end-January funding horizon and the 'after the New Year' strike re-dating bracket a January decision window (stage note); the Ynet plan is a strike-headline precursor, not a strike",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-23.json; 11-25; 11-27; 11-28",
+   "status": "Trump: 'permanent deal' (Nov 21); 'inclined to resume strikes after the New Year' unless a deal (Nov 22); campaign 'funded until really the end of January', 'we can put that war to bed anytime we want' (NY Post, Nov 24); 'victory at hand ... whenever I want it to be', 'every chance to make a deal', Pickaxe Mountain named as a target (Thanksgiving, Nov 26). Iran: Araghchi 'Hormuz discussion pointless until demands met' (Nov 21); Shekarchi denies the Kuwait attack and offers a joint probe (Nov 26); Vahidi 'next round not local', 'new targets' (Nov 25); Kayhan attacks the negotiating track. Ynet: Netanyahu proposes a plan to destroy Iran's water/power/energy infrastructure, not approved (Nov 27)",
+   "targets": [],
+   "tier": null
+  },
+  {
+   "event_time": "2026-11-23",
+   "field": "Personnel",
+   "id": "T5",
+   "note": "no change",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-24.json",
+   "status": "no empowerment or sidelining read; Kushner confirms he works the file under Vance; Mossad's Gofman in Washington urging joint strikes (Axios/WSJ, Nov 23, late); UK and Gulf states privately urged restraint (Bloomberg)",
+   "targets": [],
+   "tier": null
+  },
+  {
+   "event_time": "2026-11-27",
+   "field": "China lean",
+   "id": "T6",
+   "note": "nothing scored; absence, not failure",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": 0,
+   "source_node": "dials/standoff/2026-11-25.json; 11-28",
+   "status": "no Wang Yi call or visit surfaced; Turkey reportedly extends its Iranian gas contract to 2032 (unconfirmed, Nov 27); record Russian crude to China/India cited by the oil tape",
+   "targets": [],
+   "tier": null
+  },
+  {
+   "event_time": "2026-11-26",
+   "field": "Escalation choreography",
+   "id": "T7",
+   "note": "scored once under ruling s-T7 for the new modality: the first ministry-confirmed, fatal strike with damage on an energy facility in the sequence (Jazan; proxy direction, Red Sea coast - hence the moderate tier, not the x4 reserved for a US/Israel-Iran or Iran-Gulf energy strike). The Kuwait fatalities and the fourth-to-seventh confirmed hull hits continue modalities already scored Nov 21 (casualties; host-state bases) and are stage notes; Iran's denial-plus-probe offer is noted but is not the R choreography (no warning, no symbolic target, casualties). Ras Tanura stays unconfirmed (0)",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "score": -1,
+   "source_node": "dials/standoff/2026-11-27.json; 11-26; 11-25; 11-28",
+   "status": "Iran-aligned side: Houthi projectile hits Saudi Aramco's Jazan refinery (Red Sea coast, 400 kb/d design) - Saudi Energy Ministry via SPA confirms the hit, a fire, one Nepali worker killed, several injured, 'some operations temporarily halted' (Nov 26); Ras Tanura: coalition intercepted four drones 'over the refinery', a Reuters source says it 'came under attack', no Saudi damage statement (Nov 25); PIF tower in Riyadh hit, 11 injured (Nov 24); a drone at Kuwait's Ali Al-Salem air-defence site kills two Italian technicians - Kuwait, Italy and Saudi blame Iran (Italy: the drone was made in Iran), Tehran denies and offers a tripartite inquiry, Kuwait summons Iran's ambassador (Nov 26-28); Bahrain Patriot radars struck again, a civilian industrial site set on fire, two injured (Nov 21-22). At sea: UKMTO 215/216-26 (Torkel, Arina, Nov 21), 217-26 'military forces' incident (Nov 22), 219/220/221-26 three Sinokor VLCCs hit within 17 minutes (Nov 22, announced Nov 24), a projectile 50 nm west of Dubai (Nov 25-26), 223-26 KUN PENG 18 nm E of Khasab with one seriously injured (Nov 25); JMIC: 17 tankers struck since Nov 1, threat 'Severe' (Nov 26); ADNOC L&S confirms the first crew death from the Nov 17 attack. US side: the Pacific Archer disabling (no casualties); no strike on Iranian territory Nov 21-28",
+   "targets": [
+    "E"
+   ],
+   "tier": "moderate x2"
+  }
+ ],
+ "transmission": {
+  "F1": {
+   "core_ge_0p4_twice": false,
+   "cpi_oct_core_mm": 0.3,
+   "cpi_oct_headline_mm": 0.35,
+   "event_time": "2026-11-25",
+   "months_since_floor": 8,
+   "note": "Oct CPI 0.35/0.30 (repo files); Oct core PCE 3.3% y/y vs 3.2 consensus, 0.3 m/m (Nov 25); the marker (core >=0.4 twice) is not met; Nov CPI ~Dec 10",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "pce_oct_core_mm": 0.3,
+   "pce_oct_core_yy": 3.3,
+   "pce_oct_headline_yy": 3.8,
+   "source_node": "data/fred/CPIAUCSL.csv; CPILFESL.csv; marketintellabs.com Nov 27; admiralmarkets.com Nov 26"
+  },
+  "F2": {
+   "date": "2026-11-27",
+   "event_time": "2026-11-27",
+   "note": "5y breakeven 2.18 -> 2.16, 5y5y 2.12 -> 2.14 over the week; expectations not drifting with the oil rebound",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "source_node": "data/fred/T5YIE.csv; T5YIFR.csv",
+   "t5yie": 2.16,
+   "t5yifr": 2.14
+  },
+  "F3": {
+   "dec_50bp_p": 0.05,
+   "dec_hike_p": 0.95,
+   "dgs2": 4.61,
+   "dgs2_date": "2026-11-25",
+   "event_time": "2026-11-26",
+   "jan_hike_p": 0.6,
+   "note": "FedWatch Dec 25 bp 94.4% post-PCE Nov 25 / 98.1% cited Nov 26 (range 94-98), 50 bp 3-10% (Waller 'go 50' Nov 18; Williams 'no dramatic action' Nov 17; Bessent warns of overtightening Nov 22); January ~60% pre-PCE; ~62 bp priced over three meetings; funds 3.75-4.00; 2y 4.61 (-15 bp since Nov 19); hike-into-floor mode continues on a flat 5y breakeven",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "source_node": "admiralmarkets.com Nov 26; marketintellabs.com Nov 27; data/fred/DGS2.csv"
+  },
+  "F4": {
+   "date": "2026-11-25",
+   "dfii10": 2.73,
+   "dgs10": 4.85,
+   "dgs30": 5.24,
+   "event_time": "2026-11-26",
+   "note": "10y 5.04 -> 4.85 (Nov 25; 4.92 Nov 26 per the gather, +6 bp on the oil day), 30y 5.40 -> 5.24, real 10y 2.88 -> 2.73; 7y auction tailed ~1 bp (Nov 25); orderly; Q3 GDP revised to 4.3%",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "source_node": "data/fred/DGS10.csv; DGS30.csv; DFII10.csv; dials/standoff/2026-11-26.json; 11-27"
+  },
+  "F5": {
+   "event_time": "2026-11-20",
+   "fuse": "strained",
+   "late": true,
+   "note": "PRICED, late (Nov 19-20; missed by the Nov 21 run, scored at the run that finds it per ruling i): ~$44B of notes priced Fri Nov 20 via the Saturn Funding Trust SPV (unaffiliated with SpaceX; chip-collateralised Vera Rubin NVL72 lease, triple-net, hell-or-high-water, deliveries from H1 2027, master lease to close by Dec 31), upsized on demand with BlackRock, GSAM and KKR accounts anchoring; largest ~$25B tranche ~8.3% / ~T+345 (FT); KBRA prelim A- (~$27.2B senior / $2.4B sub), Moody's A3; lenders sought to bar launching the chips to orbit (FT Nov 20; final docs unclear); SpaceX 2031s ~7.2%; SPCX 131.16 Nov 20, below the June IPO price; Musk Nov 21: 'the cash shortage is also going to be nuts next year'. Under s-fuse this is neither 'hung' (it cleared, oversubscribed) nor 'clean' (collateral by construction, a BB-wide spread on an A- wrapper): 'strained' with a priced tranche - the F5 'collateral, sweeteners or a downsize' outcome, which the skill routes to macro-dials C3/C6 (-1 x2). IG OAS 0.99 (+5 bp wk), HY 3.77 (+25 bp wk, 3.76 Nov 20); Oracle 2036s at a cycle-high 8.47% (Nov 25); S&P Global puts NVDA on CreditWatch Negative (Nov 25). Sources are relays (IBTimes, BreezyScroll) of FT/Bloomberg/KBRA/8-K - flagged",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "priced": true,
+   "source_node": "ibtimes.co.uk Nov 24; breezyscroll.com Nov 24; stocktwits Nov 4; data/fred/BAMLC0A0CM.csv; BAMLH0A0HYM2.csv; dials/standoff/2026-11-25.json; 11-26"
+  },
+  "F6": {
+   "cash_pct": 3.6,
+   "event_time": "2026-11-25",
+   "fms": "Nov 6-12 (carried from the Nov 21 run)",
+   "note": "no new FMS; the S&P fell 3.7% Nov 20 to 6910.39 then +4.7% Nov 23 (7237.17; NVDA +31% on Huang's reinstatement), 7182.78 Nov 25; the Treasury short is mostly covered, so R squeezes less and F/E pressures the hold camp from 4.85, not 5.8",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "rotation_10y_level": 5.8,
+   "short_treasuries_crowded_pct": 10,
+   "source_node": "dials/runs/2026-11-21T0611-standoff/export.json; data/fred/SP500.csv; dials/standoff/2026-11-24.json",
+   "tech_net_ow": 12
+  },
+  "F7": {
+   "as_of": "~2026-11-22",
+   "event_time": "2026-11-22",
+   "kalshi_normal_by": {
+    "2026-12-01": 0.01,
+    "2027-01-01": 0.03,
+    "2027-03-01": 0.08,
+    "2027-04-01": 0.11,
+    "2027-06-01": 0.14,
+    "2027-07-01": 0.2,
+    "2027-12-01": 0.31,
+    "2028-01-01": 0.33,
+    "2029-01-01": 0.63
+   },
+   "note": "the 50% point slipped past January 2028 toward 2029 (Dec 2027 40 -> 31, Jan 2028 43 -> 33 since the Nov 21 read); US-Iran nuclear deal by Dec 31 5.5%, end of blockade by Dec 31 18.5% (Nov 17). Crowd read, no LR; fork adjustments within +/-10 with reasons written",
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "polymarket_normal_by": {
+    "2026-12-31": 0.03,
+    "2027-01-31": 0.06,
+    "2027-03-31": 0.13,
+    "2027-06-30": 0.23,
+    "2027-12-31": 0.35
+   },
+   "source_node": "predictmarketcap.com; predictionmarketspicks.com Nov 17"
+  }
+ }
+}

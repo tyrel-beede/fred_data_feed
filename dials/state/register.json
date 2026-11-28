@@ -2,105 +2,105 @@
  "P11_h8": {
   "error": "",
   "group": "P11_h8",
-  "last_as_of": "2026-11-11",
-  "last_file": "dials/flows/2026-11-21.json",
-  "last_run_at": "2026-11-21T05:11:00-07:00",
+  "last_as_of": "2026-11-18",
+  "last_file": "dials/flows/2026-11-28.json",
+  "last_run_at": "2026-11-28T05:10:00-07:00",
   "status": "ok"
  },
  "P12_fms": {
-  "error": "",
+  "error": "2026-11-25 run: no newer BofA Global FMS than the November survey (fielded 6-12 Nov, published 17 Nov; recorded in flows/2026-11-18.json) - one extended search ('BofA global fund manager survey December 2026 Hartnett cash level') returned only the Nov-2026 relays and Dec-2025 pages; next survey expected ~mid-December. No flows file written today; last_as_of unchanged (8 days old, tolerance 35).",
   "group": "P12_fms",
   "last_as_of": "2026-11-17",
   "last_file": "dials/flows/2026-11-18.json",
-  "last_run_at": "2026-11-18T05:11:00-07:00",
+  "last_run_at": "2026-11-25T05:11:00-07:00",
   "status": "ok"
  },
  "P1_ici": {
-  "error": "",
+  "error": "Combined MF+ETF page (ici.org/research/stats/combined_flows) still served the 2026-11-18 release (latest week 2026-11-11) on both the initial fetch and one retry after the 15-minute fetch cache expired, although ICI's listing page (weekly-combined-estimated-etf-and-longterm-flows) dates the release and the summary xls 'Nov 25'; the summary xls (combined_flows_data_2026.xls) could not be read (WebFetch PROVENANCE_REQUIRED permission not answered; curl CONNECT denied 403 by the egress proxy). Combined series therefore recorded as-is from the 18 Nov release (weeks 11-11..10-21), the 11-18 week NOT recorded for ici_combined.*. MMF page (ici.org/research/stats/mmf) still served the 2026-11-19 release (week ended 11-18) on both fetches although the MMF listing page dates a release 'Nov 25' (week ending 11-24, per the holiday schedule note on the 11-19 release); the 11-24 week is NOT recorded.",
   "group": "P1_ici",
-  "last_as_of": "2026-11-11",
-  "last_file": "dials/flows/2026-11-19.json",
-  "last_run_at": "2026-11-19T05:11:00-07:00",
-  "status": "ok"
+  "last_as_of": "2026-11-18",
+  "last_file": "dials/flows/2026-11-26.json",
+  "last_run_at": "2026-11-26T05:10:46-07:00",
+  "status": "partial"
  },
  "P2_epfr": {
-  "error": "Flow Show 20 Nov 2026 (week to Wed 18 Nov) read via Yahoo/Investing.com, chaincatcher 2306709, longbridge 306272547 and kucoin relays; BofA HY weekly flow and Treasury weekly flow not printed in any reachable relay (epfr.hy_usd_bn null, quiet; Treasuries noted null inside the bonds item). All other EPFR series incl. ETF/mutual-fund split and Bull & Bear (7.1) printed. Lipper US series all printed incl. tech sector (10.3bn). au.investing.com Reuters relay returned SERVER_ERROR (fetched the 1049thewolf/Reuters relay and longbridge/Zhitong relay instead). Bloomberg and gurufocus not attempted (refused/failed hosts).",
+  "error": "BofA Flow Show for the week to Wed 25 Nov not found: 13 extended searches surfaced no relay with EPFR weekly flows or a Bull & Bear update; BofA's Thanksgiving-week publication was Hartnett's Year Ahead 2027 note (relays dated 26-27 Nov: longbridge 306960407, TheStreet, tokenpost; vblgoldfix and darksideoftheboom paywalled) which prints only '$1.5tn annualised 2026 equity inflows'. All 12 EPFR/B&B series recorded value null, status quiet. LSEG Lipper US series all printed (Reuters relay via Investing.com 5053333 + wkzo global story); Lipper US HY not printed in the US story (global HY -1.54bn noted). Bloomberg/CNBC/FT/WSJ not attempted (refused hosts).",
   "group": "P2_epfr",
-  "last_as_of": "2026-11-18",
-  "last_file": "dials/flows/2026-11-21.json",
-  "last_run_at": "2026-11-21T05:11:00-07:00",
+  "last_as_of": "2026-11-25",
+  "last_file": "dials/flows/2026-11-28.json",
+  "last_run_at": "2026-11-28T05:10:00-07:00",
   "status": "partial"
  },
  "P4_cftc": {
-  "error": "Exact web verification of the 2026-11-17 futures-only ES nets not achieved: futuresbench.com and thetrading.tools still served 2026-11-10 data on 21 Nov (those 10 Nov values match the repo's prior-week nets exactly), modigin.com served 17 Nov on a futures-and-options-combined basis (not comparable), and cftc.gov financial_lf.htm came back as a cached 2026-10-20 page. Gold/WTI prior-week nets not in the supplied disaggregated extract, so no w/w change recorded. No dated 20-21 Nov press relay of the 17 Nov report reachable (fxtribune client_error). Repo tff_gc.json still maps to PAX Gold perp and tff_cl.json is empty (flagged).",
+  "error": "",
   "group": "P4_cftc",
   "last_as_of": "2026-11-17",
-  "last_file": "dials/flows/2026-11-21.json",
-  "last_run_at": "2026-11-21T05:11:00-07:00",
-  "status": "partial"
+  "last_file": "dials/flows/2026-11-28.json",
+  "last_run_at": "2026-11-28T05:10:00-07:00",
+  "status": "ok"
  },
  "P5_sentiment": {
-  "error": "CBOE total/equity put/call not printed for the 2026-11-18 and 2026-11-19 sessions (thetrading.tools stops at 11-17; Cboe daily market statistics page returned PROVENANCE_REQUIRED after a redirect, not retried). VIX9D/VIX6M/VIX1Y not printed on the thetrading.tools term-structure page (VIX9D from repo price file only). SKEW web page prints the latest close only (11-13..11-18 from repo). Nov VIX future expired 11-18, no Nov settlement printed. Repo FRED VIXCLS/VXVCLS run through 11-18 only.",
+  "error": "CBOE total/equity put/call not printed for the 2026-11-25 session (thetrading.tools stops at 11-24; Cboe daily market statistics page, search-surfaced, was refused by the fetch permission layer). VIX9D/VIX6M/VIX1Y not printed on the thetrading.tools term-structure page (VIX9D and VVIX from repo price files only). SKEW web page prints the latest close only (11-20..11-24 from repo). thetrading.tools prints VIX 28.10 / VIX3M 26.20 for the 11-25 close vs repo price files 28.29 / 26.29 (not reconciled; both recorded). Repo FRED VIXCLS/VXVCLS run through 11-24 only. IDX_VIX.csv carries a 2026-11-26 vendor row (26.80) on a US holiday, recorded with a caveat. VIX futures settlements printed for 11-25 and 11-24 only (no 11-20..11-23 settlements).",
   "group": "P5_sentiment",
-  "last_as_of": "2026-11-19",
-  "last_file": "dials/flows/2026-11-20.json",
-  "last_run_at": "2026-11-20T05:11:00-07:00",
+  "last_as_of": "2026-11-25",
+  "last_file": "dials/flows/2026-11-27.json",
+  "last_run_at": "2026-11-27T05:10:46-07:00",
   "status": "partial"
  },
  "P6_margin": {
   "error": "",
   "group": "P6_margin",
   "last_as_of": "2026-10-31",
-  "last_file": "dials/flows/2026-11-16.json",
-  "last_run_at": "2026-11-16T05:11:00-07:00",
+  "last_file": "dials/flows/2026-11-23.json",
+  "last_run_at": "2026-11-23T05:11:00-07:00",
   "status": "ok"
  },
  "P8_calendar": {
-  "error": "No US IG dealer tally for Fri 20 Nov or for the week of 16-20 Nov surfaced (cappnotes Closing Look Fri 20 Nov has no issuance section; goodman-macro has no 20 Nov page; IG-tally searches returned cambonds/SIFMA/pre-gate USD 35bn forecast pages) - ig.us_daily_volume_usd_bn and ig.us_weekly_volume_usd_bn recorded quiet (null), not zero. The SpaceX GPU financing DID price Fri 20 Nov and is far larger than tracked (~USD 44bn of notes / USD 32bn public bonds via Saturn Funding Trust, not the ~USD 4bn / Atlas SP framing carried since 11-17) - tranche yields other than the A3 8.259%, spreads vs IPT, order book and ratings per tranche are not printed by any fetched page (IFR primary coverage not reachable; FourWeekMBA client_error). CoreWeave >=USD 4bn IG loan: BigGo 'Launches' page SERVER_ERROR for the fifth run; no dated launch page anywhere - still unconfirmed. Alphabet C$6bn Maple: no page prints book or IPT. Google-linked USD 3bn prepaid muni: no page dated 20 Nov (all hits 17-18 Nov 'delayed'). Treasury: treasuryauctions.gov announcements and savingsbonds.gov RSS both robots_disallowed; 2y/5y/7y sizes remain the RTTNews relay (69/70/44bn), 2y FRN R size still not found; us500 confirms the Mon-Wed dates and that Friday 20 Nov had no auction. bea.gov full schedule client_error - BEA/BLS/Fed dates carried from the 11-14/11-16 agency reads. ORCL FQ2 remains aggregator-only (verified:false, 17+ days out).",
+  "error": "Realised Thanksgiving-week US IG tally (Mon 23-Wed 25 Nov) and the week-of-30-Nov supply expectation still unprinted by any reachable page (cambonds No. 227 not posted; IFR snapshot robots-disallowed; CappNotes/Saxo/24-7 carry no issuance line) - ig.us_daily_volume_usd_bn quiet/null for a fifth run (Fri = 14:00 ET early close, no deal). ICE BofA OAS now posted through Thu 26 Nov (HY 3.77 / IG 0.99) but the Fri 27 Nov close is not. ORCL FQ2 FY2027 date STILL aggregator-only and now INSIDE the ten-day window (8 Dec = 10 days from 28 Nov): two searches, no 'Sets the Date' notice on any wire, no 8-K. Schaeffer's / TalkMarkets / theweekendspread / beincrypto failed to fetch (robots or client errors); CrowdStrike and Snowflake report dates not surfaced; DAX/FTSE/CAC Friday closes not printed by the Reuters relay. 2y FRN R result (11-25) not re-searched.",
   "group": "P8_calendar",
-  "last_as_of": "2026-11-21",
-  "last_file": "dials/calendar/2026-11-21.json",
-  "last_run_at": "2026-11-21T05:11:00-07:00",
+  "last_as_of": "2026-11-28",
+  "last_file": "dials/calendar/2026-11-28.json",
+  "last_run_at": "2026-11-28T05:10:00-07:00",
   "status": "partial"
  },
  "P9_custody": {
-  "error": "",
+  "error": "Fed H.4.1 for the week ending 2026-11-25 was NOT released as of the run (federalreserve.gov current page and PDF still dated November 19, 2026; FRED WSEFINT1 lists next release Fri 2026-11-27) - WMTSECL1 11-25 Wednesday level, week-average change and total custody recorded as quiet/null. MOF week.pdf raised PROVENANCE_REQUIRED (not retried); the 11-15..11-21 week was read from the historical week.csv (search-surfaced via the MOF index page) and reconciles exactly with the Reuters relays and tradingeconomics. MOF English index page still listed the Nov 19 release at fetch time (stale listing).",
   "group": "P9_custody",
-  "last_as_of": "2026-11-18",
-  "last_file": "dials/flows/2026-11-20.json",
-  "last_run_at": "2026-11-20T05:11:00-07:00",
-  "status": "ok"
+  "last_as_of": "2026-11-21",
+  "last_file": "dials/flows/2026-11-27.json",
+  "last_run_at": "2026-11-27T05:10:46-07:00",
+  "status": "partial"
  },
  "consensus": {
-  "error": "Pages read for all 14 tickers, but the stockanalysis copies fetched for SPCX, GEV, VRT, ANET, AVGO, CRWV, NBIS carry forecast dates of 2026-10-22..10-30 (October ratings, stale price/PT); see each item's as_of. No post-Q3-earnings 2027 capex consensus compile found; the one recorded is dated 2026-08-05.",
+  "error": "Pages read for all 14 tickers, but the stockanalysis copies served for ORCL, SPCX, GEV, VRT, ANET are the same October/early-November copies read on 2026-11-09 (stale ratings, price and PT; see each item's as_of and notes). No post-Q3-earnings 2027 capex consensus compile found; the four-company total and GOOGL/AMZN/MSFT figures remain the 2026-08-05 I/O Fund-MarketScreener compile relayed on a page updated 2026-11-10; META 209.69bn is a Nov 2 'Wall Street estimate' with the compiler unnamed.",
   "group": "consensus",
-  "last_as_of": "2026-11-06",
-  "last_file": "dials/consensus/2026-11-09.json",
-  "last_run_at": "2026-11-09T05:01:33-07:00",
+  "last_as_of": "2026-11-20",
+  "last_file": "dials/consensus/2026-11-23.json",
+  "last_run_at": "2026-11-23T05:07:41-07:00",
   "status": "partial"
  },
  "events": {
-  "error": "Client_error (not read): datacenterdynamics Prometheus Hyperscale page (item is 28 Oct, pre-gate anyway), cryptobriefing / techflowpost / aistockwire Alibaba 20 GW relays (huggingnews relay read instead), lubbocklights Ledger 21 Nov, trib.com (tollbit redirect, not followed). Refused hosts not fetched: Bloomberg 'UBS's Lovell sees AI capex at risk of 5-10% cut' video (20 Nov, headline only), CNBC 'Anthropic falls nearly 9%', CNN 'Nasdaq wipes out gains for the year'. No gilt or OAT level dated 20 Nov surfaced (Yahoo Europe-close page carries index moves only; Yahoo SG global-yields page gives Bund/JGB/AU/UST but no gilt/OAT). cappnotes Friday table carries no MSFT/GOOGL/META/AMZN/ORCL/GEV/VRT/ANET lines - META -5.9% and AMZN -3.9% come from Reuters via Yahoo; Alphabet 'flat' per stockanalysis is intraday. HY OAS printed by cappnotes is the 19 Nov FRED value (352bp); the 20 Nov value is not yet published.",
+  "error": "Fetch failures (not retried): vlsi.kr 'Daily Silicon 28 Nov' (KOSPI close + US SOX; second day running) client_error; invezz 'Why are CoreWeave and Nebius stocks soaring' and invezz 'Why Nvidia pared opening gains' (27 Nov) client_error; Newsquawk 'European Market Wrap 27 Nov' client_error (no Friday Bund/Gilt/OAT levels or OAT-Bund spread read); theweekendspread 'The Close Fri 27 Nov' client_error; mlq 'consumer advocates urge delay of the December PJM capacity auction' client_error (undated); ajupress 'Korea's financial chiefs hold fire as stocks rebound, tightening deepens' - PROVENANCE_REQUIRED after the search link's session parameter was stripped (gatherer error, not retried; the companion ajupress 'silent on rescue fund' piece was read). Refused hosts not attempted: Bloomberg (BBVA EUR 500m DC-loan SRT 26 Nov; Iqony pulled loan 3 Nov; BoE repo reform), CNBC (Treasury yields 27 Nov), FT/WSJ. Semafor primary (Citi/JPM AI-loan offload, 26 Nov) not surfaced - relays only (Benzinga via AOL, Pivot News, FourWeekMBA); none prints portfolio sizes. BoE FSR PDF / FPC record primary not read; the 'just over USD 4tn' hyperscaler potential-exposure figure is carried from a FourWeekMBA relay attributing it to Bloomberg/FSR - relay-attributed, unverified against the PDF. No vendor CoreWeave 5y CDS print dated Fri 27 Nov found - reading recorded quiet; capexcat's 'nearly 1,390' Wednesday print (described as a single trade) conflicts with the 1,314bp recorded 11-26. No JGB/Gilt/Bund 10y Friday close in any fetched page (JGB 10y 2.64% is the THURSDAY 26 Nov level from note.com, carried as context only). S&P France: investing.com/Reuters relay prints action and reasons but no deficit/debt figures, no OAT reaction (markets closed).",
   "group": "events",
-  "last_as_of": "2026-11-20",
-  "last_file": "dials/events/2026-11-21.json",
-  "last_run_at": "2026-11-21T05:11:00-07:00",
+  "last_as_of": "2026-11-27",
+  "last_file": "dials/events/2026-11-28.json",
+  "last_run_at": "2026-11-28T05:10:00-07:00",
   "status": "ok"
  },
  "standoff": {
-  "error": "brent.m2.settle null: no Feb-27 settle printed by cappnotes, Rigzone/Bloomberg, financefeeds or the DTN 20 Nov piece (DTN surfaced only its 8:42am CST intraday note, no afternoon settle article surfaced); Rigzone/Bloomberg says the Brent prompt spread 'has weakened' with no figure; oilprice.com/futures/brent surfaced but shows stale untimed quotes (Jan 110.32) and was discarded. dated_brent.premium null: no Platts/Argus relay dated 20-21 Nov (hormuz.now/oil still IEA $93 from 13 Nov). war_risk.premium_pct_hull and td3c null: the only surfaced freight/insurance pages are undated explainers or a 29 Jun procurementinstitute piece. Fetch failures: energynow 20 Nov settle piece client_error (financefeeds/Rigzone used); straits.live 21 Nov brief client_error (20 Nov brief used); wam.ae settle piece returned metadata only; Times of Israel 20 Nov liveblog index page returned only non-Iran items, so individual liveblog entries were fetched instead. UKMTO 214-26 vessel name not given by any fetched page; UKMTO 213-26 not surfaced at all (gap between 212 and 214 unexplained); 'Phoenix' name for 212 still unconfirmed. IRGC MQ-9/MQ-1 shootdown claims 21 Nov have no US comment yet. Known refused hosts not attempted: CNN, NPR, Al Arabiya, Doha News, Bloomberg direct, CNBC (Al Arabiya and CBS links surfaced were not fetched). No rule slips: every fetch followed a surfacing search this session.",
+  "error": "brent.m2.settle (Fri 27 Nov) not printed by any fetched source - null for a second day (The Edge commodities wrap 27 Nov client_error; Investing.com contracts table stale at 27 Oct; Reuters relays print Jan only); brent.m1_m2_spread_settle therefore null (financefeeds intraday ~4.40 at 13:00Z noted, not a value). dated_brent.premium, war_risk.premium_pct_hull, freight.td3c null again (dedicated searches returned only pre-gate pages: oilprice 23 Oct, xindemarinenews 15 Sep; Lloyd's List VLCC piece client_error). No UKMTO/JMIC primary page fetched; no UKMTO warning after 223-26 surfaced for the Hormuz box (224-26 number gap unexplained); 225-26 (Balhaf hijack) via GSM/Reuters. Fetch failures: Edge commodities wrap 27 Nov, mlq.ai x2, straits.live brief 2026-11-28, UPI and The Hill (Pacific Archer; PBS/AP used), Al Arabiya (Mousavi; TASS used), israelnationalnews flash 698721 (headline only), Lloyd's List LL1158394 - all client_error; Mehr 249728 robots_unreachable; NBC Jazan and Al Jazeera 27 Nov liveblog robots_disallowed; WAM metadata only; Al Jazeera 28 Nov liveblog returned two untimed summaries. OFAC 27 Nov page did not surface (0 recorded, not confirmed from the primary). No mediator (Qatar/Pakistan/Oman), IAEA, Vance/Witkoff/Rubio or Araghchi/Pezeshkian item dated in gate - absence, not failure. Jazan still has no restart/output figure and Ras Tanura no Aramco statement (third day). The IRGC's Friday-morning (Ghavam Island) and Friday-night (Khasab/eastern route) claims may overlap - counted as 2 statements / 3 hulls, none confirmed. The 'supreme-leader adviser' in Reuters is unnamed in every relay fetched.",
   "group": "standoff",
-  "last_as_of": "2026-11-20",
-  "last_file": "dials/standoff/2026-11-21.json",
-  "last_run_at": "2026-11-21T05:11:00-07:00",
+  "last_as_of": "2026-11-27",
+  "last_file": "dials/standoff/2026-11-28.json",
+  "last_run_at": "2026-11-28T05:10:00-07:00",
   "status": "partial"
  },
  "voices": {
-  "error": "",
+  "error": "O'Laughlin (Fabricated Knowledge) unreachable: fabricatedknowledge.com ROBOTS_UNREACHABLE; all other roster voices read or confirmed quiet.",
   "group": "voices",
-  "last_as_of": "2026-11-18",
-  "last_file": "dials/voices/2026-11-19.json",
-  "last_run_at": "2026-11-19T05:05:19-07:00",
-  "status": "ok"
+  "last_as_of": "2026-11-26",
+  "last_file": "dials/voices/2026-11-26.json",
+  "last_run_at": "2026-11-26T04:48:53-07:00",
+  "status": "partial"
  }
 }

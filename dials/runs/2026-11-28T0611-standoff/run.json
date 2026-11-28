@@ -1,0 +1,35 @@
+{
+ "error": "gather group standoff status partial every day Nov 23-28; unmeasured this run: M3 war-risk % of hull (ninth gather run with no November quote; Lloyd's List 7-9% of Nov 9 carried); O3 Dated Brent (no quote since IEA ~93 Nov 13; Bloomberg 'Middle East prompt crude bid' Nov 27 direction only); Brent Feb-27 settle for Nov 26 and Nov 27 (M1-M2 4.90 is The Edge's Nov 26 feed calculation, provisional; 4.40 is a Nov 27 13:00Z intraday pair); O5 TD3C after Sep 14 (Baltic 13 Nov in-Gulf/out-of-Gulf differential only); O6 rial 2.82-2.856m Nov 24 (Gulf News, record) read from the gather, no later print; O7 CDS not read; M8 source split (Kpler clearance 9.25 mb/d = <10 zone vs DTN 13.5 of Nov 17 = 13-15 zone, not scored); Jazan refinery output/restart figure (third day without one) and Ras Tanura damage (no Aramco statement); the SpaceX pricing read from IBTimes/BreezyScroll relays of FT/Bloomberg/KBRA, late (Nov 19-20, missed by the Nov 21 run)",
+ "grade_the_gap": null,
+ "inputs_commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+ "kind": "standoff",
+ "mode": "full",
+ "repo_commit": "2ad6dd1d9c5b5f964279078e471070769cff7b67",
+ "run_at": "2026-11-28T06:11:18-07:00",
+ "run_id": "2026-11-28T0611-standoff",
+ "sequence": {
+  "attended": false,
+  "memory_written": false,
+  "scheduled": true,
+  "stage": 1,
+  "task": "dials-weekly"
+ },
+ "skill_version": "standoff-watch SKILL.md, repository-state version (dials/runs/<RUN_ID>/), synced skill folder 2026-11-28",
+ "state_prev": {
+  "H2": {
+   "E": 60,
+   "F": 25,
+   "R+": 5,
+   "R-": 10
+  },
+  "H2_exact": {
+   "E": 62.92,
+   "F": 23.6,
+   "R+": 4.49,
+   "R-": 8.99
+  },
+  "run_id": "2026-11-21T0611-standoff"
+ },
+ "status": "partial",
+ "test_materialize": "state reproduces byte-for-byte from runs/ (mismatches 0); the one FAIL line is the test's hard-coded migration anchor (dials Brier 0.121, n=12), outgrown since the 2026-11-14 dials run (now 0.136875, n=24) - pre-existing on main, a test bug not a folder fault; tools are not edited by a scorer run"
+}

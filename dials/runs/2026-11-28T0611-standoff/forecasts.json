@@ -1,0 +1,150 @@
+{
+ "hazards_per_month": {
+  "blockade_run_engagement_iranian_tanker_vs_us": 20,
+  "choreographed_strike_then_ceasefire": 8,
+  "disorderly_treasury_move": 12,
+  "energy_infra_strike_either_direction": 18,
+  "fed_50bp_dec": 5,
+  "fuse_second_raise_or_oracle_print_wide_by_0131": 25,
+  "gulf_state_engages_iran": 10,
+  "iran_npt_withdrawal_announced": 8,
+  "iran_nuclear_test": 2,
+  "iranian_strike_on_gulf_data_center_or_cable": 6,
+  "joint_us_israel_campaign_4_7_days": 10,
+  "red_sea_or_pipeline_shutdown": 22,
+  "second_confirmed_crew_or_facility_fatality": 35
+ },
+ "ledger_note": "2 resolved this run (S-20261126-VENUE NO, Brier 0.0025; S-20261209-BRENT90 YES early, Brier 0.36); 7 re-priced, 2 held, 2 new. Hazards realised since Nov 21: crew_fatality_confirmed (ADNOC L&S, Nov 17 attack; plus Jazan and Kuwait deaths) and fuse_pricing (priced with collateral, not failed) - both replaced. Rolling Brier is read from dials/state/scoreboard.json after materialization.",
+ "registered": [
+  {
+   "criterion": "a written US-Iran agreement announced by both governments by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-SIGN",
+   "lead_days": 11,
+   "note": "from 0.10: Kushner confirms direct meetings but undated; seven conditions restated in full; Trump 'after the New Year' and 'funded until end-January'; Araghchi 'examining ideas'; 11 days left. Within the R+ + R- H2 weight of 10",
+   "p": 0.05,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "E criteria met by Dec 9 (a strike on energy infrastructure in either direction confirmed by the owning state, a Gulf state engaging Iran directly, or an Iranian nuclear test)",
+   "depth": 2,
+   "id": "S-20261209-E",
+   "lead_days": 11,
+   "note": "from 0.35: Jazan (Houthi projectile, Saudi Energy Ministry-confirmed damage and a death) is an owner-confirmed energy-infrastructure strike by an Iran-aligned actor - not 'either direction' as the criterion was written (US/Israel-Iran, Iran-Gulf), so held unresolved and flagged for ruling s-E; Kuwait blames Iran for two deaths but has not engaged Iran directly; Ras Tanura unconfirmed; the Ynet infrastructure plan is unapproved. If s-E counts proxy strikes this resolves YES at the next attended run",
+   "p": 0.4,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "Brent front-month settles >= 120 on any day by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-BRENT120",
+   "lead_days": 11,
+   "note": "from 0.07: 95.44 needs +26% in 8 sessions; Friday failed at 98.06; the E-strike path only",
+   "p": 0.05,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a Hormuz war-risk premium <= 2% of hull reported by Dec 9",
+   "depth": 2,
+   "id": "S-20261209-M3",
+   "lead_days": 11,
+   "note": "from 0.03: 7-9% carried from Nov 9; JMIC 'Severe'; premiums 'approached wartime highs' (safety4sea Nov 27)",
+   "p": 0.02,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "a new Israeli government sworn in by Dec 4",
+   "depth": 1,
+   "id": "S-20261204-ISRAELGOV",
+   "lead_days": 6,
+   "note": "from 0.30: no coalition reporting in any gather day; Katz and Netanyahu acting as the sitting government on the Iran file; 6 days left",
+   "p": 0.2,
+   "resolves": "2026-12-04"
+  },
+  {
+   "criterion": "any tranche of the SpaceX $40B prices by Dec 31 at an IG spread with no collateral or sweeteners reported",
+   "depth": 3,
+   "id": "S-20261231-FUSE",
+   "lead_days": 33,
+   "note": "from 0.05: the ~$44B priced Nov 20 (late) chip-collateralised through the Saturn Funding Trust SPV at ~8.3% / ~T+345 on an A-/A3 wrapper - collateral by construction, so the criterion as written is not met by this pricing; not resolved early because the window runs to Dec 31 and SpaceX's next raise could be unsecured; the fuse read for macro-dials is 'strained, priced'",
+   "p": 0.02,
+   "resolves": "2026-12-31"
+  },
+  {
+   "criterion": "a further US or Israeli strike on Iranian territory Nov 21-Dec 5, reported by CENTCOM/IDF or confirmed by two wires",
+   "depth": 1,
+   "id": "S-20261205-STRIKE3",
+   "lead_days": 7,
+   "note": "from 0.55: no strike on Iranian territory Nov 21-28 (the Pacific Archer was disabled at sea in the Gulf of Oman - a ship, not territory); Trump 'after the New Year', allied brake, Iran's denial of Kuwait removes the self-defense trigger for the week; against: Pickaxe Mountain named, Israel pressing, IRGC vows to 'break the blockade' in the air and at sea; 7 days left",
+   "p": 0.35,
+   "resolves": "2026-12-05"
+  },
+  {
+   "criterion": "the FOMC raises the funds rate by >= 25 bp on Dec 9",
+   "depth": 2,
+   "id": "S-20261209-FEDHIKE",
+   "lead_days": 11,
+   "note": "held: FedWatch 94-98% through the Oct PCE (core 3.3% y/y); Kalshi/Polymarket not re-read",
+   "p": 0.95,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "the FOMC raises the funds rate by 50 bp on Dec 9",
+   "depth": 2,
+   "id": "S-20261209-FED50",
+   "lead_days": 11,
+   "note": "held: 3-10% priced (Waller 'go 50' Nov 18 vs Williams, Bessent); Oct core PCE 0.3 m/m is Waller's own trigger, but the committee's voice is 25",
+   "p": 0.05,
+   "resolves": "2026-12-09"
+  },
+  {
+   "criterion": "the Nov 29 OPEC+ ministerial leaves production targets unchanged at least through Q1 2027 (a rollover), per the OPEC communique or two wires",
+   "depth": 0,
+   "id": "S-20261129-OPEC",
+   "lead_days": 1,
+   "note": "new: three Reuters sources 'agreement in principle' (Nov 27); risks: Iraq/Kazakhstan capacity fight, an Iraqi walkout; registered as a short-lead calibration point for the F path's surplus narrative",
+   "p": 0.85,
+   "resolves": "2026-11-29"
+  },
+  {
+   "criterion": "a Saudi, UAE, Qatari, Kuwaiti or Bahraini government or national oil company statement confirming damage to a Gulf-side (Hormuz/Persian Gulf coast) oil or gas production, processing or export facility, Nov 28-Dec 31",
+   "depth": 3,
+   "id": "S-20261231-GULFFACILITY",
+   "lead_days": 33,
+   "note": "new: the Houthi front reached Ras Tanura (drones intercepted over the refinery, Nov 25) and Iran has named Gulf energy, cables and data centers as targets; Jazan and the Nov 9 pipeline fire were Red Sea-side; this fork tests the escalation geography the E branch needs",
+   "p": 0.3,
+   "resolves": "2026-12-31"
+  }
+ ],
+ "resolved": [
+  {
+   "brier": 0.0025,
+   "criterion": "within 7 days of the Nov 19 Shenzhen trilateral, a US-Iran meeting with a named venue and date is announced by the US or Iran (not a mediator)",
+   "event_time": "2026-11-26",
+   "evidence": "No US-Iran meeting with a venue and date was announced by either government Nov 19-26: the Qatari delegation in Tehran (Nov 20) was 'not yet formal negotiations' (Gharibabadi); the Qatari PM's Washington meetings (Nov 23) produced a courtesy readout; Kushner's 'we met with the Iranians a couple times' (Nov 26) names no venue or date and is past the window; Araghchi restated the seven conditions as a precondition for talks every day of the window. NO",
+   "id": "S-20261126-VENUE",
+   "kind": "standoff",
+   "log_score": -0.051293,
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "outcome": 0,
+   "p": 0.05,
+   "resolved_at": "2026-11-28",
+   "source_node": "dials/standoff/2026-11-23.json; 11-24; 11-25; 11-27"
+  },
+  {
+   "brier": 0.36,
+   "criterion": "Brent front-month settles <= 90 on any day by Dec 9",
+   "event_time": "2026-11-23",
+   "evidence": "ICE Brent January 2027 (front month under ruling s-O1) settled 89.37 on Mon Nov 23 (-3.20, -3.46%; lowest close since Aug 28; Reuters/Nation Thailand, CappNotes, financefeeds). Criterion met; resolved early. YES",
+   "id": "S-20261209-BRENT90",
+   "kind": "standoff",
+   "log_score": -0.916291,
+   "observed_time": "2026-11-28T06:11:18-07:00",
+   "outcome": 1,
+   "p": 0.4,
+   "resolved_at": "2026-11-28",
+   "source_node": "dials/standoff/2026-11-24.json"
+  }
+ ],
+ "run_id": "2026-11-28T0611-standoff"
+}
